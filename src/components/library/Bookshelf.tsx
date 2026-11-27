@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent } from "react";
-import { LESSON_IDS, LESSONS, LIBRARY, PHASES, TOTAL_DAYS, lessonIdForDay } from "@/content";
+import { LESSON_IDS, LESSON_META, LIBRARY, PHASES, TOTAL_DAYS, lessonIdForDay } from "@/content/catalog";
 import { entriesForPhase } from "@/content/library";
 import { BOOK_STATE_LABEL, bookState, type BookState } from "@/lib/bookState";
 import { useAppState, useHydrated } from "@/lib/store";
@@ -19,7 +19,7 @@ export function Bookshelf() {
   const [filter, setFilter] = useState<ShelfFilter>("authored");
 
   const stateOf = (entry: (typeof LIBRARY)[number]): BookState =>
-    hydrated ? bookState(entry, LESSONS[entry.id], state) : entry.authored ? "ready" : "preview";
+    hydrated ? bookState(entry, LESSON_META[entry.id], state) : entry.authored ? "ready" : "preview";
 
   return (
     <div className="space-y-8">

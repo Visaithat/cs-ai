@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { KIND_LABEL, LESSONS, type LibraryEntry } from "@/content";
+import { KIND_LABEL, LESSON_META, type LibraryEntry } from "@/content/catalog";
 import { BOOK_STATE_LABEL, type BookState } from "@/lib/bookState";
 import { BookOpen, Check, CircleDashed, LessonGlyph, Sparkles } from "../Icons";
 
@@ -16,7 +16,7 @@ function StateGlyph({ state }: { state: BookState }) {
  */
 export function Book({ entry, state }: { entry: LibraryEntry; state: BookState }) {
   const label = BOOK_STATE_LABEL[state];
-  const lesson = LESSONS[entry.id];
+  const lesson = LESSON_META[entry.id];
 
   return (
     <Link href={entry.href} prefetch={false} className="book" data-state={state} data-kind={entry.kind}>

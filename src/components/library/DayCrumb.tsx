@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLibraryEntry, type LibraryEntry } from "@/content";
+import { getLibraryEntry, type LibraryEntry } from "@/content/catalog";
 import { ArrowLeft, ArrowRight, Library } from "../Icons";
 
 const LINK = "inline-flex min-h-11 items-center gap-1.5 rounded-xl px-2 text-sm font-medium text-muted hover:text-ink";

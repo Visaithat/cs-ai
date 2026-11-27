@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
-import { DAILY_LOOP, LESSON_IDS, LESSONS, PHASES, TOTAL_DAYS } from "@/content";
+import { DAILY_LOOP, LESSON_IDS, LESSON_META, PHASES, TOTAL_DAYS, getLibraryEntry } from "@/content/catalog";
 import { Bookshelf } from "@/components/library/Bookshelf";
 import { assetPath } from "@/lib/assetPath";
 import {
@@ -43,26 +43,27 @@ export function Dashboard() {
   const today = todayNow ?? "";
 
   // Pick the most relevant authored lesson: first in-progress, else first uncompleted, else Day 1.
-  const authoredLessons = LESSON_IDS.map((id) => LESSONS[id]).sort((a, b) => a.day - b.day);
+  const authoredLessons = LESSON_IDS.map((id) => LESSON_META[id]).sort((a, b) => a.day - b.day);
   const activeLesson = hydrated
     ? authoredLessons.find((l) => {
         const p = getLessonProgress(state, l.id);
         const c = lessonChecklist(p, {
-          setupSteps: l.setup.steps.length,
-          exampleSteps: l.workedExample.steps.length,
-          quizQuestions: l.quiz.questions.length,
+          setupSteps: l.setupSteps,
+          exampleSteps: l.exampleSteps,
+          quizQuestions: l.quizQuestions,
         });
         return !p.completedOn && (c.done > 0 || p.exercise.attempts > 0);
       }) ??
       authoredLessons.find((l) => !getLessonProgress(state, l.id).completedOn) ??
-      LESSONS.d001
-    : LESSONS.d001;
+      LESSON_META.d001
+    : LESSON_META.d001;
 
+  const activeEntry = getLibraryEntry(activeLesson.day);
   const progress = getLessonProgress(state, activeLesson.id);
   const checklist = lessonChecklist(progress, {
-    setupSteps: activeLesson.setup.steps.length,
-    exampleSteps: activeLesson.workedExample.steps.length,
-    quizQuestions: activeLesson.quiz.questions.length,
+    setupSteps: activeLesson.setupSteps,
+    exampleSteps: activeLesson.exampleSteps,
+    quizQuestions: activeLesson.quizQuestions,
   });
   const completed = Object.values(state.lessons).filter((l) => l.completedOn).length;
   const streak = hydrated ? computeStreak(state.activeDates, today) : { current: 0, best: 0, activeToday: false, atRisk: false };
@@ -96,7 +97,7 @@ export function Dashboard() {
                 <p className="eyebrow flex items-center gap-1.5">
                   <LessonGlyph icon={activeLesson.icon} size={14} className="text-brand-ink" />
                   <span>
-                    Day {activeLesson.day} · Phase {activeLesson.phase.index} · {activeLesson.minutes} นาที
+                    Day {activeLesson.day} · Phase {activeEntry?.phase ?? 1} · {activeEntry?.minutes ?? 30} นาที
                   </span>
                 </p>
                 <p className="mt-1 font-semibold leading-snug">{activeLesson.titleTh}</p>
@@ -217,7 +218,7 @@ export function Dashboard() {
               <BookOpen size={16} strokeWidth={1.75} aria-hidden="true" className="text-brand-ink" />
               <span>{activeLesson.titleTh}</span>
             </h3>
-            <p className="mt-1 text-sm text-muted">{activeLesson.tagline}</p>
+            <p className="mt-1 text-sm text-muted">{activeEntry?.title ?? activeLesson.titleTh}</p>
 
             <ol className="mt-5 divide-y divide-[color:var(--hair)]">
               {DAILY_LOOP.map((step, index) => {

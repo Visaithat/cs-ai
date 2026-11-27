@@ -7,14 +7,41 @@ import { getLesson as getLessonProgress, lessonChecklist, type AppState } from "
 
 export type BookState = "completed" | "in-progress" | "ready" | "preview";
 
-export function bookState(entry: LibraryEntry, lesson: Lesson | undefined, state: AppState): BookState {
+export interface BookChecklistMeta {
+  id: string;
+  setupSteps: number;
+  exampleSteps: number;
+  quizQuestions: number;
+}
+
+function toChecklistCounts(source: Lesson | BookChecklistMeta): {
+  id: string;
+  setupSteps: number;
+  exampleSteps: number;
+  quizQuestions: number;
+} {
+  if ("setupSteps" in source) return source;
+  return {
+    id: source.id,
+    setupSteps: source.setup.steps.length,
+    exampleSteps: source.workedExample.steps.length,
+    quizQuestions: source.quiz.questions.length,
+  };
+}
+
+export function bookState(
+  entry: LibraryEntry,
+  lesson: Lesson | BookChecklistMeta | undefined,
+  state: AppState,
+): BookState {
   if (!entry.authored || !lesson) return "preview";
-  const progress = getLessonProgress(state, lesson.id);
+  const counts = toChecklistCounts(lesson);
+  const progress = getLessonProgress(state, counts.id);
   if (progress.completedOn) return "completed";
   const checklist = lessonChecklist(progress, {
-    setupSteps: lesson.setup.steps.length,
-    exampleSteps: lesson.workedExample.steps.length,
-    quizQuestions: lesson.quiz.questions.length,
+    setupSteps: counts.setupSteps,
+    exampleSteps: counts.exampleSteps,
+    quizQuestions: counts.quizQuestions,
   });
   const started = checklist.done > 0 || progress.exercise.attempts > 0;
   return started ? "in-progress" : "ready";

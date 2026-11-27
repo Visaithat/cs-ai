@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { getLibraryEntry, lessonIdForDay } from "@/content";
+import { getLibraryEntry, lessonIdForDay } from "@/content/catalog";
 import type { Lesson } from "@/content/types";
 import { Callout } from "../Callout";
 import { Award, ExternalLink, Repeat } from "../Icons";

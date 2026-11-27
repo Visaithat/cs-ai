@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { createContext, useCallback, useContext, useId, useMemo, useRef, useState, type ReactNode } from "react";
 import { GLOSSARY } from "@/content/glossary";
-import { LESSONS } from "@/content";
+import { LESSON_META } from "@/content/catalog";
 import { toggleGlossaryReview } from "@/lib/actions";
 import { useAppState } from "@/lib/store";
 import { CodeBlock } from "./CodeBlock";
@@ -230,7 +230,7 @@ function TermSheet({ termId, onClose }: { termId: string | null; onClose: () => 
             </h3>
             <ul className="mt-1 space-y-1">
               {term.related.map((rel) => {
-                const available = rel.lessonId && LESSONS[rel.lessonId];
+                const available = rel.lessonId && LESSON_META[rel.lessonId];
                 return (
                   <li key={rel.label}>
                     {available ? (

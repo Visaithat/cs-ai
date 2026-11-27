@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useMemo, useState, type ReactNode } from "react";
-import { KIND_LABEL, getLibraryEntry } from "@/content";
+import { KIND_LABEL, getLibraryEntry } from "@/content/catalog";
 import { getLessonAudio } from "@/content/audio";
 import type { Lesson } from "@/content/types";
 import { assetPath } from "@/lib/assetPath";

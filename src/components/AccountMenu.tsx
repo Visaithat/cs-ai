@@ -3,11 +3,11 @@
 import { useAuth } from "./AuthProvider";
 import { Cloud, LogIn, LogOut, User } from "./Icons";
 
-/** Compact header account controls: Login/Register trigger or logged-in username + cloud sync + Logout. */
+/** Compact header account controls: always shows Login trigger when signed out, or username + sync + Logout when signed in. */
 export function AccountMenu() {
-  const { user, configured, loading, syncState, openAuthModal, logout } = useAuth();
+  const { user, configured, syncState, openAuthModal, logout } = useAuth();
 
-  if (!configured || loading) {
+  if (!configured) {
     return null;
   }
 

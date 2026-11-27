@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LESSON_IDS, LESSONS, getLesson, parseLessonId } from "@/content";
+import { LESSON_IDS, getLessonMeta, parseLessonId } from "@/content/catalog";
 import { lessonChecklist, getLesson as getLessonProgress } from "@/lib/progress";
 import { assetPath } from "@/lib/assetPath";
 import { useAppState, useHydrated } from "@/lib/store";
@@ -24,7 +24,7 @@ export function SiteHeader() {
   const slug = pathname.split("/")[2] ?? "";
   const lessonDay = parseLessonId(slug);
   const onLesson = pathname.startsWith("/lesson/") && lessonDay !== null;
-  const activeLesson = onLesson ? getLesson(slug) : undefined;
+  const activeLesson = onLesson ? getLessonMeta(slug) : undefined;
 
   let pct = 0;
   let progressLabel = "";
@@ -35,9 +35,9 @@ export function SiteHeader() {
     showProgress = true;
     const progress = getLessonProgress(state, activeLesson.id);
     const checklist = lessonChecklist(progress, {
-      setupSteps: activeLesson.setup.steps.length,
-      exampleSteps: activeLesson.workedExample.steps.length,
-      quizQuestions: activeLesson.quiz.questions.length,
+      setupSteps: activeLesson.setupSteps,
+      exampleSteps: activeLesson.exampleSteps,
+      quizQuestions: activeLesson.quizQuestions,
     });
     pct = hydrated ? Math.round((checklist.done / checklist.total) * 100) : 0;
     progressLabel = `${hydrated ? checklist.done : 0}/${checklist.total}`;
@@ -78,7 +78,7 @@ export function SiteHeader() {
               <span>Day {lessonDay}</span>
             </Link>
           ) : (
-            <Link href={`/lesson/${LESSONS.d001.id}`} className="inline-flex min-h-11 items-center gap-1.5 rounded-xl px-2.5 text-sm font-medium text-muted hover:text-ink">
+            <Link href="/lesson/d001" className="inline-flex min-h-11 items-center gap-1.5 rounded-xl px-2.5 text-sm font-medium text-muted hover:text-ink">
               <BookOpen size={15} strokeWidth={1.75} aria-hidden="true" className="hidden min-[400px]:inline" />
               <span>Day 1</span>
             </Link>

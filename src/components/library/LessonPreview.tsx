@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DAILY_LOOP, KIND_LABEL, PHASES, REVIEW_LOOP, TOTAL_DAYS, getLibraryEntry, type LibraryEntry } from "@/content";
+import { DAILY_LOOP, KIND_LABEL, PHASES, REVIEW_LOOP, TOTAL_DAYS, getLibraryEntry, type LibraryEntry } from "@/content/catalog";
 import { ArrowRight, CircleDashed, Clock } from "../Icons";
 import { DayCrumb } from "./DayCrumb";
 

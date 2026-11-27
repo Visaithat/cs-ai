@@ -7,7 +7,7 @@ import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 import { GlossaryProvider } from "@/components/Glossary";
 import { SiteHeader } from "@/components/SiteHeader";
-import { LESSON_IDS } from "@/content";
+import { LESSON_IDS } from "@/content/catalog";
 import { assetPath } from "@/lib/assetPath";
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import type { LibraryEntry } from "@/content";
+import type { LibraryEntry } from "@/content/catalog";
 import { PHASE_COVERS } from "@/content/lessons/builder";
 import type { RoadmapPhase } from "@/content/types";
 import { assetPath } from "@/lib/assetPath";

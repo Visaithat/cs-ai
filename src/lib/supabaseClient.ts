@@ -1,10 +1,13 @@
 /**
  * Browser-safe Supabase client for static hosting (GitHub Pages + localhost).
  * Uses ONLY `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
- * (`sb_publishable_...`), relying on Supabase Auth + Postgres Row-Level Security (RLS)
- * on `public.user_progress`.
+ * (`sb_publishable_...`).
+ *
+ * Progress persistence uses `public.user_progress` (when RLS + GRANT are enabled)
+ * and automatically falls back to Supabase Auth `user_metadata.np_progress` so
+ * cross-device sync works out of the box even before SQL GRANT is applied.
  */
-import { parseState, type AppState } from "./progress";
+import { parseState, type AppState, type LessonProgress } from "./progress";
 
 const SESSION_STORAGE_KEY = "neural-path:sb-session";
 
@@ -80,6 +83,66 @@ export function writeStoredSession(session: SupabaseAuthSession | null): void {
   }
 }
 
+/** Trim oversized scratchpad code only when saving to compact auth user_metadata fallback. */
+function compactForMetadata(state: AppState): AppState {
+  const lessons: Record<string, LessonProgress> = {};
+  for (const [id, lp] of Object.entries(state.lessons)) {
+    const { code, ...restEx } = lp.exercise;
+    lessons[id] = {
+      ...lp,
+      exercise: code && code.length <= 500 ? { ...restEx, code } : restEx,
+    };
+  }
+  return { ...state, lessons };
+}
+
+/** Merge cloud and local progress non-destructively (union of active dates, completed lessons & review cards). */
+export function mergeAppStates(cloud: AppState, local: AppState): AppState {
+  const activeDates = Array.from(new Set([...cloud.activeDates, ...local.activeDates])).sort().slice(-400);
+  const lessons: Record<string, LessonProgress> = { ...cloud.lessons };
+  for (const [id, loc] of Object.entries(local.lessons)) {
+    const prev = lessons[id];
+    if (!prev) {
+      lessons[id] = loc;
+    } else {
+      lessons[id] = {
+        completedOn: prev.completedOn ?? loc.completedOn,
+        setup: { ...loc.setup, ...prev.setup },
+        exampleStep: Math.max(prev.exampleStep, loc.exampleStep),
+        exercise: {
+          ...prev.exercise,
+          code: loc.exercise.code ?? prev.exercise.code,
+          attempts: Math.max(prev.exercise.attempts, loc.exercise.attempts),
+          passed: prev.exercise.passed || loc.exercise.passed,
+          mastered: prev.exercise.mastered || loc.exercise.mastered,
+          hintsRevealed: Math.max(prev.exercise.hintsRevealed, loc.exercise.hintsRevealed),
+          selfChecks: { ...(loc.exercise.selfChecks ?? {}), ...(prev.exercise.selfChecks ?? {}) },
+        },
+        quiz: {
+          answers: { ...loc.quiz.answers, ...prev.quiz.answers },
+          checked: { ...loc.quiz.checked, ...prev.quiz.checked },
+        },
+      };
+    }
+  }
+  const seenReview = new Set(cloud.review.map((r) => `${r.lessonId}:${r.id}`));
+  const review = [...cloud.review];
+  for (const item of local.review) {
+    const k = `${item.lessonId}:${item.id}`;
+    if (!seenReview.has(k)) {
+      seenReview.add(k);
+      review.push(item);
+    }
+  }
+  return {
+    ...cloud,
+    activeDates,
+    lessons,
+    review,
+    graduated: Math.max(cloud.graduated, local.graduated),
+  };
+}
+
 interface RawAuthPayload {
   access_token?: string;
   refresh_token?: string;
@@ -88,7 +151,7 @@ interface RawAuthPayload {
   user?: {
     id?: string;
     email?: string;
-    user_metadata?: { username?: string; display_name?: string };
+    user_metadata?: { username?: string; display_name?: string; np_progress?: unknown };
   };
   msg?: string;
   error_description?: string;
@@ -236,24 +299,44 @@ export async function loadCloudUserProgress(
   const active = await ensureFreshSession(session);
   if (!active) throw new Error("Session expired");
 
-  const res = await fetch(
-    `${cfg.url}/rest/v1/user_progress?user_id=eq.${encodeURIComponent(active.userId)}&select=state`,
-    {
-      method: "GET",
-      headers: {
-        apikey: cfg.key,
-        Authorization: `Bearer ${active.accessToken}`,
+  // 1) Try public.user_progress table (RLS) first
+  try {
+    const res = await fetch(
+      `${cfg.url}/rest/v1/user_progress?user_id=eq.${encodeURIComponent(active.userId)}&select=state`,
+      {
+        method: "GET",
+        headers: {
+          apikey: cfg.key,
+          Authorization: `Bearer ${active.accessToken}`,
+        },
       },
+    );
+    if (res.ok) {
+      const rows = (await res.json()) as Array<{ state?: unknown }>;
+      if (rows.length && rows[0]?.state) {
+        return { exists: true, state: parseState(JSON.stringify(rows[0].state)) };
+      }
+    }
+  } catch {
+    /* fall through to auth metadata */
+  }
+
+  // 2) Fallback: read Supabase Auth user_metadata.np_progress (works without extra SQL GRANT!)
+  const meRes = await fetch(`${cfg.url}/auth/v1/user`, {
+    method: "GET",
+    headers: {
+      apikey: cfg.key,
+      Authorization: `Bearer ${active.accessToken}`,
     },
-  );
-  if (!res.ok) {
-    throw new Error(`Load progress failed (HTTP ${res.status})`);
+  });
+  if (!meRes.ok) {
+    throw new Error(`Load progress failed (HTTP ${meRes.status})`);
   }
-  const rows = (await res.json()) as Array<{ state?: unknown }>;
-  if (!rows.length || !rows[0]?.state) {
-    return { exists: false, state: null };
+  const me = (await meRes.json()) as { user_metadata?: { np_progress?: unknown } };
+  if (me.user_metadata?.np_progress) {
+    return { exists: true, state: parseState(JSON.stringify(me.user_metadata.np_progress)) };
   }
-  return { exists: true, state: parseState(JSON.stringify(rows[0].state)) };
+  return { exists: false, state: null };
 }
 
 export async function saveCloudUserProgress(
@@ -266,21 +349,47 @@ export async function saveCloudUserProgress(
   const active = await ensureFreshSession(session);
   if (!active) throw new Error("Session expired");
 
-  const res = await fetch(`${cfg.url}/rest/v1/user_progress?on_conflict=user_id`, {
-    method: "POST",
+  // 1) Try public.user_progress table first
+  let tableSaved = false;
+  try {
+    const res = await fetch(`${cfg.url}/rest/v1/user_progress?on_conflict=user_id`, {
+      method: "POST",
+      headers: {
+        apikey: cfg.key,
+        Authorization: `Bearer ${active.accessToken}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=merge-duplicates,return=minimal",
+      },
+      body: JSON.stringify({
+        user_id: active.userId,
+        state,
+        updated_at: new Date().toISOString(),
+      }),
+    });
+    tableSaved = res.ok;
+  } catch {
+    tableSaved = false;
+  }
+
+  if (tableSaved) return;
+
+  // 2) Fallback: persist compact progress to Supabase Auth user_metadata.np_progress
+  const metaRes = await fetch(`${cfg.url}/auth/v1/user`, {
+    method: "PUT",
     headers: {
       apikey: cfg.key,
       Authorization: `Bearer ${active.accessToken}`,
       "Content-Type": "application/json",
-      Prefer: "resolution=merge-duplicates,return=minimal",
     },
     body: JSON.stringify({
-      user_id: active.userId,
-      state,
-      updated_at: new Date().toISOString(),
+      data: {
+        username: active.username,
+        display_name: active.username,
+        np_progress: compactForMetadata(state),
+      },
     }),
   });
-  if (!res.ok) {
-    throw new Error(`Save progress failed (HTTP ${res.status})`);
+  if (!metaRes.ok) {
+    throw new Error(`Save progress failed (HTTP ${metaRes.status})`);
   }
 }
