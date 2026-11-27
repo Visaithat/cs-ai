@@ -1,0 +1,109 @@
+{
+  "lessonId": "d167",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — เชื่อม LangGraph Router",
+      "src": "/audio/d167/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เป็นกันเอง เหมือนชวนน้องนำชิ้นส่วน D165 และ D166 มาประกอบเข้าด้วยกันในสถาปัตยกรรม Router",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 167 นะครับ วันนี้เป็นวันที่สนุกมาก เพราะเราจะเอาของที่เราสร้างไว้สองวันก่อน ทั้ง Grounded RAG จาก D165 และ MCP Server จาก D166 มาต่อสายพานเข้าด้วยกันด้วย LangGraph Router ครับ\n\nคำถามของลูกค้าในองค์กรมี 3 ธรรมชาติที่ต่างกันชัดเจน คือถามนโยบายบริษัท ถามสถานะออเดอร์หรือทิกเก็ต และขอเปิดทิกเก็ตหรือร้องเรียน การโยนทุกอย่างเข้าไปใน ReAct loop ที่ให้โมเดลคิดวนเองอิสระจะทำให้ช้า เปลือง token และคาดเดาพฤติกรรมยากมาก เราจึงใช้รูปแบบ Routing Workflow บน LangGraph เพื่อแยกส่งเข้าโหนดเฉพาะทางตั้งแต่วินาทีแรกครับ\n\nวันนี้เราจะล็อกเพดานจำนวนก้าวไว้ที่ max_steps น้อยกว่าหรือเท่ากับ 3 เพื่อการันตีว่าไม่มี loop ไม่รู้จบ เชื่อม Checkpointer สำหรับหยุดรอ Human-in-the-Loop ตาม thread_id และสร้างเส้นทาง fallback ไปที่ escalate พร้อมเก็บ trace_events ไว้ส่งต่อเข้า Langfuse ใน Block B43 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 167 นะครับ วันนี้เป็นวันที่สนุกมาก เพราะเราจะเอาของที่เราสร้างไว้สองวันก่อน ทั้ง Grounded RAG จาก D165 และ MCP Server จาก D166 มาต่อสายพานเข้าด้วยกันด้วย LangGraph Router ครับ\n\nคำถามของลูกค้าในองค์กรมี 3 ธรรมชาติที่ต่างกันชัดเจน คือถามนโยบายบริษัท ถามสถานะออเดอร์หรือทิกเก็ต และขอเปิดทิกเก็ตหรือร้องเรียน การโยนทุกอย่างเข้าไปใน ReAct loop ที่ให้โมเดลคิดวนเองอิสระจะทำให้ช้า เปลือง token และคาดเดาพฤติกรรมยากมาก เราจึงใช้รูปแบบ Routing Workflow บน LangGraph เพื่อแยกส่งเข้าโหนดเฉพาะทางตั้งแต่วินาทีแรกครับ\n\nวันนี้เราจะล็อกเพดานจำนวนก้าวไว้ที่ max_steps น้อยกว่าหรือเท่ากับ 3 เพื่อการันตีว่าไม่มี loop ไม่รู้จบ เชื่อม Checkpointer สำหรับหยุดรอ Human-in-the-Loop ตาม thread_id และสร้างเส้นทาง fallback ไปที่ escalate พร้อมเก็บ trace_events ไว้ส่งต่อเข้า Langfuse ใน Block B43 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d167/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน แยกจังหวะเป้าหมายทั้ง 3 ข้อและย้ำเรื่องการทดสอบแบบ offline ในเสี้ยววินาที",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Day 167 กันครับ\n\nข้อแรก คือออกแบบ StateGraph และ Router ที่จำแนกคำขอเป็น 4 เส้นทาง ได้แก่ faq_rag, mcp_lookup, hitl_write หรือ escalate โดยมีขอบเขตไม่เกิน 3 ก้าว\nข้อสอง คือต่อโหนดจาก D165 และ D166 เข้ากับ Conditional Edges พร้อมกลไก fallback สู่ escalate เมื่อ RAG ปฏิเสธหรือ Tool ล้มเหลว\nและข้อสาม คือจัดการ HITL Pause และ Resume ผ่าน Checkpointer เพื่อหยุดกราฟรอการอนุมัติตาม thread_id แล้วกลับมาทำต่อหรือยกเลิกอย่างปลอดภัยครับ\n\nวันนี้เรายังทดสอบด้วย pytest แบบ offline ได้ 100 เปอร์เซ็นต์โดยไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Day 167 กันครับ\n\nข้อแรก คือออกแบบ StateGraph และ Router ที่จำแนกคำขอเป็น 4 เส้นทาง ได้แก่ faq_rag, mcp_lookup, hitl_write หรือ escalate โดยมีขอบเขตไม่เกิน 3 ก้าว\nข้อสอง คือต่อโหนดจาก D165 และ D166 เข้ากับ Conditional Edges พร้อมกลไก fallback สู่ escalate เมื่อ RAG ปฏิเสธหรือ Tool ล้มเหลว\nและข้อสาม คือจัดการ HITL Pause และ Resume ผ่าน Checkpointer เพื่อหยุดกราฟรอการอนุมัติตาม thread_id แล้วกลับมาทำต่อหรือยกเลิกอย่างปลอดภัยครับ\n\nวันนี้เรายังทดสอบด้วย pytest แบบ offline ได้ 100 เปอร์เซ็นต์โดยไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง LangGraph & เช็กเครื่อง",
+      "src": "/audio/d167/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งติดตั้ง langgraph และเช็ก import ให้พร้อมก่อนเขียน core_router.py",
+      "script": "มาเตรียมโปรเจกต์ thai-enterprise-assistant สำหรับสร้างไฟล์ src/core_router.py กันครับ\n\nรันคำสั่ง uv add pydantic langgraph แล้วตามด้วย uv add --dev pytest ruff จากนั้นลองทดสอบด้วยคำสั่ง python ให้ import langgraph และ pydantic เพื่อเช็กว่าแพ็กเกจทำงานได้ปกติโดยไม่ต้องใช้ API key เลย\n\nในแบบฝึกหัดวันนี้เราออกแบบโหนด RAG, MCP และตัวจำแนกเจตนาเป็น Protocol หรือ Callable เพื่อให้รัน pytest จบในเสี้ยววินาทีและนำไปคอมไพล์เป็น StateGraph จริงได้ด้วยสัญญาข้อมูลเดียวกัน เดี๋ยวพี่พักรอให้คุณติดตั้งและเช็กเครื่องให้เรียบร้อยก่อนนะ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาเตรียมโปรเจกต์ thai-enterprise-assistant สำหรับสร้างไฟล์ src core_router dot py กันครับ\n\nรันคำสั่ง uv add pydantic langgraph แล้วตามด้วย uv add dash dash dev pytest ruff จากนั้นลองทดสอบด้วยคำสั่ง python ให้ import langgraph และ pydantic เพื่อเช็กว่าแพ็กเกจทำงานได้ปกติโดยไม่ต้องใช้ API key เลย\n\nในแบบฝึกหัดวันนี้เราออกแบบโหนด RAG, MCP และตัวจำแนกเจตนาเป็น Protocol หรือ Callable เพื่อให้รัน pytest จบในเสี้ยววินาทีและนำไปคอมไพล์เป็น StateGraph จริงได้ด้วยสัญญาข้อมูลเดียวกัน เดี๋ยวพี่พักรอให้คุณติดตั้งและเช็กเครื่องให้เรียบร้อยก่อนนะ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง LangGraph",
+        "prompt": "ลองรันคำสั่งติดตั้ง langgraph และเช็กการ import บนเครื่องให้พร้อมก่อนไปดูแผนภาพ Router ครับ",
+        "continueLabel": "ติดตั้งเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — 3 เส้นทางควบคุมแบบมีขอบเขต",
+      "src": "/audio/d167/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพ เหมือนกำลังชี้ภาพรวมทั้ง 3 เส้นทางของ LangGraph Router บนหน้าจอพร้อมกัน",
+      "script": "ลองมองแผนภาพ LangGraph Router บนหน้าจอตอนนี้เลยครับ ใน D165 เราดูเส้นทางที่ 1 ใน D166 เราดูเส้นทางที่ 2 และ 3 แต่วันนี้เรามาดูภาพรวมทั้งหมดตอนมันวิ่งประสานกันจริง ๆ\n\nพอคำถามไหลเข้ามาที่จุดเริ่มต้น ตัว Router จะคัดแยกเจตนาทันทีว่าจะส่งเข้าช่อง faq_rag ที่ตอบพร้อม citations, ช่อง mcp_lookup ที่เช็กสถานะแบบ read-only, หรือช่อง hitl_write ที่ต้องหยุดรอคนอนุมัติ และถ้าช่องไหนตอบไม่ได้หรือเกิด error กราฟจะเบี่ยงเข้าเส้นทาง escalate โดยที่จำนวนก้าวทั้งหมดไม่มีทางเกิน 3 ก้าวเลยครับ",
+      "ttsText": "ลองมองแผนภาพ LangGraph Router บนหน้าจอตอนนี้เลยครับ ใน D165 เราดูเส้นทางที่ 1 ใน D166 เราดูเส้นทางที่ 2 และ 3 แต่วันนี้เรามาดูภาพรวมทั้งหมดตอนมันวิ่งประสานกันจริง ๆ\n\nพอคำถามไหลเข้ามาที่จุดเริ่มต้น ตัว Router จะคัดแยกเจตนาทันทีว่าจะส่งเข้าช่อง faq_rag ที่ตอบพร้อม citations, ช่อง mcp_lookup ที่เช็กสถานะแบบ read-only, หรือช่อง hitl_write ที่ต้องหยุดรอคนอนุมัติ และถ้าช่องไหนตอบไม่ได้หรือเกิด error กราฟจะเบี่ยงเข้าเส้นทาง escalate โดยที่จำนวนก้าวทั้งหมดไม่มีทางเกิน 3 ก้าวเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก Bounded Router, Fallback & Checkpointer",
+      "src": "/audio/d167/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสถาปัตยกรรม StateGraph ด้วยภาพเปรียบเทียบโรงพยาบาล สายการบิน และ Save Game อย่างมีชีวิตชีวา",
+      "script": "มาเจาะลึกแนวคิดหลักทั้ง 3 ข้อของการออกแบบ LangGraph Router กันนะครับ\n\nข้อแรก คือ Bounded StateGraph ที่มีเพดาน max_steps น้อยกว่าหรือเท่ากับ 3 ตามแนวทาง Building Effective Agents ของ Anthropic งานซัพพอร์ตไม่ควรปล่อยให้ Agent คิดวนเอง 10 รอบ เพราะทั้งช้า แพง และอาจเรียก tool พลาด เราจึงสร้าง State ที่มี thread_id, route, step_count, max_steps และ trace_events ชัดเจน ให้นึกเหมือนเคาน์เตอร์คัดกรองหน้าประตูโรงพยาบาลครับ ถ้าถือใบนัดมาส่งช่องทะเบียน ถ้าถามเวลาทำการส่งช่องข้อมูล ถ้าจะทำหัตถการหรือขอเคลมส่งห้องซักประวัติเพื่อเซ็นยินยอม ไม่ปล่อยคนไข้เดินวนหาห้องเอง 10 ชั้น การใช้ Fast Rule จับรหัส ORD หรือ TKT ช่วยคัดแยกได้ในเวลาน้อยกว่า 1 มิลลิวินาที และคุม P95 latency ให้อยู่ใต้ 3.5 วินาทีได้จริงครับ\n\nข้อที่สอง คือ Conditional Routing และ Graceful Fallback จุดแข็งของ LangGraph เมื่อเทียบกับ if-else ตายตัวคือการส่งต่อระหว่างโหนดเมื่อเกิดความไม่แน่นอน เช่น ถ้า faq_rag คืน abstained หรือ mcp_lookup เกิด timeout ให้ Conditional Edge ส่งต่อไปโหนด escalate ทันที ต่างจากกรณี not_found ที่แจ้งลูกค้าตรง ๆ ได้เลย เหมือนสายการบินที่พอเครื่องเช็กอินอัตโนมัติอ่านพาสปอร์ตไม่ออก ก็ส่งคุณไปช่องพนักงานตัวจริงทันที ไม่ปล่อยหน้าจอดำ แล้วบันทึกทุกก้าวไว้ใน trace_events เพื่อตรวจสอบย้อนหลังครับ\n\nและข้อที่สาม คือ Checkpointer ร่วมกับ HITL Pause และ Resume เมื่อผู้ใช้ขอเปิดทิกเก็ตเคลม Router จะเข้าเส้นทาง hitl_write สร้าง Draft Preview ใน pending_action แล้วหยุดกราฟไว้กลางทางพร้อมบันทึก state ลง Checkpointer ผูกกับ thread_id โดยไม่ block โปรเซส Python นึกภาพเหมือนการกด Save Game หน้าห้องบอสเพื่อรอผู้เล่นกดปุ่ม Confirm ครับ พอผู้ใช้ตอบกลับมาในเทิร์นถัดไปด้วย thread_id เดิม ถ้าอนุมัติก็ inject approval_token ให้ MCP Write Tool บันทึกจริง แต่ถ้าปฏิเสธก็ปิดสถานะเป็น cancelled อย่างสุภาพโดยไม่แก้ฐานข้อมูลครับ",
+      "ttsText": "มาเจาะลึกแนวคิดหลักทั้ง 3 ข้อของการออกแบบ LangGraph Router กันนะครับ\n\nข้อแรก คือ Bounded StateGraph ที่มีเพดาน max_steps น้อยกว่าหรือเท่ากับ 3 ตามแนวทาง Building Effective Agents ของ Anthropic งานซัพพอร์ตไม่ควรปล่อยให้ Agent คิดวนเอง 10 รอบ เพราะทั้งช้า แพง และอาจเรียก tool พลาด เราจึงสร้าง State ที่มี thread_id, route, step_count, max_steps และ trace_events ชัดเจน ให้นึกเหมือนเคาน์เตอร์คัดกรองหน้าประตูโรงพยาบาลครับ ถ้าถือใบนัดมาส่งช่องทะเบียน ถ้าถามเวลาทำการส่งช่องข้อมูล ถ้าจะทำหัตถการหรือขอเคลมส่งห้องซักประวัติเพื่อเซ็นยินยอม ไม่ปล่อยคนไข้เดินวนหาห้องเอง 10 ชั้น การใช้ Fast Rule จับรหัส ORD หรือ TKT ช่วยคัดแยกได้ในเวลาน้อยกว่า 1 มิลลิวินาที และคุม P95 latency ให้อยู่ใต้ 3.5 วินาทีได้จริงครับ\n\nข้อที่สอง คือ Conditional Routing และ Graceful Fallback จุดแข็งของ LangGraph เมื่อเทียบกับ if-else ตายตัวคือการส่งต่อระหว่างโหนดเมื่อเกิดความไม่แน่นอน เช่น ถ้า faq_rag คืน abstained หรือ mcp_lookup เกิด timeout ให้ Conditional Edge ส่งต่อไปโหนด escalate ทันที ต่างจากกรณี not_found ที่แจ้งลูกค้าตรง ๆ ได้เลย เหมือนสายการบินที่พอเครื่องเช็กอินอัตโนมัติอ่านพาสปอร์ตไม่ออก ก็ส่งคุณไปช่องพนักงานตัวจริงทันที ไม่ปล่อยหน้าจอดำ แล้วบันทึกทุกก้าวไว้ใน trace_events เพื่อตรวจสอบย้อนหลังครับ\n\nและข้อที่สาม คือ Checkpointer ร่วมกับ HITL Pause และ Resume เมื่อผู้ใช้ขอเปิดทิกเก็ตเคลม Router จะเข้าเส้นทาง hitl_write สร้าง Draft Preview ใน pending_action แล้วหยุดกราฟไว้กลางทางพร้อมบันทึก state ลง Checkpointer ผูกกับ thread_id โดยไม่ block โปรเซส Python นึกภาพเหมือนการกด Save Game หน้าห้องบอสเพื่อรอผู้เล่นกดปุ่ม Confirm ครับ พอผู้ใช้ตอบกลับมาในเทิร์นถัดไปด้วย thread_id เดิม ถ้าอนุมัติก็ inject approval_token ให้ MCP Write Tool บันทึกจริง แต่ถ้าปฏิเสธก็ปิดสถานะเป็น cancelled อย่างสุภาพโดยไม่แก้ฐานข้อมูลครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน MiniLangGraphRouter",
+      "src": "/audio/d167/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่ดู route trace ทีละบรรทัด และเน้นจุดตายเรื่องลำดับการเช็กคำขอเปิดทิกเก็ตก่อนเลข order",
+      "script": "มาดูตัวอย่างโค้ด MiniLangGraphRouter ที่ทำงานครบทั้ง 3 เส้นทางกันครับ กดขั้นต่อไปดูทีละขั้นได้เลย\n\nในขั้นที่ 1 เรานิยาม RouterState ด้วย Pydantic และฟังก์ชัน classify_intent สังเกตบรรทัดแรกในฟังก์ชันนี้ดี ๆ นะครับ เราเช็กคำขอเปิดทิกเก็ตหรือแจ้งเคลมก่อนเช็ก regex รหัส ORD หรือ TKT เสมอ\n\nขั้นที่ 2 ในคลาส MiniLangGraphRouter เราสร้าง self.checkpoints เป็น dict ผูกกับ thread_id เมื่อเรียก invoke แล้วเข้า hitl_write กราฟจะเซฟ state ลง checkpoint แล้วหยุดที่ status='awaiting_approval' ทันที ส่วนในเมธอด resume ก็จะโหลด state เดิมมาดูว่า approved เป็น True หรือ False เพื่อ commit หรือ cancel โดยเช็กว่า step_count ยังไม่เกิน max_steps\n\nขั้นที่ 3 ลองรันดู 3 threads พร้อมกันครับ ทั้ง FAQ, MCP Lookup และ HITL Pause แล้ว Resume จะเห็น trace_events ไล่เรียงชัดเจนและ step_count ไม่เกิน 3 เลย จุดสังเกตที่พลาดกันบ่อยคือถ้าผู้ใช้พิมพ์ว่า เปิดทิกเก็ตเคลมให้ ORD-2026-104 หน่อย ประโยคนี้มีทั้งคำว่าเปิดทิกเก็ตและเลข ORD อยู่ด้วยกัน ถ้าไปเช็ก regex ก่อนจะหลุดไป lookup แทนที่จะหยุดขออนุมัติครับ เดี๋ยวพี่พักรอให้คุณกดดูผลลัพธ์ก่อนนะ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาดูตัวอย่างโค้ด MiniLangGraphRouter ที่ทำงานครบทั้ง 3 เส้นทางกันครับ กดขั้นต่อไปดูทีละขั้นได้เลย\n\nในขั้นที่ 1 เรานิยาม RouterState ด้วย Pydantic และฟังก์ชัน classify_intent สังเกตบรรทัดแรกในฟังก์ชันนี้ดี ๆ นะครับ เราเช็กคำขอเปิดทิกเก็ตหรือแจ้งเคลมก่อนเช็ก regex รหัส ORD หรือ TKT เสมอ\n\nขั้นที่ 2 ในคลาส MiniLangGraphRouter เราสร้าง self.checkpoints เป็น dict ผูกกับ thread_id เมื่อเรียก invoke แล้วเข้า hitl_write กราฟจะเซฟ state ลง checkpoint แล้วหยุดที่ status เท่ากับ awaiting_approval ทันที ส่วนในเมธอด resume ก็จะโหลด state เดิมมาดูว่า approved เป็น True หรือ False เพื่อ commit หรือ cancel โดยเช็กว่า step_count ยังไม่เกิน max_steps\n\nขั้นที่ 3 ลองรันดู 3 threads พร้อมกันครับ ทั้ง FAQ, MCP Lookup และ HITL Pause แล้ว Resume จะเห็น trace_events ไล่เรียงชัดเจนและ step_count ไม่เกิน 3 เลย จุดสังเกตที่พลาดกันบ่อยคือถ้าผู้ใช้พิมพ์ว่า เปิดทิกเก็ตเคลมให้ ORD-2026-104 หน่อย ประโยคนี้มีทั้งคำว่าเปิดทิกเก็ตและเลข ORD อยู่ด้วยกัน ถ้าไปเช็ก regex ก่อนจะหลุดไป lookup แทนที่จะหยุดขออนุมัติครับ เดี๋ยวพี่พักรอให้คุณกดดูผลลัพธ์ก่อนนะ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง LangGraph Router",
+        "prompt": "ลองกดดูการเดินกราฟทั้ง 3 เส้นทางและดู trace_events ในจังหวะ Pause กับ Resume เมื่อเข้าใจแล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้างโมดูล core_router.py",
+      "src": "/audio/d167/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ใจเย็น พูดช้าชัดเป็นจังหวะตอนอธิบายลำดับความสำคัญใน classify_route, invoke และ resume ของ CoreRouter",
+      "script": "ถึงเวลาลงมือสร้าง src/core_router.py ของจริงกันแล้วครับ ค่อย ๆ ทำตามสเปกทีละส่วนนะ\n\nส่วนแรก คือฟังก์ชัน classify_route ให้เรียงลำดับความสำคัญตามนี้เป๊ะ ๆ เลยครับ หนึ่ง คำขอเปิดทิกเก็ตหรือแจ้งเคลมส่งไป hitl_write สอง คำขอคุยกับคนหรือติดต่อเจ้าหน้าที่ส่งไป escalate สาม ถ้าเจอ pattern ORD หรือ TKT ส่งไป mcp_lookup และสี่ อื่น ๆ ทั้งหมดส่งไป faq_rag ครับ\n\nส่วนที่สอง ในคลาส CoreRouter ตอน init ให้ validate ว่า max_steps ต้องอยู่ระหว่าง 1 ถึง 5 ถ้าไม่อยู่ให้โยน ValueError และเตรียม self.checkpoints ไว้เก็บ RouterResult ตาม thread_id\n\nส่วนที่สาม ใน invoke ให้แยกจัดการแต่ละเส้นทางครับ ถ้าเป็น faq_rag แล้วได้ status='answered' ให้คืน completed พร้อม citations แต่ถ้าเป็น abstained ให้เปลี่ยนต่อไป escalate โดย step_count ไม่เกิน max_steps ถ้าเป็น mcp_lookup แล้วเจอ error_code เป็น timeout หรือ server_disconnected ให้ fallback เป็น escalated ส่วนถ้าเป็น hitl_write ให้เก็บ pending_action ลง checkpoint แล้วคืน awaiting_approval โดยห้ามเรียก write_fn เด็ดขาด\n\nสุดท้าย ใน resume ให้เช็กว่ามี thread_id ใน checkpoint และสถานะเป็น awaiting_approval ไหม ถ้าไม่ใช่ให้โยน ValueError ถ้า approved=True ค่อยเรียก write_fn แล้วคืน completed แต่ถ้า approved=False ให้คืน cancelled โดยไม่เรียก write_fn ครับ เขียนเสร็จแล้วรัน pytest บน test_core_router.py และ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "ttsText": "ถึงเวลาลงมือสร้าง src core_router dot py ของจริงกันแล้วครับ ค่อย ๆ ทำตามสเปกทีละส่วนนะ\n\nส่วนแรก คือฟังก์ชัน classify_route ให้เรียงลำดับความสำคัญตามนี้เป๊ะ ๆ เลยครับ หนึ่ง คำขอเปิดทิกเก็ตหรือแจ้งเคลมส่งไป hitl_write สอง คำขอคุยกับคนหรือติดต่อเจ้าหน้าที่ส่งไป escalate สาม ถ้าเจอ pattern ORD หรือ TKT ส่งไป mcp_lookup และสี่ อื่น ๆ ทั้งหมดส่งไป faq_rag ครับ\n\nส่วนที่สอง ในคลาส CoreRouter ตอน init ให้ validate ว่า max_steps ต้องอยู่ระหว่าง 1 ถึง 5 ถ้าไม่อยู่ให้โยน ValueError และเตรียม self.checkpoints ไว้เก็บ RouterResult ตาม thread_id\n\nส่วนที่สาม ใน invoke ให้แยกจัดการแต่ละเส้นทางครับ ถ้าเป็น faq_rag แล้วได้ status เป็น answered ให้คืน completed พร้อม citations แต่ถ้าเป็น abstained ให้เปลี่ยนต่อไป escalate โดย step_count ไม่เกิน max_steps ถ้าเป็น mcp_lookup แล้วเจอ error_code เป็น timeout หรือ server_disconnected ให้ fallback เป็น escalated ส่วนถ้าเป็น hitl_write ให้เก็บ pending_action ลง checkpoint แล้วคืน awaiting_approval โดยห้ามเรียก write_fn เด็ดขาด\n\nสุดท้าย ใน resume ให้เช็กว่ามี thread_id ใน checkpoint และสถานะเป็น awaiting_approval ไหม ถ้าไม่ใช่ให้โยน ValueError ถ้า approved เท่ากับ True ค่อยเรียก write_fn แล้วคืน completed แต่ถ้า approved เท่ากับ False ให้คืน cancelled โดยไม่เรียก write_fn ครับ เขียนเสร็จแล้วรัน pytest บน test_core_router dot py และ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง core_router.py",
+        "prompt": "ลงมือเติม classify_route และ CoreRouter (invoke กับ resume) แล้วรัน pytest ทั้ง 5 เคสให้ผ่านได้เลยครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อยใน LangGraph Router",
+      "src": "/audio/d167/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด แล้วเล่า 4 ข้อผิดพลาดของ Router ด้วยจังหวะสนุก เป็นกันเอง แบบรุ่นพี่ที่เคยดีบักมาก่อน",
+      "script": "สุดยอดเลยครับที่ผ่านเทสต์ของ CoreRouter ครบทั้ง 5 เคสแล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่คนเขียน Router ชอบเจอบ่อย ๆ นะครับ\n\nข้อแรก คือเอา pattern รหัสออเดอร์อย่าง ORD ไปเช็กก่อนเจตนาเปิดทิกเก็ต ผลคือพอลูกค้าพิมพ์ว่า เปิดทิกเก็ตเคลม ORD-2026-104 ระบบดันวิ่งไปที่ mcp_lookup แทนที่จะหยุดขออนุมัติเปิดทิกเก็ต\n\nข้อที่สอง คือปล่อยให้กราฟวิ่งแบบไม่มี max_steps guard พอเกิด fallback หรือ tool error ซ้ำ ๆ กราฟก็วนลูปเรียก LLM ไม่หยุดจน timeout และเผาโควตา API หมดในไม่กี่วินาที\n\nข้อที่สาม คือไม่มี Checkpointer ที่แยกตาม thread_id พอมีผู้ใช้ 2 คนขออนุมัติพร้อมกัน หรือปิดหน้าแชตแล้วเปิดใหม่ สถานะ pending_action ก็หายหรือสลับคนกันเลย\n\nและข้อที่สี่ คือปล่อยให้เส้นทาง faq_rag จบแบบเงียบ ๆ ตอนที่ RAG คืน abstained แทนที่จะส่งต่อ Conditional Edge ไปที่ escalate เพื่อให้ผู้ใช้มีทางเลือกติดต่อเจ้าหน้าที่ครับ",
+      "ttsText": "สุดยอดเลยครับที่ผ่านเทสต์ของ CoreRouter ครบทั้ง 5 เคสแล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่คนเขียน Router ชอบเจอบ่อย ๆ นะครับ\n\nข้อแรก คือเอา pattern รหัสออเดอร์อย่าง ORD ไปเช็กก่อนเจตนาเปิดทิกเก็ต ผลคือพอลูกค้าพิมพ์ว่า เปิดทิกเก็ตเคลม ORD-2026-104 ระบบดันวิ่งไปที่ mcp_lookup แทนที่จะหยุดขออนุมัติเปิดทิกเก็ต\n\nข้อที่สอง คือปล่อยให้กราฟวิ่งแบบไม่มี max_steps guard พอเกิด fallback หรือ tool error ซ้ำ ๆ กราฟก็วนลูปเรียก LLM ไม่หยุดจน timeout และเผาโควตา API หมดในไม่กี่วินาที\n\nข้อที่สาม คือไม่มี Checkpointer ที่แยกตาม thread_id พอมีผู้ใช้ 2 คนขออนุมัติพร้อมกัน หรือปิดหน้าแชตแล้วเปิดใหม่ สถานะ pending_action ก็หายหรือสลับคนกันเลย\n\nและข้อที่สี่ คือปล่อยให้เส้นทาง faq_rag จบแบบเงียบ ๆ ตอนที่ RAG คืน abstained แทนที่จะส่งต่อ Conditional Edge ไปที่ escalate เพื่อให้ผู้ใช้มีทางเลือกติดต่อเจ้าหน้าที่ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d167/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเบา ๆ ผ่อนคลาย ชวนเช็กความเข้าใจ 4 ข้อเรื่อง Bounded Router, Priority, Checkpointer และ Fallback",
+      "script": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อกันครับ รอบนี้ถามเรื่องเหตุผลที่ใช้ Bounded Router แทน ReAct Agent, ลำดับความสำคัญเมื่อข้อความมีทั้งเปิดทิกเก็ตและเลข ORD, บทบาทของ Checkpointer กับ thread_id และทางไปต่อเมื่อ faq_rag คืน abstained ครับ ลองตอบให้ครบทุกข้อนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อกันครับ รอบนี้ถามเรื่องเหตุผลที่ใช้ Bounded Router แทน ReAct Agent, ลำดับความสำคัญเมื่อข้อความมีทั้งเปิดทิกเก็ตและเลข ORD, บทบาทของ Checkpointer กับ thread_id และทางไปต่อเมื่อ faq_rag คืน abstained ครับ ลองตอบให้ครบทุกข้อนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเพื่อทบทวนหลักการของ LangGraph Router เสร็จแล้วกดไปต่อเพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 168 (Milestone 3)",
+      "src": "/audio/d167/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและตื่นเต้น สรุปหลักคิดของ LangGraph Router 4 ข้อ แล้วชวนน้องเข้าสู่วันสำคัญ Milestone 3 ใน Day 168",
+      "script": "ยินดีด้วยครับ คุณเชื่อม LangGraph Router ของ Day 167 สำเร็จแล้ว ขอสรุป 4 แกนหลักติดตัวไปใช้นะครับ\n\nหนึ่ง ใช้ Bounded Router ที่มี max_steps น้อยกว่าหรือเท่ากับ 3 เพื่อคุมความคาดเดาได้ คุม latency และป้องกัน loop ไม่รู้จบ\nสอง จัดลำดับกฎการ route ให้จับ hitl_write และ escalate ก่อน mcp_lookup เสมอ\nสาม เชื่อม Conditional Fallback จาก rag:abstained และ mcp:timeout ไปยัง escalate เพื่อให้ระบบไม่เจอทางตัน\nสี่ ใช้ Checkpointer ผูกกับ thread_id เพื่อหยุดกราฟรอ HITL แล้ว resume ข้ามเทิร์นได้อย่างปลอดภัย\n\nตอนนี้เรามีชิ้นส่วนครบทั้ง 3 ชิ้นแล้วครับ ทั้ง D165, D166 และ D167 พรุ่งนี้ใน Day 168 จะเป็นวัน Milestone 3 ที่เราเอาของจริงทุกไฟล์มาต่อเป็นท่อ End-to-End เดียวกันแล้วรันสาธิต 4 Core Journeys ครบวงจรครับ แล้วเจอกันใน Day 168 นะครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเชื่อม LangGraph Router ของ Day 167 สำเร็จแล้ว ขอสรุป 4 แกนหลักติดตัวไปใช้นะครับ\n\nหนึ่ง ใช้ Bounded Router ที่มี max_steps น้อยกว่าหรือเท่ากับ 3 เพื่อคุมความคาดเดาได้ คุม latency และป้องกัน loop ไม่รู้จบ\nสอง จัดลำดับกฎการ route ให้จับ hitl_write และ escalate ก่อน mcp_lookup เสมอ\nสาม เชื่อม Conditional Fallback จาก rag abstained และ mcp timeout ไปยัง escalate เพื่อให้ระบบไม่เจอทางตัน\nสี่ ใช้ Checkpointer ผูกกับ thread_id เพื่อหยุดกราฟรอ HITL แล้ว resume ข้ามเทิร์นได้อย่างปลอดภัย\n\nตอนนี้เรามีชิ้นส่วนครบทั้ง 3 ชิ้นแล้วครับ ทั้ง D165, D166 และ D167 พรุ่งนี้ใน Day 168 จะเป็นวัน Milestone 3 ที่เราเอาของจริงทุกไฟล์มาต่อเป็นท่อ End-to-End เดียวกันแล้วรันสาธิต 4 Core Journeys ครบวงจรครับ แล้วเจอกันใน Day 168 นะครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

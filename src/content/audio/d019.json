@@ -1,0 +1,109 @@
+{
+  "lessonId": "d019",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — สตรีมคำตอบ LLM ทีละ Token",
+      "src": "/audio/d019/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงตื่นเต้น ชวนนึกถึงประสบการณ์ใช้งานแอปแชต AI ที่พิมพ์คำตอบไหลทีละคำ และเน้นความสำคัญของการลด TTFT และกัน connection leak",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 19 นะครับ เคยสังเกตไหมว่าเวลาเราคุยกับ ChatGPT หรือระบบแชต AI ดี ๆ ทำไมตัวอักษรถึงค่อย ๆ ไหลออกมาทีละคำทันทีโดยไม่ต้องรอให้โมเดลคิดจบทั้งย่อหน้า?\n\nความจริงเบื้องหลังมันคือโปรโตคอลที่ชื่อว่า Server-Sent Events หรือ SSE จับคู่กับ Async Generator ใน Python นั่นเองครับ โมเดล LLM อาจใช้เวลาสร้างคำตอบทั้งหมด 6 ถึง 12 วินาที ถ้ารอจนครบ 100 เปอร์เซ็นต์ผู้ใช้จะนึกว่าแอปค้างไปแล้ว ดังนั้นเราจึงต้องลด Time-to-First-Token หรือ TTFT ให้สั้นที่สุด\n\nนอกจากส่งไวแล้ว เรื่องที่สำคัญไม่แพ้กันคือตอนที่ผู้ใช้กดปุ่ม Stop Generating หรือปิดหน้าจอหนีกลางคันครับ ถ้าโค้ดเราหลุดจากลูปโดยไม่ปิด generator หรือเผลอกลืน CancelledError ทิ้ง การเชื่อมต่อ HTTP จะค้างรั่วและผลาญค่า API ต่อแบบเงียบ ๆ วันนี้เราจะมาฝึกสร้าง SSE streaming client ที่ทั้งไวและปิดทรัพยากรสะอาด 100 เปอร์เซ็นต์บนเครื่องกันครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 19 นะครับ เคยสังเกตไหมว่าเวลาเราคุยกับ ChatGPT หรือระบบแชต AI ดี ๆ ทำไมตัวอักษรถึงค่อย ๆ ไหลออกมาทีละคำทันทีโดยไม่ต้องรอให้โมเดลคิดจบทั้งย่อหน้า?\n\nความจริงเบื้องหลังมันคือโปรโตคอลที่ชื่อว่า Server-Sent Events หรือ SSE จับคู่กับ Async Generator ใน Python นั่นเองครับ โมเดล LLM อาจใช้เวลาสร้างคำตอบทั้งหมด 6 ถึง 12 วินาที ถ้ารอจนครบ 100 เปอร์เซ็นต์ผู้ใช้จะนึกว่าแอปค้างไปแล้ว ดังนั้นเราจึงต้องลด Time-to-First-Token หรือ TTFT ให้สั้นที่สุด\n\nนอกจากส่งไวแล้ว เรื่องที่สำคัญไม่แพ้กันคือตอนที่ผู้ใช้กดปุ่ม Stop Generating หรือปิดหน้าจอหนีกลางคันครับ ถ้าโค้ดเราหลุดจากลูปโดยไม่ปิด generator หรือเผลอกลืน CancelledError ทิ้ง การเชื่อมต่อ HTTP จะค้างรั่วและผลาญค่า API ต่อแบบเงียบ ๆ วันนี้เราจะมาฝึกสร้าง SSE streaming client ที่ทั้งไวและปิดทรัพยากรสะอาด 100 เปอร์เซ็นต์บนเครื่องกันครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d019/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน แบ่งเป้าหมาย 3 ข้อให้ฟังลื่นไหล และย้ำว่าจำลอง SSE Stream บนเครื่องได้ครบถ้วน",
+      "script": "เป้าหมายของ Day 19 มี 3 อย่างครับ\n\nหนึ่ง เขียน Async Generator ด้วย async def คู่กับ yield และบริโภคค่าทีละชิ้นด้วย async for\nสอง อ่านสตรีม HTTP แบบไม่บัฟเฟอร์ทั้งก้อนด้วย httpx.AsyncClient.stream และ resp.aiter_lines() เพื่อแกะเฟรม SSE ทั้ง data:, comment และ [DONE]\nและสาม จัดการการหยุดและยกเลิกกลางทางด้วย try / finally, contextlib.aclosing และการส่งต่อ asyncio.CancelledError อย่างสะอาด\n\nวันนี้เราจำลองเซิร์ฟเวอร์ SSE ด้วย httpx.AsyncByteStream บนเครื่อง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 19 มี 3 อย่างครับ\n\nหนึ่ง เขียน Async Generator ด้วย async def คู่กับ yield และบริโภคค่าทีละชิ้นด้วย async for\nสอง อ่านสตรีม HTTP แบบไม่บัฟเฟอร์ทั้งก้อนด้วย httpx dot AsyncClient dot stream และ resp dot aiter_lines เพื่อแกะเฟรม SSE ทั้ง data colon, comment และ DONE\nและสาม จัดการการหยุดและยกเลิกกลางทางด้วย try finally, contextlib dot aclosing และการส่งต่อ asyncio dot CancelledError อย่างสะอาด\n\nวันนี้เราจำลองเซิร์ฟเวอร์ SSE ด้วย httpx dot AsyncByteStream บนเครื่อง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d019/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นพาตั้งค่าโปรเจกต์ ai-day19-sse และตรวจความพร้อมของ contextlib.aclosing",
+      "script": "มาตั้งโปรเจกต์ Day 19 ด้วย uv กันครับ\n\nเปิดเทอร์มินัลแล้วสั่ง uv init ai-day19-sse ตามด้วย cd ai-day19-sse จากนั้นติดตั้ง httpx ด้วย uv add httpx และเพิ่ม dev tools ด้วย uv add --dev pytest ruff\n\nเสร็จแล้วรันคำสั่งเช็กว่ามี contextlib.aclosing ซึ่งมากับ Python 3.10 ขึ้นไปและตรวจเวอร์ชัน httpx ตามกล่องคำสั่งด้านบนได้เลยครับ เดี๋ยวพี่พักรอตรงนี้สักครู่ พร้อมแล้วกด ไปต่อ ได้เลยนะ",
+      "ttsText": "มาตั้งโปรเจกต์ Day 19 ด้วย uv กันครับ\n\nเปิดเทอร์มินัลแล้วสั่ง uv init ai-day19-sse ตามด้วย cd ai-day19-sse จากนั้นติดตั้ง httpx ด้วย uv add httpx และเพิ่ม dev tools ด้วย uv add dash dash dev pytest ruff\n\nเสร็จแล้วรันคำสั่งเช็กว่ามี contextlib dot aclosing ซึ่งมากับ Python 3.10 ขึ้นไปและตรวจเวอร์ชัน httpx ตามกล่องคำสั่งด้านบนได้เลยครับ เดี๋ยวพี่พักรอตรงนี้สักครู่ พร้อมแล้วกด ไปต่อ ได้เลยนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งค่าโปรเจกต์ Day 19",
+        "prompt": "ลองรัน uv init ai-day19-sse ติดตั้ง httpx, pytest, ruff และเช็ก contextlib.aclosing แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เช็กเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — กระแส Token ของ SSE",
+      "src": "/audio/d019/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนเห็นภาพการไหลของเฟรม SSE ทีละชิ้นและการสั่งหยุดกลางทาง",
+      "script": "ลองมองแผนภาพตรงหน้านี้เพื่อสร้างภาพจำของ Async Generator กับ SSE Streaming กันครับ\n\nแทนที่จะรอให้โมเดลปั้นประโยคยาว ๆ เสร็จทั้งหมดแล้วส่งมาเป็นก้อนเดียว ในโหมด SSE ข้อมูลจะถูกหั่นส่งมาทีละบรรทัดที่ขึ้นต้นด้วย data: พอฝั่งเราได้รับ 1 บรรทัดก็ yield token ออกไปแสดงผลได้ทันที ทำให้เห็นคำแรกไวมาก และถ้าผู้ใช้กดหยุดกลางคัน สัญญาณยกเลิกก็จะตัดการดึงข้อมูลทันทีโดยไม่ต้องรอจนจบครับ",
+      "ttsText": "ลองมองแผนภาพตรงหน้านี้เพื่อสร้างภาพจำของ Async Generator กับ SSE Streaming กันครับ\n\nแทนที่จะรอให้โมเดลปั้นประโยคยาว ๆ เสร็จทั้งหมดแล้วส่งมาเป็นก้อนเดียว ในโหมด SSE ข้อมูลจะถูกหั่นส่งมาทีละบรรทัดที่ขึ้นต้นด้วย data colon พอฝั่งเราได้รับ 1 บรรทัดก็ yield token ออกไปแสดงผลได้ทันที ทำให้เห็นคำแรกไวมาก และถ้าผู้ใช้กดหยุดกลางคัน สัญญาณยกเลิกก็จะตัดการดึงข้อมูลทันทีโดยไม่ต้องรอจนจบครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d019/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก ใช้เปรียบเทียบร้านซูชิสายพาน บอลถ่ายทอดสด และปิดก๊อกน้ำ เน้นสเปก SSE และ CancelledError",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 19 กันนะครับ เรื่องนี้เข้าใจแล้วเอาไปต่อยอดทำ FastAPI SSE และ CLI แชตได้ยาวเลย\n\nข้อแรก Async Generator หรือ async def คู่กับ yield ให้นึกถึงร้านซูชิสายพานครับ เชฟปั้นเสร็จทีละคำก็ส่งให้ลูกค้ากินได้ทันทีผ่าน async for ไม่ต้องรอปั้นครบ 20 คำแล้วค่อยเสิร์ฟเหมือน return list ช่วยลด TTFT ให้เหลือเสี้ยววินาทีและแยกส่วนผลิตออกจากส่วนแสดงผลได้สะอาด\n\nข้อสอง การอ่าน SSE ด้วย httpx.AsyncClient.stream ห้ามใช้ await client.get(url) เด็ดขาดนะครับ เพราะ client.get เหมือนรอถ่ายทอดสดฟุตบอลจบ 90 นาทีแล้วค่อยโหลดวิดีโอมาดู เราต้องใช้ async with client.stream แล้วอ่านทีละบรรทัดด้วย resp.aiter_lines() ข้ามบรรทัดว่างกับบรรทัด comment โคลอนอย่าง keep-alive ส่วนบรรทัด data: ห้ามใช้ .strip() เพราะจะกินช่องว่างนำหน้าของ token อย่างคำว่า space world จนคำติดกัน ให้ตัดเฉพาะช่องว่างตัวแรกหลัง data: ตามสเปกเท่านั้น\n\nข้อสาม รับมือ [DONE], contextlib.aclosing และ asyncio.CancelledError ถ้าผู้เรียกสั่ง break ออกจาก async for ก่อนจบ ให้ครอบด้วย async with aclosing(stream): เหมือนหมุนปิดก๊อกน้ำทันทีที่ยกแก้วออก และในบล็อก except asyncio.CancelledError: หลังบันทึกสถานะหรือ cleanup ใน finally ต้องจบด้วย raise เสมอ ห้ามกลืนทิ้งเด็ดขาดครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 19 กันนะครับ เรื่องนี้เข้าใจแล้วเอาไปต่อยอดทำ FastAPI SSE และ CLI แชตได้ยาวเลย\n\nข้อแรก Async Generator หรือ async def คู่กับ yield ให้นึกถึงร้านซูชิสายพานครับ เชฟปั้นเสร็จทีละคำก็ส่งให้ลูกค้ากินได้ทันทีผ่าน async for ไม่ต้องรอปั้นครบ 20 คำแล้วค่อยเสิร์ฟเหมือน return list ช่วยลด TTFT ให้เหลือเสี้ยววินาทีและแยกส่วนผลิตออกจากส่วนแสดงผลได้สะอาด\n\nข้อสอง การอ่าน SSE ด้วย httpx dot AsyncClient dot stream ห้ามใช้ await client dot get เด็ดขาดนะครับ เพราะ client dot get เหมือนรอถ่ายทอดสดฟุตบอลจบ 90 นาทีแล้วค่อยโหลดวิดีโอมาดู เราต้องใช้ async with client dot stream แล้วอ่านทีละบรรทัดด้วย resp dot aiter_lines ข้ามบรรทัดว่างกับบรรทัด comment โคลอนอย่าง keep-alive ส่วนบรรทัด data colon ห้ามใช้ dot strip เพราะจะกินช่องว่างนำหน้าของ token อย่างคำว่า space world จนคำติดกัน ให้ตัดเฉพาะช่องว่างตัวแรกหลัง data colon ตามสเปกเท่านั้น\n\nข้อสาม รับมือ DONE, contextlib dot aclosing และ asyncio dot CancelledError ถ้าผู้เรียกสั่ง break ออกจาก async for ก่อนจบ ให้ครอบด้วย async with aclosing ของ stream เหมือนหมุนปิดก๊อกน้ำทันทีที่ยกแก้วออก และในบล็อก except asyncio dot CancelledError หลังบันทึกสถานะหรือ cleanup ใน finally ต้องจบด้วย raise เสมอ ห้ามกลืนทิ้งเด็ดขาดครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างจำลอง SSE Server & Cancellation",
+      "src": "/audio/d019/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนติดตามเหมือนดูสตรีมสดไหลผ่านเทอร์มินัล ชี้ตัวเลข TTFT 0.05 วินาทีเทียบเวลารวม และการยกเลิก task หลัง 0.12 วินาที",
+      "script": "มาดู Worked Example ทั้ง 3 สเต็ปกันครับ วันนี้เราจำลองเซิร์ฟเวอร์ LLM ที่ส่ง SSE ออกมาจริง ๆ ในหน่วยความจำโดยไม่ต้องเปิดพอร์ตเครือข่ายเลย\n\nสเต็ปแรก เราสร้างคลาส FakeSSEStream ที่สืบทอดจาก httpx.AsyncByteStream เพื่อทยอย yield บรรทัด keep-alive ตามด้วย token ภาษาไทยทีละคำห่างกัน 0.05 วินาที และปิดท้ายด้วย data: [DONE]\n\nสเต็ปที่สอง เราเขียน async generator ชื่อ iter_sse_tokens ใช้ client.stream กับ resp.aiter_lines() เพื่ออ่านและ yield token ออกมาทันที ผลรันเห็นชัดมากครับว่า TTFT หรือเวลาของคำแรกอยู่ที่ 0.05 วินาทีเท่านั้น ขณะที่ทั้งประโยคใช้เวลา 0.26 วินาที\n\nและสเต็ปที่สาม เราลองรัน consumer เป็น Task แล้วสั่ง task.cancel() หลังผ่านไป 0.12 วินาที ตอนเพิ่งได้ไป 2 คำ จะเห็นว่า CancelledError ถูกส่งผ่าน cleanup อย่างสะอาดและผู้เรียกก็รับรู้การยกเลิกครบถ้วน ลองกดอ่านโค้ดทั้ง 3 สเต็ปดูนะครับ แล้วกด ไปต่อ เพื่อลงมือเขียนจริงกัน",
+      "ttsText": "มาดู Worked Example ทั้ง 3 สเต็ปกันครับ วันนี้เราจำลองเซิร์ฟเวอร์ LLM ที่ส่ง SSE ออกมาจริง ๆ ในหน่วยความจำโดยไม่ต้องเปิดพอร์ตเครือข่ายเลย\n\nสเต็ปแรก เราสร้างคลาส FakeSSEStream ที่สืบทอดจาก httpx dot AsyncByteStream เพื่อทยอย yield บรรทัด keep-alive ตามด้วย token ภาษาไทยทีละคำห่างกัน 0.05 วินาที และปิดท้ายด้วย data colon DONE\n\nสเต็ปที่สอง เราเขียน async generator ชื่อ iter_sse_tokens ใช้ client dot stream กับ resp dot aiter_lines เพื่ออ่านและ yield token ออกมาทันที ผลรันเห็นชัดมากครับว่า TTFT หรือเวลาของคำแรกอยู่ที่ 0.05 วินาทีเท่านั้น ขณะที่ทั้งประโยคใช้เวลา 0.26 วินาที\n\nและสเต็ปที่สาม เราลองรัน consumer เป็น Task แล้วสั่ง task dot cancel หลังผ่านไป 0.12 วินาที ตอนเพิ่งได้ไป 2 คำ จะเห็นว่า CancelledError ถูกส่งผ่าน cleanup อย่างสะอาดและผู้เรียกก็รับรู้การยกเลิกครบถ้วน ลองกดอ่านโค้ดทั้ง 3 สเต็ปดูนะครับ แล้วกด ไปต่อ เพื่อลงมือเขียนจริงกัน",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาตัวอย่าง Mock SSE Stream",
+        "prompt": "ลองไล่ดู FakeSSEStream, การวัด TTFT และ task.cancel() ในตัวอย่างทั้ง 3 ขั้น แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างเข้าใจแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียน sse_streamer.py",
+      "src": "/audio/d019/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชัดเจน พาไล่สเปก 3 ฟังก์ชันของ sse_streamer.py ทีละส่วน โดยเฉพาะการจัดการ on_close hook ในทุกเส้นทาง",
+      "script": "ถึงเวลาลงมือเขียนโมดูล sse_streamer.py แล้วครับ วันนี้มี 3 ฟังก์ชันให้เราเติมให้สมบูรณ์นะ\n\nฟังก์ชันแรก parse_sse_data รับ line เข้ามา ถ้าเป็นบรรทัดว่าง บรรทัด comment ที่ขึ้นต้นด้วยโคลอน หรือไม่ได้ขึ้นต้นด้วย data: ให้คืน None แต่ถ้าขึ้นต้นด้วย data: ให้ตัด prefix ออกแล้วตัดช่องว่างนำหน้าได้สูงสุดแค่ 1 ตัว เพื่อรักษาช่องว่างจริงของข้อความไว้\n\nฟังก์ชันที่สอง stream_sse_tokens เป็น async generator รับ client, url และ callback on_close ให้ใช้ async with client.stream('GET', url) as resp:, เช็ก status แล้ววน resp.aiter_lines() ถ้าเจอ [DONE] ให้หยุดปกติแล้วแจ้ง on_close('done') ใน finally แต่ถ้าโดน asyncio.CancelledError ให้แจ้ง on_close('cancelled') แล้วอย่าลืม raise ต่อ ส่วนถ้าถูกปิดก่อนจบเช่นจาก aclosing ให้แจ้ง on_close('closed_early') นะครับ\n\nและฟังก์ชันที่สาม collect_with_limit รับ stream กับ max_tokens ให้ครอบด้วย async with aclosing(stream): เพื่ออ่านเก็บไม่เกิน max_tokens ชิ้น และถ้า max_tokens น้อยกว่าหรือเท่ากับ 0 ก็ปิดสตรีมแล้วคืนลิสต์ว่างทันทีครับ เติมเสร็จแล้วรัน pytest -W error -q กับ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนโมดูล sse_streamer dot py แล้วครับ วันนี้มี 3 ฟังก์ชันให้เราเติมให้สมบูรณ์นะ\n\nฟังก์ชันแรก parse_sse_data รับ line เข้ามา ถ้าเป็นบรรทัดว่าง บรรทัด comment ที่ขึ้นต้นด้วยโคลอน หรือไม่ได้ขึ้นต้นด้วย data colon ให้คืน None แต่ถ้าขึ้นต้นด้วย data colon ให้ตัด prefix ออกแล้วตัดช่องว่างนำหน้าได้สูงสุดแค่ 1 ตัว เพื่อรักษาช่องว่างจริงของข้อความไว้\n\nฟังก์ชันที่สอง stream_sse_tokens เป็น async generator รับ client, url และ callback on_close ให้ใช้ async with client dot stream แบบ GET, เช็ก status แล้ววน resp dot aiter_lines ถ้าเจอ DONE ให้หยุดปกติแล้วแจ้ง on_close ด้วยคำว่า done ใน finally แต่ถ้าโดน asyncio dot CancelledError ให้แจ้ง on_close ด้วยคำว่า cancelled แล้วอย่าลืม raise ต่อ ส่วนถ้าถูกปิดก่อนจบเช่นจาก aclosing ให้แจ้ง on_close ด้วยคำว่า closed_early นะครับ\n\nและฟังก์ชันที่สาม collect_with_limit รับ stream กับ max_tokens ให้ครอบด้วย async with aclosing ของ stream เพื่ออ่านเก็บไม่เกิน max_tokens ชิ้น และถ้า max_tokens น้อยกว่าหรือเท่ากับ 0 ก็ปิดสตรีมแล้วคืนลิสต์ว่างทันทีครับ เติมเสร็จแล้วรัน pytest dash W error dash q กับ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด sse_streamer.py",
+        "prompt": "ลงมือเขียน parse_sse_data, stream_sse_tokens และ collect_with_limit แล้วรัน pytest เช็กทุกเคสได้เลยครับ เสร็จแล้วกดไปต่อ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d019/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชื่นชมและเล่า 4 ข้อผิดพลาดเรื่อง SSE Streaming แบบรุ่นพี่ช่วยกันดักบั๊กให้คนฟังจำแม่น",
+      "script": "เก่งมากครับที่ผ่านเทสต์ทั้ง 4 เคสมาได้ ก่อนทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่เจอบ่อยเวลาทำ SSE streaming ในงานจริงนะครับ\n\nข้อแรก ใช้ await client.get() แทน async with client.stream() อาการคือข้อความไม่ทยอยโผล่แต่ค้างรอหลายวินาทีแล้วโผล่พรวดทีเดียว TTFT พังหมดเลย\nข้อสอง จับ except asyncio.CancelledError: แล้วดันเขียน return ออกไปเงียบ ๆ ทำให้ผู้เรียกไม่รู้ว่า task ถูกยกเลิกและระบบค้างตอนปิด\nข้อสาม เผลอใช้ .strip() ตัดช่องว่างหัวท้ายหลัง data: จนช่องว่างนำหน้าของ token ภาษาอังกฤษหายไป กลายเป็นคำติดกันเช่น HelloWorld\nและข้อสี่ สั่ง break ออกจากลูป async for โดยไม่ครอบด้วย contextlib.aclosing ทำให้ HTTP connection ค้างเปิดรอ Garbage Collector นานเกินจำเป็นครับ",
+      "ttsText": "เก่งมากครับที่ผ่านเทสต์ทั้ง 4 เคสมาได้ ก่อนทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่เจอบ่อยเวลาทำ SSE streaming ในงานจริงนะครับ\n\nข้อแรก ใช้ await client dot get แทน async with client dot stream อาการคือข้อความไม่ทยอยโผล่แต่ค้างรอหลายวินาทีแล้วโผล่พรวดทีเดียว TTFT พังหมดเลย\nข้อสอง จับ except asyncio dot CancelledError แล้วดันเขียน return ออกไปเงียบ ๆ ทำให้ผู้เรียกไม่รู้ว่า task ถูกยกเลิกและระบบค้างตอนปิด\nข้อสาม เผลอใช้ dot strip ตัดช่องว่างหัวท้ายหลัง data colon จนช่องว่างนำหน้าของ token ภาษาอังกฤษหายไป กลายเป็นคำติดกันเช่น HelloWorld\nและข้อสี่ สั่ง break ออกจากลูป async for โดยไม่ครอบด้วย contextlib dot aclosing ทำให้ HTTP connection ค้างเปิดรอ Garbage Collector นานเกินจำเป็นครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d019/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนเช็กความเข้าใจเรื่อง SSE Framing, aclosing และ CancelledError ผ่านควิซ",
+      "script": "มาทบทวนความเข้าใจด้วย Micro-Quiz 4 ข้อกันครับ\n\nคำถามจะเช็กเรื่องความต่างระหว่าง client.get กับ client.stream, ความหมายของบรรทัด : keep-alive, เครื่องมือปิด async generator เมื่อ break กลางทางอย่าง contextlib.aclosing และสิ่งที่ต้องทำต่อในบล็อกจับ CancelledError ลองตอบให้ครบทั้ง 4 ข้อแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "ttsText": "มาทบทวนความเข้าใจด้วย Micro-Quiz 4 ข้อกันครับ\n\nคำถามจะเช็กเรื่องความต่างระหว่าง client dot get กับ client dot stream, ความหมายของบรรทัด colon keep-alive, เครื่องมือปิด async generator เมื่อ break กลางทางอย่าง contextlib dot aclosing และสิ่งที่ต้องทำต่อในบล็อกจับ CancelledError ลองตอบให้ครบทั้ง 4 ข้อแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง SSE Streaming, aclosing และ CancelledError เสร็จแล้วกดไปต่อเพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 20",
+      "src": "/audio/d019/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ชื่นชมผู้เรียน สรุปหลักสำคัญของ SSE Streaming ให้คมชัด และชวนไปลุยวันทบทวนใหญ่ Day 20",
+      "script": "ยินดีด้วยครับ จบ Day 19 เรื่อง Async Generators และ SSE Streaming แล้ว! พี่ขอสรุป 3 หัวใจสำคัญของวันนี้ไว้นะ\n\nหนึ่ง ใช้ async def คู่กับ yield เพื่อส่ง token ทีละชิ้นผ่าน async for ช่วยลด TTFT และประหยัด RAM\nสอง อ่านสตรีม SSE ด้วย client.stream คู่ resp.aiter_lines() เสมอ ข้ามบรรทัด comment โคลอน ตัดช่องว่างหลัง data: สูงสุด 1 ตัว และหยุดเมื่อเจอ [DONE]\nสาม เมื่อหยุดอ่านกลางทางให้ครอบด้วย contextlib.aclosing และถ้าจับ CancelledError เพื่อ cleanup ใน finally ต้อง raise ส่งต่อทุกครั้ง\n\nพรุ่งนี้เป็นวันทบทวนใหญ่ปิด Block B05 ใน Day 20 ครับ เราจะนำความรู้ตั้งแต่ D17 ถึง D19 มารวมร่างกับ Exponential Backoff จาก D14 เพื่อเร่งความเร็วท่อ batch 20 คำขอให้ไวขึ้น 5 เท่าอย่างปลอดภัย! อย่าลืมกดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 20 นะครับ!",
+      "ttsText": "ยินดีด้วยครับ จบ Day 19 เรื่อง Async Generators และ SSE Streaming แล้ว! พี่ขอสรุป 3 หัวใจสำคัญของวันนี้ไว้นะ\n\nหนึ่ง ใช้ async def คู่กับ yield เพื่อส่ง token ทีละชิ้นผ่าน async for ช่วยลด TTFT และประหยัด RAM\nสอง อ่านสตรีม SSE ด้วย client dot stream คู่ resp dot aiter_lines เสมอ ข้ามบรรทัด comment โคลอน ตัดช่องว่างหลัง data colon สูงสุด 1 ตัว และหยุดเมื่อเจอ DONE\nสาม เมื่อหยุดอ่านกลางทางให้ครอบด้วย contextlib dot aclosing และถ้าจับ CancelledError เพื่อ cleanup ใน finally ต้อง raise ส่งต่อทุกครั้ง\n\nพรุ่งนี้เป็นวันทบทวนใหญ่ปิด Block B05 ใน Day 20 ครับ เราจะนำความรู้ตั้งแต่ D17 ถึง D19 มารวมร่างกับ Exponential Backoff จาก D14 เพื่อเร่งความเร็วท่อ batch 20 คำขอให้ไวขึ้น 5 เท่าอย่างปลอดภัย! อย่าลืมกดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 20 นะครับ!"
+    }
+  ]
+}

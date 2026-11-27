@@ -1,0 +1,109 @@
+{
+  "lessonId": "d091",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Prompt คือโค้ดที่มีเวอร์ชัน",
+      "src": "/audio/d091/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เหมือนชวนน้องจัดระเบียบครัววิศวกรรม AI เล่าให้เห็นภาพว่าทำไม Prompt ถึงต้องมีเวอร์ชันและลายนิ้วมือ SHA-256",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 91 นะครับ วันนี้เราจะมาแก้พฤติกรรมยอดฮิตของโปรเจกต์ AI ที่ชอบเขียน prompt ยาว ๆ ฝังไว้กลางไฟล์ Python มาจัดระเบียบให้เป็นระดับ production ด้วยการแยก Prompt Templates เป็นไฟล์ YAML ที่มีเวอร์ชันครับ\n\nจำหลักคิดข้อนี้ไว้เลยครับ Prompt ไม่ใช่แค่ข้อความธรรมดา แต่คือโค้ดและพารามิเตอร์ของโมเดล เพราะการแก้คำสั่งเพียงประโยคเดียวอาจเปลี่ยนความแม่นยำได้พอ ๆ กับการเปลี่ยนไฮเปอร์พารามิเตอร์เลย พอเราย้ายพรอมต์ไปไว้ในไฟล์อย่าง extract_v1.yaml เราก็จะเอาไปรันเทียบ regression กับ v2 บนไม้บรรทัดของ Day 90 ได้แบบทำซ้ำได้ 100 เปอร์เซ็นต์\n\nนอกจากนี้ เรายังวางตัวตรวจตัวแปรแบบ strict ด้วย Pydantic กับ string.Formatter เพื่อ fail-fast ก่อนยิง API และคำนวณ content hash อย่าง sha256 8 ตัวอักษรแรก แปะลงในทุกผลลัพธ์ เพื่อสร้าง Audit Trail ที่ย้อนรอยได้ทันทีว่าผลลัพธ์เมื่อวานมาจากพรอมต์ชิ้นไหนครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 91 นะครับ วันนี้เราจะมาแก้พฤติกรรมยอดฮิตของโปรเจกต์ AI ที่ชอบเขียน prompt ยาว ๆ ฝังไว้กลางไฟล์ Python มาจัดระเบียบให้เป็นระดับ production ด้วยการแยก Prompt Templates เป็นไฟล์ YAML ที่มีเวอร์ชันครับ\n\nจำหลักคิดข้อนี้ไว้เลยครับ Prompt ไม่ใช่แค่ข้อความธรรมดา แต่คือโค้ดและพารามิเตอร์ของโมเดล เพราะการแก้คำสั่งเพียงประโยคเดียวอาจเปลี่ยนความแม่นยำได้พอ ๆ กับการเปลี่ยนไฮเปอร์พารามิเตอร์เลย พอเราย้ายพรอมต์ไปไว้ในไฟล์อย่าง extract_v1 dot yaml เราก็จะเอาไปรันเทียบ regression กับ v2 บนไม้บรรทัดของ Day 90 ได้แบบทำซ้ำได้ 100 เปอร์เซ็นต์\n\nนอกจากนี้ เรายังวางตัวตรวจตัวแปรแบบ strict ด้วย Pydantic กับ string dot Formatter เพื่อ fail-fast ก่อนยิง API และคำนวณ content hash อย่าง sha256 8 ตัวอักษรแรก แปะลงในทุกผลลัพธ์ เพื่อสร้าง Audit Trail ที่ย้อนรอยได้ทันทีว่าผลลัพธ์เมื่อวานมาจากพรอมต์ชิ้นไหนครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d091/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อให้เห็นลำดับจากแยกไฟล์ ตรวจตัวแปร ไปจนถึงทำ hash",
+      "script": "เป้าหมายของ Day 91 มี 3 ข้อชัดเจนครับ\n\nหนึ่ง แยก hardcoded prompt strings ออกจากโค้ด Python ไปเป็นไฟล์ YAML ที่มีเวอร์ชัน พร้อมตรวจสอบโครงสร้างด้วย Pydantic และ pathlib\nสอง เขียนตัว render template แบบ strict ที่จับได้ทั้งตัวแปรขาด ตัวแปรเกิน และรองรับตัวอย่าง JSON ที่มีวงเล็บปีกกาโดยไม่พังด้วย KeyError\nสาม คำนวณ content hash sha256 8 ตัวอักษรแรกแบบ deterministic แล้วแนบ prompt_version กับ prompt_hash ลงทุกผลลัพธ์\n\nวันนี้ใช้แค่ไฟล์ YAML กับ pytest รันบนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 91 มี 3 ข้อชัดเจนครับ\n\nหนึ่ง แยก hardcoded prompt strings ออกจากโค้ด Python ไปเป็นไฟล์ YAML ที่มีเวอร์ชัน พร้อมตรวจสอบโครงสร้างด้วย Pydantic และ pathlib\nสอง เขียนตัว render template แบบ strict ที่จับได้ทั้งตัวแปรขาด ตัวแปรเกิน และรองรับตัวอย่าง JSON ที่มีวงเล็บปีกกาโดยไม่พังด้วย KeyError\nสาม คำนวณ content hash sha256 8 ตัวอักษรแรกแบบ deterministic แล้วแนบ prompt_version กับ prompt_hash ลงทุกผลลัพธ์\n\nวันนี้ใช้แค่ไฟล์ YAML กับ pytest รันบนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d091/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งติดตั้ง pyyaml กับ pydantic และเน้นคำเตือนเรื่อง encoding UTF-8 บน Windows",
+      "script": "มาเตรียมโปรเจกต์ ai-day91 กันครับ วันนี้มีแพ็กเกจใหม่เพิ่มมาหนึ่งตัวคือ pyyaml สำหรับอ่านไฟล์ YAML\n\nให้คุณสั่ง uv init ai-day91 แล้ว cd เข้าไป จากนั้นรัน uv add pydantic pyyaml แล้วตามด้วย uv add --dev pytest ruff แล้วทดสอบด้วยคำสั่ง python -c import yaml, hashlib และ pydantic เพื่อยืนยันว่าขึ้นข้อความ Prompt registry ready ครับ\n\nทิปสำคัญสำหรับคนที่ใช้ Windows เลยนะ เวลาอ่านไฟล์ YAML ภาษาไทยด้วย pathlib อย่าลืมใส่ encoding=\"utf-8\" ทุกครั้งนะครับ จะได้ไม่พังเพราะ default encoding ของระบบ เดี๋ยวพี่รอตรงนี้ให้เช็กเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาเตรียมโปรเจกต์ ai-day91 กันครับ วันนี้มีแพ็กเกจใหม่เพิ่มมาหนึ่งตัวคือ pyyaml สำหรับอ่านไฟล์ YAML\n\nให้คุณสั่ง uv init ai-day91 แล้ว cd เข้าไป จากนั้นรัน uv add pydantic pyyaml แล้วตามด้วย uv add dash dash dev pytest ruff แล้วทดสอบด้วยคำสั่ง python dash c import yaml, hashlib และ pydantic เพื่อยืนยันว่าขึ้นข้อความ Prompt registry ready ครับ\n\nทิปสำคัญสำหรับคนที่ใช้ Windows เลยนะ เวลาอ่านไฟล์ YAML ภาษาไทยด้วย pathlib อย่าลืมใส่ encoding เท่ากับ utf-8 ทุกครั้งนะครับ จะได้ไม่พังเพราะ default encoding ของระบบ เดี๋ยวพี่รอตรงนี้ให้เช็กเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง pyyaml และเช็กเครื่อง",
+        "prompt": "รันคำสั่งติดตั้ง pydantic กับ pyyaml และเช็ก import ให้เรียบร้อยก่อนไปต่อครับ",
+        "continueLabel": "เช็กเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Map — Prompt Registry & Audit Trail",
+      "src": "/audio/d091/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนมองภาพเปรียบเทียบระหว่างโลก Web Dev กับโลก Prompt Registry ให้เข้าใจทันที",
+      "script": "ลองมองแผนภาพบนหน้าจอให้เห็นตำแหน่งของ Prompt Registry ในระบบกันครับ\n\nถ้าคุณเคยทำ Web Dev มา ให้นึกภาพว่าไฟล์ prompts/extract_v1.yaml ก็เหมือนไฟล์ SQL migration หรือไฟล์แปลภาษา i18n ที่แยกขาดจากโค้ด controller ส่วนคลาส PromptTemplate คือ schema validation ตอนโหลด และลายนิ้วมือ sha256 8 ตัวอักษรแรกก็เหมือน content hash ของไฟล์ bundle ใน Vite หรือ Webpack ที่ช่วยยืนยันได้ 100 เปอร์เซ็นต์ว่าผลลัพธ์นี้รันมาจากพรอมต์ชิ้นไหนครับ",
+      "ttsText": "ลองมองแผนภาพบนหน้าจอให้เห็นตำแหน่งของ Prompt Registry ในระบบกันครับ\n\nถ้าคุณเคยทำ Web Dev มา ให้นึกภาพว่าไฟล์ prompts slash extract_v1 dot yaml ก็เหมือนไฟล์ SQL migration หรือไฟล์แปลภาษา i18n ที่แยกขาดจากโค้ด controller ส่วนคลาส PromptTemplate คือ schema validation ตอนโหลด และลายนิ้วมือ sha256 8 ตัวอักษรแรกก็เหมือน content hash ของไฟล์ bundle ใน Vite หรือ Webpack ที่ช่วยยืนยันได้ 100 เปอร์เซ็นต์ว่าผลลัพธ์นี้รันมาจากพรอมต์ชิ้นไหนครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก 3 ข้อ",
+      "src": "/audio/d091/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM เล่าสนุกด้วยคำเปรียบเทียบสูตรอาหารและซีลกันแกะ เน้นจังหวะชัดตรงเรื่อง escape วงเล็บ JSON",
+      "script": "มาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 91 กันครับ\n\nข้อแรก ทำไมการแปะพรอมต์ไว้ในไฟล์ Python ถึงเป็นกับดักใน production ลองนึกภาพว่าเรากำลังเขียนสูตรอาหารด้วยดินสอไว้ข้างเตาไฟครับ พอมีหลายเวอร์ชัน หลายโมเดล มันจะเกิด 3 ปัญหาทันที คือ Git diff อ่านยากมากเพราะโค้ดปนกับข้อความยาว ๆ เทียบ A/B หรือ rollback ยาก และไม่มี auditability เลย การแยกเป็นไฟล์ YAML ที่มี metadata ทั้ง id, version, model_tier, temperature, input_variables, system และ user_template ทำให้ทั้งทีมและ Domain Expert รีวิวผ่าน Pull Request ได้สะอาดมากครับ\n\nข้อที่สอง Strict Variable Rendering เพื่อ fail-fast ก่อนยิง API เหมือนเครื่องพิมพ์แบบฟอร์มสัญญาที่เช็กช่องว่างก่อนพิมพ์ครับ เราต้องเช็ก 2 จังหวะ จังหวะแรก load-time ใช้ string.Formatter().parse() แตกชื่อ placeholder ใน system กับ user_template มาเทียบว่าตรงกับ input_variables เป๊ะ จังหวะสอง render-time ถ้าส่งตัวแปรขาดหรือเกินให้โยน ValueError ทันที และระวังจุดตายเรื่องตัวอย่าง JSON ในพรอมต์นะครับ ถ้ามีวงเล็บปีกกาใน .format() ต้อง escape เป็นวงเล็บซ้อนสองชั้น คือ {{ กับ }} ไม่งั้น Python จะระเบิดด้วย KeyError กลาง production ทันที\n\nข้อที่สาม Content Hashing ด้วย sha256 8 ตัวอักษรแรกครับ เลข version เป็นสิ่งที่คนพิมพ์เอง ดังนั้นมีโอกาสสูงมากที่ใครจะแอบแก้ข้อความไทยใน extract_v1.yaml แล้วลืมอัปเดตเลข version เราเลยคำนวณ hash จาก canonical JSON โดยตั้ง sort_keys=True และ ensure_ascii=False เพื่อเป็นซีลกันแกะขวดยา ถ้าแก้แม้แต่ช่องว่างเดียว hash จะเปลี่ยนฟ้องทันที และเมื่อแนบลงทุก log ก็พร้อมต่อยอดเข้า Promptfoo หรือ Langfuse ใน Phase 5 เลยครับ",
+      "ttsText": "มาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 91 กันครับ\n\nข้อแรก ทำไมการแปะพรอมต์ไว้ในไฟล์ Python ถึงเป็นกับดักใน production ลองนึกภาพว่าเรากำลังเขียนสูตรอาหารด้วยดินสอไว้ข้างเตาไฟครับ พอมีหลายเวอร์ชัน หลายโมเดล มันจะเกิด 3 ปัญหาทันที คือ Git diff อ่านยากมากเพราะโค้ดปนกับข้อความยาว ๆ เทียบ A B หรือ rollback ยาก และไม่มี auditability เลย การแยกเป็นไฟล์ YAML ที่มี metadata ทั้ง id, version, model_tier, temperature, input_variables, system และ user_template ทำให้ทั้งทีมและ Domain Expert รีวิวผ่าน Pull Request ได้สะอาดมากครับ\n\nข้อที่สอง Strict Variable Rendering เพื่อ fail-fast ก่อนยิง API เหมือนเครื่องพิมพ์แบบฟอร์มสัญญาที่เช็กช่องว่างก่อนพิมพ์ครับ เราต้องเช็ก 2 จังหวะ จังหวะแรก load-time ใช้ string dot Formatter dot parse แตกชื่อ placeholder ใน system กับ user_template มาเทียบว่าตรงกับ input_variables เป๊ะ จังหวะสอง render-time ถ้าส่งตัวแปรขาดหรือเกินให้โยน ValueError ทันที และระวังจุดตายเรื่องตัวอย่าง JSON ในพรอมต์นะครับ ถ้ามีวงเล็บปีกกาใน dot format ต้อง escape เป็นวงเล็บซ้อนสองชั้น ไม่งั้น Python จะระเบิดด้วย KeyError กลาง production ทันที\n\nข้อที่สาม Content Hashing ด้วย sha256 8 ตัวอักษรแรกครับ เลข version เป็นสิ่งที่คนพิมพ์เอง ดังนั้นมีโอกาสสูงมากที่ใครจะแอบแก้ข้อความไทยใน extract_v1 dot yaml แล้วลืมอัปเดตเลข version เราเลยคำนวณ hash จาก canonical JSON โดยตั้ง sort_keys เท่ากับ True และ ensure_ascii เท่ากับ False เพื่อเป็นซีลกันแกะขวดยา ถ้าแก้แม้แต่ช่องว่างเดียว hash จะเปลี่ยนฟ้องทันที และเมื่อแนบลงทุก log ก็พร้อมต่อยอดเข้า Promptfoo หรือ Langfuse ใน Phase 5 เลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่าง PromptTemplate & Hash Diff",
+      "src": "/audio/d091/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงเหมือนนั่งรีวิวโค้ด worked_d091.py ไปด้วยกัน ชวนสังเกตการ escape วงเล็บ JSON และค่า hash ที่เปลี่ยนทันทีเมื่อแก้คำเดียว",
+      "script": "ลองมาไล่ดูตัวอย่างใน worked_d091.py ทั้ง 3 สเต็ปกันครับ\n\nสเต็ปแรก เราสร้างฟังก์ชัน extract_placeholders ด้วย Formatter().parse() ซึ่งดีมากตรงที่มันจะข้ามวงเล็บที่ escape ด้วยสองชั้นให้อัตโนมัติ จากนั้นเอาไปใส่ใน @model_validator ของ PromptTemplate เพื่อตรวจให้ตรงกับ input_variables และเขียน property content_hash คำนวณ sha256 8 ตัวอักษรแรก จะเห็นว่าตอนสร้างตัวอย่างมี JSON แบบ escape สองชั้นอยู่ใน system ด้วย แล้วโหลดได้ hash 6f2d8b41 ออกมาครับ\n\nสเต็ปที่สอง เขียน render_prompt เช็ก missing กับ extra variables แบบ strict ถ้าครบถ้วนก็จะคืนทั้ง messages ที่มี JSON วงเล็บชั้นเดียวสวย ๆ และ audit dict ที่มี prompt_ref ครบชุด\n\nสเต็ปที่สาม เราชวนทดลองแก้คำใน system นิดเดียวโดยจงใจไม่เปลี่ยนเลข version จาก v1 hash 6f2d8b41 พอแก้ปุ๊บ hash เปลี่ยนเป็น c49e10a7 ทันที แบบนี้ไม่มีใครแอบแก้พรอมต์เงียบ ๆ ได้แน่นอนครับ ดูผลรันให้เข้าใจก่อน แล้วค่อยกด ไปต่อ นะ",
+      "ttsText": "ลองมาไล่ดูตัวอย่างใน worked_d091 dot py ทั้ง 3 สเต็ปกันครับ\n\nสเต็ปแรก เราสร้างฟังก์ชัน extract_placeholders ด้วย Formatter dot parse ซึ่งดีมากตรงที่มันจะข้ามวงเล็บที่ escape ด้วยสองชั้นให้อัตโนมัติ จากนั้นเอาไปใส่ใน model_validator ของ PromptTemplate เพื่อตรวจให้ตรงกับ input_variables และเขียน property content_hash คำนวณ sha256 8 ตัวอักษรแรก จะเห็นว่าตอนสร้างตัวอย่างมี JSON แบบ escape สองชั้นอยู่ใน system ด้วย แล้วโหลดได้ hash 6f2d8b41 ออกมาครับ\n\nสเต็ปที่สอง เขียน render_prompt เช็ก missing กับ extra variables แบบ strict ถ้าครบถ้วนก็จะคืนทั้ง messages ที่มี JSON วงเล็บชั้นเดียวสวย ๆ และ audit dict ที่มี prompt_ref ครบชุด\n\nสเต็ปที่สาม เราชวนทดลองแก้คำใน system นิดเดียวโดยจงใจไม่เปลี่ยนเลข version จาก v1 hash 6f2d8b41 พอแก้ปุ๊บ hash เปลี่ยนเป็น c49e10a7 ทันที แบบนี้ไม่มีใครแอบแก้พรอมต์เงียบ ๆ ได้แน่นอนครับ ดูผลรันให้เข้าใจก่อน แล้วค่อยกด ไปต่อ นะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง worked_d091.py",
+        "prompt": "เช็กวิธี escape JSON braces และการเปลี่ยนค่า sha256[:8] ในตัวอย่างให้เข้าใจ แล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อ..."
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง prompt_registry.py",
+      "src": "/audio/d091/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชวนทำทีละฟังก์ชันใน prompt_registry.py พูดช้าชัดตรงรายละเอียดการอ่านไฟล์และ key ที่ห้ามซ้ำ",
+      "script": "ถึงเวลาสร้างโมดูล prompt_registry.py กันแล้วครับ มาเช็กสเปกทั้ง 4 ส่วนให้ครบก่อนลงมือนะ\n\nหนึ่ง เติม extract_placeholders ด้วย Formatter().parse() โดยเก็บเฉพาะ field_name ที่ไม่เป็น None\nสอง เติมคลาส PromptTemplate ทั้ง model_validator เช็ก placeholder ให้ตรงกับ input_variables, property content_hash คืน sha256 8 ตัวอักษรแรกจาก canonical JSON, property prompt_ref และเมธอด render แบบ strict ที่โยน ValueError เมื่อตัวแปรขาดหรือเกิน พร้อมคืน dict ที่มี messages กับ audit\nสาม ฟังก์ชัน load_prompt_yaml อ่านไฟล์ด้วย encoding=\"utf-8\" แล้ว parse ด้วย yaml.safe_load ก่อน validate ด้วย PromptTemplate\nสี่ ฟังก์ชัน load_prompt_directory วนอ่านไฟล์นามสกุล yaml ทั้งหมดแบบ sorted แล้วเก็บใน dict ด้วย key รูปแบบ id@version ถ้าเจอ key ซ้ำให้โยน ValueError ทันทีครับ\n\nเทสต์วันนี้ใช้ tmp_path fixture ของ pytest เช็กครบทั้ง 4 เคส เสร็จแล้วรัน uv run pytest -q กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "ttsText": "ถึงเวลาสร้างโมดูล prompt_registry dot py กันแล้วครับ มาเช็กสเปกทั้ง 4 ส่วนให้ครบก่อนลงมือนะ\n\nหนึ่ง เติม extract_placeholders ด้วย Formatter dot parse โดยเก็บเฉพาะ field_name ที่ไม่เป็น None\nสอง เติมคลาส PromptTemplate ทั้ง model_validator เช็ก placeholder ให้ตรงกับ input_variables, property content_hash คืน sha256 8 ตัวอักษรแรกจาก canonical JSON, property prompt_ref และเมธอด render แบบ strict ที่โยน ValueError เมื่อตัวแปรขาดหรือเกิน พร้อมคืน dict ที่มี messages กับ audit\nสาม ฟังก์ชัน load_prompt_yaml อ่านไฟล์ด้วย encoding เท่ากับ utf-8 แล้ว parse ด้วย yaml dot safe_load ก่อน validate ด้วย PromptTemplate\nสี่ ฟังก์ชัน load_prompt_directory วนอ่านไฟล์นามสกุล yaml ทั้งหมดแบบ sorted แล้วเก็บใน dict ด้วย key รูปแบบ id at version ถ้าเจอ key ซ้ำให้โยน ValueError ทันทีครับ\n\nเทสต์วันนี้ใช้ tmp_path fixture ของ pytest เช็กครบทั้ง 4 เคส เสร็จแล้วรัน uv run pytest dash q กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน prompt_registry.py",
+        "prompt": "ลงมือเติม PromptTemplate, load_prompt_yaml และ load_prompt_directory แล้วรัน test_prompt_registry.py ให้ผ่านครบครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d091/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 ข้อผิดพลาดเรื่อง YAML, UTF-8 และความปลอดภัยแบบกระชับจำแม่น",
+      "script": "เก่งมากครับที่เขียน Prompt Registry ผ่านเทสต์ครบแล้ว ก่อนไปควิซ มาทวน 4 ข้อผิดพลาดที่คนพลาดกันบ่อยมากตอนแยกพรอมต์เป็นไฟล์นะครับ\n\nข้อแรก ใส่ตัวอย่าง JSON ดิบ ๆ ลงในเทมเพลตที่ใช้ .format() โดยลืม escape ผลคือพังด้วย KeyError ทันที ต้องซ้อนวงเล็บปีกกาเป็นสองชั้นเสมอ และควรมี unit test โหลดและ render ทุกไฟล์ในโฟลเดอร์ prompts ใน CI ครับ\n\nข้อสอง ลืมใส่ encoding=\"utf-8\" ตอนอ่านไฟล์ YAML ภาษาไทย โค้ดอาจรันผ่านบน Mac กับ Linux แต่พอไปเปิดบน Windows จะพังด้วย UnicodeDecodeError หรือภาษาไทยเพี้ยนครับ\n\nข้อสาม แก้ข้อความในไฟล์ v1 ทับไปเรื่อย ๆ โดยไม่เก็บ content_hash พอระบบแม่นยำตกกะทันหัน ใน log ก็ยังเห็นว่าเป็น v1.0.0 เหมือนเดิม หาสาเหตุไม่เจอเลย\n\nและข้อสี่ ใช้ yaml.load แทน yaml.safe_load ซึ่งอันตรายมากเพราะเปิดช่องโหว่ Arbitrary Code Execution ต้องใช้ safe_load เสมอนะครับ",
+      "ttsText": "เก่งมากครับที่เขียน Prompt Registry ผ่านเทสต์ครบแล้ว ก่อนไปควิซ มาทวน 4 ข้อผิดพลาดที่คนพลาดกันบ่อยมากตอนแยกพรอมต์เป็นไฟล์นะครับ\n\nข้อแรก ใส่ตัวอย่าง JSON ดิบ ๆ ลงในเทมเพลตที่ใช้ dot format โดยลืม escape ผลคือพังด้วย KeyError ทันที ต้องซ้อนวงเล็บปีกกาเป็นสองชั้นเสมอ และควรมี unit test โหลดและ render ทุกไฟล์ในโฟลเดอร์ prompts ใน CI ครับ\n\nข้อสอง ลืมใส่ encoding เท่ากับ utf-8 ตอนอ่านไฟล์ YAML ภาษาไทย โค้ดอาจรันผ่านบน Mac กับ Linux แต่พอไปเปิดบน Windows จะพังด้วย UnicodeDecodeError หรือภาษาไทยเพี้ยนครับ\n\nข้อสาม แก้ข้อความในไฟล์ v1 ทับไปเรื่อย ๆ โดยไม่เก็บ content_hash พอระบบแม่นยำตกกะทันหัน ใน log ก็ยังเห็นว่าเป็น v1.0.0 เหมือนเดิม หาสาเหตุไม่เจอเลย\n\nและข้อสี่ ใช้ yaml dot load แทน yaml dot safe_load ซึ่งอันตรายมากเพราะเปิดช่องโหว่ Arbitrary Code Execution ต้องใช้ safe_load เสมอนะครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d091/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ ชวนทบทวนหลักการของ Prompt Versioning ผ่านควิซ 4 ข้อ",
+      "script": "มาเช็กความเข้าใจกับควิซ 4 ข้อของ Day 91 กันครับ\n\nคำถามจะทบทวนตั้งแต่เหตุผลที่ต้องบันทึก content_hash คู่กับ prompt_version วิธีใส่ตัวอย่าง JSON ใน Python format template โดยไม่เจอ KeyError ประโยชน์ของการทำ Strict Variable Rendering ไปจนถึงเหตุผลที่ต้องแปลงเป็น canonical JSON ด้วย sort_keys=True และ ensure_ascii=False ก่อนคำนวณ SHA-256\n\nทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "ttsText": "มาเช็กความเข้าใจกับควิซ 4 ข้อของ Day 91 กันครับ\n\nคำถามจะทบทวนตั้งแต่เหตุผลที่ต้องบันทึก content_hash คู่กับ prompt_version วิธีใส่ตัวอย่าง JSON ใน Python format template โดยไม่เจอ KeyError ประโยชน์ของการทำ Strict Variable Rendering ไปจนถึงเหตุผลที่ต้องแปลงเป็น canonical JSON ด้วย sort_keys เท่ากับ True และ ensure_ascii เท่ากับ False ก่อนคำนวณ SHA-256\n\nทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz Day 91",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง YAML Prompt Templates, Strict Render และ SHA-256 ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 92",
+      "src": "/audio/d091/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ สดใส ชวนเตรียมตัวเข้าสู่วัน Checkpoint ปิด Phase 3 ใน Day 92",
+      "script": "ยินดีด้วยครับ จบ Day 91 เรียบร้อยแล้ว! สรุป 4 สิ่งสำคัญของวันนี้ไว้ใช้งานจริงนะครับ\n\nหนึ่ง แยกพรอมต์ออกจากโค้ด Python เป็นไฟล์ YAML ที่มีเวอร์ชัน โหลดด้วย pathlib แบบ UTF-8 และ yaml.safe_load\nสอง บังคับ Strict Variable Checking ทั้งตอนโหลดและตอน render เพื่อ fail-fast ก่อนยิง API\nสาม คำนวณ Content Hash sha256 8 ตัวอักษรแรกจาก canonical JSON แล้วแนบลงในทุกผลลัพธ์เพื่อ audit trail และ regression diff\nสี่ escape วงเล็บปีกกาของตัวอย่าง JSON เป็นสองชั้น และเขียนเทสต์โหลดทุกไฟล์พรอมต์ใน CI เสมอครับ\n\nตอนนี้เรามีครบทั้ง Edge-Case Guards, 3-Axis Benchmark และ Versioned Prompts แล้ว ใน Day 92 พรุ่งนี้คือวัน Checkpoint Phase 3 ที่เราจะเอาทั้งหมดมาประกอบเป็นเดโมเทียบหมัดต่อหมัดกับ Phase 2 ML Baseline และทำควิซรวม Block B16 ถึง B23 กัน แล้วเจอกันใน Day 92 นะครับ!",
+      "ttsText": "ยินดีด้วยครับ จบ Day 91 เรียบร้อยแล้ว! สรุป 4 สิ่งสำคัญของวันนี้ไว้ใช้งานจริงนะครับ\n\nหนึ่ง แยกพรอมต์ออกจากโค้ด Python เป็นไฟล์ YAML ที่มีเวอร์ชัน โหลดด้วย pathlib แบบ UTF-8 และ yaml dot safe_load\nสอง บังคับ Strict Variable Checking ทั้งตอนโหลดและตอน render เพื่อ fail-fast ก่อนยิง API\nสาม คำนวณ Content Hash sha256 8 ตัวอักษรแรกจาก canonical JSON แล้วแนบลงในทุกผลลัพธ์เพื่อ audit trail และ regression diff\nสี่ escape วงเล็บปีกกาของตัวอย่าง JSON เป็นสองชั้น และเขียนเทสต์โหลดทุกไฟล์พรอมต์ใน CI เสมอครับ\n\nตอนนี้เรามีครบทั้ง Edge-Case Guards, 3-Axis Benchmark และ Versioned Prompts แล้ว ใน Day 92 พรุ่งนี้คือวัน Checkpoint Phase 3 ที่เราจะเอาทั้งหมดมาประกอบเป็นเดโมเทียบหมัดต่อหมัดกับ Phase 2 ML Baseline และทำควิซรวม Block B16 ถึง B23 กัน แล้วเจอกันใน Day 92 นะครับ!"
+    }
+  ]
+}

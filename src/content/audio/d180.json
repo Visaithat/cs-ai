@@ -1,0 +1,109 @@
+{
+  "lessonId": "d180",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Final Defense & วันจบหลักสูตร 180 วัน",
+      "src": "/audio/d180/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น ยินดี และภาคภูมิใจในวันจบหลักสูตร Day 180 น้ำเสียงมีพลัง ชวนปิดวงจรการเรียนรู้ให้สมบูรณ์",
+      "script": "สวัสดีครับ และขอแสดงความยินดีล่วงหน้าเลยนะครับ ในที่สุดเราก็เดินทางมาถึง Day 180 วันสุดท้ายของ Neural Path กันแล้วครับ วันนี้คือวัน Final Defense ที่เราจะมาตรวจรับ Capstone ของคุณเทียบกับเกณฑ์ Production-Ready Rubric และเตรียมตัวรับมือสัมภาษณ์งานจริงกัน\n\nวิศวกรตัวจริงไม่ได้วัดความสำเร็จจากจำนวนบรรทัดโค้ด แต่ถามว่า ระบบที่ส่งมอบแก้ปัญหาใน ADR-001 ตั้งแต่วันที่ 157 ได้ครบตามเงื่อนไขและ Non-Goals หรือไม่ วันนี้เราเลยมาปิดวงจรจากวันนั้นมาถึงหลักฐานผลทดสอบจริงใน Day 180\n\nระบบ AI ที่พร้อมขึ้น Production ต้องสอบผ่านพร้อมกันครบทั้ง 4 เสาหลักของ Capstone Rubric จากผล Ragas, Promptfoo และ red-team suite จากนั้นเรานำ Langfuse trace waterfall ตัวเลข P50/P95 และต้นทุนต่อ 1,000 คำถามมาเป็นหลักฐานใน Live Demo 3 นาที\n\nและสุดท้าย เราจะหลอมรวมผลงานพอร์ตโฟลิโอทั้ง 6 ชิ้นตลอด 180 วัน ให้กลายเป็นความพร้อมเต็มร้อยสู่สายงาน AI Engineer ครับ",
+      "ttsText": "สวัสดีครับ และขอแสดงความยินดีล่วงหน้าเลยนะครับ ในที่สุดเราก็เดินทางมาถึง Day 180 วันสุดท้ายของ Neural Path กันแล้วครับ วันนี้คือวัน Final Defense ที่เราจะมาตรวจรับ Capstone ของคุณเทียบกับเกณฑ์ Production-Ready Rubric และเตรียมตัวรับมือสัมภาษณ์งานจริงกัน\n\nวิศวกรตัวจริงไม่ได้วัดความสำเร็จจากจำนวนบรรทัดโค้ด แต่ถามว่า ระบบที่ส่งมอบแก้ปัญหาใน ADR-001 ตั้งแต่วันที่ 157 ได้ครบตามเงื่อนไขและ Non-Goals หรือไม่ วันนี้เราเลยมาปิดวงจรจากวันนั้นมาถึงหลักฐานผลทดสอบจริงใน Day 180\n\nระบบ AI ที่พร้อมขึ้น Production ต้องสอบผ่านพร้อมกันครบทั้ง 4 เสาหลักของ Capstone Rubric จากผล Ragas, Promptfoo และ red-team suite จากนั้นเรานำ Langfuse trace waterfall ตัวเลข P50 กับ P95 และต้นทุนต่อ 1,000 คำถามมาเป็นหลักฐานใน Live Demo 3 นาที\n\nและสุดท้าย เราจะหลอมรวมผลงานพอร์ตโฟลิโอทั้ง 6 ชิ้นตลอด 180 วัน ให้กลายเป็นความพร้อมเต็มร้อยสู่สายงาน AI Engineer ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d180/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ ชัดเจน ชวนตรวจรับงานขั้นสุดท้ายครบ 3 มิติ",
+      "script": "มาดูเป้าหมายของ Day 180 กันครับ วันนี้เราจะปิดจ๊อบครบทั้ง 3 มิติเลย\n\nอย่างแรก ประเมินระบบ Capstone ของตัวเองเทียบกับ 4 เสาหลักของ Production-Ready Capstone Rubric ด้วยสคริปต์อัตโนมัติที่ชี้จุด Blocker ได้ชัดเจน\nอย่างที่สอง ลำดับขั้นตอน Live Technical Demo 3 นาที ให้ครบทั้งสถาปัตยกรรม, Hybrid RAG + Citations, Safe MCP + HITL, Edge Cases/PDPA และ Langfuse Telemetry\nอย่างที่สาม อธิบายเหตุผลเชิงวิศวกรรมแบบ Trade-off Thinking ตอบคำถามสัมภาษณ์ตำแหน่ง Junior AI Engineer โดยมีตัวเลขจริงรองรับ\n\nเช่นเคยครับ วันนี้รันตรวจรับบนเครื่อง 100% ออฟไลน์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 180 กันครับ วันนี้เราจะปิดจ๊อบครบทั้ง 3 มิติเลย\n\nอย่างแรก ประเมินระบบ Capstone ของตัวเองเทียบกับ 4 เสาหลักของ Production-Ready Capstone Rubric ด้วยสคริปต์อัตโนมัติที่ชี้จุด Blocker ได้ชัดเจน\nอย่างที่สอง ลำดับขั้นตอน Live Technical Demo 3 นาที ให้ครบทั้งสถาปัตยกรรม, Hybrid RAG กับ Citations, Safe MCP กับ HITL, Edge Cases กับ PDPA และ Langfuse Telemetry\nอย่างที่สาม อธิบายเหตุผลเชิงวิศวกรรมแบบ Trade-off Thinking ตอบคำถามสัมภาษณ์ตำแหน่ง Junior AI Engineer โดยมีตัวเลขจริงรองรับ\n\nเช่นเคยครับ วันนี้รันตรวจรับบนเครื่อง 100 เปอร์เซ็นต์ ออฟไลน์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เช็กเครื่อง & ตรวจความสะอาด Git ขั้นสุดท้าย",
+      "src": "/audio/d180/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงรอบคอบเหมือนตรวจเช็กก่อนปล่อย release v1.0.0",
+      "script": "มาตรวจเช็กโค้ดและรีโปขั้นสุดท้ายในโฟลเดอร์ thai-enterprise-assistant ก่อนรันตัวตรวจ Rubric กันครับ\n\nขั้นแรก รัน uv run pytest -q เพื่อยืนยันว่า unit tests และ eval checks ทั้งหมดผ่านเขียว\nขั้นที่สอง รัน uv run ruff check . ให้โค้ดสะอาดไร้ warning\nขั้นที่สาม รัน git status -s และตรวจ .gitignore อีกครั้งให้มั่นใจว่าไม่มีไฟล์ .env, raw PII logs หรือโฟลเดอร์ .venv หลุดเตรียม commit ขึ้น GitHub สาธารณะ\n\nเดี๋ยวพี่หยุดรอให้เช็ก 3 คำสั่งนี้ให้เรียบร้อยก่อนนะ พร้อมตรวจ Rubric 4 เสาหลักเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาตรวจเช็กโค้ดและรีโปขั้นสุดท้ายในโฟลเดอร์ thai-enterprise-assistant ก่อนรันตัวตรวจ Rubric กันครับ\n\nขั้นแรก รัน uv run pytest dash q เพื่อยืนยันว่า unit tests และ eval checks ทั้งหมดผ่านเขียว\nขั้นที่สอง รัน uv run ruff check dot ให้โค้ดสะอาดไร้ warning\nขั้นที่สาม รัน git status dash s และตรวจ dot gitignore อีกครั้งให้มั่นใจว่าไม่มีไฟล์ dot env, raw PII logs หรือโฟลเดอร์ dot venv หลุดเตรียม commit ขึ้น GitHub สาธารณะ\n\nเดี๋ยวพี่หยุดรอให้เช็ก 3 คำสั่งนี้ให้เรียบร้อยก่อนนะ พร้อมตรวจ Rubric 4 เสาหลักเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอเช็กความสะอาดของรีโปขั้นสุดท้าย",
+        "prompt": "รัน `uv run pytest -q`, `uv run ruff check .` และ `git status -s` ให้เรียบร้อยก่อนเข้าสู่การตรวจ Rubric นะครับ",
+        "continueLabel": "รีโปสะอาดพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — 4 เสาหลัก Production-Ready Rubric",
+      "src": "/audio/d180/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงกระตือรือร้น ชวนคลิกดูแผนภาพ 4 เสาหลัก เน้นความสำคัญว่าทุกเสาต้องผ่านพร้อมกัน",
+      "script": "ลองกดดูแผนภาพ 4 เสาหลักของ Production-Ready Capstone Rubric ตรงหน้านี้กันนะครับ\n\nจุดสำคัญที่สุดของแผนภาพนี้คือคำว่า ต้องผ่านพร้อมกันทั้ง 4 เสา ไม่ใช่เอาคะแนนเสาอื่นมาถัวเฉลี่ยกันได้ เสาที่ 1 Retrieval & Groundedness, เสาที่ 2 Reliability & Tool Safety, เสาที่ 3 Observability & Cost, และเสาที่ 4 Security & PDPA\n\nถ้าเสา 1 ได้ 95 เปอร์เซ็นต์ แต่เสา 4 ดันปล่อยเลขบัตรประชาชนหลุดลง log แม้แต่จุดเดียว ระบบทั้งก้อนจะถูกตีกลับว่า NEEDS_REMEDIATION ทันที ลองคลิกตรวจเกณฑ์แต่ละเสาบนภาพดูนะครับ แล้วเราจะไปเจาะลึกกันต่อ",
+      "ttsText": "ลองกดดูแผนภาพ 4 เสาหลักของ Production-Ready Capstone Rubric ตรงหน้านี้กันนะครับ\n\nจุดสำคัญที่สุดของแผนภาพนี้คือคำว่า ต้องผ่านพร้อมกันทั้ง 4 เสา ไม่ใช่เอาคะแนนเสาอื่นมาถัวเฉลี่ยกันได้ เสาที่ 1 Retrieval และ Groundedness, เสาที่ 2 Reliability และ Tool Safety, เสาที่ 3 Observability และ Cost, และเสาที่ 4 Security และ PDPA\n\nถ้าเสา 1 ได้ 95 เปอร์เซ็นต์ แต่เสา 4 ดันปล่อยเลขบัตรประชาชนหลุดลง log แม้แต่จุดเดียว ระบบทั้งก้อนจะถูกตีกลับว่า NEEDS_REMEDIATION ทันที ลองคลิกตรวจเกณฑ์แต่ละเสาบนภาพดูนะครับ แล้วเราจะไปเจาะลึกกันต่อ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d180/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายหนักแน่น ชัดเจน มีชีวิตชีวา เปรียบเทียบกับใบตรวจรับเครื่องบินและแผนการรักษาแพทย์ให้จำขึ้นใจ",
+      "script": "มาดูแนวคิดหลัก 3 ข้อของ Final Defense กันครับ\n\nข้อแรก 4 เสาหลักของ Capstone Rubric เหมือนใบตรวจรับเครื่องบินก่อนขึ้นบิน ไม่ใช่แค่เครื่องยนต์ติด แต่ต้องผ่านพร้อมกันทุกข้อ เสาที่ 1 Retrieval & Groundedness ต้องมี Recall@5 >= 0.85, Faithfulness >= 0.85 และ Abstention >= 90% เสาที่ 2 Reliability & Tool Safety ต้องมี Schema >= 99%, มี timeout/retry/fallback และ write tool ทุกตัวผ่าน HITL gate เสาที่ 3 Observability & Cost ต้องมี trace_id 100% พร้อม P50/P95 และ Cost ต่อ 1,000 คำถาม เสาที่ 4 Security & PDPA ต้องผ่าน Promptfoo red-team >= 90% และ mask เลขบัตรประชาชนกับเบอร์โทรทั้งก่อนออก API และก่อนลง log ครับ\n\nข้อที่สอง Live Demo 3 นาทีเดินให้ครบ 5 ช็อต 0:00-0:30 ปัญหาและ ADR, 0:30-1:00 Happy Path RAG พร้อม citation, 1:00-1:40 MCP Lookup เทียบกับ HITL Gate, 1:40-2:20 Edge Cases ทั้ง Abstention, PDPA mask และ Prompt Injection และ 2:20-3:00 Langfuse Trace กับตาราง Eval/Cost โดยเก็บวิดีโอจาก Day 179 ไว้เป็นแผนสำรองด้วยครับ\n\nข้อที่สาม ตอบสัมภาษณ์ด้วยสูตร Decision -> Evidence -> Trade-off & Next Step เหมือนแพทย์อธิบายแผนการรักษา เช่น ถามว่าทำไมใช้ Hybrid RAG แทน Fine-tuning หรือ LoRA ก็ตอบว่าข้อมูลองค์กรเปลี่ยนรายสัปดาห์ RAG อัปเดตและคุม ACL กับ citation ได้ทันที ส่วน LoRA เอาไว้ปรับสไตล์หรืองานเฉพาะทาง ทั้งหมดนี้หยิบหลักฐานจากผลงาน 6 ชิ้นตลอด 180 วันมาตอบได้ทันทีครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อของ Final Defense กันครับ\n\nข้อแรก 4 เสาหลักของ Capstone Rubric เหมือนใบตรวจรับเครื่องบินก่อนขึ้นบิน ไม่ใช่แค่เครื่องยนต์ติด แต่ต้องผ่านพร้อมกันทุกข้อ เสาที่ 1 Retrieval และ Groundedness ต้องมี Recall at 5 มากกว่าหรือเท่ากับ 0.85, Faithfulness มากกว่าหรือเท่ากับ 0.85 และ Abstention มากกว่าหรือเท่ากับ 90 เปอร์เซ็นต์ เสาที่ 2 Reliability และ Tool Safety ต้องมี Schema มากกว่าหรือเท่ากับ 99 เปอร์เซ็นต์, มี timeout retry และ fallback และ write tool ทุกตัวผ่าน HITL gate เสาที่ 3 Observability และ Cost ต้องมี trace_id 100 เปอร์เซ็นต์ พร้อม P50 P95 และ Cost ต่อ 1,000 คำถาม เสาที่ 4 Security และ PDPA ต้องผ่าน Promptfoo red-team มากกว่าหรือเท่ากับ 90 เปอร์เซ็นต์ และ mask เลขบัตรประชาชนกับเบอร์โทรทั้งก่อนออก API และก่อนลง log ครับ\n\nข้อที่สอง Live Demo 3 นาทีเดินให้ครบ 5 ช็อต 0 นาที 00 ถึง 0 นาที 30 ปัญหาและ ADR, 0 นาที 30 ถึง 1 นาที 00 Happy Path RAG พร้อม citation, 1 นาที 00 ถึง 1 นาที 40 MCP Lookup เทียบกับ HITL Gate, 1 นาที 40 ถึง 2 นาที 20 Edge Cases ทั้ง Abstention, PDPA mask และ Prompt Injection และ 2 นาที 20 ถึง 3 นาที 00 Langfuse Trace กับตาราง Eval และ Cost โดยเก็บวิดีโอจาก Day 179 ไว้เป็นแผนสำรองด้วยครับ\n\nข้อที่สาม ตอบสัมภาษณ์ด้วยสูตร Decision, Evidence และ Trade-off กับ Next Step เหมือนแพทย์อธิบายแผนการรักษา เช่น ถามว่าทำไมใช้ Hybrid RAG แทน Fine-tuning หรือ LoRA ก็ตอบว่าข้อมูลองค์กรเปลี่ยนรายสัปดาห์ RAG อัปเดตและคุม ACL กับ citation ได้ทันที ส่วน LoRA เอาไว้ปรับสไตล์หรืองานเฉพาะทาง ทั้งหมดนี้หยิบหลักฐานจากผลงาน 6 ชิ้นตลอด 180 วันมาตอบได้ทันทีครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — ตรวจรับ Capstone Rubric อัตโนมัติ",
+      "src": "/audio/d180/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังตรวจงานรอบสุดท้ายด้วยกัน เน้นจุดสังเกตเรื่อง PDPA log masking ที่คนชอบพลาด",
+      "script": "มาดูตัวอย่างโค้ดตรวจรับ Capstone ใน worked_defense.py กันครับ กดเดินตามทีละขั้นได้เลยนะ\n\nขั้นที่ 1 เรานิยาม CapstoneMetrics เก็บตัวเลขครบทั้ง 4 เสาหลัก แล้วเขียนฟังก์ชัน evaluate_defense ไล่เช็กกฎ 10 ข้อ ถ้าข้อไหนไม่ผ่านจะเก็บข้อความใส่ลิสต์ blockers แล้วคืน tuple (passed, blockers)\n\nขั้นที่ 2 ลองทดสอบเคส draft ที่ได้ Recall@5 ถึง 0.89 และ Faithfulness 0.90 แต่พลาดแค่ 2 จุดคือ abstention_accuracy 0.80 กับ pdpa_mask_logs เป็น False ผลลัพธ์ที่ได้คือ PASSED: False พร้อมชี้ Blocker ทั้ง 2 จุดทันที ไม่ยอมปล่อยผ่านแน่นอน\n\nขั้นที่ 3 พอเราแก้ draft ด้วย model_copy ให้ abstention_accuracy เป็น 0.93 และ pdpa_mask_logs เป็น True ผลตรวจจึงออกมาเป็น VERDICT=PASS_PRODUCTION_READY ครับ\n\nจำจุดสังเกตตรงนี้ให้ดีนะครับ นักพัฒนาจำนวนมาก mask PII ก่อนส่ง OpenAI หรือ Anthropic เรียบร้อย แต่ดันลืม mask ก่อนส่งเข้า Langfuse trace หรือ stdout logs แบบนี้คือไม่ผ่าน PDPA ทันที ลองกดดูโค้ดให้ครบแล้วกด ไปต่อ นะครับ",
+      "ttsText": "มาดูตัวอย่างโค้ดตรวจรับ Capstone ใน worked_defense.py กันครับ กดเดินตามทีละขั้นได้เลยนะ\n\nขั้นที่ 1 เรานิยาม CapstoneMetrics เก็บตัวเลขครบทั้ง 4 เสาหลัก แล้วเขียนฟังก์ชัน evaluate_defense ไล่เช็กกฎ 10 ข้อ ถ้าข้อไหนไม่ผ่านจะเก็บข้อความใส่ลิสต์ blockers แล้วคืน tuple passed กับ blockers\n\nขั้นที่ 2 ลองทดสอบเคส draft ที่ได้ Recall at 5 ถึง 0.89 และ Faithfulness 0.90 แต่พลาดแค่ 2 จุดคือ abstention_accuracy 0.80 กับ pdpa_mask_logs เป็น False ผลลัพธ์ที่ได้คือ PASSED False พร้อมชี้ Blocker ทั้ง 2 จุดทันที ไม่ยอมปล่อยผ่านแน่นอน\n\nขั้นที่ 3 พอเราแก้ draft ด้วย model_copy ให้ abstention_accuracy เป็น 0.93 และ pdpa_mask_logs เป็น True ผลตรวจจึงออกมาเป็น VERDICT PASS_PRODUCTION_READY ครับ\n\nจำจุดสังเกตตรงนี้ให้ดีนะครับ นักพัฒนาจำนวนมาก mask PII ก่อนส่ง OpenAI หรือ Anthropic เรียบร้อย แต่ดันลืม mask ก่อนส่งเข้า Langfuse trace หรือ stdout logs แบบนี้คือไม่ผ่าน PDPA ทันที ลองกดดูโค้ดให้ครบแล้วกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอศึกษาตัวอย่าง Capstone Rubric Evaluator",
+        "prompt": "ลองกดเดินตัวอย่าง `worked_defense.py` ทั้ง 3 ขั้น เพื่อดูว่าทำไมระบบจึงตีกลับเคสที่ลืม mask PII ใน log แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อที่แบบฝึกหัดสุดท้าย"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — แบบฝึกหัดสุดท้าย src/capstone_rubric_evaluator.py",
+      "src": "/audio/d180/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจอบอุ่นเหมือนติวเตอร์อยู่ข้าง ๆ ในแบบฝึกหัดชิ้นสุดท้ายของหลักสูตร พูดช้าชัดเป็นจังหวะ",
+      "script": "มาถึงแบบฝึกหัดชิ้นสุดท้ายของ Neural Path แล้วครับ ให้สร้างโมดูล src/capstone_rubric_evaluator.py เพื่อตรวจรับ Capstone ทั้ง 4 เสาหลักแบบเต็มรูปแบบ\n\nในไฟล์ starter เราแบ่ง Pydantic model ให้แล้วเป็น RetrievalMetrics, ReliabilityMetrics, ObservabilityMetrics, SecurityMetrics และ CapstoneSubmission\nจุดที่หนึ่ง ใน ObservabilityMetrics เพิ่ม @model_validator(mode=\"after\") ตรวจว่า p95_latency_ms >= p50_latency_ms\nจุดที่สอง เขียน grade_capstone(submission) ตรวจเงื่อนไขทั้ง 10 ข้อแยกตาม 4 เสา คือ retrieval, reliability, observability และ security โดยเก็บรายการที่ไม่ผ่านลง blockers แล้วคืน dict ที่มี pillars (bool ทั้ง 4 keys), passed_all, blockers และ verdict ที่เป็น PASS_PRODUCTION_READY หรือ NEEDS_REMEDIATION\nจุดที่สาม เขียน format_defense_checklist(report) แปลงผลเป็น Markdown Checklist แสดง [x] หรือ [ ] ครบทั้ง 4 เสา พร้อม verdict และ blockers ถ้ามี\n\nทำเสร็จแล้วรัน uv run pytest -q tests/test_capstone_rubric.py กับ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ ผ่านแล้วกด ไปต่อ นะ!",
+      "ttsText": "มาถึงแบบฝึกหัดชิ้นสุดท้ายของ Neural Path แล้วครับ ให้สร้างโมดูล src slash capstone_rubric_evaluator.py เพื่อตรวจรับ Capstone ทั้ง 4 เสาหลักแบบเต็มรูปแบบ\n\nในไฟล์ starter เราแบ่ง Pydantic model ให้แล้วเป็น RetrievalMetrics, ReliabilityMetrics, ObservabilityMetrics, SecurityMetrics และ CapstoneSubmission\nจุดที่หนึ่ง ใน ObservabilityMetrics เพิ่ม model_validator mode after ตรวจว่า p95_latency_ms มากกว่าหรือเท่ากับ p50_latency_ms\nจุดที่สอง เขียน grade_capstone รับ submission ตรวจเงื่อนไขทั้ง 10 ข้อแยกตาม 4 เสา คือ retrieval, reliability, observability และ security โดยเก็บรายการที่ไม่ผ่านลง blockers แล้วคืน dict ที่มี pillars เป็น bool ทั้ง 4 keys, passed_all, blockers และ verdict ที่เป็น PASS_PRODUCTION_READY หรือ NEEDS_REMEDIATION\nจุดที่สาม เขียน format_defense_checklist รับ report แปลงผลเป็น Markdown Checklist แสดงเครื่องหมายถูกหรือช่องว่างครบทั้ง 4 เสา พร้อม verdict และ blockers ถ้ามี\n\nทำเสร็จแล้วรัน uv run pytest dash q tests slash test_capstone_rubric.py กับ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ ผ่านแล้วกด ไปต่อ นะ!",
+      "pauseAfter": {
+        "title": "พักรอทำแบบฝึกหัดสุดท้ายของหลักสูตร",
+        "prompt": "ลงมือเขียน `src/capstone_rubric_evaluator.py` ให้ผ่านครบทั้ง 5 test cases ใน `tests/test_capstone_rubric.py` แล้วกด 'ไปต่อ' ได้เลยครับ",
+        "continueLabel": "ผ่านครบ 5 เทสต์แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อยในวัน Defense",
+      "src": "/audio/d180/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงยินดีที่ผ่านแบบฝึกหัดสุดท้าย แล้วเตือน 4 จุดพลาดสำคัญวันสอบและส่งงานสมัครงานอย่างจริงใจ",
+      "script": "สุดยอดจริง ๆ ครับ ผ่านแบบฝึกหัดสุดท้ายของหลักสูตรเรียบร้อยแล้ว! ก่อนเข้าควิซสุดท้าย พี่ขอฝาก 4 ข้อควรระวังวัน Defense และวันส่งพอร์ตโฟลิโอสมัครงานนะครับ\n\nข้อแรก โชว์เดโมแค่ Happy Path พอผู้สัมภาษณ์ถามว่า รู้ได้ไงว่าไม่หลอน หรือ ค่า API เท่าไร กลับตอบได้แค่ว่าลองพิมพ์ถามดูแล้วโอเค ต้องโชว์ Abstention, PDPA, HITL และหน้าจอ Langfuse กับ Promptfoo ให้เห็นตัวเลขจริงครับ\nข้อที่สอง Mask PDPA ก่อนส่ง LLM API แต่ลืม Mask ก่อนลง Trace หรือ Logs แบบนี้ข้อมูลบัตรประชาชนลูกค้ายังรั่วลงฐานข้อมูล Langfuse หรือ stdout อยู่ดี ต้องวาง PDPA Redaction ไว้หน้าสุดก่อนทั้งการ log, tracing และ outbound API\nข้อที่สาม ท่องคำตอบทฤษฎีแต่เชื่อมกับระบบตัวเองไม่ได้ อธิบาย RAG vs Fine-tuning ได้คล่อง แต่พอถามว่าโปรเจกต์ตัวเองใช้ chunk size เท่าไรกลับตอบไม่ได้ ให้ทวน ADR-001.md และใช้สูตร Decision -> Evidence -> Trade-off เสมอ\nข้อที่สี่ ลืมลอง git clone รีโปตัวเองลงโฟลเดอร์ใหม่แล้วรันตาม README ด้วย uv กับ docker compose up ต้องลองทำซ้ำจริง 100% ก่อนส่งสมัครงานครับ",
+      "ttsText": "สุดยอดจริง ๆ ครับ ผ่านแบบฝึกหัดสุดท้ายของหลักสูตรเรียบร้อยแล้ว! ก่อนเข้าควิซสุดท้าย พี่ขอฝาก 4 ข้อควรระวังวัน Defense และวันส่งพอร์ตโฟลิโอสมัครงานนะครับ\n\nข้อแรก โชว์เดโมแค่ Happy Path พอผู้สัมภาษณ์ถามว่า รู้ได้ไงว่าไม่หลอน หรือ ค่า API เท่าไร กลับตอบได้แค่ว่าลองพิมพ์ถามดูแล้วโอเค ต้องโชว์ Abstention, PDPA, HITL และหน้าจอ Langfuse กับ Promptfoo ให้เห็นตัวเลขจริงครับ\nข้อที่สอง Mask PDPA ก่อนส่ง LLM API แต่ลืม Mask ก่อนลง Trace หรือ Logs แบบนี้ข้อมูลบัตรประชาชนลูกค้ายังรั่วลงฐานข้อมูล Langfuse หรือ stdout อยู่ดี ต้องวาง PDPA Redaction ไว้หน้าสุดก่อนทั้งการ log, tracing และ outbound API\nข้อที่สาม ท่องคำตอบทฤษฎีแต่เชื่อมกับระบบตัวเองไม่ได้ อธิบาย RAG เทียบกับ Fine-tuning ได้คล่อง แต่พอถามว่าโปรเจกต์ตัวเองใช้ chunk size เท่าไรกลับตอบไม่ได้ ให้ทวน ADR-001 และใช้สูตร Decision, Evidence และ Trade-off เสมอ\nข้อที่สี่ ลืมลอง git clone รีโปตัวเองลงโฟลเดอร์ใหม่แล้วรันตาม README ด้วย uv กับ docker compose up ต้องลองทำซ้ำจริง 100 เปอร์เซ็นต์ ก่อนส่งสมัครงานครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อสุดท้าย",
+      "src": "/audio/d180/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทำควิซสุดท้ายของหลักสูตรอย่างมั่นใจ",
+      "script": "มาถึง Micro-Quiz 4 ข้อสุดท้ายของหลักสูตร 180 วันแล้วครับ ทั้งคำถามกรณีหลุด PII ลง trace logs, การเลือก Hybrid RAG vs LoRA, เกณฑ์ 3 ข้อของเสา Reliability & Tool Safety และลำดับ 5 ช็อตของ Live Demo 3 นาที\n\nค่อย ๆ อ่านและกดตอบให้ครบทั้ง 4 ข้อได้เลยนะครับ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปจบหลักสูตรกันครับ!",
+      "ttsText": "มาถึง Micro-Quiz 4 ข้อสุดท้ายของหลักสูตร 180 วันแล้วครับ ทั้งคำถามกรณีหลุด PII ลง trace logs, การเลือก Hybrid RAG กับ LoRA, เกณฑ์ 3 ข้อของเสา Reliability และ Tool Safety และลำดับ 5 ช็อตของ Live Demo 3 นาที\n\nค่อย ๆ อ่านและกดตอบให้ครบทั้ง 4 ข้อได้เลยนะครับ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปจบหลักสูตรกันครับ!",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อสุดท้าย",
+        "prompt": "ตอบควิซทั้ง 4 ข้อสุดท้ายเพื่อเช็กความพร้อมก่อนจบหลักสูตร แล้วกด 'ไปต่อ' เพื่อฟังบทสรุป Graduation ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดหลักสูตร"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & จบหลักสูตร Neural Path 180 วัน",
+      "src": "/audio/d180/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ปลื้มใจ ฉลองความสำเร็จของรุ่นน้องที่เรียนครบ 180 วันอย่างทรงพลังและน่าประทับใจ",
+      "script": "ขอแสดงความยินดีด้วยครับ คุณเรียนจบ Neural Path ครบทั้ง 180 วันอย่างสมบูรณ์แล้ว!\n\nลองมองย้อนกลับไปตั้งแต่วันแรกที่คุณเพิ่งเริ่มจับ uv กับ Pydantic จนถึงวันนี้ คุณสร้างผลงานพอร์ตโฟลิโอที่รันซ้ำได้และตรวจสอบได้ครบทั้ง 6 ชิ้นแล้ว ตั้งแต่ Async Python CLI, Tabular ML Pipeline, Structured Extractor, Thai Hybrid RAG Engine, Eval & Security Suite มาจนถึง Thai Enterprise AI Assistant Capstone ระดับ Production\n\nจำ 3 หัวใจสุดท้ายไว้ใช้ในห้องสัมภาษณ์นะครับ หนึ่ง ระบบ Production ต้องผ่านครบทั้ง 4 เสาหลักของ Rubric ห้ามตกเรื่อง PDPA และ Reliability เด็ดขาด สอง Live Demo 3 นาทีเดินครบ 5 ช็อต ตั้งแต่ ADR, Happy Path RAG, MCP/HITL, Edge Cases ไปจนถึง Langfuse และ Eval/Cost สาม ตอบคำถามด้วยสูตร Decision -> Evidence -> Trade-off จากตัวเลขจริงของคุณเอง\n\nอย่าลืมกด ทำเครื่องหมายว่าเรียนจบ เพื่อบันทึกความสำเร็จใน Day 180 นะครับ พี่ภูมิใจในตัวคุณมาก ๆ แล้วขอให้โชคดีในการสัมภาษณ์งาน Junior AI Engineer นะครับ ลุยเลย!",
+      "ttsText": "ขอแสดงความยินดีด้วยครับ คุณเรียนจบ Neural Path ครบทั้ง 180 วันอย่างสมบูรณ์แล้ว!\n\nลองมองย้อนกลับไปตั้งแต่วันแรกที่คุณเพิ่งเริ่มจับ uv กับ Pydantic จนถึงวันนี้ คุณสร้างผลงานพอร์ตโฟลิโอที่รันซ้ำได้และตรวจสอบได้ครบทั้ง 6 ชิ้นแล้ว ตั้งแต่ Async Python CLI, Tabular ML Pipeline, Structured Extractor, Thai Hybrid RAG Engine, Eval and Security Suite มาจนถึง Thai Enterprise AI Assistant Capstone ระดับ Production\n\nจำ 3 หัวใจสุดท้ายไว้ใช้ในห้องสัมภาษณ์นะครับ หนึ่ง ระบบ Production ต้องผ่านครบทั้ง 4 เสาหลักของ Rubric ห้ามตกเรื่อง PDPA และ Reliability เด็ดขาด สอง Live Demo 3 นาทีเดินครบ 5 ช็อต ตั้งแต่ ADR, Happy Path RAG, MCP กับ HITL, Edge Cases ไปจนถึง Langfuse และ Eval กับ Cost สาม ตอบคำถามด้วยสูตร Decision, Evidence และ Trade-off จากตัวเลขจริงของคุณเอง\n\nอย่าลืมกด ทำเครื่องหมายว่าเรียนจบ เพื่อบันทึกความสำเร็จใน Day 180 นะครับ พี่ภูมิใจในตัวคุณมาก ๆ แล้วขอให้โชคดีในการสัมภาษณ์งาน Junior AI Engineer นะครับ ลุยเลย!"
+    }
+  ]
+}

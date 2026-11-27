@@ -1,0 +1,109 @@
+{
+  "lessonId": "d030",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ท่อ Async Ingestion & Quarantine",
+      "src": "/audio/d030/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น ชวนต่อยอดจากพิมพ์เขียวเมื่อวานสู่การลงมือต่อท่อจริง น้ำเสียงสดใส ชวนเห็นภาพการไหลของข้อมูล",
+      "script": "สวัสดีครับ กลับมาเจอกันใน Day 30 แล้วนะ เมื่อวานเราวางแปลนของ Resilient Async Data Fetcher CLI เสร็จเรียบร้อย วันนี้ถึงเวลาลงมือต่อท่อ Async Ingestion และ Validation Pipeline ของจริงกันครับ ใช้เวลา 30 นาทีและทดสอบออฟไลน์บนเครื่องได้ 100 เปอร์เซ็นต์เหมือนเดิม\n\nลองนึกภาพโจทย์ใหญ่ของการดึงข้อมูลนะครับ ถ้ายิงทีละ URL แบบ sync ก็ช้าเกินไปสำหรับงานหลักพันรายการ แต่ถ้าปล่อยยิงพร้อมกันทั้งหมด ปลายทางก็จะบล็อกเราทันที เราจึงต้องจับคู่ httpx.AsyncClient เข้ากับ asyncio.Semaphore เพื่อวิ่งขนานอย่างมีวินัย\n\nในเวลาเดียวกัน ข้อมูลดิบมักมีของเสียปนมาเสมอ ทั้ง 404 หน้า HTML error หรือฟิลด์ผิดประเภท เราจึงใช้ Pydantic คัดกรองทุกชิ้น ของดีไหลลง output.jsonl ของเสียแยกเข้า quarantine.jsonl แบบ UTF-8 ด้วย pathlib โดยไม่ทำให้ทั้ง batch ล่ม และคืนยอดสรุปที่ตรงเป๊ะพร้อมต่อยอดเพิ่ม retry กับ SQLite cache ใน Day 31 ครับ",
+      "ttsText": "สวัสดีครับ กลับมาเจอกันใน Day 30 แล้วนะ เมื่อวานเราวางแปลนของ Resilient Async Data Fetcher CLI เสร็จเรียบร้อย วันนี้ถึงเวลาลงมือต่อท่อ Async Ingestion และ Validation Pipeline ของจริงกันครับ ใช้เวลา 30 นาทีและทดสอบออฟไลน์บนเครื่องได้ 100 เปอร์เซ็นต์เหมือนเดิม\n\nลองนึกภาพโจทย์ใหญ่ของการดึงข้อมูลนะครับ ถ้ายิงทีละ URL แบบ sync ก็ช้าเกินไปสำหรับงานหลักพันรายการ แต่ถ้าปล่อยยิงพร้อมกันทั้งหมด ปลายทางก็จะบล็อกเราทันที เราจึงต้องจับคู่ httpx AsyncClient เข้ากับ asyncio Semaphore เพื่อวิ่งขนานอย่างมีวินัย\n\nในเวลาเดียวกัน ข้อมูลดิบมักมีของเสียปนมาเสมอ ทั้ง 404 หน้า HTML error หรือฟิลด์ผิดประเภท เราจึงใช้ Pydantic คัดกรองทุกชิ้น ของดีไหลลง output dot jsonl ของเสียแยกเข้า quarantine dot jsonl แบบ UTF-8 ด้วย pathlib โดยไม่ทำให้ทั้ง batch ล่ม และคืนยอดสรุปที่ตรงเป๊ะพร้อมต่อยอดเพิ่ม retry กับ SQLite cache ใน Day 31 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d030/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงชัดเจน มั่นใจ แยก 3 ทักษะที่จะได้ลงมือทำวันนี้ให้ฟังง่าย กระชับ และเป็นลำดับ",
+      "script": "มาดูเป้าหมายของ Day 30 กันสั้น ๆ นะครับ จบบทนี้คุณจะประกอบท่อ ingestion ที่แข็งแรงได้ 3 เรื่องหลัก\n\nหนึ่ง ประกอบท่อด้วย httpx.AsyncClient ที่แชร์ connection pool ร่วมกับ asyncio.Semaphore เพื่อคุมเพดาน concurrency อย่างแม่นยำ\nสอง จัดการ partial failure ด้วย Quarantine Pattern แยกดักข้อผิดพลาดตามขั้น fetch, parse และ validate ไม่ให้ชิ้นเดียวทำพังทั้ง batch\nและสาม เขียนผลลัพธ์แบบ streaming JSONL ด้วย pathlib แบบ UTF-8 พร้อมทดสอบออฟไลน์ครบชุดด้วย httpx.MockTransport ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 30 กันสั้น ๆ นะครับ จบบทนี้คุณจะประกอบท่อ ingestion ที่แข็งแรงได้ 3 เรื่องหลัก\n\nหนึ่ง ประกอบท่อด้วย httpx AsyncClient ที่แชร์ connection pool ร่วมกับ asyncio Semaphore เพื่อคุมเพดาน concurrency อย่างแม่นยำ\nสอง จัดการ partial failure ด้วย Quarantine Pattern แยกดักข้อผิดพลาดตามขั้น fetch, parse และ validate ไม่ให้ชิ้นเดียวทำพังทั้ง batch\nและสาม เขียนผลลัพธ์แบบ streaming JSONL ด้วย pathlib แบบ UTF-8 พร้อมทดสอบออฟไลน์ครบชุดด้วย httpx MockTransport ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d030/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงสบาย ๆ เช็กความพร้อมโฟลเดอร์และเวอร์ชันแพ็กเกจก่อนเริ่มเขียนโค้ด",
+      "script": "มาเตรียมสภาพแวดล้อมกันก่อนครับ ถ้าคุณมีโฟลเดอร์ resilient-fetcher จาก Day 29 อยู่แล้วก็ทำต่อในนั้นได้เลย หรือถ้าอยากแยกโฟลเดอร์ใหม่ก็สั่ง uv init ai-day30-pipeline แล้วติดตั้ง httpx, pydantic, pytest และ ruff ให้เรียบร้อยครับ\n\nจากนั้นรันคำสั่ง uv run python -c เช็กเวอร์ชันของ httpx และ pydantic ให้เรียบร้อย ทุกเทสต์ในวันนี้ใช้ MockTransport จึงรันได้แม้ปิด Wi-Fi และจบในเสี้ยววินาทีเลย เดี๋ยวพี่รอตรงนี้ให้คุณเช็กเครื่องก่อนนะครับ",
+      "ttsText": "มาเตรียมสภาพแวดล้อมกันก่อนครับ ถ้าคุณมีโฟลเดอร์ resilient-fetcher จาก Day 29 อยู่แล้วก็ทำต่อในนั้นได้เลย หรือถ้าอยากแยกโฟลเดอร์ใหม่ก็สั่ง uv init ai-day30-pipeline แล้วติดตั้ง httpx, pydantic, pytest และ ruff ให้เรียบร้อยครับ\n\nจากนั้นรันคำสั่ง uv run python dash c เช็กเวอร์ชันของ httpx และ pydantic ให้เรียบร้อย ทุกเทสต์ในวันนี้ใช้ MockTransport จึงรันได้แม้ปิด Wi-Fi และจบในเสี้ยววินาทีเลย เดี๋ยวพี่รอตรงนี้ให้คุณเช็กเครื่องก่อนนะครับ",
+      "pauseAfter": {
+        "title": "พักรอเช็กสภาพแวดล้อม Day 30",
+        "prompt": "ตรวจสอบโฟลเดอร์โปรเจกต์และรันคำสั่งเช็กเวอร์ชัน httpx กับ pydantic ให้เรียบร้อยก่อนไปต่อครับ",
+        "continueLabel": "เช็กสภาพแวดล้อมพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อขนานและ Quarantine",
+      "src": "/audio/d030/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชี้ให้เห็นภาพท่อขนานที่แยกของดีกับของเสียออกจากกันแบบชัดเจน",
+      "script": "ลองดูแผนภาพบนหน้าจอตรงนี้ประกอบนะครับ วันนี้จุดโฟกัสของเราอยู่ที่ช่วงกลางของสถาปัตยกรรมเลย\n\nคุณจะเห็นคำขอหลายรายการวิ่งเข้าพร้อมกันภายใต้เพดานของ Semaphore เพื่อไม่ให้ล้น จากนั้นแต่ละรายการจะไหลผ่านด่านตรวจ Pydantic ที่แยกเส้นทางออกเป็นสองฝั่งชัดเจน ของที่ผ่านทุกด่านจะไหลลง output.jsonl ส่วนของที่สะดุดจะถูกติดป้ายสาเหตุแล้วเบี่ยงลง quarantine.jsonl โดยไม่ขวางงานอื่นเลยครับ",
+      "ttsText": "ลองดูแผนภาพบนหน้าจอตรงนี้ประกอบนะครับ วันนี้จุดโฟกัสของเราอยู่ที่ช่วงกลางของสถาปัตยกรรมเลย\n\nคุณจะเห็นคำขอหลายรายการวิ่งเข้าพร้อมกันภายใต้เพดานของ Semaphore เพื่อไม่ให้ล้น จากนั้นแต่ละรายการจะไหลผ่านด่านตรวจ Pydantic ที่แยกเส้นทางออกเป็นสองฝั่งชัดเจน ของที่ผ่านทุกด่านจะไหลลง output dot jsonl ส่วนของที่สะดุดจะถูกติดป้ายสาเหตุแล้วเบี่ยงลง quarantine dot jsonl โดยไม่ขวางงานอื่นเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d030/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM เล่าเปรียบเทียบสนุก เห็นภาพชัดทั้งด่านเก็บเงิน สายพานตรวจสินค้า และแคชเชียร์พิมพ์ใบเสร็จ",
+      "script": "เรามาเจาะแนวคิดหลัก 3 ข้อที่เป็นหัวใจของท่อวันนี้กันครับ\n\nข้อแรก คือการแชร์ httpx.AsyncClient หนึ่งตัวร่วมกับการถือ asyncio.Semaphore ให้สั้นที่สุด ลองเปรียบเหมือนด่านเก็บค่าผ่านทางที่มี 5 ช่องและใช้บัตรผ่านร่วมกันครับ เราต้องสร้าง AsyncClient แค่ครั้งเดียวข้างนอกเพื่อใช้ TCP กับ TLS connection pool ร่วมกัน แล้วครอบ async with semaphore เฉพาะบรรทัดรอเครือข่ายอย่าง await client.get เท่านั้น พอได้ response แล้วปล่อยทันที อย่าเอาขั้น validate ไปไว้ข้างใน semaphore นะครับ ไม่งั้นช่องทางเครือข่ายจะถูกกักไว้เปล่า ๆ\n\nข้อที่สอง คือ Fault Isolation และ Quarantine Pattern เปรียบเหมือนสายพานตรวจสินค้าที่มี 3 ด่านครับ คือด่านรับกล่อง fetch ที่เช็ก HTTP error กับ HTTPError, ด่านเปิดกล่อง parse ที่ดัก ValueError เวลาปลายทางส่ง HTML มาแทน JSON, และด่านตรวจคุณภาพ validate ที่ดัก ValidationError ของ Pydantic การหุ้ม try except แยกทั้ง 3 ขั้นใน process_one ทำให้ของพัง 1 ชิ้นไม่ทำลาย asyncio.gather หรือ as_completed ทั้งชุด และดีกว่า return_exceptions=True ตรงที่เรามี item_id, url, stage และ reason ครบถ้วน\n\nและข้อที่สาม คือ Streaming JSONL ด้วย pathlib กับ asyncio.as_completed ครับ เหมือนแคชเชียร์ที่พิมพ์ใบเสร็จลงกล่องทีละใบทันทีที่ลูกค้าจ่ายเงิน ไม่ต้องจำทั้งวันไว้ในหัวให้ RAM บวม และจำให้แม่นเลยว่าบน Windows ต้องใส่ encoding='utf-8' เสมอ คู่กับ parent.mkdir(parents=True, exist_ok=True) และ model_dump_json() เพื่อไม่ให้ภาษาไทยเพี้ยนหรือเกิด UnicodeEncodeError ครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลัก 3 ข้อที่เป็นหัวใจของท่อวันนี้กันครับ\n\nข้อแรก คือการแชร์ httpx AsyncClient หนึ่งตัวร่วมกับการถือ asyncio Semaphore ให้สั้นที่สุด ลองเปรียบเหมือนด่านเก็บค่าผ่านทางที่มี 5 ช่องและใช้บัตรผ่านร่วมกันครับ เราต้องสร้าง AsyncClient แค่ครั้งเดียวข้างนอกเพื่อใช้ TCP กับ TLS connection pool ร่วมกัน แล้วครอบ async with semaphore เฉพาะบรรทัดรอเครือข่ายอย่าง await client dot get เท่านั้น พอได้ response แล้วปล่อยทันที อย่าเอาขั้น validate ไปไว้ข้างใน semaphore นะครับ ไม่งั้นช่องทางเครือข่ายจะถูกกักไว้เปล่า ๆ\n\nข้อที่สอง คือ Fault Isolation และ Quarantine Pattern เปรียบเหมือนสายพานตรวจสินค้าที่มี 3 ด่านครับ คือด่านรับกล่อง fetch ที่เช็ก HTTP error กับ HTTPError, ด่านเปิดกล่อง parse ที่ดัก ValueError เวลาปลายทางส่ง HTML มาแทน JSON, และด่านตรวจคุณภาพ validate ที่ดัก ValidationError ของ Pydantic การหุ้ม try except แยกทั้ง 3 ขั้นใน process_one ทำให้ของพัง 1 ชิ้นไม่ทำลาย asyncio gather หรือ as completed ทั้งชุด และดีกว่า return exceptions เท่ากับ True ตรงที่เรามี item_id, url, stage และ reason ครบถ้วน\n\nและข้อที่สาม คือ Streaming JSONL ด้วย pathlib กับ asyncio as completed ครับ เหมือนแคชเชียร์ที่พิมพ์ใบเสร็จลงกล่องทีละใบทันทีที่ลูกค้าจ่ายเงิน ไม่ต้องจำทั้งวันไว้ในหัวให้ RAM บวม และจำให้แม่นเลยว่าบน Windows ต้องใส่ encoding เท่ากับ utf-8 เสมอ คู่กับ parent dot mkdir parents เท่ากับ True และ exist ok เท่ากับ True รวมถึง model dump json เพื่อไม่ให้ภาษาไทยเพี้ยนหรือเกิด UnicodeEncodeError ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน & MockTransport",
+      "src": "/audio/d030/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนติดตามเหมือนรันเดโมให้ดูสด ๆ ชี้ให้เห็นผลลัพธ์ทั้ง 4 เส้นทางและเตือนจุดพลาดเรื่อง UTF-8 บน Windows",
+      "script": "มาดูตัวอย่างท่อ ingestion ครบวงจรที่รันด้วย httpx.MockTransport กันครับ เราจำลองปลายทาง 4 แบบเพื่อทดสอบทุกเส้นทางของท่อในรอบเดียวเลย\n\nขั้นที่ 1 เราเตรียมโมเดลและ mock_handler ที่มีหน่วงเวลา 0.05 วินาที โดย path 1 คืนข้อมูลภาษาไทยถูกต้อง, path 2 คืน 404 Not Found, path 3 คืนหน้า HTML Gateway Error ทั้งที่ได้สถานะ 200, และ path 4 คืน JSON ที่ผิด schema ของ Pydantic\n\nขั้นที่ 2 ใน process_target เราดักแยก fetch, parse และ validate แล้วคืน FetchedRecord หรือ QuarantineRecord ออกมา จากนั้นใน run_ingestion เราสร้างโฟลเดอร์ปลายทาง สร้าง tasks แล้วเปิดไฟล์ทั้งสองด้วย encoding='utf-8' เพื่อวนรับผลจาก asyncio.as_completed แล้วเขียนลงไฟล์ทีละบรรทัดทันที\n\nขั้นที่ 3 พอสั่งรันจริง จะเห็น summary ออกมาเป็น total 4, succeeded 1, quarantined 3 โดย output.jsonl ได้ข้อมูลภาษาไทยสะอาด 1 บรรทัด ส่วน quarantine.jsonl แยก stage ครบทั้ง fetch, parse และ validate ให้เห็นชัดเลยครับ อย่าลืมสังเกตเรื่อง encoding='utf-8' บน Windows ด้วยนะ สำคัญมาก ๆ ลองไล่ดูโค้ดให้ครบแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "ttsText": "มาดูตัวอย่างท่อ ingestion ครบวงจรที่รันด้วย httpx MockTransport กันครับ เราจำลองปลายทาง 4 แบบเพื่อทดสอบทุกเส้นทางของท่อในรอบเดียวเลย\n\nขั้นที่ 1 เราเตรียมโมเดลและ mock_handler ที่มีหน่วงเวลา 0.05 วินาที โดย path 1 คืนข้อมูลภาษาไทยถูกต้อง, path 2 คืน 404 Not Found, path 3 คืนหน้า HTML Gateway Error ทั้งที่ได้สถานะ 200, และ path 4 คืน JSON ที่ผิด schema ของ Pydantic\n\nขั้นที่ 2 ใน process_target เราดักแยก fetch, parse และ validate แล้วคืน FetchedRecord หรือ QuarantineRecord ออกมา จากนั้นใน run_ingestion เราสร้างโฟลเดอร์ปลายทาง สร้าง tasks แล้วเปิดไฟล์ทั้งสองด้วย encoding เท่ากับ utf-8 เพื่อวนรับผลจาก asyncio as completed แล้วเขียนลงไฟล์ทีละบรรทัดทันที\n\nขั้นที่ 3 พอสั่งรันจริง จะเห็น summary ออกมาเป็น total 4, succeeded 1, quarantined 3 โดย output dot jsonl ได้ข้อมูลภาษาไทยสะอาด 1 บรรทัด ส่วน quarantine dot jsonl แยก stage ครบทั้ง fetch, parse และ validate ให้เห็นชัดเลยครับ อย่าลืมสังเกตเรื่อง encoding เท่ากับ utf-8 บน Windows ด้วยนะ สำคัญมาก ๆ ลองไล่ดูโค้ดให้ครบแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่างท่อ Ingestion",
+        "prompt": "ลองศึกษาการแยก 3 stage ใน process_target และ streaming writer ใน run_ingestion ก่อนลงมือเขียนเองนะครับ",
+        "continueLabel": "เข้าใจท่อตัวอย่างแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง async_pipeline.py",
+      "src": "/audio/d030/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดจังหวะสม่ำเสมอตอนอธิบาย process_target, run_pipeline และเทสต์วัด max_seen",
+      "script": "ถึงเวลาลงมือเขียนจริง 15 นาทีแล้วครับ โจทย์วันนี้ให้เราเติมไฟล์ async_pipeline.py ในฟังก์ชัน process_target และ run_pipeline ให้สมบูรณ์ครับ\n\nเริ่มจาก process_target ก่อนเลยนะ ให้ถือ semaphore เฉพาะตอนเรียก await client.get เท่านั้น แล้วดักแยก 3 stage ให้เป๊ะ: ถ้าสถานะตั้งแต่ 400 ขึ้นไปหรือเจอ httpx.HTTPError อย่าง ReadTimeout ให้คืน QuarantineRecord ที่ stage='fetch', ถ้า resp.json() โยน ValueError ให้คืน stage='parse', และถ้า FetchedRecord.model_validate ไม่ผ่านให้คืน stage='validate'\n\nต่อด้วย run_pipeline ที่รับ targets, client, output_path, quarantine_path และ max_concurrency ให้สร้าง parent directory ก่อนเสมอ รองรับกรณี targets เป็นลิสต์ว่างให้สร้างไฟล์เปล่าสองไฟล์แล้วคืนยอดศูนย์ จากนั้นสร้าง tasks ด้วย asyncio.create_task แล้ววนรับด้วย asyncio.as_completed เพื่อเขียน JSONL แบบ UTF-8 ทีละบรรทัด แล้วคืน PipelineSummary\n\nเวลาทดสอบให้รัน pytest -W error -v นะครับ เทสต์จะตรวจทั้งว่า max_seen ต้องไม่เกิน 2 และต้องเท่ากับ 2 เพื่อยืนยันว่าวิ่งขนานจริง เดี๋ยวพี่พักรอตรงนี้จนกว่าเทสต์จะผ่านครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนจริง 15 นาทีแล้วครับ โจทย์วันนี้ให้เราเติมไฟล์ async_pipeline dot py ในฟังก์ชัน process_target และ run_pipeline ให้สมบูรณ์ครับ\n\nเริ่มจาก process_target ก่อนเลยนะ ให้ถือ semaphore เฉพาะตอนเรียก await client dot get เท่านั้น แล้วดักแยก 3 stage ให้เป๊ะ: ถ้าสถานะตั้งแต่ 400 ขึ้นไปหรือเจอ httpx HTTPError อย่าง ReadTimeout ให้คืน QuarantineRecord ที่ stage เท่ากับ fetch, ถ้า resp dot json โยน ValueError ให้คืน stage เท่ากับ parse, และถ้า FetchedRecord dot model validate ไม่ผ่านให้คืน stage เท่ากับ validate\n\nต่อด้วย run_pipeline ที่รับ targets, client, output_path, quarantine_path และ max_concurrency ให้สร้าง parent directory ก่อนเสมอ รองรับกรณี targets เป็นลิสต์ว่างให้สร้างไฟล์เปล่าสองไฟล์แล้วคืนยอดศูนย์ จากนั้นสร้าง tasks ด้วย asyncio create task แล้ววนรับด้วย asyncio as completed เพื่อเขียน JSONL แบบ UTF-8 ทีละบรรทัด แล้วคืน PipelineSummary\n\nเวลาทดสอบให้รัน pytest dash W error dash v นะครับ เทสต์จะตรวจทั้งว่า max_seen ต้องไม่เกิน 2 และต้องเท่ากับ 2 เพื่อยืนยันว่าวิ่งขนานจริง เดี๋ยวพี่พักรอตรงนี้จนกว่าเทสต์จะผ่านครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน async_pipeline.py",
+        "prompt": "ลงมือเติม process_target กับ run_pipeline แล้วรัน pytest -W error -v และ ruff check ให้ผ่านครับ",
+        "continueLabel": "เขียนท่อ async และเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d030/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนต้น แล้วเล่า 4 ข้อผิดพลาดของโค้ด async ด้วยน้ำเสียงเป็นกันเองและเตือนภัยให้จำแม่น",
+      "script": "เก่งมากครับที่ผ่านโจทย์ async pipeline มาได้ ก่อนไปทำควิซ พี่ขอเตือน 4 จุดตายที่เจอบ่อยเวลาเขียนท่อ async ingestion นะครับ\n\nข้อแรก คือเผลอสร้าง async with httpx.AsyncClient() ไว้ข้างใน process_target ทุกรอบ แทนที่จะเปิดข้างนอกครั้งเดียว ผลคือต้องทำ TCP และ TLS handshake ใหม่ทุกคำขอจนช้าและกิน socket เปลืองมาก\nข้อที่สอง คือไม่ดัก exception ใน task แล้วปล่อยให้หลุดไปล้ม asyncio.gather ทั้งชุด แค่ URL เดียว timeout อีก 99 รายการที่เหลือก็โดนยกเลิกหมดเลย\n\nข้อที่สาม คือลืมใส่ encoding='utf-8' ตอนเปิดไฟล์เขียนหรืออ่าน JSONL ภาษาไทย พอไปรันบน Windows ปุ๊บเจอ UnicodeEncodeError หรือภาษาต่างดาวทันที\nและข้อที่สี่ คือถือ asyncio.Semaphore ครอบยาวไปถึงขั้น validate และเขียนไฟล์ ทำให้สล็อตเครือข่ายว่างช้ากว่าที่ควร ทั้งที่ไม่ได้ช่วยลดภาระเซิร์ฟเวอร์เลยครับ",
+      "ttsText": "เก่งมากครับที่ผ่านโจทย์ async pipeline มาได้ ก่อนไปทำควิซ พี่ขอเตือน 4 จุดตายที่เจอบ่อยเวลาเขียนท่อ async ingestion นะครับ\n\nข้อแรก คือเผลอสร้าง async with httpx AsyncClient ไว้ข้างใน process_target ทุกรอบ แทนที่จะเปิดข้างนอกครั้งเดียว ผลคือต้องทำ TCP และ TLS handshake ใหม่ทุกคำขอจนช้าและกิน socket เปลืองมาก\nข้อที่สอง คือไม่ดัก exception ใน task แล้วปล่อยให้หลุดไปล้ม asyncio gather ทั้งชุด แค่ URL เดียว timeout อีก 99 รายการที่เหลือก็โดนยกเลิกหมดเลย\n\nข้อที่สาม คือลืมใส่ encoding เท่ากับ utf-8 ตอนเปิดไฟล์เขียนหรืออ่าน JSONL ภาษาไทย พอไปรันบน Windows ปุ๊บเจอ UnicodeEncodeError หรือภาษาต่างดาวทันที\nและข้อที่สี่ คือถือ asyncio Semaphore ครอบยาวไปถึงขั้น validate และเขียนไฟล์ ทำให้สล็อตเครือข่ายว่างช้ากว่าที่ควร ทั้งที่ไม่ได้ช่วยลดภาระเซิร์ฟเวอร์เลยครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d030/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทบทวนจุดสำคัญของบทที่ 30 ผ่านควิซสั้น ๆ 4 ข้อแบบไม่กดดัน",
+      "script": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อนะครับ เนื้อหาจะทบทวนเรื่องการแชร์ AsyncClient เพื่อใช้ connection pool, การจำแนก stage ของหน้า 200 ที่ส่ง HTML, เหตุผลที่ต้องเช็กทั้ง max_seen <= 2 และ == 2 ในเทสต์, รวมถึงข้อดีของการจับคู่ as_completed กับการเขียน JSONL ทีละบรรทัด\n\nค่อย ๆ ทำทีละข้อได้เลยครับ เดี๋ยวพี่รออยู่ตรงนี้ ทำเสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายนะ",
+      "ttsText": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อนะครับ เนื้อหาจะทบทวนเรื่องการแชร์ AsyncClient เพื่อใช้ connection pool, การจำแนก stage ของหน้า 200 ที่ส่ง HTML, เหตุผลที่ต้องเช็กทั้ง max_seen น้อยกว่าหรือเท่ากับ 2 และ เท่ากับ 2 ในเทสต์, รวมถึงข้อดีของการจับคู่ as completed กับการเขียน JSONL ทีละบรรทัด\n\nค่อย ๆ ทำทีละข้อได้เลยครับ เดี๋ยวพี่รออยู่ตรงนี้ ทำเสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบคำถาม 4 ข้อเรื่อง Bounded Concurrency, Quarantine และ Streaming JSONL ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 31",
+      "src": "/audio/d030/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจในตัวผู้เรียน สรุป 4 แก่นหลักของท่อ async ให้ชัดเจน แล้วชวนต่อยอดสู่ Day 31",
+      "script": "ยอดเยี่ยมมากครับ จบ Day 30 ไปแบบคลีน ๆ เลย! พี่ขอสรุป 4 หลักคิดสำคัญของท่อ Async Ingestion ที่คุณทำได้จริงในวันนี้นะครับ\n\nหนึ่ง เปิด httpx.AsyncClient ครั้งเดียวต่อ batch แล้วแชร์ให้ทุก task ใช้ connection pool ร่วมกัน\nสอง วาง async with asyncio.Semaphore เฉพาะรอบการรอเครือข่าย เพื่อไม่ให้ถ่วงขั้น validate และเขียนไฟล์\nสาม แยกดักความผิดพลาดเป็น 3 ขั้นคือ fetch, parse และ validate แล้วส่งรายการที่พังลง quarantine.jsonl เพื่อรักษา batch ที่เหลือ\nและสี่ เขียนไฟล์ JSONL ภาษาไทยด้วย pathlib พร้อม encoding='utf-8' เสมอ และทดสอบแบบออฟไลน์ได้ 100 เปอร์เซ็นต์ด้วย MockTransport\n\nพรุ่งนี้ใน Day 31 เราจะมาเสริมเกราะ production ให้ท่อนี้ด้วย tenacity selective retry, SQLite persistent cache และ structlog metrics ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบแล้วเจอกันพรุ่งนี้นะครับ!",
+      "ttsText": "ยอดเยี่ยมมากครับ จบ Day 30 ไปแบบคลีน ๆ เลย! พี่ขอสรุป 4 หลักคิดสำคัญของท่อ Async Ingestion ที่คุณทำได้จริงในวันนี้นะครับ\n\nหนึ่ง เปิด httpx AsyncClient ครั้งเดียวต่อ batch แล้วแชร์ให้ทุก task ใช้ connection pool ร่วมกัน\nสอง วาง async with asyncio Semaphore เฉพาะรอบการรอเครือข่าย เพื่อไม่ให้ถ่วงขั้น validate และเขียนไฟล์\nสาม แยกดักความผิดพลาดเป็น 3 ขั้นคือ fetch, parse และ validate แล้วส่งรายการที่พังลง quarantine dot jsonl เพื่อรักษา batch ที่เหลือ\nและสี่ เขียนไฟล์ JSONL ภาษาไทยด้วย pathlib พร้อม encoding เท่ากับ utf-8 เสมอ และทดสอบแบบออฟไลน์ได้ 100 เปอร์เซ็นต์ด้วย MockTransport\n\nพรุ่งนี้ใน Day 31 เราจะมาเสริมเกราะ production ให้ท่อนี้ด้วย tenacity selective retry, SQLite persistent cache และ structlog metrics ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบแล้วเจอกันพรุ่งนี้นะครับ!"
+    }
+  ]
+}

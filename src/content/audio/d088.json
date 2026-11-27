@@ -1,0 +1,109 @@
+{
+  "lessonId": "d088",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ประกอบ Pipeline บททบทวน B22",
+      "src": "/audio/d088/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างคึกคัก เหมือนชวนน้องนำชิ้นส่วนตลอดสัปดาห์มาประกอบร่างเป็นระบบจริง น้ำเสียงสดใส ภูมิใจและชวนติดตาม",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 88 ซึ่งเป็น Review Day ปิดท้าย Block B22 ของ Neural Path นะครับ วันนี้สนุกมากเพราะเราจะหยิบพิมพ์เขียวจาก Day 87 มาประกอบเป็น Extraction Pipeline ที่รันได้จริงบนเครื่องครับ\n\nงานวันนี้เป็นการดึงความรู้แบบผสมผสานหรือ Interleaved Recall ทั้งจาก D85 ถึง D87 และย้อนไปถึง D27 เรื่อง SQLite Caching, D78 เรื่อง Validation-Repair Loop และ D79 เรื่อง Model Routing มารวมอยู่ในโมดูลเดียวกัน\n\nเราจะเขียนคลาส SQLiteExtractionCache คู่กับ Small-First Routing, Frontier Escalation และ Safe Fallback เพื่อพิสูจน์ใน pytest ทั้ง 5 พฤติกรรมสำคัญ ตั้งแต่ Cache Hit ไม่เรียก LLM เลย ไปจนถึงไม่แคชผลลัพธ์ที่ตก Fallback และเก็บ telemetry ครบในเวลาไม่ถึง 1 วินาทีครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 88 ซึ่งเป็น Review Day ปิดท้าย Block B22 ของ Neural Path นะครับ วันนี้สนุกมากเพราะเราจะหยิบพิมพ์เขียวจาก Day 87 มาประกอบเป็น Extraction Pipeline ที่รันได้จริงบนเครื่องครับ\n\nงานวันนี้เป็นการดึงความรู้แบบผสมผสานหรือ Interleaved Recall ทั้งจาก D85 ถึง D87 และย้อนไปถึง D27 เรื่อง SQLite Caching, D78 เรื่อง Validation-Repair Loop และ D79 เรื่อง Model Routing มารวมอยู่ในโมดูลเดียวกัน\n\nเราจะเขียนคลาส SQLiteExtractionCache คู่กับ Small-First Routing, Frontier Escalation และ Safe Fallback เพื่อพิสูจน์ใน pytest ทั้ง 5 พฤติกรรมสำคัญ ตั้งแต่ Cache Hit ไม่เรียก LLM เลย ไปจนถึงไม่แคชผลลัพธ์ที่ตก Fallback และเก็บ telemetry ครบในเวลาไม่ถึง 1 วินาทีครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d088/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อของ Review Day ให้เห็นภาพการเชื่อมโยงความรู้ครบวงจร",
+      "script": "มาดูเป้าหมายของ Review Day วันนี้กันครับ จบบทนี้คุณจะได้ทบทวนและลงมือทำครบ 3 อย่างเลย\n\nหนึ่ง ดึงความรู้แบบ Interleaved Recall จาก D85 ถึง D87 รวมถึง D27, D78 และ D79 มาเชื่อมโยงกันได้คล่อง\nสอง ลงมือเขียน Extraction Pipeline ที่ต่อท่อ Versioned SQLite Cache ไป Small Model พร้อม Repair Loop แล้ว escalate ไป Frontier หรือจบที่ Safe Fallback\nและสาม พิสูจน์ความถูกต้องด้วย pytest, mocking และ tmp_path ว่าไร้ Cache Poisoning บนเครื่อง 100 เปอร์เซ็นต์ครับ",
+      "ttsText": "มาดูเป้าหมายของ Review Day วันนี้กันครับ จบบทนี้คุณจะได้ทบทวนและลงมือทำครบ 3 อย่างเลย\n\nหนึ่ง ดึงความรู้แบบ Interleaved Recall จาก D85 ถึง D87 รวมถึง D27, D78 และ D79 มาเชื่อมโยงกันได้คล่อง\nสอง ลงมือเขียน Extraction Pipeline ที่ต่อท่อ Versioned SQLite Cache ไป Small Model พร้อม Repair Loop แล้ว escalate ไป Frontier หรือจบที่ Safe Fallback\nและสาม พิสูจน์ความถูกต้องด้วย pytest, mocking และ tmp_path ว่าไร้ Cache Poisoning บนเครื่อง 100 เปอร์เซ็นต์ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d088/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาตั้งโปรเจกต์ ai-day88-review และแนะนำการแบ่งเวลา 30 นาทีของ Review Day",
+      "script": "มาเตรียมโฟลเดอร์รอบทบทวน Block B22 กันครับ ดูในกล่องคำสั่งได้เลย\n\nสั่ง uv init ai-day88-review แล้ว cd เข้าไป ติดตั้ง pydantic, pytest และ ruff ให้ครบ จากนั้นรัน python เช็กทั้ง sqlite3 และ pydantic ให้ขึ้นคำว่า B22 Review Ready ครับ\n\nแนะนำการแบ่งเวลา 30 นาทีของวันนี้นะ 10 นาทีทำควิซทบทวน, 15 นาทีประกอบ Extraction Pipeline และ 5 นาทีสรุป Error Log เดี๋ยวพี่พักรอให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาเตรียมโฟลเดอร์รอบทบทวน Block B22 กันครับ ดูในกล่องคำสั่งได้เลย\n\nสั่ง uv init ai-day88-review แล้ว cd เข้าไป ติดตั้ง pydantic, pytest และ ruff ให้ครบ จากนั้นรัน python เช็กทั้ง sqlite3 และ pydantic ให้ขึ้นคำว่า B22 Review Ready ครับ\n\nแนะนำการแบ่งเวลา 30 นาทีของวันนี้นะ 10 นาทีทำควิซทบทวน, 15 นาทีประกอบ Extraction Pipeline และ 5 นาทีสรุป Error Log เดี๋ยวพี่พักรอให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียมโปรเจกต์ ai-day88-review",
+        "prompt": "ลองรันคำสั่งสร้างโปรเจกต์ ai-day88-review และเช็กเวอร์ชัน SQLite กับ Pydantic ก่อนเริ่มลุยนะครับ",
+        "continueLabel": "เตรียมโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อ Cache ถึง Repair Loop",
+      "src": "/audio/d088/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนไล่สายตาตามท่อ Extraction Pipeline ตั้งแต่ Cache Lookup จนถึง Repair Loop",
+      "script": "ลองมองแผนภาพ Extraction Pipeline บนหน้าจอนะครับ วันนี้เราเปลี่ยนจากภาพสถาปัตยกรรมนิ่ง ๆ ให้กลายเป็นท่อที่ข้อมูลไหลจริงตั้งแต่ต้นจนจบ\n\nเอกสารเข้ามาจะวิ่งไปเคาะประตู SQLite Cache ก่อนเลย ถ้าเจอในรุ่นเวอร์ชันเดียวกันก็ตอบกลับทันที แต่ถ้า Cache Miss ก็ส่งไปให้ Small Model พร้อม Repair Loop ถ้ายังไม่ผ่านหรือความมั่นใจต่ำกว่าเกณฑ์ค่อยส่งต่อ Frontier แล้วเขียนผลที่สะอาดลง SQLite เก็บไว้ใช้รอบหน้าครับ",
+      "ttsText": "ลองมองแผนภาพ Extraction Pipeline บนหน้าจอนะครับ วันนี้เราเปลี่ยนจากภาพสถาปัตยกรรมนิ่ง ๆ ให้กลายเป็นท่อที่ข้อมูลไหลจริงตั้งแต่ต้นจนจบ\n\nเอกสารเข้ามาจะวิ่งไปเคาะประตู SQLite Cache ก่อนเลย ถ้าเจอในรุ่นเวอร์ชันเดียวกันก็ตอบกลับทันที แต่ถ้า Cache Miss ก็ส่งไปให้ Small Model พร้อม Repair Loop ถ้ายังไม่ผ่านหรือความมั่นใจต่ำกว่าเกณฑ์ค่อยส่งต่อ Frontier แล้วเขียนผลที่สะอาดลง SQLite เก็บไว้ใช้รอบหน้าครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d088/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบาย Control Flow 5 ขั้น, ความปลอดภัย SQLite และภาพรวม Data Flywheel ให้ฟังลื่นและเชื่อมโยงครบ",
+      "script": "มาเชื่อมแนวคิดหลักทั้ง 3 ข้อของวันนี้เข้าด้วยกันครับ ข้อแรกคือลำดับ 5 ขั้นของ Extraction Pipeline เริ่มจากล้างอักขระล่องหนและสร้าง Versioned SHA-256 Key ไปค้นใน SQLite ถ้า Cache Hit คืนผลทันทีด้วยต้นทุน 0 ดอลลาร์ ถ้า Miss ส่งให้ Small Model พร้อมซ่อม ValidationError สูงสุด max_retries รอบ หากไม่ผ่านหรือ confidence ต่ำ ให้ escalate ไป Frontier Model และถ้าพังทั้งคู่คืน Safe Fallback โดยห้ามบันทึกลง cache เด็ดขาดครับ\n\nข้อที่สอง กฎ SQLite Cache ที่ปลอดภัย 3 ข้อคือ ใช้ Parameterized Queries เครื่องหมายคำถามเสมอ, เรียก model_validate_json ซ้ำตอนอ่านกลับจาก cache ถ้าไม่ผ่านให้ถือเป็น Cache Miss และใช้ tmp_path หรือ in-memory ใน pytest เพื่อแยกฐานข้อมูลแต่ละเทสต์ครับ\n\nข้อที่สาม เชื่อมภาพใหญ่ของ B22 หาก Pipeline ผ่าน SLA แล้วก็ยังไม่จำเป็นต้อง Fine-Tune ตามหลัก D85 แต่ผลสะอาดที่สะสมใน extraction_cache จะกลายเป็น Data Flywheel ไว้รัน SFT Auditor ของ D86 สำหรับฝึก QLoRA ในอนาคตครับ",
+      "ttsText": "มาเชื่อมแนวคิดหลักทั้ง 3 ข้อของวันนี้เข้าด้วยกันครับ ข้อแรกคือลำดับ 5 ขั้นของ Extraction Pipeline เริ่มจากล้างอักขระล่องหนและสร้าง Versioned SHA-256 Key ไปค้นใน SQLite ถ้า Cache Hit คืนผลทันทีด้วยต้นทุน 0 ดอลลาร์ ถ้า Miss ส่งให้ Small Model พร้อมซ่อม ValidationError สูงสุด max_retries รอบ หากไม่ผ่านหรือ confidence ต่ำ ให้ escalate ไป Frontier Model และถ้าพังทั้งคู่คืน Safe Fallback โดยห้ามบันทึกลง cache เด็ดขาดครับ\n\nข้อที่สอง กฎ SQLite Cache ที่ปลอดภัย 3 ข้อคือ ใช้ Parameterized Queries เครื่องหมายคำถามเสมอ, เรียก model_validate_json ซ้ำตอนอ่านกลับจาก cache ถ้าไม่ผ่านให้ถือเป็น Cache Miss และใช้ tmp_path หรือ in-memory ใน pytest เพื่อแยกฐานข้อมูลแต่ละเทสต์ครับ\n\nข้อที่สาม เชื่อมภาพใหญ่ของ B22 หาก Pipeline ผ่าน SLA แล้วก็ยังไม่จำเป็นต้อง Fine-Tune ตามหลัก D85 แต่ผลสะอาดที่สะสมใน extraction_cache จะกลายเป็น Data Flywheel ไว้รัน SFT Auditor ของ D86 สำหรับฝึก QLoRA ในอนาคตครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน Extraction Pipeline",
+      "src": "/audio/d088/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนรีวิวโค้ดแบบลงรายละเอียด สังเกตตัวนับ provider calls ทั้ง 4 กรณีในตัวอย่างให้เห็นการทำงานจริง",
+      "script": "มาไล่ดูโค้ดตัวอย่างใน worked_day88.py ทั้ง 3 สเต็ปกันครับ วันนี้เราประกอบทั้งท่อตั้งแต่ต้นจนจบเลย\n\nสเต็ปแรก นิยาม ExtractedDoc, build_cache_key และ SQLiteExtractionCache ที่มี get กับ set แบบ parameterized SQL พร้อมดัก ValidationError ตอนอ่านกลับจากฐานข้อมูล\n\nสเต็ปที่สอง เขียน _run_tier สำหรับ bounded repair loop แล้วต่อท่อ run_pipeline เช็ก cache ก่อน ลอง small_llm ตามด้วย frontier_llm และจบที่ fallback ที่คืน model_tier=\"none\" โดยไม่เรียก cache.set ครับ\n\nสเต็ปที่สาม พอทดสอบ 4 กรณีกับ mock providers จะเห็นตัวนับชัดเลย r1 ยิง small 1 ครั้ง, r2 ที่ติด zero-width space ชน cache ได้ 0 ครั้ง, r3 เปลี่ยน prompt_version เป็น v2 ยิง small 1 ครั้ง และ r4 ที่เป็น CORRUPT ลอง small 2 กับ frontier 2 ครั้งแล้วตก fallback โดยไม่เพิ่มขยะใน cache ครับ",
+      "ttsText": "มาไล่ดูโค้ดตัวอย่างใน worked_day88.py ทั้ง 3 สเต็ปกันครับ วันนี้เราประกอบทั้งท่อตั้งแต่ต้นจนจบเลย\n\nสเต็ปแรก นิยาม ExtractedDoc, build_cache_key และ SQLiteExtractionCache ที่มี get กับ set แบบ parameterized SQL พร้อมดัก ValidationError ตอนอ่านกลับจากฐานข้อมูล\n\nสเต็ปที่สอง เขียน _run_tier สำหรับ bounded repair loop แล้วต่อท่อ run_pipeline เช็ก cache ก่อน ลอง small_llm ตามด้วย frontier_llm และจบที่ fallback ที่คืน model_tier เท่ากับ none โดยไม่เรียก cache.set ครับ\n\nสเต็ปที่สาม พอทดสอบ 4 กรณีกับ mock providers จะเห็นตัวนับชัดเลย r1 ยิง small 1 ครั้ง, r2 ที่ติด zero-width space ชน cache ได้ 0 ครั้ง, r3 เปลี่ยน prompt_version เป็น v2 ยิง small 1 ครั้ง และ r4 ที่เป็น CORRUPT ลอง small 2 กับ frontier 2 ครั้งแล้วตก fallback โดยไม่เพิ่มขยะใน cache ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา worked_day88.py",
+        "prompt": "ลองไล่ดูการทำงานของ SQLiteExtractionCache, _run_tier และ run_pipeline ทั้ง 3 สเต็ปได้เลยครับ",
+        "continueLabel": "เข้าใจ Pipeline แล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียนโค้ดจริง",
+      "src": "/audio/d088/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจ พูดช้าชัดทีละความต้องการของ exercise_day88.py ทั้ง 4 ข้อเพื่อให้ประกอบ pipeline ได้ครบไม่ตกหล่น",
+      "script": "ถึงเวลาประกอบ Extraction Pipeline ของคุณเองใน exercise_day88.py แล้วครับ มี 4 ส่วนให้เติมให้ครบนะ\n\nหนึ่ง เขียน ExtractedDoc ตั้ง extra=\"forbid\" ตรวจความยาว summary_th 4 ถึง 160 ตัวอักษร พร้อม model_validator บังคับให้ยอด total_thb >= 50,000 ต้องตั้ง needs_human_review เป็น True\nสอง เขียน build_cache_key และ SQLiteExtractionCache ให้ครบ get, set, count และ close ด้วย parameterized SQL\nสาม เขียน run_extraction_pipeline ตามลำดับ Cache, Small Model พร้อม repair loop, Frontier Escalation และ Safe Fallback โดยห้ามเรียก cache.set ตอน fallback เด็ดขาด\nสี่ เขียน summarize_pipeline_runs คืน total, cache_hit_rate, valid_rate, frontier_rate และ fallback_rate ปัด 4 ตำแหน่ง เสร็จแล้วรัน test_day88.py ได้เลยครับ เดี๋ยวพี่รอตรงนี้",
+      "ttsText": "ถึงเวลาประกอบ Extraction Pipeline ของคุณเองใน exercise_day88.py แล้วครับ มี 4 ส่วนให้เติมให้ครบนะ\n\nหนึ่ง เขียน ExtractedDoc ตั้ง extra เท่ากับ forbid ตรวจความยาว summary_th 4 ถึง 160 ตัวอักษร พร้อม model_validator บังคับให้ยอด total_thb มากกว่าหรือเท่ากับ 50,000 ต้องตั้ง needs_human_review เป็น True\nสอง เขียน build_cache_key และ SQLiteExtractionCache ให้ครบ get, set, count และ close ด้วย parameterized SQL\nสาม เขียน run_extraction_pipeline ตามลำดับ Cache, Small Model พร้อม repair loop, Frontier Escalation และ Safe Fallback โดยห้ามเรียก cache.set ตอน fallback เด็ดขาด\nสี่ เขียน summarize_pipeline_runs คืน total, cache_hit_rate, valid_rate, frontier_rate และ fallback_rate ปัด 4 ตำแหน่ง เสร็จแล้วรัน test_day88.py ได้เลยครับ เดี๋ยวพี่รอตรงนี้",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด exercise_day88.py",
+        "prompt": "ลงมือประกอบ ExtractedDoc, SQLiteExtractionCache, run_extraction_pipeline และ summarize_pipeline_runs แล้วรัน test_day88.py ให้ผ่านนะครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d088/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเล่า 4 ข้อผิดพลาดตอนเขียน SQLite Cache กับ Pipeline แบบเตือนภัยชัดเจนให้จำไปใช้ตลอด Phase 3",
+      "script": "เก่งมากครับที่ประกอบ Pipeline จนผ่านเทสต์ทั้งหมดแล้ว ก่อนทำควิซทบทวน พี่ขอสรุป 4 จุดพลาดที่เจอบ่อยในท่อ Cache และ Routing นะครับ\n\nข้อแรก เขียนผล fallback หรือ JSON พังลง SQLite Cache ทำให้เกิด Cache Poisoning เอกสารใบนั้นจะติดผลพังไปตลอดแม้ระบบหายสะดุดแล้วก็ตาม ต้องเรียก cache.set เฉพาะตอนผ่าน Pydantic validation สมบูรณ์เท่านั้นครับ\n\nข้อที่สอง ต่อสตริง SQL ตรง ๆ ด้วย f-string แทน parameterized query เครื่องหมายคำถาม เสี่ยง SQL injection และพังทันทีถ้าเจอเครื่องหมาย quote\n\nข้อที่สาม ลืมครอบ model_validate_json ด้วย try except ValidationError ตอนอ่านข้อมูลเก่ากลับมาจาก SQLite พอเพิ่มฟิลด์ใหม่ใน schema แอปก็แครชแทนที่จะตกเป็น Cache Miss อย่างนุ่มนวล\n\nและข้อที่สี่ ใช้ไฟล์ cache.db ชื่อเดิมในทุกฟังก์ชันของ pytest ทำให้เทสต์ข้อหลังชน Cache Hit จากข้อแรกจนตัวนับ mock พัง ต้องใช้ tmp_path แยกฐานข้อมูลเสมอครับ",
+      "ttsText": "เก่งมากครับที่ประกอบ Pipeline จนผ่านเทสต์ทั้งหมดแล้ว ก่อนทำควิซทบทวน พี่ขอสรุป 4 จุดพลาดที่เจอบ่อยในท่อ Cache และ Routing นะครับ\n\nข้อแรก เขียนผล fallback หรือ JSON พังลง SQLite Cache ทำให้เกิด Cache Poisoning เอกสารใบนั้นจะติดผลพังไปตลอดแม้ระบบหายสะดุดแล้วก็ตาม ต้องเรียก cache.set เฉพาะตอนผ่าน Pydantic validation สมบูรณ์เท่านั้นครับ\n\nข้อที่สอง ต่อสตริง SQL ตรง ๆ ด้วย f-string แทน parameterized query เครื่องหมายคำถาม เสี่ยง SQL injection และพังทันทีถ้าเจอเครื่องหมาย quote\n\nข้อที่สาม ลืมครอบ model_validate_json ด้วย try except ValidationError ตอนอ่านข้อมูลเก่ากลับมาจาก SQLite พอเพิ่มฟิลด์ใหม่ใน schema แอปก็แครชแทนที่จะตกเป็น Cache Miss อย่างนุ่มนวล\n\nและข้อที่สี่ ใช้ไฟล์ cache.db ชื่อเดิมในทุกฟังก์ชันของ pytest ทำให้เทสต์ข้อหลังชน Cache Hit จากข้อแรกจนตัวนับ mock พัง ต้องใช้ tmp_path แยกฐานข้อมูลเสมอครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz ทบทวน B22 (4 ข้อ)",
+      "src": "/audio/d088/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเอง ชวนดึงความรู้จากทั้ง D85, D86, D87 และ D27/D78/D79 ผ่านควิซทบทวน 4 ข้อ",
+      "script": "มาถึงช่วง Interleaved Recall Quiz 4 ข้อปิดท้าย Block B22 กันแล้วครับ แต่ละข้อจะดึงความรู้ข้ามวันมาทดสอบ ทั้งเรื่องเมื่อไหร่ควรหยุดที่ Pipeline ตามกรอบ D85, การตรวจข้อมูลก่อนทำ QLoRA ตาม D86, ผลของการเปลี่ยน prompt_version ตาม D27 และ D87, รวมถึงการจัดการเคส confidence ต่ำตาม D78 และ D79\n\nลองตอบให้ครบทั้ง 4 ข้อดูนะ เดี๋ยวพี่รอฟังสรุปปิดท้ายพร้อมกันครับ",
+      "ttsText": "มาถึงช่วง Interleaved Recall Quiz 4 ข้อปิดท้าย Block B22 กันแล้วครับ แต่ละข้อจะดึงความรู้ข้ามวันมาทดสอบ ทั้งเรื่องเมื่อไหร่ควรหยุดที่ Pipeline ตามกรอบ D85, การตรวจข้อมูลก่อนทำ QLoRA ตาม D86, ผลของการเปลี่ยน prompt_version ตาม D27 และ D87, รวมถึงการจัดการเคส confidence ต่ำตาม D78 และ D79\n\nลองตอบให้ครบทั้ง 4 ข้อดูนะ เดี๋ยวพี่รอฟังสรุปปิดท้ายพร้อมกันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Interleaved Recall Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทบทวนข้ามบทเรียน B22 ทั้ง 4 ข้อ แล้วกดไปต่อเพื่อฟังสรุปปิดบล็อกครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป B22 & ก้าวต่อไป Block B23",
+      "src": "/audio/d088/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจอย่างมาก ปิดท้าย Block B22 อย่างทรงพลังและชวนลุย Block B23 ช่วงสุดท้ายของ Phase 3",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Review Day 88 และปิด Block B22 ได้อย่างยอดเยี่ยมเลย วันนี้คุณประกอบแกนกลางของ Phase 3 Mini-Project เสร็จสมบูรณ์แล้ว ขอสรุป 3 ข้อสำคัญติดตัวไว้นะครับ\n\nหนึ่ง ต่อท่อ 5 ชั้นครบวงจร Normalize และ Versioned SHA-256 Key ไป SQLite Cache ต่อด้วย Small Model กับ Bounded Repair Loop แล้ว escalate ไป Frontier จบที่ Safe Fallback อย่างไม่แครช\nสอง ป้องกัน Cache Poisoning ด้วยกฎเหล็ก แคชเฉพาะผลที่ผ่าน Pydantic validation สมบูรณ์ และผูก key กับ prompt_version และ schema_version เสมอ\nสาม ทดสอบทั้ง SQLite ไฟล์จริงด้วย tmp_path และ mock providers ใน pytest ให้จบเร็วในไม่ถึง 1 วินาทีโดยไม่เสียค่า API เลยครับ\n\nบทถัดไปเราจะเข้าสู่ Block B23 ซึ่งเป็นบล็อกสุดท้ายของ Phase 3 ตั้งแต่วันที่ 89 ถึง 92 เพื่อเพิ่มการรับมือ Edge Cases ภาษาไทย วัดผล Accuracy, Latency, Cost และขึ้น Demo เทียบกับ ML Baseline แล้วเจอกันใน Day 89 ครับ สู้ ๆ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Review Day 88 และปิด Block B22 ได้อย่างยอดเยี่ยมเลย วันนี้คุณประกอบแกนกลางของ Phase 3 Mini-Project เสร็จสมบูรณ์แล้ว ขอสรุป 3 ข้อสำคัญติดตัวไว้นะครับ\n\nหนึ่ง ต่อท่อ 5 ชั้นครบวงจร Normalize และ Versioned SHA-256 Key ไป SQLite Cache ต่อด้วย Small Model กับ Bounded Repair Loop แล้ว escalate ไป Frontier จบที่ Safe Fallback อย่างไม่แครช\nสอง ป้องกัน Cache Poisoning ด้วยกฎเหล็ก แคชเฉพาะผลที่ผ่าน Pydantic validation สมบูรณ์ และผูก key กับ prompt_version และ schema_version เสมอ\nสาม ทดสอบทั้ง SQLite ไฟล์จริงด้วย tmp_path และ mock providers ใน pytest ให้จบเร็วในไม่ถึง 1 วินาทีโดยไม่เสียค่า API เลยครับ\n\nบทถัดไปเราจะเข้าสู่ Block B23 ซึ่งเป็นบล็อกสุดท้ายของ Phase 3 ตั้งแต่วันที่ 89 ถึง 92 เพื่อเพิ่มการรับมือ Edge Cases ภาษาไทย วัดผล Accuracy, Latency, Cost และขึ้น Demo เทียบกับ ML Baseline แล้วเจอกันใน Day 89 ครับ สู้ ๆ!"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "lessonId": "d076",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ทบทวน B19: Streaming CLI Chat",
+      "src": "/audio/d076/01-big-picture.mp3",
+      "stylePrompt": "เปิดบททบทวนอย่างสดใส อบอุ่น ชวนตื่นเต้นที่จะได้ร้อยต่อจิ๊กซอว์ Block B19 เข้าด้วยกัน",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 76 วันทบทวน Block B19 นะครับ วันนี้เราจะร้อยต่อ D73–D75 ร่วมกับ Async Generator ใน Day 19 และ Typer CLI ใน Day 23 ให้เป็น Streaming CLI Chat ที่เทสต์ได้จริงครับ\n\nภาพรวมมี 4 เรื่อง หนึ่งคือประกอบ Roles, Context และ Streaming ใน StreamingChatSession ที่มี sliding window สองคือพิสูจน์ multi-turn, TTFT และ Ctrl+C ด้วย Mock Stream ใน pytest\n\nสามคือให้ CLI หยุดเฉพาะรอบปัจจุบันได้โดยไม่ทำลายประวัติรอบก่อน และสี่คือบันทึก Token และ Cost Ledger สะสมทั้ง USD และ THB ให้เห็นต้นทุนแชตหลายรอบด้วยตาตัวเองครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 76 วันทบทวน Block B19 นะครับ วันนี้เราจะร้อยต่อ D73 ถึง D75 ร่วมกับ Async Generator ใน Day 19 และ Typer CLI ใน Day 23 ให้เป็น Streaming CLI Chat ที่เทสต์ได้จริงครับ\n\nภาพรวมมี 4 เรื่อง หนึ่งคือประกอบ Roles, Context และ Streaming ใน StreamingChatSession ที่มี sliding window สองคือพิสูจน์ multi-turn, TTFT และ Control C ด้วย Mock Stream ใน pytest\n\nสามคือให้ CLI หยุดเฉพาะรอบปัจจุบันได้โดยไม่ทำลายประวัติรอบก่อน และสี่คือบันทึก Token และ Cost Ledger สะสมทั้ง USD และ THB ให้เห็นต้นทุนแชตหลายรอบด้วยตาตัวเองครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & แผนเวลา 30 นาที",
+      "src": "/audio/d076/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมายวันทบทวน 3 ข้อและแนะแนว Interleaved Practice",
+      "script": "เป้าหมายของวันทบทวน Day 76 มี 3 ข้อนะครับ\n\nข้อแรก ทบทวนแบบผสม Interleaved Recall ดึง D73–D75 ร่วมกับ D19 และ D23 มาประกอบในงานเดียว\nข้อสอง สร้าง StreamingChatSession ที่คุม sliding-window history, แยก system role, วัด TTFT และสะสมต้นทุน USD/THB ผ่าน CostLedger\nข้อสาม จัดการ cancellation กลางรอบด้วย aclosing และ Atomic Turn Commit แล้วเทสต์ครบด้วย mock stream ใน pytest ครับ",
+      "ttsText": "เป้าหมายของวันทบทวน Day 76 มี 3 ข้อนะครับ\n\nข้อแรก ทบทวนแบบผสม Interleaved Recall ดึง D73 ถึง D75 ร่วมกับ D19 และ D23 มาประกอบในงานเดียว\nข้อสอง สร้าง StreamingChatSession ที่คุม sliding-window history, แยก system role, วัด TTFT และสะสมต้นทุน USD และ THB ผ่าน CostLedger\nข้อสาม จัดการ cancellation กลางรอบด้วย aclosing และ Atomic Turn Commit แล้วเทสต์ครบด้วย mock stream ใน pytest ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้งโปรเจกต์ ai-day76-review",
+      "src": "/audio/d076/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น แนะนำคำสั่งตั้งโปรเจกต์พร้อม typer และแผน 30 นาที",
+      "script": "มาเตรียมโปรเจกต์ ai-day76-review ด้วย uv กันครับ\n\nสั่ง uv init ai-day76-review แล้ว cd เข้าไป ติดตั้ง openai, httpx, typer ด้วย uv add และ pytest, ruff ด้วย uv add --dev แล้วลองรัน python เช็ก import asyncio, httpx, typer ให้เรียบร้อย\n\nแนะนำแบ่งเวลา 30 นาทีเป็น ควิซ 10 นาที สร้าง streaming_chat.py 15 นาที และจด Error Log อีก 5 นาที พร้อมแล้วกด ไปต่อ ได้เลยนะ",
+      "ttsText": "มาเตรียมโปรเจกต์ ai-day76-review ด้วย uv กันครับ\n\nสั่ง uv init ai-day76-review แล้ว cd เข้าไป ติดตั้ง openai, httpx, typer ด้วย uv add และ pytest, ruff ด้วย uv add dash dash dev แล้วลองรัน python เช็ก import asyncio, httpx, typer ให้เรียบร้อย\n\nแนะนำแบ่งเวลา 30 นาทีเป็น ควิซ 10 นาที สร้าง streaming_chat dot py 15 นาที และจด Error Log อีก 5 นาที พร้อมแล้วกด ไปต่อ ได้เลยนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง ai-day76-review",
+        "prompt": "สร้างโปรเจกต์ ai-day76-review และเช็ก import asyncio, httpx, typer ให้พร้อม แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ติดตั้งเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — สถาปัตยกรรม CLI Chat",
+      "src": "/audio/d076/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงกระตือรือร้น ชี้ให้เห็นภาพรวมการเชื่อมต่อ roles, streaming และตัวนับต้นทุน",
+      "script": "ลองมองภาพรวมของ Streaming CLI Chat ที่เราจะประกอบวันนี้ไปด้วยกันนะครับ\n\nเวลาผู้ใช้ถามแต่ละรอบ คำสั่ง system จะตรึงอยู่หน้าสุดเสมอ ตามด้วยประวัติล่าสุดไม่กี่รอบ แล้วไหลผ่าน SSE async generator ที่วัด TTFT ทันที พอจบ stream ปุ๊บ final usage event ก็วิ่งเข้า CostLedger เพื่อสรุปยอดเงิน USD และบาทออกมาให้เห็นชัด ๆ เลยครับ",
+      "ttsText": "ลองมองภาพรวมของ Streaming CLI Chat ที่เราจะประกอบวันนี้ไปด้วยกันนะครับ\n\nเวลาผู้ใช้ถามแต่ละรอบ คำสั่ง system จะตรึงอยู่หน้าสุดเสมอ ตามด้วยประวัติล่าสุดไม่กี่รอบ แล้วไหลผ่าน SSE async generator ที่วัด TTFT ทันที พอจบ stream ปุ๊บ final usage event ก็วิ่งเข้า CostLedger เพื่อสรุปยอดเงิน USD และบาทออกมาให้เห็นชัด ๆ เลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d076/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสถาปัตย์ 4 ชั้นและ Atomic Turn Commit ด้วยอุปมาห้องควบคุมรถไฟ",
+      "script": "มาดูแนวคิดหลัก 3 ข้อที่ร้อยต่อ Block B19 กันครับ\n\nข้อแรก สถาปัตยกรรม 4 ชั้น เหมือนห้องควบคุมรถไฟ คือ Context/History, StreamBackend Protocol, aclosing Consumer และ CLI กับ CostLedger เราแยก core session ออกจาก input() และ print() ผ่าน callback on_delta เพื่อเทสต์ใน pytest ได้ใน 0.2 วินาทีและต่อยอดเข้า FastAPI ใน Phase 5 ได้เลย\n\nข้อสอง ต้นทุนแชตหลายรอบ LLM เป็น stateless จึงต้องส่ง system กับประวัติเดิมกลับไปซ้ำทุกรอบ ทำให้ prompt_tokens โตคล้าย O(k²) หากไม่ตั้ง sliding window อย่าง max_history_turns และตอน stream กับ OpenAI API จริงต้องส่ง stream_options={'include_usage': True} เพื่อให้ได้ยอด token มาเข้า CostLedger\n\nข้อสาม Atomic Turn Commit อย่าเพิ่ง append user ลง history ก่อนเริ่ม stream เพราะถ้าโดน Ctrl+C กลางรอบ ประวัติจะมี user สองอันติดกันจน API รอบหน้าโยน HTTP 400 ให้รอจน stream จบสมบูรณ์ก่อนค่อย commit เหมือน database transaction ครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อที่ร้อยต่อ Block B19 กันครับ\n\nข้อแรก สถาปัตยกรรม 4 ชั้น เหมือนห้องควบคุมรถไฟ คือ Context กับ History, StreamBackend Protocol, aclosing Consumer และ CLI กับ CostLedger เราแยก core session ออกจาก input และ print ผ่าน callback on_delta เพื่อเทสต์ใน pytest ได้ใน 0.2 วินาทีและต่อยอดเข้า FastAPI ใน Phase 5 ได้เลย\n\nข้อสอง ต้นทุนแชตหลายรอบ LLM เป็น stateless จึงต้องส่ง system กับประวัติเดิมกลับไปซ้ำทุกรอบ ทำให้ prompt_tokens โตคล้าย โอ ของ เค กำลังสอง หากไม่ตั้ง sliding window อย่าง max_history_turns และตอน stream กับ OpenAI API จริงต้องส่ง stream_options include_usage เท่ากับ True เพื่อให้ได้ยอด token มาเข้า CostLedger\n\nข้อสาม Atomic Turn Commit อย่าเพิ่ง append user ลง history ก่อนเริ่ม stream เพราะถ้าโดน Control C กลางรอบ ประวัติจะมี user สองอันติดกันจน API รอบหน้าโยน HTTP 400 ให้รอจน stream จบสมบูรณ์ก่อนค่อย commit เหมือน database transaction ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน worked_day76.py",
+      "src": "/audio/d076/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต พาไล่ดูการโต้ตอบ 2 รอบใน worked_day76.py เห็นตัวเลข CostLedger ชัด",
+      "script": "ลองมาดูตัวอย่าง worked_day76.py กับ worked_day76_cli.py กันครับ\n\nสเต็ปแรก นิยาม StreamEvent ตัวเดียวให้รับได้ทั้ง delta และ final usage chunk ตอนจบ แล้วสร้าง StreamBackend Protocol กับ MockStreamBackend\n\nสเต็ปสอง รันแชต 2 รอบด้วย MockStreamBackend กับ CostLedger จะเห็นชัดเลยว่ารอบแรกส่งเข้าไป 2 messages คือ system กับ user แต่รอบสองกระโดดเป็น 4 messages เพราะพ่วงรอบแรกเข้าไปด้วย ทำให้ prompt_tokens เพิ่มขึ้นเกือบเท่าตัวและถูกสะสมใน CostLedger ทั้ง USD และ THB\n\nสเต็ปสาม ดูโครง Typer CLI ที่จับ KeyboardInterrupt อย่างสุภาพและพิมพ์สรุปยอดก่อนออก จำไว้ด้วยว่าถ้าต่อ API จริงต้องส่ง stream_options={'include_usage': True} ไม่อย่างนั้นยอด token จะเป็นศูนย์ตลอดเซสชันนะครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "ttsText": "ลองมาดูตัวอย่าง worked_day76 dot py กับ worked_day76_cli dot py กันครับ\n\nสเต็ปแรก นิยาม StreamEvent ตัวเดียวให้รับได้ทั้ง delta และ final usage chunk ตอนจบ แล้วสร้าง StreamBackend Protocol กับ MockStreamBackend\n\nสเต็ปสอง รันแชต 2 รอบด้วย MockStreamBackend กับ CostLedger จะเห็นชัดเลยว่ารอบแรกส่งเข้าไป 2 messages คือ system กับ user แต่รอบสองกระโดดเป็น 4 messages เพราะพ่วงรอบแรกเข้าไปด้วย ทำให้ prompt_tokens เพิ่มขึ้นเกือบเท่าตัวและถูกสะสมใน CostLedger ทั้ง USD และ THB\n\nสเต็ปสาม ดูโครง Typer CLI ที่จับ KeyboardInterrupt อย่างสุภาพและพิมพ์สรุปยอดก่อนออก จำไว้ด้วยว่าถ้าต่อ API จริงต้องส่ง stream_options include_usage เท่ากับ True ไม่อย่างนั้นยอด token จะเป็นศูนย์ตลอดเซสชันนะครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา worked_day76.py",
+        "prompt": "ลองสังเกตการส่ง messages เพิ่มขึ้นในแต่ละรอบและการเก็บ usage ใน CostLedger แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อ..."
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง streaming_chat.py",
+      "src": "/audio/d076/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดตอนอธิบายสเปก CostLedger และ StreamingChatSession.ask",
+      "script": "ถึงโจทย์ Mini-Integration 15 นาทีแล้วครับ มาประกอบ streaming_chat.py เพื่อผ่าน test_streaming_chat.py ทั้ง 4 ข้อกันนะ\n\nใน CostLedger เติมเมธอด record ที่ปฏิเสธค่าติดลบด้วย ValueError สะสมยอด token กับ turns และคืนต้นทุน USD ของรอบนั้น ส่วน total_usd ให้คำนวณจากยอดสะสมหารหนึ่งล้าน\n\nใน StreamingChatSession.ask ทำตามนี้ครับ หนึ่ง strip และปฏิเสธ user_text ว่างด้วย ValueError สองตัดประวัติล่าสุดไม่เกิน max_history_turns คูณ 2 messages แล้วต่อหลัง system_prompt สามครอบ stream ด้วย aclosing วนอ่าน StreamEvent จับ ttft_sec ที่ delta แรกที่ไม่ว่าง เรียก on_delta และเก็บ token usage สี่หลุดจากลูปปกติแล้วค่อย commit history ตาม sliding window และเรียก ledger.record เพื่อรักษา Atomic Turn Commit ครับ เสร็จแล้วรัน pytest -v กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "ttsText": "ถึงโจทย์ Mini-Integration 15 นาทีแล้วครับ มาประกอบ streaming_chat dot py เพื่อผ่าน test_streaming_chat dot py ทั้ง 4 ข้อกันนะ\n\nใน CostLedger เติมเมธอด record ที่ปฏิเสธค่าติดลบด้วย ValueError สะสมยอด token กับ turns และคืนต้นทุน USD ของรอบนั้น ส่วน total_usd ให้คำนวณจากยอดสะสมหารหนึ่งล้าน\n\nใน StreamingChatSession ask ทำตามนี้ครับ หนึ่ง strip และปฏิเสธ user_text ว่างด้วย ValueError สองตัดประวัติล่าสุดไม่เกิน max_history_turns คูณ 2 messages แล้วต่อหลัง system_prompt สามครอบ stream ด้วย aclosing วนอ่าน StreamEvent จับ ttft_sec ที่ delta แรกที่ไม่ว่าง เรียก on_delta และเก็บ token usage สี่หลุดจากลูปปกติแล้วค่อย commit history ตาม sliding window และเรียก ledger record เพื่อรักษา Atomic Turn Commit ครับ เสร็จแล้วรัน pytest dash v กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด streaming_chat.py",
+        "prompt": "ประกอบ CostLedger และ StreamingChatSession.ask แล้วรัน uv run pytest -v ให้ผ่านครบทั้ง 4 ข้อได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d076/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อนเปิด แล้วเล่า 4 ข้อผิดพลาดของ Multi-Turn Streaming CLI ให้เตือนสติ",
+      "script": "ยอดเยี่ยมมากครับที่ประกอบ StreamingChatSession ผ่านครบทุกเทสต์! ก่อนเข้าควิซ มาเช็ก 4 ข้อผิดพลาดของแอปแชตหลายรอบกันนะ\n\nข้อแรก เพิ่ม user message ลง self._history ก่อนเริ่ม stream พอโดน Ctrl+C กลางรอบประวัติจะค้าง user ไว้โดยไม่มี assistant คู่กัน ทำให้รอบหน้าเกิด user สองอันติดกัน\nข้อสอง ลืมจำกัด max_history_turns คุยไป 20 รอบค่า prompt_tokens พุ่งจนบิลบานหรือชน context limit\n\nข้อสาม ลืมส่ง stream_options={'include_usage': True} ตอนต่อ OpenAI-compatible API จริง ทำให้ตัวนับ token เป็น 0 ตลอดเซสชัน\nข้อสี่ ลืมส่ง flush=True ตอนพิมพ์ delta ใน CLI ทำให้เทอร์มินัลบัฟเฟอร์รอขึ้นบรรทัดใหม่จนดูเหมือนไม่ stream ครับ",
+      "ttsText": "ยอดเยี่ยมมากครับที่ประกอบ StreamingChatSession ผ่านครบทุกเทสต์! ก่อนเข้าควิซ มาเช็ก 4 ข้อผิดพลาดของแอปแชตหลายรอบกันนะ\n\nข้อแรก เพิ่ม user message ลง self _history ก่อนเริ่ม stream พอโดน Control C กลางรอบประวัติจะค้าง user ไว้โดยไม่มี assistant คู่กัน ทำให้รอบหน้าเกิด user สองอันติดกัน\nข้อสอง ลืมจำกัด max_history_turns คุยไป 20 รอบค่า prompt_tokens พุ่งจนบิลบานหรือชน context limit\n\nข้อสาม ลืมส่ง stream_options include_usage เท่ากับ True ตอนต่อ OpenAI-compatible API จริง ทำให้ตัวนับ token เป็น 0 ตลอดเซสชัน\nข้อสี่ ลืมส่ง flush เท่ากับ True ตอนพิมพ์ delta ใน CLI ทำให้เทอร์มินัลบัฟเฟอร์รอขึ้นบรรทัดใหม่จนดูเหมือนไม่ stream ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Interleaved Micro-Quiz 4 ข้อ",
+      "src": "/audio/d076/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนทำควิซทบทวนแบบผสมผสานทั้ง Block B19",
+      "script": "มาถึง Interleaved Micro-Quiz 4 ข้อประจำวันทบทวน Block B19 แล้วครับ\n\nคำถามจะสลับถามทวนจากหลายบท ทั้งเหตุผลที่ prompt_tokens โตขึ้นในแชตหลายรอบ, Atomic Turn Commit, การจับคู่อาการพัง 3 อย่างใน Streaming App ภาษาไทย, และเหตุผลที่แยก on_delta กับ StreamBackend ออกจาก CLI ทำเสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาถึง Interleaved Micro-Quiz 4 ข้อประจำวันทบทวน Block B19 แล้วครับ\n\nคำถามจะสลับถามทวนจากหลายบท ทั้งเหตุผลที่ prompt_tokens โตขึ้นในแชตหลายรอบ, Atomic Turn Commit, การจับคู่อาการพัง 3 อย่างใน Streaming App ภาษาไทย, และเหตุผลที่แยก on_delta กับ StreamBackend ออกจาก CLI ทำเสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Interleaved Quiz 4 ข้อ",
+        "prompt": "ตอบควิซทบทวน B19 ทั้ง 4 ข้อให้ครบ และจดจุดที่พลาดเข้า Error Log ได้เลยครับ เสร็จแล้วกดไปต่อ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุปปิด Block B19 & ก้าวต่อไป",
+      "src": "/audio/d076/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและยินดีอย่างยิ่งที่ผู้เรียนจบ Block B19 ส่งพลังใจต่อสู่ Block B20",
+      "script": "ยินดีด้วยจริง ๆ ครับ คุณผ่าน Block B19 ครบทั้ง 4 วันแล้ว! ขอสรุป 4 แก่นหลักของ Block นี้ไว้ให้จำแม่น ๆ นะครับ\n\nหนึ่ง แยกชั้นสถาปัตยกรรมให้ชัดทั้ง Context/History, StreamBackend Protocol, aclosing Consumer และ CostLedger\nสอง จำกัดประวัติด้วย sliding window อย่าง max_history_turns และเปิด include_usage=True เพื่อวัดต้นทุนจริงทั้ง USD และ THB\nสาม ใช้ Atomic Turn Commit ป้องกันประวัติพังตอนโดน Ctrl+C และปิด stream ด้วย contextlib.aclosing เสมอ\nสี่ แยก on_delta callback กับ backend ออกจาก CLI ทำให้เทสต์ครบ 100 เปอร์เซ็นต์ใน pytest\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบและอัปเดต Error Log แล้วเตรียมลุย Block B20 เรื่อง Structured Outputs ด้วย Pydantic ในบทถัดไปครับ!",
+      "ttsText": "ยินดีด้วยจริง ๆ ครับ คุณผ่าน Block B19 ครบทั้ง 4 วันแล้ว! ขอสรุป 4 แก่นหลักของ Block นี้ไว้ให้จำแม่น ๆ นะครับ\n\nหนึ่ง แยกชั้นสถาปัตยกรรมให้ชัดทั้ง Context และ History, StreamBackend Protocol, aclosing Consumer และ CostLedger\nสอง จำกัดประวัติด้วย sliding window อย่าง max_history_turns และเปิด include_usage เท่ากับ True เพื่อวัดต้นทุนจริงทั้ง USD และ THB\nสาม ใช้ Atomic Turn Commit ป้องกันประวัติพังตอนโดน Control C และปิด stream ด้วย contextlib aclosing เสมอ\nสี่ แยก on_delta callback กับ backend ออกจาก CLI ทำให้เทสต์ครบ 100 เปอร์เซ็นต์ใน pytest\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบและอัปเดต Error Log แล้วเตรียมลุย Block B20 เรื่อง Structured Outputs ด้วย Pydantic ในบทถัดไปครับ!"
+    }
+  ]
+}

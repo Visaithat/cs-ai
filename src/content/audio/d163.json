@@ -1,0 +1,109 @@
+{
+  "lessonId": "d163",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ACL Pre-Filter & Reranker",
+      "src": "/audio/d163/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงจริงจังแต่เป็นมิตร เน้นความสำคัญของความปลอดภัยองค์กรและการอัปเกรดความแม่นยำสู่ Production",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 163 วันสุดท้ายของการสร้างโมดูลค้นหาใน Block B41 กันแล้วนะ วันนี้เราจะมาติดอาวุธสำคัญ 2 อย่างให้กับ Hybrid Search คือระบบกรองสิทธิ์ ACL Pre-Filtering และ Cross-Encoder Reranker ครับ\n\nในองค์กรจริง ความปลอดภัยมาก่อนเสมอ พนักงานฝ่ายขายต้องไม่มีทางค้นเจอไฟล์เงินเดือนผู้บริหารของ HR และลูกค้า Tenant A ต้องไม่มีวันเห็นข้อมูลของ Tenant B เราจึงต้องบังคับใช้ Pre-Filtering ตั้งแต่ชั้นฐานข้อมูล ก่อนคิดคะแนนใด ๆ ทั้งสิ้น เพื่อปิดช่องโหว่ data leakage และกันปัญหาผลลัพธ์ว่างเปล่า\n\nส่วนด้านความแม่นยำ Bi-Encoder จากเมื่อวานทำงานเร็วมากก็จริง แต่ไม่ได้อ่านคำถามเทียบกับเนื้อหาใน chunk แบบคำต่อคำ วันนี้เราจะส่ง Top-20 ที่ผ่านด่าน ACL มาให้ Cross-Encoder Reranker ช่วยคัดเหลือ Top-5 เพื่อดัน Recall@5 และ MRR ข้าม 0.85 พร้อมวาง Timeout Fallback เผื่อเวลา Reranker ช้าหรือล่มด้วยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 163 วันสุดท้ายของการสร้างโมดูลค้นหาใน Block B41 กันแล้วนะ วันนี้เราจะมาติดอาวุธสำคัญ 2 อย่างให้กับ Hybrid Search คือระบบกรองสิทธิ์ ACL Pre-Filtering และ Cross-Encoder Reranker ครับ\n\nในองค์กรจริง ความปลอดภัยมาก่อนเสมอ พนักงานฝ่ายขายต้องไม่มีทางค้นเจอไฟล์เงินเดือนผู้บริหารของ HR และลูกค้า Tenant A ต้องไม่มีวันเห็นข้อมูลของ Tenant B เราจึงต้องบังคับใช้ Pre-Filtering ตั้งแต่ชั้นฐานข้อมูล ก่อนคิดคะแนนใด ๆ ทั้งสิ้น เพื่อปิดช่องโหว่ data leakage และกันปัญหาผลลัพธ์ว่างเปล่า\n\nส่วนด้านความแม่นยำ Bi-Encoder จากเมื่อวานทำงานเร็วมากก็จริง แต่ไม่ได้อ่านคำถามเทียบกับเนื้อหาใน chunk แบบคำต่อคำ วันนี้เราจะส่ง Top-20 ที่ผ่านด่าน ACL มาให้ Cross-Encoder Reranker ช่วยคัดเหลือ Top-5 เพื่อดัน Recall at 5 และ MRR ข้าม 0.85 พร้อมวาง Timeout Fallback เผื่อเวลา Reranker ช้าหรือล่มด้วยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d163/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงมั่นใจ กระฉับกระเฉง แบ่งจังหวะเป้าหมาย 3 ข้อชัดเจน และย้ำว่าทดสอบแบบ offline ได้ทันที",
+      "script": "เป้าหมายของ Day 163 มี 3 เรื่องหลักให้ระบบค้นหาพร้อมขึ้น Production ครับ\n\nหนึ่ง บังคับ ACL Pre-Filtering ด้วย tenant_id, allowed_roles และ metadata อย่าง doc_type ก่อนค้นหาและ Rerank\nสอง เชื่อมต่อ Cross-Encoder Reranker แบบ 2 จังหวะ จาก Top-20 เหลือ Top-5 พร้อมเข้าใจ trade-off ด้าน latency\nสาม สร้าง Reranker Adapter ที่เทสต์แบบ offline ด้วย pytest ได้ 100 เปอร์เซ็นต์ และมี Timeout Fallback ที่ปลอดภัย ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 163 มี 3 เรื่องหลักให้ระบบค้นหาพร้อมขึ้น Production ครับ\n\nหนึ่ง บังคับ ACL Pre-Filtering ด้วย tenant_id, allowed_roles และ metadata อย่าง doc_type ก่อนค้นหาและ Rerank\nสอง เชื่อมต่อ Cross-Encoder Reranker แบบ 2 จังหวะ จาก Top-20 เหลือ Top-5 พร้อมเข้าใจ trade-off ด้าน latency\nสาม สร้าง Reranker Adapter ที่เทสต์แบบ offline ด้วย pytest ได้ 100 เปอร์เซ็นต์ และมี Timeout Fallback ที่ปลอดภัย ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เตรียมสภาพแวดล้อม",
+      "src": "/audio/d163/03-setup.mp3",
+      "stylePrompt": "พูดช้าชัด น้ำเสียงใจเย็น อธิบายวิธีทดสอบแบบ offline ผ่าน MockCrossEncoderReranker",
+      "script": "ช่วงเตรียมเครื่องในโฟลเดอร์ thai-enterprise-assistant ให้ตรวจโฟลเดอร์ด้วยคำสั่ง mkdir -p src/retrieval tests และเช็ก uv run pytest --version ครับ\n\nวันนี้เราใช้ MockCrossEncoderReranker ที่ให้คะแนนแบบ deterministic เพื่อให้เทสต์ผ่านในเสี้ยววินาที และในระบบจริงสามารถสลับไปใช้ bge-reranker-v2-m3 หรือ Rerank API ได้ด้วย interface เดียวกัน พร้อมแล้วกดไปต่อนะครับ",
+      "ttsText": "ช่วงเตรียมเครื่องในโฟลเดอร์ thai-enterprise-assistant ให้ตรวจโฟลเดอร์ด้วยคำสั่ง mkdir dash p src ทับ retrieval tests และเช็ก uv run pytest dash dash version ครับ\n\nวันนี้เราใช้ MockCrossEncoderReranker ที่ให้คะแนนแบบ deterministic เพื่อให้เทสต์ผ่านในเสี้ยววินาที และในระบบจริงสามารถสลับไปใช้ bge-reranker-v2-m3 หรือ Rerank API ได้ด้วย interface เดียวกัน พร้อมแล้วกดไปต่อนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียมโมดูล Reranking & ACL",
+        "prompt": "เช็กโฟลเดอร์ src/retrieval กับคำสั่ง uv run pytest --version ให้พร้อม แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เตรียมเครื่องพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อค้นหาปลอดภัย 2 จังหวะ",
+      "src": "/audio/d163/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนเห็นภาพ เปรียบเทียบด่านตรวจสิทธิ์และการคัดเลือกผู้สมัครทีละขั้นอย่างชัดเจน",
+      "script": "ลองดูแผนภาพท่อค้นหาปลอดภัย 2 จังหวะตรงหน้านี้ครับ ให้เห็นลำดับการกรองและการคัดเลือกที่ห้ามสลับที่เด็ดขาด\n\nด่านหน้าสุดคือ ACL Pre-Filter ที่กันเอกสารข้าม tenant และข้ามแผนกออกไปตั้งแต่ยังไม่ทันค้นหา จากนั้น Hybrid RRF ค่อยคัดผู้สมัคร Top-20 ที่ผ่านสิทธิ์แล้วออกมา\n\nปลายทางคือ Cross-Encoder Reranker ที่หยิบ 20 ชิ้นนี้มาอ่านคู่กับคำถามทีละคู่ เพื่อคัด 5 ชิ้นที่ตรงที่สุดส่งให้ LLM อย่างปลอดภัยและแม่นยำครับ",
+      "ttsText": "ลองดูแผนภาพท่อค้นหาปลอดภัย 2 จังหวะตรงหน้านี้ครับ ให้เห็นลำดับการกรองและการคัดเลือกที่ห้ามสลับที่เด็ดขาด\n\nด่านหน้าสุดคือ ACL Pre-Filter ที่กันเอกสารข้าม tenant และข้ามแผนกออกไปตั้งแต่ยังไม่ทันค้นหา จากนั้น Hybrid RRF ค่อยคัดผู้สมัคร Top-20 ที่ผ่านสิทธิ์แล้วออกมา\n\nปลายทางคือ Cross-Encoder Reranker ที่หยิบ 20 ชิ้นนี้มาอ่านคู่กับคำถามทีละคู่ เพื่อคัด 5 ชิ้นที่ตรงที่สุดส่งให้ LLM อย่างปลอดภัยและแม่นยำครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d163/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายแนวคิด Security และ Latency Trade-off ด้วยน้ำเสียงหนักแน่น ชัดเจน และเปรียบเทียบเห็นภาพ",
+      "script": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของวันนี้กันครับ\n\nข้อแรก ACL Pre-Filtering ห้าม Post-Filter เด็ดขาด การดึง Top-5 จากคลังรวมมาก่อนแล้วค่อยคัดทิ้งทีหลังพัง 2 เด้ง คืออาจได้ผล 0 ชิ้นถ้า Top-5 เป็นของแผนกอื่นหมด และเสี่ยง data leakage ใน trace log เราจึงต้องใช้ Fail-Closed Pre-Filter ใน SQL WHERE หรือ Qdrant Filter กรอง tenant_id, allowed_roles และ active status ตั้งแต่ชั้นฐานข้อมูลครับ\n\nข้อที่สอง Bi-Encoder vs Cross-Encoder Reranker ตัว Bi-Encoder แยกแปลง query กับ chunk คนละทีเลยเร็วมาก แต่พลาดเงื่อนไขละเอียดได้ ส่วน Cross-Encoder อย่าง bge-reranker-v2-m3 อ่าน query คู่กับ chunk พร้อมกันทุก token จึงจับคำว่า ยกเว้นสินค้าลดราคา ได้แม่นมาก แต่ใช้เวลาราว 100 ถึง 250 มิลลิวินาที เราจึงใช้เฉพาะ Top-20 เท่านั้น\n\nข้อที่สาม Reranker Protocol และ Timeout Fallback ตั้ง timeout budget เช่น ไม่เกิน 400 มิลลิวินาที ถ้าเกิด TimeoutError ให้บันทึก warning log แล้วถอยกลับมาใช้อันดับจาก Hybrid RRF ที่ผ่าน ACL แล้วทันที เพื่อรักษา SLA โดยไม่ล่มครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของวันนี้กันครับ\n\nข้อแรก ACL Pre-Filtering ห้าม Post-Filter เด็ดขาด การดึง Top-5 จากคลังรวมมาก่อนแล้วค่อยคัดทิ้งทีหลังพัง 2 เด้ง คืออาจได้ผล 0 ชิ้นถ้า Top-5 เป็นของแผนกอื่นหมด และเสี่ยง data leakage ใน trace log เราจึงต้องใช้ Fail-Closed Pre-Filter ใน SQL WHERE หรือ Qdrant Filter กรอง tenant_id, allowed_roles และ active status ตั้งแต่ชั้นฐานข้อมูลครับ\n\nข้อที่สอง Bi-Encoder vs Cross-Encoder Reranker ตัว Bi-Encoder แยกแปลง query กับ chunk คนละทีเลยเร็วมาก แต่พลาดเงื่อนไขละเอียดได้ ส่วน Cross-Encoder อย่าง bge-reranker-v2-m3 อ่าน query คู่กับ chunk พร้อมกันทุก token จึงจับคำว่า ยกเว้นสินค้าลดราคา ได้แม่นมาก แต่ใช้เวลาราว 100 ถึง 250 มิลลิวินาที เราจึงใช้เฉพาะ Top-20 เท่านั้น\n\nข้อที่สาม Reranker Protocol และ Timeout Fallback ตั้ง timeout budget เช่น ไม่เกิน 400 มิลลิวินาที ถ้าเกิด TimeoutError ให้บันทึก warning log แล้วถอยกลับมาใช้อันดับจาก Hybrid RRF ที่ผ่าน ACL แล้วทันที เพื่อรักษา SLA โดยไม่ล่มครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — ACL + Rerank + Fallback",
+      "src": "/audio/d163/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนติดตามเหมือนกำลังทดสอบระบบจริงร่วมกัน ชี้ให้เห็นว่าเอกสารลับโดนตัดทิ้งตั้งแต่ขั้นแรกอย่างไร",
+      "script": "ลองมาดูตัวอย่างพร้อมรันที่จำลองท่อค้นหาปลอดภัยครบทั้ง 3 จังหวะกันครับ\n\nขั้นแรก เรานิยาม UserContext ด้วย Pydantic เพื่อเก็บ user_id, tenant_id และ roles แล้วเขียนฟังก์ชัน prefilter_chunks ที่กรองทั้ง tenant_id, การทับซ้อนของ roles และ doc_type ก่อนใครเพื่อน\nขั้นที่สอง เรามีคลังเอกสารจำลอง 4 ชิ้นที่มีทั้งเอกสารเงินเดือน HR และเอกสารของ tenant beta ปนอยู่ พอผู้ใช้ฝั่ง support ของ acme ถามว่า สินค้าลดราคาคืนได้ไหม ตัว prefilter_chunks จะตัดไฟล์ HR และไฟล์ beta ทิ้งทันที เหลือแค่ 2 ชิ้นที่เข้าถึงได้ จากนั้น HeuristicMockReranker จะให้คะแนนโบนัสคำว่า ยกเว้น กับ สินค้าลดราคา จนดัน pol-exc ขึ้นมาอันดับ 1\n\nขั้นที่สาม เราทดสอบจังหวะพังด้วย FailingReranker ที่โยน TimeoutError ระบบต้องจับ error แล้วถอยมาคืนผลจาก authorized ชุดเดิมอย่างปลอดภัย ไม่มีทางหลุดไฟล์ HR หรือข้าม tenant ออกมาได้เลยครับ จำลำดับนี้ให้ขึ้นใจนะ Pre-Filter ก่อน Hybrid และ Rerank เสมอ ลองกดเดินโค้ดดูทีละขั้นครับ",
+      "ttsText": "ลองมาดูตัวอย่างพร้อมรันที่จำลองท่อค้นหาปลอดภัยครบทั้ง 3 จังหวะกันครับ\n\nขั้นแรก เรานิยาม UserContext ด้วย Pydantic เพื่อเก็บ user_id, tenant_id และ roles แล้วเขียนฟังก์ชัน prefilter_chunks ที่กรองทั้ง tenant_id, การทับซ้อนของ roles และ doc_type ก่อนใครเพื่อน\nขั้นที่สอง เรามีคลังเอกสารจำลอง 4 ชิ้นที่มีทั้งเอกสารเงินเดือน HR และเอกสารของ tenant beta ปนอยู่ พอผู้ใช้ฝั่ง support ของ acme ถามว่า สินค้าลดราคาคืนได้ไหม ตัว prefilter_chunks จะตัดไฟล์ HR และไฟล์ beta ทิ้งทันที เหลือแค่ 2 ชิ้นที่เข้าถึงได้ จากนั้น HeuristicMockReranker จะให้คะแนนโบนัสคำว่า ยกเว้น กับ สินค้าลดราคา จนดัน pol-exc ขึ้นมาอันดับ 1\n\nขั้นที่สาม เราทดสอบจังหวะพังด้วย FailingReranker ที่โยน TimeoutError ระบบต้องจับ error แล้วถอยมาคืนผลจาก authorized ชุดเดิมอย่างปลอดภัย ไม่มีทางหลุดไฟล์ HR หรือข้าม tenant ออกมาได้เลยครับ จำลำดับนี้ให้ขึ้นใจนะ Pre-Filter ก่อน Hybrid และ Rerank เสมอ ลองกดเดินโค้ดดูทีละขั้นครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา Worked Example ACL & Rerank",
+        "prompt": "ลองกดดูตัวอย่างการตัดสิทธิ์ Pre-Filter, การดันอันดับด้วย Reranker และจังหวะ Timeout Fallback ทั้ง 3 ขั้นนะครับ",
+        "continueLabel": "เข้าใจท่อปลอดภัยแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้างระบบ ACL Pre-Filter & Rerank",
+      "src": "/audio/d163/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่นชัดเจน ค่อย ๆ ไล่สเปกโมเดล Pydantic และฟังก์ชันทีละตัวเพื่อให้เขียนโค้ดได้อย่างมั่นใจ",
+      "script": "ถึงเวลาลงมือเขียนโมดูล src/rerank_acl.py กันแล้วครับ โจทย์นี้เป็นการประกอบร่างระบบสิทธิ์เข้ากับ Reranker อย่างสมบูรณ์\n\nเริ่มจากโมเดล Pydantic 3 ตัว ได้แก่ UserContext, SearchFilter ที่มี doc_type, lang, และ only_active และ SearchResult ที่เก็บ items, reranked, และ fallback_reason\nถัดมาคือฟังก์ชัน prefilter_chunks ที่ต้องบังคับ tenant_id เป๊ะ ตรวจ role ทับซ้อนอย่างน้อย 1 ตัว และเช็ก active flag ด้วย\n\nจากนั้นนิยาม Reranker Protocol พร้อมคลาส LexicalCrossReranker ที่คำนวณคะแนนแบบ deterministic และฟังก์ชันพระเอก retrieve_and_rerank กฎเหล็กคือต้องเรียก prefilter_chunks ก่อนส่ง pool เข้า retriever_fn เสมอ ถ้า pool ว่างให้คืนผลว่างโดยห้ามเรียก reranker และถ้า reranker เกิด TimeoutError หรือ RuntimeError ให้ fallback ไปใช้อันดับจาก retriever_fn พร้อมตั้ง reranked เท่ากับ False ครับ เขียนเสร็จแล้วลองรัน pytest ทั้ง 4 เคสและ ruff check ดูนะ",
+      "ttsText": "ถึงเวลาลงมือเขียนโมดูล rerank_acl dot py ในโฟลเดอร์ src กันแล้วครับ โจทย์นี้เป็นการประกอบร่างระบบสิทธิ์เข้ากับ Reranker อย่างสมบูรณ์\n\nเริ่มจากโมเดล Pydantic 3 ตัว ได้แก่ UserContext, SearchFilter ที่มี doc_type, lang, และ only_active และ SearchResult ที่เก็บ items, reranked, และ fallback_reason\nถัดมาคือฟังก์ชัน prefilter_chunks ที่ต้องบังคับ tenant_id เป๊ะ ตรวจ role ทับซ้อนอย่างน้อย 1 ตัว และเช็ก active flag ด้วย\n\nจากนั้นนิยาม Reranker Protocol พร้อมคลาส LexicalCrossReranker ที่คำนวณคะแนนแบบ deterministic และฟังก์ชันพระเอก retrieve_and_rerank กฎเหล็กคือต้องเรียก prefilter_chunks ก่อนส่ง pool เข้า retriever_fn เสมอ ถ้า pool ว่างให้คืนผลว่างโดยห้ามเรียก reranker และถ้า reranker เกิด TimeoutError หรือ RuntimeError ให้ fallback ไปใช้อันดับจาก retriever_fn พร้อมตั้ง reranked เท่ากับ False ครับ เขียนเสร็จแล้วลองรัน pytest ทั้ง 4 เคสและ ruff check dot ดูนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโมดูล ACL & Reranker",
+        "prompt": "ลงมือเขียน src/rerank_acl.py และรัน uv run pytest -q tests/test_rerank_acl.py ให้ผ่านครบทุกเคสนะครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d163/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงจริงจังแต่เป็นกันเอง เตือนภัยช่องโหว่ความปลอดภัยและจุดคอขวดด้าน latency ให้จำฝังใจ",
+      "script": "เก่งมากครับที่ผ่านด่านนี้มาได้ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดอันตรายเรื่อง ACL และ Reranker ที่ห้ามเผลอทำใน Production เด็ดขาด\n\nข้อแรก คือทำ ACL Post-Filtering หลังดึง Top-5 หรือ Top-20 มาแล้ว นอกจากจะทำให้ผลลัพธ์กลายเป็นศูนย์เวลาอันดับต้น ๆ เป็นของแผนกอื่น ยังเสี่ยงข้อมูลข้ามสิทธิ์หลุดลงใน log ด้วย\nข้อที่สอง คือส่งเอกสารทั้งคลังเป็นหมื่นชิ้นเข้า Cross-Encoder Reranker ตรง ๆ แบบนี้ API ค้างหลายสิบวินาทีจน timeout แน่นอน ต้องให้ Hybrid RRF คัดเหลือ 20 ชิ้นก่อนเสมอ\n\nข้อที่สาม คือไม่ทำ Fallback เวลา Reranker ล่มหรือช้า ปล่อยให้ระบบขึ้น HTTP 500 ทั้งคำขอทั้งที่ RRF หาเอกสารเจอแล้ว\nและข้อสี่ คือลืมฟิลด์ active หรือ effective_date ใน Metadata Filter ทำให้บอทหยิบนโยบายเก่าปี 2022 ที่ยกเลิกไปแล้วมาตอบลูกค้าแทนฉบับปี 2026 ครับ",
+      "ttsText": "เก่งมากครับที่ผ่านด่านนี้มาได้ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดอันตรายเรื่อง ACL และ Reranker ที่ห้ามเผลอทำใน Production เด็ดขาด\n\nข้อแรก คือทำ ACL Post-Filtering หลังดึง Top-5 หรือ Top-20 มาแล้ว นอกจากจะทำให้ผลลัพธ์กลายเป็นศูนย์เวลาอันดับต้น ๆ เป็นของแผนกอื่น ยังเสี่ยงข้อมูลข้ามสิทธิ์หลุดลงใน log ด้วย\nข้อที่สอง คือส่งเอกสารทั้งคลังเป็นหมื่นชิ้นเข้า Cross-Encoder Reranker ตรง ๆ แบบนี้ API ค้างหลายสิบวินาทีจน timeout แน่นอน ต้องให้ Hybrid RRF คัดเหลือ 20 ชิ้นก่อนเสมอ\n\nข้อที่สาม คือไม่ทำ Fallback เวลา Reranker ล่มหรือช้า ปล่อยให้ระบบขึ้น HTTP 500 ทั้งคำขอทั้งที่ RRF หาเอกสารเจอแล้ว\nและข้อสี่ คือลืมฟิลด์ active หรือ effective_date ใน Metadata Filter ทำให้บอทหยิบนโยบายเก่าปี 2022 ที่ยกเลิกไปแล้วมาตอบลูกค้าแทนฉบับปี 2026 ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d163/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ ชวนทบทวนแนวคิดความปลอดภัยและการจัดอันดับผ่านสถานการณ์จำลอง",
+      "script": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อครับ รอบนี้ถามตรงจุดทั้งเรื่อง ACL Pre-Filtering vs Post-Filtering, ความต่างของ Bi-Encoder กับ Cross-Encoder, การทำ Fallback เมื่อ Reranker timeout, และสถานการณ์ที่ฝ่าย Sales แอบถามเงินเดือนผู้บริหาร\n\nค่อย ๆ อ่านแล้วลองตอบให้ครบทั้ง 4 ข้อนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปจบ Block B41 กันครับ",
+      "ttsText": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อครับ รอบนี้ถามตรงจุดทั้งเรื่อง ACL Pre-Filtering กับ Post-Filtering ความต่างของ Bi-Encoder กับ Cross-Encoder การทำ Fallback เมื่อ Reranker timeout และสถานการณ์ที่ฝ่าย Sales แอบถามเงินเดือนผู้บริหาร\n\nค่อย ๆ อ่านแล้วลองตอบให้ครบทั้ง 4 ข้อนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปจบ Block B41 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบ Micro-Quiz เรื่อง ACL Pre-Filtering และ Cross-Encoder Reranker ทั้ง 4 ข้อให้ครบ แล้วกดไปต่อนะครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 164",
+      "src": "/audio/d163/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและยินดีที่ผู้เรียนสร้าง Hybrid Retrieval Module ครบชุดแล้ว พร้อมชวนลุย Benchmark ใน Day 164",
+      "script": "ยินดีด้วยครับ คุณสร้างระบบค้นหาปลอดภัย 2 จังหวะครบชุดพร้อมปิด Block B41 อย่างสวยงามใน Day 163 แล้ว ขอสรุป 3 แก่นสำคัญก่อนลุย Milestone 2 พรุ่งนี้นะครับ\n\nหนึ่ง บังคับใช้ ACL Pre-Filtering ทั้ง tenant_id, allowed_roles และ active status ตั้งแต่ก่อนค้นหา เพื่อปิดประตู data leakage แบบร้อยเปอร์เซ็นต์\nสอง ใช้สถาปัตยกรรม 2 จังหวะคือ Hybrid RRF ดึง Top-20 แล้วให้ Cross-Encoder Reranker คัดเหลือ Top-5\nสาม ครอบ Reranker ด้วย Protocol และ Timeout Fallback กลับไปใช้อันดับ RRF เสมอเพื่อรักษา SLA\n\nพรุ่งนี้ใน Day 164 คือวันสำคัญ Milestone 2 Lab เราจะนำท่อค้นหาทั้งหมดที่สร้างมา 3 วันไปวัดผล Benchmark บนคำถามภาษาไทย 40 ข้อ เพื่อพิสูจน์ว่า Recall@5 ทะลุ 0.85 จริงหรือไม่ กดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 164 นะครับ",
+      "ttsText": "ยินดีด้วยครับ คุณสร้างระบบค้นหาปลอดภัย 2 จังหวะครบชุดพร้อมปิด Block B41 อย่างสวยงามใน Day 163 แล้ว ขอสรุป 3 แก่นสำคัญก่อนลุย Milestone 2 พรุ่งนี้นะครับ\n\nหนึ่ง บังคับใช้ ACL Pre-Filtering ทั้ง tenant_id, allowed_roles และ active status ตั้งแต่ก่อนค้นหา เพื่อปิดประตู data leakage แบบร้อยเปอร์เซ็นต์\nสอง ใช้สถาปัตยกรรม 2 จังหวะคือ Hybrid RRF ดึง Top-20 แล้วให้ Cross-Encoder Reranker คัดเหลือ Top-5\nสาม ครอบ Reranker ด้วย Protocol และ Timeout Fallback กลับไปใช้อันดับ RRF เสมอเพื่อรักษา SLA\n\nพรุ่งนี้ใน Day 164 คือวันสำคัญ Milestone 2 Lab เราจะนำท่อค้นหาทั้งหมดที่สร้างมา 3 วันไปวัดผล Benchmark บนคำถามภาษาไทย 40 ข้อ เพื่อพิสูจน์ว่า Recall at 5 ทะลุ 0.85 จริงหรือไม่ กดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 164 นะครับ"
+    }
+  ]
+}

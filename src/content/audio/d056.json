@@ -1,0 +1,109 @@
+{
+  "lessonId": "d056",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ร้อยต่อ Pipeline End-to-End",
+      "src": "/audio/d056/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น สดใส เหมือนชวนน้องมาซ้อมใหญ่ประกอบชิ้นส่วนทั้งหมดเข้าด้วยกันในวันทบทวน B14",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 56 วันทบทวนของ Block B14 นะครับ วันนี้สนุกมาก เพราะเราจะเอาพิมพ์เขียวจาก Day 55 และความรู้จากทั้ง D43, D47, D53, D54 มาร้อยต่อเป็น End-to-End Pipeline ที่รันจบในคำสั่งเดียวครับ\n\nลองมองภาพ Big Picture ไปด้วยกันนะ จุดเริ่มต้นคือตาราง Polars ที่สะอาด จากนั้นเราจะใช้รูปแบบ Pre-Tokenized Thai Text ตัดคำภาษาไทยด้วย PyThaiNLP แล้วคั่นด้วยช่องว่างก่อนส่งเข้า TfidfVectorizer เพื่อตัด custom closure ออกจากไฟล์โมเดล ทำให้ serialize ด้วย joblib ได้เสถียรข้ามเครื่องเลยครับ\n\nจากนั้นเรารวมสาขา Text, Numeric และ Categorical ไว้ใน Hybrid ColumnTransformer เดียว เพื่อเทรนเทียบ LogisticRegression กับ LightGBM บน Validation Set แล้วจูน urgent threshold บน Val เท่านั้น ก่อนแตะ Test Set ครั้งเดียว ปิดท้ายด้วยการบันทึก Immutable Bundle ครบ 3 ชิ้น ทั้ง model.joblib พร้อม SHA-256, metrics.json และ drift_baseline.json เตรียมพร้อมสู่ Block B15 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 56 วันทบทวนของ Block B14 นะครับ วันนี้สนุกมาก เพราะเราจะเอาพิมพ์เขียวจาก Day 55 และความรู้จากทั้ง D43, D47, D53, D54 มาร้อยต่อเป็น End-to-End Pipeline ที่รันจบในคำสั่งเดียวครับ\n\nลองมองภาพ Big Picture ไปด้วยกันนะ จุดเริ่มต้นคือตาราง Polars ที่สะอาด จากนั้นเราจะใช้รูปแบบ Pre-Tokenized Thai Text ตัดคำภาษาไทยด้วย PyThaiNLP แล้วคั่นด้วยช่องว่างก่อนส่งเข้า TfidfVectorizer เพื่อตัด custom closure ออกจากไฟล์โมเดล ทำให้ serialize ด้วย joblib ได้เสถียรข้ามเครื่องเลยครับ\n\nจากนั้นเรารวมสาขา Text, Numeric และ Categorical ไว้ใน Hybrid ColumnTransformer เดียว เพื่อเทรนเทียบ LogisticRegression กับ LightGBM บน Validation Set แล้วจูน urgent threshold บน Val เท่านั้น ก่อนแตะ Test Set ครั้งเดียว ปิดท้ายด้วยการบันทึก Immutable Bundle ครบ 3 ชิ้น ทั้ง model dot joblib พร้อม SHA 256, metrics dot json และ drift baseline dot json เตรียมพร้อมสู่ Block B15 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & แผนทบทวน 30 นาที",
+      "src": "/audio/d056/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน สรุปเป้าหมาย 3 ข้อของการทบทวนและประกอบระบบครบวงจร",
+      "script": "เป้าหมายของวันทบทวน Day 56 มี 3 ข้อหลักครับ\n\nข้อแรก คือดึงความรู้แบบสลับหัวข้อ เชื่อมโยง D53 Serialization, D54 Drift Monitor, D55 Pipeline Spec, D43 ColumnTransformer และ D47 LightGBM เข้าด้วยกัน\nข้อที่สอง คือสร้างและเทรน Hybrid End-to-End Pipeline ที่ผสานข้อความภาษาไทยกับฟีเจอร์ตารางใน ColumnTransformer โดยไม่เกิด Data Leakage\nข้อที่สาม คือจูน threshold บน Validation Set และบันทึก Versioned Artifact Bundle ที่มีทั้ง model.joblib, metrics.json และ drift_baseline.json พร้อม SHA-256\n\nรันบน CPU เครื่องคุณได้ 100% ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของวันทบทวน Day 56 มี 3 ข้อหลักครับ\n\nข้อแรก คือดึงความรู้แบบสลับหัวข้อ เชื่อมโยง D53 Serialization, D54 Drift Monitor, D55 Pipeline Spec, D43 ColumnTransformer และ D47 LightGBM เข้าด้วยกัน\nข้อที่สอง คือสร้างและเทรน Hybrid End-to-End Pipeline ที่ผสานข้อความภาษาไทยกับฟีเจอร์ตารางใน ColumnTransformer โดยไม่เกิด Data Leakage\nข้อที่สาม คือจูน threshold บน Validation Set และบันทึก Versioned Artifact Bundle ที่มีทั้ง model dot joblib, metrics dot json และ drift baseline dot json พร้อม SHA 256\n\nรันบน CPU เครื่องคุณได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d056/03-setup.mp3",
+      "stylePrompt": "พูดช้าชัด น้ำเสียงใจเย็น แนะนำให้ใช้โปรเจกต์เดิมจาก Day 55 หรือสร้างโฟลเดอร์ทบทวนใหม่",
+      "script": "สำหรับการเตรียมเครื่องวันนี้ คุณใช้โฟลเดอร์ thai-ticket-priority ต่อจาก Day 55 ได้เลย หรือจะสร้างโฟลเดอร์ทบทวนใหม่ด้วย uv init ai-day56-review ก็ได้ครับ\n\nจากนั้นลงแพ็กเกจให้ครบทั้ง polars, pandas, scikit-learn, lightgbm, pythainlp, joblib, numpy และตัวเทสต์ pytest กับ ruff แล้วรันคำสั่งเช็ก import ให้เห็น B14 Review Ready\n\nวันนี้แนะนำแบ่งเวลา 30 นาทีตามจังหวะทบทวนครับ คือลองทำโค้ด End-to-End Hybrid Pipeline ประมาณ 15 นาที ทำ Interleaved Quiz 10 นาที และทบทวน Review Cards 5 นาที พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "สำหรับการเตรียมเครื่องวันนี้ คุณใช้โฟลเดอร์ thai ticket priority ต่อจาก Day 55 ได้เลย หรือจะสร้างโฟลเดอร์ทบทวนใหม่ด้วย uv init ai day56 review ก็ได้ครับ\n\nจากนั้นลงแพ็กเกจให้ครบทั้ง polars, pandas, scikit-learn, lightgbm, pythainlp, joblib, numpy และตัวเทสต์ pytest กับ ruff แล้วรันคำสั่งเช็ก import ให้เห็น B14 Review Ready\n\nวันนี้แนะนำแบ่งเวลา 30 นาทีตามจังหวะทบทวนครับ คือลองทำโค้ด End-to-End Hybrid Pipeline ประมาณ 15 นาที ทำ Interleaved Quiz 10 นาที และทบทวน Review Cards 5 นาที พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเช็กสภาพแวดล้อม Day 56",
+        "prompt": "ตรวจเช็กแพ็กเกจในโปรเจกต์ thai-ticket-priority หรือ ai-day56-review ให้พร้อมรัน แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เช็กเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — วงจร End-to-End",
+      "src": "/audio/d056/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชี้ให้เห็นการไหลของข้อมูลตั้งแต่ต้นจนจบในแผนภาพเดียวกัน",
+      "script": "ลองดูแผนภาพ Phase 2 ML Pipeline ตรงหน้าอีกทีในมุมของการรันจริงแบบ End-to-End นะครับ\n\nวันนี้ข้อมูลไม่ได้หยุดอยู่แค่พิมพ์เขียวแล้ว แต่จะไหลจริงตั้งแต่ Polars แปลงข้อความด้วย PyThaiNLP ส่งต่อเข้า ColumnTransformer ทั้ง 3 สาขา วิ่งผ่านตัวเลือกโมเดล LogisticRegression กับ LightGBM ไปจนถึงการจูน Threshold และผลิตไฟล์ Bundle พร้อม Drift Baseline ออกมาในคำสั่งเดียว\n\nเห็นภาพการไหลครบทั้งวงจรแล้ว ไปดูเทคนิคสำคัญที่ช่วยไม่ให้โค้ดพังตอนเซฟโมเดลกันต่อเลยครับ",
+      "ttsText": "ลองดูแผนภาพ Phase 2 ML Pipeline ตรงหน้าอีกทีในมุมของการรันจริงแบบ End-to-End นะครับ\n\nวันนี้ข้อมูลไม่ได้หยุดอยู่แค่พิมพ์เขียวแล้ว แต่จะไหลจริงตั้งแต่ Polars แปลงข้อความด้วย PyThaiNLP ส่งต่อเข้า ColumnTransformer ทั้ง 3 สาขา วิ่งผ่านตัวเลือกโมเดล LogisticRegression กับ LightGBM ไปจนถึงการจูน Threshold และผลิตไฟล์ Bundle พร้อม Drift Baseline ออกมาในคำสั่งเดียว\n\nเห็นภาพการไหลครบทั้งวงจรแล้ว ไปดูเทคนิคสำคัญที่ช่วยไม่ให้โค้ดพังตอนเซฟโมเดลกันต่อเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d056/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเทคนิคระดับ Production อย่างสนุกและตรงจุด โดยเฉพาะ 3 เคล็ดลับ ColumnTransformer",
+      "script": "เรามาดูแนวคิดและเทคนิคสำคัญทั้ง 3 ข้อของ Day 56 กันครับ\n\nข้อแรก การร้อยต่อจิ๊กซอว์ B14 เข้ากับ D43 และ D47 เปรียบเหมือนการซ้อมใหญ่ของวงออร์เคสตรา ทุกเครื่องดนตรีทั้ง Polars, PyThaiNLP, ColumnTransformer, LightGBM, Threshold Tuning, SHA-256 และ Drift Baseline ซ้อมแยกกันมาหมดแล้ว วันนี้คือวันที่ทั้งหมดเล่นประสานกันในสคริปต์เดียวที่ทดสอบซ้ำได้ด้วย pytest\n\nข้อที่สอง เทคนิคประกอบ Hybrid ColumnTransformer ให้ serialize สะอาด มี 3 จุดตายที่ต้องรู้ครับ จุดแรก คอลัมน์ข้อความสำหรับ TfidfVectorizer ต้องส่งชื่อเป็นสตริงเดี่ยวคือ tokenized_text ไม่ใช่ list เพราะ TfidfVectorizer รับอินพุต 1D ส่วน numeric กับ categorical ส่งเป็น list เพราะรับ 2D จุดที่สอง ใช้รูปแบบ Pre-Tokenized Thai Text คือตัดคำด้วย PyThaiNLP คั่นด้วยช่องว่างไว้ก่อน แล้วให้ TfidfVectorizer อ่านด้วย token_pattern ที่จับ non-whitespace วิธีนี้ตัดอ็อบเจกต์ Trie หรือ closure ออกจาก Pipeline ทำให้ไม่เจอ PicklingError ตอน joblib.dump เลยครับ และจุดที่สาม ผลลัพธ์ของ ColumnTransformer เป็น sparse matrix ซึ่งทั้ง LogisticRegression และ LGBMClassifier รับไปเทรนได้ตรง ๆ\n\nข้อที่สาม ผลลัพธ์ของการเทรน 1 รอบต้องสร้าง Immutable Output Bundle ครบ 3 ชิ้น คือ model.joblib พร้อม SHA-256, metrics.json ที่บันทึกผล Val กับ Test รวมถึง best_threshold และ drift_baseline.json ที่เก็บ quantile ของ order_value_thb, vocab_size และ train_positive_rate โดยเลือกโมเดลและจูน threshold บน Val เท่านั้น แตะ Test Set เพียงครั้งเดียวครับ",
+      "ttsText": "เรามาดูแนวคิดและเทคนิคสำคัญทั้ง 3 ข้อของ Day 56 กันครับ\n\nข้อแรก การร้อยต่อจิ๊กซอว์ B14 เข้ากับ D43 และ D47 เปรียบเหมือนการซ้อมใหญ่ของวงออร์เคสตรา ทุกเครื่องดนตรีทั้ง Polars, PyThaiNLP, ColumnTransformer, LightGBM, Threshold Tuning, SHA 256 และ Drift Baseline ซ้อมแยกกันมาหมดแล้ว วันนี้คือวันที่ทั้งหมดเล่นประสานกันในสคริปต์เดียวที่ทดสอบซ้ำได้ด้วย pytest\n\nข้อที่สอง เทคนิคประกอบ Hybrid ColumnTransformer ให้ serialize สะอาด มี 3 จุดตายที่ต้องรู้ครับ จุดแรก คอลัมน์ข้อความสำหรับ TfidfVectorizer ต้องส่งชื่อเป็นสตริงเดี่ยวคือ tokenized_text ไม่ใช่ list เพราะ TfidfVectorizer รับอินพุต 1D ส่วน numeric กับ categorical ส่งเป็น list เพราะรับ 2D จุดที่สอง ใช้รูปแบบ Pre-Tokenized Thai Text คือตัดคำด้วย PyThaiNLP คั่นด้วยช่องว่างไว้ก่อน แล้วให้ TfidfVectorizer อ่านด้วย token_pattern ที่จับ non-whitespace วิธีนี้ตัดอ็อบเจกต์ Trie หรือ closure ออกจาก Pipeline ทำให้ไม่เจอ PicklingError ตอน joblib dot dump เลยครับ และจุดที่สาม ผลลัพธ์ของ ColumnTransformer เป็น sparse matrix ซึ่งทั้ง LogisticRegression และ LGBMClassifier รับไปเทรนได้ตรง ๆ\n\nข้อที่สาม ผลลัพธ์ของการเทรน 1 รอบต้องสร้าง Immutable Output Bundle ครบ 3 ชิ้น คือ model dot joblib พร้อม SHA 256, metrics dot json ที่บันทึกผล Val กับ Test รวมถึง best_threshold และ drift baseline dot json ที่เก็บ quantile ของ order_value_thb, vocab_size และ train_positive_rate โดยเลือกโมเดลและจูน threshold บน Val เท่านั้น แตะ Test Set เพียงครั้งเดียวครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน",
+      "src": "/audio/d056/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตการไหลของโค้ด End-to-End ทีละขั้น พร้อมเฉลยข้อสังเกตเรื่องข้อมูลสังเคราะห์",
+      "script": "ลองมาดูตัวอย่างโค้ด End-to-End ครบวงจรใน 3 ขั้นตอนนะครับ\n\nขั้นที่ 1 เราจำลองข้อมูลทิกเก็ตไทย 300 ใบด้วย Polars ทำ pretokenize_thai พร้อม custom dict คำอย่าง พร้อมเพย์, ใบกำกับภาษี, เลขพัสดุ, คืนเงิน แล้วแปลงเป็น pandas DataFrame ด้วย to_dicts จากนั้นแบ่ง Train, Val, Test 60 20 20 แบบ Stratified ได้ 180, 60 และ 60 แถวครับ\n\nขั้นที่ 2 เราสร้าง Hybrid ColumnTransformer 3 สาขา แล้วเทรนเทียบ LogisticRegression กับ LightGBM บนชุด Train จากนั้นวัด Val PR-AUC เพื่อเลือกผู้ชนะอย่างยุติธรรม\n\nขั้นที่ 3 เราใช้ cost matrix ที่ cost_fp เท่ากับ 100 และ cost_fn เท่ากับ 1,000 กวาดหา best_threshold บน Val set แล้วประเมินบน Test set ครั้งเดียว ก่อนบันทึก model.joblib, metrics.json และ drift_baseline.json ลงโฟลเดอร์เวอร์ชันครับ\n\nจุดสังเกตหนึ่งอย่างคือ ในตัวอย่างข้อมูลสังเคราะห์นี้ข้อความแยกกันชัดมากเลยได้ PR-AUC เท่ากับ 1.0 แต่ในชุดข้อมูลจริงที่ข้อความกำกวมกว่านี้จะได้ราว 0.80 ถึง 0.90 ซึ่งพรุ่งนี้ใน Day 57 เราจะไปผ่าหา Error Modes กันครับ ลองไล่อ่านโค้ดแล้วกด ไปต่อ ได้เลย",
+      "ttsText": "ลองมาดูตัวอย่างโค้ด End-to-End ครบวงจรใน 3 ขั้นตอนนะครับ\n\nขั้นที่ 1 เราจำลองข้อมูลทิกเก็ตไทย 300 ใบด้วย Polars ทำ pretokenize_thai พร้อม custom dict คำอย่าง พร้อมเพย์, ใบกำกับภาษี, เลขพัสดุ, คืนเงิน แล้วแปลงเป็น pandas DataFrame ด้วย to_dicts จากนั้นแบ่ง Train, Val, Test 60, 20, 20 แบบ Stratified ได้ 180, 60 และ 60 แถวครับ\n\nขั้นที่ 2 เราสร้าง Hybrid ColumnTransformer 3 สาขา แล้วเทรนเทียบ LogisticRegression กับ LightGBM บนชุด Train จากนั้นวัด Val PR-AUC เพื่อเลือกผู้ชนะอย่างยุติธรรม\n\nขั้นที่ 3 เราใช้ cost matrix ที่ cost_fp เท่ากับ 100 และ cost_fn เท่ากับ 1,000 กวาดหา best_threshold บน Val set แล้วประเมินบน Test set ครั้งเดียว ก่อนบันทึก model dot joblib, metrics dot json และ drift baseline dot json ลงโฟลเดอร์เวอร์ชันครับ\n\nจุดสังเกตหนึ่งอย่างคือ ในตัวอย่างข้อมูลสังเคราะห์นี้ข้อความแยกกันชัดมากเลยได้ PR-AUC เท่ากับ 1.0 แต่ในชุดข้อมูลจริงที่ข้อความกำกวมกว่านี้จะได้ราว 0.80 ถึง 0.90 ซึ่งพรุ่งนี้ใน Day 57 เราจะไปผ่าหา Error Modes กันครับ ลองไล่อ่านโค้ดแล้วกด ไปต่อ ได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาตัวอย่าง End-to-End Pipeline",
+        "prompt": "ลองไล่ดูขั้นตอนการทำ Pre-tokenize, เทียบ LogReg กับ LightGBM และส่งออก Bundle ทั้ง 3 ไฟล์ เมื่อเข้าใจแล้วกดไปต่อครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — เขียน train_ticket_pipeline.py",
+      "src": "/audio/d056/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชัดเจน ไล่สเปก 4 ฟังก์ชันของสคริปต์เทรน End-to-End ให้ผู้เรียนเขียนตามได้ไม่หลงทาง",
+      "script": "ถึงโจทย์บูรณาการ End-to-End ของ Block B14 แล้วครับ ให้คุณสร้างไฟล์ train_ticket_pipeline.py ที่มี 4 ฟังก์ชันครบชุด\n\nฟังก์ชันแรก pretokenize_thai ตัดคำด้วย PyThaiNLP newmm พร้อม CUSTOM_DICT แปลงเป็นตัวพิมพ์เล็กแล้วเชื่อมคำด้วยช่องว่าง\n\nฟังก์ชันที่สอง build_hybrid_pipeline ประกอบ ColumnTransformer 3 สาขา ได้แก่ text ส่งชื่อคอลัมน์เป็นสตริงเดี่ยวเข้า TfidfVectorizer, num ส่งลิสต์เข้า SimpleImputer กับ StandardScaler และ cat ส่งลิสต์เข้า OneHotEncoder แบบ handle_unknown เท่ากับ ignore ต่อกับ logreg หรือ lightgbm ถ้าส่งชื่ออื่นมาให้ raise ValueError\n\nฟังก์ชันที่สาม tune_threshold_on_val กวาด threshold ตั้งแต่ 0.10 ถึง 0.90 ทีละ 0.05 บน Val set แล้วคืนค่าที่ลดต้นทุนต่ำสุด ถ้าเสมอกันเลือก threshold ที่สูงกว่า\n\nฟังก์ชันที่สี่ train_and_export_bundle เช็กก่อนเลยว่าโฟลเดอร์เวอร์ชันมีอยู่แล้วไหม ถ้ามีให้ raise FileExistsError จากนั้นเพิ่มคอลัมน์ tokenized_text แบ่ง Train, Val, Test 60 20 20 แบบ stratify เทรน จูนบน Val วัดผลบน Test แล้วบันทึก model.joblib, metrics.json และ drift_baseline.json ครบทั้ง 3 ไฟล์\n\nเสร็จแล้วรัน pytest กับ ruff check ดูนะครับ เดี๋ยวพี่รอตรงนี้ครับ",
+      "ttsText": "ถึงโจทย์บูรณาการ End-to-End ของ Block B14 แล้วครับ ให้คุณสร้างไฟล์ train_ticket_pipeline dot py ที่มี 4 ฟังก์ชันครบชุด\n\nฟังก์ชันแรก pretokenize_thai ตัดคำด้วย PyThaiNLP newmm พร้อม CUSTOM_DICT แปลงเป็นตัวพิมพ์เล็กแล้วเชื่อมคำด้วยช่องว่าง\n\nฟังก์ชันที่สอง build_hybrid_pipeline ประกอบ ColumnTransformer 3 สาขา ได้แก่ text ส่งชื่อคอลัมน์เป็นสตริงเดี่ยวเข้า TfidfVectorizer, num ส่งลิสต์เข้า SimpleImputer กับ StandardScaler และ cat ส่งลิสต์เข้า OneHotEncoder แบบ handle_unknown เท่ากับ ignore ต่อกับ logreg หรือ lightgbm ถ้าส่งชื่ออื่นมาให้ raise ValueError\n\nฟังก์ชันที่สาม tune_threshold_on_val กวาด threshold ตั้งแต่ 0.10 ถึง 0.90 ทีละ 0.05 บน Val set แล้วคืนค่าที่ลดต้นทุนต่ำสุด ถ้าเสมอกันเลือก threshold ที่สูงกว่า\n\nฟังก์ชันที่สี่ train_and_export_bundle เช็กก่อนเลยว่าโฟลเดอร์เวอร์ชันมีอยู่แล้วไหม ถ้ามีให้ raise FileExistsError จากนั้นเพิ่มคอลัมน์ tokenized_text แบ่ง Train, Val, Test 60, 20, 20 แบบ stratify เทรน จูนบน Val วัดผลบน Test แล้วบันทึก model dot joblib, metrics dot json และ drift baseline dot json ครบทั้ง 3 ไฟล์\n\nเสร็จแล้วรัน pytest กับ ruff check ดูนะครับ เดี๋ยวพี่รอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน train_ticket_pipeline.py",
+        "prompt": "ลงมือประกอบ End-to-End Hybrid Pipeline และรัน pytest ดูว่าผ่านทั้ง LogReg และ LightGBM หรือยัง เสร็จแล้วกด 'ไปต่อ' ครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d056/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชย แล้วเตือน 4 จุดตายของ Hybrid Pipeline ด้วยจังหวะสนุกและน่าจำ",
+      "script": "เก่งมากครับ ร้อยต่อ End-to-End Pipeline สำเร็จแล้ว ก่อนเข้า Interleaved Quiz มาดู 4 ข้อผิดพลาดที่พบบ่อยที่สุดเวลาประกอบ Hybrid Pipeline นะครับ\n\nข้อแรก คือส่งชื่อคอลัมน์ข้อความเป็น list เข้า ColumnTransformer ตัว TfidfVectorizer จะได้ DataFrame 2D แล้วเอาชื่อคอลัมน์มา fit แทนเนื้อหาจนพัง ต้องส่งเป็นสตริงเดี่ยวเสมอนะครับ\n\nข้อที่สอง คือผูก lambda หรือ closure tokenizer ไว้ใน TfidfVectorizer พอเทรนเสร็จสั่ง joblib.dump ก็ระเบิดด้วย PicklingError ทันที การทำ Pre-Tokenize แยกชั้นช่วยตัดปัญหานี้ได้ขาดเลย\n\nข้อที่สาม คือลืมตั้ง OneHotEncoder handle_unknown เท่ากับ ignore พอเจอช่องทางใหม่อย่าง tiktok ใน Production ก็โยน ValueError พังทันที\n\nและข้อที่สี่ คือเอา Test Set มาใช้ทั้งเลือกโมเดลและจูน threshold ทำให้เกิด Data Leakage จนคะแนนหลอกตา ต้องเลือกและจูนบน Validation Set เท่านั้นครับ",
+      "ttsText": "เก่งมากครับ ร้อยต่อ End-to-End Pipeline สำเร็จแล้ว ก่อนเข้า Interleaved Quiz มาดู 4 ข้อผิดพลาดที่พบบ่อยที่สุดเวลาประกอบ Hybrid Pipeline นะครับ\n\nข้อแรก คือส่งชื่อคอลัมน์ข้อความเป็น list เข้า ColumnTransformer ตัว TfidfVectorizer จะได้ DataFrame 2D แล้วเอาชื่อคอลัมน์มา fit แทนเนื้อหาจนพัง ต้องส่งเป็นสตริงเดี่ยวเสมอนะครับ\n\nข้อที่สอง คือผูก lambda หรือ closure tokenizer ไว้ใน TfidfVectorizer พอเทรนเสร็จสั่ง joblib dot dump ก็ระเบิดด้วย PicklingError ทันที การทำ Pre-Tokenize แยกชั้นช่วยตัดปัญหานี้ได้ขาดเลย\n\nข้อที่สาม คือลืมตั้ง OneHotEncoder handle_unknown เท่ากับ ignore พอเจอช่องทางใหม่อย่าง tiktok ใน Production ก็โยน ValueError พังทันที\n\nและข้อที่สี่ คือเอา Test Set มาใช้ทั้งเลือกโมเดลและจูน threshold ทำให้เกิด Data Leakage จนคะแนนหลอกตา ต้องเลือกและจูนบน Validation Set เท่านั้นครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Interleaved Recall Quiz 4 ข้อ",
+      "src": "/audio/d056/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเอง ชวนดึงความจำสลับหัวข้อตั้งแต่ D43, D47 จนถึง D53–D56",
+      "script": "มาทดสอบความจำระยะยาวด้วย Interleaved Recall Quiz 4 ข้อกันครับ รอบนี้ทบทวนสลับหัวข้อทั้ง D43, D47 และ D53 ถึง D56 เลย ทั้งเรื่องมิติอินพุตใน ColumnTransformer ข้อดีของ Pre-Tokenize การอ่านสัญญาณ Drift เมื่อ missing_delta พุ่ง และไฟล์ทั้ง 3 ชิ้นใน Bundle\n\nลองนึกคำตอบจากความจำก่อนดูเฉลยนะครับ เดี๋ยวพี่พักรอตรงนี้ ทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิด Block B14 กันครับ",
+      "ttsText": "มาทดสอบความจำระยะยาวด้วย Interleaved Recall Quiz 4 ข้อกันครับ รอบนี้ทบทวนสลับหัวข้อทั้ง D43, D47 และ D53 ถึง D56 เลย ทั้งเรื่องมิติอินพุตใน ColumnTransformer ข้อดีของ Pre-Tokenize การอ่านสัญญาณ Drift เมื่อ missing_delta พุ่ง และไฟล์ทั้ง 3 ชิ้นใน Bundle\n\nลองนึกคำตอบจากความจำก่อนดูเฉลยนะครับ เดี๋ยวพี่พักรอตรงนี้ ทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิด Block B14 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Interleaved Quiz 4 ข้อ",
+        "prompt": "ลองดึงความจำตอบควิซทบทวนทั้ง 4 ข้อให้ครบ แล้วกด 'ไปต่อ' เพื่อฟังสรุปปิด Block B14 ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Block B15",
+      "src": "/audio/d056/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ ยินดีที่จบ Block B14 และชวนลุย Block B15 ช่วงโค้งสุดท้ายของ Phase 2",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 56 และปิด Block B14 อย่างสวยงามแล้ว ขอสรุปภาพรวม 3 ข้อก่อนเข้าสู่โค้งสุดท้ายของ Phase 2 นะครับ\n\nหนึ่ง วันนี้คุณร้อยต่อ Phase 2 ได้ครบวงจร ตั้งแต่ Polars, PyThaiNLP Pre-Tokenization, Hybrid ColumnTransformer, LogisticRegression กับ LightGBM, Val-only Threshold Tuning ไปจนถึง Immutable Artifact Bundle\nสอง เทคนิค Pre-Tokenized Thai Text ช่วยให้ Pipeline ไม่มี custom closure จึงเซฟและโหลดด้วย joblib ข้ามเครื่องได้สะอาด 100%\nสาม การเทรน 1 รอบผลิตครบทั้งไฟล์โมเดลพร้อม SHA-256, metrics.json และ drift_baseline.json ที่พร้อมส่งต่อให้ระบบเฝ้าระวัง Drift ทันที\n\nใน Block B15 ช่วง Day 57 ถึง Day 60 เราจะเอาโมเดลชุดนี้ไปผ่า Error Analysis, ทำ Benchmark ONNX ให้ต่ำกว่า 10 มิลลิวินาที, เขียน Reproducible Tests และปิดท้ายด้วย Phase 2 Demo ครับ เจอกันใน Day 57 นะครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 56 และปิด Block B14 อย่างสวยงามแล้ว ขอสรุปภาพรวม 3 ข้อก่อนเข้าสู่โค้งสุดท้ายของ Phase 2 นะครับ\n\nหนึ่ง วันนี้คุณร้อยต่อ Phase 2 ได้ครบวงจร ตั้งแต่ Polars, PyThaiNLP Pre-Tokenization, Hybrid ColumnTransformer, LogisticRegression กับ LightGBM, Val-only Threshold Tuning ไปจนถึง Immutable Artifact Bundle\nสอง เทคนิค Pre-Tokenized Thai Text ช่วยให้ Pipeline ไม่มี custom closure จึงเซฟและโหลดด้วย joblib ข้ามเครื่องได้สะอาด 100 เปอร์เซ็นต์\nสาม การเทรน 1 รอบผลิตครบทั้งไฟล์โมเดลพร้อม SHA 256, metrics dot json และ drift baseline dot json ที่พร้อมส่งต่อให้ระบบเฝ้าระวัง Drift ทันที\n\nใน Block B15 ช่วง Day 57 ถึง Day 60 เราจะเอาโมเดลชุดนี้ไปผ่า Error Analysis, ทำ Benchmark ONNX ให้ต่ำกว่า 10 มิลลิวินาที, เขียน Reproducible Tests และปิดท้ายด้วย Phase 2 Demo ครับ เจอกันใน Day 57 นะครับ สู้ ๆ ครับ"
+    }
+  ]
+}

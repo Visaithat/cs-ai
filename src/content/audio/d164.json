@@ -1,0 +1,109 @@
+{
+  "lessonId": "d164",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Milestone 2 Retrieval Gate",
+      "src": "/audio/d164/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงตื่นเต้นและมุ่งมั่นแบบวันสำคัญของ Milestone Lab ชี้ให้เห็นว่าทำไมต้องวัด Retrieval แยกจาก LLM",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 164 วัน Milestone 2 Lab ของโปรเจกต์ Capstone แล้วนะครับ วันนี้เราจะไม่เดาว่าท่อค้นหาของเราดีหรือยัง แต่จะวัดผลด้วยตัวเลขจริงให้เห็นว่า Recall@5 ทะลุ 0.85 หรือเปล่าครับ\n\nหลักคิดสำคัญของวิศวกร AI คือเราต้องแยกวัด Retrieval ออกจาก Generation เสมอ เพราะถ้าเอกสารคำตอบไม่ติดเข้ามาใน Top-5 ต่อให้ไปจูน System Prompt ให้ตาย LLM ก็ไม่มีทางตอบถูกจากหลักฐานได้\n\nวันนี้เราจะเปรียบเทียบพลังการค้นหาแบบเป็นขั้นบันได 3 ขั้น ตั้งแต่ Dense Only, Hybrid RRF ไปจนถึง Cross-Encoder Rerank และไม่ดูแค่ค่าเฉลี่ยรวมอย่างเดียว แต่จะผ่าดูราย Failure Slice ทั้งไทยปนอังกฤษ รหัสใบแจ้งหนี้ และตารางค่าธรรมเนียม เพื่อตัดสินใจเชิงวิศวกรรมอย่างมีหลักฐานว่าพร้อม Ship สู่ Block B42 หรือต้องย้อนกลับไปซ่อม Chunking ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 164 วัน Milestone 2 Lab ของโปรเจกต์ Capstone แล้วนะครับ วันนี้เราจะไม่เดาว่าท่อค้นหาของเราดีหรือยัง แต่จะวัดผลด้วยตัวเลขจริงให้เห็นว่า Recall at 5 ทะลุ 0.85 หรือเปล่าครับ\n\nหลักคิดสำคัญของวิศวกร AI คือเราต้องแยกวัด Retrieval ออกจาก Generation เสมอ เพราะถ้าเอกสารคำตอบไม่ติดเข้ามาใน Top-5 ต่อให้ไปจูน System Prompt ให้ตาย LLM ก็ไม่มีทางตอบถูกจากหลักฐานได้\n\nวันนี้เราจะเปรียบเทียบพลังการค้นหาแบบเป็นขั้นบันได 3 ขั้น ตั้งแต่ Dense Only, Hybrid RRF ไปจนถึง Cross-Encoder Rerank และไม่ดูแค่ค่าเฉลี่ยรวมอย่างเดียว แต่จะผ่าดูราย Failure Slice ทั้งไทยปนอังกฤษ รหัสใบแจ้งหนี้ และตารางค่าธรรมเนียม เพื่อตัดสินใจเชิงวิศวกรรมอย่างมีหลักฐานว่าพร้อม Ship สู่ Block B42 หรือต้องย้อนกลับไปซ่อม Chunking ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d164/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อให้เห็นภาพการวัดผลและการวินิจฉัยปัญหา",
+      "script": "เป้าหมายของ Milestone 2 Lab มี 3 ข้อที่จะทำให้คุณวัดผลระบบได้แม่นยำครับ\n\nหนึ่ง คำนวณและตีความ Recall@5 คู่กับ MRR เพื่อแยกปัญหา ค้นไม่เจอเลย กับ เจอแต่อยู่อันดับท้าย\nสอง เทียบผลเชิงตัวเลข 3 ขั้นคือ Dense Only, Hybrid RRF และ +Cross-Encoder Rerank บนคำถามไทยผสมอังกฤษ\nสาม ผ่า Failure Slices เพื่อตัดสินใจ Ship สู่ Block B42 หรือย้อนแก้ Chunking กับ PyThaiNLP โดยรันแบบ offline 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Milestone 2 Lab มี 3 ข้อที่จะทำให้คุณวัดผลระบบได้แม่นยำครับ\n\nหนึ่ง คำนวณและตีความ Recall at 5 คู่กับ MRR เพื่อแยกปัญหา ค้นไม่เจอเลย กับ เจอแต่อยู่อันดับท้าย\nสอง เทียบผลเชิงตัวเลข 3 ขั้นคือ Dense Only, Hybrid RRF และบวก Cross-Encoder Rerank บนคำถามไทยผสมอังกฤษ\nสาม ผ่า Failure Slices เพื่อตัดสินใจ Ship สู่ Block B42 หรือย้อนแก้ Chunking กับ PyThaiNLP โดยรันแบบ offline 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เตรียมไฟล์ Benchmark",
+      "src": "/audio/d164/03-setup.mp3",
+      "stylePrompt": "พูดช้าชัด น้ำเสียงใจเย็น พาเตรียมโฟลเดอร์ evals และชุดเทสต์ CI แบบ offline",
+      "script": "ช่วงเตรียมเครื่องวันนี้ ในโฟลเดอร์ thai-enterprise-assistant ให้สร้างโฟลเดอร์สำหรับการประเมินผลด้วยคำสั่ง mkdir -p evals src tests ติดตั้ง uv add --dev pytest ruff แล้วทดสอบ uv run pytest --version ให้พร้อมครับ\n\nสคริปต์ Benchmark วันนี้รันแบบ offline 100 เปอร์เซ็นต์ เพื่อให้คุณวางตรรกะการวัดผลและการตัดสินใจเป็น automated gate ที่รันซ้ำใน CI ได้ทุกครั้งที่แก้ chunking หรือ index ครับ พร้อมแล้วกดไปต่อเลย",
+      "ttsText": "ช่วงเตรียมเครื่องวันนี้ ในโฟลเดอร์ thai-enterprise-assistant ให้สร้างโฟลเดอร์สำหรับการประเมินผลด้วยคำสั่ง mkdir dash p evals src tests ติดตั้ง uv add dash dash dev pytest ruff แล้วทดสอบ uv run pytest dash dash version ให้พร้อมครับ\n\nสคริปต์ Benchmark วันนี้รันแบบ offline 100 เปอร์เซ็นต์ เพื่อให้คุณวางตรรกะการวัดผลและการตัดสินใจเป็น automated gate ที่รันซ้ำใน CI ได้ทุกครั้งที่แก้ chunking หรือ index ครับ พร้อมแล้วกดไปต่อเลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียมโฟลเดอร์ Benchmark",
+        "prompt": "สร้างโฟลเดอร์ evals/ และเช็ก uv run pytest --version ให้พร้อมสำหรับการเขียน Automated Gate แล้วกดไปต่อครับ",
+        "continueLabel": "เตรียมเครื่องพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — กราฟ Benchmark 3 ขั้น",
+      "src": "/audio/d164/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงกระตือรือร้น เหมือนกำลังชี้ดูกราฟคะแนนที่ไต่ระดับขึ้นทีละขั้นอย่างน่าภูมิใจ",
+      "script": "ลองมองกราฟ Benchmark 3 ขั้นตรงหน้านี้ดูครับ เราจะเห็นพัฒนาการของระบบค้นหาชัดเจนเป็นขั้นบันไดเลย\n\nขั้นแรก Dense Only มักจะติดอยู่แถว 0.70 เพราะพลาดรหัสเฉพาะกับตาราง พอเติม PyThaiNLP BM25 และรวมด้วย Hybrid RRF กราฟจะดีดขึ้นมาราว 0.83 ทันที\n\nและขั้นที่สามพอส่ง Top-20 เข้า Cross-Encoder Rerank ทั้ง Recall@5 และ MRR จะพุ่งทะลุเส้นเป้าหมาย 0.85 ขึ้นไปแถว 0.90 ได้อย่างมั่นคง นี่คือหลักฐานเชิงตัวเลขที่พิสูจน์ว่าทุกชั้นที่เพิ่มเข้ามาคุ้มค่าจริงครับ",
+      "ttsText": "ลองมองกราฟ Benchmark 3 ขั้นตรงหน้านี้ดูครับ เราจะเห็นพัฒนาการของระบบค้นหาชัดเจนเป็นขั้นบันไดเลย\n\nขั้นแรก Dense Only มักจะติดอยู่แถว 0.70 เพราะพลาดรหัสเฉพาะกับตาราง พอเติม PyThaiNLP BM25 และรวมด้วย Hybrid RRF กราฟจะดีดขึ้นมาราว 0.83 ทันที\n\nและขั้นที่สามพอส่ง Top-20 เข้า Cross-Encoder Rerank ทั้ง Recall at 5 และ MRR จะพุ่งทะลุเส้นเป้าหมาย 0.85 ขึ้นไปแถว 0.90 ได้อย่างมั่นคง นี่คือหลักฐานเชิงตัวเลขที่พิสูจน์ว่าทุกชั้นที่เพิ่มเข้ามาคุ้มค่าจริงครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d164/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบาย metric และวิธีทำ Error Analysis ด้วยน้ำเสียงเฉียบคม ชัดเจน เปรียบเทียบกับการตรวจสภาพรถ",
+      "script": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Milestone 2 กันครับ\n\nข้อแรก Recall@5 กับ MRR ทำไมต้องดูคู่กัน Recall@5 วัดว่าเอกสารเฉลยติด Top-5 ไหม ซึ่งเป็นเพดานความถูกต้องของ RAG ส่วน MRR วัดว่าเฉลยชิ้นแรกอยู่สูงแค่ไหนด้วย 1 หารด้วย rank ถ้า Recall@5 สูงแต่ MRR ต่ำ แปลว่าคำตอบไปกองอยู่อันดับ 4 ถึง 5 เสี่ยง Lost in the Middle และอย่าเพิ่งโทษ System Prompt ถ้า Retrieval ยังไม่ผ่านเกณฑ์ครับ\n\nข้อที่สอง ก้าวกระโดด 3 ขั้น Dense Only พลาดรหัสใบแจ้งหนี้ ขั้นสอง Hybrid RRF ใช้ 1 หารด้วย 60 บวก rank ผสาน Dense กับ PyThaiNLP BM25 โดยไม่ต้อง normalize สเกล ขั้นสามใส่ Cross-Encoder Rerank บน Top-20 แม้เพิ่ม latency 100 ถึง 250 มิลลิวินาที แต่มักดันผลข้าม 0.85 อย่าลืมบันทึกตารางเทียบลง README.md ด้วยนะครับ\n\nข้อที่สาม ผ่า Failure Slices ค่าเฉลี่ย 0.85 อาจหลอกตาได้ถ้ากลุ่มตารางได้แค่ 0.50 เราต้องแยกวัด thai_faq, code_switch, exact_id และ table_policy พร้อม ACL filter เสมอ ถ้า exact_id พังแก้ที่ PyThaiNLP ถ้า table_policy พังให้ย้อนไปแก้ Table-Aware Chunking ครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Milestone 2 กันครับ\n\nข้อแรก Recall at 5 กับ MRR ทำไมต้องดูคู่กัน Recall at 5 วัดว่าเอกสารเฉลยติด Top-5 ไหม ซึ่งเป็นเพดานความถูกต้องของ RAG ส่วน MRR วัดว่าเฉลยชิ้นแรกอยู่สูงแค่ไหนด้วย 1 หารด้วย rank ถ้า Recall at 5 สูงแต่ MRR ต่ำ แปลว่าคำตอบไปกองอยู่อันดับ 4 ถึง 5 เสี่ยง Lost in the Middle และอย่าเพิ่งโทษ System Prompt ถ้า Retrieval ยังไม่ผ่านเกณฑ์ครับ\n\nข้อที่สอง ก้าวกระโดด 3 ขั้น Dense Only พลาดรหัสใบแจ้งหนี้ ขั้นสอง Hybrid RRF ใช้ 1 หารด้วย 60 บวก rank ผสาน Dense กับ PyThaiNLP BM25 โดยไม่ต้อง normalize สเกล ขั้นสามใส่ Cross-Encoder Rerank บน Top-20 แม้เพิ่ม latency 100 ถึง 250 มิลลิวินาที แต่มักดันผลข้าม 0.85 อย่าลืมบันทึกตารางเทียบลง README dot md ด้วยนะครับ\n\nข้อที่สาม ผ่า Failure Slices ค่าเฉลี่ย 0.85 อาจหลอกตาได้ถ้ากลุ่มตารางได้แค่ 0.50 เราต้องแยกวัด thai_faq, code_switch, exact_id และ table_policy พร้อม ACL filter เสมอ ถ้า exact_id พังแก้ที่ PyThaiNLP ถ้า table_policy พังให้ย้อนไปแก้ Table-Aware Chunking ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — Benchmark & Slice Gate",
+      "src": "/audio/d164/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนวิเคราะห์ตัวเลขในตารางผลลัพธ์ทีละขั้น ชี้จุดแตกต่างระหว่าง dense, hybrid_rrf และ rerank อย่างชัดเจน",
+      "script": "ลองมาดูตัวอย่างพร้อมรันที่จำลอง Milestone 2 Benchmark บนคำถาม 4 slices กันครับ\n\nขั้นแรก เราเขียนฟังก์ชันวัดผลพื้นฐานที่ deterministic คือ recall_at_k, reciprocal_rank และ rrf_fuse ขั้นที่สอง เรานำ 4 เคสที่ครอบคลุมทั้ง thai_faq, code_switch, exact_id อย่าง INV-2026-009 และ table_policy มาเทียบกัน 3 โหมด\n\nผลที่ได้เห็นชัดมากเลยครับ ถ้าใช้แค่ dense อย่างเดียว Recall@5 จะได้แค่ 0.50 และ MRR ได้ 0.38 เพราะพลาดทั้งรหัสใบแจ้งหนี้และตาราง พอขยับมาเป็น hybrid_rrf ค่า Recall@5 พุ่งเป็น 1.00 และ MRR ขยับเป็น 0.69 แต่พอเติม rerank เข้าไป MRR พุ่งเต็ม 1.00 เลยเพราะเฉลยขึ้นอันดับ 1 ทุกข้อ\n\nขั้นที่สาม ตัวเช็ก Gate ราย slice ฟ้องเลยว่า dense ต้อง FIX_FIRST ใน exact_id และ table_policy ส่วน rerank ได้คำตัดสิน SHIP_TO_B42 ครับ จุดสังเกตคือถ้า Top-20 จาก RRF ยังไม่ติดเฉลย Reranker ก็ช่วยไม่ได้ ต้องกลับไปแก้ Chunking หรือ Tokenization กดเดินโค้ดดูทีละขั้นได้เลย",
+      "ttsText": "ลองมาดูตัวอย่างพร้อมรันที่จำลอง Milestone 2 Benchmark บนคำถาม 4 slices กันครับ\n\nขั้นแรก เราเขียนฟังก์ชันวัดผลพื้นฐานที่ deterministic คือ recall_at_k, reciprocal_rank และ rrf_fuse ขั้นที่สอง เรานำ 4 เคสที่ครอบคลุมทั้ง thai_faq, code_switch, exact_id อย่าง INV ขีด 2026 ขีด 009 และ table_policy มาเทียบกัน 3 โหมด\n\nผลที่ได้เห็นชัดมากเลยครับ ถ้าใช้แค่ dense อย่างเดียว Recall at 5 จะได้แค่ 0.50 และ MRR ได้ 0.38 เพราะพลาดทั้งรหัสใบแจ้งหนี้และตาราง พอขยับมาเป็น hybrid_rrf ค่า Recall at 5 พุ่งเป็น 1.00 และ MRR ขยับเป็น 0.69 แต่พอเติม rerank เข้าไป MRR พุ่งเต็ม 1.00 เลยเพราะเฉลยขึ้นอันดับ 1 ทุกข้อ\n\nขั้นที่สาม ตัวเช็ก Gate ราย slice ฟ้องเลยว่า dense ต้อง FIX_FIRST ใน exact_id และ table_policy ส่วน rerank ได้คำตัดสิน SHIP_TO_B42 ครับ จุดสังเกตคือถ้า Top-20 จาก RRF ยังไม่ติดเฉลย Reranker ก็ช่วยไม่ได้ ต้องกลับไปแก้ Chunking หรือ Tokenization กดเดินโค้ดดูทีละขั้นได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา Worked Example Benchmark",
+        "prompt": "ลองกดเดินโค้ด Benchmark ทั้ง 3 ขั้น แล้วดูการเปลี่ยนคะแนนจาก dense ไปสู่ hybrid_rrf และ rerank ก่อนกดไปต่อครับ",
+        "continueLabel": "เห็นผล Benchmark แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง Automated Milestone 2 Gate",
+      "src": "/audio/d164/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชัดเจน ไล่สเปกฟังก์ชันทั้ง 3 ตัวและโครงสร้าง return dictionary ให้ทำตามได้อย่างแม่นยำ",
+      "script": "ได้เวลาสร้าง Automated Milestone 2 Gate ของคุณเองในไฟล์ src/retrieval_benchmark.py แล้วครับ วันนี้มี 3 ฟังก์ชันหลักที่เอาไปใส่เป็น step ใน GitHub Actions ได้จริงเลย\n\nหนึ่ง rrf_merge รวมผลจาก dense_rank กับ bm25_rank ด้วยสูตร RRF และ tie-break ด้วย doc_id แบบ ascending เพื่อความ deterministic\nสอง evaluate_retrieval รับรายการ cases แล้วคำนวณค่าเฉลี่ย recall_at_k กับ mrr พร้อมแยกสรุปใน by_slice เก็บ missed_case_ids กรณี recall น้อยกว่า 1.0 และคืน passed_gate ที่เช็กว่า recall_at_k มากกว่าหรือเท่ากับ target_recall ไหม โดยถ้า cases ว่างให้โยน ValueError ทันที\n\nและสาม find_weak_slices คืนรายชื่อ slice ที่คะแนน recall_at_k ต่ำกว่า min_slice_recall โดยเรียงจากแย่สุดไปดีสุดครับ เขียนเสร็จแล้วลองรัน pytest ทั้ง 5 เคสกับ ruff check และอย่าลืมลองรันกับผลจริง 40 ข้อเพื่อจดตารางลง README.md ด้วยนะครับ",
+      "ttsText": "ได้เวลาสร้าง Automated Milestone 2 Gate ของคุณเองในไฟล์ retrieval_benchmark dot py ในโฟลเดอร์ src แล้วครับ วันนี้มี 3 ฟังก์ชันหลักที่เอาไปใส่เป็น step ใน GitHub Actions ได้จริงเลย\n\nหนึ่ง rrf_merge รวมผลจาก dense_rank กับ bm25_rank ด้วยสูตร RRF และ tie-break ด้วย doc_id แบบ ascending เพื่อความ deterministic\nสอง evaluate_retrieval รับรายการ cases แล้วคำนวณค่าเฉลี่ย recall_at_k กับ mrr พร้อมแยกสรุปใน by_slice เก็บ missed_case_ids กรณี recall น้อยกว่า 1.0 และคืน passed_gate ที่เช็กว่า recall_at_k มากกว่าหรือเท่ากับ target_recall ไหม โดยถ้า cases ว่างให้โยน ValueError ทันที\n\nและสาม find_weak_slices คืนรายชื่อ slice ที่คะแนน recall_at_k ต่ำกว่า min_slice_recall โดยเรียงจากแย่สุดไปดีสุดครับ เขียนเสร็จแล้วลองรัน pytest ทั้ง 5 เคสกับ ruff check dot และอย่าลืมลองรันกับผลจริง 40 ข้อเพื่อจดตารางลง README dot md ด้วยนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียน Automated Milestone 2 Gate",
+        "prompt": "ลงมือเขียน src/retrieval_benchmark.py แล้วรัน uv run pytest -q tests/test_retrieval_benchmark.py ให้ผ่านครบทั้ง 5 เคสครับ",
+        "continueLabel": "สร้าง Gate ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d164/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงเตือนภัยแบบเป็นกันเอง ชี้ 4 จุดพลาดที่ทำให้ตัวเลข Benchmark หลอกตาหรือเสียเวลาจูนผิดจุด",
+      "script": "เก่งมากครับที่ทำ Automated Gate เสร็จแล้ว ก่อนทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตตอนทำ Retrieval Benchmark ที่ต้องระวังให้ดีนะ\n\nข้อแรก คือใส่ Reranker แล้วแต่ดันดึง candidate จาก RRF มาแค่ Top-5 ผลคือ MRR อาจขยับนิดหน่อย แต่ Recall@5 เท่าเดิมเป๊ะ ต้องดึง Top-20 หรือ Top-30 เข้าไปให้ Reranker คัดเสมอ\nข้อที่สอง คือวัด Benchmark ด้วยคำถามง่าย ๆ ล้วน ลืมใส่กลุ่ม Code-Switching, เลขใบแจ้งหนี้ และตารางใน Golden Dataset 40 ข้อ ตัวเลขเลยสวยปลอม ๆ แต่พังตอนใช้งานจริง\n\nข้อที่สาม คือยังเผลอใช้ whitespace split ทำ BM25 กับภาษาไทย จนคะแนน Hybrid แทบไม่ขยับจาก Dense Only เลย\nและข้อสี่ คือปิด ACL filter ตอนทดสอบ Benchmark แล้วค่อยไปเปิดตอนขึ้น Production ทำให้จำนวนเอกสารที่ผ่าน filter น้อยลงจน Recall@5 ตกฮวบตอนใช้งานจริง ต้องทดสอบพร้อม ACL Pre-Filter เสมอครับ",
+      "ttsText": "เก่งมากครับที่ทำ Automated Gate เสร็จแล้ว ก่อนทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตตอนทำ Retrieval Benchmark ที่ต้องระวังให้ดีนะ\n\nข้อแรก คือใส่ Reranker แล้วแต่ดันดึง candidate จาก RRF มาแค่ Top-5 ผลคือ MRR อาจขยับนิดหน่อย แต่ Recall at 5 เท่าเดิมเป๊ะ ต้องดึง Top-20 หรือ Top-30 เข้าไปให้ Reranker คัดเสมอ\nข้อที่สอง คือวัด Benchmark ด้วยคำถามง่าย ๆ ล้วน ลืมใส่กลุ่ม Code-Switching, เลขใบแจ้งหนี้ และตารางใน Golden Dataset 40 ข้อ ตัวเลขเลยสวยปลอม ๆ แต่พังตอนใช้งานจริง\n\nข้อที่สาม คือยังเผลอใช้ whitespace split ทำ BM25 กับภาษาไทย จนคะแนน Hybrid แทบไม่ขยับจาก Dense Only เลย\nและข้อสี่ คือปิด ACL filter ตอนทดสอบ Benchmark แล้วค่อยไปเปิดตอนขึ้น Production ทำให้จำนวนเอกสารที่ผ่าน filter น้อยลงจน Recall at 5 ตกฮวบตอนใช้งานจริง ต้องทดสอบพร้อม ACL Pre-Filter เสมอครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d164/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ ชวนฝึกวินิจฉัยตัวเลข Benchmark และทบทวนสูตรคำนวณอย่างสนุก",
+      "script": "มาเช็กความเข้าใจส่งท้าย Milestone 2 ด้วย Micro-Quiz 4 ข้อครับ รอบนี้สนุกมากเพราะเป็นโจทย์วินิจฉัยจริง เช่น ถ้า Recall@20 ได้ 0.92 แต่ Recall@5 ได้ 0.72 ควรแก้อะไร หรือถ้า Recall@5 รวมผ่าน 0.86 แต่ slice ตารางได้แค่ 0.45 ควรตัดสินใจยังไง พร้อมคำนวณ Recall@5 และ Reciprocal Rank ด้วย\n\nลองตอบให้ครบทั้ง 4 ข้อนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจส่งท้าย Milestone 2 ด้วย Micro-Quiz 4 ข้อครับ รอบนี้สนุกมากเพราะเป็นโจทย์วินิจฉัยจริง เช่น ถ้า Recall at 20 ได้ 0.92 แต่ Recall at 5 ได้ 0.72 ควรแก้อะไร หรือถ้า Recall at 5 รวมผ่าน 0.86 แต่ slice ตารางได้แค่ 0.45 ควรตัดสินใจยังไง พร้อมคำนวณ Recall at 5 และ Reciprocal Rank ด้วย\n\nลองตอบให้ครบทั้ง 4 ข้อนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบ Micro-Quiz วินิจฉัยผล Benchmark และ Failure Slices ทั้ง 4 ข้อให้ครบ แล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซครบแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป Milestone 2 & ก้าวต่อไป B42",
+      "src": "/audio/d164/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภาคภูมิใจ และให้กำลังใจอย่างอบอุ่น สรุป Milestone 2 แล้วส่งต่อเข้าสู่ Block B42 อย่างมั่นใจ",
+      "script": "ยินดีด้วยครับ คุณผ่าน Milestone 2 Lab และปิด Block B41 ของโปรเจกต์ Capstone ได้อย่างสมบูรณ์แบบแล้ว ขอสรุป 4 หัวใจหลักที่ทำวันนี้ให้จำแม่น ๆ นะครับ\n\nหนึ่ง วัด Retrieval แยกจาก Generation เสมอด้วย Recall@5 คู่กับ MRR\nสอง เก็บสถิติเปรียบเทียบ 3 ขั้นคือ Dense Only, Hybrid RRF และ +Cross-Encoder Rerank ไว้เป็นหลักฐานเชิงวิศวกรรม\nสาม อย่าเชื่อแค่ค่าเฉลี่ยรวม ต้องผ่า Failure Slices ทั้ง thai_faq, code_switch, exact_id และ table_policy เพื่อชี้เป้าให้ถูกจุดระหว่าง Chunking, Tokenization หรือ Reranking\nสี่ ดึง Top-20 เข้า Reranker เสมอและทดสอบพร้อม ACL filter ทุกครั้ง\n\nตอนนี้ฐานค้นหาของเราแข็งแกร่งและผ่านเกณฑ์ 0.85 พร้อม Ship แล้ว ก้าวต่อไปใน Block B42 เราจะเริ่มสร้างชั้น Grounded Generation, Citations และ MCP Tool Calling กันครับ กดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 165 นะครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณผ่าน Milestone 2 Lab และปิด Block B41 ของโปรเจกต์ Capstone ได้อย่างสมบูรณ์แบบแล้ว ขอสรุป 4 หัวใจหลักที่ทำวันนี้ให้จำแม่น ๆ นะครับ\n\nหนึ่ง วัด Retrieval แยกจาก Generation เสมอด้วย Recall at 5 คู่กับ MRR\nสอง เก็บสถิติเปรียบเทียบ 3 ขั้นคือ Dense Only, Hybrid RRF และบวก Cross-Encoder Rerank ไว้เป็นหลักฐานเชิงวิศวกรรม\nสาม อย่าเชื่อแค่ค่าเฉลี่ยรวม ต้องผ่า Failure Slices ทั้ง thai_faq, code_switch, exact_id และ table_policy เพื่อชี้เป้าให้ถูกจุดระหว่าง Chunking, Tokenization หรือ Reranking\nสี่ ดึง Top-20 เข้า Reranker เสมอและทดสอบพร้อม ACL filter ทุกครั้ง\n\nตอนนี้ฐานค้นหาของเราแข็งแกร่งและผ่านเกณฑ์ 0.85 พร้อม Ship แล้ว ก้าวต่อไปใน Block B42 เราจะเริ่มสร้างชั้น Grounded Generation, Citations และ MCP Tool Calling กันครับ กดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 165 นะครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

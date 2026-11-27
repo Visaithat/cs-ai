@@ -1,0 +1,109 @@
+{
+  "lessonId": "d014",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Retry อย่างฉลาดด้วย tenacity",
+      "src": "/audio/d014/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เชื่อมโยงต่อจาก Day 13 ให้เห็นภาพปัญหาจริงเวลาดึงข้อมูลชุดใหญ่และเจอ 429",
+      "script": "สวัสดีครับ กลับมาเจอกันใน Day 14 นะครับ เมื่อวานเราแยก ClientAPIError กับ TransientAPIError ไว้สวย ๆ แล้ว วันนี้เราจะเอา TransientAPIError มาต่อเข้ากับระบบ Retry อัตโนมัติด้วย tenacity กันครับ\n\nลองนึกภาพเวลา pipeline ของเราต้องดึงเอกสารหรือทิกเก็ตหลายพันรายการ หรือเรียก LLM API ช่วงที่คนใช้เยอะ โอกาสเจอ 429 rate limit กับ 503 ชั่วคราวแทบจะร้อยเปอร์เซ็นต์ ถ้าไม่ retry งานก็พังกลางคัน แต่ถ้าให้ไคลเอนต์ทุกเครื่องยิงซ้ำทันทีพร้อมกัน เซิร์ฟเวอร์ปลายทางก็จะล่มหนักกว่าเดิม เกิดอาการที่เรียกว่า Thundering Herd ครับ\n\nวันนี้เราเลยจะใช้ Exponential Backoff บวก Random Jitter เพื่อกระจายจังหวะการยิงใหม่ คุมงบเวลาด้วย stop_after_attempt และ reraise=True เคารพ header Retry-After แบบมีเพดาน และผูก before_sleep เข้ากับ structlog เพื่อให้ทีมมองเห็นทุกรอบที่ระบบแอบ retry ครับ",
+      "ttsText": "สวัสดีครับ กลับมาเจอกันใน Day 14 นะครับ เมื่อวานเราแยก ClientAPIError กับ TransientAPIError ไว้สวย ๆ แล้ว วันนี้เราจะเอา TransientAPIError มาต่อเข้ากับระบบ Retry อัตโนมัติด้วย tenacity กันครับ\n\nลองนึกภาพเวลา pipeline ของเราต้องดึงเอกสารหรือทิกเก็ตหลายพันรายการ หรือเรียก LLM API ช่วงที่คนใช้เยอะ โอกาสเจอ 429 rate limit กับ 503 ชั่วคราวแทบจะร้อยเปอร์เซ็นต์ ถ้าไม่ retry งานก็พังกลางคัน แต่ถ้าให้ไคลเอนต์ทุกเครื่องยิงซ้ำทันทีพร้อมกัน เซิร์ฟเวอร์ปลายทางก็จะล่มหนักกว่าเดิม เกิดอาการที่เรียกว่า Thundering Herd ครับ\n\nวันนี้เราเลยจะใช้ Exponential Backoff บวก Random Jitter เพื่อกระจายจังหวะการยิงใหม่ คุมงบเวลาด้วย stop_after_attempt และ reraise เท่ากับ True เคารพ header Retry-After แบบมีเพดาน และผูก before_sleep เข้ากับ structlog เพื่อให้ทีมมองเห็นทุกรอบที่ระบบแอบ retry ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d014/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อให้เห็นโครงสร้างบทเรียนและบอกจุดเด่นเรื่อง fake sleeper",
+      "script": "เป้าหมายของ Day 14 มี 3 ข้อหลัก ๆ นะครับ\n\nหนึ่ง อธิบายได้ว่าทำไมต้องใช้ Exponential Backoff คู่กับ Random Jitter เพื่อกัน Thundering Herd\nสอง ตั้งค่า tenacity ทั้ง Retrying, retry_if_exception_type, stop_after_attempt, wait_exponential_jitter และ reraise=True ให้ลองใหม่เฉพาะ TransientAPIError โดยไม่แตะ ClientAPIError\nและสาม เขียน custom wait strategy ที่เคารพ Retry-After บันทึก log ทุกครั้งก่อนนอนรอ และเทสต์เสร็จในเสี้ยววินาทีด้วยการฉีด fake sleeper ครับ",
+      "ttsText": "เป้าหมายของ Day 14 มี 3 ข้อหลัก ๆ นะครับ\n\nหนึ่ง อธิบายได้ว่าทำไมต้องใช้ Exponential Backoff คู่กับ Random Jitter เพื่อกัน Thundering Herd\nสอง ตั้งค่า tenacity ทั้ง Retrying, retry_if_exception_type, stop_after_attempt, wait_exponential_jitter และ reraise เท่ากับ True ให้ลองใหม่เฉพาะ TransientAPIError โดยไม่แตะ ClientAPIError\nและสาม เขียน custom wait strategy ที่เคารพ Retry-After บันทึก log ทุกครั้งก่อนนอนรอ และเทสต์เสร็จในเสี้ยววินาทีด้วยการฉีด fake sleeper ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d014/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงสบาย ๆ แนะนำคำสั่ง uv init และแพ็กเกจทั้ง 3 ตัวให้พร้อมใช้งาน",
+      "script": "มาเตรียมโปรเจกต์กันครับ รัน uv init ai-day14-retry แล้วเข้าไปในโฟลเดอร์\n\nจากนั้นลง 3 แพ็กเกจหลักด้วย uv add httpx tenacity structlog แล้วตามด้วย uv add --dev pytest ruff และลอง import ทดสอบทั้ง 3 ตัวใน python ครับ\n\nเทคนิคเด่นของบทนี้คือเราฉีดฟังก์ชัน sleep เข้าไปใน tenacity.Retrying ได้ เทสต์เลยตรวจเวลารอหลายวินาทีได้โดยรันจบในไม่ถึง 0.1 วินาที เดี๋ยวพี่รอตรงนี้ให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ นะครับ",
+      "ttsText": "มาเตรียมโปรเจกต์กันครับ รัน uv init ai-day14-retry แล้วเข้าไปในโฟลเดอร์\n\nจากนั้นลง 3 แพ็กเกจหลักด้วย uv add httpx tenacity structlog แล้วตามด้วย uv add dash dash dev pytest ruff และลอง import ทดสอบทั้ง 3 ตัวใน python ครับ\n\nเทคนิคเด่นของบทนี้คือเราฉีดฟังก์ชัน sleep เข้าไปใน tenacity Retrying ได้ เทสต์เลยตรวจเวลารอหลายวินาทีได้โดยรันจบในไม่ถึง 0 จุด 1 วินาที เดี๋ยวพี่รอตรงนี้ให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอเตรียมโปรเจกต์ Day 14",
+        "prompt": "สร้างโปรเจกต์ ai-day14-retry และติดตั้ง httpx, tenacity, structlog, pytest, ruff ให้เรียบร้อยครับ",
+        "continueLabel": "เตรียมเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Backoff + Jitter vs ยิงซ้ำทันที",
+      "src": "/audio/d014/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเปรียบเทียบภาพสองโหมดบนหน้าจอให้เห็นคลื่นการยิงชนกัน vs การกระจายตัว",
+      "script": "ก่อนลุยโค้ด ลองกดสลับดูแผนภาพ Retry Backoff บนหน้าจอครับ\n\nถ้าลองจินตนาการว่ามี worker 50 ตัวโดน 429 หรือ 503 พร้อมกัน แบบแรกคือรอเวลาคงที่ 2 วินาทีเป๊ะ พอถึงวินาทีที่ 2 ทุกตัวก็จะวิ่งชนเซิร์ฟเวอร์เป็นกำแพงเดียวกันอีกรอบ\n\nแต่พอกดสลับมาเป็น Exponential Backoff บวก Random Jitter จังหวะการยิงใหม่ของแต่ละเครื่องจะค่อย ๆ ถ่างออกและสุ่มเหลื่อมเวลากันเล็กน้อย ทำให้ปลายทางมีเวลาหายใจและฟื้นตัวได้จริงครับ",
+      "ttsText": "ก่อนลุยโค้ด ลองกดสลับดูแผนภาพ Retry Backoff บนหน้าจอครับ\n\nถ้าลองจินตนาการว่ามี worker 50 ตัวโดน 429 หรือ 503 พร้อมกัน แบบแรกคือรอเวลาคงที่ 2 วินาทีเป๊ะ พอถึงวินาทีที่ 2 ทุกตัวก็จะวิ่งชนเซิร์ฟเวอร์เป็นกำแพงเดียวกันอีกรอบ\n\nแต่พอกดสลับมาเป็น Exponential Backoff บวก Random Jitter จังหวะการยิงใหม่ของแต่ละเครื่องจะค่อย ๆ ถ่างออกและสุ่มเหลื่อมเวลากันเล็กน้อย ทำให้ปลายทางมีเวลาหายใจและฟื้นตัวได้จริงครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d014/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM เล่าสนุก มีเปรียบเทียบจองตั๋วคอนเสิร์ต เน้นเสียงตรงจุดตาย reraise=True และเพดาน max_wait",
+      "script": "มาดูแนวคิดหลัก 3 ข้อของ Day 14 กันครับ\n\nข้อแรก Exponential Backoff บวก Jitter เหมือนคน 50 คนหลุดสายจองตั๋วคอนเสิร์ต ถ้าทุกคนกดโทรซ้ำทุก 5 วินาทีเป๊ะ สายก็ล่มซ้ำทุก 5 วินาที สูตรมาตรฐานคือเพิ่มเวลารอแบบทวีคูณ เช่น 0.5, 1, 2, 4 วินาที มีเพดาน max บวกค่าสุ่ม jitter เพื่อกระจายจังหวะ และจำกัดรอบด้วย stop_after_attempt\n\nข้อที่สอง การตั้งค่า tenacity ใช้ retry_if_exception_type เฉพาะ TransientAPIError, stop_after_attempt, wait_exponential_jitter และต้องใส่ reraise=True ไม่งั้นครบแล้วยังพังจะโยน RetryError บัง error เดิม อย่าลืมว่า stop_after_attempt(3) คือยิง 3 ครั้งแต่นอนรอ 2 ครั้ง และ Retrying ยังรับ fake sleep ตอนเทสต์ได้\n\nข้อที่สาม เคารพ Retry-After และ Log ทุกรอบ เขียน custom wait ดึงค่า retry_after แต่ครอบ min กับ max_wait กันเลขสูงเกินเช่น 3600 แล้วผูก before_sleep เข้ากับ structlog เพื่อ log ทุกรอบครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อของ Day 14 กันครับ\n\nข้อแรก Exponential Backoff บวก Jitter เหมือนคน 50 คนหลุดสายจองตั๋วคอนเสิร์ต ถ้าทุกคนกดโทรซ้ำทุก 5 วินาทีเป๊ะ สายก็ล่มซ้ำทุก 5 วินาที สูตรมาตรฐานคือเพิ่มเวลารอแบบทวีคูณ เช่น 0 จุด 5, 1, 2, 4 วินาที มีเพดาน max บวกค่าสุ่ม jitter เพื่อกระจายจังหวะ และจำกัดรอบด้วย stop_after_attempt\n\nข้อที่สอง การตั้งค่า tenacity ใช้ retry_if_exception_type เฉพาะ TransientAPIError, stop_after_attempt, wait_exponential_jitter และต้องใส่ reraise เท่ากับ True ไม่งั้นครบแล้วยังพังจะโยน RetryError บัง error เดิม อย่าลืมว่า stop_after_attempt 3 คือยิง 3 ครั้งแต่นอนรอ 2 ครั้ง และ Retrying ยังรับ fake sleep ตอนเทสต์ได้\n\nข้อที่สาม เคารพ Retry-After และ Log ทุกรอบ เขียน custom wait ดึงค่า retry_after แต่ครอบ min กับ max_wait กันเลขสูงเกินเช่น 3600 แล้วผูก before_sleep เข้ากับ structlog เพื่อ log ทุกรอบครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่าง post_with_retry ฝ่าด่าน 503 → 429 → 200",
+      "src": "/audio/d014/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นเหมือนกำลังรีวิวผลเทสต์จริง อธิบายจังหวะ 3 รอบและวิธีฉีด recorded_sleeps.append ให้เข้าใจทันที",
+      "script": "มาดูตัวอย่างโค้ดจริงที่ร้อย httpx เข้ากับ tenacity.Retrying และ structlog กันครับ\n\nในขั้นแรก เราสร้างฟังก์ชัน build_wait ที่ใช้ wait_exponential_jitter เป็นตัวหลัก แต่ถ้า exception เป็น TransientAPIError ที่มีค่า retry_after ก็สลับไปคืนค่า min ของ retry_after กับ max_wait แทน\n\nขั้นที่สอง เราสร้าง post_with_retry ที่รับพารามิเตอร์ sleep_fn เข้ามาได้ ภายในสร้างออบเจกต์ Retrying ใส่ before_sleep เพื่อ log warning ผ่าน structlog และใส่ reraise=True แล้วใช้ for attempt in retrying: with attempt: ครอบการยิง client.post\n\nขั้นที่สาม เราจำลองเซิร์ฟเวอร์ให้ตอบ 503 ในรอบแรก 429 พร้อม Retry-After: 3 ในรอบสอง แล้วค่อย 200 ในรอบสาม พอส่ง recorded_sleeps.append เข้าไปเป็น sleep_fn เราจะเห็นเลยว่ารอบแรก backoff ประมาณ 0.614 วินาที รอบสองรอ 3.0 วินาทีเป๊ะ และจบงานแบบไม่ต้องรอเวลาจริงเลย ลองกดดูทีละขั้นก่อน แล้วค่อยกด ไปต่อ นะครับ",
+      "ttsText": "มาดูตัวอย่างโค้ดจริงที่ร้อย httpx เข้ากับ tenacity Retrying และ structlog กันครับ\n\nในขั้นแรก เราสร้างฟังก์ชัน build_wait ที่ใช้ wait_exponential_jitter เป็นตัวหลัก แต่ถ้า exception เป็น TransientAPIError ที่มีค่า retry_after ก็สลับไปคืนค่า min ของ retry_after กับ max_wait แทน\n\nขั้นที่สอง เราสร้าง post_with_retry ที่รับพารามิเตอร์ sleep_fn เข้ามาได้ ภายในสร้างออบเจกต์ Retrying ใส่ before_sleep เพื่อ log warning ผ่าน structlog และใส่ reraise เท่ากับ True แล้วใช้ for attempt in retrying คู่กับ with attempt ครอบการยิง client post\n\nขั้นที่สาม เราจำลองเซิร์ฟเวอร์ให้ตอบ 503 ในรอบแรก 429 พร้อม Retry-After 3 ในรอบสอง แล้วค่อย 200 ในรอบสาม พอส่ง recorded_sleeps append เข้าไปเป็น sleep_fn เราจะเห็นเลยว่ารอบแรก backoff ประมาณ 0 จุด 614 วินาที รอบสองรอ 3 จุด 0 วินาทีเป๊ะ และจบงานแบบไม่ต้องรอเวลาจริงเลย ลองกดดูทีละขั้นก่อน แล้วค่อยกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง post_with_retry",
+        "prompt": "ลองไล่ดูการทำงานของ build_wait, before_sleep และผลลัพธ์จาก recorded_sleeps.append แล้วกดไปต่อเพื่อทำแบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง resilient_caller.py",
+      "src": "/audio/d014/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจ ช้าชัดเป็นระบบ ไล่ฟังก์ชันทั้ง 2 ตัวและเงื่อนไขเทสต์ทั้ง 3 เคสให้พิมพ์ตามได้แม่นยำ",
+      "script": "ได้เวลาลงมือเขียนโค้ดจริงในไฟล์ resilient_caller.py แล้วครับ วันนี้มีฟังก์ชันหลักให้เติม 2 ตัว\n\nตัวแรก make_wait_strategy รับ initial, max_wait และ jitter แล้วคืนฟังก์ชัน _wait ที่รับ RetryCallState เช็กว่าถ้า outcome exception เป็น TransientAPIError และมี retry_after ไม่ใช่ None ให้คืน min ของ retry_after กับ max_wait ไม่อย่างนั้นให้เรียก fallback จาก wait_exponential_jitter\n\nตัวที่สอง request_json_with_retry ให้สร้าง _before_sleep ที่ดึง attempt_number กับ next_action.sleep ออกมา log ผ่าน structlog และเรียก callback on_retry ถ้าไม่เป็น None จากนั้นใช้ Retrying ครอบ client.request\n\nเช็กให้ชัวร์ว่า 400 ต้องโยน ClientAPIError ทันทีในรอบแรกโดยไม่มีการ sleep ส่วน ReadTimeout ครบ max_attempts แล้วต้องโยน TransientAPIError ตัวจริงออกมาด้วย reraise=True นะครับ พี่หยุดรอตรงนี้ให้ลองทำและรันเทสต์จนผ่านเลยครับ",
+      "ttsText": "ได้เวลาลงมือเขียนโค้ดจริงในไฟล์ resilient_caller dot py แล้วครับ วันนี้มีฟังก์ชันหลักให้เติม 2 ตัว\n\nตัวแรก make_wait_strategy รับ initial, max_wait และ jitter แล้วคืนฟังก์ชัน _wait ที่รับ RetryCallState เช็กว่าถ้า outcome exception เป็น TransientAPIError และมี retry_after ไม่ใช่ None ให้คืน min ของ retry_after กับ max_wait ไม่อย่างนั้นให้เรียก fallback จาก wait_exponential_jitter\n\nตัวที่สอง request_json_with_retry ให้สร้าง _before_sleep ที่ดึง attempt_number กับ next_action sleep ออกมา log ผ่าน structlog และเรียก callback on_retry ถ้าไม่เป็น None จากนั้นใช้ Retrying ครอบ client request\n\nเช็กให้ชัวร์ว่า 400 ต้องโยน ClientAPIError ทันทีในรอบแรกโดยไม่มีการ sleep ส่วน ReadTimeout ครบ max_attempts แล้วต้องโยน TransientAPIError ตัวจริงออกมาด้วย reraise เท่ากับ True นะครับ พี่หยุดรอตรงนี้ให้ลองทำและรันเทสต์จนผ่านเลยครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน resilient_caller.py",
+        "prompt": "ลงมือเติม make_wait_strategy และ request_json_with_retry แล้วรัน pytest กับ ruff ได้เลยครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d014/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเอง เหมือนรุ่นพี่เตือน 4 จุดตายที่ทำให้ระบบ retry พังเงียบหรือเทสต์ช้า",
+      "script": "สุดยอดครับ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่เจอบ่อยเวลาใช้ tenacity ในงานจริงนะครับ\n\nข้อแรก คือลืมใส่ reraise=True พอ retry ครบจำนวนรอบแล้วโค้ดชั้นบนที่ดัก except TransientAPIError กลับจับไม่เจอ เพราะ tenacity ดันโยน RetryError ออกมาแทน\nข้อสอง คือใส่ retry_if_exception_type(Exception) เหมารวมทุกอย่าง กลายเป็นว่าทั้ง 401 Invalid API Key หรือแม้แต่ KeyError ในโค้ดเราเองก็ถูก retry ไปด้วย\nข้อสาม คือใช้ wait_exponential โดยไม่ใส่ jitter ทำให้เวลาปลายทางสะดุด หลาย worker รอ 1, 2, 4 วินาทีเท่ากันเป๊ะแล้วยิงชนเป็นระลอก ต้องใช้ wait_exponential_jitter เสมอครับ\nและข้อสี่ คือปล่อยให้เทสต์รัน time.sleep จริงจนชุดเทสต์อืด 20 วินาที แทนที่จะฉีด sleep_fn ให้รันจบในไม่กี่มิลลิวินาทีครับ",
+      "ttsText": "สุดยอดครับ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่เจอบ่อยเวลาใช้ tenacity ในงานจริงนะครับ\n\nข้อแรก คือลืมใส่ reraise เท่ากับ True พอ retry ครบจำนวนรอบแล้วโค้ดชั้นบนที่ดัก except TransientAPIError กลับจับไม่เจอ เพราะ tenacity ดันโยน RetryError ออกมาแทน\nข้อสอง คือใส่ retry_if_exception_type Exception เหมารวมทุกอย่าง กลายเป็นว่าทั้ง 401 Invalid API Key หรือแม้แต่ KeyError ในโค้ดเราเองก็ถูก retry ไปด้วย\nข้อสาม คือใช้ wait_exponential โดยไม่ใส่ jitter ทำให้เวลาปลายทางสะดุด หลาย worker รอ 1, 2, 4 วินาทีเท่ากันเป๊ะแล้วยิงชนเป็นระลอก ต้องใช้ wait_exponential_jitter เสมอครับ\nและข้อสี่ คือปล่อยให้เทสต์รัน time sleep จริงจนชุดเทสต์อืด 20 วินาที แทนที่จะฉีด sleep_fn ให้รันจบในไม่กี่มิลลิวินาทีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d014/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเบา ๆ สบาย ๆ ชวนเช็กความเข้าใจ 4 ข้อเรื่อง backoff, attempts, max_wait และ before_sleep",
+      "script": "มาทดสอบความเข้าใจกันด้วย Micro-Quiz 4 ข้อครับ รอบนี้เน้นเรื่อง Random Jitter, ความต่างระหว่างจำนวน attempt กับจำนวน sleep เมื่อใช้ stop_after_attempt(4), การคุมเพดานเมื่อเจอ Retry-After: 3600 และประโยชน์ของ before_sleep กับ structlog\n\nค่อย ๆ ทำจนครบทั้ง 4 ข้อ แล้วกดปุ่มเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาทดสอบความเข้าใจกันด้วย Micro-Quiz 4 ข้อครับ รอบนี้เน้นเรื่อง Random Jitter, ความต่างระหว่างจำนวน attempt กับจำนวน sleep เมื่อใช้ stop_after_attempt 4, การคุมเพดานเมื่อเจอ Retry-After 3600 และประโยชน์ของ before_sleep กับ structlog\n\nค่อย ๆ ทำจนครบทั้ง 4 ข้อ แล้วกดปุ่มเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ทำควิซทั้ง 4 ข้อเรื่อง Exponential Backoff, Jitter และ tenacity ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 15",
+      "src": "/audio/d014/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจ สรุป 4 แก่นหลักของ Day 14 ให้จำง่าย และปูทางสู่ Day 15 อย่างน่าติดตาม",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 14 แล้ว! วันนี้ client ของเราฉลาดขึ้นเยอะเลย จากแค่แยก error เมื่อวาน วันนี้ลองใหม่เป็นแล้ว\n\nสรุปสั้น ๆ 4 ข้อนะครับ หนึ่ง ใช้ wait_exponential_jitter เสมอเพื่อเปิดโอกาสให้ปลายทางฟื้นตัวและกัน Thundering Herd สอง retry เฉพาะ TransientAPIError พร้อม stop_after_attempt และ reraise=True สาม เคารพ Retry-After แต่ต้องครอบเพดาน max_wait และ log ทุกรอบผ่าน before_sleep และสี่ ฉีด sleep_fn เข้าไปใน Retrying เพื่อให้ pytest เทสต์เสร็จในพริบตา\n\nแต่เอ๊ะ ถ้าเรา retry งาน POST อย่างการสร้างทิกเก็ตหรือตัดเงิน แล้วรอบแรกทำสำเร็จแต่ตอบกลับช้าจน timeout พอรอบสองยิงซ้ำมันจะสร้างเบิ้ลไหม พรุ่งนี้ใน Day 15 เราจะมาแก้ปัญหานี้ด้วย Idempotency Key, Rate Pacing และ Circuit Breaker กันครับ แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 14 แล้ว! วันนี้ client ของเราฉลาดขึ้นเยอะเลย จากแค่แยก error เมื่อวาน วันนี้ลองใหม่เป็นแล้ว\n\nสรุปสั้น ๆ 4 ข้อนะครับ หนึ่ง ใช้ wait_exponential_jitter เสมอเพื่อเปิดโอกาสให้ปลายทางฟื้นตัวและกัน Thundering Herd สอง retry เฉพาะ TransientAPIError พร้อม stop_after_attempt และ reraise เท่ากับ True สาม เคารพ Retry-After แต่ต้องครอบเพดาน max_wait และ log ทุกรอบผ่าน before_sleep และสี่ ฉีด sleep_fn เข้าไปใน Retrying เพื่อให้ pytest เทสต์เสร็จในพริบตา\n\nแต่เอ๊ะ ถ้าเรา retry งาน POST อย่างการสร้างทิกเก็ตหรือตัดเงิน แล้วรอบแรกทำสำเร็จแต่ตอบกลับช้าจน timeout พอรอบสองยิงซ้ำมันจะสร้างเบิ้ลไหม พรุ่งนี้ใน Day 15 เราจะมาแก้ปัญหานี้ด้วย Idempotency Key, Rate Pacing และ Circuit Breaker กันครับ แล้วเจอกันครับ!"
+    }
+  ]
+}

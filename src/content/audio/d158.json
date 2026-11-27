@@ -1,0 +1,109 @@
+{
+  "lessonId": "d158",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Repo มาตรฐาน Production",
+      "src": "/audio/d158/01-big-picture.mp3",
+      "stylePrompt": "น้ำเสียงสดใส กระฉับกระเฉง เหมือนรุ่นพี่ชวนจัดโต๊ะทำงานและวางโครงสร้างบ้านให้เป็นระเบียบก่อนลงมือสร้างระบบจริง",
+      "script": "สวัสดีครับ กลับมาเจอกันใน Day 158 วันที่สองของ Block B40 แล้วนะ เมื่อวานเราเขียนพิมพ์เขียว ADR-001 เสร็จเรียบร้อย วันนี้เราจะมาแปลงพิมพ์เขียวนั้นให้กลายเป็นโครงสร้างโค้ดที่รันซ้ำได้ทุกเครื่องครับ\n\nลองมอง Big Picture บนหน้าจอไปด้วยกันนะ พิมพ์เขียว ADR จะไม่มีพลังเลยถ้าเราโยนไฟล์ทุกอย่างรวมกันไว้ที่ root จนชั้น API, RAG, MCP และ Eval พันกันยุ่งเหยิงตั้งแต่สัปดาห์แรก ดังนั้นวันนี้เราสร้าง src/ layout แยกโมดูล ingest, retrieval, agents, mcp, app และ evals ออกจากกันชัดเจนเลยครับ\n\nนอกจากแยกโฟลเดอร์แล้ว เรายังฝัง Quality Gate ด้วย Ruff กับ pytest ใน pyproject.toml จำลองสภาพแวดล้อม Production บนเครื่องด้วย Dockerfile แบบ multi-stage และ docker-compose.yml ที่มี pgvector พร้อม healthcheck และสุดท้ายคือสร้าง Reproducibility ตั้งแต่วันแรกด้วย uv.lock กับ .env.example เพื่อให้ทั้งเครื่องเรา CI และ Cloud รันพฤติกรรมเดียวกัน 100% ครับ",
+      "ttsText": "สวัสดีครับ กลับมาเจอกันใน Day 158 วันที่สองของ Block B40 แล้วนะ เมื่อวานเราเขียนพิมพ์เขียว ADR 001 เสร็จเรียบร้อย วันนี้เราจะมาแปลงพิมพ์เขียวนั้นให้กลายเป็นโครงสร้างโค้ดที่รันซ้ำได้ทุกเครื่องครับ\n\nลองมอง Big Picture บนหน้าจอไปด้วยกันนะ พิมพ์เขียว ADR จะไม่มีพลังเลยถ้าเราโยนไฟล์ทุกอย่างรวมกันไว้ที่ root จนชั้น API, RAG, MCP และ Eval พันกันยุ่งเหยิงตั้งแต่สัปดาห์แรก ดังนั้นวันนี้เราสร้าง src layout แยกโมดูล ingest, retrieval, agents, mcp, app และ evals ออกจากกันชัดเจนเลยครับ\n\nนอกจากแยกโฟลเดอร์แล้ว เรายังฝัง Quality Gate ด้วย Ruff กับ pytest ใน pyproject dot toml จำลองสภาพแวดล้อม Production บนเครื่องด้วย Dockerfile แบบ multi-stage และ docker-compose dot yml ที่มี pgvector พร้อม healthcheck และสุดท้ายคือสร้าง Reproducibility ตั้งแต่วันแรกด้วย uv dot lock กับ dot env dot example เพื่อให้ทั้งเครื่องเรา CI และ Cloud รันพฤติกรรมเดียวกัน 100 เปอร์เซ็นต์ ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d158/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อให้เห็นภาพโครงสร้างโปรเจกต์ แล้วคลายกังวลเรื่อง Docker",
+      "script": "เป้าหมายของ Day 158 มี 3 ข้อชัด ๆ เลยครับ\n\nหนึ่ง ออกแบบโครงสร้างโฟลเดอร์แบบ src/ layout ให้รองรับทุกชั้นของ Capstone โดยไม่เกิด circular import\nสอง ตั้งค่าเครื่องมือคุณภาพใน pyproject.toml ทั้ง uv, uv.lock, Ruff และ pytest ให้ตรวจโค้ดและเทสต์แบบ offline ได้ทันที\nสาม เขียน docker-compose.yml และ env config ที่ตรวจค่าแบบ fail-fast พร้อม healthcheck รอฐานข้อมูล pgvector ให้พร้อมใช้งานครับ\n\nหมายเหตุนิดนึงนะ ถ้าเครื่องคุณยังไม่ได้เปิด Docker Desktop ก็ทำแบบฝึกหัด Python กับ pytest วันนี้ได้ครบ 100% ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 158 มี 3 ข้อชัด ๆ เลยครับ\n\nหนึ่ง ออกแบบโครงสร้างโฟลเดอร์แบบ src layout ให้รองรับทุกชั้นของ Capstone โดยไม่เกิด circular import\nสอง ตั้งค่าเครื่องมือคุณภาพใน pyproject dot toml ทั้ง uv, uv dot lock, Ruff และ pytest ให้ตรวจโค้ดและเทสต์แบบ offline ได้ทันที\nสาม เขียน docker-compose dot yml และ env config ที่ตรวจค่าแบบ fail-fast พร้อม healthcheck รอฐานข้อมูล pgvector ให้พร้อมใช้งานครับ\n\nหมายเหตุนิดนึงนะ ถ้าเครื่องคุณยังไม่ได้เปิด Docker Desktop ก็ทำแบบฝึกหัด Python กับ pytest วันนี้ได้ครบ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · วางโครงสร้างโฟลเดอร์และ uv.lock",
+      "src": "/audio/d158/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พารันคำสั่งสร้างแพ็กเกจย่อยใน src และล็อก dependency ด้วย uv lock",
+      "script": "มาต่อยอดโฟลเดอร์ thai-enterprise-assistant จากเมื่อวานกันครับ ดูชุดคำสั่งในกล่องบนหน้าจอเลย\n\nขั้นแรก สร้างโฟลเดอร์แพ็กเกจย่อยใน src ได้แก่ app, ingest, retrieval, mcp, agents รวมถึง evals และ data/corpus แล้วสร้างไฟล์ __init__.py ในแต่ละแพ็กเกจให้เรียบร้อย\nขั้นที่สอง รัน uv add pydantic pydantic-settings fastapi uvicorn และเพิ่ม dev tools ด้วย uv add --dev pytest pytest-asyncio ruff\nขั้นที่สาม รัน uv lock เพื่อสร้างไฟล์ uv.lock เก็บไว้ครับ\n\nพอเสร็จแล้วติ๊กเช็กลิสต์บนหน้าจอได้เลย เดี๋ยวพี่พักรอตรงนี้ก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาต่อยอดโฟลเดอร์ thai-enterprise-assistant จากเมื่อวานกันครับ ดูชุดคำสั่งในกล่องบนหน้าจอเลย\n\nขั้นแรก สร้างโฟลเดอร์แพ็กเกจย่อยใน src ได้แก่ app, ingest, retrieval, mcp, agents รวมถึง evals และ data slash corpus แล้วสร้างไฟล์ init dot py ในแต่ละแพ็กเกจให้เรียบร้อย\nขั้นที่สอง รัน uv add pydantic pydantic-settings fastapi uvicorn และเพิ่ม dev tools ด้วย uv add dash dash dev pytest pytest-asyncio ruff\nขั้นที่สาม รัน uv lock เพื่อสร้างไฟล์ uv dot lock เก็บไว้ครับ\n\nพอเสร็จแล้วติ๊กเช็กลิสต์บนหน้าจอได้เลย เดี๋ยวพี่พักรอตรงนี้ก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอสร้างโครงสร้างแพ็กเกจและ uv.lock",
+        "prompt": "สร้างโฟลเดอร์ย่อยใน src/ เพิ่ม dependencies และรัน uv lock ให้เรียบร้อย แล้วกดไปต่อครับ",
+        "continueLabel": "สร้างโครงสร้างและ uv.lock แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — แผนภาพ Repo Scaffold",
+      "src": "/audio/d158/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนดูแผนภาพขั้นตอน B40 เพื่อเห็นตำแหน่งของ Repo Scaffold ก่อนต่อยอดไปเตรียมข้อมูลในวันพรุ่งนี้",
+      "script": "ลองดูแผนภาพขั้นตอน Block B40 บนหน้าจอตรงนี้ครับ วันนี้เราอยู่ตรงขั้นที่ 1 คือ Repo Scaffold ที่รวม 4 เสาหลักเข้าด้วยกัน ได้แก่ uv.lock สำหรับล็อกเวอร์ชันแพ็กเกจ, Ruff สำหรับตรวจสไตล์และบั๊ก, pytest สำหรับรันเทสต์ และ Docker Compose สำหรับบูตฐานข้อมูล pgvector กับ API\n\nสังเกตนะว่าทุกโมดูลที่เราจะเขียนในอีก 3 สัปดาห์ข้างหน้า ตั้งแต่ตัวโหลดเอกสารจนถึง LangGraph Router จะถูกวางแยกเป็นระเบียบอยู่ในโฟลเดอร์นี้ทั้งหมด เพื่อให้วันพรุ่งนี้เรานำชุดคลังข้อมูล 20 กว่าฉบับเข้ามาวางใน data/corpus ได้อย่างลงตัวครับ",
+      "ttsText": "ลองดูแผนภาพขั้นตอน Block B40 บนหน้าจอตรงนี้ครับ วันนี้เราอยู่ตรงขั้นที่ 1 คือ Repo Scaffold ที่รวม 4 เสาหลักเข้าด้วยกัน ได้แก่ uv dot lock สำหรับล็อกเวอร์ชันแพ็กเกจ, Ruff สำหรับตรวจสไตล์และบั๊ก, pytest สำหรับรันเทสต์ และ Docker Compose สำหรับบูตฐานข้อมูล pgvector กับ API\n\nสังเกตนะว่าทุกโมดูลที่เราจะเขียนในอีก 3 สัปดาห์ข้างหน้า ตั้งแต่ตัวโหลดเอกสารจนถึง LangGraph Router จะถูกวางแยกเป็นระเบียบอยู่ในโฟลเดอร์นี้ทั้งหมด เพื่อให้วันพรุ่งนี้เรานำชุดคลังข้อมูล 20 กว่าฉบับเข้ามาวางใน data slash corpus ได้อย่างลงตัวครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d158/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเหตุผลเบื้องหลัง src layout, Ruff, Fail-Fast Env และ Docker healthcheck ให้เข้าใจง่ายและจำแม่น",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 158 แบบเจาะลึกกันครับ\n\nข้อแรก คือทำไมต้องใช้ src/ layout, pyproject.toml และ uv.lock มือใหม่มักวาง main.py ไว้ที่ root ข้าง ๆ tests/ ซึ่งทำให้เกิดบั๊กคลาสสิกคือ pytest ดันไป import โค้ดจากโฟลเดอร์ปัจจุบันแทนแพ็กเกจใน virtual env พอเอาขึ้น Docker หรือ CI ก็ระเบิดด้วย ModuleNotFoundError เลยครับ การใช้ src/ layout คู่กับ pythonpath = [\"src\"] ใน pyproject.toml ช่วยให้ import วิ่งเส้นทางเดียวเสมอ เหมือนห้องครัวร้านอาหารที่แยกโซนเตรียมวัตถุดิบ โซนปรุง และโซนจัดจานชัดเจน พร้อมสูตรตวงมาตรฐานอย่าง uv.lock ให้เชฟทุกคนทำรสชาติเหมือนกันเป๊ะ\n\nข้อที่สอง คือ Ruff, pytest และ Fail-Fast Env Config ตัว Ruff ทำหน้าที่ทั้ง format และตรวจจุดเสี่ยงได้เร็วระดับมิลลิวินาทีในไฟล์ config เดียวกับ pytest ส่วนการอ่านค่าความลับ เราใช้ pydantic-settings อ่านจาก .env แบบ fail-fast ตั้งแต่วินาทีที่แอปบูต จะได้ไม่ไป crash กลาง request ของลูกค้า แถมยังเปิดโหมด OFFLINE_MOCK_LLM=true เป็นค่าเริ่มต้นให้รันเทสต์ใน CI ได้ฟรีและเร็ว ที่สำคัญห้าม commit .env ลง Git เด็ดขาด ให้แชร์เฉพาะ .env.example ที่มีค่าตัวอย่างเท่านั้นครับ\n\nข้อที่สาม คือ Docker Compose กับ Healthcheck เวลาสตาร์ตบริการ API คู่กับ pgvector หลายคนใส่แค่ depends_on แบบรายชื่อธรรมดา ซึ่ง Docker รอแค่ container เริ่มรัน ไม่ได้รอให้ฐานข้อมูลเปิดพอร์ตพร้อมรับ query จน FastAPI crash วนลูป เราจึงต้องใส่ healthcheck ด้วย pg_isready คู่กับ condition: service_healthy เสมอ พร้อมทำ multi-stage Dockerfile จาก python:3.12-slim และรันด้วย non-root user ให้อิมเมจเล็กและปลอดภัยครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 158 แบบเจาะลึกกันครับ\n\nข้อแรก คือทำไมต้องใช้ src layout, pyproject dot toml และ uv dot lock มือใหม่มักวาง main dot py ไว้ที่ root ข้าง ๆ tests ซึ่งทำให้เกิดบั๊กคลาสสิกคือ pytest ดันไป import โค้ดจากโฟลเดอร์ปัจจุบันแทนแพ็กเกจใน virtual env พอเอาขึ้น Docker หรือ CI ก็ระเบิดด้วย ModuleNotFoundError เลยครับ การใช้ src layout คู่กับ pythonpath เท่ากับ src ใน pyproject dot toml ช่วยให้ import วิ่งเส้นทางเดียวเสมอ เหมือนห้องครัวร้านอาหารที่แยกโซนเตรียมวัตถุดิบ โซนปรุง และโซนจัดจานชัดเจน พร้อมสูตรตวงมาตรฐานอย่าง uv dot lock ให้เชฟทุกคนทำรสชาติเหมือนกันเป๊ะ\n\nข้อที่สอง คือ Ruff, pytest และ Fail-Fast Env Config ตัว Ruff ทำหน้าที่ทั้ง format และตรวจจุดเสี่ยงได้เร็วระดับมิลลิวินาทีในไฟล์ config เดียวกับ pytest ส่วนการอ่านค่าความลับ เราใช้ pydantic-settings อ่านจาก dot env แบบ fail-fast ตั้งแต่วินาทีที่แอปบูต จะได้ไม่ไป crash กลาง request ของลูกค้า แถมยังเปิดโหมด OFFLINE_MOCK_LLM เท่ากับ true เป็นค่าเริ่มต้นให้รันเทสต์ใน CI ได้ฟรีและเร็ว ที่สำคัญห้าม commit dot env ลง Git เด็ดขาด ให้แชร์เฉพาะ dot env dot example ที่มีค่าตัวอย่างเท่านั้นครับ\n\nข้อที่สาม คือ Docker Compose กับ Healthcheck เวลาสตาร์ตบริการ API คู่กับ pgvector หลายคนใส่แค่ depends_on แบบรายชื่อธรรมดา ซึ่ง Docker รอแค่ container เริ่มรัน ไม่ได้รอให้ฐานข้อมูลเปิดพอร์ตพร้อมรับ query จน FastAPI crash วนลูป เราจึงต้องใส่ healthcheck ด้วย pg_isready คู่กับ condition service_healthy เสมอ พร้อมทำ multi-stage Dockerfile จาก python 3.12 slim และรันด้วย non-root user ให้อิมเมจเล็กและปลอดภัยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — ตรวจ Scaffold อัตโนมัติ",
+      "src": "/audio/d158/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงเหมือนกำลังเดินดูสคริปต์ตรวจสุขภาพโปรเจกต์ด้วยกัน พาดูทั้ง 3 ขั้นและเน้นข้อควรระวังเรื่อง env_file ใน Docker Compose",
+      "script": "มาดูตัวอย่าง worked_scaffold.py บนหน้าจอกันครับ เราใช้ Python มาตรฐานอย่าง tomllib กับ re คู่กับ Pydantic มาตรวจความพร้อมของโปรเจกต์ก่อนเริ่มงานจริง ลองกด ขั้นต่อไป ดูทีละขั้นนะ\n\nขั้นที่ 1 สร้าง AppSettings แบบ fail-fast โดยตั้งค่า default ให้ llm_mode เป็น mock แต่ถ้าใครปรับเป็น live โดยลืมใส่ llm_api_key ตัว model_validator จะโยน ValueError ทันทีตอนแอปบูต\n\nขั้นที่ 2 ใช้ tomllib ที่มากับ Python 3.11 ขึ้นไป อ่านไฟล์ pyproject.toml แล้วเช็กว่ามีหมวด tool.ruff และ tool.pytest.ini_options ที่มี pythonpath = [\"src\"] ครบหรือยัง\n\nขั้นที่ 3 สร้างฟังก์ชัน find_exposed_secrets สแกนไฟล์ .env.example เพื่อกันไม่ให้ใครเผลอวางคีย์จริงอย่าง sk- หรือ pk-lf- หลุดขึ้น GitHub และข้อสังเกตสำคัญใน docker-compose.yml คืออย่าบังคับอ่านแค่ไฟล์ .env โดยไม่มี fallback หรือ .env.example นะครับ ไม่อย่างนั้นคนที่ clone repo ใหม่มาลองรัน docker compose up จะเจอ error ทันที ลองกดดูให้ครบทั้ง 3 ขั้นแล้วกด ไปต่อ เพื่อลงมือทำแบบฝึกหัดได้เลยครับ",
+      "ttsText": "มาดูตัวอย่าง worked_scaffold dot py บนหน้าจอกันครับ เราใช้ Python มาตรฐานอย่าง tomllib กับ re คู่กับ Pydantic มาตรวจความพร้อมของโปรเจกต์ก่อนเริ่มงานจริง ลองกด ขั้นต่อไป ดูทีละขั้นนะ\n\nขั้นที่ 1 สร้าง AppSettings แบบ fail-fast โดยตั้งค่า default ให้ llm_mode เป็น mock แต่ถ้าใครปรับเป็น live โดยลืมใส่ llm_api_key ตัว model_validator จะโยน ValueError ทันทีตอนแอปบูต\n\nขั้นที่ 2 ใช้ tomllib ที่มากับ Python 3.11 ขึ้นไป อ่านไฟล์ pyproject dot toml แล้วเช็กว่ามีหมวด tool dot ruff และ tool dot pytest dot ini_options ที่มี pythonpath เท่ากับ src ครบหรือยัง\n\nขั้นที่ 3 สร้างฟังก์ชัน find_exposed_secrets สแกนไฟล์ dot env dot example เพื่อกันไม่ให้ใครเผลอวางคีย์จริงอย่าง sk ขีด หรือ pk-lf ขีด หลุดขึ้น GitHub และข้อสังเกตสำคัญใน docker-compose dot yml คืออย่าบังคับอ่านแค่ไฟล์ dot env โดยไม่มี fallback หรือ dot env dot example นะครับ ไม่อย่างนั้นคนที่ clone repo ใหม่มาลองรัน docker compose up จะเจอ error ทันที ลองกดดูให้ครบทั้ง 3 ขั้นแล้วกด ไปต่อ เพื่อลงมือทำแบบฝึกหัดได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงสำรวจตัวอย่าง Scaffold Validator",
+        "prompt": "ลองกดดูขั้นตอน worked_scaffold.py ทั้ง 3 ขั้นให้เข้าใจวิธีตรวจ config, TOML และ secret leak ก่อนลงมือเขียนโค้ดนะครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — เขียน src/scaffold_validator.py",
+      "src": "/audio/d158/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชัดเจน ไล่สเปกฟังก์ชันทั้ง 3 ตัวและคลาส ScaffoldReport อย่างเป็นระบบเพื่อให้ผู้เรียนเขียนผ่านเทสต์ทั้ง 5 ข้อได้สบาย",
+      "script": "ถึงเวลาลงมือเขียนโค้ดจริงใน src/scaffold_validator.py แล้วครับ โจทย์นี้เราจะสร้างตัวตรวจสอบโครงสร้าง Repo Scaffold อัตโนมัติสำหรับใช้ใน CI กัน\n\nมาเช็กองค์ประกอบที่ต้องเขียนทีละตัวนะ หนึ่ง ScaffoldReport เป็น BaseModel ที่มีฟิลด์ missing_paths, has_ruff_config, has_pytest_src_path, compose_has_healthcheck, leaked_secret_keys และ passed\nสอง ฟังก์ชัน audit_pyproject ใช้ tomllib.loads อ่านข้อความ TOML แล้วคืนคู่ค่า boolean ว่ามี [tool.ruff] ไหม และ [tool.pytest.ini_options].pythonpath มี \"src\" ไหม อย่าลืมครอบ try except TOMLDecodeError คืน False, False ด้วยนะครับ\nสาม ฟังก์ชัน audit_compose เช็กว่ามีฐานข้อมูล pgvector หรือ postgres มี healthcheck: และมี service_healthy ครบทั้ง 3 อย่าง\nและสี่ audit_repo_scaffold หา path ที่ขาดจาก REQUIRED_PATHS 8 รายการ (แนะนำให้ sorted ด้วยนะ) สแกน secret pattern sk- หรือ ghp_ ที่มีตัวอักษรและตัวเลขตามหลังตั้งแต่ 16 ตัวขึ้นไป แล้วตั้ง passed = True เมื่อทุกด่านผ่านหมดครับ\n\nเสร็จแล้วรัน uv run pytest -q tests/test_scaffold_validator.py และ uv run ruff check . ได้เลย เดี๋ยวพี่รอตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนโค้ดจริงใน src slash scaffold_validator dot py แล้วครับ โจทย์นี้เราจะสร้างตัวตรวจสอบโครงสร้าง Repo Scaffold อัตโนมัติสำหรับใช้ใน CI กัน\n\nมาเช็กองค์ประกอบที่ต้องเขียนทีละตัวนะ หนึ่ง ScaffoldReport เป็น BaseModel ที่มีฟิลด์ missing_paths, has_ruff_config, has_pytest_src_path, compose_has_healthcheck, leaked_secret_keys และ passed\nสอง ฟังก์ชัน audit_pyproject ใช้ tomllib dot loads อ่านข้อความ TOML แล้วคืนคู่ค่า boolean ว่ามี tool dot ruff ไหม และ tool dot pytest dot ini_options dot pythonpath มี src ไหม อย่าลืมครอบ try except TOMLDecodeError คืน False, False ด้วยนะครับ\nสาม ฟังก์ชัน audit_compose เช็กว่ามีฐานข้อมูล pgvector หรือ postgres มี healthcheck และมี service_healthy ครบทั้ง 3 อย่าง\nและสี่ audit_repo_scaffold หา path ที่ขาดจาก REQUIRED_PATHS 8 รายการ แนะนำให้ sorted ด้วยนะ สแกน secret pattern sk ขีด หรือ ghp_ ที่มีตัวอักษรและตัวเลขตามหลังตั้งแต่ 16 ตัวขึ้นไป แล้วตั้ง passed เท่ากับ True เมื่อทุกด่านผ่านหมดครับ\n\nเสร็จแล้วรัน uv run pytest dash q tests slash test_scaffold_validator dot py และ uv run ruff check dot ได้เลย เดี๋ยวพี่รอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน scaffold_validator.py",
+        "prompt": "เขียน src/scaffold_validator.py แล้วรันทดสอบทั้ง 5 test cases กับ ruff check ให้ผ่านได้เลยครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดในการวาง Repo",
+      "src": "/audio/d158/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยและเตือนภัยแบบรุ่นพี่ที่เคยเจอปัญหาพังบน CI มาก่อน เล่าสนุก กระชับ จำง่าย",
+      "script": "สุดยอดครับ ผ่านตัวตรวจ Scaffold มาได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่ทำโปรเจกต์ Python พังบ่อยที่สุดเวลาเปลี่ยนเครื่องหรือขึ้น CI นะครับ\n\nข้อแรก ไม่ยอมใช้ uv.lock เขียนแค่ชื่อไลบรารีลอย ๆ พอไปรันบน GitHub Actions แล้วเวอร์ชันใหม่เปลี่ยน API จนโค้ดพัง ต้องรัน uv lock และ commit ขึ้น Git เสมอครับ\nข้อสอง ลืมใส่ healthcheck กับ condition: service_healthy ใน docker-compose.yml ทำให้ API รีบสตาร์ตก่อน Postgres พร้อมรับ connection แล้ว crash วนลูป\nข้อสาม รัน pytest โดยไม่ได้กำหนด pythonpath = [\"src\"] ใน pyproject.toml พอเปลี่ยนโฟลเดอร์รันก็เจอ ModuleNotFoundError ทันที\nและข้อสี่ เผลอใส่ API Key จริงลงใน .env.example หรือ commit ไฟล์ .env ขึ้น GitHub จนระบบ Secret Scanning แจ้งเตือน ต้องใส่ .env ใน .gitignore ตั้งแต่วันแรกและมีเทสต์สแกนทุกครั้งครับ",
+      "ttsText": "สุดยอดครับ ผ่านตัวตรวจ Scaffold มาได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่ทำโปรเจกต์ Python พังบ่อยที่สุดเวลาเปลี่ยนเครื่องหรือขึ้น CI นะครับ\n\nข้อแรก ไม่ยอมใช้ uv dot lock เขียนแค่ชื่อไลบรารีลอย ๆ พอไปรันบน GitHub Actions แล้วเวอร์ชันใหม่เปลี่ยน API จนโค้ดพัง ต้องรัน uv lock และ commit ขึ้น Git เสมอครับ\nข้อสอง ลืมใส่ healthcheck กับ condition service_healthy ใน docker-compose dot yml ทำให้ API รีบสตาร์ตก่อน Postgres พร้อมรับ connection แล้ว crash วนลูป\nข้อสาม รัน pytest โดยไม่ได้กำหนด pythonpath เท่ากับ src ใน pyproject dot toml พอเปลี่ยนโฟลเดอร์รันก็เจอ ModuleNotFoundError ทันที\nและข้อสี่ เผลอใส่ API Key จริงลงใน dot env dot example หรือ commit ไฟล์ dot env ขึ้น GitHub จนระบบ Secret Scanning แจ้งเตือน ต้องใส่ dot env ใน dot gitignore ตั้งแต่วันแรกและมีเทสต์สแกนทุกครั้งครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d158/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทบทวนคอนเซปต์หลักทั้ง 4 ข้อแบบไม่เครียด",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้จะถามเรื่องประโยชน์ของ src/ layout คู่กับ uv.lock, ปัญหาของ depends_on แบบสั้นใน Docker Compose, หลัก Fail-Fast และโหมด mock ใน AppSettings รวมถึงการจัดการ .env กับ .env.example บน Git\n\nลองทำดูได้เลย เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้จะถามเรื่องประโยชน์ของ src layout คู่กับ uv dot lock, ปัญหาของ depends_on แบบสั้นใน Docker Compose, หลัก Fail-Fast และโหมด mock ใน AppSettings รวมถึงการจัดการ dot env กับ dot env dot example บน Git\n\nลองทำดูได้เลย เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบคำถามทั้ง 4 ข้อเกี่ยวกับ src/ layout, Docker healthcheck และ env config เสร็จแล้วกดไปต่อนะครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 159",
+      "src": "/audio/d158/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและมั่นใจ สรุป 4 แก่นหลักของ Repo Scaffold แล้วส่งต่ออย่างตื่นเต้นสู่ Day 159",
+      "script": "ยินดีด้วยครับ คุณวางโครงสร้าง Repo ระดับ Production สำหรับ Capstone เสร็จสมบูรณ์แล้ว ขอสรุป 4 สิ่งสำคัญติดตัวจาก Day 158 ไว้ตรงนี้นะครับ\n\nหนึ่ง แยกโครงสร้างโค้ดเป็น src/ layout ได้แก่ app, ingest, retrieval, mcp และ agents คู่กับ evals, data/corpus, tests และล็อกเวอร์ชันด้วย uv.lock\nสอง รวมการตั้งค่า Ruff และ pytest ไว้ใน pyproject.toml ให้เป็น Quality Gate ที่รันได้ในเสี้ยววินาที\nสาม ออกแบบ env config แบบ fail-fast ที่รองรับโหมด mock สำหรับเทสต์ offline และแยก .env ออกจาก Git เสมอ\nและสี่ เขียน docker-compose.yml ที่มี healthcheck คู่กับ condition: service_healthy และ Dockerfile แบบ non-root เพื่อให้ใครก็บูต stack ได้ในคำสั่งเดียวครับ\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบนะ พรุ่งนี้ใน Day 159 เราจะมาสร้างและทำความสะอาดคลังความรู้องค์กรไทยสองภาษา 20 กว่าฉบับ พร้อมตารางและสิทธิ์ ACL กันครับ แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณวางโครงสร้าง Repo ระดับ Production สำหรับ Capstone เสร็จสมบูรณ์แล้ว ขอสรุป 4 สิ่งสำคัญติดตัวจาก Day 158 ไว้ตรงนี้นะครับ\n\nหนึ่ง แยกโครงสร้างโค้ดเป็น src layout ได้แก่ app, ingest, retrieval, mcp และ agents คู่กับ evals, data slash corpus, tests และล็อกเวอร์ชันด้วย uv dot lock\nสอง รวมการตั้งค่า Ruff และ pytest ไว้ใน pyproject dot toml ให้เป็น Quality Gate ที่รันได้ในเสี้ยววินาที\nสาม ออกแบบ env config แบบ fail-fast ที่รองรับโหมด mock สำหรับเทสต์ offline และแยก dot env ออกจาก Git เสมอ\nและสี่ เขียน docker-compose dot yml ที่มี healthcheck คู่กับ condition service_healthy และ Dockerfile แบบ non-root เพื่อให้ใครก็บูต stack ได้ในคำสั่งเดียวครับ\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบนะ พรุ่งนี้ใน Day 159 เราจะมาสร้างและทำความสะอาดคลังความรู้องค์กรไทยสองภาษา 20 กว่าฉบับ พร้อมตารางและสิทธิ์ ACL กันครับ แล้วเจอกันครับ!"
+    }
+  ]
+}

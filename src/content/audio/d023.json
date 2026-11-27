@@ -1,0 +1,109 @@
+{
+  "lessonId": "d023",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — CLI ระดับโปรดักชันด้วย Typer",
+      "src": "/audio/d023/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระฉับกระเฉง เป็นกันเอง เล่าภาพจริงของงาน AI batch pipeline ที่รันผ่าน CLI และ CI/CD",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 23 นะครับ วันนี้เราจะมาสร้างเครื่องมือ CLI ระดับโปรดักชันด้วย Typer บนเครื่องตัวเอง 100 เปอร์เซ็นต์โดยไม่ต้องใช้ API key เลย\n\nในทีม AI จริง ๆ งานดึงข้อมูล ล้างไฟล์ JSONL หรือสร้างดัชนีเอกสารแทบทั้งหมดไม่ได้กดรันจากปุ่มบนเว็บนะครับ แต่ถูกรันผ่าน CLI ทั้งบนเครื่องนักพัฒนาและใน cron หรือ CI\n\nซึ่ง CLI ที่ดีต้องมี 3 อย่างครับ หนึ่งคือใช้ง่าย มีหน้า --help และตรวจพารามิเตอร์ผิดแบบ fail-fast ด้วย type hints สองคือสื่อสารกับ CI/CD ได้ถูกต้องด้วย exit code เช่น ผ่านคือ exit 0 ไม่ผ่านเกณฑ์คือ exit 1 ไม่ใช่พิมพ์ Error แล้วจบด้วย 0 เงียบ ๆ และสามคือรักษาวินัย UNIX CLI ส่งข้อมูลหลักออก stdout และส่ง progress หรือ error ออก stderr เพื่อไม่ให้ทำลายท่อ pipe อย่าง jq\n\nมาสร้าง CLI มาตรฐานแบบที่เครื่องมืออย่าง uv และ ruff ใช้กันทุกวันเลยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 23 นะครับ วันนี้เราจะมาสร้างเครื่องมือ CLI ระดับโปรดักชันด้วย Typer บนเครื่องตัวเอง 100 เปอร์เซ็นต์โดยไม่ต้องใช้ API key เลย\n\nในทีม AI จริง ๆ งานดึงข้อมูล ล้างไฟล์ JSONL หรือสร้างดัชนีเอกสารแทบทั้งหมดไม่ได้กดรันจากปุ่มบนเว็บนะครับ แต่ถูกรันผ่าน CLI ทั้งบนเครื่องนักพัฒนาและใน cron หรือ CI\n\nซึ่ง CLI ที่ดีต้องมี 3 อย่างครับ หนึ่งคือใช้ง่าย มีหน้า dash dash help และตรวจพารามิเตอร์ผิดแบบ fail-fast ด้วย type hints สองคือสื่อสารกับ CI หรือ CD ได้ถูกต้องด้วย exit code เช่น ผ่านคือ exit 0 ไม่ผ่านเกณฑ์คือ exit 1 ไม่ใช่พิมพ์ Error แล้วจบด้วย 0 เงียบ ๆ และสามคือรักษาวินัย UNIX CLI ส่งข้อมูลหลักออก stdout และส่ง progress หรือ error ออก stderr เพื่อไม่ให้ทำลายท่อ pipe อย่าง jq\n\nมาสร้าง CLI มาตรฐานแบบที่เครื่องมืออย่าง uv และ ruff ใช้กันทุกวันเลยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d023/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงสดใส มั่นใจ แยกจังหวะเป้าหมาย 3 ข้อของ Day 23 ชัดเจน พร้อมทริกเล็ก ๆ เชื่อมโยงไปถึง FastAPI",
+      "script": "เป้าหมาย 3 ข้อของ Day 23 มีตามนี้เลยครับ\n\nอย่างแรก คือสร้าง CLI แบบหลายคำสั่งด้วย typer.Typer() โดยใช้ type hints อย่าง Path, int, bool และ Annotated เพื่อสร้าง Argument, Option และ --help อัตโนมัติ\nอย่างที่สอง คือใช้วินัย UNIX CLI แยกผลลัพธ์หลักออก stdout, ส่ง progress และ error ออก stderr ด้วย err=True, และกำหนด exit code ด้วย typer.Exit\nและอย่างที่สาม คือเขียนเทสต์อัตโนมัติสำหรับ CLI ด้วย typer.testing.CliRunner และ pytest โดยไม่ต้องเปิด subprocess ช้า ๆ ครับ",
+      "ttsText": "เป้าหมาย 3 ข้อของ Day 23 มีตามนี้เลยครับ\n\nอย่างแรก คือสร้าง CLI แบบหลายคำสั่งด้วย typer dot Typer โดยใช้ type hints อย่าง Path, int, bool และ Annotated เพื่อสร้าง Argument, Option และ dash dash help อัตโนมัติ\nอย่างที่สอง คือใช้วินัย UNIX CLI แยกผลลัพธ์หลักออก stdout, ส่ง progress และ error ออก stderr ด้วย err เท่ากับ True, และกำหนด exit code ด้วย typer dot Exit\nและอย่างที่สาม คือเขียนเทสต์อัตโนมัติสำหรับ CLI ด้วย typer dot testing dot CliRunner และ pytest โดยไม่ต้องเปิด subprocess ช้า ๆ ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง Typer & เช็กเวอร์ชัน",
+      "src": "/audio/d023/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งติดตั้ง Typer และบอกจุดเชื่อมโยงกับ FastAPI ใน Phase 5",
+      "script": "มาตั้งค่าโปรเจกต์สำหรับฝึก Typer กันครับ ขั้นตอนสั้นมาก\n\nสั่ง uv init ai-day23-typer แล้ว cd เข้าโฟลเดอร์ จากนั้นติดตั้ง typer ด้วย uv add typer และติดตั้ง dev tools ด้วย uv add --dev pytest ruff แล้วเช็กเวอร์ชันด้วย python -c \"import typer; print('Typer:', typer.__version__)\" ครับ\n\nเกร็ดน่ารู้คือ Typer สร้างโดยผู้พัฒนาคนเดียวกับ FastAPI ครับ ดังนั้นการฝึกใช้ Annotated และ type hints ของ Typer วันนี้ จะช่วยให้คุณเขียน FastAPI ใน Phase 5 ได้คล่องทันที เดี๋ยวพี่พักรอให้ติดตั้งให้เสร็จก่อนครับ",
+      "ttsText": "มาตั้งค่าโปรเจกต์สำหรับฝึก Typer กันครับ ขั้นตอนสั้นมาก\n\nสั่ง uv init ai-day23-typer แล้ว cd เข้าโฟลเดอร์ จากนั้นติดตั้ง typer ด้วย uv add typer และติดตั้ง dev tools ด้วย uv add dash dash dev pytest ruff แล้วเช็กเวอร์ชันด้วย uv run python เช็กเวอร์ชันของ typer ครับ\n\nเกร็ดน่ารู้คือ Typer สร้างโดยผู้พัฒนาคนเดียวกับ FastAPI ครับ ดังนั้นการฝึกใช้ Annotated และ type hints ของ Typer วันนี้ จะช่วยให้คุณเขียน FastAPI ใน Phase 5 ได้คล่องทันที เดี๋ยวพี่พักรอให้ติดตั้งให้เสร็จก่อนครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง Typer",
+        "prompt": "ลองรันคำสั่งสร้างโปรเจกต์ ai-day23-typer, ติดตั้ง typer และเช็กเวอร์ชันให้เรียบร้อย แล้วกดไปต่อครับ",
+        "continueLabel": "ติดตั้ง Typer เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Flow ของ Typer CLI",
+      "src": "/audio/d023/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นชวนมองภาพ ชี้ให้เห็นการแปลง type hints เป็น CLI และการแยกท่อ stdout กับ stderr",
+      "script": "ลองดูแผนภาพการทำงานของ Typer CLI บนหน้าจอไปด้วยกันนะครับ\n\nจะเห็นว่าแค่เราเขียนลายเซ็นฟังก์ชัน Python พร้อม type hints ตัว Typer จะช่วยแปลงเป็นทั้งตัวตรวจอินพุตและหน้า --help ให้อัตโนมัติตั้งแต่ก่อนเข้าโค้ดหลัก\n\nและที่สำคัญมากในภาพคือทางออก 2 ช่องที่แยกขาดจากกัน ข้อมูลสะอาดอย่าง JSON ไหลออกทาง stdout ส่วนข้อความ progress และ error วิ่งออกทาง stderr พร้อม exit code ที่บอกสถานะชัดเจนครับ",
+      "ttsText": "ลองดูแผนภาพการทำงานของ Typer CLI บนหน้าจอไปด้วยกันนะครับ\n\nจะเห็นว่าแค่เราเขียนลายเซ็นฟังก์ชัน Python พร้อม type hints ตัว Typer จะช่วยแปลงเป็นทั้งตัวตรวจอินพุตและหน้า dash dash help ให้อัตโนมัติตั้งแต่ก่อนเข้าโค้ดหลัก\n\nและที่สำคัญมากในภาพคือทางออก 2 ช่องที่แยกขาดจากกัน ข้อมูลสะอาดอย่าง JSON ไหลออกทาง stdout ส่วนข้อความ progress และ error วิ่งออกทาง stderr พร้อม exit code ที่บอกสถานะชัดเจนครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d023/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก เข้าใจง่าย เปรียบเทียบสายพานโรงงานและเครื่องจำลองการบิน เน้นเสียงเตือนเรื่อง exit code 0",
+      "script": "มาดู 3 แนวคิดหลักของ Typer CLI กันครับ\n\nข้อแรก คือการแปลง Python Type Hints เป็น CLI อัตโนมัติ แทนที่จะเขียน argparse ยืดยาว Typer อ่านจากลายเซ็นฟังก์ชันตรง ๆ เลยครับ พารามิเตอร์ที่ไม่มีค่าเริ่มต้นจะกลายเป็น positional Argument ส่วนพารามิเตอร์ที่มีค่าเริ่มต้นจะกลายเป็น Option อย่าง --limit หรือ --json-out และเมื่อใช้คู่กับ Annotated เราแนบคำอธิบาย help=... หรือขอบเขต min=1 ให้ตรวจผิดแบบ fail-fast ได้ทันทีครับ\n\nข้อที่สอง คือวินัย UNIX CLI เรื่อง stdout, stderr และ Exit Code นึกภาพสายพานโรงงานที่มี 2 ช่องออกนะครับ ช่องสินค้าสำเร็จรูปคือ stdout เอาไว้ส่ง JSON หรือข้อมูลหลักสำหรับต่อท่อ pipe หรือ redirect ลงไฟล์ ส่วนหน้าจอบอกสถานะเครื่องจักรและไฟแดงคือ stderr เอาไว้ส่ง progress และ error ผ่าน typer.echo(..., err=True) หรือ typer.progressbar(..., file=sys.stderr) และห้ามลืม Exit Code เด็ดขาดครับ ถ้าเกิดข้อผิดพลาดแล้วคุณแค่พิมพ์ Error แล้ว return เฉย ๆ โปรแกรมจะจบด้วย exit 0 ทำให้ CI คิดว่าผ่าน! ต้องโยน raise typer.Exit(code=1) เสมอครับ\n\nข้อที่สาม คือการทดสอบ CLI ด้วย typer.testing.CliRunner ซึ่งเหมือนเครื่องจำลองการบินในหน่วยความจำครับ แทนที่จะเรียก subprocess ช้า ๆ เราใช้ runner.invoke(app, [...]) แล้วตรวจทั้ง result.exit_code, result.stdout ด้วย json.loads และ result.stderr คู่กับ tmp_path ของ pytest จบได้ในเสี้ยววินาทีเลยครับ",
+      "ttsText": "มาดู 3 แนวคิดหลักของ Typer CLI กันครับ\n\nข้อแรก คือการแปลง Python Type Hints เป็น CLI อัตโนมัติ แทนที่จะเขียน argparse ยืดยาว Typer อ่านจากลายเซ็นฟังก์ชันตรง ๆ เลยครับ พารามิเตอร์ที่ไม่มีค่าเริ่มต้นจะกลายเป็น positional Argument ส่วนพารามิเตอร์ที่มีค่าเริ่มต้นจะกลายเป็น Option อย่าง dash dash limit หรือ dash dash json-out และเมื่อใช้คู่กับ Annotated เราแนบคำอธิบาย help หรือขอบเขต min เท่ากับ 1 ให้ตรวจผิดแบบ fail-fast ได้ทันทีครับ\n\nข้อที่สอง คือวินัย UNIX CLI เรื่อง stdout, stderr และ Exit Code นึกภาพสายพานโรงงานที่มี 2 ช่องออกนะครับ ช่องสินค้าสำเร็จรูปคือ stdout เอาไว้ส่ง JSON หรือข้อมูลหลักสำหรับต่อท่อไปป์ หรือ redirect ลงไฟล์ ส่วนหน้าจอบอกสถานะเครื่องจักรและไฟแดงคือ stderr เอาไว้ส่ง progress และ error ผ่าน typer dot echo โดยใส่ err เท่ากับ True หรือ typer dot progressbar โดยใส่ file เท่ากับ sys dot stderr และห้ามลืม Exit Code เด็ดขาดครับ ถ้าเกิดข้อผิดพลาดแล้วคุณแค่พิมพ์ Error แล้ว return เฉย ๆ โปรแกรมจะจบด้วย exit 0 ทำให้ CI คิดว่าผ่าน ต้องโยน raise typer dot Exit code เท่ากับ 1 เสมอครับ\n\nข้อที่สาม คือการทดสอบ CLI ด้วย typer dot testing dot CliRunner ซึ่งเหมือนเครื่องจำลองการบินในหน่วยความจำครับ แทนที่จะเรียก subprocess ช้า ๆ เราใช้ runner dot invoke แล้วตรวจทั้ง result dot exit_code, result dot stdout ด้วย json dot loads และ result dot stderr คู่กับ tmp_path ของ pytest จบได้ในเสี้ยววินาทีเลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่าง Typer CLI & CliRunner",
+      "src": "/audio/d023/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่รัน CLI ด้วยกัน ชี้ให้เห็นทริก make_runner และกับดัก subcommand เดียวของ Typer",
+      "script": "ลองมาดูตัวอย่างโค้ดจริง worked_d023_cli.py กันครับ โจทย์คือสรุปทิกเก็ตภาษาไทยในไฟล์ JSONL ที่ผ่านความยาวขั้นต่ำ\n\nในขั้นแรก เราสร้าง app = typer.Typer() และคำสั่ง summary รับ input_path: Path กับ option --min-len และ --json-out ถ้าไฟล์ไม่มีอยู่จริง เราพิมพ์ Error ลง stderr ด้วย err=True แล้ว raise typer.Exit(code=1) ระหว่างวนอ่านทีละบรรทัดเราก็ส่งข้อความ [progress] ออก stderr ส่วนผลลัพธ์ JSON สะอาดค่อยส่งออก stdout ครับ\n\nขั้นที่สอง เวลาเราสั่งรันพร้อม --json-out แล้ว redirect > out.json ในไฟล์ out.json จะได้เฉพาะ JSON ล้วน ๆ ส่วนบรรทัด [progress] จะแสดงบนหน้าจอไม่ปนเข้าไปในไฟล์เลย\n\nขั้นที่สาม ตอนทดสอบด้วย CliRunner สังเกตฟังก์ชันช่วย make_runner() ที่เช็กพารามิเตอร์ mix_stderr นะครับ เพื่อให้รันได้ทั้งกับ Click 8.1 ที่ต้องใส่ mix_stderr=False และ Click 8.2 ขึ้นไปที่แยก stdout กับ stderr ให้อัตโนมัติ\n\nและจำกับดักท้ายตัวอย่างไว้ให้แม่นนะครับ ถ้า app มี @app.command() แค่ตัวเดียว Typer จะยุบชื่อ subcommand ทิ้ง ถ้าอยากให้เรียกแบบมีชื่อคำสั่งเสมอต้องใส่ @app.callback() หรือเพิ่มคำสั่งที่ 2 ครับ ลองไล่ดูทั้ง 3 ขั้นแล้วกดไปต่อได้เลย",
+      "ttsText": "ลองมาดูตัวอย่างโค้ดจริง worked_d023_cli dot py กันครับ โจทย์คือสรุปทิกเก็ตภาษาไทยในไฟล์ JSONL ที่ผ่านความยาวขั้นต่ำ\n\nในขั้นแรก เราสร้าง app ด้วย typer dot Typer และคำสั่ง summary รับ input_path ชนิด Path กับ option dash dash min-len และ dash dash json-out ถ้าไฟล์ไม่มีอยู่จริง เราพิมพ์ Error ลง stderr ด้วย err เท่ากับ True แล้ว raise typer dot Exit code เท่ากับ 1 ระหว่างวนอ่านทีละบรรทัดเราก็ส่งข้อความ progress ออก stderr ส่วนผลลัพธ์ JSON สะอาดค่อยส่งออก stdout ครับ\n\nขั้นที่สอง เวลาเราสั่งรันพร้อม dash dash json-out แล้วใช้เครื่องหมาย redirect ไปยัง out dot json ในไฟล์ out dot json จะได้เฉพาะ JSON ล้วน ๆ ส่วนบรรทัด progress จะแสดงบนหน้าจอไม่ปนเข้าไปในไฟล์เลย\n\nขั้นที่สาม ตอนทดสอบด้วย CliRunner สังเกตฟังก์ชันช่วย make_runner ที่เช็กพารามิเตอร์ mix_stderr นะครับ เพื่อให้รันได้ทั้งกับ Click 8.1 ที่ต้องใส่ mix_stderr เท่ากับ False และ Click 8.2 ขึ้นไปที่แยก stdout กับ stderr ให้อัตโนมัติ\n\nและจำกับดักท้ายตัวอย่างไว้ให้แม่นนะครับ ถ้า app มี decorator app dot command แค่ตัวเดียว Typer จะยุบชื่อ subcommand ทิ้ง ถ้าอยากให้เรียกแบบมีชื่อคำสั่งเสมอต้องใส่ decorator app dot callback หรือเพิ่มคำสั่งที่ 2 ครับ ลองไล่ดูทั้ง 3 ขั้นแล้วกดไปต่อได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง Typer CLI",
+        "prompt": "ลองไล่ดูการแยก stdout/stderr, ฟังก์ชัน make_runner และกับดัก single-command ของ Typer แล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง Ticket Stats CLI",
+      "src": "/audio/d023/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดตอนไล่สเปกของคำสั่งย่อยทั้ง 2 คำสั่งและเงื่อนไข exit code",
+      "script": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์ 12 นาทีนี้ให้เราสร้างไฟล์ ticket_stats_cli.py ที่มี 2 คำสั่งย่อยคือ stats และ filter-channel\n\nคำสั่งแรก stats รับ input_path, --min-len ค่าเริ่มต้น 5 และ --json-out ค่าเริ่มต้น False ถ้าไม่พบไฟล์ให้พิมพ์ error ลง stderr แล้ว raise typer.Exit(code=1) จากนั้นอ่าน JSONL ทีละบรรทัด ข้ามบรรทัดว่าง ดักจับ json.JSONDecodeError ต่อแถวเพื่อไม่ให้แครช แล้วนับ total, valid_len และ bad_json พร้อมพิมพ์ progress ลง stderr สุดท้ายถ้า total เท่ากับ 0 คือไฟล์ว่าง ให้แจ้งเตือนลง stderr แล้ว Exit code 1 ด้วยนะครับ ส่วนผลลัพธ์ให้พิมพ์ JSON เมื่อเปิด --json-out ลง stdout โดยใส่ ensure_ascii=False\n\nคำสั่งที่สอง @app.command(\"filter-channel\") รับ input_path, --channel และ --output ให้กรองเฉพาะแถว JSON ที่อ่านได้และ channel ตรงกัน เขียนลงไฟล์ output ด้วย UTF-8 ส่งสถานะลง stderr และพิมพ์ JSON สรุปจำนวน written กับ channel ลง stdout หากไม่พบไฟล์ต้นทางก็คืน Exit code 1 เช่นกันครับ\n\nเขียนเสร็จแล้วรัน uv run pytest -q, uv run ruff check . และลองสั่ง --help ดูนะครับ พี่หยุดรอตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์ 12 นาทีนี้ให้เราสร้างไฟล์ ticket_stats_cli dot py ที่มี 2 คำสั่งย่อยคือ stats และ filter-channel\n\nคำสั่งแรก stats รับ input_path, dash dash min-len ค่าเริ่มต้น 5 และ dash dash json-out ค่าเริ่มต้น False ถ้าไม่พบไฟล์ให้พิมพ์ error ลง stderr แล้ว raise typer dot Exit code เท่ากับ 1 จากนั้นอ่าน JSONL ทีละบรรทัด ข้ามบรรทัดว่าง ดักจับ json dot JSONDecodeError ต่อแถวเพื่อไม่ให้แครช แล้วนับ total, valid_len และ bad_json พร้อมพิมพ์ progress ลง stderr สุดท้ายถ้า total เท่ากับ 0 คือไฟล์ว่าง ให้แจ้งเตือนลง stderr แล้ว Exit code 1 ด้วยนะครับ ส่วนผลลัพธ์ให้พิมพ์ JSON เมื่อเปิด dash dash json-out ลง stdout โดยใส่ ensure_ascii เท่ากับ False\n\nคำสั่งที่สอง decorator app dot command filter-channel รับ input_path, dash dash channel และ dash dash output ให้กรองเฉพาะแถว JSON ที่อ่านได้และ channel ตรงกัน เขียนลงไฟล์ output ด้วย UTF-8 ส่งสถานะลง stderr และพิมพ์ JSON สรุปจำนวน written กับ channel ลง stdout หากไม่พบไฟล์ต้นทางก็คืน Exit code 1 เช่นกันครับ\n\nเขียนเสร็จแล้วรัน uv run pytest dash q, uv run ruff check dot และลองสั่ง dash dash help ดูนะครับ พี่หยุดรอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียน Ticket Stats CLI",
+        "prompt": "ลงมือเติมคำสั่ง stats และ filter-channel ใน ticket_stats_cli.py แล้วรันเทสต์ CliRunner ทั้ง 4 ข้อให้ผ่านครับ",
+        "continueLabel": "เขียน CLI และเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d023/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด แล้วเล่า 4 ข้อผิดพลาดเรื่อง Typer CLI แบบเป็นกันเองและเตือนภัยให้จำแม่น",
+      "script": "เก่งมากครับที่เขียน CLI จนผ่าน CliRunner ครบทุกเคส ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่คนเขียน Typer เจอบ่อยมากในงานจริงนะครับ\n\nข้อแรก คือใช้ print() พิมพ์ progress หรือ debug ลง stdout ปนกับผลลัพธ์ JSON ทำให้พอเอาไป pipe เข้า jq หรือเรียก json.loads แล้วพังด้วย JSONDecodeError ทันที ให้ส่ง progress และ error ทั้งหมดออก stderr ด้วย err=True เสมอครับ\nข้อที่สอง คือพิมพ์ข้อความ Error แล้ว return เฉย ๆ โดยไม่โยน typer.Exit(code=1) ทำให้ CLI จบด้วย exit code 0 แล้ว CI คิดว่างานสำเร็จทั้งที่พังอยู่\nข้อที่สาม คืองงว่าทำไมมี @app.command() แค่ตัวเดียวแล้ว Typer ยุบชื่อ subcommand ทิ้ง จนเรียก my-cli stats แล้วโดนฟ้อง extra argument แก้ได้ง่าย ๆ ด้วยการใส่ @app.callback() เปล่าไว้ 1 ตัวหรือเพิ่มคำสั่งที่ 2 ครับ\nและข้อที่สี่ คือไปเรียก sys.exit(1) หรือ subprocess.run ใน unit test แทนที่จะใช้ typer.Exit กับ CliRunner ทำให้เทสต์ช้าและแยก stdout กับ stderr ลำบากครับ",
+      "ttsText": "เก่งมากครับที่เขียน CLI จนผ่าน CliRunner ครบทุกเคส ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่คนเขียน Typer เจอบ่อยมากในงานจริงนะครับ\n\nข้อแรก คือใช้ print พิมพ์ progress หรือ debug ลง stdout ปนกับผลลัพธ์ JSON ทำให้พอเอาไปไปป์เข้า jq หรือเรียก json dot loads แล้วพังด้วย JSONDecodeError ทันที ให้ส่ง progress และ error ทั้งหมดออก stderr ด้วย err เท่ากับ True เสมอครับ\nข้อที่สอง คือพิมพ์ข้อความ Error แล้ว return เฉย ๆ โดยไม่โยน typer dot Exit code เท่ากับ 1 ทำให้ CLI จบด้วย exit code 0 แล้ว CI คิดว่างานสำเร็จทั้งที่พังอยู่\nข้อที่สาม คืองงว่าทำไมมี decorator app dot command แค่ตัวเดียวแล้ว Typer ยุบชื่อ subcommand ทิ้ง จนเรียก my-cli stats แล้วโดนฟ้อง extra argument แก้ได้ง่าย ๆ ด้วยการใส่ decorator app dot callback เปล่าไว้ 1 ตัวหรือเพิ่มคำสั่งที่ 2 ครับ\nและข้อที่สี่ คือไปเรียก sys dot exit 1 หรือ subprocess dot run ใน unit test แทนที่จะใช้ typer dot Exit กับ CliRunner ทำให้เทสต์ช้าและแยก stdout กับ stderr ลำบากครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d023/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทบทวนกฎของ Typer, stdout/stderr, Exit Codes และ CliRunner แบบสบาย ๆ",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 23 กันครับ รอบนี้ทบทวนทั้งกฎการแปลง Argument กับ Option จาก type hints, ช่องทางของ progress เมื่อใช้ --json-out, การส่งสัญญาณ failure ให้ GitHub Actions CI และข้อดีของ CliRunner\n\nลองตอบให้ครบทั้ง 4 ข้อและอ่านคำอธิบายประกอบนะครับ ข้อไหนพลาดระบบจะเก็บเข้าคิวทบทวนให้อัตโนมัติ พี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 23 กันครับ รอบนี้ทบทวนทั้งกฎการแปลง Argument กับ Option จาก type hints, ช่องทางของ progress เมื่อใช้ dash dash json-out, การส่งสัญญาณ failure ให้ GitHub Actions CI และข้อดีของ CliRunner\n\nลองตอบให้ครบทั้ง 4 ข้อและอ่านคำอธิบายประกอบนะครับ ข้อไหนพลาดระบบจะเก็บเข้าคิวทบทวนให้อัตโนมัติ พี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง Typer Type Hints, stdout/stderr, Exit Codes และ CliRunner แล้วกดไปต่อเพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 24",
+      "src": "/audio/d023/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและอบอุ่น สรุป 4 แกนของ Typer CLI ให้ทรงพลัง แล้วส่งต่อไปวันทบทวน Block B06 ใน Day 24",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 23 เรียบร้อยแล้ว ขอสรุป 4 หลักการสำคัญของ Typer CLI ไว้ใช้งานจริงนะครับ\n\nหนึ่ง Typer ใช้ type hints อย่าง Path, int, bool และ Annotated สร้างทั้ง Argument, Option, validation และ --help โดยอัตโนมัติ\nสอง ยึดวินัย UNIX CLI เสมอ ข้อมูลหลักออก stdout ส่วน progress, log และ error ออก stderr ด้วย err=True หรือ file=sys.stderr\nสาม เมื่อเกิดข้อผิดพลาดหรือผลไม่ผ่านเกณฑ์ ให้โยน raise typer.Exit(code=1) เพื่อส่งสัญญาณให้ shell และ CI รับรู้ทันที\nสี่ ทดสอบ CLI ทุกคำสั่งอย่างรวดเร็วในหน่วยความจำด้วย typer.testing.CliRunner คู่กับ tmp_path ใน pytest\n\nอย่าลืมกดปุ่ม ทำเครื่องหมายว่าเรียนจบ นะครับ และใน Day 24 พรุ่งนี้จะเป็นวันทบทวน Block B06 ที่เราจะประกอบ Git hygiene, src layout และ Typer CLI มารวมกันเป็นแพ็กเกจ ticket-cli เต็มรูปแบบ แล้วเจอกันครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 23 เรียบร้อยแล้ว ขอสรุป 4 หลักการสำคัญของ Typer CLI ไว้ใช้งานจริงนะครับ\n\nหนึ่ง Typer ใช้ type hints อย่าง Path, int, bool และ Annotated สร้างทั้ง Argument, Option, validation และ dash dash help โดยอัตโนมัติ\nสอง ยึดวินัย UNIX CLI เสมอ ข้อมูลหลักออก stdout ส่วน progress, log และ error ออก stderr ด้วย err เท่ากับ True หรือ file เท่ากับ sys dot stderr\nสาม เมื่อเกิดข้อผิดพลาดหรือผลไม่ผ่านเกณฑ์ ให้โยน raise typer dot Exit code เท่ากับ 1 เพื่อส่งสัญญาณให้ shell และ CI รับรู้ทันที\nสี่ ทดสอบ CLI ทุกคำสั่งอย่างรวดเร็วในหน่วยความจำด้วย typer dot testing dot CliRunner คู่กับ tmp_path ใน pytest\n\nอย่าลืมกดปุ่ม ทำเครื่องหมายว่าเรียนจบ นะครับ และใน Day 24 พรุ่งนี้จะเป็นวันทบทวน Block B06 ที่เราจะประกอบ Git hygiene, src layout และ Typer CLI มารวมกันเป็นแพ็กเกจ ticket-cli เต็มรูปแบบ แล้วเจอกันครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

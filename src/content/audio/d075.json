@@ -1,0 +1,109 @@
+{
+  "lessonId": "d075",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Streaming UX & TTFT",
+      "src": "/audio/d075/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เล่าให้เห็นภาพปัญหาจอนิ่ง 4 วินาทีและวิธีแก้ด้วย Streaming",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 75 นะครับ วันนี้เราจะมาทำให้แอป AI รู้สึกเร็วขึ้นแบบทันตาเห็นด้วย Streaming UX ผ่าน SSE ครับ\n\nเพราะ LLM สร้างคำตอบทีละ token การรอจนจบทั้งย่อหน้าอาจใช้เวลา 4–8 วินาที แต่ถ้าส่งออกทีละคำผ่าน SSE ผู้ใช้จะเห็นตัวอักษรแรกภายในไม่กี่ร้อยมิลลิวินาที ซึ่งเป็นตัวเลขสำคัญที่เรียกว่า TTFT หรือ Time-to-First-Token ครับ\n\nภาพใหญ่ของวันนี้มี 4 เรื่อง หนึ่งคือเทียบ Non-Streaming กับ SSE Streaming พร้อมวัด TTFT และ throughput สองคือแก้กับดักตัวอักษรไทย 3 ไบต์ใน UTF-8 ด้วย incremental decoder สามคือปิด stream ด้วย contextlib.aclosing และไม่กลืน CancelledError และสี่คือแยกวัด TTFT เพื่อต่อยอดเข้า Streaming CLI Chat ใน Day 76 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 75 นะครับ วันนี้เราจะมาทำให้แอป AI รู้สึกเร็วขึ้นแบบทันตาเห็นด้วย Streaming UX ผ่าน SSE ครับ\n\nเพราะ LLM สร้างคำตอบทีละ token การรอจนจบทั้งย่อหน้าอาจใช้เวลา 4 ถึง 8 วินาที แต่ถ้าส่งออกทีละคำผ่าน SSE ผู้ใช้จะเห็นตัวอักษรแรกภายในไม่กี่ร้อยมิลลิวินาที ซึ่งเป็นตัวเลขสำคัญที่เรียกว่า TTFT หรือ Time-to-First-Token ครับ\n\nภาพใหญ่ของวันนี้มี 4 เรื่อง หนึ่งคือเทียบ Non-Streaming กับ SSE Streaming พร้อมวัด TTFT และ throughput สองคือแก้กับดักตัวอักษรไทย 3 ไบต์ใน UTF-8 ด้วย incremental decoder สามคือปิด stream ด้วย contextlib aclosing และไม่กลืน CancelledError และสี่คือแยกวัด TTFT เพื่อต่อยอดเข้า Streaming CLI Chat ใน Day 76 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d075/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมายทั้ง 3 ข้อของ Streaming UX ให้ฟังตามง่าย",
+      "script": "เป้าหมายของ Day 75 มี 3 ข้อที่สำคัญมากสำหรับงานแชต AI ครับ\n\nข้อแรก วัดค่า TTFT, Total Latency และ Throughput จาก async SSE stream ให้แม่นยำด้วย time.perf_counter()\nข้อสอง ถอดรหัส UTF-8 แบบ incremental ด้วย codecs.getincrementaldecoder เพื่อกันตัวอักษรไทย 3 ไบต์แตกข้าม chunk\nข้อสาม จัดการการยกเลิกกลางทางอย่างสะอาดด้วย contextlib.aclosing และ re-raise asyncio.CancelledError โดยไม่ทำให้ connection รั่วไหล\n\nทั้งหมดนี้ทดสอบได้ฟรี 100 เปอร์เซ็นต์บนเครื่องด้วย mock async stream ใน pytest ครับ",
+      "ttsText": "เป้าหมายของ Day 75 มี 3 ข้อที่สำคัญมากสำหรับงานแชต AI ครับ\n\nข้อแรก วัดค่า TTFT, Total Latency และ Throughput จาก async SSE stream ให้แม่นยำด้วย time perf_counter\nข้อสอง ถอดรหัส UTF-8 แบบ incremental ด้วย codecs getincrementaldecoder เพื่อกันตัวอักษรไทย 3 ไบต์แตกข้าม chunk\nข้อสาม จัดการการยกเลิกกลางทางอย่างสะอาดด้วย contextlib aclosing และ re-raise asyncio CancelledError โดยไม่ทำให้ connection รั่วไหล\n\nทั้งหมดนี้ทดสอบได้ฟรี 100 เปอร์เซ็นต์บนเครื่องด้วย mock async stream ใน pytest ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้งโปรเจกต์ ai-day75",
+      "src": "/audio/d075/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งตั้งโปรเจกต์ ai-day75 และเช็ก asyncio",
+      "script": "มาตั้งโปรเจกต์ ai-day75 ด้วย uv กันก่อนนะครับ\n\nสั่ง uv init ai-day75 แล้ว cd เข้าไป ติดตั้ง openai กับ httpx ด้วย uv add และเพิ่ม pytest กับ ruff ด้วย uv add --dev จากนั้นลองรัน python เช็ก import asyncio, codecs, httpx ให้เรียบร้อย\n\nการทดสอบวันนี้ใช้ mock async stream บนเครื่องได้เลย แต่โครงโค้ดใช้กับ AsyncOpenAI หรือ Ollama ได้ทันที เช็กเสร็จแล้วกด ไปต่อ นะครับ",
+      "ttsText": "มาตั้งโปรเจกต์ ai-day75 ด้วย uv กันก่อนนะครับ\n\nสั่ง uv init ai-day75 แล้ว cd เข้าไป ติดตั้ง openai กับ httpx ด้วย uv add และเพิ่ม pytest กับ ruff ด้วย uv add dash dash dev จากนั้นลองรัน python เช็ก import asyncio, codecs, httpx ให้เรียบร้อย\n\nการทดสอบวันนี้ใช้ mock async stream บนเครื่องได้เลย แต่โครงโค้ดใช้กับ AsyncOpenAI หรือ Ollama ได้ทันที เช็กเสร็จแล้วกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง ai-day75",
+        "prompt": "ตั้งโปรเจกต์ ai-day75 และทดสอบ import asyncio, codecs, httpx ให้เรียบร้อย แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ติดตั้งเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Non-Streaming vs SSE",
+      "src": "/audio/d075/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนกดสลับดูภาพเปรียบเทียบจอนิ่ง 4.2 วินาทีกับ TTFT 0.35 วินาที",
+      "script": "ก่อนเจาะโค้ด ลองกดสลับแผนภาพเปรียบเทียบ Non-Streaming กับ SSE Streaming บนหน้าจอดูก่อนนะครับ\n\nฝั่งซ้าย Non-Streaming ต้องจ้องจอนิ่ง 4.2 วินาทีเต็ม ๆ ส่วนฝั่งขวา SSE Streaming ตัวอักษรแรกโผล่ใน 0.35 วินาที แล้วไหลต่อเรื่อย ๆ พร้อมกด Cancel กลางทางได้ทันที ลองกดเล่นเทียบดูแล้วจะเห็นเลยว่าทำไม TTFT ถึงสำคัญกับ UX มากครับ",
+      "ttsText": "ก่อนเจาะโค้ด ลองกดสลับแผนภาพเปรียบเทียบ Non-Streaming กับ SSE Streaming บนหน้าจอดูก่อนนะครับ\n\nฝั่งซ้าย Non-Streaming ต้องจ้องจอนิ่ง 4.2 วินาทีเต็ม ๆ ส่วนฝั่งขวา SSE Streaming ตัวอักษรแรกโผล่ใน 0.35 วินาที แล้วไหลต่อเรื่อย ๆ พร้อมกด Cancel กลางทางได้ทันที ลองกดเล่นเทียบดูแล้วจะเห็นเลยว่าทำไม TTFT ถึงสำคัญกับ UX มากครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d075/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก ใช้อุปมาร้านตามสั่ง เลโก้ 3 ชิ้น และปุ่มวางสายโทรศัพท์",
+      "script": "มาดู 3 แนวคิดหัวใจของ Streaming UX กันครับ\n\nข้อแรก Perceived Latency และวิธีวัด TTFT Non-Streaming เหมือนร้านตามสั่งที่รอครบ 5 จานค่อยเสิร์ฟ แต่ Streaming เสิร์ฟน้ำกับจานแรกก่อน งานวิจัย UX ชี้ว่าคนเริ่มหงุดหงิดเมื่อจอนิ่งเกิน 1 วินาที เราจึงต้องวัด TTFT ด้วย time.perf_counter() เฉพาะตอนที่ได้ content delta แรกที่ไม่ว่าง อย่าจับตอนได้ HTTP 200 OK หรือ chunk ที่ content ว่างนะครับ\n\nข้อสอง การอ่าน SSE และป้องกันตัวอักษรไทยแตกกลางไบต์ บรรทัด SSE จะขึ้นด้วย data: ตามด้วย JSON และจบที่ data: [DONE] ส่วนภาษาไทย 1 ตัวใช้ 3 ไบต์และอิโมจิใช้ 4 ไบต์ใน UTF-8 ถ้า packet ตัดผ่ากลางแล้ว decode ทีละก้อนจะพังทันที เหมือนตัวต่อเลโก้ 3 ชิ้น เราต้องใช้ codecs.getincrementaldecoder('utf-8') พักไบต์เศษไว้รวมกับ chunk ถัดไป และปิดท้ายด้วย final=True\n\nข้อสาม Graceful Cancellation ถ้าผู้ใช้กด Stop แล้วไม่ปิด stream ก็เหมือนวางสายโดยไม่กดปุ่มแดง ปลายทางยังสร้าง token เสียเงินต่อ จึงต้องครอบด้วย async with contextlib.aclosing(stream) และ re-raise asyncio.CancelledError เสมอครับ",
+      "ttsText": "มาดู 3 แนวคิดหัวใจของ Streaming UX กันครับ\n\nข้อแรก Perceived Latency และวิธีวัด TTFT Non-Streaming เหมือนร้านตามสั่งที่รอครบ 5 จานค่อยเสิร์ฟ แต่ Streaming เสิร์ฟน้ำกับจานแรกก่อน งานวิจัย UX ชี้ว่าคนเริ่มหงุดหงิดเมื่อจอนิ่งเกิน 1 วินาที เราจึงต้องวัด TTFT ด้วย time perf_counter เฉพาะตอนที่ได้ content delta แรกที่ไม่ว่าง อย่าจับตอนได้ HTTP 200 โอเค หรือ chunk ที่ content ว่างนะครับ\n\nข้อสอง การอ่าน SSE และป้องกันตัวอักษรไทยแตกกลางไบต์ บรรทัด SSE จะขึ้นด้วย data colon ตามด้วย JSON และจบที่ data colon DONE ส่วนภาษาไทย 1 ตัวใช้ 3 ไบต์และอิโมจิใช้ 4 ไบต์ใน UTF-8 ถ้า packet ตัดผ่ากลางแล้ว decode ทีละก้อนจะพังทันที เหมือนตัวต่อเลโก้ 3 ชิ้น เราต้องใช้ codecs getincrementaldecoder utf-8 พักไบต์เศษไว้รวมกับ chunk ถัดไป และปิดท้ายด้วย final เท่ากับ True\n\nข้อสาม Graceful Cancellation ถ้าผู้ใช้กด Stop แล้วไม่ปิด stream ก็เหมือนวางสายโดยไม่กดปุ่มแดง ปลายทางยังสร้าง token เสียเงินต่อ จึงต้องครอบด้วย async with contextlib aclosing stream และ re-raise asyncio CancelledError เสมอครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน worked_day75.py",
+      "src": "/audio/d075/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต พาไล่ดูการทดลองทั้ง 3 สเต็ปใน worked_day75.py อย่างเข้าใจง่าย",
+      "script": "มาดูตัวอย่าง worked_day75.py ที่ทดสอบ Streaming 3 ด้านแบบออฟไลน์ 100 เปอร์เซ็นต์กันครับ\n\nสเต็ปแรก เราจงใจหั่นสตริง สวัสดีครับ AI ไทย เป็นก้อนละ 2 ไบต์เพื่อผ่ากลางตัวอักษรไทย 3 ไบต์ทุกตัว แต่เมื่อผ่าน decode_utf8_chunks ที่ใช้ incremental decoder ก็ประกอบกลับมาได้ครบ 100 เปอร์เซ็นต์โดยไม่พังเลย\n\nสเต็ปสอง พาร์ส mock_sse_lines ที่มีทั้งคอมเมนต์ keep-alive, chunk ที่ content ว่าง, delta ภาษาไทย และ data: [DONE] ตัวโค้ดจะข้ามบรรทัดว่างกับ content ว่าง แล้วจับ TTFT ที่คำว่า สวัสดี ก่อนแสดงเทียบกับ Total Latency\n\nสเต็ปสาม ใช้ task.cancel() ยกเลิก slow_token_stream กลางทางหลังผ่านไป 0.12 วินาที เพราะครอบด้วย aclosing บล็อก finally ของฝั่ง producer จึงถูกรันทันทีและ Stream closed กลายเป็น True สะอาดมากครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "ttsText": "มาดูตัวอย่าง worked_day75 dot py ที่ทดสอบ Streaming 3 ด้านแบบออฟไลน์ 100 เปอร์เซ็นต์กันครับ\n\nสเต็ปแรก เราจงใจหั่นสตริง สวัสดีครับ AI ไทย เป็นก้อนละ 2 ไบต์เพื่อผ่ากลางตัวอักษรไทย 3 ไบต์ทุกตัว แต่เมื่อผ่าน decode_utf8_chunks ที่ใช้ incremental decoder ก็ประกอบกลับมาได้ครบ 100 เปอร์เซ็นต์โดยไม่พังเลย\n\nสเต็ปสอง พาร์ส mock_sse_lines ที่มีทั้งคอมเมนต์ keep-alive, chunk ที่ content ว่าง, delta ภาษาไทย และ data colon DONE ตัวโค้ดจะข้ามบรรทัดว่างกับ content ว่าง แล้วจับ TTFT ที่คำว่า สวัสดี ก่อนแสดงเทียบกับ Total Latency\n\nสเต็ปสาม ใช้ task cancel ยกเลิก slow_token_stream กลางทางหลังผ่านไป 0.12 วินาที เพราะครอบด้วย aclosing บล็อก finally ของฝั่ง producer จึงถูกรันทันทีและ Stream closed กลายเป็น True สะอาดมากครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา worked_day75.py",
+        "prompt": "ลองไล่ดูการทำงานของ incremental UTF-8, SSE parser และ aclosing ทั้ง 3 ขั้น แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อ..."
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง stream_consumer.py",
+      "src": "/audio/d075/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดเป็นจังหวะตอนไล่สเปก 3 ฟังก์ชันใน stream_consumer.py",
+      "script": "ถึงช่วงลงมือเขียน stream_consumer.py เพื่อผ่าน test_stream_consumer.py ทั้ง 4 ข้อแล้วครับ\n\nหนึ่ง decode_utf8_chunks ใช้ codecs.getincrementaldecoder('utf-8')(errors='strict') ถอดรหัสทีละก้อน แล้วปิดท้ายด้วย decode(b'', final=True)\nสอง iter_sse_deltas ครอบ lines ด้วย aclosing ข้ามบรรทัดว่างและคอมเมนต์โคลอน อ่านเฉพาะบรรทัด data: หยุดทันทีที่ [DONE] และ yield เฉพาะ content ใน delta ที่ไม่ว่าง\n\nสาม consume_stream ครอบ deltas ด้วย aclosing จับเวลา t0 ด้วย time.perf_counter() บันทึก ttft เฉพาะเมื่อได้ delta แรกที่ไม่ว่าง เรียก on_delta หยุดเมื่อครบ max_chunks และเมื่อโดน CancelledError ต้องปิด stream แล้ว re-raise เสมอก่อนคืน StreamMetrics ครับ เสร็จแล้วรัน pytest กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "ttsText": "ถึงช่วงลงมือเขียน stream_consumer dot py เพื่อผ่าน test_stream_consumer dot py ทั้ง 4 ข้อแล้วครับ\n\nหนึ่ง decode_utf8_chunks ใช้ codecs getincrementaldecoder utf-8 แบบ errors เท่ากับ strict ถอดรหัสทีละก้อน แล้วปิดท้ายด้วย decode bytes ว่างและ final เท่ากับ True\nสอง iter_sse_deltas ครอบ lines ด้วย aclosing ข้ามบรรทัดว่างและคอมเมนต์โคลอน อ่านเฉพาะบรรทัด data colon หยุดทันทีที่ DONE และ yield เฉพาะ content ใน delta ที่ไม่ว่าง\n\nสาม consume_stream ครอบ deltas ด้วย aclosing จับเวลา t0 ด้วย time perf_counter บันทึก ttft เฉพาะเมื่อได้ delta แรกที่ไม่ว่าง เรียก on_delta หยุดเมื่อครบ max_chunks และเมื่อโดน CancelledError ต้องปิด stream แล้ว re-raise เสมอก่อนคืน StreamMetrics ครับ เสร็จแล้วรัน pytest กับ ruff check ได้เลย พี่รอตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด stream_consumer.py",
+        "prompt": "ลงมือเติม decode_utf8_chunks, iter_sse_deltas และ consume_stream แล้วรัน pytest ให้ผ่านครบทั้ง 4 ข้อได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d075/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อนเปิด แล้วเล่า 4 บั๊กสุดแสบของ Streaming ภาษาไทยให้จำแม่น",
+      "script": "เก่งมากครับที่ผ่านแบบฝึกหัด Streaming มาได้ ก่อนทำควิซ พี่ขอเตือน 4 จุดพลาดคลาสสิกในงานจริงนะครับ\n\nข้อแรก เรียก raw_chunk.decode('utf-8') ตรง ๆ บน byte stream พอขึ้นเน็ตจริงแพ็กเก็ตหั่นกลางตัวอักษรไทย 3 ไบต์เมื่อไหร่ก็พังด้วย UnicodeDecodeError หรือขึ้นตัวอักษรเสียทันที\nข้อสอง วัด TTFT ทันทีที่ได้ HTTP 200 OK หรือ chunk ที่ content ว่าง ทำให้ตัวเลขเร็วหลอกตาทั้งที่ผู้ใช้ยังจ้องจอนิ่งอยู่\n\nข้อสาม กลืน asyncio.CancelledError ด้วย except Exception หรือ except BaseException: pass จน coroutine ค้างไม่ยอมหยุด\nข้อสี่ ใช้ client.post ปกติแทน client.stream ของ httpx ทำให้รอโหลดจบก่อนค่อยวนลูป จน TTFT เท่ากับ total latency เลยครับ",
+      "ttsText": "เก่งมากครับที่ผ่านแบบฝึกหัด Streaming มาได้ ก่อนทำควิซ พี่ขอเตือน 4 จุดพลาดคลาสสิกในงานจริงนะครับ\n\nข้อแรก เรียก raw_chunk decode utf-8 ตรง ๆ บน byte stream พอขึ้นเน็ตจริงแพ็กเก็ตหั่นกลางตัวอักษรไทย 3 ไบต์เมื่อไหร่ก็พังด้วย UnicodeDecodeError หรือขึ้นตัวอักษรเสียทันที\nข้อสอง วัด TTFT ทันทีที่ได้ HTTP 200 โอเค หรือ chunk ที่ content ว่าง ทำให้ตัวเลขเร็วหลอกตาทั้งที่ผู้ใช้ยังจ้องจอนิ่งอยู่\n\nข้อสาม กลืน asyncio CancelledError ด้วย except Exception หรือ except BaseException pass จน coroutine ค้างไม่ยอมหยุด\nข้อสี่ ใช้ client post ปกติแทน client stream ของ httpx ทำให้รอโหลดจบก่อนค่อยวนลูป จน TTFT เท่ากับ total latency เลยครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d075/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทำควิซทบทวน 4 ข้อเรื่อง Streaming UX",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 75 กันครับ\n\nควิซจะถามเรื่องทำไม SSE Streaming ถึงช่วยให้ UX เร็วขึ้น, เหตุผลที่ byte stream ภาษาไทยต้องใช้ incremental decoder, จังหวะที่ควรจับเวลา TTFT และวิธีปิด async stream อย่างสะอาดเมื่อถูก cancel เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 75 กันครับ\n\nควิซจะถามเรื่องทำไม SSE Streaming ถึงช่วยให้ UX เร็วขึ้น, เหตุผลที่ byte stream ภาษาไทยต้องใช้ incremental decoder, จังหวะที่ควรจับเวลา TTFT และวิธีปิด async stream อย่างสะอาดเมื่อถูก cancel เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง TTFT, UTF-8 incremental decoder และ aclosing แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 76",
+      "src": "/audio/d075/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ สดใส สรุป 4 แก่นหลักของ Day 75 และชวนไปประกอบร่างใน Day 76",
+      "script": "ยินดีด้วยครับ จบ Day 75 เรียบร้อยแล้ว! วันนี้คุณเก็บทักษะสำคัญของ Streaming UX ครบ 4 ข้อเลย\n\nหนึ่ง วัด TTFT ที่ content delta แรกที่ไม่ว่าง แยกจาก Total Latency ด้วย time.perf_counter()\nสอง ใช้ codecs.getincrementaldecoder('utf-8') หรือ aiter_text() เสมอ กันตัวอักษรไทย 3 ไบต์แตกกลางทาง\nสาม พาร์ส SSE อย่างรัดกุม ข้ามบรรทัดว่างและคอมเมนต์โคลอน อ่าน data: และหยุดที่ data: [DONE]\nสี่ ครอบ async stream ด้วย contextlib.aclosing และไม่กลืน CancelledError เพื่อกัน connection leak\n\nพรุ่งนี้ Day 76 วันทบทวน Block B19 เราจะเอาทั้งหมดมาร้อยเป็น Streaming CLI Chat พร้อมตัวนับ TTFT และต้นทุน USD/THB เต็มตัวครับ",
+      "ttsText": "ยินดีด้วยครับ จบ Day 75 เรียบร้อยแล้ว! วันนี้คุณเก็บทักษะสำคัญของ Streaming UX ครบ 4 ข้อเลย\n\nหนึ่ง วัด TTFT ที่ content delta แรกที่ไม่ว่าง แยกจาก Total Latency ด้วย time perf_counter\nสอง ใช้ codecs getincrementaldecoder utf-8 หรือ aiter_text เสมอ กันตัวอักษรไทย 3 ไบต์แตกกลางทาง\nสาม พาร์ส SSE อย่างรัดกุม ข้ามบรรทัดว่างและคอมเมนต์โคลอน อ่าน data colon และหยุดที่ data colon DONE\nสี่ ครอบ async stream ด้วย contextlib aclosing และไม่กลืน CancelledError เพื่อกัน connection leak\n\nพรุ่งนี้ Day 76 วันทบทวน Block B19 เราจะเอาทั้งหมดมาร้อยเป็น Streaming CLI Chat พร้อมตัวนับ TTFT และต้นทุน USD และ THB เต็มตัวครับ"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "lessonId": "d080",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ประกอบร่าง Block B20 สู่ 99%+",
+      "src": "/audio/d080/01-big-picture.mp3",
+      "stylePrompt": "เปิดวันทบทวนอย่างอบอุ่นและมีพลัง เหมือนรุ่นพี่ชวนน้องประกอบจิ๊กซอว์ทั้งสัปดาห์ให้เห็นภาพครบวงจร",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 80 ซึ่งเป็นวันทบทวน Block B20 ครับ วันนี้เราจะเอาจิ๊กซอว์ทุกชิ้นตั้งแต่ Day 77, 78 และ 79 รวมถึงพื้นฐาน Day 3 กับ Day 14 มาประกอบเป็นตัวสกัดใบแจ้งหนี้ไทยที่ผ่าน schema ระดับ 99% ขึ้นไปใน pipeline เดียวกัน\n\nเริ่มจากรวม Strict Pydantic Schema คู่กับ Static Prefix ที่คงที่ เพื่อเปิดทางให้ Prompt Caching ทำงานได้เต็มร้อย จากนั้นใช้ Small-First Routing ร่วมกับ Bounded Repair Loop ซ่อมจุดผิดอย่างปี พ.ศ. หรือ VAT ใน 1 ถึง 2 รอบ และ escalate ไปโมเดลใหญ่เฉพาะเคสยากหรือความมั่นใจต่ำ\n\nความเจ๋งของวันนี้คือเราจะพิสูจน์ตัวเลขจริงด้วยชุดจำลอง 100 ใบแจ้งหนี้ไทยใน pytest เพื่อตรวจทั้ง valid_rate >= 0.99, unique_prefix_hashes == 1, fallback ที่ปลอดภัย และ metric ครบทุกมิติ เตรียมพร้อมลุยต่อสู่ Block B21 และ Mini-Project ปลาย Phase 3 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 80 ซึ่งเป็นวันทบทวน Block B20 ครับ วันนี้เราจะเอาจิ๊กซอว์ทุกชิ้นตั้งแต่ Day 77, 78 และ 79 รวมถึงพื้นฐาน Day 3 กับ Day 14 มาประกอบเป็นตัวสกัดใบแจ้งหนี้ไทยที่ผ่าน schema ระดับ 99 เปอร์เซ็นต์ ขึ้นไปใน pipeline เดียวกัน\n\nเริ่มจากรวม Strict Pydantic Schema คู่กับ Static Prefix ที่คงที่ เพื่อเปิดทางให้ Prompt Caching ทำงานได้เต็มร้อย จากนั้นใช้ Small-First Routing ร่วมกับ Bounded Repair Loop ซ่อมจุดผิดอย่างปี พุทธศักราช หรือ VAT ใน 1 ถึง 2 รอบ และ escalate ไปโมเดลใหญ่เฉพาะเคสยากหรือความมั่นใจต่ำ\n\nความเจ๋งของวันนี้คือเราจะพิสูจน์ตัวเลขจริงด้วยชุดจำลอง 100 ใบแจ้งหนี้ไทยใน pytest เพื่อตรวจทั้ง valid_rate มากกว่าหรือเท่ากับ 0.99, unique_prefix_hashes เท่ากับ 1, fallback ที่ปลอดภัย และ metric ครบทุกมิติ เตรียมพร้อมลุยต่อสู่ Block B21 และ Mini-Project ปลาย Phase 3 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d080/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชวนทบทวนแบบ Interleaved Recall และเน้นเป้าหมายเชิงปริมาณ 99 เปอร์เซ็นต์",
+      "script": "เป้าหมายของวันทบทวน Day 80 มี 3 ข้อชัดเจนเลยครับ\n\nหนึ่ง ดึงความรู้แบบผสมผสานครบทั้ง Day 77, 78, 79 รวมถึง Day 3 และ Day 14 มาเชื่อมเข้าด้วยกัน\nสอง ประกอบ Production-Grade Thai Invoice Extractor ที่มีทั้ง Strict Schema, Static Prefix, 2-Step Repair Loop, Frontier Escalation และ Safe Fallback\nสาม พิสูจน์เชิงปริมาณใน pytest บนชุดจำลอง 100 เคสว่า valid_rate ถึง 0.99 ขึ้นไป รักษา unique_prefix_hashes เท่ากับ 1 และส่งเอกสารเสียเข้าคิวคนตรวจโดยไม่ crash ครับ",
+      "ttsText": "เป้าหมายของวันทบทวน Day 80 มี 3 ข้อชัดเจนเลยครับ\n\nหนึ่ง ดึงความรู้แบบผสมผสานครบทั้ง Day 77, 78, 79 รวมถึง Day 3 และ Day 14 มาเชื่อมเข้าด้วยกัน\nสอง ประกอบ Production-Grade Thai Invoice Extractor ที่มีทั้ง Strict Schema, Static Prefix, 2-Step Repair Loop, Frontier Escalation และ Safe Fallback\nสาม พิสูจน์เชิงปริมาณใน pytest บนชุดจำลอง 100 เคสว่า valid_rate ถึง 0.99 ขึ้นไป รักษา unique_prefix_hashes เท่ากับ 1 และส่งเอกสารเสียเข้าคิวคนตรวจโดยไม่ crash ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d080/03-setup.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชวนวางแผนเวลา 30 นาทีของ Review Day และตั้งโปรเจกต์ ai-day80-review",
+      "script": "ตั้งโปรเจกต์รอบทบทวนด้วย uv init ai-day80-review ตามด้วย uv add pydantic และ uv add --dev pytest ruff แล้วรันเช็กเวอร์ชันตามหน้าจอครับ\n\nวันนี้พี่แนะนำแบ่งเวลา 30 นาทีตามแผนนี้เลยนะ 10 นาทีทำควิซแบบผสมผสาน 15 นาทีประกอบ Extractor กับรันเทสต์ 100 เคส แล้วอีก 5 นาทีทบทวน Error Log ก่อนก้าวสู่ Block B21 เรื่อง Multimodal, Batch API และ Ollama ครับ ตั้งเครื่องเสร็จแล้วกดไปต่อได้เลย",
+      "ttsText": "ตั้งโปรเจกต์รอบทบทวนด้วย uv init ai-day80-review ตามด้วย uv add pydantic และ uv add dash dash dev pytest ruff แล้วรันเช็กเวอร์ชันตามหน้าจอครับ\n\nวันนี้พี่แนะนำแบ่งเวลา 30 นาทีตามแผนนี้เลยนะ 10 นาทีทำควิซแบบผสมผสาน 15 นาทีประกอบ Extractor กับรันเทสต์ 100 เคส แล้วอีก 5 นาทีทบทวน Error Log ก่อนก้าวสู่ Block B21 เรื่อง Multimodal, Batch API และ Ollama ครับ ตั้งเครื่องเสร็จแล้วกดไปต่อได้เลย",
+      "pauseAfter": {
+        "title": "พักรอตั้งโปรเจกต์ ai-day80-review",
+        "prompt": "รัน uv init ai-day80-review และติดตั้ง pydantic, pytest, ruff ให้เรียบร้อยก่อนไปดูแผนภาพครับ",
+        "continueLabel": "พร้อมลุย Review Day — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — B20 Full Pipeline",
+      "src": "/audio/d080/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ ชวนมองภาพรวมทั้ง 4 ชั้นของ pipeline ที่ทำงานประสานกันตั้งแต่ต้นจนจบ",
+      "script": "ลองมองภาพแผนภาพตรงหน้านี้โดยนึกถึงทุกอย่างที่เราเรียนมาตลอดสัปดาห์นะครับ จาก Day 79 ที่คุม Static Prefix กับ Model Routing ไหลผ่านด่าน Strict Schema ของ Day 77 เข้าสู่ลูปซ่อมและ Deterministic Fallback ของ Day 78 วันนี้ทุกกล่องเชื่อมต่อกันเป็นระบบสกัดใบแจ้งหนี้ไทยที่พร้อมวัดผลจริง 100 เคสแล้วครับ",
+      "ttsText": "ลองมองภาพแผนภาพตรงหน้านี้โดยนึกถึงทุกอย่างที่เราเรียนมาตลอดสัปดาห์นะครับ จาก Day 79 ที่คุม Static Prefix กับ Model Routing ไหลผ่านด่าน Strict Schema ของ Day 77 เข้าสู่ลูปซ่อมและ Deterministic Fallback ของ Day 78 วันนี้ทุกกล่องเชื่อมต่อกันเป็นระบบสกัดใบแจ้งหนี้ไทยที่พร้อมวัดผลจริง 100 เคสแล้วครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d080/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM สรุปภาพรวมสถาปัตยกรรม 4 ชั้นอย่างเป็นระบบ และเน้นเรื่องการอ่าน 5 metrics ไม่ให้ถูกตัวเลขหลอก",
+      "script": "ก่อนประกอบโค้ด มาร้อยต่อจิ๊กซอว์ B20 ให้เห็นเป็นระบบสะอาด 3 ประเด็นสำคัญครับ\n\nประเด็นแรก สถาปัตยกรรม 4 ชั้นที่แยกหน้าที่กันชัด ชั้น 1 Prompt Layout และ Caching วาง Static Prefix คงที่ใน system message และเอกสารใน user message ท้ายสุด ชั้น 2 แยก Transport Retry ของ Day 14 ออกจาก Semantic Resilience ด้วย Pydantic และ Bounded Repair Loop ชั้น 3 ลองโมเดลเล็กก่อน 80% แล้ว escalate ไปโมเดลใหญ่เมื่อ confidence ต่ำกว่า 0.80 หรือซ่อมไม่ผ่าน และชั้น 4 ตัดจบด้วย Safe Fallback เข้าคิวคนตรวจ\n\nประเด็นที่สอง อย่าหลงกลตัวเลข valid_rate 99% ตัวเดียวครับ ต้องรายงาน 5 ตัวเลขคู่กันเสมอ ได้แก่ first_pass_rate, repaired_rate, valid_rate, fallback_rate และ frontier_rate ถ้า first_pass_rate ร่วงลงเหลือ 65% แม้ valid_rate ยังสวยที่ 99% แต่นั่นแปลว่า Repair Loop กำลังแบกงานหนักจนบิลและ latency พุ่งแล้ว\n\nประเด็นที่สาม ก่อนเสียเงินยิง API จริง ต้องสร้าง Flight Simulator บนเครื่องด้วยการทำ 100-case Deterministic Mock Stress Suite ใน pytest ใส่ทั้งเคสปกติ ปี พ.ศ. ยอดสูง ความมั่นใจต่ำ และเอกสารเสีย เพื่อยืนยัน Contract Safety 100%, unique_prefix_hashes เท่ากับ 1 และ frontier_rate ไม่เกินเป้าภายในเสี้ยววินาทีครับ",
+      "ttsText": "ก่อนประกอบโค้ด มาร้อยต่อจิ๊กซอว์ B20 ให้เห็นเป็นระบบสะอาด 3 ประเด็นสำคัญครับ\n\nประเด็นแรก สถาปัตยกรรม 4 ชั้นที่แยกหน้าที่กันชัด ชั้น 1 Prompt Layout และ Caching วาง Static Prefix คงที่ใน system message และเอกสารใน user message ท้ายสุด ชั้น 2 แยก Transport Retry ของ Day 14 ออกจาก Semantic Resilience ด้วย Pydantic และ Bounded Repair Loop ชั้น 3 ลองโมเดลเล็กก่อน 80 เปอร์เซ็นต์ แล้ว escalate ไปโมเดลใหญ่เมื่อ confidence ต่ำกว่า 0.80 หรือซ่อมไม่ผ่าน และชั้น 4 ตัดจบด้วย Safe Fallback เข้าคิวคนตรวจ\n\nประเด็นที่สอง อย่าหลงกลตัวเลข valid_rate 99 เปอร์เซ็นต์ ตัวเดียวครับ ต้องรายงาน 5 ตัวเลขคู่กันเสมอ ได้แก่ first_pass_rate, repaired_rate, valid_rate, fallback_rate และ frontier_rate ถ้า first_pass_rate ร่วงลงเหลือ 65 เปอร์เซ็นต์ แม้ valid_rate ยังสวยที่ 99 เปอร์เซ็นต์ แต่นั่นแปลว่า Repair Loop กำลังแบกงานหนักจนบิลและ latency พุ่งแล้ว\n\nประเด็นที่สาม ก่อนเสียเงินยิง API จริง ต้องสร้าง Flight Simulator บนเครื่องด้วยการทำ 100-case Deterministic Mock Stress Suite ใน pytest ใส่ทั้งเคสปกติ ปี พุทธศักราช ยอดสูง ความมั่นใจต่ำ และเอกสารเสีย เพื่อยืนยัน Contract Safety 100 เปอร์เซ็นต์, unique_prefix_hashes เท่ากับ 1 และ frontier_rate ไม่เกินเป้าภายในเสี้ยววินาทีครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — 100-Case Stress Test",
+      "src": "/audio/d080/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงสนุกและภูมิใจตอนเห็นทั้ง pipeline ทำงานร่วมกันบน 100 ใบแจ้งหนี้จำลอง",
+      "script": "มาดูภาพเต็มของ worked_day80.py กันครับ โค้ดนี้รวมร่างทุกบทเรียนของ Block B20 ไว้ในไฟล์เดียวเลย\n\nขั้นแรก ThaiInvoiceRecord ตั้ง extra=\"forbid\" บังคับปี ค.ศ. 2020 ถึง 2030 เช็ก subtotal + vat == total และเพิ่มกฎธุรกิจว่ายอดตั้งแต่ 50,000 บาทขึ้นไปต้องตั้ง needs_human_review เป็น True พร้อม static_prefix_hash ตัด SHA-256 มา 12 ตัวไว้เช็ก cache\n\nขั้นที่สอง เราแยก helper ชื่อ _try_tier เพื่อใช้ซ้ำได้ทั้งฝั่ง small_llm และ frontier_llm ในฟังก์ชัน extract_invoice ลอง small สูงสุด max_retries 2 รอบ ถ้าผ่านและ confidence >= 0.80 จบเลย มิฉะนั้น escalate ไป frontier ที่ซ่อมได้อีก 1 รอบ และถ้ายังไม่รอดก็คืน PipelineResult สถานะ fallback\n\nขั้นที่สาม เรารันจำลอง 100 ใบที่มีทั้ง CLEAN, BE_YEAR, AMBIGUOUS และ CORRUPT ผลออกมาได้ Valid Rate 99.0%, Frontier Escalation แค่ 8.0% และ Unique Cache Prefix Hashes เท่ากับ 1 ส่วนใบที่เสีย 1 ใบก็ตก fallback เข้าคิวคนตรวจโดยไม่ทำ batch ล่มคือ Contract Safety 100% พักไล่โค้ดให้คล่องแล้วกดไปต่อที่แบบฝึกหัดใหญ่กันครับ",
+      "ttsText": "มาดูภาพเต็มของ worked_day80.py กันครับ โค้ดนี้รวมร่างทุกบทเรียนของ Block B20 ไว้ในไฟล์เดียวเลย\n\nขั้นแรก ThaiInvoiceRecord ตั้ง extra เท่ากับ forbid บังคับปี คริสต์ศักราช 2020 ถึง 2030 เช็ก subtotal บวก vat เท่ากับ total และเพิ่มกฎธุรกิจว่ายอดตั้งแต่ 50000 บาทขึ้นไปต้องตั้ง needs_human_review เป็น True พร้อม static_prefix_hash ตัด SHA-256 มา 12 ตัวไว้เช็ก cache\n\nขั้นที่สอง เราแยก helper ชื่อ _try_tier เพื่อใช้ซ้ำได้ทั้งฝั่ง small_llm และ frontier_llm ในฟังก์ชัน extract_invoice ลอง small สูงสุด max_retries 2 รอบ ถ้าผ่านและ confidence มากกว่าหรือเท่ากับ 0.80 จบเลย มิฉะนั้น escalate ไป frontier ที่ซ่อมได้อีก 1 รอบ และถ้ายังไม่รอดก็คืน PipelineResult สถานะ fallback\n\nขั้นที่สาม เรารันจำลอง 100 ใบที่มีทั้ง CLEAN, BE_YEAR, AMBIGUOUS และ CORRUPT ผลออกมาได้ Valid Rate 99.0 เปอร์เซ็นต์, Frontier Escalation แค่ 8.0 เปอร์เซ็นต์ และ Unique Cache Prefix Hashes เท่ากับ 1 ส่วนใบที่เสีย 1 ใบก็ตก fallback เข้าคิวคนตรวจโดยไม่ทำ batch ล่มคือ Contract Safety 100 เปอร์เซ็นต์ พักไล่โค้ดให้คล่องแล้วกดไปต่อที่แบบฝึกหัดใหญ่กันครับ",
+      "pauseAfter": {
+        "title": "พักรอทบทวนตัวอย่าง B20 Full Pipeline",
+        "prompt": "ดูโครงสร้างของ ThaiInvoiceRecord, _try_tier, extract_invoice และผลทดสอบ 100 เคสใน worked_day80.py แล้วกดไปต่อครับ",
+        "continueLabel": "เห็นภาพครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ประกอบ Extractor 99%+",
+      "src": "/audio/d080/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจ เหมือนโค้ชคอยชี้จุดเช็กสำคัญใน exercise_day80.py ก่อนปล่อยน้องลงมือจริง",
+      "script": "ถึงภารกิจใหญ่ประจำสัปดาห์ใน exercise_day80.py แล้วครับ วันนี้เราจะประกอบ 3 ส่วนหลักให้ผ่าน test_day80.py ที่มีชุดจำลอง 100 ใบแจ้งหนี้ไทยนะ\n\nส่วนแรก เติม ThaiInvoiceRecord ตั้ง extra=\"forbid\" ครบทุกฟิลด์ เช็กปี ค.ศ. 2020 ถึง 2030, ยอด subtotal + vat == total และเงื่อนไข total_amount >= 50000.0 ต้องมี needs_human_review เป็น True\n\nส่วนที่สอง เขียน extract_invoice เช็ก max_retries >= 0 กับ confidence_threshold ระหว่าง 0.0 ถึง 1.0 ใช้ rubric.strip() เป็น system message คงที่และคำนวณ cache_prefix_hash จาก SHA-256 12 ตัวแรก จากนั้นใช้ helper ลูปซ่อมฝั่ง small_llm แล้วค่อย escalate ไป frontier_llm กรณีซ่อมไม่ผ่านหรือ confidence ต่ำกว่าเกณฑ์ โดยอย่าลืมเก็บเหตุผลลง error_reasons ด้วยนะครับ\n\nส่วนที่สาม เขียน evaluate_batch เช็ก results ไม่ว่างแล้วคำนวณทั้ง 7 metrics รวมถึง unique_prefix_hashes เสร็จแล้วรัน uv run pytest -q กับ ruff check ดูว่า valid_rate >= 0.99 และ frontier_rate <= 0.15 ผ่านฉลุยไหม เดี๋ยวพี่รอเชียร์อยู่ตรงนี้ครับ",
+      "ttsText": "ถึงภารกิจใหญ่ประจำสัปดาห์ใน exercise_day80.py แล้วครับ วันนี้เราจะประกอบ 3 ส่วนหลักให้ผ่าน test_day80.py ที่มีชุดจำลอง 100 ใบแจ้งหนี้ไทยนะ\n\nส่วนแรก เติม ThaiInvoiceRecord ตั้ง extra เท่ากับ forbid ครบทุกฟิลด์ เช็กปี คริสต์ศักราช 2020 ถึง 2030, ยอด subtotal บวก vat เท่ากับ total และเงื่อนไข total_amount มากกว่าหรือเท่ากับ 50000.0 ต้องมี needs_human_review เป็น True\n\nส่วนที่สอง เขียน extract_invoice เช็ก max_retries มากกว่าหรือเท่ากับ 0 กับ confidence_threshold ระหว่าง 0.0 ถึง 1.0 ใช้ rubric.strip() เป็น system message คงที่และคำนวณ cache_prefix_hash จาก SHA-256 12 ตัวแรก จากนั้นใช้ helper ลูปซ่อมฝั่ง small_llm แล้วค่อย escalate ไป frontier_llm กรณีซ่อมไม่ผ่านหรือ confidence ต่ำกว่าเกณฑ์ โดยอย่าลืมเก็บเหตุผลลง error_reasons ด้วยนะครับ\n\nส่วนที่สาม เขียน evaluate_batch เช็ก results ไม่ว่างแล้วคำนวณทั้ง 7 metrics รวมถึง unique_prefix_hashes เสร็จแล้วรัน uv run pytest dash q กับ ruff check ดูว่า valid_rate มากกว่าหรือเท่ากับ 0.99 และ frontier_rate น้อยกว่าหรือเท่ากับ 0.15 ผ่านฉลุยไหม เดี๋ยวพี่รอเชียร์อยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอประกอบ Extractor ใน exercise_day80.py",
+        "prompt": "ประกอบ ThaiInvoiceRecord, extract_invoice และ evaluate_batch แล้วรันชุดทดสอบ 100 เคสใน test_day80.py ให้ผ่านครับ",
+        "continueLabel": "รันเทสต์ 100 เคสผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d080/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยและเน้นย้ำ 4 จุดตายที่ต้องระวังเมื่อรวม pipeline ทั้งสัปดาห์เข้าด้วยกัน",
+      "script": "เก่งมากครับที่ประกอบทั้ง pipeline ผ่าน 100 เคสได้สำเร็จ มาเช็ก 4 ข้อผิดพลาดที่มักโผล่ตอนรวมระบบจริงกันนะ\n\nข้อแรก วัด 99% valid บนชุดทดสอบสะอาดอย่างเดียว ไม่มีเคสปี พ.ศ. ไทย เลขเอกสาร null หรือยอด VAT ผิด พอขึ้น production เลยร่วงเหลือ 80%\nข้อที่สอง เผลอใส่ doc_id หรือ timestamp ลงใน system message ทำให้ unique_prefix_hashes พุ่งเป็น 100 แทนที่จะเป็น 1 จน Prompt Caching miss ทุกคำขอ\nข้อที่สาม ให้ frontier_llm ใช้ max_retries สูงเกินไปหรือลืมคืน Deterministic Fallback ทำให้ใบเสร็จเสีย 1 ใบทำ batch 100 ใบล่มกลางคัน\nข้อที่สี่ เอา tenacity HTTP Retry มาจับ ValidationError ทำให้หน่วง backoff แล้วยิง prompt เดิมซ้ำโดยไม่บอกจุดผิดครับ",
+      "ttsText": "เก่งมากครับที่ประกอบทั้ง pipeline ผ่าน 100 เคสได้สำเร็จ มาเช็ก 4 ข้อผิดพลาดที่มักโผล่ตอนรวมระบบจริงกันนะ\n\nข้อแรก วัด 99 เปอร์เซ็นต์ valid บนชุดทดสอบสะอาดอย่างเดียว ไม่มีเคสปี พุทธศักราช ไทย เลขเอกสาร null หรือยอด VAT ผิด พอขึ้น production เลยร่วงเหลือ 80 เปอร์เซ็นต์\nข้อที่สอง เผลอใส่ doc_id หรือ timestamp ลงใน system message ทำให้ unique_prefix_hashes พุ่งเป็น 100 แทนที่จะเป็น 1 จน Prompt Caching miss ทุกคำขอ\nข้อที่สาม ให้ frontier_llm ใช้ max_retries สูงเกินไปหรือลืมคืน Deterministic Fallback ทำให้ใบเสร็จเสีย 1 ใบทำ batch 100 ใบล่มกลางคัน\nข้อที่สี่ เอา tenacity HTTP Retry มาจับ ValidationError ทำให้หน่วง backoff แล้วยิง prompt เดิมซ้ำโดยไม่บอกจุดผิดครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ (Interleaved Recall)",
+      "src": "/audio/d080/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเอง ชวนเช็กความเข้าใจแบบเชื่อมโยงทั้งสัปดาห์ก่อนจบ Block B20",
+      "script": "มาปิดท้าย Block B20 ด้วย Micro-Quiz 4 ข้อแบบ Interleaved Recall กันครับ ทั้งเรื่องการต่อจิ๊กซอว์ 3 วัน การอ่านสัญญาณอันตรายจาก metrics การบังคับกฎยอด 50,000 บาท และเหตุผลของ 100-case mock stress test ลองทำครบแล้วกดไปต่อเพื่อฟังสรุปปิดบล็อกนะครับ",
+      "ttsText": "มาปิดท้าย Block B20 ด้วย Micro-Quiz 4 ข้อแบบ Interleaved Recall กันครับ ทั้งเรื่องการต่อจิ๊กซอว์ 3 วัน การอ่านสัญญาณอันตรายจาก metrics การบังคับกฎยอด 50000 บาท และเหตุผลของ 100-case mock stress test ลองทำครบแล้วกดไปต่อเพื่อฟังสรุปปิดบล็อกนะครับ",
+      "pauseAfter": {
+        "title": "พักรอทำ Micro-Quiz ทบทวน B20 (4 ข้อ)",
+        "prompt": "ตอบควิซทบทวน Block B20 ทั้ง 4 ข้อให้ครบ แล้วกดไปต่อเพื่อฟังสรุปปิดบล็อกครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุปจบ Block B20 & ก้าวต่อไป B21",
+      "src": "/audio/d080/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภาคภูมิใจ อบอุ่น ยินดีที่น้องจบ Block B20 ครบถ้วน และเปิดทางไปสู่ Block B21 อย่างน่าตื่นเต้น",
+      "script": "ยินดีด้วยจริง ๆ ครับ คุณจบ Block B20 ครบสมบูรณ์แบบแล้ว ขอสรุปภาพรวมทั้งหมดติดตัวไปลุยงานจริงกันนะ\n\nหนึ่ง ระบบสกัดเอกสารไทยระดับ 99%+ เกิดจากการประสาน 4 ชั้น คือ Strict Pydantic Schema, Static Prefix Caching, Small กับ Frontier Routing และ Bounded Repair Loop คู่ Safe Fallback\nสอง อย่าดูแค่ valid_rate ตัวเดียว ต้องดูทั้ง first_pass_rate, repaired_rate, fallback_rate, frontier_rate และ unique_prefix_hashes ควบคู่กัน\nสาม แยก HTTP Transport Retry ออกจาก Semantic Validation Repair และรับประกัน 0% crash ด้วย Deterministic Fallback เข้าคิวคนตรวจ\nสี่ ล็อกคุณภาพด้วย 100-case offline mock stress test ใน pytest ทุกครั้งที่แก้โค้ด\n\nวันพรุ่งนี้เราจะเริ่ม Block B21 ลุยโลก Multimodal, Batch API และการรันโมเดลบนเครื่องด้วย Local Ollama กันครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 81 นะครับ",
+      "ttsText": "ยินดีด้วยจริง ๆ ครับ คุณจบ Block B20 ครบสมบูรณ์แบบแล้ว ขอสรุปภาพรวมทั้งหมดติดตัวไปลุยงานจริงกันนะ\n\nหนึ่ง ระบบสกัดเอกสารไทยระดับ 99 เปอร์เซ็นต์ ขึ้นไป เกิดจากการประสาน 4 ชั้น คือ Strict Pydantic Schema, Static Prefix Caching, Small กับ Frontier Routing และ Bounded Repair Loop คู่ Safe Fallback\nสอง อย่าดูแค่ valid_rate ตัวเดียว ต้องดูทั้ง first_pass_rate, repaired_rate, fallback_rate, frontier_rate และ unique_prefix_hashes ควบคู่กัน\nสาม แยก HTTP Transport Retry ออกจาก Semantic Validation Repair และรับประกัน 0 เปอร์เซ็นต์ crash ด้วย Deterministic Fallback เข้าคิวคนตรวจ\nสี่ ล็อกคุณภาพด้วย 100-case offline mock stress test ใน pytest ทุกครั้งที่แก้โค้ด\n\nวันพรุ่งนี้เราจะเริ่ม Block B21 ลุยโลก Multimodal, Batch API และการรันโมเดลบนเครื่องด้วย Local Ollama กันครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบ แล้วเจอกันใน Day 81 นะครับ"
+    }
+  ]
+}

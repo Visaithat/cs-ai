@@ -1,0 +1,109 @@
+{
+  "lessonId": "d031",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — เสริมเกราะ Production",
+      "src": "/audio/d031/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างมั่นใจและชวนตื่นเต้น ชี้ให้เห็นการยกระดับท่อเมื่อวานให้ทนทานระดับ production",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 31 นะครับ เมื่อวานเราต่อท่อ Async Ingestion เสร็จไปแล้ว วันนี้เราจะมาเสริมเกราะระดับ production ให้ท่อนี้แกร่งขึ้นอีกระดับครับ ใช้เวลา 30 นาทีและทดสอบบนเครื่องแบบออฟไลน์ได้ 100 เปอร์เซ็นต์เหมือนเดิม\n\nในโลกจริง API ภายนอกไม่ได้นิ่งเหมือนในห้องแล็บครับ มันจะสะดุดชั่วคราวอย่าง 429, 503 หรือ timeout อยู่เรื่อย ๆ แถมถ้ารันงานซ้ำระหว่างพัฒนา เราก็ไม่อยากยิงปลายทางซ้ำให้เสียเวลาและเสียโควตา วันนี้เราจึงผสาน tenacity แบบ selective retry เข้ากับ SQLite persistent cache ไว้หน้าด่านเครือข่ายครับ\n\nที่สำคัญมากคือลำดับการทำงานต้องถูกเป๊ะ: ตรวจ cache ก่อนยิง, ถ้ายิงค่อย retry เฉพาะความผิดพลาดชั่วคราว, แล้วค่อยบันทึก cache เฉพาะข้อมูลที่ผ่าน Pydantic validation เท่านั้น จากนั้นเก็บ telemetry ด้วย structlog และพิสูจน์ทุกเส้นทางด้วยชุดเทสต์ pytest แบบ offline ที่ใช้ MockTransport กับ tmp_path ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 31 นะครับ เมื่อวานเราต่อท่อ Async Ingestion เสร็จไปแล้ว วันนี้เราจะมาเสริมเกราะระดับ production ให้ท่อนี้แกร่งขึ้นอีกระดับครับ ใช้เวลา 30 นาทีและทดสอบบนเครื่องแบบออฟไลน์ได้ 100 เปอร์เซ็นต์เหมือนเดิม\n\nในโลกจริง API ภายนอกไม่ได้นิ่งเหมือนในห้องแล็บครับ มันจะสะดุดชั่วคราวอย่าง 429, 503 หรือ timeout อยู่เรื่อย ๆ แถมถ้ารันงานซ้ำระหว่างพัฒนา เราก็ไม่อยากยิงปลายทางซ้ำให้เสียเวลาและเสียโควตา วันนี้เราจึงผสาน tenacity แบบ selective retry เข้ากับ SQLite persistent cache ไว้หน้าด่านเครือข่ายครับ\n\nที่สำคัญมากคือลำดับการทำงานต้องถูกเป๊ะ: ตรวจ cache ก่อนยิง, ถ้ายิงค่อย retry เฉพาะความผิดพลาดชั่วคราว, แล้วค่อยบันทึก cache เฉพาะข้อมูลที่ผ่าน Pydantic validation เท่านั้น จากนั้นเก็บ telemetry ด้วย structlog และพิสูจน์ทุกเส้นทางด้วยชุดเทสต์ pytest แบบ offline ที่ใช้ MockTransport กับ tmp_path ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d031/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระชับ ชัดเจน แยกความสามารถ 3 ด้านของบทเรียนให้ฟังตามทันง่าย",
+      "script": "มาดูเป้าหมายของ Day 31 กันครับ จบวันนี้คุณจะได้ 3 อาวุธสำคัญของ production client เลย\n\nหนึ่ง เพิ่ม selective async retry ด้วย tenacity.AsyncRetrying พร้อม exponential backoff และ jitter โดย retry เฉพาะ 408, 429, 5xx หรือ timeout และ fail-fast ทันทีกับ 400, 401, 404\nสอง เชื่อมต่อ SQLite response cache ที่ใช้ parameterized query พร้อม TTL โดยตรวจแคชก่อนยิงและบันทึกเฉพาะของที่ validate ผ่าน\nและสาม บันทึก metrics ด้วย structlog พร้อมเขียน offline pytest suite ที่รันจบในไม่ถึง 1 วินาทีครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 31 กันครับ จบวันนี้คุณจะได้ 3 อาวุธสำคัญของ production client เลย\n\nหนึ่ง เพิ่ม selective async retry ด้วย tenacity AsyncRetrying พร้อม exponential backoff และ jitter โดย retry เฉพาะ 408, 429, 500 ถึง 599 หรือ timeout และ fail-fast ทันทีกับ 400, 401, 404\nสอง เชื่อมต่อ SQLite response cache ที่ใช้ parameterized query พร้อม TTL โดยตรวจแคชก่อนยิงและบันทึกเฉพาะของที่ validate ผ่าน\nและสาม บันทึก metrics ด้วย structlog พร้อมเขียน offline pytest suite ที่รันจบในไม่ถึง 1 วินาทีครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d031/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น แนะนำเคล็ดลับเรื่อง wait policy สำหรับเทสต์อย่างเป็นกันเอง",
+      "script": "เช็กสภาพแวดล้อมในโปรเจกต์ resilient-fetcher กันก่อนครับ วันนี้เราใช้ tenacity, structlog และ sqlite3 ซึ่งตัว sqlite3 มากับ Python อยู่แล้วไม่ต้องลงเพิ่มเลย แค่ยืนยันว่ามี httpx, pydantic, tenacity, structlog, pytest, pytest-cov และ ruff ครบ แล้วรันคำสั่ง python -c เช็ก import ให้เห็นคำว่า All ready! ครับ\n\nขอฝากเคล็ดลับเด็ดไว้ตรงนี้เลยนะ ให้เปิด wait policy ของ tenacity เป็นพารามิเตอร์ได้ ใน production เราใช้ backoff จริงผสม jitter ส่วนตอนรัน pytest เราส่ง wait_none() เข้าไปเพื่อให้ชุดเทสต์รันจบในเสี้ยววินาทีครับ ลองเช็กเครื่องให้พร้อมแล้วกดไปต่อนะ",
+      "ttsText": "เช็กสภาพแวดล้อมในโปรเจกต์ resilient-fetcher กันก่อนครับ วันนี้เราใช้ tenacity, structlog และ sqlite3 ซึ่งตัว sqlite3 มากับ Python อยู่แล้วไม่ต้องลงเพิ่มเลย แค่ยืนยันว่ามี httpx, pydantic, tenacity, structlog, pytest, pytest cov และ ruff ครบ แล้วรันคำสั่ง python dash c เช็ก import ให้เห็นคำว่า All ready ครับ\n\nขอฝากเคล็ดลับเด็ดไว้ตรงนี้เลยนะ ให้เปิด wait policy ของ tenacity เป็นพารามิเตอร์ได้ ใน production เราใช้ backoff จริงผสม jitter ส่วนตอนรัน pytest เราส่ง wait_none เข้าไปเพื่อให้ชุดเทสต์รันจบในเสี้ยววินาทีครับ ลองเช็กเครื่องให้พร้อมแล้วกดไปต่อนะ",
+      "pauseAfter": {
+        "title": "พักรอเช็กเครื่องสำหรับ Day 31",
+        "prompt": "ยืนยันแพ็กเกจ tenacity, structlog, sqlite3 และ pytest-cov บนเครื่องให้พร้อมก่อนเข้าสู่เนื้อหาครับ",
+        "continueLabel": "เครื่องพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Cache, Retry และ Telemetry",
+      "src": "/audio/d031/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนเห็นภาพ อธิบายลำดับก่อนหลังระหว่าง Cache Lookup, Retryable Fetch และ Save Cache อย่างชัดเจน",
+      "script": "ลองดูแผนภาพบนหน้าจอเพื่อจับลำดับการไหลให้แม่นนะครับ วันนี้เราต่อชิ้นส่วนสำคัญ 3 จุดเข้ากับท่อเดิม\n\nคำขอจะเข้าไปถาม SQLite Cache ก่อนเป็นด่านแรก ถ้าเจอ cache hit ก็คืนข้อมูลกลับทันทีไม่แตะเน็ต แต่ถ้า miss ถึงจะวิ่งไปผ่าน tenacity retry แล้วค่อยเข้า validation จากนั้นบันทึกเฉพาะของดีกลับลง cache ส่วนท้ายรอบก็ให้ structlog พ่นสรุป metrics ออกมา โดยมีชุดเทสต์ MockTransport คุมคุณภาพทั้งหมดครับ",
+      "ttsText": "ลองดูแผนภาพบนหน้าจอเพื่อจับลำดับการไหลให้แม่นนะครับ วันนี้เราต่อชิ้นส่วนสำคัญ 3 จุดเข้ากับท่อเดิม\n\nคำขอจะเข้าไปถาม SQLite Cache ก่อนเป็นด่านแรก ถ้าเจอ cache hit ก็คืนข้อมูลกลับทันทีไม่แตะเน็ต แต่ถ้า miss ถึงจะวิ่งไปผ่าน tenacity retry แล้วค่อยเข้า validation จากนั้นบันทึกเฉพาะของดีกลับลง cache ส่วนท้ายรอบก็ให้ structlog พ่นสรุป metrics ออกมา โดยมีชุดเทสต์ MockTransport คุมคุณภาพทั้งหมดครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d031/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเทคนิค production ทั้ง retry, cache และ testing ให้ฟังสนุก เน้นจุดตายเรื่อง semaphore กับ cache poisoning",
+      "script": "มาเจาะ 3 แนวคิดหลักของ Day 31 กันครับ\n\nข้อแรก คือ Selective Async Retry ด้วย tenacity.AsyncRetrying และ wait_exponential_jitter เหมือนการโทรหาร้านอาหารเลยครับ ถ้าสายไม่ว่างอย่าง 429 หรือ 503 ให้รอเพิ่มขึ้นทีละนิดแบบสุ่ม jitter เพื่อไม่ให้ทุก worker พุ่งถล่มเซิร์ฟเวอร์พร้อมกันเป็น Thundering Herd แต่ถ้าปลายทางบอกว่าไม่มีเบอร์นี้อย่าง 404 ต้องโยน NonRetryableFetchError เพื่อหยุดทันที 0 retries ที่สำคัญมาก ๆ คือต้องวาง async with semaphore เฉพาะตอนเรียก client.get ภายในแต่ละ attempt นะครับ อย่าเอาไปครอบลูปรอ backoff เด็ดขาด ไม่งั้นสล็อตจะค้างตายระหว่างนอนรอ\n\nข้อที่สอง คือ SQLiteResponseCache ที่วางหน้าด่านเครือข่าย จำกฎเหล็ก 3 ข้อของแคชไว้เลยครับ หนึ่ง ใช้ parameterized query เครื่องหมายคำถามเสมอ ห้ามต่อสตริง SQL เอง สอง เก็บ fetched_at เพื่อตรวจอายุ TTL และรับพารามิเตอร์ now เข้ามาได้เพื่อใช้เทสต์หมดอายุโดยไม่ต้อง sleep จริง และสาม สำคัญที่สุดคือบันทึกเฉพาะ FetchedRecord ที่ผ่าน validation แล้วเท่านั้น เพื่อป้องกัน cache poisoning จากหน้า error 500 รูปแบบแคชนี้ยังเอาไปลดค่า LLM API ใน Phase 3 ได้ 70 ถึง 90 เปอร์เซ็นต์เลยด้วย\n\nและข้อที่สาม คือบันทึก telemetry อย่าง cache_hits, retries และ quarantined ผ่าน structlog เป็น JSON event แล้วสร้างชุดเทสต์ออฟไลน์ด้วย pytest, MockTransport, tmp_path และ wait_none() เพื่อครอบคลุมทั้ง happy path, warm cache hit, 429 recovery และ 404 fail-fast โดยไม่ให้ CI พังสุ่มเพราะเน็ตจริงครับ",
+      "ttsText": "มาเจาะ 3 แนวคิดหลักของ Day 31 กันครับ\n\nข้อแรก คือ Selective Async Retry ด้วย tenacity AsyncRetrying และ wait_exponential_jitter เหมือนการโทรหาร้านอาหารเลยครับ ถ้าสายไม่ว่างอย่าง 429 หรือ 503 ให้รอเพิ่มขึ้นทีละนิดแบบสุ่ม jitter เพื่อไม่ให้ทุก worker พุ่งถล่มเซิร์ฟเวอร์พร้อมกันเป็น Thundering Herd แต่ถ้าปลายทางบอกว่าไม่มีเบอร์นี้อย่าง 404 ต้องโยน NonRetryableFetchError เพื่อหยุดทันที 0 retries ที่สำคัญมาก ๆ คือต้องวาง async with semaphore เฉพาะตอนเรียก client dot get ภายในแต่ละ attempt นะครับ อย่าเอาไปครอบลูปรอ backoff เด็ดขาด ไม่งั้นสล็อตจะค้างตายระหว่างนอนรอ\n\nข้อที่สอง คือ SQLiteResponseCache ที่วางหน้าด่านเครือข่าย จำกฎเหล็ก 3 ข้อของแคชไว้เลยครับ หนึ่ง ใช้ parameterized query เครื่องหมายคำถามเสมอ ห้ามต่อสตริง SQL เอง สอง เก็บ fetched_at เพื่อตรวจอายุ TTL และรับพารามิเตอร์ now เข้ามาได้เพื่อใช้เทสต์หมดอายุโดยไม่ต้อง sleep จริง และสาม สำคัญที่สุดคือบันทึกเฉพาะ FetchedRecord ที่ผ่าน validation แล้วเท่านั้น เพื่อป้องกัน cache poisoning จากหน้า error 500 รูปแบบแคชนี้ยังเอาไปลดค่า LLM API ใน Phase 3 ได้ 70 ถึง 90 เปอร์เซ็นต์เลยด้วย\n\nและข้อที่สาม คือบันทึก telemetry อย่าง cache hits, retries และ quarantined ผ่าน structlog เป็น JSON event แล้วสร้างชุดเทสต์ออฟไลน์ด้วย pytest, MockTransport, tmp_path และ wait_none เพื่อครอบคลุมทั้ง happy path, warm cache hit, 429 recovery และ 404 fail-fast โดยไม่ให้ CI พังสุ่มเพราะเน็ตจริงครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน & Cold vs Warm Run",
+      "src": "/audio/d031/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่ดู log ของ Cold Run กับ Warm Run ไปพร้อมกัน เน้นตัวเลข attempt และ cache_hits ให้ชัดเจน",
+      "script": "มาดูตัวอย่างการทำงานร่วมกันของ Cache Lookup, Selective Retry, Validation, Save Cache และ structlog ผ่านสคริปต์เดียวเลยครับ\n\nขั้นที่ 1 เราสร้างคลาส SQLiteResponseCache ที่ใช้ INSERT ON CONFLICT DO UPDATE แบบ upsert และ placeholder เครื่องหมายคำถาม คู่กับ RetryableError และ NonRetryableError\n\nขั้นที่ 2 ในฟังก์ชัน fetch_with_cache_and_retry เราเช็ก cache.get(url) ก่อนเลย ถ้าเจอก็ parse กลับด้วย model_validate_json แล้วอัปเดต source='cache' คืนทันทีโดยไม่แตะ client ถ้าไม่เจอค่อยเข้าลูป AsyncRetrying ที่นับ retries เฉพาะตอน attempt_number มากกว่า 1 และถือ semaphore เฉพาะบรรทัด client.get เมื่อได้ 200 และ validate ผ่านแล้วจึงเรียก cache.set\n\nขั้นที่ 3 ลองดูผลจำลอง 2 รอบครับ รอบแรก URL /doc/1 เจอ 429 หนึ่งครั้งแล้วสำเร็จในรอบ retry ส่วน /doc/404 ล้มทันทีด้วย 0 retries แต่พอวิ่งรอบสองปุ๊บ จะเห็น structlog พิมพ์ออกมาชัดเลยว่า /doc/1 ได้ cache_hit=true, source='cache' และจำนวน network_calls ของ /doc/1 ยังหยุดอยู่ที่ 2 เท่าเดิม ไม่ยิงซ้ำเลยครับ ระวังอย่าแคชก่อน validate นะ ลองไล่ดูโค้ดให้ครบแล้วกดไปต่อได้เลยครับ",
+      "ttsText": "มาดูตัวอย่างการทำงานร่วมกันของ Cache Lookup, Selective Retry, Validation, Save Cache และ structlog ผ่านสคริปต์เดียวเลยครับ\n\nขั้นที่ 1 เราสร้างคลาส SQLiteResponseCache ที่ใช้ INSERT ON CONFLICT DO UPDATE แบบ upsert และ placeholder เครื่องหมายคำถาม คู่กับ RetryableError และ NonRetryableError\n\nขั้นที่ 2 ในฟังก์ชัน fetch_with_cache_and_retry เราเช็ก cache dot get ก่อนเลย ถ้าเจอก็ parse กลับด้วย model validate json แล้วอัปเดต source เท่ากับ cache คืนทันทีโดยไม่แตะ client ถ้าไม่เจอค่อยเข้าลูป AsyncRetrying ที่นับ retries เฉพาะตอน attempt_number มากกว่า 1 และถือ semaphore เฉพาะบรรทัด client dot get เมื่อได้ 200 และ validate ผ่านแล้วจึงเรียก cache dot set\n\nขั้นที่ 3 ลองดูผลจำลอง 2 รอบครับ รอบแรก URL slash doc slash 1 เจอ 429 หนึ่งครั้งแล้วสำเร็จในรอบ retry ส่วน slash doc slash 404 ล้มทันทีด้วย 0 retries แต่พอวิ่งรอบสองปุ๊บ จะเห็น structlog พิมพ์ออกมาชัดเลยว่า slash doc slash 1 ได้ cache hit เท่ากับ true, source เท่ากับ cache และจำนวน network calls ของ slash doc slash 1 ยังหยุดอยู่ที่ 2 เท่าเดิม ไม่ยิงซ้ำเลยครับ ระวังอย่าแคชก่อน validate นะ ลองไล่ดูโค้ดให้ครบแล้วกดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง Cold vs Warm Run",
+        "prompt": "ลองสังเกตผลลัพธ์ JSON ของ structlog ในรอบที่ 1 และรอบที่ 2 เพื่อดูการทำงานของ retry และ cache hit ครับ",
+        "continueLabel": "เข้าใจตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง resilient_fetcher.py",
+      "src": "/audio/d031/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดเป็นลำดับตอนอธิบาย SQLiteResponseCache และ run_resilient_batch เพื่อให้พิมพ์โค้ดตามทัน",
+      "script": "มาลุยแบบฝึกหัด 15 นาทีกันครับ โจทย์วันนี้ให้เราสร้างโมดูล resilient_fetcher.py ให้ครบทุกชิ้นและผ่านชุดเทสต์ offline ทั้งหมดเลยนะ\n\nส่วนแรกคือเติมคลาส SQLiteResponseCache ทั้งเมธอด __init__, get และ set โดยใช้ parameterized SQL เครื่องหมายคำถาม และรองรับพารามิเตอร์ now: float | None = None เพื่อเช็ก TTL expiry ได้แม่นยำในเทสต์โดยไม่ต้องรอเวลาจริง\n\nส่วนที่สองคือเขียนฟังก์ชัน run_resilient_batch ที่รวมทุกอย่างเข้าด้วยกันครับ เริ่มจากตรวจ cache.get(target.url) ก่อน ถ้าเจอให้แปลงกลับเป็น FetchedRecord ที่มี source='cache' แล้วเพิ่มยอด cache_hits โดยไม่ยิง HTTP ถ้าไม่เจอค่อยยิงผ่าน AsyncRetrying ที่รับ wait_strategy เข้ามาได้ โดย retry เฉพาะ 408, 429, 5xx, TimeoutException และ TransportError ส่วน 400, 401, 404 ให้ fail-fast ทันที\n\nพอ validate ผ่านแล้วค่อยเรียก cache.set และเขียนลง output.jsonl ส่วนที่พังเขียนลง quarantine.jsonl แบบ UTF-8 ปิดท้ายด้วย logger.info('pipeline_finished', **metrics.model_dump()) แล้วรัน pytest --cov เช็กว่าได้ coverage 90 เปอร์เซ็นต์ขึ้นไปและ ruff ผ่าน 100 เปอร์เซ็นต์ เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "ttsText": "มาลุยแบบฝึกหัด 15 นาทีกันครับ โจทย์วันนี้ให้เราสร้างโมดูล resilient_fetcher dot py ให้ครบทุกชิ้นและผ่านชุดเทสต์ offline ทั้งหมดเลยนะ\n\nส่วนแรกคือเติมคลาส SQLiteResponseCache ทั้งเมธอด init, get และ set โดยใช้ parameterized SQL เครื่องหมายคำถาม และรองรับพารามิเตอร์ now เพื่อเช็ก TTL expiry ได้แม่นยำในเทสต์โดยไม่ต้องรอเวลาจริง\n\nส่วนที่สองคือเขียนฟังก์ชัน run_resilient_batch ที่รวมทุกอย่างเข้าด้วยกันครับ เริ่มจากตรวจ cache dot get ก่อน ถ้าเจอให้แปลงกลับเป็น FetchedRecord ที่มี source เท่ากับ cache แล้วเพิ่มยอด cache hits โดยไม่ยิง HTTP ถ้าไม่เจอค่อยยิงผ่าน AsyncRetrying ที่รับ wait_strategy เข้ามาได้ โดย retry เฉพาะ 408, 429, 500 ถึง 599, TimeoutException และ TransportError ส่วน 400, 401, 404 ให้ fail-fast ทันที\n\nพอ validate ผ่านแล้วค่อยเรียก cache dot set และเขียนลง output dot jsonl ส่วนที่พังเขียนลง quarantine dot jsonl แบบ UTF-8 ปิดท้ายด้วย logger dot info pipeline_finished พร้อม metrics แล้วรัน pytest dash dash cov เช็กว่าได้ coverage 90 เปอร์เซ็นต์ขึ้นไปและ ruff ผ่าน 100 เปอร์เซ็นต์ เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน resilient_fetcher.py",
+        "prompt": "เติม SQLiteResponseCache และ run_resilient_batch แล้วรัน pytest --cov กับ ruff check ให้ผ่านครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d031/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนต้น แล้วเล่า 4 ข้อผิดพลาดเรื่อง retry และ SQLite cache ด้วยจังหวะเตือนสติแบบเป็นกันเอง",
+      "script": "สุดยอดมากครับที่เขียน resilient_fetcher ผ่านแล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดอันตรายที่คนทำ retry กับ cache เจอบ่อยมากในระบบจริงนะครับ\n\nข้อแรก คือตั้ง retry=retry_if_exception_type(Exception) แบบกวาดหมดทุกอย่าง ทำให้ 400, 401, 404 และ ValidationError ถูกยิงซ้ำหลายรอบโดยไม่มีทางสำเร็จ เสียทั้งเวลาและโควตา ต้องล็อกเฉพาะ RetryableFetchError เท่านั้น\nข้อที่สอง คือใช้ wait_exponential แบบไม่มี jitter พอหลาย worker สะดุดพร้อมกัน ก็จะตื่นมายิงซ้ำในวินาทีเดียวกันเป็น Thundering Herd จนปลายทางล่มซ้ำ\n\nข้อที่สาม คือเผลอต่อสตริง URL เข้าไปใน SQL ของ SQLite ด้วย f-string แค่ URL มีเครื่องหมาย single quote ก็พังแล้วแถมเสี่ยง SQL injection ด้วย ต้องใช้เครื่องหมายคำถามเท่านั้น\nและข้อที่สี่ คือบันทึก response ลงแคชก่อนผ่าน Pydantic validation ถ้าปลายทางส่งของพังหรือหน้า 500 มาครั้งเดียว แคชจะเก็บของเสียตัวนั้นไว้หลอนทุกรอบจนกว่าจะหมด TTL เลยครับ",
+      "ttsText": "สุดยอดมากครับที่เขียน resilient_fetcher ผ่านแล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดอันตรายที่คนทำ retry กับ cache เจอบ่อยมากในระบบจริงนะครับ\n\nข้อแรก คือตั้ง retry แบบกวาดหมดทุก Exception ทำให้ 400, 401, 404 และ ValidationError ถูกยิงซ้ำหลายรอบโดยไม่มีทางสำเร็จ เสียทั้งเวลาและโควตา ต้องล็อกเฉพาะ RetryableFetchError เท่านั้น\nข้อที่สอง คือใช้ wait_exponential แบบไม่มี jitter พอหลาย worker สะดุดพร้อมกัน ก็จะตื่นมายิงซ้ำในวินาทีเดียวกันเป็น Thundering Herd จนปลายทางล่มซ้ำ\n\nข้อที่สาม คือเผลอต่อสตริง URL เข้าไปใน SQL ของ SQLite ด้วย f-string แค่ URL มีเครื่องหมาย single quote ก็พังแล้วแถมเสี่ยง SQL injection ด้วย ต้องใช้เครื่องหมายคำถามเท่านั้น\nและข้อที่สี่ คือบันทึก response ลงแคชก่อนผ่าน Pydantic validation ถ้าปลายทางส่งของพังหรือหน้า 500 มาครั้งเดียว แคชจะเก็บของเสียตัวนั้นไว้หลอนทุกรอบจนกว่าจะหมด TTL เลยครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d031/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนเช็กความแม่นยำเรื่อง retry count, cache poisoning, jitter และ clock injection",
+      "script": "มาทบทวนความแม่นยำกันด้วย Micro-Quiz 4 ข้อนะครับ คำถามจะทดสอบตั้งแต่การนับจำนวน call และ retries ของ 429 เทียบกับ 404, เหตุผลของการแคชหลัง validation, บทบาทของ jitter ใน wait_exponential_jitter, ไปจนถึงเทคนิคส่งพารามิเตอร์ now เพื่อเทสต์ TTL โดยไม่ต้อง sleep\n\nลองตอบให้ครบทั้ง 4 ข้อได้เลยครับ เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปนะ",
+      "ttsText": "มาทบทวนความแม่นยำกันด้วย Micro-Quiz 4 ข้อนะครับ คำถามจะทดสอบตั้งแต่การนับจำนวน call และ retries ของ 429 เทียบกับ 404, เหตุผลของการแคชหลัง validation, บทบาทของ jitter ใน wait_exponential_jitter, ไปจนถึงเทคนิคส่งพารามิเตอร์ now เพื่อเทสต์ TTL โดยไม่ต้อง sleep\n\nลองตอบให้ครบทั้ง 4 ข้อได้เลยครับ เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบคำถาม 4 ข้อเรื่อง Selective Retry, SQLite Cache และ Offline Testing ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 32",
+      "src": "/audio/d031/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจในตัวผู้เรียน สรุป 4 แก่นหลักของบทเรียนให้กระชับ แล้วชวนไปปิด Phase 1 ใน Day 32",
+      "script": "ยินดีด้วยครับ คุณผ่าน Day 31 และเสริมเกราะ production ให้ Resilient Async Data Fetcher เสร็จสมบูรณ์แล้ว! ขอสรุป 4 หัวใจหลักของวันนี้นะครับ\n\nหนึ่ง ใช้ tenacity.AsyncRetrying คู่กับ wait_exponential_jitter เพื่อ retry เฉพาะ 408, 429, 5xx และ timeout ส่วน 4xx อื่นให้ fail-fast ทันที\nสอง วาง SQLiteResponseCache ไว้หน้าด่านเครือข่าย ใช้ parameterized SQL และ TTL แล้วบันทึกเฉพาะของที่ผ่าน Pydantic validation แล้วเท่านั้น\nสาม ปล่อย semaphore ระหว่างรอ backoff โดยครอบเฉพาะบรรทัด client.get ในแต่ละ attempt\nและสี่ เก็บ telemetry ผ่าน structlog แล้วทดสอบทุก failure mode แบบออฟไลน์ 100 เปอร์เซ็นต์ด้วย MockTransport, tmp_path และ wait_none()\n\nพรุ่งนี้ใน Day 32 จะเป็นวัน Checkpoint ปิด Phase 1 เพื่อตรวจโค้ดตามเกณฑ์วิศวกรรมและทำควิซรวมทั้ง 8 บล็อก ก่อนก้าวสู่ Phase 2 ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบแล้วเจอกันวันพรุ่งนี้นะครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณผ่าน Day 31 และเสริมเกราะ production ให้ Resilient Async Data Fetcher เสร็จสมบูรณ์แล้ว! ขอสรุป 4 หัวใจหลักของวันนี้นะครับ\n\nหนึ่ง ใช้ tenacity AsyncRetrying คู่กับ wait_exponential_jitter เพื่อ retry เฉพาะ 408, 429, 500 ถึง 599 และ timeout ส่วน 400 ถึง 499 อื่นให้ fail-fast ทันที\nสอง วาง SQLiteResponseCache ไว้หน้าด่านเครือข่าย ใช้ parameterized SQL และ TTL แล้วบันทึกเฉพาะของที่ผ่าน Pydantic validation แล้วเท่านั้น\nสาม ปล่อย semaphore ระหว่างรอ backoff โดยครอบเฉพาะบรรทัด client dot get ในแต่ละ attempt\nและสี่ เก็บ telemetry ผ่าน structlog แล้วทดสอบทุก failure mode แบบออฟไลน์ 100 เปอร์เซ็นต์ด้วย MockTransport, tmp_path และ wait_none\n\nพรุ่งนี้ใน Day 32 จะเป็นวัน Checkpoint ปิด Phase 1 เพื่อตรวจโค้ดตามเกณฑ์วิศวกรรมและทำควิซรวมทั้ง 8 บล็อก ก่อนก้าวสู่ Phase 2 ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบแล้วเจอกันวันพรุ่งนี้นะครับ!"
+    }
+  ]
+}

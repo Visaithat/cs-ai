@@ -1,0 +1,109 @@
+{
+  "lessonId": "d178",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — หน้าด่าน GitHub Repo ระดับพอร์ตโฟลิโอ",
+      "src": "/audio/d178/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น สดใส มุมมองคนตรวจงานจริง เล่าให้เห็นภาพว่าทำไม 30 วินาทีแรกบน GitHub ถึงตัดสินโอกาสสัมภาษณ์",
+      "script": "สวัสดีครับ เข้าสู่ Day 178 กันแล้วนะ เหลืออีกแค่ 3 วันสุดท้ายของหลักสูตรแล้วครับ วันนี้เราจะมาขัดเกลาหน้าด่านที่สำคัญที่สุดของพอร์ตโฟลิโอ นั่นคือ README.md แผนภาพสถาปัตยกรรม และตาราง Eval กับ Cost Metrics ครับ\n\nรู้ไหมครับว่า Hiring Manager หรือ Tech Lead มีเวลาสแกนรีโป GitHub ของผู้สมัครเฉลี่ยแค่ 30 ถึง 60 วินาที ถ้าเปิดมาเจอแค่คำว่า AI Chatbot using LangChain เขาปิดแท็บทันทีเลย ดังนั้นย่อหน้าแรกของ README.md ต้องสื่อสารปัญหาขององค์กรไทย 3 เส้นทางหลัก Non-Goals และลิงก์ไป ADR-001 ให้จบใน 10 วินาทีแรกครับ\n\nถัดมาคือแผนภาพสถาปัตยกรรม ต้องวาดด้วย Mermaid ให้ตรงกับโค้ดจริงใน src ทุกเส้นทาง ไม่มีอาการ diagram drift ไปวาดกล่องที่ไม่มีอยู่จริง\n\nและที่สำคัญที่สุด เราจะไม่พิมพ์ตัวเลขลอย ๆ ด้วยมือ แต่เขียนสคริปต์อ่านรายงาน JSON จาก Ragas, Promptfoo และ Load Test ของ Day 177 มาเรนเดอร์เป็นตาราง Metrics อัตโนมัติ พร้อมเปิดเผย Latency, Cost ต่อ 1,000 queries และตรวจ repo hygiene ไม่ให้มี .env หรือข้อมูลลับหลุดเข้า Git ก่อนถึงวัน Defense ครับ",
+      "ttsText": "สวัสดีครับ เข้าสู่ Day 178 กันแล้วนะ เหลืออีกแค่ 3 วันสุดท้ายของหลักสูตรแล้วครับ วันนี้เราจะมาขัดเกลาหน้าด่านที่สำคัญที่สุดของพอร์ตโฟลิโอ นั่นคือ README แผนภาพสถาปัตยกรรม และตาราง Eval กับ Cost Metrics ครับ\n\nรู้ไหมครับว่า Hiring Manager หรือ Tech Lead มีเวลาสแกนรีโป GitHub ของผู้สมัครเฉลี่ยแค่ 30 ถึง 60 วินาที ถ้าเปิดมาเจอแค่คำว่า AI Chatbot using LangChain เขาปิดแท็บทันทีเลย ดังนั้นย่อหน้าแรกของ README ต้องสื่อสารปัญหาขององค์กรไทย 3 เส้นทางหลัก Non-Goals และลิงก์ไป ADR-001 ให้จบใน 10 วินาทีแรกครับ\n\nถัดมาคือแผนภาพสถาปัตยกรรม ต้องวาดด้วย Mermaid ให้ตรงกับโค้ดจริงใน src ทุกเส้นทาง ไม่มีอาการ diagram drift ไปวาดกล่องที่ไม่มีอยู่จริง\n\nและที่สำคัญที่สุด เราจะไม่พิมพ์ตัวเลขลอย ๆ ด้วยมือ แต่เขียนสคริปต์อ่านรายงาน JSON จาก Ragas, Promptfoo และ Load Test ของ Day 177 มาเรนเดอร์เป็นตาราง Metrics อัตโนมัติ พร้อมเปิดเผย Latency, Cost ต่อ 1,000 queries และตรวจ repo hygiene ไม่ให้มี dot env หรือข้อมูลลับหลุดเข้า Git ก่อนถึงวัน Defense ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d178/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระชับ มั่นใจ แยกเป้าหมาย 3 ข้อให้ชัดเจนและเชื่อมโยงกับงานเอกสารที่วัดผลได้ด้วยโค้ด",
+      "script": "มาดูเป้าหมายของ Day 178 กันครับ วันนี้เอกสารของเราก็ตรวจสอบได้ด้วยโค้ดเหมือนกันนะ\n\nอย่างแรก ออกแบบโครงสร้าง README.md ระดับ Hiring-Grade ที่สื่อสาร Problem, Architecture, Quickstart 1 คำสั่ง, Non-Goals และ Known Limitations ได้ภายใน 30 วินาที\nอย่างที่สอง เขียนแผนภาพ Mermaid ที่ตรงกับโมดูลจริงใน src ครบทั้ง Happy Path, PDPA, HITL Gate, Observability และ Timeout Fallback\nอย่างที่สาม สร้างตัวเรนเดอร์และตัวตรวจ Metrics Table ด้วย Pydantic v2 และ pytest เพื่อดึงผลจาก JSON artifact มาอัปเดตอย่างซื่อสัตย์ครับ\n\nวันนี้รันตรวจสอบทั้งหมดบนเครื่อง 100% ออฟไลน์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 178 กันครับ วันนี้เอกสารของเราก็ตรวจสอบได้ด้วยโค้ดเหมือนกันนะ\n\nอย่างแรก ออกแบบโครงสร้าง README ระดับ Hiring-Grade ที่สื่อสาร Problem, Architecture, Quickstart 1 คำสั่ง, Non-Goals และ Known Limitations ได้ภายใน 30 วินาที\nอย่างที่สอง เขียนแผนภาพ Mermaid ที่ตรงกับโมดูลจริงใน src ครบทั้ง Happy Path, PDPA, HITL Gate, Observability และ Timeout Fallback\nอย่างที่สาม สร้างตัวเรนเดอร์และตัวตรวจ Metrics Table ด้วย Pydantic v2 และ pytest เพื่อดึงผลจาก JSON artifact มาอัปเดตอย่างซื่อสัตย์ครับ\n\nวันนี้รันตรวจสอบทั้งหมดบนเครื่อง 100 เปอร์เซ็นต์ ออฟไลน์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เช็กสถานะ Repo & Hygiene",
+      "src": "/audio/d178/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงรอบคอบเหมือนกำลังตรวจเช็กความสะอาดของ Git repository ก่อนส่งงาน",
+      "script": "ก่อนสร้างตัวเรนเดอร์ Metrics มาเช็กสถานะโปรเจกต์ thai-enterprise-assistant กัน 3 ขั้นสั้น ๆ ครับ\n\nขั้นแรก รัน ls -la docs/ ดูว่ามี ADR-001.md และโครงสร้าง src กับ tests ครบถ้วน\nขั้นที่สอง รัน uv run pytest -q เพื่อยืนยันว่าเทสต์จากบทที่ผ่านมาทั้งหมดยังผ่านสีเขียว\nขั้นที่สาม รัน git status -s ตรวจให้แน่ใจว่าไม่มีไฟล์ .env หรือไฟล์ชั่วคราวที่ไม่ควร commit ค้างอยู่\n\nจุดดีของ Mermaid diagram คือ GitHub เรนเดอร์ให้เป็นกราฟสวย ๆ ใน README.md ได้เลย ไม่ต้องเซฟรูปแยก เดี๋ยวพี่รอตรงนี้ให้เช็ก 3 คำสั่งนี้ก่อนนะครับ เสร็จแล้วกด ไปต่อ ได้เลย",
+      "ttsText": "ก่อนสร้างตัวเรนเดอร์ Metrics มาเช็กสถานะโปรเจกต์ thai-enterprise-assistant กัน 3 ขั้นสั้น ๆ ครับ\n\nขั้นแรก รัน l s dash l a docs ดูว่ามี ADR-001 และโครงสร้าง src กับ tests ครบถ้วน\nขั้นที่สอง รัน uv run pytest dash q เพื่อยืนยันว่าเทสต์จากบทที่ผ่านมาทั้งหมดยังผ่านสีเขียว\nขั้นที่สาม รัน git status dash s ตรวจให้แน่ใจว่าไม่มีไฟล์ dot env หรือไฟล์ชั่วคราวที่ไม่ควร commit ค้างอยู่\n\nจุดดีของ Mermaid diagram คือ GitHub เรนเดอร์ให้เป็นกราฟสวย ๆ ใน README ได้เลย ไม่ต้องเซฟรูปแยก เดี๋ยวพี่รอตรงนี้ให้เช็ก 3 คำสั่งนี้ก่อนนะครับ เสร็จแล้วกด ไปต่อ ได้เลย",
+      "pauseAfter": {
+        "title": "พักรอเช็กเอกสารและ Repo Hygiene",
+        "prompt": "ลองรัน `ls -la docs/`, `uv run pytest -q` และ `git status -s` เพื่อตรวจความสะอาดของรีโปก่อนเริ่มทำนะครับ",
+        "continueLabel": "เช็กความพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — หน้าด่านพอร์ตโฟลิโอ",
+      "src": "/audio/d178/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงกระตือรือร้น ชวนมองภาพรวมการเชื่อม JSON artifacts จากหลายวันมารวมเป็นหน้าด่าน README เดียว",
+      "script": "ลองมองภาพหน้าด่านพอร์ตโฟลิโอตรงนี้ด้วยกันนะครับ\n\nหัวใจของ Day 178 คือการต่อสายตรงจากหลักฐานการทดสอบจริงในโปรเจกต์ ทั้ง Eval Report จาก Day 172, Red-Team Suite จาก Day 176 และ Load Test จาก Day 177 ให้ไหลเข้ามารวมกันเป็นตาราง Scorecard เดียวใน README.md คู่กับแผนภาพสถาปัตยกรรม\n\nหมายความว่าทุกตัวเลขที่คุณโชว์ในหน้าแรกของ GitHub จะมีไฟล์หลักฐานยืนยันอยู่ข้างหลัง ไม่ใช่ตัวเลขแต่งเอง ผู้สัมภาษณ์เปิดเข้ามาดูปุ๊บก็จะเห็นครบทั้งภาพระบบและหลักฐานความน่าเชื่อถือในหน้าเดียวเลยครับ",
+      "ttsText": "ลองมองภาพหน้าด่านพอร์ตโฟลิโอตรงนี้ด้วยกันนะครับ\n\nหัวใจของ Day 178 คือการต่อสายตรงจากหลักฐานการทดสอบจริงในโปรเจกต์ ทั้ง Eval Report จาก Day 172, Red-Team Suite จาก Day 176 และ Load Test จาก Day 177 ให้ไหลเข้ามารวมกันเป็นตาราง Scorecard เดียวใน README คู่กับแผนภาพสถาปัตยกรรม\n\nหมายความว่าทุกตัวเลขที่คุณโชว์ในหน้าแรกของ GitHub จะมีไฟล์หลักฐานยืนยันอยู่ข้างหลัง ไม่ใช่ตัวเลขแต่งเอง ผู้สัมภาษณ์เปิดเข้ามาดูปุ๊บก็จะเห็นครบทั้งภาพระบบและหลักฐานความน่าเชื่อถือในหน้าเดียวเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d178/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก ชัดเจน เน้นคำเปรียบเทียบเมนูร้านมิชลิน แผนผังทางหนีไฟ และป้ายโภชนาการ",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ข้อในการปั้น README ระดับ Senior Reviewer ยอมรับกันครับ\n\nข้อแรก กฎ 30 วินาทีของ README.md ให้เรียงตามความอยากรู้ของคนอ่านจริงครับ เหมือนหน้าเมนูหน้าร้านมิชลินที่บอกชัดว่าจานเด่นคืออะไร ราคาเท่าไร และมีคำเตือนคนแพ้อาหารไหม เริ่มจาก 1 Hero Summary กับลิงก์ Demo 3 นาที, 2 Architecture Diagram, 3 ตาราง Eval, Cost & Resilience, 4 Quickstart แบบ 3 ขั้นที่รัน offline mock ได้ด้วย uv โดยไม่ต้องมี API key, และ 5 Trade-offs กับ Known Limitations เช่น บอกตรง ๆ ว่ารองรับเอกสารข้อความ 24 ไฟล์ ยังไม่ทำ OCR ภาพสแกน ความซื่อสัตย์แบบนี้ยิ่งเพิ่มความน่าเชื่อถือครับ\n\nข้อที่สอง วาด Mermaid Architecture Diagram ที่ไม่โกหกโค้ดจริง เหมือนแผนผังทางหนีไฟที่ต้องตรงกับประตูที่มีจริงทุกบาน ห้ามวาดกล่อง Kubernetes หรือ Kafka หลอกถ้าโค้ดจริงไม่มี ให้วาดตามท่อจริงตั้งแต่ FastAPI + PDPA Mask, LangGraph Router, Hybrid PyThaiNLP BM25 + Dense + Rerank, MCP Read-Only, HITL Gate, Circuit Breaker Fallback แล้วใช้เส้นประเชื่อมไปที่ Langfuse เพื่อแยก Data กับ Telemetry ให้ชัดครับ\n\nข้อที่สาม สร้างตาราง Metrics จาก JSON Artifact จริง เหมือนป้ายโภชนาการที่มาจากผลตรวจแล็บ ครอบคลุมครบ 4 เสา ทั้ง Recall@5, Faithfulness, Abstention, Schema Pass, Fallback Success, P50/P95, Cost ต่อ 1,000 queries และ Red-Team/PDPA Leak ใช้ Pydantic อ่าน JSON แล้วเทียบ SLA เป็น PASS หรือ FAIL อัตโนมัติ พร้อมระบุ dataset และ concurrency กำกับเสมอครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ข้อในการปั้น README ระดับ Senior Reviewer ยอมรับกันครับ\n\nข้อแรก กฎ 30 วินาทีของ README ให้เรียงตามความอยากรู้ของคนอ่านจริงครับ เหมือนหน้าเมนูหน้าร้านมิชลินที่บอกชัดว่าจานเด่นคืออะไร ราคาเท่าไร และมีคำเตือนคนแพ้อาหารไหม เริ่มจาก 1 Hero Summary กับลิงก์ Demo 3 นาที, 2 Architecture Diagram, 3 ตาราง Eval, Cost และ Resilience, 4 Quickstart แบบ 3 ขั้นที่รัน offline mock ได้ด้วย uv โดยไม่ต้องมี API key, และ 5 Trade-offs กับ Known Limitations เช่น บอกตรง ๆ ว่ารองรับเอกสารข้อความ 24 ไฟล์ ยังไม่ทำ OCR ภาพสแกน ความซื่อสัตย์แบบนี้ยิ่งเพิ่มความน่าเชื่อถือครับ\n\nข้อที่สอง วาด Mermaid Architecture Diagram ที่ไม่โกหกโค้ดจริง เหมือนแผนผังทางหนีไฟที่ต้องตรงกับประตูที่มีจริงทุกบาน ห้ามวาดกล่อง Kubernetes หรือ Kafka หลอกถ้าโค้ดจริงไม่มี ให้วาดตามท่อจริงตั้งแต่ FastAPI กับ PDPA Mask, LangGraph Router, Hybrid PyThaiNLP BM25 กับ Dense และ Rerank, MCP Read-Only, HITL Gate, Circuit Breaker Fallback แล้วใช้เส้นประเชื่อมไปที่ Langfuse เพื่อแยก Data กับ Telemetry ให้ชัดครับ\n\nข้อที่สาม สร้างตาราง Metrics จาก JSON Artifact จริง เหมือนป้ายโภชนาการที่มาจากผลตรวจแล็บ ครอบคลุมครบ 4 เสา ทั้ง Recall at 5, Faithfulness, Abstention, Schema Pass, Fallback Success, P50 และ P95, Cost ต่อ 1,000 queries และ Red-Team กับ PDPA Leak ใช้ Pydantic อ่าน JSON แล้วเทียบ SLA เป็น PASS หรือ FAIL อัตโนมัติ พร้อมระบุ dataset และ concurrency กำกับเสมอครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — เรนเดอร์ Metrics Scorecard",
+      "src": "/audio/d178/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังรีวิวสคริปต์เรนเดอร์ตารางด้วยกัน พูดชัดเจนเป็นจังหวะ",
+      "script": "ลองมาดูตัวอย่างโค้ดใน worked_readme_metrics.py ที่ช่วยเปลี่ยน JSON report ให้กลายเป็นตาราง Markdown สวย ๆ กันครับ\n\nในขั้นที่ 1 เรานิยามคลาส CapstoneMetrics ด้วย Pydantic v2 รับค่าจากผล Eval, Load Test และ Security แล้วเขียนเมธอด evaluate_gates เพื่อเทียบกับเกณฑ์ Rubric 4 เสาหลัก เช่น Recall@5 >= 0.85, P95 <= 3,500 ms และ PDPA Leaks ต้องเป็น 0 แล้วคืนค่า Target, Actual และ Status ว่า PASS หรือ FAIL\n\nขั้นที่ 2 ฟังก์ชัน render_metrics_markdown จะนำผลจาก evaluate_gates มาจัดเรียงเป็นตาราง Markdown และต่อท้ายด้วยบรรทัดสรุป dataset_label, P50 Latency และ Cost ต่อ 1,000 queries อัตโนมัติ\n\nขั้นที่ 3 พอป้อนตัวอย่างผลรันบนชุด golden-th-en-v1 จำนวน 40 ข้อ ที่มี Recall@5 0.88, P95 2,840 ms และ Cost 1.42 ดอลลาร์ต่อ 1,000 queries ระบบก็พิมพ์ตารางที่พร้อมแปะลง README.md ออกมาให้ทันที แถมตัวเลขไม่มั่วด้วย ลองกดดูทีละขั้นก่อนนะครับ แล้วค่อยไปลงมือเขียนตัวตรวจฉบับเต็มกัน",
+      "ttsText": "ลองมาดูตัวอย่างโค้ดใน worked_readme_metrics.py ที่ช่วยเปลี่ยน JSON report ให้กลายเป็นตาราง Markdown สวย ๆ กันครับ\n\nในขั้นที่ 1 เรานิยามคลาส CapstoneMetrics ด้วย Pydantic v2 รับค่าจากผล Eval, Load Test และ Security แล้วเขียนเมธอด evaluate_gates เพื่อเทียบกับเกณฑ์ Rubric 4 เสาหลัก เช่น Recall at 5 มากกว่าหรือเท่ากับ 0.85, P95 น้อยกว่าหรือเท่ากับ 3,500 มิลลิวินาที และ PDPA Leaks ต้องเป็น 0 แล้วคืนค่า Target, Actual และ Status ว่า PASS หรือ FAIL\n\nขั้นที่ 2 ฟังก์ชัน render_metrics_markdown จะนำผลจาก evaluate_gates มาจัดเรียงเป็นตาราง Markdown และต่อท้ายด้วยบรรทัดสรุป dataset_label, P50 Latency และ Cost ต่อ 1,000 queries อัตโนมัติ\n\nขั้นที่ 3 พอป้อนตัวอย่างผลรันบนชุด golden-th-en-v1 จำนวน 40 ข้อ ที่มี Recall at 5 ที่ 0.88, P95 ที่ 2,840 มิลลิวินาที และ Cost 1.42 ดอลลาร์ต่อ 1,000 queries ระบบก็พิมพ์ตารางที่พร้อมแปะลง README ออกมาให้ทันที แถมตัวเลขไม่มั่วด้วย ลองกดดูทีละขั้นก่อนนะครับ แล้วค่อยไปลงมือเขียนตัวตรวจฉบับเต็มกัน",
+      "pauseAfter": {
+        "title": "พักรอศึกษาตัวอย่าง Metrics Renderer",
+        "prompt": "ลองกดเดินตัวอย่าง `worked_readme_metrics.py` ทั้ง 3 ขั้นเพื่อดูโครงสร้างตารางและการตรวจเกณฑ์ SLA แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียน src/readme_polish.py",
+      "src": "/audio/d178/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชัดเจน พูดเรียงสเปกทั้ง 4 ส่วนใน readme_polish.py ให้เขียนตามได้ง่ายและไม่หลุดเงื่อนไข",
+      "script": "มาลงมือเขียนตัวตรวจความสมบูรณ์ของ README และตัวเรนเดอร์ Scorecard ในไฟล์ src/readme_polish.py กันครับ มี 4 ส่วนหลักนะ\n\nหนึ่ง MetricsReport ใช้ @model_validator(mode=\"after\") ตรวจให้แน่ใจว่า p95_ms >= p50_ms เพราะค่าหางกราฟไม่มีทางเร็วกว่าค่ากลางได้\nสอง all_rubric_gates_pass ตรวจครบทั้ง 8 เกณฑ์ Rubric รวมถึง fallback_success_rate >= 0.95 แล้วคืน tuple ของบูลีนกับรายชื่อ field ที่ไม่ผ่านทั้งหมด\nสาม render_readme_metrics_section สร้างหัวข้อ ## Eval, Latency & Cost Metrics พร้อมตาราง Markdown และบรรทัดสรุป dataset_label กับ cost_per_1k_usd\nสี่ validate_readme_completeness รับข้อความ README แล้วคืน list ของปัญหาที่เจอ โดยเช็ก 3 เรื่องคือ มีหัวข้อหลักครบ 5 หัวข้อไหม มีบล็อก ```mermaid ที่มีคำว่า PDPA, LangGraph, MCP, HITL, Fallback ไหม และห้ามมีคำต้องห้ามอย่าง TODO, sk-live- หรือ API_KEY_HERE_LIVE_SECRET หลุดอยู่เลย\n\nเสร็จแล้วรัน uv run pytest -q tests/test_readme_polish.py กับ ruff check ได้เลยครับ พี่รออยู่ตรงนี้นะ",
+      "ttsText": "มาลงมือเขียนตัวตรวจความสมบูรณ์ของ README และตัวเรนเดอร์ Scorecard ในไฟล์ src slash readme_polish.py กันครับ มี 4 ส่วนหลักนะ\n\nหนึ่ง MetricsReport ใช้ model_validator mode after ตรวจให้แน่ใจว่า p95_ms มากกว่าหรือเท่ากับ p50_ms เพราะค่าหางกราฟไม่มีทางเร็วกว่าค่ากลางได้\nสอง all_rubric_gates_pass ตรวจครบทั้ง 8 เกณฑ์ Rubric รวมถึง fallback_success_rate มากกว่าหรือเท่ากับ 0.95 แล้วคืน tuple ของบูลีนกับรายชื่อ field ที่ไม่ผ่านทั้งหมด\nสาม render_readme_metrics_section สร้างหัวข้อ Eval, Latency and Cost Metrics พร้อมตาราง Markdown และบรรทัดสรุป dataset_label กับ cost_per_1k_usd\nสี่ validate_readme_completeness รับข้อความ README แล้วคืน list ของปัญหาที่เจอ โดยเช็ก 3 เรื่องคือ มีหัวข้อหลักครบ 5 หัวข้อไหม มีบล็อก mermaid ที่มีคำว่า PDPA, LangGraph, MCP, HITL, Fallback ไหม และห้ามมีคำต้องห้ามอย่าง TODO, s k ขีด live ขีด หรือ API_KEY_HERE_LIVE_SECRET หลุดอยู่เลย\n\nเสร็จแล้วรัน uv run pytest dash q tests slash test_readme_polish.py กับ ruff check ได้เลยครับ พี่รออยู่ตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอเขียนโค้ดและตรวจ README Polish",
+        "prompt": "ลงมือเขียน `src/readme_polish.py` ให้ผ่านทั้ง 3 test cases และลองตรวจ `README.md` ของโปรเจกต์คุณเอง แล้วกด 'ไปต่อ' ได้เลยครับ",
+        "continueLabel": "ผ่านครบ 3 เทสต์แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d178/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเตือน 4 จุดพลาดเรื่อง README แบบรุ่นพี่ช่วยรีวิวพอร์ตโฟลิโอให้รุ่นน้อง",
+      "script": "เยี่ยมเลยครับที่ทำแบบฝึกหัดผ่านแล้ว ก่อนทำควิซ พี่สรุป 4 ข้อผิดพลาดที่ทำให้รีโปพอร์ตโฟลิโอเสียคะแนนโดยไม่รู้ตัวนะครับ\n\nข้อแรก พิมพ์ตัวเลข Eval กับ Cost ลง README ด้วยมือ พอแก้ prompt ไปแล้วตัวเลขใน README กลายเป็นอดีต ไม่ตรงกับ reports จริง ให้ใช้สคริปต์เรนเดอร์จาก JSON artifact แทนเสมอ\nข้อที่สอง อาการ Diagram Drift วาด Kubernetes หรือ Redis Cluster ใหญ่โตในแผนภาพ ทั้งที่โค้ดจริงรันแค่ Docker Compose กับ LangGraph Router เดียว ถูกถามเจาะเมื่อไหร่พังทันทีครับ\nข้อที่สาม Quickstart บังคับให้คนอ่านต้องมี API Key เสียเงินถึงจะลองรันได้ ถ้าผู้สัมภาษณ์เปิดมารัน pytest แล้วติด error API Key ตั้งแต่ขั้นแรกเขาจะหมดอารมณ์ทันที ให้ชูคำสั่ง offline mock เป็นด่านแรกครับ\nข้อที่สี่ ลืมลบคำว่า TODO หรือตัวอย่าง secret ที่คล้ายของจริงออกจาก README ก่อน push ต้องให้ test ช่วยสแกนดักไว้เสมอครับ",
+      "ttsText": "เยี่ยมเลยครับที่ทำแบบฝึกหัดผ่านแล้ว ก่อนทำควิซ พี่สรุป 4 ข้อผิดพลาดที่ทำให้รีโปพอร์ตโฟลิโอเสียคะแนนโดยไม่รู้ตัวนะครับ\n\nข้อแรก พิมพ์ตัวเลข Eval กับ Cost ลง README ด้วยมือ พอแก้ prompt ไปแล้วตัวเลขใน README กลายเป็นอดีต ไม่ตรงกับ reports จริง ให้ใช้สคริปต์เรนเดอร์จาก JSON artifact แทนเสมอ\nข้อที่สอง อาการ Diagram Drift วาด Kubernetes หรือ Redis Cluster ใหญ่โตในแผนภาพ ทั้งที่โค้ดจริงรันแค่ Docker Compose กับ LangGraph Router เดียว ถูกถามเจาะเมื่อไหร่พังทันทีครับ\nข้อที่สาม Quickstart บังคับให้คนอ่านต้องมี API Key เสียเงินถึงจะลองรันได้ ถ้าผู้สัมภาษณ์เปิดมารัน pytest แล้วติด error API Key ตั้งแต่ขั้นแรกเขาจะหมดอารมณ์ทันที ให้ชูคำสั่ง offline mock เป็นด่านแรกครับ\nข้อที่สี่ ลืมลบคำว่า TODO หรือตัวอย่าง secret ที่คล้ายของจริงออกจาก README ก่อน push ต้องให้ test ช่วยสแกนดักไว้เสมอครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d178/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ ชวนทบทวนหลักคิดเรื่องการเขียน README และ Metrics ที่ซื่อสัตย์",
+      "script": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อสั้น ๆ นะครับ รอบนี้ถามเรื่องกฎ 30 วินาทีของ README, ข้อดีของการเรนเดอร์ Metrics จาก JSON, ทำไมต้องโชว์ Safety Gates ใน Mermaid และมุมมองต่อ Known Limitations\n\nค่อย ๆ อ่านและกดตอบได้เลยนะครับ ทำครบทั้ง 4 ข้อแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายกัน",
+      "ttsText": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อสั้น ๆ นะครับ รอบนี้ถามเรื่องกฎ 30 วินาทีของ README, ข้อดีของการเรนเดอร์ Metrics จาก JSON, ทำไมต้องโชว์ Safety Gates ใน Mermaid และมุมมองต่อ Known Limitations\n\nค่อย ๆ อ่านและกดตอบได้เลยนะครับ ทำครบทั้ง 4 ข้อแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายกัน",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเพื่อทวนหลักคิด README ระดับ Hiring-Grade แล้วกด 'ไปต่อ' เพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 179",
+      "src": "/audio/d178/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ภูมิใจ สรุปกระชับชัดเจน แล้วชวนไปลุยอัด Demo 3 นาทีใน Day 179",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 178 เรียบร้อยแล้ว ตอนนี้หน้าด่าน GitHub ของคุณพร้อมสร้างความประทับใจตั้งแต่ 30 วินาทีแรกแล้วนะ\n\nสรุปสั้น ๆ 4 ข้อของวันนี้ครับ หนึ่ง README.md ต้องตอบ Problem, Architecture, Metrics, Quickstart และ Trade-offs/Limitations ให้ชัดตั้งแต่หน้าแรก สอง วาด Mermaid Diagram ให้ตรงกับโมดูลจริงใน src ครบทั้ง PDPA, HITL และ Circuit Breaker Fallback สาม สร้างตาราง Eval, Latency และ Cost จาก JSON artifact ด้วยสคริปต์ Pydantic เพื่อกัน metric drift สี่ ให้ Quickstart รันแบบ 100% offline mock ได้ทันทีด้วย uv run pytest -q\n\nก้าวต่อไปใน Day 179 เราจะเอา README กับแผนภาพวันนี้ไปใช้เปิดฉากอัดวิดีโอ Technical Demo 3 นาที และซ้อมตอบคำถามสัมภาษณ์ Junior AI Engineer กัน อย่าลืมกดเรียนจบเก็บ streak แล้วเจอกันใน Day 179 ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 178 เรียบร้อยแล้ว ตอนนี้หน้าด่าน GitHub ของคุณพร้อมสร้างความประทับใจตั้งแต่ 30 วินาทีแรกแล้วนะ\n\nสรุปสั้น ๆ 4 ข้อของวันนี้ครับ หนึ่ง README ต้องตอบ Problem, Architecture, Metrics, Quickstart และ Trade-offs กับ Limitations ให้ชัดตั้งแต่หน้าแรก สอง วาด Mermaid Diagram ให้ตรงกับโมดูลจริงใน src ครบทั้ง PDPA, HITL และ Circuit Breaker Fallback สาม สร้างตาราง Eval, Latency และ Cost จาก JSON artifact ด้วยสคริปต์ Pydantic เพื่อกัน metric drift สี่ ให้ Quickstart รันแบบ 100 เปอร์เซ็นต์ offline mock ได้ทันทีด้วย uv run pytest dash q\n\nก้าวต่อไปใน Day 179 เราจะเอา README กับแผนภาพวันนี้ไปใช้เปิดฉากอัดวิดีโอ Technical Demo 3 นาที และซ้อมตอบคำถามสัมภาษณ์ Junior AI Engineer กัน อย่าลืมกดเรียนจบเก็บ streak แล้วเจอกันใน Day 179 ครับ!"
+    }
+  ]
+}

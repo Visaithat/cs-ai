@@ -1,0 +1,109 @@
+{
+  "lessonId": "d032",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Checkpoint ปิด Phase 1",
+      "src": "/audio/d032/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่นและภูมิใจ ต้อนรับเข้าสู่วัน Checkpoint ปิด Phase 1 น้ำเสียงมีพลัง ชวนมองภาพใหญ่สู่อนาคตใน Phase 2",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่วัน Checkpoint Day 32 ซึ่งเป็นวันปิด Phase 1 ของ Neural Path แล้วนะ เดินทางกันมาครบ 8 บล็อก 32 วันเต็ม เก่งมากจริง ๆ ครับ!\n\nวันนี้ไม่ได้มีแค่การมานั่งชมโค้ดตัวเองนะครับ เพราะโค้ดที่รันผ่านแค่บนเครื่องเรายังไม่ใช่มาตรฐาน production ทีมวิศวกรรมวัดความพร้อมจาก reproducibility, การรักษาความลับ, การรับมือ error และความน่าเชื่อถือของชุดเทสต์ เราเลยจะตรวจ Resilient Async Data Fetcher CLI ด้วย Engineering Code Review Checklist 6 ด้าน\n\nนอกจากนี้ เราจะสร้าง Phase 1 Readiness Auditor เพื่อสแกน repo อัตโนมัติ, ทบทวนความรู้รวบยอดทั้ง Block B01 ถึง B08 ด้วย Cumulative Quiz, และเตรียมส่งมอบไฟล์ output.jsonl ที่สะอาด 100 เปอร์เซ็นต์เข้าสู่ Polars, DuckDB และ Classical ML ใน Phase 2 วันพรุ่งนี้ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่วัน Checkpoint Day 32 ซึ่งเป็นวันปิด Phase 1 ของ Neural Path แล้วนะ เดินทางกันมาครบ 8 บล็อก 32 วันเต็ม เก่งมากจริง ๆ ครับ!\n\nวันนี้ไม่ได้มีแค่การมานั่งชมโค้ดตัวเองนะครับ เพราะโค้ดที่รันผ่านแค่บนเครื่องเรายังไม่ใช่มาตรฐาน production ทีมวิศวกรรมวัดความพร้อมจาก reproducibility, การรักษาความลับ, การรับมือ error และความน่าเชื่อถือของชุดเทสต์ เราเลยจะตรวจ Resilient Async Data Fetcher CLI ด้วย Engineering Code Review Checklist 6 ด้าน\n\nนอกจากนี้ เราจะสร้าง Phase 1 Readiness Auditor เพื่อสแกน repo อัตโนมัติ, ทบทวนความรู้รวบยอดทั้ง Block B01 ถึง B08 ด้วย Cumulative Quiz, และเตรียมส่งมอบไฟล์ output dot jsonl ที่สะอาด 100 เปอร์เซ็นต์เข้าสู่ Polars, DuckDB และ Classical ML ใน Phase 2 วันพรุ่งนี้ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & จังหวะ Checkpoint",
+      "src": "/audio/d032/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยก 3 เป้าหมายของวัน Checkpoint ให้ชัดและฟังง่าย",
+      "script": "มาดูเป้าหมายของวัน Checkpoint กันครับ พอจบ Day 32 คุณจะได้ปิดจ๊อบ Phase 1 อย่างสมบูรณ์ 3 เรื่อง\n\nหนึ่ง ตรวจโปรเจกต์ Resilient Async Data Fetcher CLI ตาม Code Review Checklist 6 ด้าน ทั้ง lockfile, .env hygiene, timeouts, concurrency, coverage 90 เปอร์เซ็นต์ขึ้นไป และ ruff clean\nสอง ประเมินความเข้าใจแบบบูรณาการครบทั้ง 8 บล็อกของ Phase 1\nและสาม สร้างสคริปต์ Phase 1 Readiness Auditor ไว้ตรวจ repo อัตโนมัติ พร้อมเชื่อม output.jsonl เข้าสู่ Polars และ DuckDB ใน Phase 2 ครับ",
+      "ttsText": "มาดูเป้าหมายของวัน Checkpoint กันครับ พอจบ Day 32 คุณจะได้ปิดจ๊อบ Phase 1 อย่างสมบูรณ์ 3 เรื่อง\n\nหนึ่ง ตรวจโปรเจกต์ Resilient Async Data Fetcher CLI ตาม Code Review Checklist 6 ด้าน ทั้ง lockfile, dot env hygiene, timeouts, concurrency, coverage 90 เปอร์เซ็นต์ขึ้นไป และ ruff clean\nสอง ประเมินความเข้าใจแบบบูรณาการครบทั้ง 8 บล็อกของ Phase 1\nและสาม สร้างสคริปต์ Phase 1 Readiness Auditor ไว้ตรวจ repo อัตโนมัติ พร้อมเชื่อม output dot jsonl เข้าสู่ Polars และ DuckDB ใน Phase 2 ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · รัน Quality Gate ครบชุด",
+      "src": "/audio/d032/03-setup.mp3",
+      "stylePrompt": "พูดช้าชัดเป็นจังหวะสม่ำเสมอ ไล่ชุดคำสั่ง Quality Gate 4 บรรทัดให้รันตรวจโปรเจกต์ได้ทันที",
+      "script": "เปิดโฟลเดอร์ resilient-fetcher ของคุณขึ้นมาแล้วรันชุดคำสั่ง Quality Gate ครบชุดในรอบเดียวได้เลยครับ\n\nเริ่มจาก uv sync --frozen เพื่อเช็กว่า uv.lock ตรงกับ pyproject.toml จากนั้นรัน uv run ruff check . กับ ruff format --check . จนได้ 0 issues แล้วปิดท้ายด้วย uv run pytest -W error --cov --cov-report=term-missing เพื่อยืนยันว่าผ่านทุกข้อแบบออฟไลน์และได้ coverage ถึง 90 เปอร์เซ็นต์ครับ ลองรันเช็กก่อนแล้วค่อยกดไปต่อนะ",
+      "ttsText": "เปิดโฟลเดอร์ resilient-fetcher ของคุณขึ้นมาแล้วรันชุดคำสั่ง Quality Gate ครบชุดในรอบเดียวได้เลยครับ\n\nเริ่มจาก uv sync dash dash frozen เพื่อเช็กว่า uv dot lock ตรงกับ pyproject dot toml จากนั้นรัน uv run ruff check จุด กับ ruff format dash dash check จุด จนได้ 0 issues แล้วปิดท้ายด้วย uv run pytest dash W error dash dash cov dash dash cov-report เท่ากับ term-missing เพื่อยืนยันว่าผ่านทุกข้อแบบออฟไลน์และได้ coverage ถึง 90 เปอร์เซ็นต์ครับ ลองรันเช็กก่อนแล้วค่อยกดไปต่อนะ",
+      "pauseAfter": {
+        "title": "พักรอรัน Quality Gate ครบชุด",
+        "prompt": "รัน uv sync --frozen, ruff check/format และ pytest --cov บนโฟลเดอร์โปรเจกต์ของคุณให้ผ่านครับ",
+        "continueLabel": "รัน Quality Gate ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — สำรวจ Checklist ทั้งระบบ",
+      "src": "/audio/d032/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนทบทวนภาพรวมทั้งหมดด้วยความภาคภูมิใจ ชี้แต่ละชั้นของระบบที่สร้างมาตลอด Block B08",
+      "script": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรมตรงนี้ดูอีกสักรอบนะครับ ตอนนี้คุณไม่ได้แค่มองภาพตัวอย่างแล้ว แต่ทุกชั้นตั้งแต่ Typer CLI, pydantic-settings, SQLite Cache, Async httpx พร้อม Semaphore และ tenacity, จนถึง JSONL และ structlog คือโค้ดที่คุณออกแบบและเขียนมาเองทั้งหมด\n\nวันนี้เราจะใช้แผนภาพนี้เป็นเหมือนเช็กลิสต์ตรวจสภาพรถก่อนออกทางไกล ไล่ดูทีละชั้นว่าพร้อมส่งมอบขึ้นพอร์ตโฟลิโอและต่อท่อเข้าสู่ Phase 2 แล้วหรือยังครับ",
+      "ttsText": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรมตรงนี้ดูอีกสักรอบนะครับ ตอนนี้คุณไม่ได้แค่มองภาพตัวอย่างแล้ว แต่ทุกชั้นตั้งแต่ Typer CLI, pydantic settings, SQLite Cache, Async httpx พร้อม Semaphore และ tenacity, จนถึง JSONL และ structlog คือโค้ดที่คุณออกแบบและเขียนมาเองทั้งหมด\n\nวันนี้เราจะใช้แผนภาพนี้เป็นเหมือนเช็กลิสต์ตรวจสภาพรถก่อนออกทางไกล ไล่ดูทีละชั้นว่าพร้อมส่งมอบขึ้นพอร์ตโฟลิโอและต่อท่อเข้าสู่ Phase 2 แล้วหรือยังครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d032/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM สรุปเกณฑ์วิศวกรรม แผนการเดโม และภาพฝันของ Phase 2 อย่างชัดเจนมีพลัง",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ส่วนของวัน Checkpoint กันครับ\n\nข้อแรก คือ Engineering Code Review Checklist 6 ด้าน เหมือนการตรวจสภาพรถก่อนออกทางไกลครับ ไล่ตั้งแต่ 1. Reproducibility มี pyproject.toml, uv.lock และ src layout 2. Config กับ Secrets Hygiene อ่านผ่าน pydantic-settings มี .env.example และใส่ .env กับ .venv ใน .gitignore 3. Strict Pydantic กับ Quarantine แยก output.jsonl กับ quarantine.jsonl แบบ UTF-8 4. Timeout, Selective Retry และ Semaphore 5. Parameterized SQLite cache กับ structlog และ 6. Offline pytest coverage 90 เปอร์เซ็นต์ขึ้นไปพร้อม ruff clean พอร์ตโฟลิโอที่ผ่าน 6 ข้อนี้จะโดดเด่นกว่าโค้ดสมุดโน้ตทั่วไปทันที\n\nข้อที่สอง คือแผนการเดโม 3 นาทีใน 3 ฉากครับ ฉากแรก Cold Run ให้เห็น retry อัตโนมัติและแยก quarantine, ฉากสอง Warm Cache Run รันซ้ำทันทีให้เห็น cache_hits เต็ม 100 เปอร์เซ็นต์ในเสี้ยววินาที, และฉากสาม Quality Gate รัน ruff กับ pytest --cov ให้เห็นผลเขียวแบบปิดเน็ต ทักษะเล่าสถาปัตยกรรมและ trade-off ใน 3 นาทีนี้จะได้ใช้จริงทั้งตอนสัมภาษณ์และวัน Capstone Day 180\n\nและข้อที่สาม คือสะพานสู่ Phase 2 ในวันพรุ่งนี้ครับ Phase 1 คือการสร้างท่อส่งน้ำประปาที่สะอาดไม่รั่วซึม ส่วน Phase 2 เราจะหยิบไฟล์ output.jsonl ที่สะอาดนี้ไปวิเคราะห์หลักแสนแถวด้วย Polars กับ DuckDB เข้าใจ vector และ cosine similarity ด้วย NumPy แล้วฝึกโมเดล Classical ML ด้วย PyThaiNLP, scikit-learn และ LightGBM ที่เร็วระดับไม่ถึง 10 มิลลิวินาทีครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ส่วนของวัน Checkpoint กันครับ\n\nข้อแรก คือ Engineering Code Review Checklist 6 ด้าน เหมือนการตรวจสภาพรถก่อนออกทางไกลครับ ไล่ตั้งแต่ 1 Reproducibility มี pyproject dot toml, uv dot lock และ src layout 2 Config กับ Secrets Hygiene อ่านผ่าน pydantic settings มี dot env dot example และใส่ dot env กับ dot venv ใน dot gitignore 3 Strict Pydantic กับ Quarantine แยก output dot jsonl กับ quarantine dot jsonl แบบ UTF-8 4 Timeout, Selective Retry และ Semaphore 5 Parameterized SQLite cache กับ structlog และ 6 Offline pytest coverage 90 เปอร์เซ็นต์ขึ้นไปพร้อม ruff clean พอร์ตโฟลิโอที่ผ่าน 6 ข้อนี้จะโดดเด่นกว่าโค้ดสมุดโน้ตทั่วไปทันที\n\nข้อที่สอง คือแผนการเดโม 3 นาทีใน 3 ฉากครับ ฉากแรก Cold Run ให้เห็น retry อัตโนมัติและแยก quarantine, ฉากสอง Warm Cache Run รันซ้ำทันทีให้เห็น cache hits เต็ม 100 เปอร์เซ็นต์ในเสี้ยววินาที, และฉากสาม Quality Gate รัน ruff กับ pytest dash dash cov ให้เห็นผลเขียวแบบปิดเน็ต ทักษะเล่าสถาปัตยกรรมและ trade-off ใน 3 นาทีนี้จะได้ใช้จริงทั้งตอนสัมภาษณ์และวัน Capstone Day 180\n\nและข้อที่สาม คือสะพานสู่ Phase 2 ในวันพรุ่งนี้ครับ Phase 1 คือการสร้างท่อส่งน้ำประปาที่สะอาดไม่รั่วซึม ส่วน Phase 2 เราจะหยิบไฟล์ output dot jsonl ที่สะอาดนี้ไปวิเคราะห์หลักแสนแถวด้วย Polars กับ DuckDB เข้าใจ vector และ cosine similarity ด้วย NumPy แล้วฝึกโมเดล Classical ML ด้วย PyThaiNLP, scikit-learn และ LightGBM ที่เร็วระดับไม่ถึง 10 มิลลิวินาทีครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน & Readiness Audit",
+      "src": "/audio/d032/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังช่วยกันเขียนสคริปต์ตรวจ repo เน้นจุดพลาดเรื่องการข้ามโฟลเดอร์ .venv",
+      "script": "แทนที่จะมานั่งไล่เช็กลิสต์ด้วยตาเปล่า เรามาดูตัวอย่างสคริปต์ Phase 1 Readiness Audit ที่ตรวจ repo อัตโนมัติด้วย Python กันครับ\n\nขั้นที่ 1 เรานิยามโมเดล Pydantic สองตัวคือ AuditCheck เก็บชื่อ ผลผ่าน และรายละเอียด กับ Phase1AuditReport ที่มี property คำนวณ passed_count, score_pct และ ready_for_phase2\n\nขั้นที่ 2 ในฟังก์ชัน audit_phase1_repo เราใช้ pathlib สแกน 4 ด้านหลัก ได้แก่ เช็กว่ามี pyproject.toml กับ uv.lock ครบ, อ่าน .gitignore ว่ากัน .env กับ .venv ไว้หรือยัง, ใช้ regex SECRET_PATTERN กวาดหา secret ที่เผลอ hardcode ในไฟล์ .py, และถ้าส่ง path ของ JSONL มาด้วย ก็เช็กว่าเปิดอ่านเป็น UTF-8 และ json.loads ได้ทุกบรรทัด\n\nขั้นที่ 3 ลองจำลองโฟลเดอร์ที่สะอาดด้วย TemporaryDirectory จะได้คะแนน 100.0 เปอร์เซ็นต์และ Ready for Phase 2: True ครับ จุดที่พลาดบ่อยมากเวลาสแกนด้วย rglob('*.py') คือลืมข้ามโฟลเดอร์ .venv นะ ไม่งั้นสคริปต์จะไปสแกนโค้ดไลบรารีนับพันไฟล์จนช้าและเกิด false positive ลองดูตัวอย่างให้ครบแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "ttsText": "แทนที่จะมานั่งไล่เช็กลิสต์ด้วยตาเปล่า เรามาดูตัวอย่างสคริปต์ Phase 1 Readiness Audit ที่ตรวจ repo อัตโนมัติด้วย Python กันครับ\n\nขั้นที่ 1 เรานิยามโมเดล Pydantic สองตัวคือ AuditCheck เก็บชื่อ ผลผ่าน และรายละเอียด กับ Phase1AuditReport ที่มี property คำนวณ passed_count, score_pct และ ready_for_phase2\n\nขั้นที่ 2 ในฟังก์ชัน audit_phase1_repo เราใช้ pathlib สแกน 4 ด้านหลัก ได้แก่ เช็กว่ามี pyproject dot toml กับ uv dot lock ครบ, อ่าน dot gitignore ว่ากัน dot env กับ dot venv ไว้หรือยัง, ใช้ regex SECRET_PATTERN กวาดหา secret ที่เผลอ hardcode ในไฟล์ dot py, และถ้าส่ง path ของ JSONL มาด้วย ก็เช็กว่าเปิดอ่านเป็น UTF-8 และ json loads ได้ทุกบรรทัด\n\nขั้นที่ 3 ลองจำลองโฟลเดอร์ที่สะอาดด้วย TemporaryDirectory จะได้คะแนน 100.0 เปอร์เซ็นต์และ Ready for Phase 2 เท่ากับ True ครับ จุดที่พลาดบ่อยมากเวลาสแกนด้วย rglob ไฟล์ dot py คือลืมข้ามโฟลเดอร์ dot venv นะ ไม่งั้นสคริปต์จะไปสแกนโค้ดไลบรารีนับพันไฟล์จนช้าและเกิด false positive ลองดูตัวอย่างให้ครบแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง Phase 1 Readiness Audit",
+        "prompt": "ลองศึกษาวิธีตรวจ lockfile, .gitignore, secret pattern และการข้าม .venv ใน audit_phase1_repo ครับ",
+        "continueLabel": "ดูตัวอย่าง Audit เสร็จแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง phase1_audit.py",
+      "src": "/audio/d032/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ ชวนทำโจทย์ Checkpoint และเอาไปรันตรวจโปรเจกต์จริงของตัวเอง",
+      "script": "มาถึงโจทย์ Checkpoint 15 นาทีสุดท้ายของ Phase 1 แล้วครับ วันนี้ให้เราสร้างไฟล์ phase1_audit.py เพื่อให้ผ่านชุดเทสต์ แล้วลองเอาไปรันตรวจโฟลเดอร์ resilient-fetcher จริงของคุณด้วยนะ\n\nเริ่มจากเติม property ทั้ง 3 ตัวใน Phase1AuditReport ให้ครบ ได้แก่ passed_count, score_pct ที่ปัดทศนิยม 1 ตำแหน่ง และ ready_for_phase2 ที่เป็น True เมื่อทุกข้อผ่าน\nจากนั้นเขียนฟังก์ชัน audit_repo(repo_dir, output_jsonl=None) ให้ตรวจครบ 4 ข้อหลัก: reproducibility_lockfile, gitignore_hygiene ที่ normalize แต่ละบรรทัดด้วย strip().rstrip('/') เพื่อรับได้ทั้ง .venv และ .venv/, no_hardcoded_secrets ที่อย่าลืมข้าม .venv, และ has_tests ที่เช็กว่ามีไฟล์ขึ้นต้นด้วย test_ อย่างน้อย 1 ไฟล์นอก .venv\n\nและถ้ามีการส่ง output_jsonl เข้ามา ให้เพิ่มข้อ valid_jsonl_output ที่ตรวจว่าไฟล์มีอยู่จริงและทุกบรรทัดที่ไม่ว่าง json.loads ออกมาได้เป็น dict ครับ เสร็จแล้วรัน pytest -v, ruff check . และลองรัน audit กับโฟลเดอร์ของคุณเองจนได้ Ready for Phase 2: True เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "ttsText": "มาถึงโจทย์ Checkpoint 15 นาทีสุดท้ายของ Phase 1 แล้วครับ วันนี้ให้เราสร้างไฟล์ phase1_audit dot py เพื่อให้ผ่านชุดเทสต์ แล้วลองเอาไปรันตรวจโฟลเดอร์ resilient-fetcher จริงของคุณด้วยนะ\n\nเริ่มจากเติม property ทั้ง 3 ตัวใน Phase1AuditReport ให้ครบ ได้แก่ passed_count, score_pct ที่ปัดทศนิยม 1 ตำแหน่ง และ ready_for_phase2 ที่เป็น True เมื่อทุกข้อผ่าน\nจากนั้นเขียนฟังก์ชัน audit_repo ให้ตรวจครบ 4 ข้อหลัก: reproducibility_lockfile, gitignore_hygiene ที่ normalize แต่ละบรรทัดด้วย strip และ rstrip slash เพื่อรับได้ทั้ง dot venv และ dot venv slash, no_hardcoded_secrets ที่อย่าลืมข้าม dot venv, และ has_tests ที่เช็กว่ามีไฟล์ขึ้นต้นด้วย test underscore อย่างน้อย 1 ไฟล์นอก dot venv\n\nและถ้ามีการส่ง output_jsonl เข้ามา ให้เพิ่มข้อ valid_jsonl_output ที่ตรวจว่าไฟล์มีอยู่จริงและทุกบรรทัดที่ไม่ว่าง json loads ออกมาได้เป็น dict ครับ เสร็จแล้วรัน pytest dash v, ruff check จุด และลองรัน audit กับโฟลเดอร์ของคุณเองจนได้ Ready for Phase 2 เท่ากับ True เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง phase1_audit.py และสแกน repo จริง",
+        "prompt": "เติม phase1_audit.py ให้ผ่านชุดเทสต์ และลองรันตรวจโปรเจกต์ resilient-fetcher ของคุณจนพร้อมเข้าสู่ Phase 2 ครับ",
+        "continueLabel": "ผ่าน Audit ครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d032/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงจริงจังปนเป็นกันเอง เตือนเรื่องหลุมพรางก่อนส่งมอบพอร์ตโฟลิโอและขึ้น GitHub",
+      "script": "เก่งมากครับที่รัน Audit ผ่านแล้ว ก่อนไปทำควิซรวม พี่ขอเตือน 4 เรื่องสำคัญตอนส่งมอบโปรเจกต์จริงขึ้น GitHub นะครับ\n\nข้อแรก คือลืม commit ไฟล์ uv.lock หรือเผลอ commit .env กับ .venv ขึ้น Git จนคีย์หลุดหรือเพื่อนติดตั้งไม่ได้ ต้องเช็ก git status ทุกครั้งและลองเทสต์ด้วย uv sync --frozen ครับ\nข้อที่สอง คือเขียนเทสต์เฉพาะ happy path แล้วไม่ตรวจ branch ของ error กับ quarantine ทำให้ coverage ต่ำกว่า 90 เปอร์เซ็นต์ ลองเปิด --cov-report=term-missing ดูบรรทัดที่ขาดแล้วเติมเคส MockTransport ให้ครบ\n\nข้อที่สาม คือปล่อยให้ชุดเทสต์ต้องต่ออินเทอร์เน็ตจริง จน CI แดงสุ่มเวลาเน็ตช้า ต้องแยก I/O ด้วย MockTransport และ tmp_path เสมอ\nและข้อที่สี่ คือไม่มี README.md ที่บอกวิธีติดตั้ง คำสั่งเดโม Cold และ Warm run และภาพรวมสถาปัตยกรรม ทำให้ผู้ตรวจไม่เห็นคุณค่าของโค้ดดี ๆ ที่เราตั้งใจสร้างครับ",
+      "ttsText": "เก่งมากครับที่รัน Audit ผ่านแล้ว ก่อนไปทำควิซรวม พี่ขอเตือน 4 เรื่องสำคัญตอนส่งมอบโปรเจกต์จริงขึ้น GitHub นะครับ\n\nข้อแรก คือลืม commit ไฟล์ uv dot lock หรือเผลอ commit dot env กับ dot venv ขึ้น Git จนคีย์หลุดหรือเพื่อนติดตั้งไม่ได้ ต้องเช็ก git status ทุกครั้งและลองเทสต์ด้วย uv sync dash dash frozen ครับ\nข้อที่สอง คือเขียนเทสต์เฉพาะ happy path แล้วไม่ตรวจ branch ของ error กับ quarantine ทำให้ coverage ต่ำกว่า 90 เปอร์เซ็นต์ ลองเปิด dash dash cov-report เท่ากับ term-missing ดูบรรทัดที่ขาดแล้วเติมเคส MockTransport ให้ครบ\n\nข้อที่สาม คือปล่อยให้ชุดเทสต์ต้องต่ออินเทอร์เน็ตจริง จน CI แดงสุ่มเวลาเน็ตช้า ต้องแยก I O ด้วย MockTransport และ tmp_path เสมอ\nและข้อที่สี่ คือไม่มี README dot md ที่บอกวิธีติดตั้ง คำสั่งเดโม Cold และ Warm run และภาพรวมสถาปัตยกรรม ทำให้ผู้ตรวจไม่เห็นคุณค่าของโค้ดดี ๆ ที่เราตั้งใจสร้างครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Cumulative Quiz B01–B08",
+      "src": "/audio/d032/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นและให้กำลังใจ ชวนทำควิซรวบยอด 8 บล็อกแบบมีสมาธิและเก็บจุดพลาดเข้า Error Log",
+      "script": "มาถึง Phase 1 Cumulative Quiz 4 ข้อที่เชื่อมโยงความรู้ตลอด 32 วันตั้งแต่ Block B01 ถึง B08 แล้วครับ\n\nข้อ 1 ทบทวนเรื่อง env, config และ logging จาก B01-B02, ข้อ 2 ทบทวนเรื่อง HTTP timeout, selective retry และ MockTransport จาก B03-B04, ข้อ 3 ทบทวนเรื่อง async Semaphore, src layout และ Typer จาก B05-B06, และข้อ 4 ทบทวนเรื่อง SQLite cache, quarantine และสะพานเชื่อม JSONL สู่ Polars กับ DuckDB ใน Phase 2\n\nข้อไหนไม่มั่นใจอ่านคำอธิบายให้ละเอียดแล้วเก็บเข้า Error Log นะครับ เดี๋ยวพี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฉลองจบ Phase 1 กันครับ",
+      "ttsText": "มาถึง Phase 1 Cumulative Quiz 4 ข้อที่เชื่อมโยงความรู้ตลอด 32 วันตั้งแต่ Block B01 ถึง B08 แล้วครับ\n\nข้อ 1 ทบทวนเรื่อง env, config และ logging จาก B01 ถึง B02, ข้อ 2 ทบทวนเรื่อง HTTP timeout, selective retry และ MockTransport จาก B03 ถึง B04, ข้อ 3 ทบทวนเรื่อง async Semaphore, src layout และ Typer จาก B05 ถึง B06, และข้อ 4 ทบทวนเรื่อง SQLite cache, quarantine และสะพานเชื่อม JSONL สู่ Polars กับ DuckDB ใน Phase 2\n\nข้อไหนไม่มั่นใจอ่านคำอธิบายให้ละเอียดแล้วเก็บเข้า Error Log นะครับ เดี๋ยวพี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฉลองจบ Phase 1 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Cumulative Quiz (B01–B08)",
+        "prompt": "ทำควิซรวบยอดทั้ง 4 ข้อครอบคลุม Block B01–B08 ให้ครบ แล้วกด 'ไปต่อ' เพื่อฟังสรุปจบ Phase 1 ครับ",
+        "continueLabel": "ทำ Cumulative Quiz ครบแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุปจบ Phase 1 & สู่ Phase 2",
+      "src": "/audio/d032/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจสุด ๆ และอบอุ่นใจ ฉลองความสำเร็จครบ 32 วันของ Phase 1 พร้อมส่งต่อแรงบันดาลใจเข้าสู่ Phase 2",
+      "script": "ขอแสดงความยินดีด้วยนะครับ! คุณเดินทางผ่าน Phase 1 Modern Python & Async Foundation ครบทั้ง 32 วันอย่างสมบูรณ์แบบแล้ว เยี่ยมมาก ๆ เลยครับ!\n\nสรุปสิ่งที่คุณพกติดตัวออกจาก Phase 1 มี 4 อย่างใหญ่ ๆ: หนึ่ง มาตรฐานวิศวกรรม 6 ด้านตั้งแต่ uv.lock, .env hygiene, Pydantic, Semaphore, SQLite cache จนถึง offline pytest 90 เปอร์เซ็นต์ขึ้นไปและ ruff clean สอง ทักษะการเดโม 3 ฉากทั้ง Cold Run, Warm Cache Run และ Quality Gate สาม นิสัยการจด Error Log ให้ Spaced Repetition ช่วยทวนในอีก 3, 8 และ 16 วัน\n\nและสี่ ประตูสู่ Phase 2 Data, Math Intuition & Classical ML ใน Day 33–60 เปิดรออยู่แล้วครับ พรุ่งนี้เราจะเอาไฟล์ output.jsonl จากท่อของคุณไปลุย Polars, DuckDB, NumPy, PyThaiNLP, scikit-learn และ LightGBM กันต่อ กดทำเครื่องหมายว่าเรียนจบแล้วพักผ่อนให้เต็มที่ เจอกันใน Day 33 วันเปิด Phase 2 นะครับ สู้ ๆ ครับ!",
+      "ttsText": "ขอแสดงความยินดีด้วยนะครับ! คุณเดินทางผ่าน Phase 1 Modern Python & Async Foundation ครบทั้ง 32 วันอย่างสมบูรณ์แบบแล้ว เยี่ยมมาก ๆ เลยครับ!\n\nสรุปสิ่งที่คุณพกติดตัวออกจาก Phase 1 มี 4 อย่างใหญ่ ๆ: หนึ่ง มาตรฐานวิศวกรรม 6 ด้านตั้งแต่ uv dot lock, dot env hygiene, Pydantic, Semaphore, SQLite cache จนถึง offline pytest 90 เปอร์เซ็นต์ขึ้นไปและ ruff clean สอง ทักษะการเดโม 3 ฉากทั้ง Cold Run, Warm Cache Run และ Quality Gate สาม นิสัยการจด Error Log ให้ Spaced Repetition ช่วยทวนในอีก 3, 8 และ 16 วัน\n\nและสี่ ประตูสู่ Phase 2 Data, Math Intuition & Classical ML ใน Day 33 ถึง 60 เปิดรออยู่แล้วครับ พรุ่งนี้เราจะเอาไฟล์ output dot jsonl จากท่อของคุณไปลุย Polars, DuckDB, NumPy, PyThaiNLP, scikit-learn และ LightGBM กันต่อ กดทำเครื่องหมายว่าเรียนจบแล้วพักผ่อนให้เต็มที่ เจอกันใน Day 33 วันเปิด Phase 2 นะครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

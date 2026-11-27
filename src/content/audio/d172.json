@@ -1,0 +1,109 @@
+{
+  "lessonId": "d172",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Milestone 4 Quality Gate",
+      "src": "/audio/d172/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงตื่นเต้นและภาคภูมิใจ เหมือนชวนน้องรวมพลังของ 3 วันที่ผ่านมาเข้าสู่ด่านตรวจรับ Milestone 4 ก่อนขึ้น Staging",
+      "script": "สวัสดีครับ มาถึงวันสำคัญของ Block B43 กันแล้ว นี่คือ Day 172 กับ Milestone 4: Eval Report Passing Quality Gates ครับ\n\nตลอด 3 วันที่ผ่านมา เราสร้างทั้ง 40-Case Golden Dataset ใน Day 169, สร้าง Ragas และ Promptfoo Eval Runner ใน Day 170 และติด Langfuse Telemetry ใน Day 171 แต่ถ้าไฟล์พวกนี้ยังแยกกันอยู่คนละสคริปต์ มันยังเอาไปเป็นตัวตัดสินใน CI/CD ไม่ได้ วันนี้เราจะประกอบทั้งหมดเข้าเป็น Aggregator Gate เดียว ที่ตัดสินได้อัตโนมัติเลยว่า SHIP_TO_B44 หรือ BLOCK_AND_FIX\n\nเกณฑ์นี้จะตรวจพร้อมกันทั้งภาพรวมและคะแนนราย slice ทั้ง 4 กลุ่ม คือ thai_faq, code_switch, unanswerable และ attack รวมถึงล็อก Telemetry Gate ให้ trace_coverage เป็น 100 เปอร์เซ็นต์, P95 ไม่เกิน 3,500 มิลลิวินาที, ไม่มี PII leak และเรนเดอร์ออกมาเป็นรายงาน Markdown พร้อมแปะใน README และ GitHub Actions ได้ทันทีครับ",
+      "ttsText": "สวัสดีครับ มาถึงวันสำคัญของ Block B43 กันแล้ว นี่คือ Day 172 กับ Milestone 4, Eval Report Passing Quality Gates ครับ\n\nตลอด 3 วันที่ผ่านมา เราสร้างทั้ง 40-Case Golden Dataset ใน Day 169, สร้าง Ragas และ Promptfoo Eval Runner ใน Day 170 และติด Langfuse Telemetry ใน Day 171 แต่ถ้าไฟล์พวกนี้ยังแยกกันอยู่คนละสคริปต์ มันยังเอาไปเป็นตัวตัดสินใน CI หรือ CD ไม่ได้ วันนี้เราจะประกอบทั้งหมดเข้าเป็น Aggregator Gate เดียว ที่ตัดสินได้อัตโนมัติเลยว่า SHIP_TO_B44 หรือ BLOCK_AND_FIX\n\nเกณฑ์นี้จะตรวจพร้อมกันทั้งภาพรวมและคะแนนราย slice ทั้ง 4 กลุ่ม คือ thai_faq, code_switch, unanswerable และ attack รวมถึงล็อก Telemetry Gate ให้ trace_coverage เป็น 100 เปอร์เซ็นต์, P95 ไม่เกิน 3,500 มิลลิวินาที, ไม่มี PII leak และเรนเดอร์ออกมาเป็นรายงาน Markdown พร้อมแปะใน README และ GitHub Actions ได้ทันทีครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d172/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยกจังหวะเป้าหมาย 3 ข้อให้ชัด แล้วเชื่อมต่อไปยัง Block B44",
+      "script": "มาดูเป้าหมายของ Milestone 4 กันครับ จบวันนี้คุณจะมีตัวตรวจรับครบ 3 อย่าง\n\nหนึ่ง ประกอบตัวตรวจ Quality Gates ที่รวม 40-Case Golden Set, Ragas, Promptfoo และ Langfuse Telemetry เข้าด้วยกัน\nสอง ระบุ Blockers ทั้งภาพรวมและราย slice ย่อยเพื่อกันจุดบอดก่อนขึ้น Production\nสาม เรนเดอร์ Markdown Eval Report สำหรับ README.md และ GitHub Actions Step Summary ก่อนเข้า B44\n\nทั้งหมดรันบนเครื่องได้ 100 เปอร์เซ็นต์ด้วยข้อมูลจาก D169 ถึง D171 ครับ",
+      "ttsText": "มาดูเป้าหมายของ Milestone 4 กันครับ จบวันนี้คุณจะมีตัวตรวจรับครบ 3 อย่าง\n\nหนึ่ง ประกอบตัวตรวจ Quality Gates ที่รวม 40-Case Golden Set, Ragas, Promptfoo และ Langfuse Telemetry เข้าด้วยกัน\nสอง ระบุ Blockers ทั้งภาพรวมและราย slice ย่อยเพื่อกันจุดบอดก่อนขึ้น Production\nสาม เรนเดอร์ Markdown Eval Report สำหรับ README dot md และ GitHub Actions Step Summary ก่อนเข้า B44\n\nทั้งหมดรันบนเครื่องได้ 100 เปอร์เซ็นต์ด้วยข้อมูลจาก D169 ถึง D171 ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ตรวจชุดทดสอบ B43 ก่อนออก Gate",
+      "src": "/audio/d172/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาน้องเช็ก unit tests และ ruff จาก 3 วันที่ผ่านมาก่อนเริ่มเขียนไฟล์ Milestone 4",
+      "script": "ก่อนเริ่มเขียนโมดูลใหม่ของ Milestone 4 ให้ลองเช็กความเรียบร้อยของงาน B43 ทั้งหมดก่อนนะครับ ในโฟลเดอร์ thai-enterprise-assistant ให้รัน uv run pytest -q เพื่อตรวจ test_golden_eval_dataset.py, test_eval_runner.py และ test_telemetry_langfuse.py ว่าผ่านสีเขียวครบทุกไฟล์\n\nจากนั้นรัน uv run ruff check . เพื่อเช็กความสะอาดของโค้ด พอทุกอย่างผ่านหมดแล้ว เราจะพร้อมสร้าง src/milestone4_eval_report.py เพื่อออกใบรับรอง Milestone 4 กันครับ เช็กเครื่องให้เรียบร้อยแล้วกดไปต่อได้เลยนะ",
+      "ttsText": "ก่อนเริ่มเขียนโมดูลใหม่ของ Milestone 4 ให้ลองเช็กความเรียบร้อยของงาน B43 ทั้งหมดก่อนนะครับ ในโฟลเดอร์ thai-enterprise-assistant ให้รัน uv run pytest dash q เพื่อตรวจ test_golden_eval_dataset dot py, test_eval_runner dot py และ test_telemetry_langfuse dot py ว่าผ่านสีเขียวครบทุกไฟล์\n\nจากนั้นรัน uv run ruff check dot เพื่อเช็กความสะอาดของโค้ด พอทุกอย่างผ่านหมดแล้ว เราจะพร้อมสร้าง src slash milestone4_eval_report dot py เพื่อออกใบรับรอง Milestone 4 กันครับ เช็กเครื่องให้เรียบร้อยแล้วกดไปต่อได้เลยนะ",
+      "pauseAfter": {
+        "title": "พักรอเช็กชุดทดสอบของ D169–D171",
+        "prompt": "รัน pytest สำหรับ D169–D171 และ ruff check ให้ผ่านสีเขียวครบทุกข้อ แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ชุดทดสอบเดิมผ่านครบ — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Pre-Flight Quality Gate",
+      "src": "/audio/d172/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนเห็นภาพ เปรียบเทียบแผนภาพ Quality Gate กับการตรวจความพร้อมก่อนขึ้นบิน",
+      "script": "ดูแผนภาพ Milestone 4 Quality Gate บนหน้าจอสิครับ ตัวเลขทุกมิติที่เราทำงานมาทั้งสัปดาห์จะมารวมอยู่บนหน้าปัดเดียวกัน\n\nทั้งเกณฑ์ผ่านรายกลุ่มของ 40 เคส คือ Thai FAQ กับ Code-Switch ต้องได้อย่างน้อย 0.85, Unanswerable กับ Red-Team Attack ต้องได้อย่างน้อย 0.90 ประกบคู่กับ P95 Latency และ Trace Coverage 100 เปอร์เซ็นต์ ถ้าไฟเขียวครบทุกช่องก็พร้อมส่งต่อเข้า Block B44 ได้อย่างมั่นใจครับ",
+      "ttsText": "ดูแผนภาพ Milestone 4 Quality Gate บนหน้าจอสิครับ ตัวเลขทุกมิติที่เราทำงานมาทั้งสัปดาห์จะมารวมอยู่บนหน้าปัดเดียวกัน\n\nทั้งเกณฑ์ผ่านรายกลุ่มของ 40 เคส คือ Thai FAQ กับ Code-Switch ต้องได้อย่างน้อย 0.85, Unanswerable กับ Red-Team Attack ต้องได้อย่างน้อย 0.90 ประกบคู่กับ P95 Latency และ Trace Coverage 100 เปอร์เซ็นต์ ถ้าไฟเขียวครบทุกช่องก็พร้อมส่งต่อเข้า Block B44 ได้อย่างมั่นใจครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก 3 ข้อ — Gate, Blockers & Markdown",
+      "src": "/audio/d172/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเกณฑ์ Milestone 4, การสร้างรายการ blockers และประโยชน์ของ Markdown Report อย่างชัดเจนและมีพลัง",
+      "script": "มาเจาะแนวคิดหลัก 3 ข้อของ Milestone 4 กันครับ\n\nข้อแรก เกณฑ์ Quality Gates ทั้งหมด ให้คิดเหมือน Pre-Flight Checklist ก่อนเครื่องบินขึ้น ต้องผ่านพร้อมกันทุกมิติ ได้แก่ ครบ 40 เคส, Recall@5 และ Faithfulness >= 0.85, Schema >= 0.99, Trace Coverage == 1.00, P95 <= 3,500 มิลลิวินาที และ pii_leaks == 0 ขาดข้อเดียวถือว่า BLOCK_AND_FIX และนำไปผูก exit code ใน GitHub Actions ได้ทันที\n\nข้อที่สอง การตรวจลึกถึงระดับ slice และระบุ blockers ให้ชัดเจน เหมือนใบตรวจสุขภาพที่ชี้ตรงจุดเลยว่าความดันหรือน้ำตาลเกินเท่าไร ถ้า code_switch ได้ 0.70 แม้คะแนนเฉลี่ยรวมจะสูงเกิน 0.85 ตัว gate จะระบุ blocker ทันทีว่า slice code_switch ต่ำกว่า 0.85 ช่วยประหยัดเวลาดีบักใน CI ได้มาก\n\nข้อที่สาม การแปลง Eval Report เป็น Markdown เพื่อเป็น Single Source of Truth ใช้แสดงผลใน GitHub Step Summary (B44) และใส่ README.md สำหรับ Final Defense ใน B45 ครับ",
+      "ttsText": "มาเจาะแนวคิดหลัก 3 ข้อของ Milestone 4 กันครับ\n\nข้อแรก เกณฑ์ Quality Gates ทั้งหมด ให้คิดเหมือน Pre-Flight Checklist ก่อนเครื่องบินขึ้น ต้องผ่านพร้อมกันทุกมิติ ได้แก่ ครบ 40 เคส, Recall at 5 และ Faithfulness มากกว่าหรือเท่ากับ 0.85, Schema มากกว่าหรือเท่ากับ 0.99, Trace Coverage เท่ากับ 1.00, P95 น้อยกว่าหรือเท่ากับ 3,500 มิลลิวินาที และ pii_leaks เท่ากับ 0 ขาดข้อเดียวถือว่า BLOCK_AND_FIX และนำไปผูก exit code ใน GitHub Actions ได้ทันที\n\nข้อที่สอง การตรวจลึกถึงระดับ slice และระบุ blockers ให้ชัดเจน เหมือนใบตรวจสุขภาพที่ชี้ตรงจุดเลยว่าความดันหรือน้ำตาลเกินเท่าไร ถ้า code_switch ได้ 0.70 แม้คะแนนเฉลี่ยรวมจะสูงเกิน 0.85 ตัว gate จะระบุ blocker ทันทีว่า slice code_switch ต่ำกว่า 0.85 ช่วยประหยัดเวลาดีบักใน CI ได้มาก\n\nข้อที่สาม การแปลง Eval Report เป็น Markdown เพื่อเป็น Single Source of Truth ใช้แสดงผลใน GitHub Step Summary ใน B44 และใส่ README dot md สำหรับ Final Defense ใน B45 ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — SHIP_TO_B44 vs BLOCK_AND_FIX",
+      "src": "/audio/d172/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต พาเดินดูโค้ดตรวจสอบทั้งกรณีผ่านฉลุยและกรณีโดนบล็อก 2 จุดพร้อมกัน",
+      "script": "ลองมากดดูตัวอย่าง worked_milestone4.py บนหน้าจอกันครับ\n\nขั้นแรก เรานิยามฟังก์ชัน check_milestone4 ที่ไล่ตรวจทุกเงื่อนไขตั้งแต่ total_cases ต้องเท่ากับ 40, recall_at_5, faithfulness, schema_pass_rate, trace_coverage, p95_ms, pii_leaks และวนตรวจ slice_floors ครบทั้ง 4 กลุ่ม ถ้าข้อไหนไม่ผ่านก็ต่อข้อความเข้าลิสต์ blockers\n\nขั้นที่สอง เราส่งชุดตัวเลขหลังซ่อมระบบจาก D170 และ D171 เข้าไป ผลคือ blockers ว่างเปล่า ได้คำตัดสิน SHIP_TO_B44 สวยงามเลย\n\nขั้นที่สาม ลองทดสอบกรณีที่ระบบมีปัญหา โดยเพิ่ม p95_ms เป็น 4,100 และลด attack เหลือ 0.75 ตัวตรวจจะตีกลับเป็น BLOCK_AND_FIX พร้อมชี้ blocker ทั้ง 2 ข้อให้ทันที อย่าลืมนะครับว่าห้ามใช้คะแนนเฉลี่ยรวมมาตัดสินแทนราย slice เด็ดขาด กดเดินตัวอย่างครบแล้วไปลุยแบบฝึกหัด Milestone 4 กันครับ",
+      "ttsText": "ลองมากดดูตัวอย่าง worked_milestone4 dot py บนหน้าจอกันครับ\n\nขั้นแรก เรานิยามฟังก์ชัน check_milestone4 ที่ไล่ตรวจทุกเงื่อนไขตั้งแต่ total_cases ต้องเท่ากับ 40, recall_at_5, faithfulness, schema_pass_rate, trace_coverage, p95_ms, pii_leaks และวนตรวจ slice_floors ครบทั้ง 4 กลุ่ม ถ้าข้อไหนไม่ผ่านก็ต่อข้อความเข้าลิสต์ blockers\n\nขั้นที่สอง เราส่งชุดตัวเลขหลังซ่อมระบบจาก D170 และ D171 เข้าไป ผลคือ blockers ว่างเปล่า ได้คำตัดสิน SHIP_TO_B44 สวยงามเลย\n\nขั้นที่สาม ลองทดสอบกรณีที่ระบบมีปัญหา โดยเพิ่ม p95_ms เป็น 4,100 และลด attack เหลือ 0.75 ตัวตรวจจะตีกลับเป็น BLOCK_AND_FIX พร้อมชี้ blocker ทั้ง 2 ข้อให้ทันที อย่าลืมนะครับว่าห้ามใช้คะแนนเฉลี่ยรวมมาตัดสินแทนราย slice เด็ดขาด กดเดินตัวอย่างครบแล้วไปลุยแบบฝึกหัด Milestone 4 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอเดินตัวอย่าง Milestone 4 Gate",
+        "prompt": "กดเดินตัวอย่างทั้ง 3 ขั้นเพื่อดูการทำงานของ check_milestone4 ทั้งกรณีผ่านและกรณีติด Blocker แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง Milestone 4 Eval Report",
+      "src": "/audio/d172/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชัดเจน ไล่สเปกของ EvalSnapshot, evaluate_milestone4_gates และ render_milestone4_markdown ให้ทำตามได้ครบทุก assertion",
+      "script": "ถึงเวลาสร้าง src/milestone4_eval_report.py เพื่อปิด Milestone 4 แล้วครับ มาดู 3 จุดที่ต้องเติมกัน\n\nหนึ่ง ใน EvalSnapshot เติม field_validator ให้ slice_scores เช็กว่ามีครบทั้ง 4 slices (thai_faq, code_switch, unanswerable, attack) และคะแนนอยู่ระหว่าง 0.0 ถึง 1.0\n\nสอง เขียน evaluate_milestone4_gates ตรวจทุกเกณฑ์เทียบ QualityGateThresholds ทั้ง total_cases, recall_at_5, faithfulness, schema_pass_rate, trace_coverage, p95_ms, pii_leaks และ slice_floors สะสมข้อความลง blockers แล้วคืน Milestone4Report ที่มี verdict เป็น SHIP_TO_B44 หรือ BLOCK_AND_FIX\n\nสาม เขียน render_milestone4_markdown คืน Markdown ที่มีหัวข้อ # Milestone 4 Eval Report, verdict, ตาราง KPI, ตาราง 4 slices และ ## Blockers (- None เมื่อผ่านหมด) ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "ttsText": "ถึงเวลาสร้าง src slash milestone4_eval_report dot py เพื่อปิด Milestone 4 แล้วครับ มาดู 3 จุดที่ต้องเติมกัน\n\nหนึ่ง ใน EvalSnapshot เติม field_validator ให้ slice_scores เช็กว่ามีครบทั้ง 4 slices ได้แก่ thai_faq, code_switch, unanswerable, attack และคะแนนอยู่ระหว่างศูนย์ถึงหนึ่ง\n\nสอง เขียน evaluate_milestone4_gates ตรวจทุกเกณฑ์เทียบ QualityGateThresholds ทั้ง total_cases, recall_at_5, faithfulness, schema_pass_rate, trace_coverage, p95_ms, pii_leaks และ slice_floors สะสมข้อความลง blockers แล้วคืน Milestone4Report ที่มี verdict เป็น SHIP_TO_B44 หรือ BLOCK_AND_FIX\n\nสาม เขียน render_milestone4_markdown คืน Markdown ที่มีหัวข้อ Milestone 4 Eval Report, verdict, ตาราง KPI, ตาราง 4 slices และ Blockers โดยใส่ None เมื่อผ่านหมด ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียน src/milestone4_eval_report.py",
+        "prompt": "ลงมือเติม validator, evaluate_milestone4_gates และ render_milestone4_markdown แล้วรัน pytest ทั้งชุดของ B43 ให้ผ่านได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d172/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเตือนจุดอันตรายก่อนปล่อยผ่าน Quality Gate เน้นเรื่อง Hard Blocker ของ PDPA และการใช้ตัวเลขจริงในเอกสาร",
+      "script": "สุดยอดมากครับ ผ่านเทสต์ของ Milestone 4 ไปได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่ห้ามทำตอนออก Release Gate นะครับ\n\nข้อแรก คือปล่อยผ่านเพราะดูแค่คะแนนเฉลี่ยรวม 0.87 โดยไม่เช็ก slice_floors จนมองไม่เห็นว่ากลุ่ม attack ได้แค่ 0.62 เปิดรูรั่วความปลอดภัยเต็ม ๆ\n\nข้อที่สอง คือแยก Eval Gate ออกจาก Telemetry Gate รีบ deploy ทั้งที่ trace_coverage ยังไม่ถึง 100 เปอร์เซ็นต์ หรือ P95 ทะลุ 5 วินาทีไปแล้ว\n\nข้อที่สาม คือพิมพ์ตัวเลขผลประเมินลง README ด้วยมือ พอแก้โค้ดแล้วลืมอัปเดต ทำให้ตัวเลขบนหน้า GitHub ไม่ตรงกับผลรันล่าสุดของ CI ต้องให้สคริปต์เรนเดอร์ Markdown สร้างจาก JSON ผลรันจริงเสมอ\n\nและข้อที่สี่ คือใจอ่อนกับ pii_leaks แค่ 1 เคสเพราะกลัวไม่ทันเดดไลน์ จำไว้เลยว่าเรื่อง PDPA รั่วแม้แต่ครั้งเดียวต้องเป็น Hard Blocker สอบตกทันทีครับ",
+      "ttsText": "สุดยอดมากครับ ผ่านเทสต์ของ Milestone 4 ไปได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่ห้ามทำตอนออก Release Gate นะครับ\n\nข้อแรก คือปล่อยผ่านเพราะดูแค่คะแนนเฉลี่ยรวม 0.87 โดยไม่เช็ก slice_floors จนมองไม่เห็นว่ากลุ่ม attack ได้แค่ 0.62 เปิดรูรั่วความปลอดภัยเต็ม ๆ\n\nข้อที่สอง คือแยก Eval Gate ออกจาก Telemetry Gate รีบ deploy ทั้งที่ trace_coverage ยังไม่ถึง 100 เปอร์เซ็นต์ หรือ P95 ทะลุ 5 วินาทีไปแล้ว\n\nข้อที่สาม คือพิมพ์ตัวเลขผลประเมินลง README ด้วยมือ พอแก้โค้ดแล้วลืมอัปเดต ทำให้ตัวเลขบนหน้า GitHub ไม่ตรงกับผลรันล่าสุดของ CI ต้องให้สคริปต์เรนเดอร์ Markdown สร้างจาก JSON ผลรันจริงเสมอ\n\nและข้อที่สี่ คือใจอ่อนกับ pii_leaks แค่ 1 เคสเพราะกลัวไม่ทันเดดไลน์ จำไว้เลยว่าเรื่อง PDPA รั่วแม้แต่ครั้งเดียวต้องเป็น Hard Blocker สอบตกทันทีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d172/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนน้องทบทวนความเข้าใจปิดท้าย Block B43 ด้วยควิซ 4 ข้อ",
+      "script": "มาถึง Micro-Quiz 4 ข้อสุดท้ายของ Block B43 แล้วครับ คำถามจะเช็กทั้งการตัดสินใจของ Gate เมื่อคะแนน attack ตก, เหตุผลที่ต้องบังคับ total_cases 40 และ trace_coverage 1.00, ประโยชน์ของการสร้าง Markdown จากโค้ด และก้าวถัดไปใน Block B44\n\nลองตอบให้ครบทั้ง 4 ข้อ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้าย Milestone 4 ครับ",
+      "ttsText": "มาถึง Micro-Quiz 4 ข้อสุดท้ายของ Block B43 แล้วครับ คำถามจะเช็กทั้งการตัดสินใจของ Gate เมื่อคะแนน attack ตก, เหตุผลที่ต้องบังคับ total_cases 40 และ trace_coverage 1.00, ประโยชน์ของการสร้าง Markdown จากโค้ด และก้าวถัดไปใน Block B44\n\nลองตอบให้ครบทั้ง 4 ข้อ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้าย Milestone 4 ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง Milestone 4 Quality Gates และแผนก้าวต่อไปสู่ B44 เสร็จแล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป Milestone 4 & ก้าวต่อไป B44",
+      "src": "/audio/d172/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจอย่างยิ่งกับการจบ Block B43 และ Milestone 4 แล้วส่งพลังใจให้พร้อมลุย Block B44",
+      "script": "ขอแสดงความยินดีด้วยครับ คุณปิด Milestone 4 และจบ Block B43 อย่างสมบูรณ์แล้ว! ขอสรุปความสำเร็จตลอด 4 วันที่ผ่านมาไว้สั้น ๆ นะครับ\n\nหนึ่ง คุณรวม Golden Dataset 40 เคส, Ragas/Promptfoo และ Langfuse Telemetry เข้าเป็น Quality Gate เดียวได้แล้ว\nสอง ระบบของคุณบังคับผ่านพร้อมกันทั้งคะแนนรวม, Slice Floors ทั้ง 4 กลุ่ม และ Telemetry SLA โดยไม่ยอมให้ค่าเฉลี่ยมากลบจุดอ่อนด้านความปลอดภัย\nสาม คุณมีฟังก์ชันระบุ blockers ที่แม่นยำและสร้าง Markdown Eval Report เป็น Single Source of Truth สำหรับ CI และ README\n\nพอได้คำตัดสิน SHIP_TO_B44 แล้ว ใน Block B44 วันพรุ่งนี้เป็นต้นไป เราจะนำระบบที่ผ่านการพิสูจน์แล้วนี้ไปห่อเกราะ Production ทั้ง PDPA Middleware, FastAPI SSE, Docker และ Deploy ขึ้น Staging พร้อม Red-Team Pass กันครับ พักหายใจให้เต็มที่แล้วไปลุยต่อใน Day 173 นะครับ!",
+      "ttsText": "ขอแสดงความยินดีด้วยครับ คุณปิด Milestone 4 และจบ Block B43 อย่างสมบูรณ์แล้ว! ขอสรุปความสำเร็จตลอด 4 วันที่ผ่านมาไว้สั้น ๆ นะครับ\n\nหนึ่ง คุณรวม Golden Dataset 40 เคส, Ragas กับ Promptfoo และ Langfuse Telemetry เข้าเป็น Quality Gate เดียวได้แล้ว\nสอง ระบบของคุณบังคับผ่านพร้อมกันทั้งคะแนนรวม, Slice Floors ทั้ง 4 กลุ่ม และ Telemetry SLA โดยไม่ยอมให้ค่าเฉลี่ยมากลบจุดอ่อนด้านความปลอดภัย\nสาม คุณมีฟังก์ชันระบุ blockers ที่แม่นยำและสร้าง Markdown Eval Report เป็น Single Source of Truth สำหรับ CI และ README\n\nพอได้คำตัดสิน SHIP_TO_B44 แล้ว ใน Block B44 วันพรุ่งนี้เป็นต้นไป เราจะนำระบบที่ผ่านการพิสูจน์แล้วนี้ไปห่อเกราะ Production ทั้ง PDPA Middleware, FastAPI SSE, Docker และ Deploy ขึ้น Staging พร้อม Red-Team Pass กันครับ พักหายใจให้เต็มที่แล้วไปลุยต่อใน Day 173 นะครับ!"
+    }
+  ]
+}

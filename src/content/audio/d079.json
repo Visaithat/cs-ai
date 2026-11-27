@@ -1,0 +1,109 @@
+{
+  "lessonId": "d079",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Caching & Model Routing",
+      "src": "/audio/d079/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงตื่นเต้นและเห็นภาพปัญหาบิลค่า API ในงาน production ชวนน้องมองวิธีลดต้นทุนโดยไม่เสียคุณภาพ",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 79 นะครับ สองวันที่ผ่านมาเราทำระบบสกัดข้อมูลให้แม่นระดับ 99% แล้ว แต่วันนี้เราจะมาแก้โจทย์ใหญ่ของวิศวกร AI ฝั่งธุรกิจ นั่นคือทำอย่างไรให้เร็วและประหยัดค่า API ลงกว่า 60% โดยไม่เสียคุณภาพเลย\n\nหัวใจของวันนี้มี 3 เรื่องที่สอดประสานกันพอดีเป๊ะครับ เรื่องแรก คือการจัดวางบริบทใน Long Context ให้พ้นจุดบอด Lost in the Middle โดยเอากฎไว้บนสุดและเอกสารไว้ท้ายสุด\n\nเรื่องที่สอง การวางลำดับแบบนี้ทำให้เราทำ Prompt Caching ให้ Hit ได้จริงด้วย Immutable Static Prefix ลดค่า input token ลง 50 ถึง 90% และลดเวลา TTFT ลงได้มาก แต่ถ้าเผลอใส่ timestamp ไว้บนสุดแค่บรรทัดเดียว cache จะ miss 100% ทันที\n\nและเรื่องที่สาม เราใช้ Model Routing ให้โมเดลเล็กเร็วถูกจัดการเคสง่าย 80% แล้วค่อย escalate เคสยากหรือความมั่นใจต่ำ 20% ไปโมเดลใหญ่ พร้อมคอยเฝ้า cache_hit_rate และ escalation_rate บน production ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 79 นะครับ สองวันที่ผ่านมาเราทำระบบสกัดข้อมูลให้แม่นระดับ 99 เปอร์เซ็นต์ แล้ว แต่วันนี้เราจะมาแก้โจทย์ใหญ่ของวิศวกร AI ฝั่งธุรกิจ นั่นคือทำอย่างไรให้เร็วและประหยัดค่า API ลงกว่า 60 เปอร์เซ็นต์ โดยไม่เสียคุณภาพเลย\n\nหัวใจของวันนี้มี 3 เรื่องที่สอดประสานกันพอดีเป๊ะครับ เรื่องแรก คือการจัดวางบริบทใน Long Context ให้พ้นจุดบอด Lost in the Middle โดยเอากฎไว้บนสุดและเอกสารไว้ท้ายสุด\n\nเรื่องที่สอง การวางลำดับแบบนี้ทำให้เราทำ Prompt Caching ให้ Hit ได้จริงด้วย Immutable Static Prefix ลดค่า input token ลง 50 ถึง 90 เปอร์เซ็นต์ และลดเวลา TTFT ลงได้มาก แต่ถ้าเผลอใส่ timestamp ไว้บนสุดแค่บรรทัดเดียว cache จะ miss 100 เปอร์เซ็นต์ ทันที\n\nและเรื่องที่สาม เราใช้ Model Routing ให้โมเดลเล็กเร็วถูกจัดการเคสง่าย 80 เปอร์เซ็นต์ แล้วค่อย escalate เคสยากหรือความมั่นใจต่ำ 20 เปอร์เซ็นต์ ไปโมเดลใหญ่ พร้อมคอยเฝ้า cache_hit_rate และ escalation_rate บน production ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d079/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง เน้นเชื่อมโยงความรู้เก่าจาก Day 65 เรื่อง KV Cache และ Day 39 เรื่อง Expected Value",
+      "script": "มาดูเป้าหมายของ Day 79 ทั้ง 3 ข้อนะครับ\n\nหนึ่ง อธิบายและป้องกันปรากฏการณ์ Lost in the Middle เวลาต้องส่งเอกสารยาวให้ LLM\nสอง ออกแบบโครงสร้าง prompt แบบ Immutable Static Prefix First แล้วตามด้วย Dynamic Query Last เพื่อให้ Prompt Caching hit สูงและลด TTFT\nสาม สร้าง Tiered Model Router แบบ Small 80% ต่อ Frontier 20% พร้อมคำนวณต้นทุนผสมแบบ Expected Value จาก Day 39 เพื่อลดบิล API กว่า 60%\n\nวันนี้เราก็ทดสอบตัวจำลอง prefix cache และ router บนเครื่องด้วย mock client และ pytest ได้ 100% เหมือนเดิมครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 79 ทั้ง 3 ข้อนะครับ\n\nหนึ่ง อธิบายและป้องกันปรากฏการณ์ Lost in the Middle เวลาต้องส่งเอกสารยาวให้ LLM\nสอง ออกแบบโครงสร้าง prompt แบบ Immutable Static Prefix First แล้วตามด้วย Dynamic Query Last เพื่อให้ Prompt Caching hit สูงและลด TTFT\nสาม สร้าง Tiered Model Router แบบ Small 80 เปอร์เซ็นต์ ต่อ Frontier 20 เปอร์เซ็นต์ พร้อมคำนวณต้นทุนผสมแบบ Expected Value จาก Day 39 เพื่อลดบิล API กว่า 60 เปอร์เซ็นต์\n\nวันนี้เราก็ทดสอบตัวจำลอง prefix cache และ router บนเครื่องด้วย mock client และ pytest ได้ 100 เปอร์เซ็นต์ เหมือนเดิมครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d079/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาเตรียมโฟลเดอร์ ai-day79 และเกริ่นถึงมาตรฐาน Caching ของผู้ให้บริการใหญ่",
+      "script": "เตรียมโฟลเดอร์โปรเจกต์ด้วย uv init ai-day79 แล้วเข้าไปในโฟลเดอร์ จากนั้นสั่ง uv add pydantic และ uv add --dev pytest ruff แล้วรันเช็กเวอร์ชันตามหน้าจอได้เลยครับ\n\nหลักการ Static Prefix First ที่เราจะสร้างวันนี้ใช้ได้เหมือนกันหมดทั้งกับ OpenAI ที่ทำ automatic prefix caching เมื่อเกิน 1024 tokens, Anthropic ที่ใช้ cache_control ephemeral และ Gemini Context Caching เลยนะ เสร็จแล้วกดไปต่อกันครับ",
+      "ttsText": "เตรียมโฟลเดอร์โปรเจกต์ด้วย uv init ai-day79 แล้วเข้าไปในโฟลเดอร์ จากนั้นสั่ง uv add pydantic และ uv add dash dash dev pytest ruff แล้วรันเช็กเวอร์ชันตามหน้าจอได้เลยครับ\n\nหลักการ Static Prefix First ที่เราจะสร้างวันนี้ใช้ได้เหมือนกันหมดทั้งกับ OpenAI ที่ทำ automatic prefix caching เมื่อเกิน 1024 tokens, Anthropic ที่ใช้ cache_control ephemeral และ Gemini Context Caching เลยนะ เสร็จแล้วกดไปต่อกันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ ai-day79",
+        "prompt": "รัน uv init ai-day79 และติดตั้ง pydantic, pytest, ruff ให้เรียบร้อยก่อนไปดูแผนภาพครับ",
+        "continueLabel": "เตรียมโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Cache & 80/20 Router",
+      "src": "/audio/d079/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเปรียบเทียบภาพการใช้โมเดลใหญ่ทุกรอบกับการจัด Static Prefix บวก Router",
+      "script": "ลองกดสลับเทียบในแผนภาพ Prompt Caching กับ Model Routing บนหน้าจอดูนะครับ\n\nฝั่งหนึ่งคือการยิง Frontier Model แบบไม่แคชทุกคำขอ ซึ่งทั้งช้าและแพง ส่วนอีกฝั่งหนึ่ง เราเอาคู่มือและกฎคงที่มาทำเป็น Static Prefix เพื่อใช้ KV Cache ซ้ำ แล้วปล่อยให้ตัว Router ส่งเคสง่าย 80% ไปโมเดลเล็ก ส่วนอีก 20% ที่ซับซ้อนค่อยส่งต่อโมเดลใหญ่ จะเห็นตัวเลขต้นทุนที่ประหยัดได้ต่างกันชัดเจนมากเลยครับ",
+      "ttsText": "ลองกดสลับเทียบในแผนภาพ Prompt Caching กับ Model Routing บนหน้าจอดูนะครับ\n\nฝั่งหนึ่งคือการยิง Frontier Model แบบไม่แคชทุกคำขอ ซึ่งทั้งช้าและแพง ส่วนอีกฝั่งหนึ่ง เราเอาคู่มือและกฎคงที่มาทำเป็น Static Prefix เพื่อใช้ KV Cache ซ้ำ แล้วปล่อยให้ตัว Router ส่งเคสง่าย 80 เปอร์เซ็นต์ ไปโมเดลเล็ก ส่วนอีก 20 เปอร์เซ็นต์ ที่ซับซ้อนค่อยส่งต่อโมเดลใหญ่ จะเห็นตัวเลขต้นทุนที่ประหยัดได้ต่างกันชัดเจนมากเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d079/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM เล่าแนวคิดเปรียบเทียบสนุก ชัดเจน ทั้งเรื่องอ่านรายงาน 50 หน้า แม่พิมพ์ใบปลิว และห้องฉุกเฉิน",
+      "script": "มาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 79 กันแบบเห็นภาพชัด ๆ นะครับ\n\nข้อแรก Lost in the Middle ใน Long Context ถึงโมเดลจะรับได้เป็นแสน token แต่ความจำมันเป็นรูปตัวยูครับ เหมือนคุณอ่านรายงาน 50 หน้าก่อนเข้าประชุม 5 นาที คุณจะจำหน้าแรกกับหน้าสุดท้ายได้แม่น แต่รายละเอียดหน้า 27 มักตกหล่น แถมทุก token ที่ใส่เข้าไปยังกินเวลา Prefill แบบ O(n²) ด้วย ดังนั้นต้องตัดขยะออก วางกฎหลักกับตัวอย่าง few-shot ไว้ต้น prompt แล้ววางเอกสารเป้าหมายไว้ท้ายสุด\n\nข้อที่สอง การวางกฎไว้บนสุดและข้อมูลเปลี่ยนตามคำขอไว้ท้ายสุด ยังตรงกับกฎเหล็กของ Prompt Caching ด้วย นั่นคือ Immutable Static Prefix First ผู้ให้บริการจะเก็บ KV Cache ของส่วนหัวที่ตรงกันเป๊ะไว้ให้ใช้ซ้ำ ลดค่า input token 50 ถึง 90% และลด TTFT แต่กับดักอันดับหนึ่งคือ Prefix Cache Busting แค่คุณเผลอใส่ timestamp หรือ request_id ไว้บรรทัดแรกของ system message เหมือนพิมพ์ใบปลิวหมื่นแผ่นแต่เปลี่ยนชื่อผู้รับไว้บรรทัดแรกสุด แม่พิมพ์เปลี่ยนทุกแผ่นทำให้ Cache Miss 100% เลยครับ ต้องย้ายของ dynamic ทั้งหมดไปไว้ใน user message ท้ายสุดเสมอ\n\nข้อที่สาม Model Routing แบบ Small 80% กับ Frontier 20% เหมือนระบบคัดกรองห้องฉุกเฉินครับ พยาบาลด่านแรกคือโมเดลเล็กที่ถูกกว่า 10 ถึง 20 เท่า จัดการเคสง่าย 80% แล้วส่งต่อแพทย์เฉพาะทางคือ Frontier เฉพาะเมื่อ Pre-route เจอเอกสารยาวเกิน 2000 ตัวอักษร หรือ Post-route เจอ confidence ต่ำกว่า 0.80 หรือเกิด ValidationError เช่น ต้นทุน small 0.001 ดอลลาร์ กับ frontier 0.015 ดอลลาร์ สูตร Expected Value 80/20 เหลือเฉลี่ยแค่ 0.0038 ดอลลาร์ ประหยัดไปเกือบ 75% เลยครับ",
+      "ttsText": "มาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 79 กันแบบเห็นภาพชัด ๆ นะครับ\n\nข้อแรก Lost in the Middle ใน Long Context ถึงโมเดลจะรับได้เป็นแสน token แต่ความจำมันเป็นรูปตัวยูครับ เหมือนคุณอ่านรายงาน 50 หน้าก่อนเข้าประชุม 5 นาที คุณจะจำหน้าแรกกับหน้าสุดท้ายได้แม่น แต่รายละเอียดหน้า 27 มักตกหล่น แถมทุก token ที่ใส่เข้าไปยังกินเวลา Prefill แบบ โอ เอ็น กำลังสอง ด้วย ดังนั้นต้องตัดขยะออก วางกฎหลักกับตัวอย่าง few-shot ไว้ต้น prompt แล้ววางเอกสารเป้าหมายไว้ท้ายสุด\n\nข้อที่สอง การวางกฎไว้บนสุดและข้อมูลเปลี่ยนตามคำขอไว้ท้ายสุด ยังตรงกับกฎเหล็กของ Prompt Caching ด้วย นั่นคือ Immutable Static Prefix First ผู้ให้บริการจะเก็บ KV Cache ของส่วนหัวที่ตรงกันเป๊ะไว้ให้ใช้ซ้ำ ลดค่า input token 50 ถึง 90 เปอร์เซ็นต์ และลด TTFT แต่กับดักอันดับหนึ่งคือ Prefix Cache Busting แค่คุณเผลอใส่ timestamp หรือ request_id ไว้บรรทัดแรกของ system message เหมือนพิมพ์ใบปลิวหมื่นแผ่นแต่เปลี่ยนชื่อผู้รับไว้บรรทัดแรกสุด แม่พิมพ์เปลี่ยนทุกแผ่นทำให้ Cache Miss 100 เปอร์เซ็นต์ เลยครับ ต้องย้ายของ dynamic ทั้งหมดไปไว้ใน user message ท้ายสุดเสมอ\n\nข้อที่สาม Model Routing แบบ Small 80 เปอร์เซ็นต์ กับ Frontier 20 เปอร์เซ็นต์ เหมือนระบบคัดกรองห้องฉุกเฉินครับ พยาบาลด่านแรกคือโมเดลเล็กที่ถูกกว่า 10 ถึง 20 เท่า จัดการเคสง่าย 80 เปอร์เซ็นต์ แล้วส่งต่อแพทย์เฉพาะทางคือ Frontier เฉพาะเมื่อ Pre-route เจอเอกสารยาวเกิน 2000 ตัวอักษร หรือ Post-route เจอ confidence ต่ำกว่า 0.80 หรือเกิด ValidationError เช่น ต้นทุน small 0.001 ดอลลาร์ กับ frontier 0.015 ดอลลาร์ สูตร Expected Value แบบ 80 ต่อ 20 เหลือเฉลี่ยแค่ 0.0038 ดอลลาร์ ประหยัดไปเกือบ 75 เปอร์เซ็นต์ เลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — Hash & Cost Estimator",
+      "src": "/audio/d079/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นตอนโชว์ผลลัพธ์ hash ที่ตรงกันเป๊ะและตัวเลขประหยัดงบจาก 15 ดอลลาร์เหลือ 2.18 ดอลลาร์",
+      "script": "มาดูตัวอย่าง worked_day79.py กันครับ วันนี้จำลองระบบรับงาน 1,000 คำขอต่อวันใน 3 ขั้นตอน\n\nขั้นแรก เราสร้าง build_cacheable_messages โดยเอาคู่มือคงที่ไว้ใน system message แล้วเอา request_id กับ timestamp ไปไว้ใน user message จากนั้นลองเอา SHA-256 มาแฮชข้อความ system ของ 2 คำขอต่างเวลากัน จะเห็น prefix_hash ออกมาเป็นค่าเดียวกันเป๊ะ ยืนยันว่า Cache Hit 100%\n\nขั้นที่สอง เราเขียน route_extraction ที่เช็กความยาวเอกสารก่อน ถ้าเกิน 2,000 ตัวอักษรส่งตรงไป frontier_fn เลย ไม่ต้องเสียเวลาลอง small_fn แต่ถ้าสั้นกว่าก็ลอง small_fn ก่อน แล้วค่อย escalate เมื่อโยน ValueError หรือ confidence ต่ำกว่า 0.80\n\nขั้นที่สาม เราคำนวณต้นทุนด้วย estimate_cost เทียบระหว่างยิง Frontier ล้วน 1,000 ครั้งที่ 15 ดอลลาร์ กับ 80/20 Routing บวก Cache Hit 85% เหลือแค่ 2.18 ดอลลาร์ ประหยัดไป 85.4% จุดสังเกตคือแม้เคส escalate จะจ่ายทั้งค่า small และ frontier รวมกัน แต่เพราะ small ถูกกว่ามาก ต้นทุนรวมก็ยังลดลงมหาศาลครับ พักดูโค้ดตรงนี้ก่อนนะ พร้อมแล้วกดไปต่อได้เลยครับ",
+      "ttsText": "มาดูตัวอย่าง worked_day79.py กันครับ วันนี้จำลองระบบรับงาน 1000 คำขอต่อวันใน 3 ขั้นตอน\n\nขั้นแรก เราสร้าง build_cacheable_messages โดยเอาคู่มือคงที่ไว้ใน system message แล้วเอา request_id กับ timestamp ไปไว้ใน user message จากนั้นลองเอา SHA-256 มาแฮชข้อความ system ของ 2 คำขอต่างเวลากัน จะเห็น prefix_hash ออกมาเป็นค่าเดียวกันเป๊ะ ยืนยันว่า Cache Hit 100 เปอร์เซ็นต์\n\nขั้นที่สอง เราเขียน route_extraction ที่เช็กความยาวเอกสารก่อน ถ้าเกิน 2000 ตัวอักษรส่งตรงไป frontier_fn เลย ไม่ต้องเสียเวลาลอง small_fn แต่ถ้าสั้นกว่าก็ลอง small_fn ก่อน แล้วค่อย escalate เมื่อโยน ValueError หรือ confidence ต่ำกว่า 0.80\n\nขั้นที่สาม เราคำนวณต้นทุนด้วย estimate_cost เทียบระหว่างยิง Frontier ล้วน 1000 ครั้งที่ 15 ดอลลาร์ กับ 80 ต่อ 20 Routing บวก Cache Hit 85 เปอร์เซ็นต์ เหลือแค่ 2.18 ดอลลาร์ ประหยัดไป 85.4 เปอร์เซ็นต์ จุดสังเกตคือแม้เคส escalate จะจ่ายทั้งค่า small และ frontier รวมกัน แต่เพราะ small ถูกกว่ามาก ต้นทุนรวมก็ยังลดลงมหาศาลครับ พักดูโค้ดตรงนี้ก่อนนะ พร้อมแล้วกดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอทบทวนตัวอย่าง Caching & Routing",
+        "prompt": "ลองไล่โค้ด worked_day79.py ทั้ง 3 ขั้นตอนและสังเกตวิธีคำนวณต้นทุนเมื่อมีการ escalate แล้วกดไปต่อครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — Cache Builder & Tiered Router",
+      "src": "/audio/d079/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชวนไล่เขียน 4 ฟังก์ชันใน exercise_day79.py ทีละตัวให้ครบตามสเปก",
+      "script": "ถึงเวลาลงมือเขียนใน exercise_day79.py แล้วครับ วันนี้มี 4 ฟังก์ชันให้ประกอบเข้าด้วยกันนะ\n\nหนึ่ง build_cacheable_messages เอา system_rules, rubric และ reference_docs มาต่อกันด้วยขึ้นบรรทัดใหม่ 2 ครั้งแล้วใส่ในข้อความ role system ข้อความเดียว ห้ามมี request_id, timestamp_iso หรือ user_query ปนเด็ดขาด แล้วค่อยเอาของ dynamic ทั้งหมดไปใส่ในข้อความ role user ท้ายสุด\n\nสอง check_prefix_cache_hit เช็กว่าทั้ง prev_messages และ curr_messages ไม่ว่าง ข้อความแรกเป็น role system ที่มี content ตรงกันทุกตัวอักษร และยาวอย่างน้อย min_prefix_chars\n\nสาม route_and_extract ทำ routing เหมือนในตัวอย่าง แต่คืน dict ที่มีคีย์ model_tier, escalated, reason และ result โดยใช้ reason ตามสเปกคือ long_context, small_error, low_confidence และ small_ok\n\nสี่ estimate_blended_cost_usd ตรวจสอบช่วงพารามิเตอร์ทั้งหมดให้ถูกต้องก่อนคำนวณแล้วปัดทศนิยม 4 ตำแหน่ง เสร็จแล้วรัน uv run pytest -q กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนใน exercise_day79.py แล้วครับ วันนี้มี 4 ฟังก์ชันให้ประกอบเข้าด้วยกันนะ\n\nหนึ่ง build_cacheable_messages เอา system_rules, rubric และ reference_docs มาต่อกันด้วยขึ้นบรรทัดใหม่ 2 ครั้งแล้วใส่ในข้อความ role system ข้อความเดียว ห้ามมี request_id, timestamp_iso หรือ user_query ปนเด็ดขาด แล้วค่อยเอาของ dynamic ทั้งหมดไปใส่ในข้อความ role user ท้ายสุด\n\nสอง check_prefix_cache_hit เช็กว่าทั้ง prev_messages และ curr_messages ไม่ว่าง ข้อความแรกเป็น role system ที่มี content ตรงกันทุกตัวอักษร และยาวอย่างน้อย min_prefix_chars\n\nสาม route_and_extract ทำ routing เหมือนในตัวอย่าง แต่คืน dict ที่มีคีย์ model_tier, escalated, reason และ result โดยใช้ reason ตามสเปกคือ long_context, small_error, low_confidence และ small_ok\n\nสี่ estimate_blended_cost_usd ตรวจสอบช่วงพารามิเตอร์ทั้งหมดให้ถูกต้องก่อนคำนวณแล้วปัดทศนิยม 4 ตำแหน่ง เสร็จแล้วรัน uv run pytest dash q กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียนโค้ด exercise_day79.py",
+        "prompt": "เขียนฟังก์ชันทั้ง 4 ตัวใน exercise_day79.py แล้วรัน test_day79.py ให้ผ่านครบทุกเคสครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d079/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเองปนเตือนภัย ชี้ให้เห็นจุดที่ทีมวิศวกรมักทำเงินรั่วไหลโดยไม่รู้ตัว",
+      "script": "สุดยอดครับที่ผ่านเทสต์มาได้ มาดู 4 ข้อผิดพลาดที่ทำให้ทีมเสียเงินค่า API ฟรี ๆ กันนะ\n\nข้อแรก ใส่ datetime.now() หรือ user_id ไว้บรรทัดแรกของ System Prompt เปิด Prompt Caching แล้วแต่ยอด cached_tokens เป็น 0 ตลอดเวลา\nข้อที่สอง วางคำสั่งสำคัญหรือเอกสารสำคัญไว้ตรงกลางบริบทยาว 30k tokens ทำให้เจอ Lost in the Middle จนโมเดลตอบพลาดทั้งที่เขียนบอกไว้แล้ว\nข้อที่สาม ยิง Frontier Model ใส่ทุก request เพื่อกันพลาด ทำให้บิลแพงกว่างบ 5 ถึง 10 เท่า ทั้งที่ 80% เป็นเคสหมู ๆ\nข้อที่สี่ ตั้ง confidence_threshold สูงเกินไปเช่น 0.99 โดยไม่ดู escalation_rate ผลคือ 95% ถูกส่งไป Frontier หมด แถมยังเสียค่าเรียกโมเดลเล็กนำร่องไปฟรี ๆ อีกครับ",
+      "ttsText": "สุดยอดครับที่ผ่านเทสต์มาได้ มาดู 4 ข้อผิดพลาดที่ทำให้ทีมเสียเงินค่า API ฟรี ๆ กันนะ\n\nข้อแรก ใส่ datetime.now() หรือ user_id ไว้บรรทัดแรกของ System Prompt เปิด Prompt Caching แล้วแต่ยอด cached_tokens เป็น 0 ตลอดเวลา\nข้อที่สอง วางคำสั่งสำคัญหรือเอกสารสำคัญไว้ตรงกลางบริบทยาว 30k tokens ทำให้เจอ Lost in the Middle จนโมเดลตอบพลาดทั้งที่เขียนบอกไว้แล้ว\nข้อที่สาม ยิง Frontier Model ใส่ทุก request เพื่อกันพลาด ทำให้บิลแพงกว่างบ 5 ถึง 10 เท่า ทั้งที่ 80 เปอร์เซ็นต์ เป็นเคสหมู ๆ\nข้อที่สี่ ตั้ง confidence_threshold สูงเกินไปเช่น 0.99 โดยไม่ดู escalation_rate ผลคือ 95 เปอร์เซ็นต์ ถูกส่งไป Frontier หมด แถมยังเสียค่าเรียกโมเดลเล็กนำร่องไปฟรี ๆ อีกครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d079/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทบทวนทั้ง Lost in the Middle, Cache Busting, Escalation และคำนวณต้นทุน",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 79 กันนะครับ ทั้งเรื่อง Lost in the Middle, ตัวการทำ Prompt Caching miss 100%, เงื่อนไขการ escalate และการคำนวณต้นทุน 80/20 ด้วย Expected Value ตอบครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 79 กันนะครับ ทั้งเรื่อง Lost in the Middle, ตัวการทำ Prompt Caching miss 100 เปอร์เซ็นต์, เงื่อนไขการ escalate และการคำนวณต้นทุน 80 ต่อ 20 ด้วย Expected Value ตอบครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอทำ Micro-Quiz 4 ข้อ (Day 79)",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง Long Context, Prompt Caching และ Model Routing ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 80",
+      "src": "/audio/d079/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี กระตือรือร้น สรุป 4 แก่นหลักของ Day 79 และชวนเตรียมพร้อมสำหรับ Review Day ใน Day 80",
+      "script": "ยินดีด้วยครับ คุณจบ Day 79 แล้ว ขอสรุป 4 แก่นสำคัญของวันนี้ไว้ใช้ออกแบบระบบ AI ระดับ production นะครับ\n\nหนึ่ง กัน Lost in the Middle ด้วยการตัดขยะออก วางกฎหลักไว้ต้น prompt และวางเอกสารเป้าหมายไว้ท้ายสุด\nสอง ทำ Prompt Caching ให้ hit จริงด้วย Immutable Static Prefix First ห้ามมี timestamp หรือ request_id ใน system message\nสาม ใช้ Tiered Model Routing แบบ Small 80% ต่อ Frontier 20% โดย escalate เฉพาะเคสยาว, confidence ต่ำ หรือ validate ไม่ผ่าน\nสี่ ติดตามทั้ง cache_hit_rate และ escalation_rate อยู่เสมอ\n\nพรุ่งนี้ Day 80 เป็นวันทบทวน Block B20 เราจะประกอบร่างความรู้ตั้งแต่ Day 77 ถึง Day 79 เป็นตัวสกัดใบแจ้งหนี้ไทยที่ผ่านเกณฑ์ 99%+ บนชุดจำลอง 100 เอกสารกันครับ แล้วเจอกันนะ",
+      "ttsText": "ยินดีด้วยครับ คุณจบ Day 79 แล้ว ขอสรุป 4 แก่นสำคัญของวันนี้ไว้ใช้ออกแบบระบบ AI ระดับ production นะครับ\n\nหนึ่ง กัน Lost in the Middle ด้วยการตัดขยะออก วางกฎหลักไว้ต้น prompt และวางเอกสารเป้าหมายไว้ท้ายสุด\nสอง ทำ Prompt Caching ให้ hit จริงด้วย Immutable Static Prefix First ห้ามมี timestamp หรือ request_id ใน system message\nสาม ใช้ Tiered Model Routing แบบ Small 80 เปอร์เซ็นต์ ต่อ Frontier 20 เปอร์เซ็นต์ โดย escalate เฉพาะเคสยาว, confidence ต่ำ หรือ validate ไม่ผ่าน\nสี่ ติดตามทั้ง cache_hit_rate และ escalation_rate อยู่เสมอ\n\nพรุ่งนี้ Day 80 เป็นวันทบทวน Block B20 เราจะประกอบร่างความรู้ตั้งแต่ Day 77 ถึง Day 79 เป็นตัวสกัดใบแจ้งหนี้ไทยที่ผ่านเกณฑ์ 99 เปอร์เซ็นต์ ขึ้นไป บนชุดจำลอง 100 เอกสารกันครับ แล้วเจอกันนะ"
+    }
+  ]
+}

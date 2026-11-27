@@ -1,0 +1,19 @@
+[project]
+name = "neural-path-d001"
+version = "0.1.0"
+description = "Day 1 exercise for Neural Path: type-safe AI payloads with Pydantic v2"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.7"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+# `solution/` holds the reference answer and its own copy of the tests
+testpaths = ["test_day1.py"]
+
+[tool.ruff]
+extend-exclude = ["solution"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

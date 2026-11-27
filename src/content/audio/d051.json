@@ -1,0 +1,109 @@
+{
+  "lessonId": "d051",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Cross-Validation & Tuning",
+      "src": "/audio/d051/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น ชวนคิดตามถึงปัญหาคะแนนแกว่งตาม random_state น้ำเสียงเป็นกันเองแต่แฝงความเฉียบคมแบบวิศวกรที่ใส่ใจความน่าเชื่อถือ",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 51 ของ Neural Path นะครับ เมื่อวานเราสร้าง Fast Thai Classifier เสร็จไปแล้ว แต่วันนี้เราจะมาแก้จุดอ่อนที่เมื่อวานทิ้งท้ายไว้ นั่นคือการวัดผลและจูนโมเดลโดยไม่พึ่งดวงครับ\n\nลองมอง Big Picture ดูนะ ถ้าเราแบ่ง Train กับ Test แค่ครั้งเดียวบนชุดข้อมูลหลักร้อยหรือหลักพันแถว คะแนนที่ได้มักจะแกว่งตาม random_state แค่เปลี่ยนเลข seed คะแนนอาจกระโดดขึ้นลงได้ตั้งหลายจุด จนเราเลือกโมเดลผิดตัวได้เลย\n\nทางออกระดับมืออาชีพคือล็อก Held-out Test Set ไว้ด้านนอกก่อน จากนั้นใช้ StratifiedKFold แบ่งชุด Train ออกเป็น 5 Folds ที่รักษาสัดส่วนคลาสเท่ากัน แล้วส่ง Pipeline ทั้งก้อนเข้าไปใน cross_validate หรือ GridSearchCV เพื่อจูนพารามิเตอร์อย่าง tfidf__ngram_range กับ clf__C โดยที่คำศัพท์และค่า IDF ไม่รั่วไหลข้าม fold เลย จากนั้นค่อยตรวจช่องว่างระหว่าง Train กับ Validation เพื่อจับสัญญาณ Overfitting ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 51 ของ Neural Path นะครับ เมื่อวานเราสร้าง Fast Thai Classifier เสร็จไปแล้ว แต่วันนี้เราจะมาแก้จุดอ่อนที่เมื่อวานทิ้งท้ายไว้ นั่นคือการวัดผลและจูนโมเดลโดยไม่พึ่งดวงครับ\n\nลองมอง Big Picture ดูนะ ถ้าเราแบ่ง Train กับ Test แค่ครั้งเดียวบนชุดข้อมูลหลักร้อยหรือหลักพันแถว คะแนนที่ได้มักจะแกว่งตาม random_state แค่เปลี่ยนเลข seed คะแนนอาจกระโดดขึ้นลงได้ตั้งหลายจุด จนเราเลือกโมเดลผิดตัวได้เลย\n\nทางออกระดับมืออาชีพคือล็อก Held-out Test Set ไว้ด้านนอกก่อน จากนั้นใช้ StratifiedKFold แบ่งชุด Train ออกเป็น 5 Folds ที่รักษาสัดส่วนคลาสเท่ากัน แล้วส่ง Pipeline ทั้งก้อนเข้าไปใน cross_validate หรือ GridSearchCV เพื่อจูนพารามิเตอร์อย่าง tfidf double underscore ngram_range กับ clf double underscore C โดยที่คำศัพท์และค่า IDF ไม่รั่วไหลข้าม fold เลย จากนั้นค่อยตรวจช่องว่างระหว่าง Train กับ Validation เพื่อจับสัญญาณ Overfitting ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d051/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้ออย่างเป็นระบบ และย้ำว่าทำงานบน CPU ได้เร็วในไม่กี่วินาที",
+      "script": "มาดูเป้าหมายของ Day 51 ทั้ง 3 ข้อกันครับ\n\nข้อแรก คือประเมินความเสถียรของโมเดลด้วย StratifiedKFold และ cross_validate พร้อมอ่านค่า mean บวกลบ std ของทั้งฝั่ง Train และ Validation เพื่อตรวจความแกว่ง\nข้อที่สอง คือรัน GridSearchCV หรือ RandomizedSearchCV ครอบ Pipeline ด้วยพารามิเตอร์แบบ double underscore เพื่อให้ TF-IDF ถูก fit ใหม่ภายในทุก fold กัน Data Leakage 100 เปอร์เซ็นต์\nและข้อที่สาม คือวินิจฉัย Underfitting, Overfitting และ Healthy Fit จากช่องว่าง train ลบ val แล้วค่อยนำ best_estimator_ ไปยืนยันบน Held-out Test Set เพียงครั้งเดียวครับ\n\nทั้งหมดนี้รันบน CPU ได้ในไม่กี่วินาทีโดยไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 51 ทั้ง 3 ข้อกันครับ\n\nข้อแรก คือประเมินความเสถียรของโมเดลด้วย StratifiedKFold และ cross_validate พร้อมอ่านค่า mean บวกลบ std ของทั้งฝั่ง Train และ Validation เพื่อตรวจความแกว่ง\nข้อที่สอง คือรัน GridSearchCV หรือ RandomizedSearchCV ครอบ Pipeline ด้วยพารามิเตอร์แบบ double underscore เพื่อให้ TF-IDF ถูก fit ใหม่ภายในทุก fold กัน Data Leakage 100 เปอร์เซ็นต์\nและข้อที่สาม คือวินิจฉัย Underfitting, Overfitting และ Healthy Fit จากช่องว่าง train ลบ val แล้วค่อยนำ best_estimator ไปยืนยันบน Held-out Test Set เพียงครั้งเดียวครับ\n\nทั้งหมดนี้รันบน CPU ได้ในไม่กี่วินาทีโดยไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d051/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งตั้งโปรเจกต์และการนำเข้า StratifiedKFold และ GridSearchCV",
+      "script": "มาเตรียมโปรเจกต์ Day 51 กันครับ สร้างโฟลเดอร์ใหม่ด้วย uv init ai-day51 แล้ว cd เข้าไป ติดตั้ง pythainlp, scikit-learn และ numpy ด้วย uv add รวมถึง pytest และ ruff ด้วย uv add --dev\n\nเสร็จแล้วรันคำสั่ง Python ทดสอบนำเข้า StratifiedKFold และ GridSearchCV เพื่อพิมพ์คำว่า CV Tools Ready! ออกมาครับ การรัน 5-Fold GridSearchCV บนข้อมูลข้อความวันนี้ใช้เวลาแค่ 1 ถึง 3 วินาทีบน CPU เท่านั้น เดี๋ยวพี่พักรอตรงนี้ให้ลองเช็กเครื่องก่อนนะครับ",
+      "ttsText": "มาเตรียมโปรเจกต์ Day 51 กันครับ สร้างโฟลเดอร์ใหม่ด้วย uv init ai-day51 แล้ว cd เข้าไป ติดตั้ง pythainlp, scikit-learn และ numpy ด้วย uv add รวมถึง pytest และ ruff ด้วย uv add dash dash dev\n\nเสร็จแล้วรันคำสั่ง Python ทดสอบนำเข้า StratifiedKFold และ GridSearchCV เพื่อพิมพ์คำว่า CV Tools Ready ออกมาครับ การรัน 5-Fold GridSearchCV บนข้อมูลข้อความวันนี้ใช้เวลาแค่ 1 ถึง 3 วินาทีบน CPU เท่านั้น เดี๋ยวพี่พักรอตรงนี้ให้ลองเช็กเครื่องก่อนนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ ai-day51",
+        "prompt": "ลองรันคำสั่งสร้างโปรเจกต์ ai-day51 และตรวจสอบว่าเห็นข้อความ CV Tools Ready! แล้วครับ",
+        "continueLabel": "เช็กเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — 5-Fold CV & Overfit Gap",
+      "src": "/audio/d051/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพ เหมือนกำลังชี้แผนภาพ 5 Folds และเส้นกราฟ Train vs Val ให้ผู้เรียนกดสลับดูอาการ Overfitting",
+      "script": "ลองมาดูแผนภาพ 5-Fold Stratified Cross-Validation และกราฟ Overfitting บนหน้าจอนี้กันก่อนครับ\n\nเวลาเรากดสลับดูแต่ละ Fold จะเห็นเลยว่าชุด Train ถูกแบ่งเป็น 5 ส่วนที่มีสัดส่วนแต่ละหมวดเท่ากันเป๊ะ ในแต่ละรอบระบบใช้ 4 ส่วนเทรน และอีก 1 ส่วนตรวจ วนจนครบทั้ง 5 รอบ\n\nและพอลองดูกราฟปรับค่า C กับ ngram_range จะเห็นชัดเจนเลยว่าพอปล่อยให้ C สูงเกินไป เส้น Train จะพุ่งไปแตะเกือบ 100 เปอร์เซ็นต์ แต่เส้น Validation กลับตกลงพร้อมช่องว่างที่ถ่างกว้าง นั่นแหละครับสัญญาณ Overfitting ที่เห็นได้ด้วยตาเปล่าเลย",
+      "ttsText": "ลองมาดูแผนภาพ 5-Fold Stratified Cross-Validation และกราฟ Overfitting บนหน้าจอนี้กันก่อนครับ\n\nเวลาเรากดสลับดูแต่ละ Fold จะเห็นเลยว่าชุด Train ถูกแบ่งเป็น 5 ส่วนที่มีสัดส่วนแต่ละหมวดเท่ากันเป๊ะ ในแต่ละรอบระบบใช้ 4 ส่วนเทรน และอีก 1 ส่วนตรวจ วนจนครบทั้ง 5 รอบ\n\nและพอลองดูกราฟปรับค่า C กับ ngram_range จะเห็นชัดเจนเลยว่าพอปล่อยให้ C สูงเกินไป เส้น Train จะพุ่งไปแตะเกือบ 100 เปอร์เซ็นต์ แต่เส้น Validation กลับตกลงพร้อมช่องว่างที่ถ่างกว้าง นั่นแหละครับสัญญาณ Overfitting ที่เห็นได้ด้วยตาเปล่าเลย"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d051/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายหลักสถิติและ Pipeline ให้ฟังง่าย เน้นเสียงเตือนภัยเรื่อง Data Leakage และเคล็ดลับจำความหมายของพารามิเตอร์ C",
+      "script": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 51 กันครับ เรื่องนี้เป็นหัวใจของการทดลอง ML ที่น่าเชื่อถือเลย\n\nข้อแรก Stratified K-Fold Cross-Validation ทำไมต้องแบ่ง 5 Folds แทนที่จะสุ่มแบ่งครั้งเดียว ก็เหมือนการชิมต้มยำหม้อใหญ่ 5 ช้อนจากคนละมุมหม้อครับ เราจะรู้ทั้งค่าเฉลี่ย mean และความแกว่ง std เช่น 0.88 ± 0.02 น่าไว้ใจกว่า 0.89 ± 0.11 เพราะเสถียรกว่า อย่าลืมเปิด shuffle=True หากข้อมูลไม่ได้เรียงตามเวลา และล็อก Held-out Test Set ไว้ด้านนอก CV เสมอครับ\n\nข้อที่สอง การใช้ GridSearchCV และ RandomizedSearchCV ครอบ Pipeline ข้อผิดพลาดยอดฮิตคือเรียก tfidf.fit_transform ก่อนส่งเข้า GridSearchCV ซึ่งทำให้ค่า IDF จาก validation fold รั่วเข้าไปเกิด Data Leakage ทันที วิธีที่ปลอดภัย 100% คือส่ง Pipeline ทั้งก้อนเข้าไปเลย แล้วอ้างชื่อพารามิเตอร์ด้วย double underscore เช่น tfidf__ngram_range หรือ clf__C เพื่อให้ TF-IDF ถูก fit ใหม่ในทุก fold อัตโนมัติ ส่วน RandomizedSearchCV ใช้ตอน grid กว้างมากเพื่อประหยัดเวลาครับ\n\nข้อที่สาม การอ่านช่องว่าง Train vs Val และค่า C ใน LogisticRegression จำง่าย ๆ ว่า C คือส่วนกลับของ regularization: C เล็กอย่าง 0.05 คือคุมเข้มกัน Overfit ส่วน C ใหญ่อย่าง 20 หรือ 100 คือปล่อยอิสระเสี่ยง Overfit เวลาดู cv_results_ ต้องเปิด return_train_score=True แล้วเทียบ mean_train_score กับ mean_test_score (ซึ่งคือ Validation fold score!) ถ้าต่ำคู่คือ Underfitting, Train พุ่งแต่ Val ทิ้งห่างคือ Overfitting, และสูงใกล้กันคือ Healthy Fit ครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 51 กันครับ เรื่องนี้เป็นหัวใจของการทดลอง ML ที่น่าเชื่อถือเลย\n\nข้อแรก Stratified K-Fold Cross-Validation ทำไมต้องแบ่ง 5 Folds แทนที่จะสุ่มแบ่งครั้งเดียว ก็เหมือนการชิมต้มยำหม้อใหญ่ 5 ช้อนจากคนละมุมหม้อครับ เราจะรู้ทั้งค่าเฉลี่ย mean และความแกว่ง std เช่น 0.88 บวกลบ 0.02 น่าไว้ใจกว่า 0.89 บวกลบ 0.11 เพราะเสถียรกว่า อย่าลืมเปิด shuffle เท่ากับ True หากข้อมูลไม่ได้เรียงตามเวลา และล็อก Held-out Test Set ไว้ด้านนอก CV เสมอครับ\n\nข้อที่สอง การใช้ GridSearchCV และ RandomizedSearchCV ครอบ Pipeline ข้อผิดพลาดยอดฮิตคือเรียก tfidf dot fit_transform ก่อนส่งเข้า GridSearchCV ซึ่งทำให้ค่า IDF จาก validation fold รั่วเข้าไปเกิด Data Leakage ทันที วิธีที่ปลอดภัย 100 เปอร์เซ็นต์ คือส่ง Pipeline ทั้งก้อนเข้าไปเลย แล้วอ้างชื่อพารามิเตอร์ด้วย double underscore เช่น tfidf double underscore ngram_range หรือ clf double underscore C เพื่อให้ TF-IDF ถูก fit ใหม่ในทุก fold อัตโนมัติ ส่วน RandomizedSearchCV ใช้ตอน grid กว้างมากเพื่อประหยัดเวลาครับ\n\nข้อที่สาม การอ่านช่องว่าง Train vs Val และค่า C ใน LogisticRegression จำง่าย ๆ ว่า C คือส่วนกลับของ regularization คือ C เล็กอย่าง 0.05 คือคุมเข้มกัน Overfit ส่วน C ใหญ่อย่าง 20 หรือ 100 คือปล่อยอิสระเสี่ยง Overfit เวลาดู cv_results ต้องเปิด return_train_score เท่ากับ True แล้วเทียบ mean_train_score กับ mean_test_score ซึ่งก็คือ Validation fold score ถ้าต่ำคู่คือ Underfitting, Train พุ่งแต่ Val ทิ้งห่างคือ Overfitting, และสูงใกล้กันคือ Healthy Fit ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน",
+      "src": "/audio/d051/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตตัวเลขผลลัพธ์ทีละแถว เน้นตอนที่ C เท่ากับ 10 แล้ว Val ตกลง และเตือนเรื่อง PicklingError กับ local closure",
+      "script": "มาไล่ดูตัวอย่าง worked_day51.py กันครับ รอบนี้เรามีชุดทิกเก็ต 60 ใบ 3 หมวด ลองกดดูทีละสเต็ปเลยนะ\n\nขั้นแรก เราแยก Held-out Test Set 25 เปอร์เซ็นต์ล็อกไว้ก่อนเลย จากนั้นรัน cross_validate ด้วย 5-Fold StratifiedKFold พร้อม return_train_score=True บนชุด Train เท่านั้น ผลเบื้องต้นได้ Train 0.994 และ Val 0.911 บวกลบ 0.045 มี Overfit Gap อยู่ที่ 0.083\n\nขั้นที่สอง เราส่ง Pipeline เข้า GridSearchCV เพื่อไล่เทียบค่า C ตั้งแต่ 0.05 จนถึง 10.0 และ ngram_range แบบคำเดี่ยวกับคำคู่ พอส่อง cv_results_ จะเห็นภาพชัดมากครับ ที่ C=0.05 คะแนนต่ำทั้งคู่แต่ gap แคบ พอขยับมาที่ C=1.0 พร้อมคำคู่ ngram_range=(1, 2) ได้ Val สูงสุดถึง 0.933 และเสถียรดี แต่พอเพิ่ม C เป็น 10.0 ปุ๊บ Train แตะ 1.000 เต็ม แต่ Val กลับร่วงลงมาเหลือ 0.889 แถม std กว้างขึ้นและ gap พุ่งเป็น 0.111 นี่แหละ Overfitting คาตา!\n\nขั้นที่สาม เราหยิบ search.best_estimator_ ไปวัดบน X_te ที่ล็อกไว้เพียงครั้งเดียว ได้ Macro-F1 ที่ 0.933 ตรงกับ CV เป๊ะ อ้อ ฝากข้อสังเกตไว้นิดครับ ถ้าจะใช้ n_jobs=-1 ใน GridSearchCV ต้องประกาศ tokenizer เป็น top-level function หรือ callable class นะ ไม่งั้นจะเจอ PicklingError ครับ เดี๋ยวพี่พักรอให้ลองดูตัวอย่างนี้ก่อนนะ",
+      "ttsText": "มาไล่ดูตัวอย่าง worked_day51.py กันครับ รอบนี้เรามีชุดทิกเก็ต 60 ใบ 3 หมวด ลองกดดูทีละสเต็ปเลยนะ\n\nขั้นแรก เราแยก Held-out Test Set 25 เปอร์เซ็นต์ล็อกไว้ก่อนเลย จากนั้นรัน cross_validate ด้วย 5-Fold StratifiedKFold พร้อม return_train_score เท่ากับ True บนชุด Train เท่านั้น ผลเบื้องต้นได้ Train 0.994 และ Val 0.911 บวกลบ 0.045 มี Overfit Gap อยู่ที่ 0.083\n\nขั้นที่สอง เราส่ง Pipeline เข้า GridSearchCV เพื่อไล่เทียบค่า C ตั้งแต่ 0.05 จนถึง 10.0 และ ngram_range แบบคำเดี่ยวกับคำคู่ พอส่อง cv_results จะเห็นภาพชัดมากครับ ที่ C เท่ากับ 0.05 คะแนนต่ำทั้งคู่แต่ gap แคบ พอขยับมาที่ C เท่ากับ 1.0 พร้อมคำคู่ ได้ Val สูงสุดถึง 0.933 และเสถียรดี แต่พอเพิ่ม C เป็น 10.0 ปุ๊บ Train แตะ 1.000 เต็ม แต่ Val กลับร่วงลงมาเหลือ 0.889 แถม std กว้างขึ้นและ gap พุ่งเป็น 0.111 นี่แหละ Overfitting คาตา!\n\nขั้นที่สาม เราหยิบ search dot best_estimator ไปวัดบน X_te ที่ล็อกไว้เพียงครั้งเดียว ได้ Macro-F1 ที่ 0.933 ตรงกับ CV เป๊ะ อ้อ ฝากข้อสังเกตไว้นิดครับ ถ้าจะใช้ n_jobs เท่ากับ ลบ 1 ใน GridSearchCV ต้องประกาศ tokenizer เป็น top-level function หรือ callable class นะ ไม่งั้นจะเจอ PicklingError ครับ เดี๋ยวพี่พักรอให้ลองดูตัวอย่างนี้ก่อนนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงสำรวจตัวอย่าง worked_day51.py",
+        "prompt": "ลองไล่ดูตารางผล GridSearchCV และสังเกตจุดที่ C=10.0 เริ่ม Overfit ก่อนไปลงมือเขียนโค้ดจริงครับ",
+        "continueLabel": "ดูตัวอย่างเสร็จแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียนโค้ดจริง",
+      "src": "/audio/d051/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ใจเย็น พูดชัดตอนบอกชื่อคีย์ทั้ง 6 ตัวที่ต้องคืนในแต่ละฟังก์ชันของ exercise_day51.py",
+      "script": "มาลงมือเขียนโค้ดใน exercise_day51.py กันครับ ในไฟล์เริ่มต้นพี่เตรียมคลาส ThaiTokenizer แบบ top-level กับ build_base_pipeline ไว้ให้แล้ว เพื่อให้ pickle ได้สะอาด คุณเหลือเติมอีก 3 ฟังก์ชันครับ\n\nฟังก์ชันแรก evaluate_cv_stability สร้าง StratifiedKFold แบบ shuffle=True แล้วเรียก cross_validate โดยเปิด return_train_score=True จากนั้นคืน dict 6 คีย์ คือ train_mean, train_std, val_mean, val_std, overfit_gap ที่มาจาก train_mean ลบ val_mean และ val_fold_scores ที่เป็น list ของ float ยาวเท่า n_splits จำไว้ว่า test_score ในผลลัพธ์คือคะแนนฝั่ง Validation นะครับ\n\nฟังก์ชันที่สอง tune_thai_classifier_cv ให้รัน GridSearchCV ครอบ base_pipeline ด้วย StratifiedKFold และตั้ง return_train_score=True, refit=True หลัง fit เสร็จให้ใช้ index จาก search.best_index_ เพื่อดึงค่าของชุดชนะเลิศจาก cv_results_ แล้วคืน dict 6 คีย์ ได้แก่ best_estimator, best_params, best_cv_mean, best_cv_std, best_train_mean และ overfit_gap\n\nฟังก์ชันที่สาม diagnose_overfitting เช็กตามลำดับเลยครับ ถ้า train และ val ต่ำกว่า underfit_threshold ทั้งคู่คืน underfitting ถ้าส่วนต่างมากกว่า gap_threshold คืน overfitting ไม่อย่างนั้นคืน healthy ครับ รัน pytest และ ruff check แล้วพี่รออยู่ตรงนี้นะ",
+      "ttsText": "มาลงมือเขียนโค้ดใน exercise_day51.py กันครับ ในไฟล์เริ่มต้นพี่เตรียมคลาส ThaiTokenizer แบบ top-level กับ build_base_pipeline ไว้ให้แล้ว เพื่อให้ pickle ได้สะอาด คุณเหลือเติมอีก 3 ฟังก์ชันครับ\n\nฟังก์ชันแรก evaluate_cv_stability สร้าง StratifiedKFold แบบ shuffle เท่ากับ True แล้วเรียก cross_validate โดยเปิด return_train_score เท่ากับ True จากนั้นคืน dict 6 คีย์ คือ train_mean, train_std, val_mean, val_std, overfit_gap ที่มาจาก train_mean ลบ val_mean และ val_fold_scores ที่เป็น list ของ float ยาวเท่า n_splits จำไว้ว่า test_score ในผลลัพธ์คือคะแนนฝั่ง Validation นะครับ\n\nฟังก์ชันที่สอง tune_thai_classifier_cv ให้รัน GridSearchCV ครอบ base_pipeline ด้วย StratifiedKFold และตั้ง return_train_score เท่ากับ True, refit เท่ากับ True หลัง fit เสร็จให้ใช้ index จาก search dot best_index เพื่อดึงค่าของชุดชนะเลิศจาก cv_results แล้วคืน dict 6 คีย์ ได้แก่ best_estimator, best_params, best_cv_mean, best_cv_std, best_train_mean และ overfit_gap\n\nฟังก์ชันที่สาม diagnose_overfitting เช็กตามลำดับเลยครับ ถ้า train และ val ต่ำกว่า underfit_threshold ทั้งคู่คืน underfitting ถ้าส่วนต่างมากกว่า gap_threshold คืน overfitting ไม่อย่างนั้นคืน healthy ครับ รัน pytest และ ruff check แล้วพี่รออยู่ตรงนี้้นะ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียนโค้ด exercise_day51.py",
+        "prompt": "ลงมือเขียนฟังก์ชัน CV, GridSearchCV และตัววินิจฉัย Overfitting ให้ผ่านทั้ง 3 เทสต์ใน test_day51.py ได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d051/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อนเริ่ม แล้วเล่า 4 ข้อผิดพลาดด้วยจังหวะชัดเจน เตือนสติแบบรุ่นพี่สาย ML ที่เจอมาบ่อย",
+      "script": "สุดยอดครับที่ทำแบบฝึกหัด Day 51 ผ่านแล้ว ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตตอนทำ Cross-Validation กับ GridSearchCV ที่เจอกันบ่อยจริง ๆ ครับ\n\nข้อแรก คือเรียก tfidf.fit_transform บน X_train ก่อนส่งเข้า GridSearchCV ซึ่งทำให้ค่า IDF และคำศัพท์ของ validation fold รั่วเข้าไปตั้งแต่ก่อนแบ่ง fold เกิด Data Leakage ทันที ต้องส่ง Pipeline ทั้งก้อนเข้า CV เท่านั้น\n\nข้อที่สอง คือเอาข้อมูลทั้งหมด X กับ y ไปรัน GridSearchCV โดยไม่กัน Held-out Test Set ไว้ก่อน ทำให้เราไม่รู้เลยว่าพารามิเตอร์ที่เลือกมาไม่ได้ฟลุคเข้ากับชุดข้อมูลนั้นเพราะ Selection Bias\n\nข้อที่สาม คือลืมใส่ shuffle=True ใน StratifiedKFold ทั้งที่ข้อมูลต้นทางเรียงตามหมวดหมู่หรือวันเวลา ทำให้บาง fold ได้แต่ข้อมูลกลุ่มเดียวกันจน std แกว่งผิดปกติ\n\nและข้อสี่ คือใส่ param_grid ใหญ่เกินไป เช่น 6 พารามิเตอร์อย่างละ 5 ค่า คูณกันออกมานี่เกือบแปดหมื่นรอบเทรน เครื่องค้างแน่นอน เริ่มจาก grid เล็ก ๆ หรือใช้ RandomizedSearchCV จะฉลาดกว่ามากครับ",
+      "ttsText": "สุดยอดครับที่ทำแบบฝึกหัด Day 51 ผ่านแล้ว ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตตอนทำ Cross-Validation กับ GridSearchCV ที่เจอกันบ่อยจริง ๆ ครับ\n\nข้อแรก คือเรียก tfidf dot fit_transform บน X_train ก่อนส่งเข้า GridSearchCV ซึ่งทำให้ค่า IDF และคำศัพท์ของ validation fold รั่วเข้าไปตั้งแต่ก่อนแบ่ง fold เกิด Data Leakage ทันที ต้องส่ง Pipeline ทั้งก้อนเข้า CV เท่านั้น\n\nข้อที่สอง คือเอาข้อมูลทั้งหมด X กับ y ไปรัน GridSearchCV โดยไม่กัน Held-out Test Set ไว้ก่อน ทำให้เราไม่รู้เลยว่าพารามิเตอร์ที่เลือกมาไม่ได้ฟลุคเข้ากับชุดข้อมูลนั้นเพราะ Selection Bias\n\nข้อที่สาม คือลืมใส่ shuffle เท่ากับ True ใน StratifiedKFold ทั้งที่ข้อมูลต้นทางเรียงตามหมวดหมู่หรือวันเวลา ทำให้บาง fold ได้แต่ข้อมูลกลุ่มเดียวกันจน std แกว่งผิดปกติ\n\nและข้อสี่ คือใส่ param_grid ใหญ่เกินไป เช่น 6 พารามิเตอร์อย่างละ 5 ค่า คูณกันออกมานี่เกือบแปดหมื่นรอบเทรน เครื่องค้างแน่นอน เริ่มจาก grid เล็ก ๆ หรือใช้ RandomizedSearchCV จะฉลาดกว่ามากครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d051/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวน 4 ประเด็นสำคัญของ CV และ Hyperparameter Tuning",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 51 กันครับ รอบนี้จะได้ทวนทั้งเรื่องเหตุผลที่ต้องเอา Pipeline เข้า GridSearchCV, การอ่านผล Train vs Val เพื่อจับ Overfitting, รูปแบบชื่อพารามิเตอร์แบบ double underscore และความหมายของค่า C ใน LogisticRegression\n\nค่อย ๆ อ่านและตอบให้ครบทั้ง 4 ข้อได้เลยครับ เดี๋ยวพี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายนะ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 51 กันครับ รอบนี้จะได้ทวนทั้งเรื่องเหตุผลที่ต้องเอา Pipeline เข้า GridSearchCV, การอ่านผล Train vs Val เพื่อจับ Overfitting, รูปแบบชื่อพารามิเตอร์แบบ double underscore และความหมายของค่า C ใน LogisticRegression\n\nค่อย ๆ อ่านและตอบให้ครบทั้ง 4 ข้อได้เลยครับ เดี๋ยวพี่รออยู่ตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อและอ่านคำอธิบายให้ครบ จากนั้นกดไปต่อเพื่อฟังสรุป Day 51 ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 52",
+      "src": "/audio/d051/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจในพัฒนาการของน้อง สรุปหลักคิดการวัดผลอย่างซื่อสัตย์แล้วชวนไปทบทวนพิสูจน์ A/B ใน Day 52",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 51 แล้ว! วันนี้คุณได้ทักษะการประเมินและจูนโมเดลแบบมืออาชีพที่ไม่พึ่งดวงแล้วนะครับ ขอสรุป 3 ข้อติดตัวไว้เลย\n\nหนึ่ง ใช้ StratifiedKFold 5 Folds วัดผลเป็น mean บวกลบ std แทนการเชื่อ split รอบเดียว เพื่อดูทั้งความแม่นยำและความเสถียร\nสอง ส่ง Pipeline ทั้งก้อนเข้า cross_validate หรือ GridSearchCV เสมอ เพื่อให้ TF-IDF ถูก fit ใหม่ในทุก fold และกัน Data Leakage ได้ 100 เปอร์เซ็นต์\nสาม เปิด return_train_score=True เพื่อตรวจช่องว่าง Train ลบ Val แยกแยะ Underfitting, Overfitting และ Healthy Fit ก่อนนำ best_estimator_ ไปทดสอบบน Held-out Test Set เพียงครั้งเดียว\n\nพรุ่งนี้ Day 52 จะเป็นวันทบทวน Block B13 ที่สนุกมาก เพราะเราจะใช้ 5-Fold Stratified CV ชุดเดียวกันเป๊ะมาทดลอง A/B พิสูจน์เป็นตัวเลขเลยว่า PyThaiNLP newmm ชนะ Whitespace Split ขาดลอยแค่ไหน กดบันทึกเรียนจบแล้วเจอกันพรุ่งนี้ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 51 แล้ว! วันนี้คุณได้ทักษะการประเมินและจูนโมเดลแบบมืออาชีพที่ไม่พึ่งดวงแล้วนะครับ ขอสรุป 3 ข้อติดตัวไว้เลย\n\nหนึ่ง ใช้ StratifiedKFold 5 Folds วัดผลเป็น mean บวกลบ std แทนการเชื่อ split รอบเดียว เพื่อดูทั้งความแม่นยำและความเสถียร\nสอง ส่ง Pipeline ทั้งก้อนเข้า cross_validate หรือ GridSearchCV เสมอ เพื่อให้ TF-IDF ถูก fit ใหม่ในทุก fold และกัน Data Leakage ได้ 100 เปอร์เซ็นต์\nสาม เปิด return_train_score เท่ากับ True เพื่อตรวจช่องว่าง Train ลบ Val แยกแยะ Underfitting, Overfitting และ Healthy Fit ก่อนนำ best_estimator ไปทดสอบบน Held-out Test Set เพียงครั้งเดียว\n\nพรุ่งนี้ Day 52 จะเป็นวันทบทวน Block B13 ที่สนุกมาก เพราะเราจะใช้ 5-Fold Stratified CV ชุดเดียวกันเป๊ะมาทดลอง A/B พิสูจน์เป็นตัวเลขเลยว่า PyThaiNLP newmm ชนะ Whitespace Split ขาดลอยแค่ไหน กดบันทึกเรียนจบแล้วเจอกันพรุ่งนี้ครับ!"
+    }
+  ]
+}

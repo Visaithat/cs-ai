@@ -1,0 +1,109 @@
+{
+  "lessonId": "d171",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Langfuse Trace & Telemetry",
+      "src": "/audio/d171/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงกระตือรือร้น เหมือนชวนน้องเปิดฝากระโปรงรถดูการทำงานภายในของระบบ AI ทั้งเรื่องความเร็ว ต้นทุน และความปลอดภัย PDPA",
+      "script": "สวัสดีครับ มาต่อกันที่ Day 171 นะครับ เมื่อวานเราทำให้ระบบตอบแม่นผ่าน Eval 40 ข้อแล้ว แต่วันนี้ลองนึกภาพตอนเปิดให้คนใช้จริงดูครับ ถ้ามีคนบ่นว่าวันนี้อืดจัง หรือจู่ ๆ บิลค่า API เดือนนี้พุ่งผิดปกติ แล้วระบบเราเป็นกล่องดำที่ไม่รู้เลยว่าเสียเวลาหรือเสีย token ตรงขั้นตอนไหน เราก็แก้ปัญหาไม่ถูกจุดแน่นอน\n\nวันนี้เราจึงมาติด Langfuse Tracing ตามมาตรฐาน OpenTelemetry GenAI เพื่อเปลี่ยนกล่องดำให้เป็น Trace Waterfall ที่สืบสวนได้ 100 เปอร์เซ็นต์ทุกคำขอ เราจะได้เห็นชัดเจนว่าตั้งแต่ PDPA gate, Router, Hybrid RAG, Rerank ไปจนถึง LLM หรือ MCP กินเวลาไปเท่าไร และคุมเพดาน P95 Latency ไม่ให้เกิน 3,500 มิลลิวินาทีตาม ADR-001\n\nนอกจากนี้ เรายังต้องคำนวณ Cost per 1,000 Queries โดยแยก cached_tokens จาก Prompt Caching ออกมาด้วย และที่สำคัญมาก ๆ คือต้องมีตัวกรอง PDPA Masking ดักไว้ในชั้น Tracer เพื่อไม่ให้เบอร์โทรหรือเลขบัตร 13 หลักดิบของลูกค้าหลุดเข้าไปในระบบ observability ครับ",
+      "ttsText": "สวัสดีครับ มาต่อกันที่ Day 171 นะครับ เมื่อวานเราทำให้ระบบตอบแม่นผ่าน Eval 40 ข้อแล้ว แต่วันนี้ลองนึกภาพตอนเปิดให้คนใช้จริงดูครับ ถ้ามีคนบ่นว่าวันนี้อืดจัง หรือจู่ ๆ บิลค่า API เดือนนี้พุ่งผิดปกติ แล้วระบบเราเป็นกล่องดำที่ไม่รู้เลยว่าเสียเวลาหรือเสีย token ตรงขั้นตอนไหน เราก็แก้ปัญหาไม่ถูกจุดแน่นอน\n\nวันนี้เราจึงมาติด Langfuse Tracing ตามมาตรฐาน OpenTelemetry GenAI เพื่อเปลี่ยนกล่องดำให้เป็น Trace Waterfall ที่สืบสวนได้ 100 เปอร์เซ็นต์ทุกคำขอ เราจะได้เห็นชัดเจนว่าตั้งแต่ PDPA gate, Router, Hybrid RAG, Rerank ไปจนถึง LLM หรือ MCP กินเวลาไปเท่าไร และคุมเพดาน P95 Latency ไม่ให้เกิน 3,500 มิลลิวินาทีตาม ADR-001\n\nนอกจากนี้ เรายังต้องคำนวณ Cost ต่อ 1,000 Queries โดยแยก cached_tokens จาก Prompt Caching ออกมาด้วย และที่สำคัญมาก ๆ คือต้องมีตัวกรอง PDPA Masking ดักไว้ในชั้น Tracer เพื่อไม่ให้เบอร์โทรหรือเลขบัตร 13 หลักดิบของลูกค้าหลุดเข้าไปในระบบ observability ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d171/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมายทั้ง 3 ข้อและย้ำเรื่องการใช้ CapstoneTracer แบบ offline",
+      "script": "มาดูเป้าหมายของ Day 171 กันครับ จบบทนี้คุณจะสร้างระบบสังเกตการณ์ได้ครบ 3 มิติ\n\nหนึ่ง ออกแบบ Trace และ Span Hierarchy ให้ CoreFlowPipeline พร้อม trace_id 100 เปอร์เซ็นต์และแนบ prompt_version\nสอง คำนวณ P50 และ P95 Latency เทียบเกณฑ์ไม่เกิน 3,500 มิลลิวินาที และ Cost per 1,000 Queries จาก token จริง\nสาม บังคับ PDPA Privacy Guard ในชั้น Telemetry ไม่ให้ PII ดิบหลุดเข้า log\n\nทั้งหมดรันด้วย Offline CapstoneTracer บนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องเปิด Docker หรือใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 171 กันครับ จบบทนี้คุณจะสร้างระบบสังเกตการณ์ได้ครบ 3 มิติ\n\nหนึ่ง ออกแบบ Trace และ Span Hierarchy ให้ CoreFlowPipeline พร้อม trace_id 100 เปอร์เซ็นต์และแนบ prompt_version\nสอง คำนวณ P50 และ P95 Latency เทียบเกณฑ์ไม่เกิน 3,500 มิลลิวินาที และ Cost ต่อ 1,000 Queries จาก token จริง\nสาม บังคับ PDPA Privacy Guard ในชั้น Telemetry ไม่ให้ PII ดิบหลุดเข้า log\n\nทั้งหมดรันด้วย Offline CapstoneTracer บนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องเปิด Docker หรือใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เตรียมโปรเจกต์สำหรับ Telemetry",
+      "src": "/audio/d171/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาเตรียมโมดูล telemetry_langfuse.py และอธิบายการออกแบบให้สลับใช้กับ Langfuse SDK จริงใน Staging",
+      "script": "การเตรียมเครื่องวันนี้เบา ๆ ครับ ในโปรเจกต์ thai-enterprise-assistant ให้เช็กว่ามี pydantic, pytest และ ruff พร้อมใช้งานด้วย uv add pydantic และ uv add --dev pytest ruff\n\nส่วน langfuse กับ opentelemetry-sdk เราจะเก็บไว้ต่อกับเซิร์ฟเวอร์จริงผ่าน Docker Compose ใน Block B44 ครับ วันนี้ตัว SpanRecord และ TraceSummary ที่เราเขียนจะแมปตรงกับ langfuse.observe และ score_current_trace ได้พอดีเลย ทำให้รัน unit tests บนเครื่องได้เร็วมาก พร้อมแล้วกดไปต่อกันครับ",
+      "ttsText": "การเตรียมเครื่องวันนี้เบา ๆ ครับ ในโปรเจกต์ thai-enterprise-assistant ให้เช็กว่ามี pydantic, pytest และ ruff พร้อมใช้งานด้วย uv add pydantic และ uv add dash dash dev pytest ruff\n\nส่วน langfuse กับ opentelemetry-sdk เราจะเก็บไว้ต่อกับเซิร์ฟเวอร์จริงผ่าน Docker Compose ใน Block B44 ครับ วันนี้ตัว SpanRecord และ TraceSummary ที่เราเขียนจะแมปตรงกับ langfuse dot observe และ score_current_trace ได้พอดีเลย ทำให้รัน unit tests บนเครื่องได้เร็วมาก พร้อมแล้วกดไปต่อกันครับ",
+      "pauseAfter": {
+        "title": "พักรอเช็ก dependencies สำหรับ Telemetry",
+        "prompt": "ตรวจสอบว่า pydantic, pytest และ ruff พร้อมสำหรับสร้างโมดูล src/telemetry_langfuse.py แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เช็กเครื่องพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Trace Waterfall",
+      "src": "/audio/d171/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนมองแผนภาพ Trace Waterfall ให้เห็นภาพขั้นบันไดของเวลาตั้งแต่ต้นจนจบคำขอ",
+      "script": "ลองมองแผนภาพ Trace Waterfall บนหน้าจอกันครับ เมื่อมี 1 คำขอวิ่งเข้ามา แทนที่จะเห็นเป็นแท่งทึบ ๆ ก้อนเดียว เราจะเห็นเป็นขั้นบันไดเรียงลงมาตั้งแต่ pdpa_gate, router, hybrid_retrieval, rerank, llm หรือ mcp\n\nข้อดีคือถ้าวันไหนระบบช้า เราแค่กวาดตาดูความยาวของแต่ละแท่งในน้ำตกนี้ก็รู้ตัวการทันที แถมยังเห็น P95 Latency และค่าใช้จ่ายต่อ 1,000 คำถามประกบคู่กันในหน้าจอเดียวเลยครับ",
+      "ttsText": "ลองมองแผนภาพ Trace Waterfall บนหน้าจอกันครับ เมื่อมี 1 คำขอวิ่งเข้ามา แทนที่จะเห็นเป็นแท่งทึบ ๆ ก้อนเดียว เราจะเห็นเป็นขั้นบันไดเรียงลงมาตั้งแต่ pdpa_gate, router, hybrid_retrieval, rerank, llm หรือ mcp\n\nข้อดีคือถ้าวันไหนระบบช้า เราแค่กวาดตาดูความยาวของแต่ละแท่งในน้ำตกนี้ก็รู้ตัวการทันที แถมยังเห็น P95 Latency และค่าใช้จ่ายต่อ 1,000 คำถามประกบคู่กันในหน้าจอเดียวเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก 3 ข้อ — Waterfall, P95 & Cost",
+      "src": "/audio/d171/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเรื่อง Trace Tree, ความต่างของ Mean กับ P95 และการคิดราคา Token อย่างเป็นจังหวะจะโคนและจำง่าย",
+      "script": "มาเจาะลึก 3 แนวคิดหลักของ Observability กันครับ\n\nข้อแรก โครงสร้าง Trace & Span Waterfall ให้แยกเป็น Parent กับ Child Spans โดยมี root_request ครอบ pdpa_gate, langgraph_router, retrieval, rerank และ generation หรือ mcp_tool_call เหมือนระบบติดตามพัสดุที่บอกเวลาทุกจุดพัก พร้อมแนบ trace_id, prompt_version และต้อง mask เลขบัตร 13 หลักกับเบอร์มือถือซ้ำใน Tracer เพื่อกันข้อมูลรั่วใน log\n\nข้อที่สอง P50 และ P95 Latency ถ้า 95 คำขอเร็ว 900 มิลลิวินาที แต่อีก 5 คำขอค้าง 5,200 มิลลิวินาที ค่าเฉลี่ยจะดูเร็ว แต่ผู้ใช้ 1 ใน 20 คนรอนานเกิน 5 วินาที เหมือนวันฝนตกหนักที่ต้องเผื่อเวลาไปประชุม จึงต้องใช้ Nearest-Rank คุม P95 <= 3,500 มิลลิวินาที โดยวัดจาก Root Span\n\nข้อที่สาม Cost per 1,000 Queries และ Prompt Caching ต้องแยก token เป็น 3 ก้อนคือ uncached input, cached_tokens ที่ได้ส่วนลด และ output_tokens ที่แพงกว่า input 3 ถึง 5 เท่าครับ",
+      "ttsText": "มาเจาะลึก 3 แนวคิดหลักของ Observability กันครับ\n\nข้อแรก โครงสร้าง Trace และ Span Waterfall ให้แยกเป็น Parent กับ Child Spans โดยมี root_request ครอบ pdpa_gate, langgraph_router, retrieval, rerank และ generation หรือ mcp_tool_call เหมือนระบบติดตามพัสดุที่บอกเวลาทุกจุดพัก พร้อมแนบ trace_id, prompt_version และต้อง mask เลขบัตร 13 หลักกับเบอร์มือถือซ้ำใน Tracer เพื่อกันข้อมูลรั่วใน log\n\nข้อที่สอง P50 และ P95 Latency ถ้า 95 คำขอเร็ว 900 มิลลิวินาที แต่อีก 5 คำขอค้าง 5,200 มิลลิวินาที ค่าเฉลี่ยจะดูเร็ว แต่ผู้ใช้ 1 ใน 20 คนรอนานเกิน 5 วินาที เหมือนวันฝนตกหนักที่ต้องเผื่อเวลาไปประชุม จึงต้องใช้ Nearest-Rank คุม P95 น้อยกว่าหรือเท่ากับ 3,500 มิลลิวินาที โดยวัดจาก Root Span\n\nข้อที่สาม Cost ต่อ 1,000 Queries และ Prompt Caching ต้องแยก token เป็น 3 ก้อนคือ uncached input, cached_tokens ที่ได้ส่วนลด และ output_tokens ที่แพงกว่า input 3 ถึง 5 เท่าครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — PDPA, P95 และ Cost",
+      "src": "/audio/d171/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต พาไล่ดูโค้ดตัวอย่างทั้ง 3 ชิ้นตั้งแต่ regex mask PDPA, สูตร Nearest-Rank และผลลดต้นทุนของ Prompt Caching",
+      "script": "ลองมากดดูตัวอย่างโค้ด 3 ขั้นของ Telemetry บนหน้าจอกันครับ\n\nขั้นแรก คือตัว sanitize_telemetry_text ที่ใช้ regex ตรวจจับเลขบัตรประชาชน 13 หลักกับเบอร์มือถือไทยขึ้นต้นด้วย 06, 08, 09 แล้วแทนที่ด้วยแท็ก REDACTED ทันทีก่อนเก็บลง span metadata\n\nขั้นที่สอง คือฟังก์ชัน percentile ที่เรียงลิสต์ latency แล้วคำนวณ index ด้วย math.ceil ของ p คูณ n ลบ 1 จากตัวอย่าง 10 ค่า จะได้ P50 เท่ากับ 1,250 และ P95 เท่ากับ 3,150 มิลลิวินาที ซึ่งผ่านเกณฑ์ไม่เกิน 3,500 มิลลิวินาที\n\nขั้นที่สาม ลองเทียบต้นทุนต่อ 1,000 คำถาม เมื่อมี input 1,200 tokens และ output 220 tokens ถ้าไม่เปิด cache จะจ่าย 0.312 ดอลลาร์ แต่พอมี cached_tokens 600 ตัว ค่าใช้จ่ายลดลงเหลือ 0.267 ดอลลาร์เลยครับ สังเกตด้วยว่า output token แพงกว่า input หลายเท่า อย่าเผลอคิดแต่ input token ล่ะ กดเดินตัวอย่างครบแล้วไปลงมือเขียนโค้ดกันครับ",
+      "ttsText": "ลองมากดดูตัวอย่างโค้ด 3 ขั้นของ Telemetry บนหน้าจอกันครับ\n\nขั้นแรก คือตัว sanitize_telemetry_text ที่ใช้ regex ตรวจจับเลขบัตรประชาชน 13 หลักกับเบอร์มือถือไทยขึ้นต้นด้วย 06, 08, 09 แล้วแทนที่ด้วยแท็ก REDACTED ทันทีก่อนเก็บลง span metadata\n\nขั้นที่สอง คือฟังก์ชัน percentile ที่เรียงลิสต์ latency แล้วคำนวณ index ด้วย math dot ceil ของ p คูณ n ลบ 1 จากตัวอย่าง 10 ค่า จะได้ P50 เท่ากับ 1,250 และ P95 เท่ากับ 3,150 มิลลิวินาที ซึ่งผ่านเกณฑ์ไม่เกิน 3,500 มิลลิวินาที\n\nขั้นที่สาม ลองเทียบต้นทุนต่อ 1,000 คำถาม เมื่อมี input 1,200 tokens และ output 220 tokens ถ้าไม่เปิด cache จะจ่าย 0.312 ดอลลาร์ แต่พอมี cached_tokens 600 ตัว ค่าใช้จ่ายลดลงเหลือ 0.267 ดอลลาร์เลยครับ สังเกตด้วยว่า output token แพงกว่า input หลายเท่า อย่าเผลอคิดแต่ input token ล่ะ กดเดินตัวอย่างครบแล้วไปลงมือเขียนโค้ดกันครับ",
+      "pauseAfter": {
+        "title": "พักรอเดินตัวอย่าง Telemetry & Cost",
+        "prompt": "กดเดินตัวอย่างทั้ง 3 ขั้นเพื่อดู PDPA masking, สูตร Nearest-Rank P95 และการคิด Cost ต่อ 1k queries แล้วกดไปต่อครับ",
+        "continueLabel": "ดูตัวอย่างเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง CapstoneTracer",
+      "src": "/audio/d171/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น พูดชัดเป็นขั้นตอนตอนอธิบาย CapstoneTracer, stack ของ parent_span_id และการคิด root span latency",
+      "script": "มาลงมือสร้าง src/telemetry_langfuse.py กันครับ มี 3 ส่วนหลักที่ต้องเติม\n\nหนึ่ง ใน CapstoneTracer: start_trace ตรวจว่า trace_id ไม่ว่าง, context manager span ดึง parent_span_id จาก stack, mask PDPA ใน string metadata, จับเวลาด้วย perf_counter หรือใช้ latency_override_ms แล้ว pop ใน finally ส่วน record_score บังคับช่วง 0.0 ถึง 1.0\n\nสอง compute_latency_summary โยน ValueError ถ้าว่าง และคืน count, p50_ms, p95_ms กับ within_sla ด้วย Nearest-Rank\n\nสาม summarize_telemetry คืน total_traces, trace_coverage, P50, P95, total_cost_usd และ cost_per_1k_queries_usd จำไว้ว่า latency ของแต่ละ trace ให้ใช้เวลาของ root span ที่ parent_span_id เป็น None เท่านั้นนะครับ ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "ttsText": "มาลงมือสร้าง src slash telemetry_langfuse dot py กันครับ มี 3 ส่วนหลักที่ต้องเติม\n\nหนึ่ง ใน CapstoneTracer: start_trace ตรวจว่า trace_id ไม่ว่าง, context manager span ดึง parent_span_id จาก stack, mask PDPA ใน string metadata, จับเวลาด้วย perf_counter หรือใช้ latency_override_ms แล้ว pop ใน finally ส่วน record_score บังคับช่วงศูนย์ถึงหนึ่ง\n\nสอง compute_latency_summary โยน ValueError ถ้าว่าง และคืน count, p50_ms, p95_ms กับ within_sla ด้วย Nearest-Rank\n\nสาม summarize_telemetry คืน total_traces, trace_coverage, P50, P95, total_cost_usd และ cost_per_1k_queries_usd จำไว้ว่า latency ของแต่ละ trace ให้ใช้เวลาของ root span ที่ parent_span_id เป็น None เท่านั้นนะครับ ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียน src/telemetry_langfuse.py",
+        "prompt": "ลงมือเขียน CapstoneTracer, compute_latency_summary และ summarize_telemetry แล้วรันเทสต์ทั้ง 4 ข้อให้ผ่านได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d171/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเตือนจุดพลาดเรื่องการนับเวลา span ซ้ำ การหลุด PDPA ใน log และการใช้ Mean แทน P95",
+      "script": "เก่งมากครับ ผ่านเรื่อง Telemetry ไปได้อย่างสวยงาม ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่เจอบ่อยในงานจริงไว้นะครับ\n\nข้อแรก คือเอาเวลาของ Parent Span กับ Child Span มาบวกรวมกันเป็น Latency รวม เช่น root ใช้เวลา 1,000 มิลลิวินาที ข้างในมี retrieval 200 กับ llm 800 พอบวกรวมกันหมดกลายเป็น 2,000 มิลลิวินาที ดูเหมือนช้าเกิน SLA ไปเฉยเลย ต้องใช้เวลาของ Root Span เท่านั้นนะครับ\n\nข้อที่สอง คือ mask PII ก่อนตอบลูกค้าแล้ว แต่ลืม redact ข้อความก่อนส่งเข้า Langfuse จนเบอร์โทรและเลขบัตร 13 หลักโผล่หราบน Dashboard ละเมิด PDPA เต็ม ๆ\n\nข้อที่สาม คือลืมแนบ prompt_version กับ model_name ลงใน trace พอเห็นกราฟคุณภาพตกกลางเดือน เลยสืบไม่ได้ว่าเกิดจาก prompt ไหนกันแน่\n\nและข้อที่สี่ คือใช้ Mean Latency แทน P95 ในการตั้ง Alert จนค่าเฉลี่ยดูสวยงามแต่ผู้ใช้ 5 เปอร์เซ็นต์รอเกิน 5 วินาทีจนปิดหน้าเว็บหนีครับ",
+      "ttsText": "เก่งมากครับ ผ่านเรื่อง Telemetry ไปได้อย่างสวยงาม ก่อนไปทำควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่เจอบ่อยในงานจริงไว้นะครับ\n\nข้อแรก คือเอาเวลาของ Parent Span กับ Child Span มาบวกรวมกันเป็น Latency รวม เช่น root ใช้เวลา 1,000 มิลลิวินาที ข้างในมี retrieval 200 กับ llm 800 พอบวกรวมกันหมดกลายเป็น 2,000 มิลลิวินาที ดูเหมือนช้าเกิน SLA ไปเฉยเลย ต้องใช้เวลาของ Root Span เท่านั้นนะครับ\n\nข้อที่สอง คือ mask PII ก่อนตอบลูกค้าแล้ว แต่ลืม redact ข้อความก่อนส่งเข้า Langfuse จนเบอร์โทรและเลขบัตร 13 หลักโผล่หราบน Dashboard ละเมิด PDPA เต็ม ๆ\n\nข้อที่สาม คือลืมแนบ prompt_version กับ model_name ลงใน trace พอเห็นกราฟคุณภาพตกกลางเดือน เลยสืบไม่ได้ว่าเกิดจาก prompt ไหนกันแน่\n\nและข้อที่สี่ คือใช้ Mean Latency แทน P95 ในการตั้ง Alert จนค่าเฉลี่ยดูสวยงามแต่ผู้ใช้ 5 เปอร์เซ็นต์รอเกิน 5 วินาทีจนปิดหน้าเว็บหนีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d171/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนน้องเช็กความเข้าใจทั้งเรื่อง PDPA, Root Span, การคำนวณ Cost และ Feedback Loop",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้มีทั้งเรื่องเหตุผลที่ต้อง mask PII ใน Telemetry, การเลือกเวลาจาก Root Span, โจทย์คำนวณ Cost ต่อ 1,000 คำขอที่มี cached_tokens และประโยชน์ของการผูก prompt_version กับ eval score\n\nลองค่อย ๆ คิดและตอบให้ครบทั้ง 4 ข้อ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้มีทั้งเรื่องเหตุผลที่ต้อง mask PII ใน Telemetry, การเลือกเวลาจาก Root Span, โจทย์คำนวณ Cost ต่อ 1,000 คำขอที่มี cached_tokens และประโยชน์ของการผูก prompt_version กับ eval score\n\nลองค่อย ๆ คิดและตอบให้ครบทั้ง 4 ข้อ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง Langfuse Tracing, P95 Latency และ Token Cost เสร็จแล้วกดไปต่อเพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 172",
+      "src": "/audio/d171/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและกระตือรือร้น สรุป 4 หัวใจของ Observability แล้วชวนเข้าสู่ Milestone 4 ใน Day 172",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 171 เรียบร้อยแล้ว วันนี้เราปิดช่องโหว่ด้านการสังเกตการณ์ของระบบ Capstone ได้ครบ 4 มิติเลย\n\nหนึ่ง ติด Langfuse Tracing ครบ 100 เปอร์เซ็นต์แบบ Parent-Child Spans พร้อมแนบ prompt_version เสมอ\nสอง วัด P50 และ P95 Latency จากเวลาของ Root Span และคุม P95 ไม่ให้เกิน 3,500 มิลลิวินาที\nสาม คำนวณ Cost per 1,000 Queries โดยแยก uncached input, cached_tokens และ output_tokens ออกจากกัน\nและสี่ บังคับ PDPA Redaction ในชั้น Tracer ก่อนส่งข้อความออกสู่ Dashboard เสมอ\n\nพรุ่งนี้ใน Day 172 จะเป็นวันสำคัญมาก คือ Milestone 4 ที่เราจะรวมผลจาก D169, D170 และ D171 เข้าเป็น Quality Gate และ Markdown Eval Report เพื่อตัดสินใจว่าพร้อมไป Deploy ใน Block B44 หรือยัง แล้วเจอกันใน Milestone 4 ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 171 เรียบร้อยแล้ว วันนี้เราปิดช่องโหว่ด้านการสังเกตการณ์ของระบบ Capstone ได้ครบ 4 มิติเลย\n\nหนึ่ง ติด Langfuse Tracing ครบ 100 เปอร์เซ็นต์แบบ Parent-Child Spans พร้อมแนบ prompt_version เสมอ\nสอง วัด P50 และ P95 Latency จากเวลาของ Root Span และคุม P95 ไม่ให้เกิน 3,500 มิลลิวินาที\nสาม คำนวณ Cost ต่อ 1,000 Queries โดยแยก uncached input, cached_tokens และ output_tokens ออกจากกัน\nและสี่ บังคับ PDPA Redaction ในชั้น Tracer ก่อนส่งข้อความออกสู่ Dashboard เสมอ\n\nพรุ่งนี้ใน Day 172 จะเป็นวันสำคัญมาก คือ Milestone 4 ที่เราจะรวมผลจาก D169, D170 และ D171 เข้าเป็น Quality Gate และ Markdown Eval Report เพื่อตัดสินใจว่าพร้อมไป Deploy ใน Block B44 หรือยัง แล้วเจอกันใน Milestone 4 ครับ!"
+    }
+  ]
+}

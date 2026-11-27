@@ -1,0 +1,109 @@
+{
+  "lessonId": "d027",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Caching ลดค่า API และ Latency",
+      "src": "/audio/d027/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างสดใส ชวนตื่นเต้นกับผลลัพธ์ของการทำ Caching ที่ช่วยลดค่า API เหลือ 0 และเร่งรอบทดสอบให้จบในหลักมิลลิวินาที",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 27 วันนี้เป็นบทที่ช่วยประหยัดเงินในกระเป๋าและประหยัดเวลาชีวิตวิศวกร AI ได้มากที่สุดบทหนึ่งเลย นั่นคือเรื่อง Caching Patterns ครับ\n\nลองดู Big Picture บนหน้าจอกันนะ เวลาเราพัฒนาหรือใช้งานระบบ AI จริง มักมีคำถามซ้ำ ๆ เช่น FAQ ของลูกค้า หรือชุดทิกเก็ตเดิมที่เรารันซ้ำตอนดีบักโค้ด ถ้าไม่มี caching ทุกรอบที่รันใหม่จะต้องเสียเงินยิง LLM API และรอเครือข่ายใหม่หมด วันนี้เราจะออกแบบ deterministic cache key ด้วย SHA-256 ของ prompt, model, temperature และ prompt_version ครับ\n\nพอมีแคชแล้ว เวลาเราแก้โค้ดส่วนจัดรูปแบบผลลัพธ์แต่ไม่ได้แก้ prompt เราสามารถอ่านคำตอบเดิมจากแคชให้ eval suite จบในหลักมิลลิวินาทีด้วยต้นทุน 0 ดอลลาร์ และเปลี่ยน prompt_version เพื่อแยกคำตอบรุ่นเก่ากับรุ่นใหม่ได้ทันที\n\nนอกจากนี้ เราจะได้เทียบการเลือกใช้แคชระหว่าง RAM อย่าง lru_cache กับแคชบนดิสก์อย่าง SQLite ที่อยู่ข้ามการรีสตาร์ต พร้อมใส่ TTL คุมอายุข้อมูล วัดค่า hit rate และทดสอบวันหมดอายุได้ทันทีโดยไม่ต้องรอเวลาจริงครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 27 วันนี้เป็นบทที่ช่วยประหยัดเงินในกระเป๋าและประหยัดเวลาชีวิตวิศวกร AI ได้มากที่สุดบทหนึ่งเลย นั่นคือเรื่อง Caching Patterns ครับ\n\nลองดู Big Picture บนหน้าจอกันนะ เวลาเราพัฒนาหรือใช้งานระบบ AI จริง มักมีคำถามซ้ำ ๆ เช่น FAQ ของลูกค้า หรือชุดทิกเก็ตเดิมที่เรารันซ้ำตอนดีบักโค้ด ถ้าไม่มี caching ทุกรอบที่รันใหม่จะต้องเสียเงินยิง LLM API และรอเครือข่ายใหม่หมด วันนี้เราจะออกแบบ deterministic cache key ด้วย SHA-256 ของ prompt, model, temperature และ prompt_version ครับ\n\nพอมีแคชแล้ว เวลาเราแก้โค้ดส่วนจัดรูปแบบผลลัพธ์แต่ไม่ได้แก้ prompt เราสามารถอ่านคำตอบเดิมจากแคชให้ eval suite จบในหลักมิลลิวินาทีด้วยต้นทุน 0 ดอลลาร์ และเปลี่ยน prompt_version เพื่อแยกคำตอบรุ่นเก่ากับรุ่นใหม่ได้ทันที\n\nนอกจากนี้ เราจะได้เทียบการเลือกใช้แคชระหว่าง RAM อย่าง lru_cache กับแคชบนดิสก์อย่าง SQLite ที่อยู่ข้ามการรีสตาร์ต พร้อมใส่ TTL คุมอายุข้อมูล วัดค่า hit rate และทดสอบวันหมดอายุได้ทันทีโดยไม่ต้องรอเวลาจริงครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d027/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมายทั้ง 3 ข้อของการทำ Cache Key, LRU vs SQLite และ TTL Testing",
+      "script": "เป้าหมายของ Day 27 วันนี้มี 3 ข้อชัด ๆ นะครับ\n\nหนึ่ง สร้าง deterministic cache key ด้วย hashlib.sha256 บน canonical JSON ที่เรียงคีย์ด้วย sort_keys=True โดยรวม prompt ที่ normalize ช่องว่างแล้ว, model, temperature และ prompt_version\nสอง เปรียบเทียบและเลือกใช้ functools.lru_cache ในหน่วยความจำ กับ persistent SQLite cache บนดิสก์ได้ตรงกับลักษณะงาน\nสาม พัฒนาชั้น caching บน SQLite ที่รองรับ TTL expiration, parameterized upsert, สถิติ hit และ miss รวมถึงทดสอบแบบ deterministic โดยไม่ต้องใช้ time.sleep และไม่ต้องใช้ API key เลยครับ",
+      "ttsText": "เป้าหมายของ Day 27 วันนี้มี 3 ข้อชัด ๆ นะครับ\n\nหนึ่ง สร้าง deterministic cache key ด้วย hashlib dot sha256 บน canonical JSON ที่เรียงคีย์ด้วย sort_keys เท่ากับ True โดยรวม prompt ที่ normalize ช่องว่างแล้ว, model, temperature และ prompt_version\nสอง เปรียบเทียบและเลือกใช้ functools dot lru_cache ในหน่วยความจำ กับ persistent SQLite cache บนดิสก์ได้ตรงกับลักษณะงาน\nสาม พัฒนาชั้น caching บน SQLite ที่รองรับ TTL expiration, parameterized upsert, สถิติ hit และ miss รวมถึงทดสอบแบบ deterministic โดยไม่ต้องใช้ time dot sleep และไม่ต้องใช้ API key เลยครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d027/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นพาตั้งโปรเจกต์ uv และย้ำเรื่อง standard library ที่พร้อมใช้งานครบแล้ว",
+      "script": "ข่าวดีของการเตรียมเครื่องวันนี้คือ เครื่องมือทั้งหมดตั้งแต่ functools.lru_cache, hashlib, json, sqlite3 ไปจนถึง time มากับ Python standard library ครบแล้วครับ\n\nเปิดเทอร์มินัลรัน uv init ai-day27-caching แล้วเข้าไปด้วย cd ai-day27-caching จากนั้นติดตั้งเครื่องมือทดสอบด้วย uv add --dev pytest ruff\n\nลองเช็กด้วย uv run python -c สั่ง import hashlib, functools, sqlite3 แล้วพิมพ์ Ready ออกมาได้เลย เสริมให้นิดหนึ่งว่า Local Response Cache ที่เราทำวันนี้ใช้คู่กับ Prompt Caching ฝั่งผู้ให้บริการใน Phase 3 ได้ดีมาก เพราะถ้า hit ที่เครื่องเราก็ต้นทุน 0 ดอลลาร์ไม่ต้องออกเน็ตเลย เดี๋ยวพี่รอตรงนี้ ตั้งโฟลเดอร์เสร็จแล้วกด ไปต่อ ครับ",
+      "ttsText": "ข่าวดีของการเตรียมเครื่องวันนี้คือ เครื่องมือทั้งหมดตั้งแต่ functools dot lru_cache, hashlib, json, sqlite3 ไปจนถึง time มากับ Python standard library ครบแล้วครับ\n\nเปิดเทอร์มินัลรัน uv init ai-day27-caching แล้วเข้าไปด้วย cd ai-day27-caching จากนั้นติดตั้งเครื่องมือทดสอบด้วย uv add dash dash dev pytest ruff\n\nลองเช็กด้วย uv run python dash c สั่ง import hashlib, functools, sqlite3 แล้วพิมพ์ Ready ออกมาได้เลย เสริมให้นิดหนึ่งว่า Local Response Cache ที่เราทำวันนี้ใช้คู่กับ Prompt Caching ฝั่งผู้ให้บริการใน Phase 3 ได้ดีมาก เพราะถ้า hit ที่เครื่องเราก็ต้นทุน 0 ดอลลาร์ไม่ต้องออกเน็ตเลย เดี๋ยวพี่รอตรงนี้ ตั้งโฟลเดอร์เสร็จแล้วกด ไปต่อ ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ Day 27",
+        "prompt": "ลองรัน uv init ai-day27-caching และเช็กการ import hashlib, functools, sqlite3 ในเทอร์มินัล เมื่อพร้อมแล้วกดไปต่อครับ",
+        "continueLabel": "เช็กเครื่องพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Cache Hit vs Miss & SHA-256",
+      "src": "/audio/d027/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพความเร็วระหว่าง Cache Hit ที่ใช้ 0ms กับ Cache Miss ที่ต้องวิ่งไปถามโมเดล",
+      "script": "ลองกดดูแผนภาพบนหน้าจอตรงส่วน Cache Hit vs Miss นะครับ\n\nภาพนี้จะทำให้เห็นทันทีเลยว่า พอคำถามลูกค้าเข้ามาแล้วถูก normalize ช่องว่าง จับมัดรวมกับ model, temperature และ prompt_version แล้วแฮชเป็นรหัส SHA-256 ยาว 64 ตัวอักษร ถ้าไปค้นใน SQLite แล้วเจอแถวที่ยังไม่หมดอายุ TTL ระบบจะได้ Cache Hit ตอบกลับทันทีในหลัก 1 มิลลิวินาทีด้วยต้นทุน 0 ดอลลาร์\n\nแต่ถ้าไม่เจอหรือหมดอายุแล้วจึงเกิด Cache Miss เพื่อไปเรียกโมเดลแล้วเก็บผลกลับเข้าแคช ลองกดดูภาพประกอบให้เห็นจังหวะไหลของข้อมูลก่อนเข้าไปเจาะแนวคิดทั้ง 3 ข้อนะครับ",
+      "ttsText": "ลองกดดูแผนภาพบนหน้าจอตรงส่วน Cache Hit กับ Miss นะครับ\n\nภาพนี้จะทำให้เห็นทันทีเลยว่า พอคำถามลูกค้าเข้ามาแล้วถูก normalize ช่องว่าง จับมัดรวมกับ model, temperature และ prompt_version แล้วแฮชเป็นรหัส SHA-256 ยาว 64 ตัวอักษร ถ้าไปค้นใน SQLite แล้วเจอแถวที่ยังไม่หมดอายุ TTL ระบบจะได้ Cache Hit ตอบกลับทันทีในหลัก 1 มิลลิวินาทีด้วยต้นทุน 0 ดอลลาร์\n\nแต่ถ้าไม่เจอหรือหมดอายุแล้วจึงเกิด Cache Miss เพื่อไปเรียกโมเดลแล้วเก็บผลกลับเข้าแคช ลองกดดูภาพประกอบให้เห็นจังหวะไหลของข้อมูลก่อนเข้าไปเจาะแนวคิดทั้ง 3 ข้อนะครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d027/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุกมีชีวิตชีวา ใช้ภาพบาร์โค้ดอาหาร โพสต์อิตกับตู้แฟ้ม และกล่องนมในตู้เย็น พร้อมเตือนหนักแน่นเรื่องฟังก์ชัน hash()",
+      "script": "มาเจาะ 3 แนวคิดหัวใจของ Caching ในงาน AI กันนะครับ\n\nข้อแรก Deterministic Cache Key เปรียบเหมือนบาร์โค้ดเมนูอาหารที่เข้ารหัสทั้งชื่อเมนู ระดับความเผ็ดคือ temperature และสูตรเชฟคือ prompt_version ถ้าเปลี่ยนสูตรเป็น v2 บาร์โค้ดต้องเปลี่ยนทันที จะได้ไม่หยิบคำตอบเก่ามาเสิร์ฟ และจำกฎเหล็กข้อนี้ไว้เลยครับ ห้ามใช้ฟังก์ชัน hash() ที่ติดมากับ Python ทำ persistent cache key เด็ดขาด เพราะ Python สุ่ม seed ใหม่ทุกครั้งที่เปิดโปรเซสเพื่อกัน HashDoS ทำให้รันรอบหน้าได้เลข hash ไม่ตรงเดิม ให้แปลง payload เป็น canonical JSON ด้วย json.dumps(data, sort_keys=True, ensure_ascii=False) แล้วแฮชด้วย hashlib.sha256 เสมอครับ\n\nข้อที่สอง In-memory lru_cache เทียบกับ SQLite Cache ตัว lru_cache เหมือนกระดาษโพสต์อิตแปะข้างจอ เร็วระดับไมโครวินาที มี cache_info ให้ดู stats แต่ปิดโปรแกรมก็หายเกลี้ยง เหมาะกับฟังก์ชัน pure ในโปรเซสเดียว ส่วน SQLite Cache เหมือนตู้แฟ้มมีดัชนีในลิ้นชัก อ่านต่ำกว่า 1 มิลลิวินาที อยู่รอดข้ามการรีสตาร์ต CLI เก็บได้หลายแสนรายการโดยไม่กิน RAM และยังไม่จำเป็นต้องรีบตั้ง Redis Server ให้ดูแลยากตั้งแต่แรกด้วยครับ\n\nข้อที่สาม TTL Expiration และ Cache Invalidation เปรียบเหมือนกล่องนมในตู้เย็นที่มีทั้งวันหมดอายุคือ TTL เก็บเป็น Unix timestamp expires_at เท่ากับ now บวก ttl_seconds และรหัสสูตรคือ prompt_version เวลาเขียนลง SQLite ใช้ท่า upsert อย่าง ON CONFLICT(cache_key) DO UPDATE SET อัปเดตค่าทับได้ในคำสั่งเดียว และเคล็ดลับสำคัญคือให้รับ clock เข้ามาใน init เพื่อจำลองเวลาใน pytest ได้โดยไม่ต้อง sleep รอครับ",
+      "ttsText": "มาเจาะ 3 แนวคิดหัวใจของ Caching ในงาน AI กันนะครับ\n\nข้อแรก Deterministic Cache Key เปรียบเหมือนบาร์โค้ดเมนูอาหารที่เข้ารหัสทั้งชื่อเมนู ระดับความเผ็ดคือ temperature และสูตรเชฟคือ prompt_version ถ้าเปลี่ยนสูตรเป็น v2 บาร์โค้ดต้องเปลี่ยนทันที จะได้ไม่หยิบคำตอบเก่ามาเสิร์ฟ และจำกฎเหล็กข้อนี้ไว้เลยครับ ห้ามใช้ฟังก์ชัน hash ที่ติดมากับ Python ทำ persistent cache key เด็ดขาด เพราะ Python สุ่ม seed ใหม่ทุกครั้งที่เปิดโปรเซสเพื่อกัน HashDoS ทำให้รันรอบหน้าได้เลข hash ไม่ตรงเดิม ให้แปลง payload เป็น canonical JSON ด้วย json dot dumps โดยส่ง sort_keys เท่ากับ True และ ensure_ascii เท่ากับ False แล้วแฮชด้วย hashlib dot sha256 เสมอครับ\n\nข้อที่สอง In-memory lru_cache เทียบกับ SQLite Cache ตัว lru_cache เหมือนกระดาษโพสต์อิตแปะข้างจอ เร็วระดับไมโครวินาที มี cache_info ให้ดู stats แต่ปิดโปรแกรมก็หายเกลี้ยง เหมาะกับฟังก์ชัน pure ในโปรเซสเดียว ส่วน SQLite Cache เหมือนตู้แฟ้มมีดัชนีในลิ้นชัก อ่านต่ำกว่า 1 มิลลิวินาที อยู่รอดข้ามการรีสตาร์ต CLI เก็บได้หลายแสนรายการโดยไม่กิน RAM และยังไม่จำเป็นต้องรีบตั้ง Redis Server ให้ดูแลยากตั้งแต่แรกด้วยครับ\n\nข้อที่สาม TTL Expiration และ Cache Invalidation เปรียบเหมือนกล่องนมในตู้เย็นที่มีทั้งวันหมดอายุคือ TTL เก็บเป็น Unix timestamp expires_at เท่ากับ now บวก ttl_seconds และรหัสสูตรคือ prompt_version เวลาเขียนลง SQLite ใช้ท่า upsert อย่าง ON CONFLICT cache_key DO UPDATE SET อัปเดตค่าทับได้ในคำสั่งเดียว และเคล็ดลับสำคัญคือให้รับ clock เข้ามาใน init เพื่อจำลองเวลาใน pytest ได้โดยไม่ต้อง sleep รอครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน",
+      "src": "/audio/d027/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนนั่งรีวิวโค้ดด้วยกัน สนุกตอนหมุนนาฬิกาจำลองแล้วปิดท้ายด้วยคำเตือนเรื่อง Negative Caching",
+      "script": "ลองมาดูตัวอย่าง worked_d027.py ที่สร้าง SQLiteResponseCache ครบวงจรในไม่กี่สิบบรรทัดกันครับ\n\nขั้นแรก เราเขียน make_cache_key ที่ normalize ช่องว่างซ้ำให้เหลือช่องว่างเดียวด้วย split แล้ว join จากนั้นแฮช SHA-256 ออกมาเป็นรหัสยาว 64 ตัวอักษรที่นิ่ง 100 เปอร์เซ็นต์ข้ามเครื่องและข้ามโปรเซส\n\nขั้นที่สอง เราสร้างคลาส SQLiteResponseCache ที่เปิดโหมด WAL สร้างตาราง response_cache และรับพารามิเตอร์ clock ค่าเริ่มต้นเป็น time.time พร้อมตัวนับ hits กับ misses ในเมธอด get จะเช็กทั้งว่ามีแถวไหมและ expires_at ยังมากกว่าเวลาปัจจุบันไหม ส่วน set ใช้ upsert แบบ parameterized ผ่านเครื่องหมายคำถามครับ\n\nขั้นที่สาม เป็นจุดที่เจ๋งมาก เราส่งนาฬิกาจำลองเข้าไปด้วย TTL 60 วินาที รอบแรก get ได้ None เป็น miss แล้วสั่ง set จากนั้นหมุนเวลาไปบวก 10 วินาที รอบสอง get ได้คำตอบทันทีเป็น hit สุดท้ายหมุนเวลาไปบวก 65 วินาทีซึ่งเกิน TTL แล้ว รอบสามก็กลับมาเป็น None เพื่อให้ไปดึงคำตอบสดใหม่ จบด้วย hits 1, misses 2 และข้อควรระวังสำคัญคือ Negative Caching ห้ามเรียก cache.set ตอน API error หรือ timeout เด็ดขาด ไม่งั้นผู้ใช้จะได้รับ error เดิมซ้ำไปอีกชั่วโมงเต็มครับ พักดูตัวอย่างให้เข้าใจก่อนแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "ttsText": "ลองมาดูตัวอย่าง worked_d027 dot py ที่สร้าง SQLiteResponseCache ครบวงจรในไม่กี่สิบบรรทัดกันครับ\n\nขั้นแรก เราเขียน make_cache_key ที่ normalize ช่องว่างซ้ำให้เหลือช่องว่างเดียวด้วย split แล้ว join จากนั้นแฮช SHA-256 ออกมาเป็นรหัสยาว 64 ตัวอักษรที่นิ่ง 100 เปอร์เซ็นต์ข้ามเครื่องและข้ามโปรเซส\n\nขั้นที่สอง เราสร้างคลาส SQLiteResponseCache ที่เปิดโหมด WAL สร้างตาราง response_cache และรับพารามิเตอร์ clock ค่าเริ่มต้นเป็น time dot time พร้อมตัวนับ hits กับ misses ในเมธอด get จะเช็กทั้งว่ามีแถวไหมและ expires_at ยังมากกว่าเวลาปัจจุบันไหม ส่วน set ใช้ upsert แบบ parameterized ผ่าน question mark ครับ\n\nขั้นที่สาม เป็นจุดที่เจ๋งมาก เราส่งนาฬิกาจำลองเข้าไปด้วย TTL 60 วินาที รอบแรก get ได้ None เป็น miss แล้วสั่ง set จากนั้นหมุนเวลาไปบวก 10 วินาที รอบสอง get ได้คำตอบทันทีเป็น hit สุดท้ายหมุนเวลาไปบวก 65 วินาทีซึ่งเกิน TTL แล้ว รอบสามก็กลับมาเป็น None เพื่อให้ไปดึงคำตอบสดใหม่ จบด้วย hits 1, misses 2 และข้อควรระวังสำคัญคือ Negative Caching ห้ามเรียก cache dot set ตอน API error หรือ timeout เด็ดขาด ไม่งั้นผู้ใช้จะได้รับ error เดิมซ้ำไปอีกชั่วโมงเต็มครับ พักดูตัวอย่างให้เข้าใจก่อนแล้วกดไปต่อที่แบบฝึกหัดได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง SQLiteResponseCache",
+        "prompt": "ลองไล่อ่านขั้นตอนการทำงานของ make_cache_key และนาฬิกาจำลองใน worked_d027.py เมื่อพร้อมแล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างเข้าใจแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียนโค้ดจริง",
+      "src": "/audio/d027/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดเป็นจังหวะตอนไล่สเปกฟังก์ชันและเมธอดทั้งหมดของ response_cache.py",
+      "script": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์ 12 นาทีนี้ให้เราสร้างโมดูล response_cache.py ที่มีทั้งตัวสร้าง key และคลาส SQLiteCache แบบเต็มรูปแบบ\n\nเริ่มจาก make_cache_key ที่ normalize ช่องว่างใน prompt แล้วแปลง payload ที่รวม model, temperature และ prompt_version เป็น canonical JSON ก่อนแฮชด้วย SHA-256 ยาว 64 ตัวอักษร\nถัดมาในคลาส SQLiteCache ให้เปิดโหมด WAL สร้างตาราง response_cache ใน init รองรับ context manager ด้วย enter กับ exit และปิดการเชื่อมต่อใน close\nเมธอด get ตรวจว่าเจอแถวและ expires_at มากกว่า now พร้อมนับ hits กับ misses ส่วน set ทำ parameterized upsert\nเมธอด get_or_compute เช็ก self.get(key) ก่อน ถ้าไม่เจอค่อยเรียก compute() แล้ว set ลงแคช คืนค่าเป็น tuple (value, from_cache)\nเมธอด stats คืน dict ของ hits, misses และ hit_rate ปัด 4 ตำแหน่ง ถ้ายังไม่เคยเรียกให้เป็น 0.0 และ clear_expired ลบแถวที่ expires_at น้อยกว่าหรือเท่ากับ now แล้วคืนจำนวนแถวที่ลบจาก rowcount ครับ\n\nเขียนเสร็จแล้วรัน uv run pytest -q และ uv run ruff check . ดูนะ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์ 12 นาทีนี้ให้เราสร้างโมดูล response_cache dot py ที่มีทั้งตัวสร้าง key และคลาส SQLiteCache แบบเต็มรูปแบบ\n\nเริ่มจาก make_cache_key ที่ normalize ช่องว่างใน prompt แล้วแปลง payload ที่รวม model, temperature และ prompt_version เป็น canonical JSON ก่อนแฮชด้วย SHA-256 ยาว 64 ตัวอักษร\nถัดมาในคลาส SQLiteCache ให้เปิดโหมด WAL สร้างตาราง response_cache ใน init รองรับ context manager ด้วย enter กับ exit และปิดการเชื่อมต่อใน close\nเมธอด get ตรวจว่าเจอแถวและ expires_at มากกว่า now พร้อมนับ hits กับ misses ส่วน set ทำ parameterized upsert\nเมธอด get_or_compute เช็ก self dot get ของ key ก่อน ถ้าไม่เจอค่อยเรียก compute แล้ว set ลงแคช คืนค่าเป็น tuple ของ value และ from_cache\nเมธอด stats คืน dict ของ hits, misses และ hit_rate ปัด 4 ตำแหน่ง ถ้ายังไม่เคยเรียกให้เป็น 0.0 และ clear_expired ลบแถวที่ expires_at น้อยกว่าหรือเท่ากับ now แล้วคืนจำนวนแถวที่ลบจาก rowcount ครับ\n\nเขียนเสร็จแล้วรัน uv run pytest dash q และ uv run ruff check dot ดูนะ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด response_cache.py",
+        "prompt": "ลงมือเขียน make_cache_key และคลาส SQLiteCache ใน response_cache.py แล้วรัน uv run pytest -q เพื่อตรวจผลทั้ง 3 เทสต์ครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d027/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 ข้อผิดพลาดเรื่อง Caching ด้วยจังหวะสนุกเตือนภัยแบบรุ่นพี่ให้จำแม่น",
+      "script": "เยี่ยมมากครับที่เขียนโค้ดผ่านไปแล้ว ก่อนเข้าควิซพี่ขอเตือน 4 จุดพลาดยอดฮิตตอนทำ Response Cache นะครับ\n\nข้อแรก ใช้ฟังก์ชัน hash(prompt) ของ Python สร้าง Cache Key ลง SQLite ผลคือรันโปรแกรมรอบใหม่ปุ๊บ Hit Rate เหลือ 0 เปอร์เซ็นต์ตลอด ต้องใช้ hashlib.sha256 บน canonical JSON เท่านั้นครับ\n\nข้อสอง ลืมใส่ model หรือ prompt_version ลงใน payload ก่อนแฮช พอทีมแก้ system prompt เป็น v2 หรือสลับไปใช้โมเดลใหม่ แคชดันยังคืนคำตอบรุ่นเก่าค้างอยู่ แทนที่จะ miss อัตโนมัติ\n\nข้อสาม เผลอแคชผลลัพธ์ตอน LLM API เกิด error หรือคืนข้อความว่าง ที่เรียกว่า negative caching ทำให้ลูกค้าคนอื่นโดนเสิร์ฟข้อความพังซ้ำจนกว่า TTL จะหมด ต้องเช็กว่าผ่าน validation แล้วเท่านั้นค่อย set ลงแคช\n\nข้อสี่ ใส่ time.sleep(61) ใน pytest เพื่อเทสต์ TTL ทำให้ชุดเทสต์อืดจนทีมขี้เกียจรัน ต้อง inject clock เข้าไปหมุนเวลาจำลองในไม่กี่มิลลิวินาทีครับ",
+      "ttsText": "เยี่ยมมากครับที่เขียนโค้ดผ่านไปแล้ว ก่อนเข้าควิซพี่ขอเตือน 4 จุดพลาดยอดฮิตตอนทำ Response Cache นะครับ\n\nข้อแรก ใช้ฟังก์ชัน hash ของ prompt ใน Python สร้าง Cache Key ลง SQLite ผลคือรันโปรแกรมรอบใหม่ปุ๊บ Hit Rate เหลือ 0 เปอร์เซ็นต์ตลอด ต้องใช้ hashlib dot sha256 บน canonical JSON เท่านั้นครับ\n\nข้อสอง ลืมใส่ model หรือ prompt_version ลงใน payload ก่อนแฮช พอทีมแก้ system prompt เป็น v2 หรือสลับไปใช้โมเดลใหม่ แคชดันยังคืนคำตอบรุ่นเก่าค้างอยู่ แทนที่จะ miss อัตโนมัติ\n\nข้อสาม เผลอแคชผลลัพธ์ตอน LLM API เกิด error หรือคืนข้อความว่าง ที่เรียกว่า negative caching ทำให้ลูกค้าคนอื่นโดนเสิร์ฟข้อความพังซ้ำจนกว่า TTL จะหมด ต้องเช็กว่าผ่าน validation แล้วเท่านั้นค่อย set ลงแคช\n\nข้อสี่ ใส่ time dot sleep 61 ใน pytest เพื่อเทสต์ TTL ทำให้ชุดเทสต์อืดจนทีมขี้เกียจรัน ต้อง inject clock เข้าไปหมุนเวลาจำลองในไม่กี่มิลลิวินาทีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d027/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนเช็กความเข้าใจเรื่อง Cache Key, LRU vs SQLite, prompt_version และ clock injection",
+      "script": "มาเช็กความแม่นยำกันด้วย Micro-Quiz 4 ข้อนะครับ ทั้งเหตุผลที่ห้ามใช้ hash() การเลือกใช้แคชให้เหมาะกับ CLI วิธี invalidate แคชด้วย prompt_version และวิธีเทสต์ TTL ใน pytest แบบไม่รอเวลาจริง\n\nลองตอบให้ครบทั้ง 4 ข้อและอ่านคำอธิบายให้เคลียร์ เดี๋ยวพี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความแม่นยำกันด้วย Micro-Quiz 4 ข้อนะครับ ทั้งเหตุผลที่ห้ามใช้ hash การเลือกใช้แคชให้เหมาะกับ CLI วิธี invalidate แคชด้วย prompt_version และวิธีเทสต์ TTL ใน pytest แบบไม่รอเวลาจริง\n\nลองตอบให้ครบทั้ง 4 ข้อและอ่านคำอธิบายให้เคลียร์ เดี๋ยวพี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองทำควิซทั้ง 4 ข้อเพื่อเช็กความเข้าใจเรื่อง Deterministic Cache Key และ TTL เมื่อทำครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 28",
+      "src": "/audio/d027/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจในตัวผู้เรียน สรุป 4 แก่นหลักของ Caching แล้วชวนเข้าวันทบทวน Block B07 ใน Day 28",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 27 เรียบร้อยแล้ว! วันนี้คุณได้อาวุธลดค่า API และเร่งความเร็วระดับ Production ไปครบ 4 ข้อเลย\n\nหนึ่ง สร้าง deterministic cache key ด้วย hashlib.sha256 บน canonical JSON ที่รวม normalized prompt, model, temperature และ prompt_version ห้ามใช้ hash() ของ Python เด็ดขาด\nสอง รู้จักเลือกใช้ lru_cache กับงานใน RAM ชั่วคราว และใช้ SQLite Cache เมื่อต้องการความทนทานข้ามการรีสตาร์ต CLI โดยไม่ต้องรีบตั้งเซิร์ฟเวอร์เพิ่ม\nสาม ใช้ TTL คู่กับ prompt_version เพื่อ invalidate แคชอย่างสะอาด และห้ามแคชผลลัพธ์ตอน API error\nสี่ Inject clock เข้าไปในคลาสแคช เพื่อให้เทสต์วันหมดอายุใน pytest รันจบในเสี้ยววินาทีครับ\n\nพรุ่งนี้ใน Day 28 เป็นวันทบทวน Block B07 เราจะประกอบ SQL Analytics, Parameterized Migrations, SQLite Cache และ Typer CLI เข้าด้วยกัน กดทำเครื่องหมายว่าเรียนจบแล้วเจอกันใน Day 28 นะครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 27 เรียบร้อยแล้ว! วันนี้คุณได้อาวุธลดค่า API และเร่งความเร็วระดับ Production ไปครบ 4 ข้อเลย\n\nหนึ่ง สร้าง deterministic cache key ด้วย hashlib dot sha256 บน canonical JSON ที่รวม normalized prompt, model, temperature และ prompt_version ห้ามใช้ hash ของ Python เด็ดขาด\nสอง รู้จักเลือกใช้ lru_cache กับงานใน RAM ชั่วคราว และใช้ SQLite Cache เมื่อต้องการความทนทานข้ามการรีสตาร์ต CLI โดยไม่ต้องรีบตั้งเซิร์ฟเวอร์เพิ่ม\nสาม ใช้ TTL คู่กับ prompt_version เพื่อ invalidate แคชอย่างสะอาด และห้ามแคชผลลัพธ์ตอน API error\nสี่ Inject clock เข้าไปในคลาสแคช เพื่อให้เทสต์วันหมดอายุใน pytest รันจบในเสี้ยววินาทีครับ\n\nพรุ่งนี้ใน Day 28 เป็นวันทบทวน Block B07 เราจะประกอบ SQL Analytics, Parameterized Migrations, SQLite Cache และ Typer CLI เข้าด้วยกัน กดทำเครื่องหมายว่าเรียนจบแล้วเจอกันใน Day 28 นะครับ!"
+    }
+  ]
+}

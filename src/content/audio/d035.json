@@ -1,0 +1,109 @@
+{
+  "lessonId": "d035",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Parquet + DuckDB + Polars Zero-Copy",
+      "src": "/audio/d035/01-big-picture.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น สดใส ชวนเห็นภาพการยกระดับจาก CSV ไปสู่ Parquet และ DuckDB บนเครื่องตัวเอง",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 35 นะครับ เมื่อวานเราล้างข้อมูลไทยจนสะอาดแล้ว แต่ถ้ายังเซฟผลลัพธ์กลับไปเป็นไฟล์ CSV มันมีปัญหาใหญ่ 3 อย่างครับ คือไฟล์ใหญ่กินดิสก์ อ่านช้า และไม่เก็บ schema เอาไว้ พอโหลดใหม่ก็ต้องมานั่งเดาชนิดข้อมูลอีกรอบ\n\nวันนี้เราจะเปลี่ยนเกมด้วยไฟล์ Parquet ที่บีบอัดข้อมูลแบบคอลัมน์จนเล็กลง 5 ถึง 10 เท่าพร้อมเก็บชนิดข้อมูลครบถ้วน จากนั้นจับคู่กับ DuckDB ซึ่งเป็นเอนจิน SQL สำหรับงานวิเคราะห์ OLAP ที่รันในโปรเซส Python ได้เลย ไม่ต้องตั้งเซิร์ฟเวอร์ PostgreSQL หรือ Spark ให้ยุ่งยาก\n\nและที่เจ๋งสุดคือ ทั้ง DuckDB กับ Polars พูดภาษาหน่วยความจำเดียวกันคือ Apache Arrow เราเลยคิวรี Parquet ด้วย SQL อย่าง Window Function เสร็จแล้วส่งกลับเข้า Polars แบบ zero-copy ด้วย .pl() ได้ทันทีครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 35 นะครับ เมื่อวานเราล้างข้อมูลไทยจนสะอาดแล้ว แต่ถ้ายังเซฟผลลัพธ์กลับไปเป็นไฟล์ CSV มันมีปัญหาใหญ่ 3 อย่างครับ คือไฟล์ใหญ่กินดิสก์ อ่านช้า และไม่เก็บ schema เอาไว้ พอโหลดใหม่ก็ต้องมานั่งเดาชนิดข้อมูลอีกรอบ\n\nวันนี้เราจะเปลี่ยนเกมด้วยไฟล์ Parquet ที่บีบอัดข้อมูลแบบคอลัมน์จนเล็กลง 5 ถึง 10 เท่าพร้อมเก็บชนิดข้อมูลครบถ้วน จากนั้นจับคู่กับ DuckDB ซึ่งเป็นเอนจิน SQL สำหรับงานวิเคราะห์ OLAP ที่รันในโปรเซส Python ได้เลย ไม่ต้องตั้งเซิร์ฟเวอร์ PostgreSQL หรือ Spark ให้ยุ่งยาก\n\nและที่เจ๋งสุดคือ ทั้ง DuckDB กับ Polars พูดภาษาหน่วยความจำเดียวกันคือ Apache Arrow เราเลยคิวรี Parquet ด้วย SQL อย่าง Window Function เสร็จแล้วส่งกลับเข้า Polars แบบ zero-copy ด้วย dot pl ได้ทันทีครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d035/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อแล้วเชื่อมโยงความรู้เดิมจาก SQLite และ Window Functions",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Day 35 กันครับ\n\nข้อแรก อธิบายเหตุผลทางวิศวกรรมได้ว่าทำไม Parquet ถึงเล็กและเร็วกว่า CSV ทั้งเรื่อง columnar storage, column pruning, row-group statistics และการบีบอัด\nข้อสอง คิวรีไฟล์ CSV และ Parquet โดยตรงด้วย DuckDB ใน Python พร้อมใช้ parameter เครื่องหมายคำถาม และแปลงไฟล์ CSV เป็น Parquet\nข้อสาม เชื่อมต่อ DuckDB กับ Polars แบบ zero-copy ทั้งส่ง Polars เข้าไปคิวรีด้วย SQL และดึงผลลัพธ์กลับเป็น DataFrame ด้วย .pl()\n\nบทนี้ใช้พื้นฐาน SQL จาก Day 25 และ parameterized query จาก Day 26 รันบนเครื่องได้ 100 เปอร์เซ็นต์ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Day 35 กันครับ\n\nข้อแรก อธิบายเหตุผลทางวิศวกรรมได้ว่าทำไม Parquet ถึงเล็กและเร็วกว่า CSV ทั้งเรื่อง columnar storage, column pruning, row-group statistics และการบีบอัด\nข้อสอง คิวรีไฟล์ CSV และ Parquet โดยตรงด้วย DuckDB ใน Python พร้อมใช้ parameter เครื่องหมายคำถาม และแปลงไฟล์ CSV เป็น Parquet\nข้อสาม เชื่อมต่อ DuckDB กับ Polars แบบ zero-copy ทั้งส่ง Polars เข้าไปคิวรีด้วย SQL และดึงผลลัพธ์กลับเป็น DataFrame ด้วย dot pl\n\nบทนี้ใช้พื้นฐาน SQL จาก Day 25 และ parameterized query จาก Day 26 รันบนเครื่องได้ 100 เปอร์เซ็นต์ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d035/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงอย่างใจเย็น แนะนำการติดตั้ง duckdb, polars และ pyarrow ทีละขั้นชัดเจน",
+      "script": "มาเตรียมโปรเจกต์ ai-day35 ด้วย uv กันครับ\n\nเริ่มจาก uv init ai-day35 แล้ว cd เข้าไป จากนั้นติดตั้ง duckdb, polars และ pyarrow ด้วย uv add duckdb polars pyarrow ตัว pyarrow จะช่วยให้การส่งข้อมูลผ่าน Apache Arrow ระหว่าง DuckDB กับ Polars ลื่นไหลในทุกเวอร์ชัน ส่วน dev tools ก็ลง pytest กับ ruff ด้วย uv add --dev pytest ruff\n\nเสร็จแล้วรัน Python เช็กเวอร์ชันของทั้ง DuckDB และ Polars ได้เลย DuckDB เป็นฐานข้อมูลฝังตัวเหมือน SQLite เลยไม่ต้องเปิด Docker ครับ เดี๋ยวพี่รอให้คุณเซตอัปตรงนี้ก่อนนะ",
+      "ttsText": "มาเตรียมโปรเจกต์ ai-day35 ด้วย uv กันครับ\n\nเริ่มจาก uv init ai-day35 แล้ว cd เข้าไป จากนั้นติดตั้ง duckdb, polars และ pyarrow ด้วย uv add duckdb polars pyarrow ตัว pyarrow จะช่วยให้การส่งข้อมูลผ่าน Apache Arrow ระหว่าง DuckDB กับ Polars ลื่นไหลในทุกเวอร์ชัน ส่วน dev tools ก็ลง pytest กับ ruff ด้วย uv add dash dash dev pytest ruff\n\nเสร็จแล้วรัน Python เช็กเวอร์ชันของทั้ง DuckDB และ Polars ได้เลย DuckDB เป็นฐานข้อมูลฝังตัวเหมือน SQLite เลยไม่ต้องเปิด Docker ครับ เดี๋ยวพี่รอให้คุณเซตอัปตรงนี้ก่อนนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง DuckDB และ Polars",
+        "prompt": "ลองรันคำสั่งตั้งโปรเจกต์ ai-day35 และติดตั้ง duckdb, polars, pyarrow ให้เรียบร้อยก่อนกดไปต่อครับ",
+        "continueLabel": "เช็กเวอร์ชันผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — CSV Row Scan vs Parquet Columnar Scan",
+      "src": "/audio/d035/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนเห็นภาพ อธิบายความต่างระหว่างการอ่านแถวของ CSV กับการหยิบเฉพาะคอลัมน์ของ Parquet",
+      "script": "ลองกดดูแผนภาพเปรียบเทียบ CSV Row Scan กับ DuckDB Columnar Parquet Scan ตรงหน้านี้กันครับ\n\nฝั่ง CSV เก็บข้อมูลแบบเรียงทีละแถว ดังนั้นเวลาคุณอยากคำนวณแค่คอลัมน์ราคา 1 คอลัมน์ จากทั้งหมด 30 คอลัมน์ เครื่องก็ยังต้องอ่านข้อความทุกตัวอักษรของอีก 29 คอลัมน์ทิ้งไปเปล่า ๆ\n\nแต่ฝั่ง Parquet เก็บแยกคอลัมน์เป็นบล็อก พร้อมจดค่า min และ max ของแต่ละกลุ่มแถวไว้ในหัวไฟล์ DuckDB จึงอ่านเฉพาะบล็อกคอลัมน์ที่ถามถึง แถมข้ามก้อนข้อมูลที่ไม่ตรงเงื่อนไขไปทั้งก้อนได้เลยครับ ลองกดเทียบดูนะ",
+      "ttsText": "ลองกดดูแผนภาพเปรียบเทียบ CSV Row Scan กับ DuckDB Columnar Parquet Scan ตรงหน้านี้กันครับ\n\nฝั่ง CSV เก็บข้อมูลแบบเรียงทีละแถว ดังนั้นเวลาคุณอยากคำนวณแค่คอลัมน์ราคา 1 คอลัมน์ จากทั้งหมด 30 คอลัมน์ เครื่องก็ยังต้องอ่านข้อความทุกตัวอักษรของอีก 29 คอลัมน์ทิ้งไปเปล่า ๆ\n\nแต่ฝั่ง Parquet เก็บแยกคอลัมน์เป็นบล็อก พร้อมจดค่า min และ max ของแต่ละกลุ่มแถวไว้ในหัวไฟล์ DuckDB จึงอ่านเฉพาะบล็อกคอลัมน์ที่ถามถึง แถมข้ามก้อนข้อมูลที่ไม่ตรงเงื่อนไขไปทั้งก้อนได้เลยครับ ลองกดเทียบดูนะ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d035/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสถาปัตยกรรม Parquet, DuckDB OLAP และ Apache Arrow อย่างลื่นไหลและเห็นภาพเปรียบเทียบชัดเจน",
+      "script": "มาดู 3 แนวคิดสำคัญที่จะเปลี่ยนวิธีวิเคราะห์ข้อมูลของคุณไปตลอดกาลครับ\n\nข้อแรก ทำไม Parquet ถึงชนะ CSV ขาดลอย ให้นึกว่า CSV เหมือนสมุดบัญชีที่จดทุกช่องต่อกันทีละบรรทัด จะรวมยอดราคาต้องไล่สายตาผ่านชื่อและที่อยู่ทุกแถว แถมรหัสไปรษณีย์อย่าง 01055 ยังโดนเดาเป็นเลข 1055 จนศูนย์นำหน้าหายอีก ส่วน Parquet เหมือนแฟ้มแยกคอลัมน์เป็นลิ้นชักพร้อมป้ายช่วงข้อมูลหน้าลิ้นชัก ทำให้ได้ 3 พลังพร้อมกันคือ Column Pruning อ่านเฉพาะคอลัมน์ที่ใช้, Row-Group Skipping ข้ามก้อนที่ไม่ตรง WHERE และ Compression ที่บีบอัดไฟล์เล็กลง 5 ถึง 10 เท่า กฎปฏิบัติคือรับไฟล์ดิบเป็น CSV ได้ แต่ล้างเสร็จแล้วให้เซฟเป็น Parquet เสมอครับ\n\nข้อที่สอง DuckDB คือ SQLite สำหรับงานวิเคราะห์ OLAP ถ้าเทียบง่าย ๆ SQLite เหมือนลิ้นชักแคชเชียร์ที่เก่งงานหยิบเก็บใบเสร็จทีละใบแบบ OLTP เช่น cache หรือ metadata ส่วน DuckDB เหมือนทีมบัญชีหลายคนที่กางแฟ้ม Parquet ทั้งปีออกมาสรุปยอดขายแยกจังหวัดพร้อมกันทุกแกน CPU จุดเด่นคือคุณคิวรีไฟล์บนดิสก์ตรง ๆ ผ่าน read_parquet(?) ได้เลยโดยไม่ต้อง import แถมมีคีย์เวิร์ด QUALIFY ที่ช่วยให้กรองผลจาก Window Function อย่าง RANK() OVER ได้ในคำสั่งเดียวไม่ต้องซ้อน subquery ยาว ๆ ครับ\n\nข้อที่สาม Zero-Copy Handoff ระหว่าง DuckDB กับ Polars ผ่าน Apache Arrow ไม่ต้องเลือกว่าจะใช้ตัวไหนตัวเดียวครับ ให้คิดว่าทั้งสองเป็นเชฟ 2 คนยืนหน้าเขียงเดียวกัน Polars ถนัดหั่นล้างสตริงไทย ส่วน DuckDB ถนัดผัดรวม SQL และ Window Functions เราส่ง DataFrame เข้า DuckDB ด้วย con.register(\"orders\", df) แล้วรับผลกลับเป็น Polars ด้วย .pl() ผ่านตัวชี้หน่วยความจำโดยแทบไม่เสียเวลาก๊อปปี้ข้อมูลเลยครับ",
+      "ttsText": "มาดู 3 แนวคิดสำคัญที่จะเปลี่ยนวิธีวิเคราะห์ข้อมูลของคุณไปตลอดกาลครับ\n\nข้อแรก ทำไม Parquet ถึงชนะ CSV ขาดลอย ให้นึกว่า CSV เหมือนสมุดบัญชีที่จดทุกช่องต่อกันทีละบรรทัด จะรวมยอดราคาต้องไล่สายตาผ่านชื่อและที่อยู่ทุกแถว แถมรหัสไปรษณีย์อย่าง 01055 ยังโดนเดาเป็นเลข 1055 จนศูนย์นำหน้าหายอีก ส่วน Parquet เหมือนแฟ้มแยกคอลัมน์เป็นลิ้นชักพร้อมป้ายช่วงข้อมูลหน้าลิ้นชัก ทำให้ได้ 3 พลังพร้อมกันคือ Column Pruning อ่านเฉพาะคอลัมน์ที่ใช้, Row-Group Skipping ข้ามก้อนที่ไม่ตรง WHERE และ Compression ที่บีบอัดไฟล์เล็กลง 5 ถึง 10 เท่า กฎปฏิบัติคือรับไฟล์ดิบเป็น CSV ได้ แต่ล้างเสร็จแล้วให้เซฟเป็น Parquet เสมอครับ\n\nข้อที่สอง DuckDB คือ SQLite สำหรับงานวิเคราะห์ OLAP ถ้าเทียบง่าย ๆ SQLite เหมือนลิ้นชักแคชเชียร์ที่เก่งงานหยิบเก็บใบเสร็จทีละใบแบบ OLTP เช่น cache หรือ metadata ส่วน DuckDB เหมือนทีมบัญชีหลายคนที่กางแฟ้ม Parquet ทั้งปีออกมาสรุปยอดขายแยกจังหวัดพร้อมกันทุกแกน CPU จุดเด่นคือคุณคิวรีไฟล์บนดิสก์ตรง ๆ ผ่าน read_parquet ที่รับ parameter ได้เลยโดยไม่ต้อง import แถมมีคีย์เวิร์ด QUALIFY ที่ช่วยให้กรองผลจาก Window Function อย่าง RANK OVER ได้ในคำสั่งเดียวไม่ต้องซ้อน subquery ยาว ๆ ครับ\n\nข้อที่สาม Zero-Copy Handoff ระหว่าง DuckDB กับ Polars ผ่าน Apache Arrow ไม่ต้องเลือกว่าจะใช้ตัวไหนตัวเดียวครับ ให้คิดว่าทั้งสองเป็นเชฟ 2 คนยืนหน้าเขียงเดียวกัน Polars ถนัดหั่นล้างสตริงไทย ส่วน DuckDB ถนัดผัดรวม SQL และ Window Functions เราส่ง DataFrame เข้า DuckDB ด้วย con dot register ชื่อ orders กับ df แล้วรับผลกลับเป็น Polars ด้วย dot pl ผ่านตัวชี้หน่วยความจำโดยแทบไม่เสียเวลาก๊อปปี้ข้อมูลเลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — Parquet Compression & QUALIFY",
+      "src": "/audio/d035/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นกับตัวเลขขนาดไฟล์ที่ลดลง 24 เท่า และอธิบายคำสั่ง QUALIFY กับกฎป้องกัน SQL พังบน Windows ชัดเจน",
+      "script": "ลองมาดูตัวอย่าง worked_duckdb.py กับข้อมูลยอดขาย 20,000 แถวกันครับ\n\nขั้นแรก เราสร้าง CSV ที่มีคอลัมน์ note ยาว ๆ ติดมาด้วย แล้วใช้ DuckDB แปลงเป็น Parquet แบบบีบอัด ZSTD ผลลัพธ์น่าทึ่งมาก จากไฟล์ CSV เกือบ 2,900 KB พอเป็น Parquet เหลือแค่ประมาณ 118 KB เล็กลงกว่า 24 เท่าเลยครับ\n\nขั้นที่สอง เราเขียน SQL คิวรีไฟล์ Parquet ตรง ๆ ผ่าน read_parquet(?) กรอง status เท่ากับ paid ผ่าน parameter (?) จัดกลุ่มตามจังหวัดและหมวดหมู่ แล้วใช้ RANK() OVER คู่กับ QUALIFY rank_in_province เท่ากับ 1 เพื่อดึงเฉพาะหมวดขายดีอันดับ 1 ของแต่ละจังหวัด ก่อนเรียก .pl() รับกลับมาเป็น Polars DataFrame สังเกตว่าเราไม่แตะคอลัมน์ order_id และ note เลย DuckDB จึงทำ column pruning อัตโนมัติ\n\nขั้นที่สาม เราใช้ DESCRIBE เพื่อดู schema จริงที่ฝังอยู่ใน Parquet footer และคำเตือนสำคัญสำหรับคนใช้ Windows นะครับ ห้ามเอา Path ไปต่อสตริงด้วย f-string ใน SQL เด็ดขาด เพราะ backslash จะทำให้ SQL พัง ให้ส่งผ่าน parameter เครื่องหมายคำถามเสมอครับ ลองกดไล่ดูทีละขั้นได้เลย",
+      "ttsText": "ลองมาดูตัวอย่าง worked_duckdb dot py กับข้อมูลยอดขาย 20,000 แถวกันครับ\n\nขั้นแรก เราสร้าง CSV ที่มีคอลัมน์ note ยาว ๆ ติดมาด้วย แล้วใช้ DuckDB แปลงเป็น Parquet แบบบีบอัด ZSTD ผลลัพธ์น่าทึ่งมาก จากไฟล์ CSV เกือบ 2,900 กิโลไบต์ พอเป็น Parquet เหลือแค่ประมาณ 118 กิโลไบต์ เล็กลงกว่า 24 เท่าเลยครับ\n\nขั้นที่สอง เราเขียน SQL คิวรีไฟล์ Parquet ตรง ๆ ผ่าน read_parquet แบบใส่ parameter กรอง status เท่ากับ paid จัดกลุ่มตามจังหวัดและหมวดหมู่ แล้วใช้ RANK OVER คู่กับ QUALIFY rank_in_province เท่ากับ 1 เพื่อดึงเฉพาะหมวดขายดีอันดับ 1 ของแต่ละจังหวัด ก่อนเรียก dot pl รับกลับมาเป็น Polars DataFrame สังเกตว่าเราไม่แตะคอลัมน์ order_id และ note เลย DuckDB จึงทำ column pruning อัตโนมัติ\n\nขั้นที่สาม เราใช้ DESCRIBE เพื่อดู schema จริงที่ฝังอยู่ใน Parquet footer และคำเตือนสำคัญสำหรับคนใช้ Windows นะครับ ห้ามเอา Path ไปต่อสตริงด้วย f-string ใน SQL เด็ดขาด เพราะ backslash จะทำให้ SQL พัง ให้ส่งผ่าน parameter เครื่องหมายคำถามเสมอครับ ลองกดไล่ดูทีละขั้นได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาตัวอย่าง DuckDB + Parquet",
+        "prompt": "ลองกดไล่ดูขั้นตอนแปลงไฟล์ Parquet, การใช้ QUALIFY และ DESCRIBE ใน worked_duckdb.py แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้างโมดูล local analytics ด้วย DuckDB",
+      "src": "/audio/d035/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชัดเจน ไล่สเปกทั้ง 3 ฟังก์ชันและบอกเคล็ดลับ Relational API ในคำใบ้อย่างเป็นกันเอง",
+      "script": "มาลงมือทำแบบฝึกหัด 12 นาทีใน exercise_day35.py กันครับ โจทย์ให้สร้าง 3 ฟังก์ชันเพื่อเชื่อม CSV, Parquet, DuckDB และ Polars เข้าด้วยกัน\n\nฟังก์ชันแรก csv_to_parquet แปลง CSV เป็น Parquet แบบบีบอัด ZSTD แล้วคืนขนาดไฟล์ทั้งสองในหน่วย bytes ทริกเล็ก ๆ ที่ช่วยชีวิตได้คือบางเวอร์ชันของ DuckDB Python คำสั่ง COPY TO ? อาจไม่รับ parameter ตรง TO ถ้าเจอ error ให้ใช้ Relational API อย่าง con.read_csv(str(src)).write_parquet(str(dst), compression=\"zstd\") ได้เลย ปลอดภัยและไม่ต้องต่อสตริงเหมือนกันครับ\n\nฟังก์ชันที่สอง top_categories_by_province คิวรีจาก read_parquet(?) กรอง status เท่ากับ paid จัดกลุ่มตาม province กับ category กรองกลุ่มด้วย HAVING ผลรวม gmv_thb มากกว่าหรือเท่ากับ min_gmv แล้วจัดอันดับด้วย RANK() OVER ก่อนกรองด้วย QUALIFY gmv_rank น้อยกว่าหรือเท่ากับ top_k และคืนค่าด้วย .pl()\n\nฟังก์ชันที่สาม query_polars_with_duckdb รับ DataFrame เข้ามาลงทะเบียนด้วย con.register(\"orders\", df) แล้วสรุปยอดรวมและค่าเฉลี่ยของแถว paid แยกตามจังหวัดส่งกลับเป็น .pl() ครับ ลองเขียนแล้วรัน pytest ดูนะ",
+      "ttsText": "มาลงมือทำแบบฝึกหัด 12 นาทีใน exercise_day35 dot py กันครับ โจทย์ให้สร้าง 3 ฟังก์ชันเพื่อเชื่อม CSV, Parquet, DuckDB และ Polars เข้าด้วยกัน\n\nฟังก์ชันแรก csv_to_parquet แปลง CSV เป็น Parquet แบบบีบอัด ZSTD แล้วคืนขนาดไฟล์ทั้งสองในหน่วย bytes ทริกเล็ก ๆ ที่ช่วยชีวิตได้คือบางเวอร์ชันของ DuckDB Python คำสั่ง COPY TO อาจไม่รับ parameter ตรง TO ถ้าเจอ error ให้ใช้ Relational API อย่าง con dot read_csv str src dot write_parquet str dst พร้อม compression เท่ากับ zstd ได้เลย ปลอดภัยและไม่ต้องต่อสตริงเหมือนกันครับ\n\nฟังก์ชันที่สอง top_categories_by_province คิวรีจาก read_parquet แบบใส่ parameter กรอง status เท่ากับ paid จัดกลุ่มตาม province กับ category กรองกลุ่มด้วย HAVING ผลรวม gmv_thb มากกว่าหรือเท่ากับ min_gmv แล้วจัดอันดับด้วย RANK OVER ก่อนกรองด้วย QUALIFY gmv_rank น้อยกว่าหรือเท่ากับ top_k และคืนค่าด้วย dot pl\n\nฟังก์ชันที่สาม query_polars_with_duckdb รับ DataFrame เข้ามาลงทะเบียนด้วย con dot register ชื่อ orders กับ df แล้วสรุปยอดรวมและค่าเฉลี่ยของแถว paid แยกตามจังหวัดส่งกลับเป็น dot pl ครับ ลองเขียนแล้วรัน pytest ดูนะ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียนโค้ด exercise_day35.py",
+        "prompt": "ลงมือเขียน csv_to_parquet, top_categories_by_province และ query_polars_with_duckdb แล้วรัน pytest กับ ruff ให้ผ่านครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อยใน DuckDB",
+      "src": "/audio/d035/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยและเล่า 4 ข้อผิดพลาดด้วยจังหวะชัดเจน มีอารมณ์เตือนภัยแบบรุ่นพี่ที่เคยเจอมาก่อน",
+      "script": "เก่งมากครับที่ทำแบบฝึกหัดครบทั้ง 3 ฟังก์ชัน ก่อนไปควิซ พี่ขอสรุป 4 ข้อผิดพลาดยอดฮิตเวลาใช้ DuckDB กับ Parquet นะครับ\n\nข้อแรก ต่อพาธไฟล์เข้าสตริง SQL ด้วย f-string แทนที่จะใช้ parameter หรือ Relational API นอกจากเสี่ยง SQL injection แล้วบน Windows ที่มี backslash หรือโฟลเดอร์มีเครื่องหมาย apostrophe อย่าง O'Brien โค้ดจะพังทันทีครับ\n\nข้อสอง เอาผลของ Window Function อย่าง gmv_rank = 1 ไปกรองใน WHERE ซึ่งจะโดน BinderException เตือนทันที ใน DuckDB ต้องใช้ QUALIFY หรือห่อด้วย CTE แล้วค่อย WHERE ด้านนอกนะ\n\nข้อสาม ติดนิสัย SELECT * เวลาคิวรีไฟล์ Parquet ใหญ่ ๆ ทั้งที่ใช้จริงแค่ 2 คอลัมน์ แบบนี้เสียพลัง Column Pruning ไปหมดเลยครับ ให้ระบุชื่อคอลัมน์ที่ใช้จริงเสมอ\n\nและข้อสี่ เปิดไฟล์ .duckdb เดียวกันแบบ read-write จากหลายโปรเซสพร้อมกันจนติด lock error สำหรับงานคิวรี Parquet ใช้ duckdb.connect() โหมด in-memory แล้วอ่านไฟล์ตรง ๆ จะปลอดภัยและรันขนานกี่โปรเซสก็ได้ครับ",
+      "ttsText": "เก่งมากครับที่ทำแบบฝึกหัดครบทั้ง 3 ฟังก์ชัน ก่อนไปควิซ พี่ขอสรุป 4 ข้อผิดพลาดยอดฮิตเวลาใช้ DuckDB กับ Parquet นะครับ\n\nข้อแรก ต่อพาธไฟล์เข้าสตริง SQL ด้วย f-string แทนที่จะใช้ parameter หรือ Relational API นอกจากเสี่ยง SQL injection แล้วบน Windows ที่มี backslash หรือโฟลเดอร์มีเครื่องหมาย apostrophe อย่าง O'Brien โค้ดจะพังทันทีครับ\n\nข้อสอง เอาผลของ Window Function อย่าง gmv_rank เท่ากับ 1 ไปกรองใน WHERE ซึ่งจะโดน BinderException เตือนทันที ใน DuckDB ต้องใช้ QUALIFY หรือห่อด้วย CTE แล้วค่อย WHERE ด้านนอกนะ\n\nข้อสาม ติดนิสัย SELECT star เวลาคิวรีไฟล์ Parquet ใหญ่ ๆ ทั้งที่ใช้จริงแค่ 2 คอลัมน์ แบบนี้เสียพลัง Column Pruning ไปหมดเลยครับ ให้ระบุชื่อคอลัมน์ที่ใช้จริงเสมอ\n\nและข้อสี่ เปิดไฟล์ dot duckdb เดียวกันแบบ read-write จากหลายโปรเซสพร้อมกันจนติด lock error สำหรับงานคิวรี Parquet ใช้ duckdb dot connect โหมด in-memory แล้วอ่านไฟล์ตรง ๆ จะปลอดภัยและรันขนานกี่โปรเซสก็ได้ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d035/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนเช็กความเข้าใจเรื่อง Parquet, DuckDB vs SQLite, .pl() และ QUALIFY",
+      "script": "มาลองทำ Micro-Quiz 4 ข้อเพื่อเช็กความแม่นของ Day 35 กันครับ\n\nมีครบทั้งเรื่อง Column Pruning กับ Row-Group Skipping ของ Parquet, การเลือกใช้ SQLite กับ DuckDB ให้ถูกงาน, เมธอด zero-copy สำหรับ Polars และลำดับการทำงานของ WHERE, HAVING, QUALIFY ทำเสร็จแล้วค่อยมากดฟังสรุปปิดท้ายกันนะ",
+      "ttsText": "มาลองทำ Micro-Quiz 4 ข้อเพื่อเช็กความแม่นของ Day 35 กันครับ\n\nมีครบทั้งเรื่อง Column Pruning กับ Row-Group Skipping ของ Parquet, การเลือกใช้ SQLite กับ DuckDB ให้ถูกงาน, เมธอด zero-copy สำหรับ Polars และลำดับการทำงานของ WHERE, HAVING, QUALIFY ทำเสร็จแล้วค่อยมากดฟังสรุปปิดท้ายกันนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซ Day 35 ทั้ง 4 ข้อและอ่านคำอธิบายให้เข้าใจ ก่อนกดไปฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 36",
+      "src": "/audio/d035/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจในตัวผู้เรียน สรุปเวิร์กโฟลว์ทองคำของ Day 35 ให้ทรงพลัง แล้วชวนไปประกอบร่างในวันทบทวน",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 35 แล้ว! วันนี้เราได้สถาปัตยกรรม Local Analytics ที่ทั้งเร็วและประหยัดทรัพยากรสุด ๆ ขอสรุป 4 ข้อหลักไว้เตือนใจนะครับ\n\nหนึ่ง บันทึกข้อมูลสะอาดเป็น Parquet เสมอ เพราะเล็กกว่า CSV 5 ถึง 10 เท่า เก็บ schema จริง และเปิดทางให้ทำ Column Pruning กับ Row-Group Skipping\nสอง ใช้ DuckDB เป็น SQL OLAP ในโปรเซส Python คิวรีไฟล์ Parquet ตรง ๆ ผ่าน parameter ได้โดยไม่ต้องตั้งเซิร์ฟเวอร์\nสาม จำลำดับ SQL ให้แม่น: WHERE กรองแถวดิบ, HAVING กรองกลุ่มหลัง GROUP BY และ QUALIFY กรองผลหลัง Window Function\nสี่ จับคู่ Polars กับ DuckDB แบบ zero-copy ด้วย con.register และ .pl() ผ่าน Apache Arrow\n\nพรุ่งนี้ Day 36 เป็นวันทบทวน Block B09 เราจะเอาความรู้จาก Day 33, 34 และ 35 มาร้อยเป็นท่อเดียวกับข้อมูล e-commerce ไทย 100,000 แถวพร้อมจับเวลาจริง อย่าลืมกดเรียนจบนะครับ แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ จบ Day 35 แล้ว! วันนี้เราได้สถาปัตยกรรม Local Analytics ที่ทั้งเร็วและประหยัดทรัพยากรสุด ๆ ขอสรุป 4 ข้อหลักไว้เตือนใจนะครับ\n\nหนึ่ง บันทึกข้อมูลสะอาดเป็น Parquet เสมอ เพราะเล็กกว่า CSV 5 ถึง 10 เท่า เก็บ schema จริง และเปิดทางให้ทำ Column Pruning กับ Row-Group Skipping\nสอง ใช้ DuckDB เป็น SQL OLAP ในโปรเซส Python คิวรีไฟล์ Parquet ตรง ๆ ผ่าน parameter ได้โดยไม่ต้องตั้งเซิร์ฟเวอร์\nสาม จำลำดับ SQL ให้แม่น: WHERE กรองแถวดิบ, HAVING กรองกลุ่มหลัง GROUP BY และ QUALIFY กรองผลหลัง Window Function\nสี่ จับคู่ Polars กับ DuckDB แบบ zero-copy ด้วย con dot register และ dot pl ผ่าน Apache Arrow\n\nพรุ่งนี้ Day 36 เป็นวันทบทวน Block B09 เราจะเอาความรู้จาก Day 33, 34 และ 35 มาร้อยเป็นท่อเดียวกับข้อมูล e-commerce ไทย 100,000 แถวพร้อมจับเวลาจริง อย่าลืมกดเรียนจบนะครับ แล้วเจอกันครับ!"
+    }
+  ]
+}

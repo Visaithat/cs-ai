@@ -1,0 +1,109 @@
+{
+  "lessonId": "d013",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — HTTP Client ที่ไว้ใจได้",
+      "src": "/audio/d013/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น เป็นกันเอง เหมือนรุ่นพี่ชวนคุยก่อนขึ้นบล็อกใหม่ เน้นเสียงชัดเจนตรงคำว่าค้างตลอดกาล และการแยก 4xx กับ 429/5xx",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 13 และจุดเริ่มต้นของ Block B04 เรื่องระบบเครือข่ายที่ทนทานนะครับ วันนี้เราจะมาสร้าง HTTP Client ที่ไว้ใจได้ด้วย httpx กันครับ\n\nมองภาพใหญ่ก่อนเลย ระบบ AI แทบทุกตัวต้องคุยกับโลกภายนอก ไม่ว่าจะเป็น CRM ฐานข้อมูลเอกสาร หรือ webhook ของลูกค้า ถ้าเราไม่ได้ตั้ง timeout ไว้ให้ชัด แค่ API ปลายทางค้างไปเส้นเดียว worker ของเราอาจหยุดนิ่งรอไปตลอดกาลจนแอปค้างทั้งระบบเลยนะครับ\n\nที่สำคัญ Official SDK ของผู้ให้บริการ LLM ยุคใหม่ใน Python ล้วนใช้ httpx เป็นเครื่องยนต์ส่ง HTTP อยู่ข้างใต้ทั้งนั้น วันนี้เราจึงมาฝึกตั้ง httpx.Timeout แบบแยกช่วง จัดการ connection pool และแยก error ออกเป็นสองกลุ่มชัด ๆ คือ 4xx ที่เป็นบั๊กฝั่งเราให้ fail fast กับ 429 หรือ 5xx ที่เป็นปัญหาชั่วคราวให้ส่งต่อไประบบ retry ใน Day 14\n\nและที่เจ๋งสุดคือ เราจะทดสอบทุกสถานะทั้ง 200, 400, 401, 429, 503 ไปจนถึง timeout ด้วย httpx.MockTransport บนเครื่องแบบออฟไลน์ 100 เปอร์เซ็นต์ ไม่ต้องยิงเน็ตจริงเลยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 13 และจุดเริ่มต้นของ Block B04 เรื่องระบบเครือข่ายที่ทนทานนะครับ วันนี้เราจะมาสร้าง HTTP Client ที่ไว้ใจได้ด้วย httpx กันครับ\n\nมองภาพใหญ่ก่อนเลย ระบบ AI แทบทุกตัวต้องคุยกับโลกภายนอก ไม่ว่าจะเป็น CRM ฐานข้อมูลเอกสาร หรือ webhook ของลูกค้า ถ้าเราไม่ได้ตั้ง timeout ไว้ให้ชัด แค่ API ปลายทางค้างไปเส้นเดียว worker ของเราอาจหยุดนิ่งรอไปตลอดกาลจนแอปค้างทั้งระบบเลยนะครับ\n\nที่สำคัญ Official SDK ของผู้ให้บริการ LLM ยุคใหม่ใน Python ล้วนใช้ httpx เป็นเครื่องยนต์ส่ง HTTP อยู่ข้างใต้ทั้งนั้น วันนี้เราจึงมาฝึกตั้ง httpx Timeout แบบแยกช่วง จัดการ connection pool และแยก error ออกเป็นสองกลุ่มชัด ๆ คือ 4 เอ็กซ์ เอ็กซ์ ที่เป็นบั๊กฝั่งเราให้ fail fast กับ 429 หรือ 5 เอ็กซ์ เอ็กซ์ ที่เป็นปัญหาชั่วคราวให้ส่งต่อไประบบ retry ใน Day 14\n\nและที่เจ๋งสุดคือ เราจะทดสอบทุกสถานะทั้ง 200, 400, 401, 429, 503 ไปจนถึง timeout ด้วย httpx MockTransport บนเครื่องแบบออฟไลน์ 100 เปอร์เซ็นต์ ไม่ต้องยิงเน็ตจริงเลยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d013/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดถ้อยชัดคำ แบ่งจังหวะเป้าหมาย 3 ข้อให้ตามง่าย และปิดท้ายด้วยความสบายใจว่าไม่ต้องต่อเน็ตหรือใช้คีย์",
+      "script": "มาดูเป้าหมายของ Day 13 กันสั้น ๆ ครับ จบบทนี้คุณจะได้ทักษะหลัก 3 อย่างเลย\n\nหนึ่ง ใช้ httpx.Client ผ่าน context manager เพื่อรีใช้ TCP และ TLS connection pool รวมถึงปิด socket อย่างสะอาด\nสอง ตั้งค่า httpx.Timeout แบบละเอียดแยกทั้ง connect, read, write และ pool ให้เข้ากับงาน AI ที่ต่อเร็วแต่รอคำตอบนาน\nและสาม จำแนก 2xx, 4xx และ 429 หรือ 5xx เป็น custom exception แล้วทดสอบครบทุกเคสด้วย httpx.MockTransport โดยไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 13 กันสั้น ๆ ครับ จบบทนี้คุณจะได้ทักษะหลัก 3 อย่างเลย\n\nหนึ่ง ใช้ httpx Client ผ่าน context manager เพื่อรีใช้ TCP และ TLS connection pool รวมถึงปิด socket อย่างสะอาด\nสอง ตั้งค่า httpx Timeout แบบละเอียดแยกทั้ง connect, read, write และ pool ให้เข้ากับงาน AI ที่ต่อเร็วแต่รอคำตอบนาน\nและสาม จำแนก 2 เอ็กซ์ เอ็กซ์, 4 เอ็กซ์ เอ็กซ์ และ 429 หรือ 5 เอ็กซ์ เอ็กซ์ เป็น custom exception แล้วทดสอบครบทุกเคสด้วย httpx MockTransport โดยไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d013/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นเหมือนนั่งพาพิมพ์คำสั่งทีละบรรทัด ชวนทำตามแบบไม่รีบร้อน",
+      "script": "ช่วงเตรียมเครื่องวันนี้ไวมากครับ เริ่มจากสั่ง uv init ai-day13-httpx แล้วเข้าไปในโฟลเดอร์โปรเจกต์\n\nจากนั้นติดตั้ง httpx ด้วย uv add httpx และติดตั้งเครื่องมือเทสต์กับตรวจโค้ดด้วย uv add --dev pytest ruff แล้วลองรันเช็กเวอร์ชัน httpx ผ่าน uv run python ดูครับ\n\nบทนี้เราจำลองเซิร์ฟเวอร์ทั้งหมดในหน่วยความจำด้วย MockTransport เลยเทสต์ได้เร็วระดับมิลลิวินาที เดี๋ยวพี่พักรอตรงนี้ให้เตรียมโปรเจกต์ให้เรียบร้อย พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "ช่วงเตรียมเครื่องวันนี้ไวมากครับ เริ่มจากสั่ง uv init ai-day13-httpx แล้วเข้าไปในโฟลเดอร์โปรเจกต์\n\nจากนั้นติดตั้ง httpx ด้วย uv add httpx และติดตั้งเครื่องมือเทสต์กับตรวจโค้ดด้วย uv add dash dash dev pytest ruff แล้วลองรันเช็กเวอร์ชัน httpx ผ่าน uv run python ดูครับ\n\nบทนี้เราจำลองเซิร์ฟเวอร์ทั้งหมดในหน่วยความจำด้วย MockTransport เลยเทสต์ได้เร็วระดับมิลลิวินาที เดี๋ยวพี่พักรอตรงนี้ให้เตรียมโปรเจกต์ให้เรียบร้อย พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอเตรียมโปรเจกต์ Day 13",
+        "prompt": "ลองสร้างโปรเจกต์ ai-day13-httpx และติดตั้ง httpx, pytest, ruff ตามขั้นตอนได้เลยครับ",
+        "continueLabel": "เตรียมโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — วงจร httpx & Status Codes",
+      "src": "/audio/d013/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนเห็นภาพ เหมือนกำลังชี้แผนภาพอธิบายจังหวะของ request ตั้งแต่ต่อสายจนถึงการตัดสินใจแยก status code",
+      "script": "ลองดูแผนภาพวงจร HTTP Client บนหน้าจอกันครับ จะเห็นภาพเลยว่าคำขอหนึ่งเส้นเดินทางผ่านด่านไหนบ้าง\n\nด่านแรกคือ connect timeout สำหรับเปิดการเชื่อมต่อ ถ้าต่อไม่ได้ในเวลาที่กำหนดก็ตัดจบทันที ต่อมาคือช่วง write ส่งข้อมูลออก และช่วง read ที่รอโมเดลคิดคำตอบกลับมา\n\nพอได้ response กลับมาแล้ว ตัว client จะแยกทางเดินชัดเจนเลยครับ ถ้าเป็น 200 ก็ผ่านฉลุย ถ้าเป็น 400 หรือ 401 จะตีกลับทันทีแบบ fail fast แต่ถ้าเป็น 429 หรือ 503 จะแยกเป็นเคสชั่วคราวเพื่อให้ระบบ retry รับช่วงต่อครับ",
+      "ttsText": "ลองดูแผนภาพวงจร HTTP Client บนหน้าจอกันครับ จะเห็นภาพเลยว่าคำขอหนึ่งเส้นเดินทางผ่านด่านไหนบ้าง\n\nด่านแรกคือ connect timeout สำหรับเปิดการเชื่อมต่อ ถ้าต่อไม่ได้ในเวลาที่กำหนดก็ตัดจบทันที ต่อมาคือช่วง write ส่งข้อมูลออก และช่วง read ที่รอโมเดลคิดคำตอบกลับมา\n\nพอได้ response กลับมาแล้ว ตัว client จะแยกทางเดินชัดเจนเลยครับ ถ้าเป็น 200 ก็ผ่านฉลุย ถ้าเป็น 400 หรือ 401 จะตีกลับทันทีแบบ fail fast แต่ถ้าเป็น 429 หรือ 503 จะแยกเป็นเคสชั่วคราวเพื่อให้ระบบ retry รับช่วงต่อครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d013/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก ลื่นไหล มีเปรียบเทียบให้เห็นภาพชัดเจน เว้นจังหวะระหว่างทั้ง 3 หัวข้อให้ฟังสบาย",
+      "script": "มาเจาะแนวคิดหลัก 3 ข้อของ Day 13 กันครับ\n\nข้อแรก httpx.Client กับ Connection Pooling การเรียก httpx.get ในลูปจะเปิด TCP/TLS handshake ใหม่ทุกรอบ เหมือนวางสายแล้วโทรหาคอลเซ็นเตอร์ใหม่ทุกประโยค แต่ถ้าใช้ with httpx.Client ตั้ง base_url, headers และ timeout ไว้ที่เดียว มันจะถือสายเดิมคุยต่อเนื่องและปิด socket ให้เอง แถม API ยังเหมือน AsyncClient ด้วย\n\nข้อที่สอง Granular Timeout 4 ช่วง ห้ามปล่อย timeout เป็น None ในงาน LLM นิยมตั้ง connect สั้น เช่น 3 วินาที เหมือนสั่งเดลิเวอรี ถ้าร้านไม่รับใน 3 นาทีควรยกเลิกทันที แต่ถ้ารับแล้วก็รอช่วง read นาน 15 ถึง 20 วินาทีได้ ส่วน write คุมส่งไฟล์และ pool คุมรอคิว connection\n\nข้อที่สาม แยก Status Code อย่าโยนทุก error ลงตะกร้าเดียว ถ้าเจอ 400 หรือ 401 ให้โยน ClientAPIError เพื่อ fail fast ทันที ส่วน 408, 429, 5xx และ TimeoutException/NetworkError ให้โยน TransientAPIError พร้อมเก็บ Retry-After ไปให้ Day 14 ครับ",
+      "ttsText": "มาเจาะแนวคิดหลัก 3 ข้อของ Day 13 กันครับ\n\nข้อแรก httpx Client กับ Connection Pooling การเรียก httpx get ในลูปจะเปิด TCP และ TLS handshake ใหม่ทุกรอบ เหมือนวางสายแล้วโทรหาคอลเซ็นเตอร์ใหม่ทุกประโยค แต่ถ้าใช้ with httpx Client ตั้ง base_url, headers และ timeout ไว้ที่เดียว มันจะถือสายเดิมคุยต่อเนื่องและปิด socket ให้เอง แถม API ยังเหมือน AsyncClient ด้วย\n\nข้อที่สอง Granular Timeout 4 ช่วง ห้ามปล่อย timeout เป็น None ในงาน LLM นิยมตั้ง connect สั้น เช่น 3 วินาที เหมือนสั่งเดลิเวอรี ถ้าร้านไม่รับใน 3 นาทีควรยกเลิกทันที แต่ถ้ารับแล้วก็รอช่วง read นาน 15 ถึง 20 วินาทีได้ ส่วน write คุมส่งไฟล์และ pool คุมรอคิว connection\n\nข้อที่สาม แยก Status Code อย่าโยนทุก error ลงตะกร้าเดียว ถ้าเจอ 400 หรือ 401 ให้โยน ClientAPIError เพื่อ fail fast ทันที ส่วน 408, 429, 5 เอ็กซ์ เอ็กซ์ และ TimeoutException หรือ NetworkError ให้โยน TransientAPIError พร้อมเก็บ Retry-After ไปให้ Day 14 ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่าง ClassifierClient & MockTransport",
+      "src": "/audio/d013/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่อ่านโค้ดด้วยกัน เน้นจุดสำคัญตรง MockTransport และข้อควรระวังของ raise_for_status",
+      "script": "ลองมาดูตัวอย่าง ClassifierClient ทั้ง 3 ขั้นตอนกันครับ\n\nขั้นแรก เรานิยาม DEFAULT_TIMEOUT แบบ granular และสร้าง ClientAPIError กับ TransientAPIError พร้อมฟังก์ชัน parse_retry_after ที่แปลงเลขวินาทีอย่างปลอดภัยใน try except ValueError\n\nขั้นที่สอง เราห่อ httpx.Client ไว้ใน ClassifierClient ที่รองรับ context manager และฉีด MockTransport เข้ามาตอนเทสต์ได้ เวลาส่ง POST ถ้าเจอ TimeoutException หรือ NetworkError ก็แปลงเป็น TransientAPIError แล้วแยกเช็ก 2xx, 408/429/5xx และ 4xx อื่น ๆ\n\nขั้นที่สาม เราเขียน mock_handler จำลองครบทั้ง 200 OK, 401, 429 พร้อม Retry-After และ ReadTimeout ข้อควรระวังคือ อย่าใช้ raise_for_status ตรง ๆ แล้วสั่ง retry เพราะมันโยน HTTPStatusError ชนิดเดียวให้ทั้ง 401 และ 503 ครับ ลองเดินโค้ดทีละขั้นแล้วกด ไปต่อ นะครับ",
+      "ttsText": "ลองมาดูตัวอย่าง ClassifierClient ทั้ง 3 ขั้นตอนกันครับ\n\nขั้นแรก เรานิยาม DEFAULT_TIMEOUT แบบ granular และสร้าง ClientAPIError กับ TransientAPIError พร้อมฟังก์ชัน parse_retry_after ที่แปลงเลขวินาทีอย่างปลอดภัยใน try except ValueError\n\nขั้นที่สอง เราห่อ httpx Client ไว้ใน ClassifierClient ที่รองรับ context manager และฉีด MockTransport เข้ามาตอนเทสต์ได้ เวลาส่ง POST ถ้าเจอ TimeoutException หรือ NetworkError ก็แปลงเป็น TransientAPIError แล้วแยกเช็ก 2 เอ็กซ์ เอ็กซ์, 408, 429, 5 เอ็กซ์ เอ็กซ์ และ 4 เอ็กซ์ เอ็กซ์ อื่น ๆ\n\nขั้นที่สาม เราเขียน mock_handler จำลองครบทั้ง 200 OK, 401, 429 พร้อม Retry-After และ ReadTimeout ข้อควรระวังคือ อย่าใช้ raise_for_status ตรง ๆ แล้วสั่ง retry เพราะมันโยน HTTPStatusError ชนิดเดียวให้ทั้ง 401 และ 503 ครับ ลองเดินโค้ดทีละขั้นแล้วกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา ClassifierClient",
+        "prompt": "ลองกดไล่ดูตัวอย่าง ClassifierClient ทั้ง 3 ขั้นและสังเกตวิธีจำลอง MockTransport เมื่อเข้าใจแล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง TicketAPIClient",
+      "src": "/audio/d013/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ช้าชัดเป็นจังหวะสม่ำเสมอตอนไล่ requirements ของ TicketAPIClient เพื่อให้ผู้เรียนเขียนตามได้ไม่ตกหล่น",
+      "script": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์วันนี้ให้สร้างโมดูล ticket_api_client.py สำหรับส่งทิกเก็ตภาษาไทยไปวิเคราะห์\n\nมาดูสเปกทีละข้อนะ ข้อแรก DEFAULT_TIMEOUT ตั้งให้ครบทั้ง connect 3.0, read 15.0, write 5.0 และ pool 5.0\nข้อสอง ใน TicketAPIClient ให้สร้าง self._client ในเมธอด init พร้อมแนบ Authorization Bearer api_key และปิดด้วย self._client.close ในเมธอด exit\nข้อสาม ใน analyze_ticket ให้ยิง POST ไปที่ path v1 tickets analyze ส่ง JSON ที่มี ticket_id กับ text\n\nระวังเงื่อนไขการแยกผลลัพธ์ให้ครบนะครับ ถ้าเป็น 2xx ให้แปลงเป็น JSON แต่ถ้า body ดันไม่ใช่ JSON ที่ถูกต้องจนเกิด ValueError ให้โยน ClientAPIError นะ ส่วน 408, 429, 5xx หรือ TimeoutException กับ NetworkError ให้โยน TransientAPIError พร้อมดึง Retry-After แบบกัน error ด้วย เขียนเสร็จแล้วลองรัน pytest กับ ruff ดูนะครับ พี่รออยู่ตรงนี้เลย",
+      "ttsText": "ถึงเวลาลงมือเขียนโค้ดจริงแล้วครับ โจทย์วันนี้ให้สร้างโมดูล ticket_api_client dot py สำหรับส่งทิกเก็ตภาษาไทยไปวิเคราะห์\n\nมาดูสเปกทีละข้อนะ ข้อแรก DEFAULT_TIMEOUT ตั้งให้ครบทั้ง connect 3 จุด 0, read 15 จุด 0, write 5 จุด 0 และ pool 5 จุด 0\nข้อสอง ใน TicketAPIClient ให้สร้าง self dot _client ในเมธอด init พร้อมแนบ Authorization Bearer api_key และปิดด้วย self dot _client dot close ในเมธอด exit\nข้อสาม ใน analyze_ticket ให้ยิง POST ไปที่ path slash v1 slash tickets slash analyze ส่ง JSON ที่มี ticket_id กับ text\n\nระวังเงื่อนไขการแยกผลลัพธ์ให้ครบนะครับ ถ้าเป็น 2 เอ็กซ์ เอ็กซ์ ให้แปลงเป็น JSON แต่ถ้า body ดันไม่ใช่ JSON ที่ถูกต้องจนเกิด ValueError ให้โยน ClientAPIError นะ ส่วน 408, 429, 5 เอ็กซ์ เอ็กซ์ หรือ TimeoutException กับ NetworkError ให้โยน TransientAPIError พร้อมดึง Retry-After แบบกัน error ด้วย เขียนเสร็จแล้วลองรัน pytest กับ ruff ดูนะครับ พี่รออยู่ตรงนี้เลย",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง TicketAPIClient",
+        "prompt": "ลงมือเติมโค้ดใน ticket_api_client.py และรัน test_ticket_api_client.py ด้วย pytest ได้เลยครับ เสร็จแล้วกดไปต่อนะ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d013/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อน จากนั้นเล่า 4 ข้อผิดพลาดด้วยจังหวะจริงใจปนเตือนขำ ๆ แบบรุ่นพี่ที่เคยเจอมาก่อน",
+      "script": "เยี่ยมมากครับที่ลุยแบบฝึกหัดมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตของคนที่เริ่มใช้ httpx ไว้เตือนใจหน่อยนะครับ\n\nข้อแรก คือปล่อย timeout เป็น None หรือเรียก httpx.get ในลูปตรง ๆ ทำให้ค้างเงียบเมื่อปลายทางตายและช้าเพราะเปิด TLS handshake ใหม่ทุกรอบ\nข้อสอง คือใช้ response.raise_for_status แล้วสั่ง retry ทุก HTTPStatusError จนหลงยิงซ้ำใส่ 400 หรือ 401 เปลืองโควตาฟรี ๆ\nข้อสาม คือสั่ง float ใส่ header Retry-After ตรง ๆ โดยไม่กัน ValueError เพราะบางเซิร์ฟเวอร์ส่งมาเป็นวันที่แบบ HTTP-date แทนตัวเลขวินาที ถ้าไม่ครอบ try except ไว้โปรแกรมจะพังกลางอากาศเลยครับ\nและข้อสี่ คือสร้าง httpx.Client เก็บไว้ในคลาสแล้วลืมปิดใน exit หรือ finally ใช้ไปนาน ๆ จะเจอ ResourceWarning หรือ socket เต็มได้ครับ",
+      "ttsText": "เยี่ยมมากครับที่ลุยแบบฝึกหัดมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 ข้อผิดพลาดยอดฮิตของคนที่เริ่มใช้ httpx ไว้เตือนใจหน่อยนะครับ\n\nข้อแรก คือปล่อย timeout เป็น None หรือเรียก httpx get ในลูปตรง ๆ ทำให้ค้างเงียบเมื่อปลายทางตายและช้าเพราะเปิด TLS handshake ใหม่ทุกรอบ\nข้อสอง คือใช้ response raise_for_status แล้วสั่ง retry ทุก HTTPStatusError จนหลงยิงซ้ำใส่ 400 หรือ 401 เปลืองโควตาฟรี ๆ\nข้อสาม คือสั่ง float ใส่ header Retry-After ตรง ๆ โดยไม่กัน ValueError เพราะบางเซิร์ฟเวอร์ส่งมาเป็นวันที่แบบ HTTP-date แทนตัวเลขวินาที ถ้าไม่ครอบ try except ไว้โปรแกรมจะพังกลางอากาศเลยครับ\nและข้อสี่ คือสร้าง httpx Client เก็บไว้ในคลาสแล้วลืมปิดใน exit หรือ finally ใช้ไปนาน ๆ จะเจอ ResourceWarning หรือ socket เต็มได้ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d013/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนความเข้าใจ 4 ข้อแบบไม่กดดัน",
+      "script": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อครับ ครอบคลุมทั้งเรื่อง connection pooling ของ httpx.Client, การตั้ง granular timeout สำหรับ LLM, การแยก 401 กับ 400 เพื่อ fail fast และการใช้ MockTransport ทดสอบแบบออฟไลน์\n\nลองตอบตามความเข้าใจได้เลย เสร็จแล้วกดปุ่มเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อครับ ครอบคลุมทั้งเรื่อง connection pooling ของ httpx Client, การตั้ง granular timeout สำหรับ LLM, การแยก 401 กับ 400 เพื่อ fail fast และการใช้ MockTransport ทดสอบแบบออฟไลน์\n\nลองตอบตามความเข้าใจได้เลย เสร็จแล้วกดปุ่มเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบคำถามทั้ง 4 ข้อเรื่อง httpx.Client, Granular Timeouts และ Status Codes ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 14",
+      "src": "/audio/d013/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและให้กำลังใจ สรุป 4 แก่นหลักของบทเรียนอย่างกระชับ ชวนตื่นเต้นกับ Day 14",
+      "script": "ยินดีด้วยครับ จบ Day 13 อย่างสมบูรณ์แล้ว วันนี้คุณได้วางรากฐาน HTTP Client ระดับ production เรียบร้อย\n\nจำ 4 หลักสั้น ๆ ติดตัวไปใช้นะครับ หนึ่ง ใช้ httpx.Client ในบล็อก with เสมอเพื่อรีใช้ connection pool และปิด socket สะอาด สอง ตั้ง granular timeout แยก connect กับ read ให้ชัด ห้ามปล่อยรอไม่มีกำหนด สาม แยก 4xx เป็น ClientAPIError เพื่อ fail fast ส่วน 408, 429, 5xx และ timeout เป็น TransientAPIError และสี่ ใช้ MockTransport จำลองทุกเคสใน pytest แบบออฟไลน์ 100 เปอร์เซ็นต์\n\nพรุ่งนี้ใน Day 14 เราจะนำ TransientAPIError ที่สร้างไว้วันนี้ไปต่อกับ tenacity เพื่อทำ Exponential Backoff และ Jitter กันแล้วครับ กดทำเครื่องหมายว่าเรียนจบได้เลย แล้วเจอกันใน Day 14 นะครับ!",
+      "ttsText": "ยินดีด้วยครับ จบ Day 13 อย่างสมบูรณ์แล้ว วันนี้คุณได้วางรากฐาน HTTP Client ระดับ production เรียบร้อย\n\nจำ 4 หลักสั้น ๆ ติดตัวไปใช้นะครับ หนึ่ง ใช้ httpx Client ในบล็อก with เสมอเพื่อรีใช้ connection pool และปิด socket สะอาด สอง ตั้ง granular timeout แยก connect กับ read ให้ชัด ห้ามปล่อยรอไม่มีกำหนด สาม แยก 4 เอ็กซ์ เอ็กซ์ เป็น ClientAPIError เพื่อ fail fast ส่วน 408, 429, 5 เอ็กซ์ เอ็กซ์ และ timeout เป็น TransientAPIError และสี่ ใช้ MockTransport จำลองทุกเคสใน pytest แบบออฟไลน์ 100 เปอร์เซ็นต์\n\nพรุ่งนี้ใน Day 14 เราจะนำ TransientAPIError ที่สร้างไว้วันนี้ไปต่อกับ tenacity เพื่อทำ Exponential Backoff และ Jitter กันแล้วครับ กดทำเครื่องหมายว่าเรียนจบได้เลย แล้วเจอกันใน Day 14 นะครับ!"
+    }
+  ]
+}

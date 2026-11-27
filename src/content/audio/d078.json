@@ -1,0 +1,109 @@
+{
+  "lessonId": "d078",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Validation-Repair Loop & Fallback",
+      "src": "/audio/d078/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น ต่อเนื่องจาก Day 77 น้ำเสียงชวนคิดตามปัญหาจริงของเอกสารไทยและการออกแบบระบบที่ไม่ crash",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 78 วันนี้เราต่อยอดจาก Day 77 ทันทีเลยครับ เมื่อวานเราล็อก JSON Schema จนไม่พังเรื่อง syntax แล้ว แต่วันนี้เราจะมาแก้ปัญหาที่ลึกกว่านั้นด้วย Validation-Repair Loop และ Deterministic Fallback ครับ\n\nในเอกสารภาษาไทยจริง แม้เปิด Strict Schema แล้ว โมเดลมักผ่านรอบแรกแค่ราว 84% เท่านั้น เพราะอาจเผลอใส่ปี พ.ศ. 2569 แทน ค.ศ., คำนวณ subtotal + vat ไม่เท่ากับ total, หรือลืมตั้ง flag ส่งเจ้าหน้าที่ตรวจ\n\nแทนที่เราจะทิ้งคำตอบนั้นหรือสุ่มเรียกซ้ำมั่ว ๆ วันนี้เราจะย่อ ValidationError เป็นข้อความสั้น ๆ ส่งกลับไปให้โมเดลแก้ตัวเองใน 1 ถึง 2 รอบ เพื่อดันอัตราผ่านสู่ 99% ขึ้นไป และถ้าครบเพดาน max_retries 2 รอบแล้วยังไม่ผ่าน ระบบจะตัดจบด้วย Deterministic Fallback ตั้ง needs_human_review เป็น True พร้อมเก็บล็อกด้วย structlog เพื่อไม่ให้แอป crash กลางอากาศครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 78 วันนี้เราต่อยอดจาก Day 77 ทันทีเลยครับ เมื่อวานเราล็อก JSON Schema จนไม่พังเรื่อง syntax แล้ว แต่วันนี้เราจะมาแก้ปัญหาที่ลึกกว่านั้นด้วย Validation-Repair Loop และ Deterministic Fallback ครับ\n\nในเอกสารภาษาไทยจริง แม้เปิด Strict Schema แล้ว โมเดลมักผ่านรอบแรกแค่ราว 84 เปอร์เซ็นต์ เท่านั้น เพราะอาจเผลอใส่ปี พุทธศักราช 2569 แทน คริสต์ศักราช, คำนวณ subtotal บวก vat ไม่เท่ากับ total, หรือลืมตั้ง flag ส่งเจ้าหน้าที่ตรวจ\n\nแทนที่เราจะทิ้งคำตอบนั้นหรือสุ่มเรียกซ้ำมั่ว ๆ วันนี้เราจะย่อ ValidationError เป็นข้อความสั้น ๆ ส่งกลับไปให้โมเดลแก้ตัวเองใน 1 ถึง 2 รอบ เพื่อดันอัตราผ่านสู่ 99 เปอร์เซ็นต์ ขึ้นไป และถ้าครบเพดาน max_retries 2 รอบแล้วยังไม่ผ่าน ระบบจะตัดจบด้วย Deterministic Fallback ตั้ง needs_human_review เป็น True พร้อมเก็บล็อกด้วย structlog เพื่อไม่ให้แอป crash กลางอากาศครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d078/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงชัดเจน กระชับ แยกเป้าหมาย 3 ข้ออย่างมีจังหวะ และย้ำความมั่นใจเรื่องการทดสอบแบบออฟไลน์",
+      "script": "เป้าหมายของ Day 78 มี 3 ข้อหลักที่สำคัญมากสำหรับงาน production ครับ\n\nหนึ่ง อธิบายความต่างระหว่างความล้มเหลวระดับโครงสร้าง JSON กับความล้มเหลวเชิงความหมายและกฎธุรกิจ พร้อมแยกให้ออกจากการทำ network retry แบบ exponential backoff ใน Day 14\nสอง สร้าง Bounded Validation-Repair Loop ที่มีเพดาน max_retries เท่ากับ 2 โดยย่อ ValidationError ให้คมและส่งกลับให้โมเดลซ่อมตัวเอง\nสาม ออกแบบ Deterministic Safe Fallback ที่คืนผลลัพธ์แบบ type-safe พร้อม needs_human_review เป็น True และเก็บประวัติ error ไว้ครบ\n\nทั้งหมดนี้เราจะสร้างและเทสต์ด้วย mock client ผ่าน pytest บนเครื่องได้ 100% เลยครับ",
+      "ttsText": "เป้าหมายของ Day 78 มี 3 ข้อหลักที่สำคัญมากสำหรับงาน production ครับ\n\nหนึ่ง อธิบายความต่างระหว่างความล้มเหลวระดับโครงสร้าง JSON กับความล้มเหลวเชิงความหมายและกฎธุรกิจ พร้อมแยกให้ออกจากการทำ network retry แบบ exponential backoff ใน Day 14\nสอง สร้าง Bounded Validation-Repair Loop ที่มีเพดาน max_retries เท่ากับ 2 โดยย่อ ValidationError ให้คมและส่งกลับให้โมเดลซ่อมตัวเอง\nสาม ออกแบบ Deterministic Safe Fallback ที่คืนผลลัพธ์แบบ type-safe พร้อม needs_human_review เป็น True และเก็บประวัติ error ไว้ครบ\n\nทั้งหมดนี้เราจะสร้างและเทสต์ด้วย mock client ผ่าน pytest บนเครื่องได้ 100 เปอร์เซ็นต์ เลยครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d078/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาตั้งโปรเจกต์ ai-day78 ให้พร้อมในไม่กี่วินาที",
+      "script": "มาตั้งโปรเจกต์เบา ๆ สำหรับ Day 78 กันครับ ใช้ uv init ai-day78 แล้ว cd เข้าไป จากนั้นติดตั้ง pydantic ด้วย uv add pydantic และลง dev tools ด้วย uv add --dev pytest ruff\n\nลองรันคำสั่งเช็กเวอร์ชัน Pydantic ตามหน้าจอดูว่าพร้อมแล้วหรือยัง โครงสร้างฟังก์ชัน llm_fn ที่รับ messages แล้วคืน string ของวันนี้จะออกแบบให้เสียบ Official OpenAI หรือ Anthropic SDK จริงได้ทันทีเมื่อต้องการด้วยครับ เดี๋ยวพี่รอตรงนี้ให้ตั้งเครื่องเสร็จก่อน แล้วกดไปต่อได้เลยนะ",
+      "ttsText": "มาตั้งโปรเจกต์เบา ๆ สำหรับ Day 78 กันครับ ใช้ uv init ai-day78 แล้ว cd เข้าไป จากนั้นติดตั้ง pydantic ด้วย uv add pydantic และลง dev tools ด้วย uv add dash dash dev pytest ruff\n\nลองรันคำสั่งเช็กเวอร์ชัน Pydantic ตามหน้าจอดูว่าพร้อมแล้วหรือยัง โครงสร้างฟังก์ชัน llm_fn ที่รับ messages แล้วคืน string ของวันนี้จะออกแบบให้เสียบ Official OpenAI หรือ Anthropic SDK จริงได้ทันทีเมื่อต้องการด้วยครับ เดี๋ยวพี่รอตรงนี้ให้ตั้งเครื่องเสร็จก่อน แล้วกดไปต่อได้เลยนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ ai-day78",
+        "prompt": "รัน uv init ai-day78 และติดตั้ง pydantic, pytest, ruff ให้เรียบร้อยก่อนไปดูแผนภาพครับ",
+        "continueLabel": "เตรียมโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ลูปซ่อมและทางออก Fallback",
+      "src": "/audio/d078/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตภาพแอนิเมชัน อธิบายการวนรอบซ่อมและการตัดจบด้วยความสนุกสนาน",
+      "script": "ลองกดดูแผนภาพ Validation-Repair Loop ตรงหน้านี้ทีละรอบนะครับ จะเห็นเลยว่าทำไมอัตราผ่านถึงกระโดดจาก 84% ไป 99% ได้\n\nพอด่าน Pydantic จับได้ว่าผิดกฎธุรกิจ ลูปจะไม่ได้ทิ้งงานไปเฉย ๆ แต่ส่ง error feedback สั้น ๆ วนกลับไปให้โมเดลแก้ใหม่ และถ้าผ่านเพดานซ่อม 2 รอบแล้วยังไม่รอด เส้นทางจะเบี่ยงออกไปที่ Deterministic Fallback ทันที เพื่อส่งต่อให้คนตรวจอย่างปลอดภัย ไม่มีวันติดลูปไม่รู้จบครับ",
+      "ttsText": "ลองกดดูแผนภาพ Validation-Repair Loop ตรงหน้านี้ทีละรอบนะครับ จะเห็นเลยว่าทำไมอัตราผ่านถึงกระโดดจาก 84 เปอร์เซ็นต์ ไป 99 เปอร์เซ็นต์ ได้\n\nพอด่าน Pydantic จับได้ว่าผิดกฎธุรกิจ ลูปจะไม่ได้ทิ้งงานไปเฉย ๆ แต่ส่ง error feedback สั้น ๆ วนกลับไปให้โมเดลแก้ใหม่ และถ้าผ่านเพดานซ่อม 2 รอบแล้วยังไม่รอด เส้นทางจะเบี่ยงออกไปที่ Deterministic Fallback ทันที เพื่อส่งต่อให้คนตรวจอย่างปลอดภัย ไม่มีวันติดลูปไม่รู้จบครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d078/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายหลักวิศวกรรมอย่างเฉียบคม เปรียบเทียบเห็นภาพ และเน้นจุดต่างกับ HTTP Retry",
+      "script": "มาดูแนวคิดหลัก 3 ข้อของ Day 78 ที่จะยกระดับโค้ดคุณสู่ระดับ production กันครับ\n\nข้อแรก ทำไม Strict JSON Schema ถึงยังพังได้ 10 ถึง 16% บนเอกสารไทย เพราะความผิดพลาดเชิงความหมาย เช่น เอกสารลงวันที่ 15/05/2569 โมเดลเลยสกัดเป็นปี พ.ศ. 2569 หรือบวก VAT ผิด และต้องแยกให้ขาดจาก Day 14 ด้วยนะ HTTP Retry ใช้แก้เน็ตหลุดหรือ 429 โดยโทรซ้ำด้วย payload เดิม แต่ Validation-Repair Loop เหมือนฝ่ายบัญชีวงปากกาแดงส่งคืนพนักงานว่าช่องยอดรวมบวก VAT ผิด 70 บาท ต้องส่งข้อมูลใหม่ที่เป็นจุดผิดกลับไปให้โมเดลแก้ครับ\n\nข้อที่สอง กฎเหล็ก 3 ข้อของ Bounded Repair Loop ได้แก่ หนึ่ง ตั้งเพดาน max_retries เท่ากับ 2 ห้ามใช้ while True เด็ดขาด เพราะรอบ 1 กับ 2 มักซ่อมได้เกือบหมดแล้ว ถ้ารอบ 3 ยังพังมักแปลว่าเอกสารต้นฉบับคลุมเครือจริง สอง ย่อ err.errors() ด้วย format_concise_errors ให้เหลือแค่ dash field: reason ไม่แปะ Python stacktrace ยาว ๆ และสาม แนบคำตอบเก่าเป็นบทบาท assistant คู่กับรายการจุดผิดเป็นบทบาท user\n\nข้อที่สาม Deterministic Safe Fallback สำหรับอีก 1% ที่ซ่อมไม่ผ่าน แทนที่จะโยน HTTP 500 หรือแอบเอาเลขผิดลงฐานข้อมูล เราห่อผลลัพธ์ใน ExtractionEnvelope ที่มี status เป็น ok, repaired หรือ fallback ถ้าครบโควตาแล้วยังพัง ให้คืน status=\"fallback\", data=None และ needs_human_review=True ทันที เหมือนเครื่องนับธนบัตรที่เจอใบยับจนสแกนไม่ผ่านก็ดีดลงช่องพักให้พนักงานตรวจ แล้วนับใบต่อไปต่อเลยครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อของ Day 78 ที่จะยกระดับโค้ดคุณสู่ระดับ production กันครับ\n\nข้อแรก ทำไม Strict JSON Schema ถึงยังพังได้ 10 ถึง 16 เปอร์เซ็นต์ บนเอกสารไทย เพราะความผิดพลาดเชิงความหมาย เช่น เอกสารลงวันที่ 15 เดือน 5 ปี 2569 โมเดลเลยสกัดเป็นปี พุทธศักราช 2569 หรือบวก VAT ผิด และต้องแยกให้ขาดจาก Day 14 ด้วยนะ HTTP Retry ใช้แก้เน็ตหลุดหรือ 429 โดยโทรซ้ำด้วย payload เดิม แต่ Validation-Repair Loop เหมือนฝ่ายบัญชีวงปากกาแดงส่งคืนพนักงานว่าช่องยอดรวมบวก VAT ผิด 70 บาท ต้องส่งข้อมูลใหม่ที่เป็นจุดผิดกลับไปให้โมเดลแก้ครับ\n\nข้อที่สอง กฎเหล็ก 3 ข้อของ Bounded Repair Loop ได้แก่ หนึ่ง ตั้งเพดาน max_retries เท่ากับ 2 ห้ามใช้ while True เด็ดขาด เพราะรอบ 1 กับ 2 มักซ่อมได้เกือบหมดแล้ว ถ้ารอบ 3 ยังพังมักแปลว่าเอกสารต้นฉบับคลุมเครือจริง สอง ย่อ err.errors() ด้วย format_concise_errors ให้เหลือแค่ dash field: reason ไม่แปะ Python stacktrace ยาว ๆ และสาม แนบคำตอบเก่าเป็นบทบาท assistant คู่กับรายการจุดผิดเป็นบทบาท user\n\nข้อที่สาม Deterministic Safe Fallback สำหรับอีก 1 เปอร์เซ็นต์ ที่ซ่อมไม่ผ่าน แทนที่จะโยน HTTP 500 หรือแอบเอาเลขผิดลงฐานข้อมูล เราห่อผลลัพธ์ใน ExtractionEnvelope ที่มี status เป็น ok, repaired หรือ fallback ถ้าครบโควตาแล้วยังพัง ให้คืน status เท่ากับ fallback, data เท่ากับ None และ needs_human_review เท่ากับ True ทันที เหมือนเครื่องนับธนบัตรที่เจอใบยับจนสแกนไม่ผ่านก็ดีดลงช่องพักให้พนักงานตรวจ แล้วนับใบต่อไปต่อเลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — ซ่อมปี พ.ศ. และ Fallback",
+      "src": "/audio/d078/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตโค้ด worked_day78.py ทีละสเต็ป เน้นความเนียนของการจับทั้ง JSON invalid และ Business Rule ในจุดเดียว",
+      "script": "ลองมาไล่ดูตัวอย่าง worked_day78.py บนหน้าจอไปด้วยกันนะครับ\n\nขั้นแรก เราสร้างโมเดล ThaiInvoice ที่เช็ก issue_date ต้องเป็นปี ค.ศ. 2020 ถึง 2030 เท่านั้น ถ้าหลุดปี พ.ศ. 2569 เข้ามาจะแจ้งเตือนให้ลบ 543 ทันที พร้อมตรวจ subtotal + vat_amount == total_amount และเขียน format_concise_errors มาย่อข้อความ error\n\nขั้นที่สอง เราประกอบ ExtractionEnvelope กับฟังก์ชัน extract_with_repair ที่วนลูป range(1, max_retries + 2) ถ้า model_validate_json ผ่านรอบแรกคืน status=\"ok\" ถ้าผ่านรอบถัดมาคืน status=\"repaired\" และถ้าพังก็ต่อท้าย assistant กับ user feedback เข้า messages\n\nขั้นที่สาม เราชมการทำงานของ mock client 2 ตัว ตัวแรกพลาดปี พ.ศ. รอบแรกแล้วซ่อมผ่านรอบ 2 ส่วนตัวที่สองตอบข้อความอ่านไม่ออกทุกครั้ง ซึ่งสังเกตจุดเจ๋งตรงนี้ครับ model_validate_json จะจับทั้งข้อความที่ไม่ใช่ JSON และข้อมูลที่ผิดกฎธุรกิจด้วย except ValidationError ก้อนเดียวจบเลย แล้วคืน status=\"fallback\" โดยไม่ crash พักดูโค้ดให้เข้าใจแล้วกดไปต่อที่แบบฝึกหัดนะครับ",
+      "ttsText": "ลองมาไล่ดูตัวอย่าง worked_day78.py บนหน้าจอไปด้วยกันนะครับ\n\nขั้นแรก เราสร้างโมเดล ThaiInvoice ที่เช็ก issue_date ต้องเป็นปี คริสต์ศักราช 2020 ถึง 2030 เท่านั้น ถ้าหลุดปี พุทธศักราช 2569 เข้ามาจะแจ้งเตือนให้ลบ 543 ทันที พร้อมตรวจ subtotal บวก vat_amount เท่ากับ total_amount และเขียน format_concise_errors มาย่อข้อความ error\n\nขั้นที่สอง เราประกอบ ExtractionEnvelope กับฟังก์ชัน extract_with_repair ที่วนลูป range 1 ถึง max_retries บวก 2 ถ้า model_validate_json ผ่านรอบแรกคืน status เท่ากับ ok ถ้าผ่านรอบถัดมาคืน status เท่ากับ repaired และถ้าพังก็ต่อท้าย assistant กับ user feedback เข้า messages\n\nขั้นที่สาม เราชมการทำงานของ mock client 2 ตัว ตัวแรกพลาดปี พุทธศักราช รอบแรกแล้วซ่อมผ่านรอบ 2 ส่วนตัวที่สองตอบข้อความอ่านไม่ออกทุกครั้ง ซึ่งสังเกตจุดเจ๋งตรงนี้ครับ model_validate_json จะจับทั้งข้อความที่ไม่ใช่ JSON และข้อมูลที่ผิดกฎธุรกิจด้วย except ValidationError ก้อนเดียวจบเลย แล้วคืน status เท่ากับ fallback โดยไม่ crash พักดูโค้ดให้เข้าใจแล้วกดไปต่อที่แบบฝึกหัดนะครับ",
+      "pauseAfter": {
+        "title": "พักรอทบทวนตัวอย่าง extract_with_repair",
+        "prompt": "ลองดูการทำงานของ ThaiInvoice, format_concise_errors และ mock client ทั้งสองแบบใน worked_day78.py แล้วกดไปต่อครับ",
+        "continueLabel": "เข้าใจลูปซ่อมแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้างโมดูล Repair Loop",
+      "src": "/audio/d078/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ใจเย็น คอยไกด์ทีละฟังก์ชันใน exercise_day78.py เพื่อให้น้องทำตามสเปกได้ครบทุกข้อ",
+      "script": "ได้เวลาลุยจริงใน exercise_day78.py แล้วครับ วันนี้เราต้องเติมโค้ดให้ครบ 3 ส่วนเพื่อให้ test_day78.py ผ่านทั้งหมดนะ\n\nหนึ่ง เติมคลาส ThaiInvoiceDraft ตั้ง ConfigDict extra=\"forbid\" มี invoice_no ที่เป็น None ได้, issue_date ที่ใช้ date.fromisoformat และเช็กปี ค.ศ. 2020 ถึง 2030, ตามด้วย subtotal, vat_amount, total_amount ที่มากกว่าหรือเท่ากับ 0.0 และใส่ model_validator ตรวจผลรวมต่างไม่เกิน 0.02\n\nสอง เขียน format_concise_errors(err) แปลงทุก error เป็นบรรทัดขึ้นต้นด้วยขีดตามด้วย path แล้วโคลอนกับข้อความ โดยถ้า loc ว่างให้ใช้คำว่า __root__ แทน\n\nสาม เขียน run_repair_loop เช็กก่อนว่า max_retries >= 0 ถ้าติดลบให้ raise ValueError แล้ววนซ่อมสูงสุด max_retries + 1 ครั้ง คืน ExtractionEnvelope ตามสถานะ ok, repaired หรือ fallback เมื่อไม่ผ่านครับ เสร็จแล้วรัน uv run pytest -q กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้นะครับ",
+      "ttsText": "ได้เวลาลุยจริงใน exercise_day78.py แล้วครับ วันนี้เราต้องเติมโค้ดให้ครบ 3 ส่วนเพื่อให้ test_day78.py ผ่านทั้งหมดนะ\n\nหนึ่ง เติมคลาส ThaiInvoiceDraft ตั้ง ConfigDict extra เท่ากับ forbid มี invoice_no ที่เป็น None ได้, issue_date ที่ใช้ date.fromisoformat และเช็กปี คริสต์ศักราช 2020 ถึง 2030, ตามด้วย subtotal, vat_amount, total_amount ที่มากกว่าหรือเท่ากับ 0.0 และใส่ model_validator ตรวจผลรวมต่างไม่เกิน 0.02\n\nสอง เขียน format_concise_errors แปลงทุก error เป็นบรรทัดขึ้นต้นด้วยขีดตามด้วย path แล้วโคลอนกับข้อความ โดยถ้า loc ว่างให้ใช้คำว่า __root__ แทน\n\nสาม เขียน run_repair_loop เช็กก่อนว่า max_retries มากกว่าหรือเท่ากับ 0 ถ้าติดลบให้ raise ValueError แล้ววนซ่อมสูงสุด max_retries บวก 1 ครั้ง คืน ExtractionEnvelope ตามสถานะ ok, repaired หรือ fallback เมื่อไม่ผ่านครับ เสร็จแล้วรัน uv run pytest dash q กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้นะครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียนโค้ด exercise_day78.py",
+        "prompt": "เติม ThaiInvoiceDraft, format_concise_errors และ run_repair_loop แล้วรัน test_day78.py ให้ผ่านทั้ง 4 เทสต์ครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d078/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยและเตือนภัยแบบรุ่นพี่ที่เคยเจ็บมาก่อน เล่า 4 ข้อให้จำง่ายและเห็นผลกระทบชัดเจน",
+      "script": "เก่งมากครับที่รันเทสต์ผ่านแล้ว มาเช็ก 4 ข้อผิดพลาดที่พบบ่อยเวลาเขียน Repair Loop กันหน่อย\n\nข้อแรก ใช้ while True วนซ่อมโดยไม่ตั้ง max_retries แค่เจอใบเสร็จสแกนเบลอ 1 ใบ ระบบจะยิง API ซ้ำเป็นร้อยรอบจนบิลพุ่งและชน rate limit\nข้อที่สอง แปะ Python traceback ยาวเหยียดหรือ str(err) ดิบลงใน repair prompt ทำให้เปลือง token และบางทีโมเดลงงกับ URL ของ Pydantic จนแก้ผิดจุด\nข้อที่สาม ปล่อย fallback ผ่านเงียบ ๆ โดยไม่ตั้ง needs_human_review=True และไม่บันทึก error_history ทำให้ใบแจ้งหนี้ตกหล่นหายไปจากฝ่ายบัญชีโดยไม่มีใครรู้\nข้อที่สี่ เอา HTTP Retry แบบ exponential backoff ของ tenacity ไปจับ ValidationError ทำให้รอตั้งนานแล้วส่ง prompt เดิมซ้ำ ซึ่งโมเดลก็ตอบผิดแบบเดิมซ้ำอยู่ดีครับ",
+      "ttsText": "เก่งมากครับที่รันเทสต์ผ่านแล้ว มาเช็ก 4 ข้อผิดพลาดที่พบบ่อยเวลาเขียน Repair Loop กันหน่อย\n\nข้อแรก ใช้ while True วนซ่อมโดยไม่ตั้ง max_retries แค่เจอใบเสร็จสแกนเบลอ 1 ใบ ระบบจะยิง API ซ้ำเป็นร้อยรอบจนบิลพุ่งและชน rate limit\nข้อที่สอง แปะ Python traceback ยาวเหยียดหรือ str ของ err ดิบลงใน repair prompt ทำให้เปลือง token และบางทีโมเดลงงกับ URL ของ Pydantic จนแก้ผิดจุด\nข้อที่สาม ปล่อย fallback ผ่านเงียบ ๆ โดยไม่ตั้ง needs_human_review เท่ากับ True และไม่บันทึก error_history ทำให้ใบแจ้งหนี้ตกหล่นหายไปจากฝ่ายบัญชีโดยไม่มีใครรู้\nข้อที่สี่ เอา HTTP Retry แบบ exponential backoff ของ tenacity ไปจับ ValidationError ทำให้รอตั้งนานแล้วส่ง prompt เดิมซ้ำ ซึ่งโมเดลก็ตอบผิดแบบเดิมซ้ำอยู่ดีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d078/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนคอนเซปต์หลักของลูปซ่อมและ fallback ผ่าน 4 คำถาม",
+      "script": "ก่อนจบ Day 78 ลองมาทำ Micro-Quiz 4 ข้อเช็กความแม่นยำกันครับ เน้นเรื่องเหตุผลของ Repair Loop วิธีจัดรูปแบบ error feedback การตัดจบด้วย fallback และความต่างจาก HTTP Backoff ทำครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "ttsText": "ก่อนจบ Day 78 ลองมาทำ Micro-Quiz 4 ข้อเช็กความแม่นยำกันครับ เน้นเรื่องเหตุผลของ Repair Loop วิธีจัดรูปแบบ error feedback การตัดจบด้วย fallback และความต่างจาก HTTP Backoff ทำครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอทำ Micro-Quiz 4 ข้อ (Day 78)",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง Validation-Repair Loop และ Deterministic Fallback ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 79",
+      "src": "/audio/d078/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี มั่นใจ สรุป 4 บทเรียนสำคัญให้ทรงพลัง และชวนเข้าสู่เรื่องประหยัดค่า API ใน Day 79",
+      "script": "ยินดีด้วยครับ คุณจบ Day 78 แล้ว วันนี้เราได้อาวุธสำคัญที่ดันความน่าเชื่อถือจาก 84% สู่ 99%+ มาครบมือเลย ขอสรุป 4 ข้อสั้น ๆ นะ\n\nหนึ่ง Strict Schema กัน JSON พังได้ แต่กฎธุรกิจไทยอย่างปี พ.ศ. หรือยอด VAT ยังต้องซ่อมด้วย Validation-Repair Loop\nสอง จำกัดรอบซ่อมเสมอด้วย max_retries = 2 และย่อ ValidationError ให้เหลือแค่ dash field: reason\nสาม เมื่อซ่อมครบโควตาแล้วยังไม่ผ่าน ให้ตัดจบด้วย Deterministic Safe Fallback ที่มี needs_human_review=True เพื่อรับประกัน 100% Contract Safety\nสี่ แยก Network Retry ออกจาก Semantic Repair Loop และเก็บสถิติด้วย structlog\n\nพรุ่งนี้ใน Day 79 เราจะมาจัดการ Long Context, Prompt Caching และการ Route ระหว่างโมเดลเล็กกับใหญ่เพื่อลดค่า API เกิน 60% กันครับ แล้วเจอกันนะ",
+      "ttsText": "ยินดีด้วยครับ คุณจบ Day 78 แล้ว วันนี้เราได้อาวุธสำคัญที่ดันความน่าเชื่อถือจาก 84 เปอร์เซ็นต์ สู่ 99 เปอร์เซ็นต์ ขึ้นไป มาครบมือเลย ขอสรุป 4 ข้อสั้น ๆ นะ\n\nหนึ่ง Strict Schema กัน JSON พังได้ แต่กฎธุรกิจไทยอย่างปี พุทธศักราช หรือยอด VAT ยังต้องซ่อมด้วย Validation-Repair Loop\nสอง จำกัดรอบซ่อมเสมอด้วย max_retries เท่ากับ 2 และย่อ ValidationError ให้เหลือแค่ dash field: reason\nสาม เมื่อซ่อมครบโควตาแล้วยังไม่ผ่าน ให้ตัดจบด้วย Deterministic Safe Fallback ที่มี needs_human_review เท่ากับ True เพื่อรับประกัน 100 เปอร์เซ็นต์ Contract Safety\nสี่ แยก Network Retry ออกจาก Semantic Repair Loop และเก็บสถิติด้วย structlog\n\nพรุ่งนี้ใน Day 79 เราจะมาจัดการ Long Context, Prompt Caching และการ Route ระหว่างโมเดลเล็กกับใหญ่เพื่อลดค่า API เกิน 60 เปอร์เซ็นต์ กันครับ แล้วเจอกันนะ"
+    }
+  ]
+}

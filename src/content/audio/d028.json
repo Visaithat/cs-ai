@@ -1,0 +1,109 @@
+{
+  "lessonId": "d028",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — รวมพลัง B07 เข้ากับ Typer CLI",
+      "src": "/audio/d028/01-big-picture.mp3",
+      "stylePrompt": "เปิดบททบทวนอย่างอบอุ่นและคึกคัก เหมือนชวนน้องมาประกอบจิ๊กซอว์ทั้ง 3 วันเข้าเป็นโปรเจกต์จริงก่อนเข้าสู่ Capstone",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 28 วันทบทวนส่งท้าย Block B07 กันแล้วนะครับ วันนี้เราจะหยิบทุกอย่างที่เรียนมาจาก Day 25 ถึง 27 บวกกับ Typer CLI จาก Day 23 มาประกอบเป็นเครื่องมือจริงที่รันบนเครื่อง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ\n\nดู Big Picture บนหน้าจอไปด้วยกันนะ ภาพใหญ่ของวันนี้คือเราอ่านชุดทิกเก็ตลูกค้าจากไฟล์ JSONL ส่งเข้าไปจัดหมวดหมู่ แล้วเก็บผลลัพธ์ลง SQLite Cache ที่เปิด WAL, รัน migration ด้วย PRAGMA user_version และใช้ placeholder เครื่องหมายคำถามครบชุดจาก Day 26\n\nเป้าหมายสำคัญของเราคือ เมื่อรันคำสั่งเดิมกับไฟล์เดิมซ้ำเป็นรอบที่สอง จำนวนการยิงโมเดลหรือ api_calls ต้องลดเหลือ 0 เต็ม ๆ ด้วย SHA-256 key จาก Day 27\n\nแถมผู้ใช้ยังคุมแคชได้ผ่านแฟล็ก CLI อย่าง --cache-db, --ttl, --prompt-version และ --no-cache พร้อมพิมพ์รายงาน hits, misses, hit_rate และคิวรีดูประวัติด้วย SQL จาก Day 25 ก่อนจะก้าวเข้าสู่ Phase 1 Capstone ใน Block B08 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 28 วันทบทวนส่งท้าย Block B07 กันแล้วนะครับ วันนี้เราจะหยิบทุกอย่างที่เรียนมาจาก Day 25 ถึง 27 บวกกับ Typer CLI จาก Day 23 มาประกอบเป็นเครื่องมือจริงที่รันบนเครื่อง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ\n\nดู Big Picture บนหน้าจอไปด้วยกันนะ ภาพใหญ่ของวันนี้คือเราอ่านชุดทิกเก็ตลูกค้าจากไฟล์ JSONL ส่งเข้าไปจัดหมวดหมู่ แล้วเก็บผลลัพธ์ลง SQLite Cache ที่เปิด WAL, รัน migration ด้วย PRAGMA user_version และใช้ placeholder question mark ครบชุดจาก Day 26\n\nเป้าหมายสำคัญของเราคือ เมื่อรันคำสั่งเดิมกับไฟล์เดิมซ้ำเป็นรอบที่สอง จำนวนการยิงโมเดลหรือ api_calls ต้องลดเหลือ 0 เต็ม ๆ ด้วย SHA-256 key จาก Day 27\n\nแถมผู้ใช้ยังคุมแคชได้ผ่านแฟล็ก CLI อย่าง dash dash cache-db, dash dash ttl, dash dash prompt-version และ dash dash no-cache พร้อมพิมพ์รายงาน hits, misses, hit_rate และคิวรีดูประวัติด้วย SQL จาก Day 25 ก่อนจะก้าวเข้าสู่ Phase 1 Capstone ใน Block B08 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d028/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ ชัดเจนในการทบทวนแบบ Interleaved Recall และเป้าหมายการพิสูจน์ด้วย pytest",
+      "script": "เป้าหมายของวันทบทวน Day 28 มี 3 ข้อชัด ๆ นะครับ\n\nหนึ่ง ดึงความรู้เดิมแบบ Interleaved Recall จากทั้ง Day 25 SQL Analytics, Day 26 Parameterized Queries กับ Migrations, Day 27 SHA-256 กับ TTL Cache และ Day 23 Typer CLI\nสอง ผสานชั้น persistent SQLite cache ที่มี TTL และ PRAGMA user_version เข้ากับ Ticket Classifier CLI พร้อมแฟล็ก --cache-db, --prompt-version และ --no-cache\nสาม พิสูจน์ด้วย pytest และ CliRunner ว่ารอบสองยอด api_calls เท่ากับ 0 และ hit_rate เท่ากับ 1.0 รวมถึงเปลี่ยนเวอร์ชันแล้ว miss และ --no-cache ข้ามแคชได้จริงครับ",
+      "ttsText": "เป้าหมายของวันทบทวน Day 28 มี 3 ข้อชัด ๆ นะครับ\n\nหนึ่ง ดึงความรู้เดิมแบบ Interleaved Recall จากทั้ง Day 25 SQL Analytics, Day 26 Parameterized Queries กับ Migrations, Day 27 SHA-256 กับ TTL Cache และ Day 23 Typer CLI\nสอง ผสานชั้น persistent SQLite cache ที่มี TTL และ PRAGMA user_version เข้ากับ Ticket Classifier CLI พร้อมแฟล็ก dash dash cache-db, dash dash prompt-version และ dash dash no-cache\nสาม พิสูจน์ด้วย pytest และ CliRunner ว่ารอบสองยอด api_calls เท่ากับ 0 และ hit_rate เท่ากับ 1.0 รวมถึงเปลี่ยนเวอร์ชันแล้ว miss และ dash dash no-cache ข้ามแคชได้จริงครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d028/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นพาตั้งโปรเจกต์ uv พร้อมติดตั้ง typer แล้วแนะนำสูตรแบ่งเวลา 30 นาทีของวันทบทวน",
+      "script": "มาตั้งโปรเจกต์ทบทวน Day 28 กันครับ ให้รัน uv init ai-day28-review ตามด้วย cd ai-day28-review แล้วติดตั้ง typer ด้วย uv add typer ตามด้วย uv add --dev pytest ruff\n\nจากนั้นเช็กเวอร์ชันของทั้ง sqlite3 และ typer ให้เรียบร้อย สูตรแบ่งเวลา 30 นาทีวันนี้คือ 10 นาทีทบทวน Interleaved Recall, 15 นาทีประกอบ SQLite Cache เข้า Ticket CLI พร้อมรันเทสต์ และ 5 นาทีสรุป Error Log เพื่อเตรียมพร้อมเข้า Block B08 เดี๋ยวพี่พักรอให้ติดตั้งและเช็กเครื่องเสร็จก่อน กด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาตั้งโปรเจกต์ทบทวน Day 28 กันครับ ให้รัน uv init ai-day28-review ตามด้วย cd ai-day28-review แล้วติดตั้ง typer ด้วย uv add typer ตามด้วย uv add dash dash dev pytest ruff\n\nจากนั้นเช็กเวอร์ชันของทั้ง sqlite3 และ typer ให้เรียบร้อย สูตรแบ่งเวลา 30 นาทีวันนี้คือ 10 นาทีทบทวน Interleaved Recall, 15 นาทีประกอบ SQLite Cache เข้า Ticket CLI พร้อมรันเทสต์ และ 5 นาทีสรุป Error Log เพื่อเตรียมพร้อมเข้า Block B08 เดี๋ยวพี่พักรอให้ติดตั้งและเช็กเครื่องเสร็จก่อน กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ Day 28",
+        "prompt": "ลองรัน uv init ai-day28-review, เพิ่ม typer, pytest, ruff และเช็กเวอร์ชันในเทอร์มินัล เมื่อพร้อมแล้วกดไปต่อครับ",
+        "continueLabel": "ติดตั้งและเช็กพร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — CLI Run 1 vs Run 2",
+      "src": "/audio/d028/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพความต่างของการรัน CLI รอบแรกกับรอบที่สองที่ api_calls ลดเหลือ 0",
+      "script": "ดูแผนภาพการทำงานบนหน้าจอกันครับ วันนี้เป็นการมองทั้งระบบตั้งแต่ต้นน้ำถึงปลายน้ำเลย\n\nรอบแรกที่เรารัน CLI กับไฟล์ทิกเก็ต JSONL ระบบยังไม่เคยเจอคำถามเหล่านี้ในไฟล์แคช ก็จะเกิด Cache Miss แล้วยิงตัวจำลอง classifier พร้อมบันทึกลงไฟล์ .db บนดิสก์\n\nแต่พอเรากดรันคำสั่งเดิมซ้ำรอบที่สอง ฐานข้อมูล SQLite ที่อยู่บนดิสก์ยังจำคำตอบทั้งหมดไว้ครบ ทำให้ได้ Cache Hit 100 เปอร์เซ็นต์และยอดการยิง API ลดเหลือ 0 เต็ม ๆ พร้อมพิมพ์รายงาน hit rate ออกมาให้เห็นชัด ๆ เลยครับ",
+      "ttsText": "ดูแผนภาพการทำงานบนหน้าจอกันครับ วันนี้เป็นการมองทั้งระบบตั้งแต่ต้นน้ำถึงปลายน้ำเลย\n\nรอบแรกที่เรารัน CLI กับไฟล์ทิกเก็ต JSONL ระบบยังไม่เคยเจอคำถามเหล่านี้ในไฟล์แคช ก็จะเกิด Cache Miss แล้วยิงตัวจำลอง classifier พร้อมบันทึกลงไฟล์ dot db บนดิสก์\n\nแต่พอเรากดรันคำสั่งเดิมซ้ำรอบที่สอง ฐานข้อมูล SQLite ที่อยู่บนดิสก์ยังจำคำตอบทั้งหมดไว้ครบ ทำให้ได้ Cache Hit 100 เปอร์เซ็นต์และยอดการยิง API ลดเหลือ 0 เต็ม ๆ พร้อมพิมพ์รายงาน hit rate ออกมาให้เห็นชัด ๆ เลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d028/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM เชื่อมจิ๊กซอว์ทุกวันเข้าด้วยกันอย่างลื่นไหล เปรียบเทียบเคาน์เตอร์รับเรื่อง ปุ่ม Hard Reload และมิเตอร์วัดค่าโทร",
+      "script": "มาดูวิธีร้อยต่อจิ๊กซอว์ทั้ง Block B07 และ D23 เข้าด้วยกันเป็นสถาปัตยกรรมที่สะอาดนะครับ\n\nข้อแรก ภาพรวมเคาน์เตอร์รับเรื่องที่มีแฟ้มคำตอบสำเร็จรูปอยู่หน้าโต๊ะ เรารวม 4 บทเข้าด้วยกันเลยคือ D26 เปิด WAL ทำ migration v1 และใช้เครื่องหมายคำถามทุกคำสั่ง, D27 สร้าง SHA-256 key จากข้อความที่ normalize แล้วคู่กับ model และ prompt_version พร้อมเช็ก TTL, D23 สร้างเปลือก Typer CLI รับไฟล์ JSONL และแฟล็กควบคุม, และ D25 เก็บคอลัมน์ model กับ prompt_version ไว้ให้คิวรี SQL audit ย้อนหลังได้\n\nข้อที่สอง การออกแบบ CLI Cache ให้ควบคุมได้จริง คติสำคัญคือแคชที่ปิดไม่ได้คือฝันร้ายตอนดีบัก เราจึงแยกแกนตรรกะอย่าง process_tickets ที่รับ cache กับ classifier แบบ dependency injection ออกจากเปลือก @app.command() ของ Typer พร้อมแฟล็ก --no-cache ที่ทำงานเหมือนปุ่ม Hard Reload บนเบราว์เซอร์ การแยกชั้นแบบนี้ช่วยให้เขียน unit test และ CliRunner test ง่ายขึ้น 10 เท่า\n\nข้อที่สาม การพิสูจน์ผลประหยัดจริงด้วยตัวเลข เหมือนติดมิเตอร์วัดการโทรออก และข้อควรจำสำคัญคือใน pytest ต้องใช้ไฟล์จริงอย่าง tmp_path / 'cache.db' เท่านั้น ห้ามใช้ :memory: เพราะ :memory: หายไปทันทีที่ CLI รอบแรกจบคำสั่ง ทำให้ทดสอบ persistence ข้ามรอบไม่ได้ครับ",
+      "ttsText": "มาดูวิธีร้อยต่อจิ๊กซอว์ทั้ง Block B07 และ D23 เข้าด้วยกันเป็นสถาปัตยกรรมที่สะอาดนะครับ\n\nข้อแรก ภาพรวมเคาน์เตอร์รับเรื่องที่มีแฟ้มคำตอบสำเร็จรูปอยู่หน้าโต๊ะ เรารวม 4 บทเข้าด้วยกันเลยคือ D26 เปิด WAL ทำ migration v1 และใช้ question mark ทุกคำสั่ง, D27 สร้าง SHA-256 key จากข้อความที่ normalize แล้วคู่กับ model และ prompt_version พร้อมเช็ก TTL, D23 สร้างเปลือก Typer CLI รับไฟล์ JSONL และแฟล็กควบคุม, และ D25 เก็บคอลัมน์ model กับ prompt_version ไว้ให้คิวรี SQL audit ย้อนหลังได้\n\nข้อที่สอง การออกแบบ CLI Cache ให้ควบคุมได้จริง คติสำคัญคือแคชที่ปิดไม่ได้คือฝันร้ายตอนดีบัก เราจึงแยกแกนตรรกะอย่าง process_tickets ที่รับ cache กับ classifier แบบ dependency injection ออกจากเปลือก app dot command ของ Typer พร้อมแฟล็ก dash dash no-cache ที่ทำงานเหมือนปุ่ม Hard Reload บนเบราว์เซอร์ การแยกชั้นแบบนี้ช่วยให้เขียน unit test และ CliRunner test ง่ายขึ้น 10 เท่า\n\nข้อที่สาม การพิสูจน์ผลประหยัดจริงด้วยตัวเลข เหมือนติดมิเตอร์วัดการโทรออก และข้อควรจำสำคัญคือใน pytest ต้องใช้ไฟล์จริงอย่าง tmp_path สแลช cache dot db เท่านั้น ห้ามใช้ colon memory colon เพราะ colon memory colon หายไปทันทีที่ CLI รอบแรกจบคำสั่ง ทำให้ทดสอบ persistence ข้ามรอบไม่ได้ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน",
+      "src": "/audio/d028/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนดูผลรันจริงในเทอร์มินัล ตื่นเต้นตอนเห็นยอด api_calls รอบสองเป็น 0 แล้วเตือนเรื่องบรรทัดว่างใน JSONL",
+      "script": "ลองมาดูตัวอย่าง worked_d028.py ที่ประกอบครบทั้งวงจรตั้งแต่ต้นจนจบบนหน้าจอกันครับ\n\nขั้นแรก เราสร้าง SQLiteTicketCache ที่เปิดโหมด WAL แล้วรัน migration เช็ก PRAGMA user_version ถ้าต่ำกว่า 1 ก็สร้างตาราง response_cache ที่มีคอลัมน์ model และ prompt_version กำกับไว้ด้วย จากนั้นอัปเดต user_version เป็น 1 ใน transaction พร้อมเมธอด get และ set แบบ parameterized upsert\n\nขั้นที่สอง เราสร้างฟังก์ชัน process_tickets ที่วนทีละทิกเก็ต คำนวณ SHA-256 key ถ้า use_cache เป็น True และ cache.get เจอคำตอบที่ไม่หมดอายุ ก็นับ hits บวก 1 โดยไม่เรียก classifier เลย แต่ถ้า miss ก็นับ api_calls บวก 1 เรียก classifier แล้วบันทึกลงแคช พอลองรัน 2 รอบบนไฟล์ cli_cache.db เดิม รอบแรกได้ api_calls เท่ากับ 2, hit_rate 0.0 พอเปิดรอบสองทันที ยอด api_calls กลายเป็น 0, hits เป็น 2, hit_rate 1.0 เต็มครับ\n\nขั้นที่สาม เราผูกเข้ากับคำสั่ง classify ใน Typer CLI อ่านไฟล์ JSONL ด้วย read_text().splitlines() อย่าลืมกรองบรรทัดว่างด้วย if line.strip() และครอบ SQLiteTicketCache ด้วย with เพื่อป้องกันไฟล์ .db ค้างล็อกบน Windows ระหว่างรัน CliRunner รอบสองนะครับ พักดูโค้ดตัวอย่างให้คล่องก่อน แล้วกดไปต่อที่แบบฝึกหัดครับ",
+      "ttsText": "ลองมาดูตัวอย่าง worked_d028 dot py ที่ประกอบครบทั้งวงจรตั้งแต่ต้นจนจบบนหน้าจอกันครับ\n\nขั้นแรก เราสร้าง SQLiteTicketCache ที่เปิดโหมด WAL แล้วรัน migration เช็ก PRAGMA user_version ถ้าต่ำกว่า 1 ก็สร้างตาราง response_cache ที่มีคอลัมน์ model และ prompt_version กำกับไว้ด้วย จากนั้นอัปเดต user_version เป็น 1 ใน transaction พร้อมเมธอด get และ set แบบ parameterized upsert\n\nขั้นที่สอง เราสร้างฟังก์ชัน process_tickets ที่วนทีละทิกเก็ต คำนวณ SHA-256 key ถ้า use_cache เป็น True และ cache dot get เจอคำตอบที่ไม่หมดอายุ ก็นับ hits บวก 1 โดยไม่เรียก classifier เลย แต่ถ้า miss ก็นับ api_calls บวก 1 เรียก classifier แล้วบันทึกลงแคช พอลองรัน 2 รอบบนไฟล์ cli_cache dot db เดิม รอบแรกได้ api_calls เท่ากับ 2, hit_rate 0.0 พอเปิดรอบสองทันที ยอด api_calls กลายเป็น 0, hits เป็น 2, hit_rate 1.0 เต็มครับ\n\nขั้นที่สาม เราผูกเข้ากับคำสั่ง classify ใน Typer CLI อ่านไฟล์ JSONL ด้วย read_text dot splitlines อย่าลืมกรองบรรทัดว่างด้วย if line dot strip และครอบ SQLiteTicketCache ด้วย with เพื่อป้องกันไฟล์ dot db ค้างล็อกบน Windows ระหว่างรัน CliRunner รอบสองนะครับ พักดูโค้ดตัวอย่างให้คล่องก่อน แล้วกดไปต่อที่แบบฝึกหัดครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง CLI + SQLite Cache",
+        "prompt": "ลองไล่ดูการทำงานของ SQLiteTicketCache, process_tickets และคำสั่ง classify ใน Typer เมื่อเข้าใจแล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียนโค้ดจริง",
+      "src": "/audio/d028/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ ชัดเจนเป็นลำดับตอนไล่โครงสร้าง ticket_cache_cli.py ทั้ง 4 ส่วนและการทดสอบด้วย CliRunner",
+      "script": "มาถึงภารกิจประกอบร่าง 15 นาทีใน Day 28 แล้วครับ ให้สร้างไฟล์ ticket_cache_cli.py ให้ผ่านครบทั้ง 4 สถานการณ์ในเทสต์\n\nส่วนแรก make_ticket_cache_key normalize ช่องว่างใน message_th แล้วแฮช canonical JSON กับ model และ prompt_version ด้วย SHA-256\nส่วนที่สอง คลาส SQLiteTicketCache เปิด WAL รัน PRAGMA user_version migration v1 สร้างตาราง response_cache รองรับ with และ close พร้อมเมธอด get และ set แบบ parameterized เครื่องหมายคำถาม\nส่วนที่สาม ฟังก์ชัน process_tickets รับรายการทิกเก็ต cache และ classifier แล้วคืน dict ที่มี results, api_calls, hits, misses และ hit_rate ระวังเมื่อ use_cache เป็น False ให้ข้ามแคชเพื่อบังคับยิงใหม่ด้วยนะ\nส่วนที่สี่ คำสั่ง classify บน typer.Typer รับแฟล็ก --input, --cache-db, --model, --prompt-version, --ttl และ --no-cache อ่านไฟล์ JSONL ทีละบรรทัด ส่งเข้า process_tickets แล้วพิมพ์รายงาน JSON ล้วนออกทาง stdout ด้วย typer.echo(json.dumps(report, ensure_ascii=False))\n\nข้อสังเกตใน Typer ถ้ามีคำสั่งเดียว CliRunner.invoke(app, [...]) ไม่ต้องใส่คำว่า classify นำหน้าครับ รัน uv run pytest -q และ uv run ruff check . ให้ผ่านครบ 4 ข้อ พี่รอตรงนี้ ทำเสร็จแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาถึงภารกิจประกอบร่าง 15 นาทีใน Day 28 แล้วครับ ให้สร้างไฟล์ ticket_cache_cli dot py ให้ผ่านครบทั้ง 4 สถานการณ์ในเทสต์\n\nส่วนแรก make_ticket_cache_key normalize ช่องว่างใน message_th แล้วแฮช canonical JSON กับ model และ prompt_version ด้วย SHA-256\nส่วนที่สอง คลาส SQLiteTicketCache เปิด WAL รัน PRAGMA user_version migration v1 สร้างตาราง response_cache รองรับ with และ close พร้อมเมธอด get และ set แบบ parameterized question mark\nส่วนที่สาม ฟังก์ชัน process_tickets รับรายการทิกเก็ต cache และ classifier แล้วคืน dict ที่มี results, api_calls, hits, misses และ hit_rate ระวังเมื่อ use_cache เป็น False ให้ข้ามแคชเพื่อบังคับยิงใหม่ด้วยนะ\nส่วนที่สี่ คำสั่ง classify บน typer dot Typer รับแฟล็ก dash dash input, dash dash cache-db, dash dash model, dash dash prompt-version, dash dash ttl และ dash dash no-cache อ่านไฟล์ JSONL ทีละบรรทัด ส่งเข้า process_tickets แล้วพิมพ์รายงาน JSON ล้วนออกทาง stdout ด้วย typer dot echo ของ json dot dumps โดยส่ง ensure_ascii เท่ากับ False\n\nข้อสังเกตใน Typer ถ้ามีคำสั่งเดียว CliRunner dot invoke ของ app ไม่ต้องใส่คำว่า classify นำหน้าครับ รัน uv run pytest dash q และ uv run ruff check dot ให้ผ่านครบ 4 ข้อ พี่รอตรงนี้ ทำเสร็จแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงประกอบร่าง ticket_cache_cli.py",
+        "prompt": "ลงมือเขียน ticket_cache_cli.py ให้ครบและรัน uv run pytest -q ตรวจทั้ง 4 สถานการณ์ผ่าน CliRunner ได้เลยครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d028/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 ข้อผิดพลาดเฉพาะทางของ CLI + SQLite Cache ด้วยจังหวะสนุกเตือนภัยแบบรุ่นพี่",
+      "script": "สุดยอดมากครับที่ประกอบ CLI พร้อม SQLite Cache สำเร็จ ก่อนไปทำควิซทบทวน พี่ขอเตือน 4 จุดพลาดเฉพาะตัวเวลาทำ CLI ร่วมกับ SQLite นะครับ\n\nข้อแรก พิมพ์ข้อความ debug เช่น Loaded 3 rows ปะปนลงไปบน stdout ของ CLI ผลคือพอเทสต์สั่ง json.loads(res.stdout) ก็พังทันที กฎคือ stdout ของคำสั่งที่ส่งออก JSON ต้องมีแค่ JSON ล้วน ๆ ส่วน log หรือ progress ให้ส่งไป stderr ด้วย typer.echo(..., err=True) ครับ\n\nข้อที่สอง ลืมปิด SQLiteTicketCache หลังจบคำสั่ง CLI บน Windows พอ pytest พยายามลบ tmp_path จะเกิด PermissionError ทันทีเพราะไฟล์ .db ยังค้างล็อกอยู่ ให้ครอบด้วย with SQLiteTicketCache(...) เสมอ\n\nข้อที่สาม ใช้ CREATE TABLE ธรรมดาโดยไม่เช็ก PRAGMA user_version รัน CLI รอบแรกผ่านฉลุย พอสั่งรันรอบสองบน --cache-db เดิมดันพังด้วย table response_cache already exists\n\nและข้อสี่ เผลอใช้ hash() ของ Python ทำ key จนรัน CliRunner รอบสองแล้ว api_calls ไม่ยอมลดเป็น 0 ต้องใช้ hashlib.sha256 เท่านั้นครับ",
+      "ttsText": "สุดยอดมากครับที่ประกอบ CLI พร้อม SQLite Cache สำเร็จ ก่อนไปทำควิซทบทวน พี่ขอเตือน 4 จุดพลาดเฉพาะตัวเวลาทำ CLI ร่วมกับ SQLite นะครับ\n\nข้อแรก พิมพ์ข้อความ debug เช่น Loaded 3 rows ปะปนลงไปบน stdout ของ CLI ผลคือพอเทสต์สั่ง json dot loads ของ res dot stdout ก็พังทันที กฎคือ stdout ของคำสั่งที่ส่งออก JSON ต้องมีแค่ JSON ล้วน ๆ ส่วน log หรือ progress ให้ส่งไป stderr ด้วย typer dot echo โดยส่ง err เท่ากับ True ครับ\n\nข้อที่สอง ลืมปิด SQLiteTicketCache หลังจบคำสั่ง CLI บน Windows พอ pytest พยายามลบ tmp_path จะเกิด PermissionError ทันทีเพราะไฟล์ dot db ยังค้างล็อกอยู่ ให้ครอบด้วย with SQLiteTicketCache เสมอ\n\nข้อที่สาม ใช้ CREATE TABLE ธรรมดาโดยไม่เช็ก PRAGMA user_version รัน CLI รอบแรกผ่านฉลุย พอสั่งรันรอบสองบน dash dash cache-db เดิมดันพังด้วย table response_cache already exists\n\nและข้อสี่ เผลอใช้ hash ของ Python ทำ key จนรัน CliRunner รอบสองแล้ว api_calls ไม่ยอมลดเป็น 0 ต้องใช้ hashlib dot sha256 เท่านั้นครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Interleaved Recall Quiz 4 ข้อ",
+      "src": "/audio/d028/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ผ่อนคลาย ชวนดึงความรู้เดิมจากทั้ง D25, D26, D27 และ D23 มาทดสอบใน 4 ข้อ",
+      "script": "มาถึงช่วง Interleaved Recall Quiz 4 ข้อที่ดึงความรู้จากทั้ง Day 25, 26, 27 และ 23 มารวมกันนะครับ ลองดึงคำตอบจากความจำก่อนกดตรวจ ทั้งเรื่อง Window Function ดึงผลรันล่าสุด, 4 หลัก SQLite ปลอดภัย, การไล่หาสาเหตุ hits เป็น 0 และวิธีเทสต์ CLI ด้วย CliRunner กับ tmp_path\n\nเดี๋ยวพี่พักรอตรงนี้ ทำครบทั้ง 4 ข้อแล้วกดไปต่อเพื่อฟังสรุปปิดท้าย Block B07 ได้เลยครับ",
+      "ttsText": "มาถึงช่วง Interleaved Recall Quiz 4 ข้อที่ดึงความรู้จากทั้ง Day 25, 26, 27 และ 23 มารวมกันนะครับ ลองดึงคำตอบจากความจำก่อนกดตรวจ ทั้งเรื่อง Window Function ดึงผลรันล่าสุด, 4 หลัก SQLite ปลอดภัย, การไล่หาสาเหตุ hits เป็น 0 และวิธีเทสต์ CLI ด้วย CliRunner กับ tmp_path\n\nเดี๋ยวพี่พักรอตรงนี้ ทำครบทั้ง 4 ข้อแล้วกดไปต่อเพื่อฟังสรุปปิดท้าย Block B07 ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Interleaved Recall Quiz",
+        "prompt": "ลองทำควิซทบทวนทั้ง 4 ข้อจาก D25–D27 และ D23 ให้ครบ แล้วกดไปต่อเพื่อฟังสรุปส่งท้าย Block B07 ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป Block B07 & ก้าวต่อไป B08",
+      "src": "/audio/d028/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจและฮึกเหิมในความสำเร็จของน้องที่จบ Block B07 แล้วส่งต่อเข้า Phase 1 Capstone ใน Block B08 อย่างอบอุ่น",
+      "script": "ยินดีด้วยจริง ๆ ครับ คุณเรียนจบ Day 28 และปิดฉาก Block B07 อย่างสมบูรณ์แล้ว! ตอนนี้คุณมีชุดทักษะฐานข้อมูลครบวงจรของวิศวกร AI อยู่ในมือเรียบร้อย\n\nตั้งแต่การวิเคราะห์ log ด้วย SQL ทั้ง JOIN, GROUP BY/HAVING และ Window Functions ใน Day 25, การเขียน SQL ที่ปลอดภัยด้วย placeholder เครื่องหมายคำถาม, with conn, WAL และ versioned migrations ใน Day 26, การลดค่า API ด้วย SHA-256 กับ TTL Cache ใน Day 27 จนถึงวันนี้ที่ประกอบเข้ากับ Typer CLI จนพิสูจน์ได้จริงว่ารอบสองยิง API เป็น 0 ครั้ง\n\nอย่าลืมเปิดสวิตช์ควบคุมแคชอย่าง --cache-db, --ttl, --prompt-version และ --no-cache ติดตัวไว้เสมอ และจากตรงนี้คุณพร้อมเต็มร้อยสำหรับ Block B08 ใน Day 29 ถึง 32 ซึ่งเป็น Phase 1 Capstone ที่จะประกอบทุกอย่างเป็น Resilient Async Data Fetcher CLI แล้วครับ กดทำเครื่องหมายว่าเรียนจบ แล้วไปลุย Capstone กันต่อเลย สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยจริง ๆ ครับ คุณเรียนจบ Day 28 และปิดฉาก Block B07 อย่างสมบูรณ์แล้ว! ตอนนี้คุณมีชุดทักษะฐานข้อมูลครบวงจรของวิศวกร AI อยู่ในมือเรียบร้อย\n\nตั้งแต่การวิเคราะห์ log ด้วย SQL ทั้ง JOIN, GROUP BY HAVING และ Window Functions ใน Day 25, การเขียน SQL ที่ปลอดภัยด้วย placeholder question mark, with conn, WAL และ versioned migrations ใน Day 26, การลดค่า API ด้วย SHA-256 กับ TTL Cache ใน Day 27 จนถึงวันนี้ที่ประกอบเข้ากับ Typer CLI จนพิสูจน์ได้จริงว่ารอบสองยิง API เป็น 0 ครั้ง\n\nอย่าลืมเปิดสวิตช์ควบคุมแคชอย่าง dash dash cache-db, dash dash ttl, dash dash prompt-version และ dash dash no-cache ติดตัวไว้เสมอ และจากตรงนี้คุณพร้อมเต็มร้อยสำหรับ Block B08 ใน Day 29 ถึง 32 ซึ่งเป็น Phase 1 Capstone ที่จะประกอบทุกอย่างเป็น Resilient Async Data Fetcher CLI แล้วครับ กดทำเครื่องหมายว่าเรียนจบ แล้วไปลุย Capstone กันต่อเลย สู้ ๆ ครับ!"
+    }
+  ]
+}

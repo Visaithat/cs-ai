@@ -1,0 +1,109 @@
+{
+  "lessonId": "d011",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ด่านตรวจคุณภาพด้วย Ruff & pre-commit",
+      "src": "/audio/d011/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงสดใส กระฉับกระเฉง ชี้ให้เห็นว่า Ruff ช่วยดักบั๊ก Python ตั้งแต่ยังไม่รัน และช่วยลดภาระรีวิวสไตล์โค้ดในทีม",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 11 นะครับ วันนี้เราจะยกระดับความเป็นมืออาชีพอีกขั้นด้วยการสร้างด่านตรวจคุณภาพโค้ดอัตโนมัติด้วย Ruff และ pre-commit กันครับ\n\nในโปรเจกต์ AI Pipeline เรามักมีสคริปต์แปลงข้อมูลที่ถูกแก้เร็ว ๆ แล้วหลงเหลือ import ค้าง ตัวแปรสะกดผิด หรือกับดักอันตรายอย่าง mutable default argument ที่แอบรั่วข้อมูลลูกค้าข้าม request การตั้งค่า Ruff ให้เป็นด่าน fail-fast ระดับซอร์สโค้ด จะช่วยดัก bug patterns เหล่านี้ได้ในไม่กี่มิลลิวินาทีตั้งแต่ยังไม่ทันกดรันเลยครับ\n\nนอกจากนี้ พอทำงานร่วมกับทีม การมานั่งคอมเมนต์ใน Pull Request เรื่องการเว้นวรรคหรือเรียง import มันเสียพลังมาก พอเรารวมกฎไว้ใน pyproject.toml แล้วผูกกับ pre-commit และ ruff format ทุกคนจะได้มาตรฐานเดียวกันหมด แถม git diff ยังสะอาดเห็นเฉพาะจุดที่เปลี่ยนตรรกะจริง ช่วยลดต้นทุนดูแลระบบไปจนถึง Capstone เลยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 11 นะครับ วันนี้เราจะยกระดับความเป็นมืออาชีพอีกขั้นด้วยการสร้างด่านตรวจคุณภาพโค้ดอัตโนมัติด้วย Ruff และ pre-commit กันครับ\n\nในโปรเจกต์ AI Pipeline เรามักมีสคริปต์แปลงข้อมูลที่ถูกแก้เร็ว ๆ แล้วหลงเหลือ import ค้าง ตัวแปรสะกดผิด หรือกับดักอันตรายอย่าง mutable default argument ที่แอบรั่วข้อมูลลูกค้าข้าม request การตั้งค่า Ruff ให้เป็นด่าน fail-fast ระดับซอร์สโค้ด จะช่วยดัก bug patterns เหล่านี้ได้ในไม่กี่มิลลิวินาทีตั้งแต่ยังไม่ทันกดรันเลยครับ\n\nนอกจากนี้ พอทำงานร่วมกับทีม การมานั่งคอมเมนต์ใน Pull Request เรื่องการเว้นวรรคหรือเรียง import มันเสียพลังมาก พอเรารวมกฎไว้ใน pyproject dot toml แล้วผูกกับ pre-commit และ ruff format ทุกคนจะได้มาตรฐานเดียวกันหมด แถม git diff ยังสะอาดเห็นเฉพาะจุดที่เปลี่ยนตรรกะจริง ช่วยลดต้นทุนดูแลระบบไปจนถึง Capstone เลยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d011/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงชัดเจน กระชับ ไล่เป้าหมายทั้ง 3 ข้อของวันนี้ให้เห็นภาพและย้ำว่ารันบนเครื่องได้ทั้งหมด",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Day 11 กันครับ\n\nข้อแรก ตั้งค่า [tool.ruff] ใน pyproject.toml โดยเลือกชุดกฎหลัก 5 ตระกูล คือ E, F, I, B และ UP พร้อม target-version ให้เหมาะกับ Python สมัยใหม่\nข้อสอง ใช้คำสั่ง ruff check --fix คู่กับ ruff format เพื่อแยกหน้าที่ระหว่างการแก้ปัญหาเชิงโครงสร้างกับการจัดรูปแบบโค้ด\nข้อสาม วางโครงไฟล์ .pre-commit-config.yaml เพื่อรันด่านตรวจอัตโนมัติก่อน git commit และเข้าใจคำสั่ง --check สำหรับรันใน CI\n\nวันนี้ไม่ต้องใช้ API key และรันบนเครื่องได้ 100 เปอร์เซ็นต์ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Day 11 กันครับ\n\nข้อแรก ตั้งค่า tool dot ruff ใน pyproject dot toml โดยเลือกชุดกฎหลัก 5 ตระกูล คือ E, F, I, B และ UP พร้อม target-version ให้เหมาะกับ Python สมัยใหม่\nข้อสอง ใช้คำสั่ง ruff check dash dash fix คู่กับ ruff format เพื่อแยกหน้าที่ระหว่างการแก้ปัญหาเชิงโครงสร้างกับการจัดรูปแบบโค้ด\nข้อสาม วางโครงไฟล์ dot pre-commit-config dot yaml เพื่อรันด่านตรวจอัตโนมัติก่อน git commit และเข้าใจคำสั่ง dash dash check สำหรับรันใน CI\n\nวันนี้ไม่ต้องใช้ API key และรันบนเครื่องได้ 100 เปอร์เซ็นต์ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d011/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาตั้งโปรเจกต์ Git และติดตั้ง ruff กับ pre-commit อย่างเป็นขั้นตอน",
+      "script": "มาเตรียมโปรเจกต์ทดลองของ Day 11 กันครับ รอบนี้เราจะใช้ Git ด้วยเพราะต้องฝึกทำ pre-commit config\n\nเปิดเทอร์มินัลแล้วรัน uv init ai-day11-quality และ cd เข้าไป จากนั้นสั่ง git init เพื่อสร้าง repository แล้วติดตั้ง ruff กับ pre-commit ด้วยคำสั่ง uv add --dev ruff pre-commit ปิดท้ายเช็กด้วย uv run ruff --version\n\nหากตอนฝึกเครื่องไม่มีอินเทอร์เน็ตโหลด hook ของ pre-commit ก็ไม่เป็นไรนะครับ เรายังรัน ruff check, ruff format และเขียนไฟล์ .pre-commit-config.yaml ฝึกโครงสร้างได้ครบ 100 เปอร์เซ็นต์เลย เดี๋ยวพี่พักรอให้ตั้งเครื่องเสร็จก่อนนะครับ",
+      "ttsText": "มาเตรียมโปรเจกต์ทดลองของ Day 11 กันครับ รอบนี้เราจะใช้ Git ด้วยเพราะต้องฝึกทำ pre-commit config\n\nเปิดเทอร์มินัลแล้วรัน uv init ai-day11-quality และ cd เข้าไป จากนั้นสั่ง git init เพื่อสร้าง repository แล้วติดตั้ง ruff กับ pre-commit ด้วยคำสั่ง uv add dash dash dev ruff pre-commit ปิดท้ายเช็กด้วย uv run ruff dash dash version\n\nหากตอนฝึกเครื่องไม่มีอินเทอร์เน็ตโหลด hook ของ pre-commit ก็ไม่เป็นไรนะครับ เรายังรัน ruff check, ruff format และเขียนไฟล์ dot pre-commit-config dot yaml ฝึกโครงสร้างได้ครบ 100 เปอร์เซ็นต์เลย เดี๋ยวพี่พักรอให้ตั้งเครื่องเสร็จก่อนนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ ai-day11-quality",
+        "prompt": "ลองรัน uv init, git init และติดตั้ง ruff กับ pre-commit ให้พร้อม แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ตั้งโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ด่าน Ruff Check/Format + pre-commit",
+      "src": "/audio/d011/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใส ชวนเปรียบเทียบกับกองบรรณาธิการหนังสือและเครื่องสแกนกระเป๋าหน้าประตูขึ้นเครื่อง",
+      "script": "ก่อนเจาะรายละเอียด ลองมองภาพรวมของด่านตรวจคุณภาพบนหน้าจอไปด้วยกันนะครับ\n\nให้จินตนาการว่า Ruff มี 2 แผนกเหมือนกองบรรณาธิการหนังสือ แผนกแรกคือ ruff check ทำหน้าที่เป็นบรรณาธิการตรวจเนื้อหา จับ unused import และกับดักบั๊กในโค้ด ส่วนแผนกที่สองคือ ruff format เป็นฝ่ายจัดหน้าหนังสือให้ย่อหน้าและความยาวบรรทัดสวยเสมอกันทุกหน้า\n\nพอตั้งค่าเสร็จ เราก็เอาไปเสียบไว้ใน pre-commit ซึ่งทำหน้าที่เหมือนเครื่องสแกนกระเป๋าอัตโนมัติหน้าประตูขึ้นเครื่อง คอยตรวจทุกครั้งก่อนที่เราจะสั่ง git commit ทำให้ไม่เผลอปล่อยโค้ดพังเข้า repo ครับ",
+      "ttsText": "ก่อนเจาะรายละเอียด ลองมองภาพรวมของด่านตรวจคุณภาพบนหน้าจอไปด้วยกันนะครับ\n\nให้จินตนาการว่า Ruff มี 2 แผนกเหมือนกองบรรณาธิการหนังสือ แผนกแรกคือ ruff check ทำหน้าที่เป็นบรรณาธิการตรวจเนื้อหา จับ unused import และกับดักบั๊กในโค้ด ส่วนแผนกที่สองคือ ruff format เป็นฝ่ายจัดหน้าหนังสือให้ย่อหน้าและความยาวบรรทัดสวยเสมอกันทุกหน้า\n\nพอตั้งค่าเสร็จ เราก็เอาไปเสียบไว้ใน pre-commit ซึ่งทำหน้าที่เหมือนเครื่องสแกนกระเป๋าอัตโนมัติหน้าประตูขึ้นเครื่อง คอยตรวจทุกครั้งก่อนที่เราจะสั่ง git commit ทำให้ไม่เผลอปล่อยโค้ดพังเข้า repo ครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d011/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายครบทั้งความต่างของ check vs format, 5 ตระกูลกฎ, และลำดับ hook ใน pre-commit อย่างชัดเจน",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 11 แบบเจาะลึกกันนะครับ\n\nข้อแรก ทำไมทีม Python ยุคใหม่ถึงเปลี่ยนมาใช้ Ruff เมื่อก่อนเราต้องลงทั้ง flake8, isort, black, pyupgrade และ flake8-bugbear แยกกัน 4-5 ตัว ช้าและไฟล์ config กระจัดกระจาย แต่ Ruff เขียนด้วยภาษา Rust จากทีม Astral เจ้าเดียวกับ uv เลยรวมทุกอย่างไว้ในตัวเดียวและเร็วกว่าเดิม 10 ถึง 100 เท่า จำหน้าที่ 2 คำสั่งให้แม่นนะครับ ruff check คือ linter จับบั๊กและสไตล์ผิด ใช้ --fix ให้ช่วยแก้จุดที่ปลอดภัย ส่วน ruff format คือ formatter จัดรูปให้ตรงกันทั้งทีม โดยไม่แก้ตรรกะโค้ดครับ\n\nข้อที่สอง การตั้งค่า [tool.ruff] ใน pyproject.toml เพื่อใช้กติกาเดียวทั้งทีมและบน CI ค่าเริ่มต้นของ Ruff จะเปิดแค่ E กับ F เท่านั้น เราควรเปิดเพิ่มเป็น 5 ตระกูลหลักคือ E สไตล์พื้นฐาน, F บั๊ก import หรือตัวแปรไม่นิยาม, I เรียง import แบบ isort, B จาก flake8-bugbear เพื่อจับกับดักบั๊กจริง และ UP จาก pyupgrade เพื่ออัปเดต type hint ให้เป็นแบบ Python 3.12 อย่าง list[str] หรือ str | None ตัวที่สำคัญมากคือตระกูล B เช่นกฎ B006 ที่จับ def fn(tags=[]): ซึ่งข้อมูลลูกค้าคนแรกจะแอบรั่วไปปนกับคนที่สอง Ruff จับได้ทันทีตั้งแต่ยังไม่รันครับ แล้วก็ใส่ ignore = [\"E501\"] เพื่อปล่อยให้ ruff format จัดการความยาวบรรทัด 88 ตัวอักษรแทน\n\nข้อที่สาม การวางด่าน .pre-commit-config.yaml เพื่อรันตรวจอัตโนมัติก่อน commit จุดที่ห้ามสลับเด็ดขาดคือ ต้องวาง hook id ruff พร้อม --fix ไว้ก่อน ruff-format เสมอ เพราะการแก้ lint อาจเปลี่ยนความยาวบรรทัด จึงต้องจัดรูปปิดท้าย แถมยังนิยมใส่ check-added-large-files กันเผลอ commit ไฟล์ dataset ใหญ่ขึ้น Git ด้วย ที่สำคัญ pre-commit เป็นแค่ด่านแรกบนเครื่อง เพราะคนกด --no-verify ข้ามได้ ดังนั้นใน GitHub Actions CI ต้องรัน ruff check . คู่กับ ruff format --check . เป็นด่านบังคับจริงเสมอครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ข้อของ Day 11 แบบเจาะลึกกันนะครับ\n\nข้อแรก ทำไมทีม Python ยุคใหม่ถึงเปลี่ยนมาใช้ Ruff เมื่อก่อนเราต้องลงทั้ง flake8, isort, black, pyupgrade และ flake8-bugbear แยกกัน 4 ถึง 5 ตัว ช้าและไฟล์ config กระจัดกระจาย แต่ Ruff เขียนด้วยภาษา Rust จากทีม Astral เจ้าเดียวกับ uv เลยรวมทุกอย่างไว้ในตัวเดียวและเร็วกว่าเดิม 10 ถึง 100 เท่า จำหน้าที่ 2 คำสั่งให้แม่นนะครับ ruff check คือ linter จับบั๊กและสไตล์ผิด ใช้ dash dash fix ให้ช่วยแก้จุดที่ปลอดภัย ส่วน ruff format คือ formatter จัดรูปให้ตรงกันทั้งทีม โดยไม่แก้ตรรกะโค้ดครับ\n\nข้อที่สอง การตั้งค่า tool dot ruff ใน pyproject dot toml เพื่อใช้กติกาเดียวทั้งทีมและบน CI ค่าเริ่มต้นของ Ruff จะเปิดแค่ E กับ F เท่านั้น เราควรเปิดเพิ่มเป็น 5 ตระกูลหลักคือ E สไตล์พื้นฐาน, F บั๊ก import หรือตัวแปรไม่นิยาม, I เรียง import แบบ isort, B จาก flake8-bugbear เพื่อจับกับดักบั๊กจริง และ UP จาก pyupgrade เพื่ออัปเดต type hint ให้เป็นแบบ Python 3.12 อย่าง list ของ str หรือ str pipe None ตัวที่สำคัญมากคือตระกูล B เช่นกฎ B006 ที่จับค่า default ที่เป็นลิสต์ว่าง ซึ่งข้อมูลลูกค้าคนแรกจะแอบรั่วไปปนกับคนที่สอง Ruff จับได้ทันทีตั้งแต่ยังไม่รันครับ แล้วก็ใส่ ignore E501 เพื่อปล่อยให้ ruff format จัดการความยาวบรรทัด 88 ตัวอักษรแทน\n\nข้อที่สาม การวางด่าน dot pre-commit-config dot yaml เพื่อรันตรวจอัตโนมัติก่อน commit จุดที่ห้ามสลับเด็ดขาดคือ ต้องวาง hook id ruff พร้อม dash dash fix ไว้ก่อน ruff-format เสมอ เพราะการแก้ lint อาจเปลี่ยนความยาวบรรทัด จึงต้องจัดรูปปิดท้าย แถมยังนิยมใส่ check-added-large-files กันเผลอ commit ไฟล์ dataset ใหญ่ขึ้น Git ด้วย ที่สำคัญ pre-commit เป็นแค่ด่านแรกบนเครื่อง เพราะคนกด dash dash no-verify ข้ามได้ ดังนั้นใน GitHub Actions CI ต้องรัน ruff check จุด คู่กับ ruff format dash dash check จุด เป็นด่านบังคับจริงเสมอครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — messy_ticket.py",
+      "src": "/audio/d011/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงเหมือนนั่งดีบักผลจาก Ruff ด้วยกัน อธิบายว่าเครื่องหมายดอกจันคืออะไรและจุดไหนที่นักพัฒนาต้องลงมือแก้เอง",
+      "script": "ลองมาดูตัวอย่างการทำงานจริงกับไฟล์ messy_ticket.py กันครับ ไฟล์นี้เรารวมปัญหาครบทั้ง 5 ตระกูลเลย พอสั่ง uv run ruff check messy_ticket.py มันจะพ่นออกมา 7 จุดทันที ทั้ง I001 เรียง import ผิด, F401 ที่ import sys กับ os แล้วไม่ได้ใช้, UP035 กับ UP007 ที่ใช้ List กับ Optional แบบเก่า, B006 ที่ใช้ลิสต์ว่างเป็น default ใน append_tag, และ E722 ที่เขียน bare except:\n\nขั้นที่สอง พอเรารัน uv run ruff check --fix สังเกตสัญลักษณ์เครื่องหมายดอกจันนะครับ Ruff จะแก้จุดที่ปลอดภัยให้เองทันที 3 จุด คือลบ import ค้างกับเรียง import ใหม่ เหลืออีก 4 จุดที่เป็นเรื่องตรรกะกับ type ให้เราตัดสินใจแก้เองอย่างตั้งใจ\n\nขั้นที่สาม เราก็แก้ B006 ให้รับ list[str] | None = None แล้วสร้างลิสต์ใหม่ข้างใน ส่วน except: เปล่าก็แก้ให้จับเฉพาะ JSONDecodeError, KeyError และ TypeError ปิดท้ายด้วย ruff format แล้วเช็กซ้ำแบบ CI ทุกอย่างก็ผ่านสะอาดครับ\n\nจำไว้นะครับ อย่าไปแปะ # noqa ทับ B006 หรือ B008 โดยไม่ดูสาเหตุ ถ้าสงสัยรหัสไหนให้รัน uv run ruff rule ตามด้วยรหัสนั้นอ่านคำอธิบายได้เลย เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่าง 3 ขั้นก่อน พร้อมแล้วกดไปต่อที่แบบฝึกหัดนะครับ",
+      "ttsText": "ลองมาดูตัวอย่างการทำงานจริงกับไฟล์ messy_ticket dot py กันครับ ไฟล์นี้เรารวมปัญหาครบทั้ง 5 ตระกูลเลย พอสั่ง uv run ruff check messy_ticket dot py มันจะพ่นออกมา 7 จุดทันที ทั้ง I001 เรียง import ผิด, F401 ที่ import sys กับ os แล้วไม่ได้ใช้, UP035 กับ UP007 ที่ใช้ List กับ Optional แบบเก่า, B006 ที่ใช้ลิสต์ว่างเป็น default ใน append_tag, และ E722 ที่เขียน bare except\n\nขั้นที่สอง พอเรารัน uv run ruff check dash dash fix สังเกตสัญลักษณ์เครื่องหมายดอกจันนะครับ Ruff จะแก้จุดที่ปลอดภัยให้เองทันที 3 จุด คือลบ import ค้างกับเรียง import ใหม่ เหลืออีก 4 จุดที่เป็นเรื่องตรรกะกับ type ให้เราตัดสินใจแก้เองอย่างตั้งใจ\n\nขั้นที่สาม เราก็แก้ B006 ให้รับ list ของ str หรือ None เท่ากับ None แล้วสร้างลิสต์ใหม่ข้างใน ส่วน except เปล่าก็แก้ให้จับเฉพาะ JSONDecodeError, KeyError และ TypeError ปิดท้ายด้วย ruff format แล้วเช็กซ้ำแบบ CI ทุกอย่างก็ผ่านสะอาดครับ\n\nจำไว้นะครับ อย่าไปแปะ noqa ทับ B006 หรือ B008 โดยไม่ดูสาเหตุ ถ้าสงสัยรหัสไหนให้รัน uv run ruff rule ตามด้วยรหัสนั้นอ่านคำอธิบายได้เลย เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่าง 3 ขั้นก่อน พร้อมแล้วกดไปต่อที่แบบฝึกหัดนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง messy_ticket.py",
+        "prompt": "ลองกดไล่ดูผลลัพธ์ของ ruff check, --fix และ ruff format ทั้ง 3 ขั้น แล้วกดไปต่อเพื่อลงมือทำความสะอาดโค้ดจริงได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ตั้งค่า Ruff และแก้ dirty_pipeline.py",
+      "src": "/audio/d011/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ ไล่เช็กลิสต์งาน 3 ส่วนอย่างชัดเจนเพื่อให้ผู้เรียนทำตามได้ครบทุกข้อ",
+      "script": "มาลงมือฝึกทำจริงกันครับ โจทย์รอบนี้มี 3 ส่วนให้จัดการให้สะอาดทั้งโปรเจกต์เลย\n\nส่วนแรก เปิดไฟล์ pyproject.toml แล้วเพิ่ม [tool.ruff], [tool.ruff.lint] ที่เลือกกฎ E, F, I, B, UP พร้อม ignore E501 และ [tool.ruff.format] โดยตั้ง target-version เป็น py312 และ line-length เท่ากับ 88\nส่วนที่สอง สร้างไฟล์ .pre-commit-config.yaml ใส่ hook มาตรฐานอย่าง trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files แล้วตามด้วย ruff-pre-commit โดยวาง id ruff พร้อม --fix ไว้ก่อน ruff-format\nส่วนที่สาม นำโค้ดเริ่มต้น dirty_pipeline.py มาทำความสะอาดให้หมดทุกจุดที่ Ruff ฟ้อง ทั้งลบ unused import อย่าง os กับ math, อัปเดต type hints เป็น dict[str, str] | None และ list[str] | None, แก้ B006 ใน collect_thai_tags ไม่ให้รั่วไหลข้ามการเรียก และเปลี่ยน bare except ใน parse_ticket_json ให้จับเฉพาะ JSONDecodeError, KeyError, TypeError โดยห้ามแอบใช้ # noqa นะครับ\n\nทำครบแล้วรัน uv run ruff format . ตามด้วย ruff check ., ruff format --check . และ pytest -q ให้ผ่านครบ 4 เทสต์ครับ เดี๋ยวพี่รอตรงนี้นะ",
+      "ttsText": "มาลงมือฝึกทำจริงกันครับ โจทย์รอบนี้มี 3 ส่วนให้จัดการให้สะอาดทั้งโปรเจกต์เลย\n\nส่วนแรก เปิดไฟล์ pyproject dot toml แล้วเพิ่ม tool dot ruff, tool dot ruff dot lint ที่เลือกกฎ E, F, I, B, UP พร้อม ignore E501 และ tool dot ruff dot format โดยตั้ง target-version เป็น py312 และ line-length เท่ากับ 88\nส่วนที่สอง สร้างไฟล์ dot pre-commit-config dot yaml ใส่ hook มาตรฐานอย่าง trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files แล้วตามด้วย ruff-pre-commit โดยวาง id ruff พร้อม dash dash fix ไว้ก่อน ruff-format\nส่วนที่สาม นำโค้ดเริ่มต้น dirty_pipeline dot py มาทำความสะอาดให้หมดทุกจุดที่ Ruff ฟ้อง ทั้งลบ unused import อย่าง os กับ math, อัปเดต type hints เป็น dict และ list แบบ Python 3.12, แก้ B006 ใน collect_thai_tags ไม่ให้รั่วไหลข้ามการเรียก และเปลี่ยน bare except ใน parse_ticket_json ให้จับเฉพาะ JSONDecodeError, KeyError, TypeError โดยห้ามแอบใช้ noqa นะครับ\n\nทำครบแล้วรัน uv run ruff format จุด ตามด้วย ruff check จุด, ruff format dash dash check จุด และ pytest dash q ให้ผ่านครบ 4 เทสต์ครับ เดี๋ยวพี่รอตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งค่า Ruff และแก้ dirty_pipeline.py",
+        "prompt": "ลองตั้งค่า pyproject.toml, สร้าง .pre-commit-config.yaml และแก้ dirty_pipeline.py ให้ผ่านทั้ง Ruff และ pytest ได้เลยครับ",
+        "continueLabel": "จัดการคุณภาพโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d011/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงสนุกและจริงจังในจุดสำคัญ เตือน 4 ข้อผิดพลาดที่เจอบ่อยเวลาตั้งค่า Ruff และ pre-commit",
+      "script": "เยี่ยมมากครับที่จัดการโค้ดจนผ่านด่านทั้ง Ruff และ pytest มาดู 4 ข้อผิดพลาดที่คนมักเผลอทำบ่อยเวลาตั้งค่า Ruff และ pre-commit กันนะครับ\n\nข้อแรก รันเฉพาะ ruff format โดยไม่รัน ruff check ผลคือโค้ดจัดหน้าสวยมาก แต่ยังมี unused import, ตัวแปรสะกดผิด หรือ B006 หลุดขึ้น production ต้องรันคู่กันเสมอครับ\nข้อสอง วาง ruff-format ไว้ก่อน ruff --fix ใน .pre-commit-config.yaml พอ ruff --fix แก้บรรทัดทีหลัง รูปแบบที่จัดไว้ก็เพี้ยนจนต้องกด commit ซ้ำสองรอบ ให้วาง ruff --fix ก่อนเสมอ\nข้อสาม แปะ # noqa ทับทุกคำเตือนแบบไม่เข้าใจรหัสกฎ เท่ากับปิดตาเดินข้ามบั๊กจริงอย่าง B006 หรือ bare except ที่เผลอกลืนแม้กระทั่ง KeyboardInterrupt ใช้ uv run ruff rule อ่านดูก่อนแก้เสมอครับ\nและข้อสี่ ลืมระบุ target-version ใน [tool.ruff] ทำให้กฎตระกูล UP ไม่รู้ว่าทีมใช้ Python 3.12 หรือแนะนำไวยากรณ์ที่เวอร์ชันจริงยังไม่รองรับครับ",
+      "ttsText": "เยี่ยมมากครับที่จัดการโค้ดจนผ่านด่านทั้ง Ruff และ pytest มาดู 4 ข้อผิดพลาดที่คนมักเผลอทำบ่อยเวลาตั้งค่า Ruff และ pre-commit กันนะครับ\n\nข้อแรก รันเฉพาะ ruff format โดยไม่รัน ruff check ผลคือโค้ดจัดหน้าสวยมาก แต่ยังมี unused import, ตัวแปรสะกดผิด หรือ B006 หลุดขึ้น production ต้องรันคู่กันเสมอครับ\nข้อสอง วาง ruff-format ไว้ก่อน ruff dash dash fix ใน dot pre-commit-config dot yaml พอ ruff dash dash fix แก้บรรทัดทีหลัง รูปแบบที่จัดไว้ก็เพี้ยนจนต้องกด commit ซ้ำสองรอบ ให้วาง ruff dash dash fix ก่อนเสมอ\nข้อสาม แปะ noqa ทับทุกคำเตือนแบบไม่เข้าใจรหัสกฎ เท่ากับปิดตาเดินข้ามบั๊กจริงอย่าง B006 หรือ bare except ที่เผลอกลืนแม้กระทั่ง KeyboardInterrupt ใช้ uv run ruff rule อ่านดูก่อนแก้เสมอครับ\nและข้อสี่ ลืมระบุ target-version ใน tool dot ruff ทำให้กฎตระกูล UP ไม่รู้ว่าทีมใช้ Python 3.12 หรือแนะนำไวยากรณ์ที่เวอร์ชันจริงยังไม่รองรับครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d011/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนทำควิซ 4 ข้อเพื่อทวนเรื่อง Ruff check vs format, 5 ตระกูลกฎ, pre-commit และ CI gate",
+      "script": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อนะครับ คำถามรอบนี้จะทวนเรื่องความต่างระหว่าง ruff check กับ ruff format, กฎตระกูล B ที่ดัก B006, ลำดับ hook ใน .pre-commit-config.yaml และคำสั่งที่เหมาะสำหรับใช้เป็น quality gate ใน GitHub Actions CI\n\nค่อย ๆ ทำทีละข้อนะครับ เดี๋ยวพี่พักรออยู่ตรงนี้ พอทำครบและดูเฉลยแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "ttsText": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อนะครับ คำถามรอบนี้จะทวนเรื่องความต่างระหว่าง ruff check กับ ruff format, กฎตระกูล B ที่ดัก B006, ลำดับ hook ใน dot pre-commit-config dot yaml และคำสั่งที่เหมาะสำหรับใช้เป็น quality gate ใน GitHub Actions CI\n\nค่อย ๆ ทำทีละข้อนะครับ เดี๋ยวพี่พักรออยู่ตรงนี้ พอทำครบและดูเฉลยแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง Ruff check vs format, Bugbear, ลำดับ pre-commit และคำสั่ง CI ได้เลยครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 12",
+      "src": "/audio/d011/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ สรุปเทมเพลตคุณภาพโค้ดทั้ง 4 ข้อให้กระชับ แล้วชวนไปรวมพลังทบทวน Block B03 ใน Day 12",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 11 แล้ว! วันนี้เราได้เทมเพลตคุณภาพโค้ดที่จะติดตัวไปใช้ทุกโปรเจกต์ตั้งแต่ตอนนี้จนถึง Capstone เลยนะ ขอสรุป 4 ข้อสั้น ๆ ครับ\n\nหนึ่ง Ruff รวมทั้ง linter อย่าง ruff check และ formatter อย่าง ruff format ไว้ในเครื่องมือเดียวที่เร็วระดับมิลลิวินาที\nสอง เก็บกฎไว้ที่จุดเดียวใน pyproject.toml ใต้ [tool.ruff] โดยเปิดชุดกฎ E, F, I, B, UP เพื่อดักทั้ง import ค้างและบั๊กจริงอย่าง B006\nสาม ผูก .pre-commit-config.yaml โดยวาง ruff --fix ก่อน ruff-format และใส่ check-added-large-files เพื่อกันไฟล์ใหญ่หลุดเข้า Git\nสี่ ใช้ pre-commit ช่วยเตือนเร็วบนเครื่อง และใช้ ruff check . คู่กับ ruff format --check . เป็นด่านบังคับจริงใน CI\n\nพรุ่งนี้ใน Day 12 จะเป็นวันทบทวนใหญ่ปิด Block B03 แล้วครับ เราจะเอาทั้ง pytest, fixtures, parametrize, mocking, Ruff และ pytest-cov มารวมพลังทดสอบ Thai Support Ticket Parser ให้ได้ coverage อย่างน้อย 90 เปอร์เซ็นต์ แล้วเจอกันใน Day 12 นะครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 11 แล้ว! วันนี้เราได้เทมเพลตคุณภาพโค้ดที่จะติดตัวไปใช้ทุกโปรเจกต์ตั้งแต่ตอนนี้จนถึง Capstone เลยนะ ขอสรุป 4 ข้อสั้น ๆ ครับ\n\nหนึ่ง Ruff รวมทั้ง linter อย่าง ruff check และ formatter อย่าง ruff format ไว้ในเครื่องมือเดียวที่เร็วระดับมิลลิวินาที\nสอง เก็บกฎไว้ที่จุดเดียวใน pyproject dot toml ใต้ tool dot ruff โดยเปิดชุดกฎ E, F, I, B, UP เพื่อดักทั้ง import ค้างและบั๊กจริงอย่าง B006\nสาม ผูก dot pre-commit-config dot yaml โดยวาง ruff dash dash fix ก่อน ruff-format และใส่ check-added-large-files เพื่อกันไฟล์ใหญ่หลุดเข้า Git\nสี่ ใช้ pre-commit ช่วยเตือนเร็วบนเครื่อง และใช้ ruff check จุด คู่กับ ruff format dash dash check จุด เป็นด่านบังคับจริงใน CI\n\nพรุ่งนี้ใน Day 12 จะเป็นวันทบทวนใหญ่ปิด Block B03 แล้วครับ เราจะเอาทั้ง pytest, fixtures, parametrize, mocking, Ruff และ pytest-cov มารวมพลังทดสอบ Thai Support Ticket Parser ให้ได้ coverage อย่างน้อย 90 เปอร์เซ็นต์ แล้วเจอกันใน Day 12 นะครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

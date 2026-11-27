@@ -1,0 +1,109 @@
+{
+  "lessonId": "d170",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Ragas + Promptfoo & Top 3 Fixes",
+      "src": "/audio/d170/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทด้วยน้ำเสียงกระตือรือร้น ชวนน้องเอาชุดข้อสอบ 40 ข้อมาตรวจจริงจัง และเล่าภาพรวมวงจร Eval-Driven Fix Loop ให้เข้าใจง่าย",
+      "script": "สวัสดีครับ กลับมาลุยกันต่อใน Day 170 นะครับ เมื่อวานเราสร้างชุดข้อสอบ golden_40.jsonl เสร็จเรียบร้อยแล้ว วันนี้ถึงเวลาเอาข้อสอบชุดนั้นมารันวัดผลระบบ CoreFlowPipeline จริง ๆ กันครับ\n\nเครื่องมือที่เราจับคู่กันวันนี้คือ Ragas กับ Promptfoo ทำไมต้องใช้คู่กัน เพราะ Ragas เก่งเรื่องวัด RAG Triad อย่าง Faithfulness, Context Recall และ Context Precision ส่วน Promptfoo เก่งเรื่องรันชุด regression tests ข้ามเวอร์ชันของ prompt รวมถึงตรวจ schema, routing และกฎความปลอดภัยของ Guardrails\n\nพอรัน 40 ข้อรอบแรกเสร็จ สิ่งที่เราต้องทำไม่ใช่การสุ่มแก้ไปเรื่อย ๆ แต่คือการจัดกลุ่มสาเหตุความพัง แล้วจัดอันดับ Top 3 Failure Modes ที่กินคะแนนเยอะที่สุด จากนั้นแก้ให้ตรงชั้น ไม่ว่าจะเป็นชั้น Retrieval, ชั้น Prompt หรือ Abstention Threshold พร้อมติด prompt version แล้วรันเช็ก Non-Regression เพื่อให้มั่นใจว่าเราไม่ได้แก้จุดหนึ่งแล้วไปทำอีก slice พังครับ",
+      "ttsText": "สวัสดีครับ กลับมาลุยกันต่อใน Day 170 นะครับ เมื่อวานเราสร้างชุดข้อสอบ golden_40 dot jsonl เสร็จเรียบร้อยแล้ว วันนี้ถึงเวลาเอาข้อสอบชุดนั้นมารันวัดผลระบบ CoreFlowPipeline จริง ๆ กันครับ\n\nเครื่องมือที่เราจับคู่กันวันนี้คือ Ragas กับ Promptfoo ทำไมต้องใช้คู่กัน เพราะ Ragas เก่งเรื่องวัด RAG Triad อย่าง Faithfulness, Context Recall และ Context Precision ส่วน Promptfoo เก่งเรื่องรันชุด regression tests ข้ามเวอร์ชันของ prompt รวมถึงตรวจ schema, routing และกฎความปลอดภัยของ Guardrails\n\nพอรัน 40 ข้อรอบแรกเสร็จ สิ่งที่เราต้องทำไม่ใช่การสุ่มแก้ไปเรื่อย ๆ แต่คือการจัดกลุ่มสาเหตุความพัง แล้วจัดอันดับ Top 3 Failure Modes ที่กินคะแนนเยอะที่สุด จากนั้นแก้ให้ตรงชั้น ไม่ว่าจะเป็นชั้น Retrieval, ชั้น Prompt หรือ Abstention Threshold พร้อมติด prompt version แล้วรันเช็ก Non-Regression เพื่อให้มั่นใจว่าเราไม่ได้แก้จุดหนึ่งแล้วไปทำอีก slice พังครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d170/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยกจังหวะเป้าหมายทั้ง 3 ข้อชัดเจน แล้วเน้นย้ำความสะดวกในการรันแบบ offline",
+      "script": "มาดูเป้าหมายของ Day 170 กันครับ จบบทนี้คุณจะทำได้ 3 อย่างหลักเลย\n\nหนึ่ง ผสานผลประเมิน Ragas และ Promptfoo บน 40 เคส เพื่อวัด Faithfulness, Context Recall, Schema, Abstention และ Attack Defense\nสอง จัดอันดับ Top 3 Failure Modes จากผลรันจริง เพื่อวางแผนแก้ตรงจุด\nสาม ยืนยันผล Before vs After ด้วยระบบตรวจ Regression (`regressed == 0`) ก่อนต่อ Langfuse ใน D171\n\nทั้งหมดรันด้วย Deterministic Harness แบบ offline 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 170 กันครับ จบบทนี้คุณจะทำได้ 3 อย่างหลักเลย\n\nหนึ่ง ผสานผลประเมิน Ragas และ Promptfoo บน 40 เคส เพื่อวัด Faithfulness, Context Recall, Schema, Abstention และ Attack Defense\nสอง จัดอันดับ Top 3 Failure Modes จากผลรันจริง เพื่อวางแผนแก้ตรงจุด\nสาม ยืนยันผล Before กับ After ด้วยระบบตรวจ Regression ที่มี regressed เท่ากับศูนย์ ก่อนต่อ Langfuse ใน D171\n\nทั้งหมดรันด้วย Deterministic Harness แบบ offline 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เตรียม Dependencies & Eval Config",
+      "src": "/audio/d170/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งติดตั้ง pyyaml และชี้ให้เห็นการแยก offline harness กับ API judge จริง",
+      "script": "ในส่วนเตรียมเครื่องวันนี้ ให้ทำงานต่อในโฟลเดอร์ thai-enterprise-assistant นะครับ ติดตั้งแพ็กเกจด้วย uv add pydantic pyyaml และ uv add --dev pytest ruff\n\nส่วนคำสั่งอย่าง npx promptfoo@latest หรือ uv add ragas นั้นเป็นทางเลือกสำหรับตอนที่เราต้องการเปิดโหมด LLM-as-a-Judge กับ API จริง แต่ในแบบฝึกหัดวันนี้เราจะสร้าง Eval Runner แบบ offline ที่จำลองการให้คะแนน Ragas และ Promptfoo assertions ได้ครบถ้วนและรันซ้ำใน CI ได้ทันใจเลยครับ\n\nเช็กแพ็กเกจให้พร้อมแล้วกดไปต่อกันเลยครับ",
+      "ttsText": "ในส่วนเตรียมเครื่องวันนี้ ให้ทำงานต่อในโฟลเดอร์ thai-enterprise-assistant นะครับ ติดตั้งแพ็กเกจด้วย uv add pydantic pyyaml และ uv add dash dash dev pytest ruff\n\nส่วนคำสั่งอย่าง npx promptfoo at latest หรือ uv add ragas นั้นเป็นทางเลือกสำหรับตอนที่เราต้องการเปิดโหมด LLM-as-a-Judge กับ API จริง แต่ในแบบฝึกหัดวันนี้เราจะสร้าง Eval Runner แบบ offline ที่จำลองการให้คะแนน Ragas และ Promptfoo assertions ได้ครบถ้วนและรันซ้ำใน CI ได้ทันใจเลยครับ\n\nเช็กแพ็กเกจให้พร้อมแล้วกดไปต่อกันเลยครับ",
+      "pauseAfter": {
+        "title": "พักรอติดตั้ง pyyaml และเช็กสภาพแวดล้อม",
+        "prompt": "ยืนยันว่า pydantic, pyyaml, pytest และ ruff พร้อมในโปรเจกต์ รวมถึงชุดทดสอบ 40 เคสจาก D169 พร้อมแล้วกดไปต่อครับ",
+        "continueLabel": "เตรียมเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Eval-Driven Fix Loop",
+      "src": "/audio/d170/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนเห็นภาพ อธิบายวงจรการวัดผล จัดอันดับ และตรวจ regression บนแผนภาพอย่างลื่นไหล",
+      "script": "มองดูแผนภาพ Eval-Driven Fix Loop บนหน้าจอไปด้วยกันนะครับ กระบวนการทั้งหมดวิ่งเป็นวงจรที่ชัดเจนมาก\n\nเริ่มจากส่ง 40 เคสเข้า Eval Runner เพื่อวัดคะแนน baseline ก่อนแก้ จากนั้นจัดอันดับ 3 สาเหตุความล้มเหลวที่ใหญ่ที่สุด หรือ Top 3 Failure Modes แล้วลงมือแก้ที่ต้นตอทีละจุด สุดท้ายค่อยรัน regression suite ซ้ำทุก slice เพื่อตรวจว่าคะแนนดีขึ้นจริงและไม่มีเคสเก่าที่พังย้อนหลังครับ",
+      "ttsText": "มองดูแผนภาพ Eval-Driven Fix Loop บนหน้าจอไปด้วยกันนะครับ กระบวนการทั้งหมดวิ่งเป็นวงจรที่ชัดเจนมาก\n\nเริ่มจากส่ง 40 เคสเข้า Eval Runner เพื่อวัดคะแนน baseline ก่อนแก้ จากนั้นจัดอันดับ 3 สาเหตุความล้มเหลวที่ใหญ่ที่สุด หรือ Top 3 Failure Modes แล้วลงมือแก้ที่ต้นตอทีละจุด สุดท้ายค่อยรัน regression suite ซ้ำทุก slice เพื่อตรวจว่าคะแนนดีขึ้นจริงและไม่มีเคสเก่าที่พังย้อนหลังครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก 3 ข้อ — Ragas, Top 3 & Non-Regression",
+      "src": "/audio/d170/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายบทบาทของ Ragas, Promptfoo และ Top 3 Failure Modes ด้วยน้ำเสียงชัดเจน ใช้คำเปรียบเทียบห้องฉุกเฉินและเบรกรถยนต์",
+      "script": "มาดูแนวคิดหลัก 3 ข้อของวันนี้กันครับ\n\nข้อแรก การผสาน Ragas กับ Promptfoo ตัว Ragas เหมือนอาจารย์ตรวจฝั่ง RAG ทั้ง Context Recall, Precision และ Faithfulness (>= 0.85) ส่วน Promptfoo เหมือนเครื่องตรวจมาตรฐานที่รันทั้ง 40 เคสเช็ก JSON schema, route, abstention และ guardrails ไปพร้อมกัน\n\nข้อที่สอง การผ่าตัด Top 3 Failure Modes ให้ทำ Triage จัดลำดับ 3 อันดับแรกก่อน ได้แก่ 1) Retrieval Miss บน code-switch แก้ด้วย PyThaiNLP BM25 + RRF หรือ Reranker, 2) Over-Eager Answering ใน unanswerable แก้ด้วย min_score และ negative constraint, 3) Citation หรือ Schema Mismatch แก้ด้วย Structured Output และ repair retry\n\nข้อที่สาม Fix & Non-Regression Gate การดัน min_score สูงเกินไปอาจทำให้เกิด False Refusal ใน thai_faq เหมือนเบรกหนึบจนล้อล็อก จึงต้องรัน diff_runs เทียบ Before vs After ให้ regressed เป็นศูนย์พร้อมติด prompt version เสมอครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อของวันนี้กันครับ\n\nข้อแรก การผสาน Ragas กับ Promptfoo ตัว Ragas เหมือนอาจารย์ตรวจฝั่ง RAG ทั้ง Context Recall, Precision และ Faithfulness ที่ต้องมากกว่าหรือเท่ากับ 0.85 ส่วน Promptfoo เหมือนเครื่องตรวจมาตรฐานที่รันทั้ง 40 เคสเช็ก JSON schema, route, abstention และ guardrails ไปพร้อมกัน\n\nข้อที่สอง การผ่าตัด Top 3 Failure Modes ให้ทำ Triage จัดลำดับ 3 อันดับแรกก่อน ได้แก่ หนึ่ง Retrieval Miss บน code-switch แก้ด้วย PyThaiNLP BM25 ร่วมกับ RRF หรือ Reranker, สอง Over-Eager Answering ใน unanswerable แก้ด้วย min_score และ negative constraint, สาม Citation หรือ Schema Mismatch แก้ด้วย Structured Output และ repair retry\n\nข้อที่สาม Fix กับ Non-Regression Gate การดัน min_score สูงเกินไปอาจทำให้เกิด False Refusal ใน thai_faq เหมือนเบรกหนึบจนล้อล็อก จึงต้องรัน diff_runs เทียบ Before กับ After ให้ regressed เป็นศูนย์พร้อมติด prompt version เสมอครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — จัดอันดับและเทียบ Regression",
+      "src": "/audio/d170/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต พูดชัดจังหวะคำนวณคะแนน recall และ faithfulness แล้วเน้นข้อควรระวังตรงเคส unanswerable ที่ total_claims เป็นศูนย์",
+      "script": "มาเดินดูตัวอย่างโค้ด worked_eval_runner.py บนหน้าจอทีละขั้นกันครับ\n\nขั้นแรก เราสร้างฟังก์ชัน score_case ที่คำนวณทั้ง Context Recall และ Faithfulness คู่กับการตรวจ route, status และ no_pii แล้วจำแนกสาเหตุความล้มเหลวออกมาเป็น failure_mode\n\nขั้นที่สอง พอเราโยนข้อมูลจำลอง baseline v1 จำนวน 6 ข้อเข้าไป ผลออกมาผ่านแค่ 1 ใน 6 และ Counter ก็จัดอันดับ Top 3 Failure Modes ให้ทันทีคือ retrieval_miss 2 ข้อ, over_eager_answering 2 ข้อ และ schema_or_citation_mismatch 1 ข้อ\n\nขั้นที่สาม พอเราจำลองผลหลังแก้ทั้ง 3 จุดเป็น v2 แล้วเทียบ v1 กับ v2 ผลคือผ่านครบ 6 ใน 6 และ regressed เป็นลิสต์ว่างเลย จุดที่ต้องสังเกตให้แม่นคือ ในเคส unanswerable ที่ระบบปฏิเสธคำตอบได้ถูกต้อง แม้ total_claims จะเป็นศูนย์ แต่ถ้า actual_status เป็น escalated หรือ blocked เราต้องให้ Faithfulness เป็น 1.0 นะครับ เพราะการยอมรับว่าไม่มีหลักฐานถือว่าซื่อสัตย์ ไม่ใช่ 0.0 ลองกดเดินตัวอย่างให้ครบแล้วไปทำแล็บจริงกันครับ",
+      "ttsText": "มาเดินดูตัวอย่างโค้ด worked_eval_runner dot py บนหน้าจอทีละขั้นกันครับ\n\nขั้นแรก เราสร้างฟังก์ชัน score_case ที่คำนวณทั้ง Context Recall และ Faithfulness คู่กับการตรวจ route, status และ no_pii แล้วจำแนกสาเหตุความล้มเหลวออกมาเป็น failure_mode\n\nขั้นที่สอง พอเราโยนข้อมูลจำลอง baseline v1 จำนวน 6 ข้อเข้าไป ผลออกมาผ่านแค่ 1 ใน 6 และ Counter ก็จัดอันดับ Top 3 Failure Modes ให้ทันทีคือ retrieval_miss 2 ข้อ, over_eager_answering 2 ข้อ และ schema_or_citation_mismatch 1 ข้อ\n\nขั้นที่สาม พอเราจำลองผลหลังแก้ทั้ง 3 จุดเป็น v2 แล้วเทียบ v1 กับ v2 ผลคือผ่านครบ 6 ใน 6 และ regressed เป็นลิสต์ว่างเลย จุดที่ต้องสังเกตให้แม่นคือ ในเคส unanswerable ที่ระบบปฏิเสธคำตอบได้ถูกต้อง แม้ total_claims จะเป็นศูนย์ แต่ถ้า actual_status เป็น escalated หรือ blocked เราต้องให้ Faithfulness เป็น 1.0 นะครับ เพราะการยอมรับว่าไม่มีหลักฐานถือว่าซื่อสัตย์ ไม่ใช่ 0.0 ลองกดเดินตัวอย่างให้ครบแล้วไปทำแล็บจริงกันครับ",
+      "pauseAfter": {
+        "title": "พักรอเดินตัวอย่าง Eval Runner & Diff",
+        "prompt": "กดเดินตัวอย่างทั้ง 3 ขั้นเพื่อดูการคำนวณ Faithfulness และการจัดอันดับ Top 3 Failure Modes เมื่อเข้าใจแล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง Eval Runner & Regression Gate",
+      "src": "/audio/d170/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชัดเจน พูดเรียงลำดับความสำคัญของ failure_mode และโครงสร้างรีเทิร์นของฟังก์ชันทั้ง 3 ตัวให้พิมพ์ตามได้ง่าย",
+      "script": "ถึงเวลาเขียน src/eval_runner.py แล้วครับ มาดูสเปก 3 ฟังก์ชันหลักกัน\n\nหนึ่ง evaluate_sample รับ EvalSampleResult แล้วคำนวณ context_recall (ถ้า expected_chunks ว่างให้เป็น 1.0) และ faithfulness (ถ้า total_claims เป็น 0 และ status เป็น escalated หรือ blocked ให้เป็น 1.0) จากนั้นเช็กผ่านทุกเงื่อนไขโดย recall และ faithfulness ต้อง >= 0.85 ถ้าตกให้จัด failure_mode ตามลำดับ: pii_or_attack_leak, schema_error, retrieval_miss, over_eager_answering, false_refusal หรือ faithfulness_drop\n\nสอง run_eval_suite โยน ValueError ถ้าว่าง นอกนั้นคืน total, pass_rate, avg_recall, avg_faithfulness, by_slice, top_failure_modes (สูงสุด 3 อันดับ) และ case_passed_map\n\nสาม compare_eval_runs เทียบ before กับ after คืน pass_rate_delta, fixed_case_ids, regressed_case_ids และ non_regression_passed ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "ttsText": "ถึงเวลาเขียน src slash eval_runner dot py แล้วครับ มาดูสเปก 3 ฟังก์ชันหลักกัน\n\nหนึ่ง evaluate_sample รับ EvalSampleResult แล้วคำนวณ context_recall โดยถ้า expected_chunks ว่างให้เป็น 1.0 และ faithfulness โดยถ้า total_claims เป็น 0 และ status เป็น escalated หรือ blocked ให้เป็น 1.0 จากนั้นเช็กผ่านทุกเงื่อนไขโดย recall และ faithfulness ต้องมากกว่าหรือเท่ากับ 0.85 ถ้าตกให้จัด failure_mode ตามลำดับ ได้แก่ pii_or_attack_leak, schema_error, retrieval_miss, over_eager_answering, false_refusal หรือ faithfulness_drop\n\nสอง run_eval_suite โยน ValueError ถ้าว่าง นอกนั้นคืน total, pass_rate, avg_recall, avg_faithfulness, by_slice, top_failure_modes สูงสุด 3 อันดับ และ case_passed_map\n\nสาม compare_eval_runs เทียบ before กับ after คืน pass_rate_delta, fixed_case_ids, regressed_case_ids และ non_regression_passed ลองเขียนแล้วรันเทสต์ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียน src/eval_runner.py",
+        "prompt": "ลงมือเขียน evaluate_sample, run_eval_suite และ compare_eval_runs แล้วรันเทสต์ทั้ง 5 ข้อให้ผ่านได้เลยครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d170/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเตือนภัยแบบรุ่นพี่ที่เคยผ่านสมรภูมิการจูนระบบ AI มาก่อน เน้นเรื่องการเปลี่ยนทีละตัวแปรและคุมงบ Judge",
+      "script": "สุดยอดครับ ผ่านบททดสอบของ eval_runner ไปได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดยอดฮิตช่วงทำ Eval Loop ให้ระวังไว้นะครับ\n\nข้อแรก คือดูแต่ค่าเฉลี่ยรวมหลังแก้ โดยไม่ตรวจ regressed_case_ids บางทีเพิ่ม min_score แล้วคะแนนรวมขึ้นมานิดนึง แต่เคส thai_faq ที่เคยตอบถูก 4 ข้อกลับโดนปฏิเสธหมดโดยไม่รู้ตัว\n\nข้อที่สอง คือแก้ทุกอย่างด้วยการยัดข้อความลง System Prompt จนยาวเป็นสองหน้า ทำให้เปลือง token และโมเดลสับสนคำสั่งเองจน Faithfulness ตก จำไว้เลยว่าต้องแก้ให้ตรงชั้นครับ\n\nข้อที่สาม คือลืมบันทึก prompt_version คู่กับผลรัน Eval ผ่านไปสามวันกลับมาดูตัวเลข 0.90 แล้วจำไม่ได้ว่าวันนั้นใช้ prompt หรือค่า top_k ตัวไหนกันแน่\n\nและข้อที่สี่ คือเอา LLM-as-a-Judge ตัวแพงมารันทุกครั้งระหว่างจูนโค้ดบนชุด dev จนเปลืองงบ API ไปหลายร้อยบาท ทั้งที่ควรใช้ Deterministic Assertions ตรวจด่านแรกก่อน แล้วค่อยเปิด Judge จริงบน holdout ตอนโค้ดนิ่งแล้วครับ",
+      "ttsText": "สุดยอดครับ ผ่านบททดสอบของ eval_runner ไปได้แล้ว ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดยอดฮิตช่วงทำ Eval Loop ให้ระวังไว้นะครับ\n\nข้อแรก คือดูแต่ค่าเฉลี่ยรวมหลังแก้ โดยไม่ตรวจ regressed_case_ids บางทีเพิ่ม min_score แล้วคะแนนรวมขึ้นมานิดนึง แต่เคส thai_faq ที่เคยตอบถูก 4 ข้อกลับโดนปฏิเสธหมดโดยไม่รู้ตัว\n\nข้อที่สอง คือแก้ทุกอย่างด้วยการยัดข้อความลง System Prompt จนยาวเป็นสองหน้า ทำให้เปลือง token และโมเดลสับสนคำสั่งเองจน Faithfulness ตก จำไว้เลยว่าต้องแก้ให้ตรงชั้นครับ\n\nข้อที่สาม คือลืมบันทึก prompt_version คู่กับผลรัน Eval ผ่านไปสามวันกลับมาดูตัวเลข 0.90 แล้วจำไม่ได้ว่าวันนั้นใช้ prompt หรือค่า top_k ตัวไหนกันแน่\n\nและข้อที่สี่ คือเอา LLM-as-a-Judge ตัวแพงมารันทุกครั้งระหว่างจูนโค้ดบนชุด dev จนเปลืองงบ API ไปหลายร้อยบาท ทั้งที่ควรใช้ Deterministic Assertions ตรวจด่านแรกก่อน แล้วค่อยเปิด Judge จริงบน holdout ตอนโค้ดนิ่งแล้วครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d170/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย ชวนคิดวิเคราะห์สถานการณ์จริงใน Micro-Quiz ทั้ง 4 ข้อ",
+      "script": "มาลองทำ Micro-Quiz 4 ข้อเพื่อเช็กความแม่นยำกันครับ คำถามจะให้ลองวิเคราะห์ว่าถ้า Context Recall ต่ำแต่ Faithfulness สูงควรแก้ชั้นไหน, ความเสี่ยงของการดัน min_score สูงเกินไป, ความต่างของ Ragas กับ Promptfoo และวินัยการแก้ทีละตัวแปร\n\nลองตอบให้ครบทั้ง 4 ข้อแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาลองทำ Micro-Quiz 4 ข้อเพื่อเช็กความแม่นยำกันครับ คำถามจะให้ลองวิเคราะห์ว่าถ้า Context Recall ต่ำแต่ Faithfulness สูงควรแก้ชั้นไหน, ความเสี่ยงของการดัน min_score สูงเกินไป, ความต่างของ Ragas กับ Promptfoo และวินัยการแก้ทีละตัวแปร\n\nลองตอบให้ครบทั้ง 4 ข้อแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง Ragas, Promptfoo และ Top 3 Failure Modes เสร็จแล้วกดไปต่อเพื่อฟังสรุปได้เลยครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 171",
+      "src": "/audio/d170/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจ สรุปแก่นสำคัญของ Eval Loop แล้วชวนต่อยอดสู่เรื่อง Observability และต้นทุนใน Day 171",
+      "script": "ยินดีด้วยครับ คุณจบ Day 170 เรียบร้อยแล้ว วันนี้เราได้อาวุธสำคัญของการทำ Eval-Driven Development ไปเต็ม ๆ 4 ข้อครับ\n\nหนึ่ง ใช้ Ragas วัดคุณภาพเนื้อหา RAG คู่กับ Promptfoo สำหรับ regression, routing, schema และ guardrails\nสอง จัดอันดับ Top 3 Failure Modes จากข้อมูลจริง เพื่อลงมือซ่อมจุดที่สร้างผลกระทบมากที่สุดก่อน\nสาม แก้ทีละตัวแปรพร้อมบันทึก prompt_version และเช็ก compare_eval_runs เพื่อยืนยันว่าไม่มี regression\nและสี่ เก็บตัวเลข Before กับ After ของวันนี้ไว้เป็นหลักฐานชิ้นเอกสำหรับ Milestone 4 และห้องสัมภาษณ์\n\nใน Day 171 พรุ่งนี้ คุณภาพอย่างเดียวอาจยังไม่พอ เราจะไปติด Langfuse Tracing เพื่อวัด Latency ระดับ P50 กับ P95 และคำนวณต้นทุนจริงต่อ 1,000 คำถามกันครับ แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณจบ Day 170 เรียบร้อยแล้ว วันนี้เราได้อาวุธสำคัญของการทำ Eval-Driven Development ไปเต็ม ๆ 4 ข้อครับ\n\nหนึ่ง ใช้ Ragas วัดคุณภาพเนื้อหา RAG คู่กับ Promptfoo สำหรับ regression, routing, schema และ guardrails\nสอง จัดอันดับ Top 3 Failure Modes จากข้อมูลจริง เพื่อลงมือซ่อมจุดที่สร้างผลกระทบมากที่สุดก่อน\nสาม แก้ทีละตัวแปรพร้อมบันทึก prompt_version และเช็ก compare_eval_runs เพื่อยืนยันว่าไม่มี regression\nและสี่ เก็บตัวเลข Before กับ After ของวันนี้ไว้เป็นหลักฐานชิ้นเอกสำหรับ Milestone 4 และห้องสัมภาษณ์\n\nใน Day 171 พรุ่งนี้ คุณภาพอย่างเดียวอาจยังไม่พอ เราจะไปติด Langfuse Tracing เพื่อวัด Latency ระดับ P50 กับ P95 และคำนวณต้นทุนจริงต่อ 1,000 คำถามกันครับ แล้วเจอกันครับ!"
+    }
+  ]
+}

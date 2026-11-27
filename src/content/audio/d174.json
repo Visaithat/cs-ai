@@ -1,0 +1,109 @@
+{
+  "lessonId": "d174",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — FastAPI SSE & Web UI",
+      "src": "/audio/d174/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น สดใส ชวนเห็นภาพการเปลี่ยนระบบใน terminal ให้กลายเป็นเว็บแอปแชตสตรีมสดที่คนอื่นกดเล่นได้จริง",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 174 นะครับ วันนี้สนุกมาก เพราะเราจะเปลี่ยนระบบ AI จากเดิมที่รันได้แค่ใน terminal ให้กลายเป็น API สตรีมคำตอบแบบเรียลไทม์พร้อมหน้าเว็บให้ทุกคนลองกดเล่นได้จริงครับ\n\nลองมอง Big Picture 3 จุดของวันนี้กันนะ จุดแรกคือเราเอา Security Middleware จากเมื่อวานมาต่อเข้ากับ Core Pipeline แล้วห่อด้วย FastAPI แบบ Server-Sent Events หรือ SSE พร้อม Swagger หน้า slash docs และหน้า Web Chat UI น้ำหนักเบาที่ root path\n\nจุดที่สองคือการคุมประสบการณ์ผู้ใช้และต้นทุนครับ ถ้าผู้ใช้รอนานเกิน 1 ถึง 2 วินาทีแล้วยังไม่เห็นตัวอักษรขยับ เขามักกดรีเฟรชซ้ำจนเซิร์ฟเวอร์ทำงานซ้อนกัน เราจึงส่ง SSE event แรกทันทีหลังตรวจ PDPA เพื่อกด TTFT ให้ต่ำ และตรวจ request.is_disconnected เสมอเพื่อตัดงานทันทีที่ลูกค้าปิดแท็บ\n\nและจุดที่สาม เราออกแบบด้วย Dependency Injection เพื่อให้ใช้ FastAPI TestClient ทดสอบ stream, headers, และความปลอดภัยหน้า UI ได้แบบ offline 100 เปอร์เซ็นต์ใน CI ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 174 นะครับ วันนี้สนุกมาก เพราะเราจะเปลี่ยนระบบ AI จากเดิมที่รันได้แค่ใน terminal ให้กลายเป็น API สตรีมคำตอบแบบเรียลไทม์พร้อมหน้าเว็บให้ทุกคนลองกดเล่นได้จริงครับ\n\nลองมอง Big Picture 3 จุดของวันนี้กันนะ จุดแรกคือเราเอา Security Middleware จากเมื่อวานมาต่อเข้ากับ Core Pipeline แล้วห่อด้วย FastAPI แบบ Server-Sent Events หรือ SSE พร้อม Swagger หน้า slash docs และหน้า Web Chat UI น้ำหนักเบาที่ root path\n\nจุดที่สองคือการคุมประสบการณ์ผู้ใช้และต้นทุนครับ ถ้าผู้ใช้รอนานเกิน 1 ถึง 2 วินาทีแล้วยังไม่เห็นตัวอักษรขยับ เขามักกดรีเฟรชซ้ำจนเซิร์ฟเวอร์ทำงานซ้อนกัน เราจึงส่ง SSE event แรกทันทีหลังตรวจ PDPA เพื่อกด TTFT ให้ต่ำ และตรวจ request dot is_disconnected เสมอเพื่อตัดงานทันทีที่ลูกค้าปิดแท็บ\n\nและจุดที่สาม เราออกแบบด้วย Dependency Injection เพื่อให้ใช้ FastAPI TestClient ทดสอบ stream, headers, และความปลอดภัยหน้า UI ได้แบบ offline 100 เปอร์เซ็นต์ใน CI ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d174/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมายทั้ง 3 ข้อของการทำ SSE Streaming API และ Web UI ให้จับประเด็นได้ทันที",
+      "script": "มาดูเป้าหมาย 3 อย่างใน Day 174 กันครับ\n\nอย่างแรก ออกแบบสัญญา SSE Event Schema ทั้ง meta, token, citation, hitl_required, done และ error ด้วย Pydantic สำหรับ endpoint POST /v1/chat/stream\nอย่างที่สอง เชื่อมต่อ SecurityMiddleware เข้ากับ FastAPI Async Generator พร้อมคุม TTFT, timeout และ request.is_disconnected เพื่อยกเลิกงานค้างอย่างปลอดภัย\nอย่างที่สาม สร้างหน้า Web Chat UI แบบจบในตัวด้วย fetch คู่กับ ReadableStream และ textContent เพื่อกัน XSS คู่กับ Swagger /docs แล้วเขียน pytest ยืนยันครบทุกเส้นทางแบบไม่ต้องใช้ API key ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 อย่างใน Day 174 กันครับ\n\nอย่างแรก ออกแบบสัญญา SSE Event Schema ทั้ง meta, token, citation, hitl_required, done และ error ด้วย Pydantic สำหรับ endpoint POST slash v1 slash chat slash stream\nอย่างที่สอง เชื่อมต่อ SecurityMiddleware เข้ากับ FastAPI Async Generator พร้อมคุม TTFT, timeout และ request dot is_disconnected เพื่อยกเลิกงานค้างอย่างปลอดภัย\nอย่างที่สาม สร้างหน้า Web Chat UI แบบจบในตัวด้วย fetch คู่กับ ReadableStream และ textContent เพื่อกัน XSS คู่กับ Swagger slash docs แล้วเขียน pytest ยืนยันครบทุกเส้นทางแบบไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d174/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาติดตั้ง fastapi, uvicorn และ httpx ในสภาพแวดล้อม uv",
+      "script": "โอเคครับ มาเตรียมเครื่องมือฝั่งเว็บเซิร์ฟเวอร์ในโฟลเดอร์ thai-enterprise-assistant กันเลย\n\nถ้ายังไม่มีให้รัน uv add fastapi uvicorn httpx แล้วเช็ก dev tools อย่าง pytest และ ruff จากนั้นลอง import fastapi เพื่อดูเลขเวอร์ชันให้ชัวร์ว่าใช้งานได้ในสภาพแวดล้อม uv ครับ\n\nวันนี้เรารันเซิร์ฟเวอร์จำลองบน localhost พอร์ต 8000 เพื่อเปิดเล่นหน้าเว็บแชตกับ Swagger UI ได้จริงโดยไม่ต้องต่อ LLM API ด้วยนะ เดี๋ยวพี่พักรอให้ติดตั้งและเช็กเวอร์ชันก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "โอเคครับ มาเตรียมเครื่องมือฝั่งเว็บเซิร์ฟเวอร์ในโฟลเดอร์ thai-enterprise-assistant กันเลย\n\nถ้ายังไม่มีให้รัน uv add fastapi uvicorn httpx แล้วเช็ก dev tools อย่าง pytest และ ruff จากนั้นลอง import fastapi เพื่อดูเลขเวอร์ชันให้ชัวร์ว่าใช้งานได้ในสภาพแวดล้อม uv ครับ\n\nวันนี้เรารันเซิร์ฟเวอร์จำลองบน localhost พอร์ต 8000 เพื่อเปิดเล่นหน้าเว็บแชตกับ Swagger UI ได้จริงโดยไม่ต้องต่อ LLM API ด้วยนะ เดี๋ยวพี่พักรอให้ติดตั้งและเช็กเวอร์ชันก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง FastAPI & Uvicorn",
+        "prompt": "ติดตั้ง fastapi, uvicorn, httpx และทดสอบ import fastapi ในรีโปให้เรียบร้อยก่อนกดไปต่อครับ",
+        "continueLabel": "ติดตั้ง FastAPI พร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อสตรีม SSE",
+      "src": "/audio/d174/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงสดใสชวนเห็นภาพการไหลของเฟรม SSE จากหลังบ้านออกสู่หน้าเว็บแชตอย่างปลอดภัย",
+      "script": "ลองมองภาพด่าน D174 บนแผนภาพกันก่อนนะครับ หลังจากคำถามผ่านด่าน PDPA และ Injection จาก D173 แล้ว มันจะไหลเข้าสู่ท่อสตรีมของ FastAPI\n\nแทนที่จะรอให้โมเดลคิดจบทั้งย่อหน้าแล้วค่อยส่งก้อนเดียว ระบบจะส่งเฟรม meta ออกไปก่อนทันที ตามด้วย token ทีละชิ้น แล้วค่อยส่ง citation เอกสารอ้างอิงและสถานะเครื่องมือปิดท้าย\n\nฝั่งเบราว์เซอร์ก็จะรับทีละชิ้นมาต่อลงหน้าจอด้วย textContent อย่างปลอดภัย ไม่มีโอกาสเกิด XSS เลยครับ",
+      "ttsText": "ลองมองภาพด่าน D174 บนแผนภาพกันก่อนนะครับ หลังจากคำถามผ่านด่าน PDPA และ Injection จาก D173 แล้ว มันจะไหลเข้าสู่ท่อสตรีมของ FastAPI\n\nแทนที่จะรอให้โมเดลคิดจบทั้งย่อหน้าแล้วค่อยส่งก้อนเดียว ระบบจะส่งเฟรม meta ออกไปก่อนทันที ตามด้วย token ทีละชิ้น แล้วค่อยส่ง citation เอกสารอ้างอิงและสถานะเครื่องมือปิดท้าย\n\nฝั่งเบราว์เซอร์ก็จะรับทีละชิ้นมาต่อลงหน้าจอด้วย textContent อย่างปลอดภัย ไม่มีโอกาสเกิด XSS เลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d174/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเรื่อง SSE, Proxy Buffering, และ Fetch Stream ให้เข้าใจทะลุปรุโปร่ง น้ำเสียงมีชีวิตชีวาและเน้นจุดตายชัดเจน",
+      "script": "มาเจาะลึก 3 แนวคิดหลักของการทำ AI Streaming API กันครับ\n\nข้อแรก Typed SSE Contract ที่เป็นมากกว่าการพ่นข้อความ แชตบอทองค์กรต้องส่งทั้ง trace_id ไว้ debug, citation เอกสารอ้างอิง, และคำขออนุมัติ HITL เราจึงใช้ StreamingResponse ที่ media_type เป็น text/event-stream แล้วส่งแต่ละเฟรมเป็นบรรทัด event กับ data แบบ JSON ที่ตั้ง ensure_ascii=False เพื่อให้อ่านภาษาไทยออกสวย ๆ การแยกชนิด event ทั้ง meta, token, citation, hitl_required, error และ done ทำให้หน้าเว็บเอาแต่ละส่วนไปแสดงถูกกล่อง ไม่ต้องมานั่งตัดสตริงปนกันมั่วครับ\n\nข้อที่สอง การคุม TTFT, Timeout และ Client Disconnect ใน Async Generator ทันทีที่ผ่านด่าน PDPA เราส่ง event: meta ออกไปก่อนเลยเพื่อลดเวลารอ จากนั้นใช้ asyncio.wait_for คุม timeout และคอยเช็ก await request.is_disconnected ทุกจังหวะของลูป เพื่อหยุดยิง LLM ทันทีที่ผู้ใช้ปิดหน้าเว็บ ที่สำคัญมาก ๆ คือต้องใส่ header Cache-Control: no-cache คู่กับ X-Accel-Buffering: no ด้วยนะครับ ไม่อย่างนั้นพอขึ้น Cloud จริง Proxy จะกักข้อความไว้จนจบแล้วค่อยโผล่พรวดเดียว และอย่าลืมห่อด้วย try except เพื่อส่ง event: error ออกมา เพราะพอส่ง 200 OK ไปแล้ว FastAPI เปลี่ยน HTTP status code ย้อนหลังไม่ได้ครับ\n\nข้อที่สาม ทำไมหน้า Web Chat UI ถึงใช้ fetch คู่กับ ReadableStream แทน EventSource คำตอบคือ EventSource ยิงได้แค่ GET ทำให้ส่ง JSON body ยาว ๆ กับ header อย่าง X-Tenant-ID ไม่สะดวกครับ เราจึงใช้ fetch ยิง POST แล้วอ่าน reader ทีละก้อน จากนั้นอัปเดตหน้าจอด้วย element.textContent เท่านั้น ห้ามใช้ innerHTML เด็ดขาดเพื่อกัน XSS ตาม OWASP LLM05 คู่กับการเปิด Swagger /docs ที่มีตัวอย่าง payload ให้ทีม QA กดลองได้เลยครับ",
+      "ttsText": "มาเจาะลึก 3 แนวคิดหลักของการทำ AI Streaming API กันครับ\n\nข้อแรก Typed SSE Contract ที่เป็นมากกว่าการพ่นข้อความ แชตบอทองค์กรต้องส่งทั้ง trace_id ไว้ debug, citation เอกสารอ้างอิง, และคำขออนุมัติ HITL เราจึงใช้ StreamingResponse ที่ media_type เป็น text slash event-stream แล้วส่งแต่ละเฟรมเป็นบรรทัด event กับ data แบบ JSON ที่ตั้ง ensure_ascii เท่ากับ False เพื่อให้อ่านภาษาไทยออกสวย ๆ การแยกชนิด event ทั้ง meta, token, citation, hitl_required, error และ done ทำให้หน้าเว็บเอาแต่ละส่วนไปแสดงถูกกล่อง ไม่ต้องมานั่งตัดสตริงปนกันมั่วครับ\n\nข้อที่สอง การคุม TTFT, Timeout และ Client Disconnect ใน Async Generator ทันทีที่ผ่านด่าน PDPA เราส่ง event meta ออกไปก่อนเลยเพื่อลดเวลารอ จากนั้นใช้ asyncio dot wait_for คุม timeout และคอยเช็ก await request dot is_disconnected ทุกจังหวะของลูป เพื่อหยุดยิง LLM ทันทีที่ผู้ใช้ปิดหน้าเว็บ ที่สำคัญมาก ๆ คือต้องใส่ header Cache-Control เป็น no-cache คู่กับ X-Accel-Buffering เป็น no ด้วยนะครับ ไม่อย่างนั้นพอขึ้น Cloud จริง Proxy จะกักข้อความไว้จนจบแล้วค่อยโผล่พรวดเดียว และอย่าลืมห่อด้วย try except เพื่อส่ง event error ออกมา เพราะพอส่ง 200 OK ไปแล้ว FastAPI เปลี่ยน HTTP status code ย้อนหลังไม่ได้ครับ\n\nข้อที่สาม ทำไมหน้า Web Chat UI ถึงใช้ fetch คู่กับ ReadableStream แทน EventSource คำตอบคือ EventSource ยิงได้แค่ GET ทำให้ส่ง JSON body ยาว ๆ กับ header อย่าง X-Tenant-ID ไม่สะดวกครับ เราจึงใช้ fetch ยิง POST แล้วอ่าน reader ทีละก้อน จากนั้นอัปเดตหน้าจอด้วย element dot textContent เท่านั้น ห้ามใช้ innerHTML เด็ดขาดเพื่อกัน XSS ตาม OWASP LLM05 คู่กับการเปิด Swagger slash docs ที่มีตัวอย่าง payload ให้ทีม QA กดลองได้เลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน & TestClient Stream",
+      "src": "/audio/d174/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่ดูโค้ด FastAPI ด้วยกัน พูดชัดเจนตรงวิธีใช้ client.stream ใน TestClient",
+      "script": "ลองมาดูตัวอย่างโค้ดใน worked_sse.py 3 ขั้นตอนสั้น ๆ นะครับ\n\nขั้นแรก เรานิยาม ChatRequest ด้วย Pydantic พร้อม model_config ใส่ตัวอย่างภาษาไทยไว้โชว์ใน Swagger UI และเขียนฟังก์ชัน sse_event ที่จัดรูปแบบ event กับ data พร้อมขึ้นบรรทัดใหม่ 2 รอบตามมาตรฐาน SSE\n\nขั้นที่สอง เราสร้าง FastAPI app ที่มี GET /healthz คืน status ok และ POST /v1/chat/stream ที่มี async generator คอย yield ลำดับ meta, token ทีละท่อน, citation แล้วจบด้วย done พร้อมส่ง headers Cache-Control กับ X-Accel-Buffering ออกไปครบ\n\nขั้นที่สาม เป็นเทคนิคทดสอบแบบ offline 100 เปอร์เซ็นต์ด้วย TestClient ครับ จุดสังเกตสำคัญคืออย่าใช้ client.post แบบธรรมดา ให้เปิดด้วย with client.stream(\"POST\", ...) แล้ววนอ่าน resp.iter_lines เพื่อเช็กทั้ง content-type, header x-accel-buffering และลำดับ event จริง ๆ เหมือน client เชื่อมต่ออยู่ เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่างก่อน พร้อมเขียนจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "ttsText": "ลองมาดูตัวอย่างโค้ดใน worked_sse dot py 3 ขั้นตอนสั้น ๆ นะครับ\n\nขั้นแรก เรานิยาม ChatRequest ด้วย Pydantic พร้อม model_config ใส่ตัวอย่างภาษาไทยไว้โชว์ใน Swagger UI และเขียนฟังก์ชัน sse_event ที่จัดรูปแบบ event กับ data พร้อมขึ้นบรรทัดใหม่ 2 รอบตามมาตรฐาน SSE\n\nขั้นที่สอง เราสร้าง FastAPI app ที่มี GET slash healthz คืน status ok และ POST slash v1 slash chat slash stream ที่มี async generator คอย yield ลำดับ meta, token ทีละท่อน, citation แล้วจบด้วย done พร้อมส่ง headers Cache-Control กับ X-Accel-Buffering ออกไปครบ\n\nขั้นที่สาม เป็นเทคนิคทดสอบแบบ offline 100 เปอร์เซ็นต์ด้วย TestClient ครับ จุดสังเกตสำคัญคืออย่าใช้ client dot post แบบธรรมดา ให้เปิดด้วย with client dot stream แบบ POST แล้ววนอ่าน resp dot iter_lines เพื่อเช็กทั้ง content-type, header x-accel-buffering และลำดับ event จริง ๆ เหมือน client เชื่อมต่ออยู่ เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่างก่อน พร้อมเขียนจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา Worked Example",
+        "prompt": "ลองอ่านโค้ด ChatRequest, StreamingResponse และการใช้ client.stream ใน TestClient ให้คล่องก่อนกดไปต่อครับ",
+        "continueLabel": "เข้าใจตัวอย่าง SSE แล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือสร้าง FastAPI SSE App",
+      "src": "/audio/d174/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจ ไล่สเปกแต่ละ endpoint ของ src/api_sse.py ช้า ๆ ชัดเจน เพื่อให้น้องเขียนตามและผ่านเทสต์ 5 ข้อได้สบาย",
+      "script": "มาลงมือสร้างแอป FastAPI เต็มรูปแบบในไฟล์ src/api_sse.py กันครับ โจทย์ให้เราใช้ factory function ชื่อ create_app(responder=None) เพื่อให้สลับใส่ spy_responder หรือ broken_responder ในชุดเทสต์ได้ง่าย\n\nภายใน create_app ให้เพิ่ม 3 เส้นทางครับ เส้นแรก GET /healthz คืน JSON status ok และ service ชื่อ thai-enterprise-assistant\nเส้นที่สอง GET / คืน HTMLResponse หน้า Web Chat UI ที่ยิง fetch ไปที่ /v1/chat/stream ด้วยเมธอด POST แล้วต่อข้อความด้วย .textContent เท่านั้น ระวังอย่าให้มีคำว่า .innerHTML โผล่ในโค้ด HTML เด็ดขาดนะครับ\nเส้นที่สาม POST /v1/chat/stream ให้ตรวจ injection และ PII บน req.query ก่อน ถ้าเจอ injection ให้สตรีม event: error โค้ด prompt_injection แล้วปิดด้วย done ทันทีโดยห้ามเรียก responder แต่ถ้าผ่าน ให้สตรีม meta ที่มี masked_query กับ pii_counts จากนั้นวนดึง event จาก active_responder พร้อมเช็ก request.is_disconnected() และครอบ try except เพื่อคืน event: error กรณีพังกลางทาง แล้วปิดด้วย event: done เสมอ พร้อมใส่ header X-Accel-Buffering: no ด้วยนะ\n\nทำเสร็จแล้วรัน pytest tests/test_api_sse.py กับ ruff check ได้เลย หรือจะลองเปิด uvicorn ดูหน้าเว็บจริงก็ได้ครับ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ นะครับ",
+      "ttsText": "มาลงมือสร้างแอป FastAPI เต็มรูปแบบในไฟล์ src slash api_sse dot py กันครับ โจทย์ให้เราใช้ factory function ชื่อ create_app ที่รับ responder เท่ากับ None เพื่อให้สลับใส่ spy_responder หรือ broken_responder ในชุดเทสต์ได้ง่าย\n\nภายใน create_app ให้เพิ่ม 3 เส้นทางครับ เส้นแรก GET slash healthz คืน JSON status ok และ service ชื่อ thai-enterprise-assistant\nเส้นที่สอง GET slash คืน HTMLResponse หน้า Web Chat UI ที่ยิง fetch ไปที่ slash v1 slash chat slash stream ด้วยเมธอด POST แล้วต่อข้อความด้วย textContent เท่านั้น ระวังอย่าให้มีคำว่า dot innerHTML โผล่ในโค้ด HTML เด็ดขาดนะครับ\nเส้นที่สาม POST slash v1 slash chat slash stream ให้ตรวจ injection และ PII บน req dot query ก่อน ถ้าเจอ injection ให้สตรีม event error โค้ด prompt_injection แล้วปิดด้วย done ทันทีโดยห้ามเรียก responder แต่ถ้าผ่าน ให้สตรีม meta ที่มี masked_query กับ pii_counts จากนั้นวนดึง event จาก active_responder พร้อมเช็ก request dot is_disconnected และครอบ try except เพื่อคืน event error กรณีพังกลางทาง แล้วปิดด้วย event done เสมอ พร้อมใส่ header X-Accel-Buffering เป็น no ด้วยนะ\n\nทำเสร็จแล้วรัน pytest tests slash test_api_sse dot py กับ ruff check ได้เลย หรือจะลองเปิด uvicorn ดูหน้าเว็บจริงก็ได้ครับ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ นะครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง FastAPI SSE App",
+        "prompt": "เขียน src/api_sse.py ให้ครบทั้ง /healthz, Web Chat UI และ /v1/chat/stream แล้วรัน pytest ให้ผ่านครบ 5 เคสครับ",
+        "continueLabel": "สร้าง API และรันเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d174/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชย แล้วเล่า 4 กับดักของ SSE บน Production ด้วยอารมณ์เหมือนเล่าประสบการณ์จริงให้ฟัง",
+      "script": "เก่งมากครับ! มาฟัง 4 กับดักยอดฮิตเวลาทำ FastAPI SSE ที่เจอบ่อยตอนเอาขึ้น Cloud จริงกันนะ\n\nข้อแรก ลืมใส่ X-Accel-Buffering: no กับ Cache-Control: no-cache บนเครื่องตัวเองไหลลื่นดี แต่พอเอาขึ้น Nginx หรือ Cloud Proxy กลับค้างเงียบ 4 วินาทีแล้วโผล่มาทั้งก้อนทีเดียวเลย\n\nข้อสอง เผลอเอา token จาก SSE ไปต่อเข้ากับ .innerHTML ในหน้าเว็บ แค่โมเดลหรือเอกสารมี tag script ติดมานิดเดียวก็เปิดช่องโหว่ XSS ทันที ต้องใช้ .textContent เท่านั้นครับ\n\nข้อสาม ลืมตรวจ request.is_disconnected() ในลูป ถ้าผู้ใช้ 10 คนปิดแท็บหนีไปกลางคัน เซิร์ฟเวอร์จะยังผลาญโควตา LLM ต่อจนจบฟรี ๆ\n\nและข้อสี่ ปล่อย exception หลุดออกจาก async generator โดยไม่จับมาส่ง event: error ทำให้เบราว์เซอร์เห็นแค่ท่อขาดเงียบ ๆ ไม่รู้ว่าคำตอบจบแล้วหรือพังกลางทางครับ",
+      "ttsText": "เก่งมากครับ! มาฟัง 4 กับดักยอดฮิตเวลาทำ FastAPI SSE ที่เจอบ่อยตอนเอาขึ้น Cloud จริงกันนะ\n\nข้อแรก ลืมใส่ X-Accel-Buffering เป็น no กับ Cache-Control เป็น no-cache บนเครื่องตัวเองไหลลื่นดี แต่พอเอาขึ้น Nginx หรือ Cloud Proxy กลับค้างเงียบ 4 วินาทีแล้วโผล่มาทั้งก้อนทีเดียวเลย\n\nข้อสอง เผลอเอา token จาก SSE ไปต่อเข้ากับ dot innerHTML ในหน้าเว็บ แค่โมเดลหรือเอกสารมี tag script ติดมานิดเดียวก็เปิดช่องโหว่ XSS ทันที ต้องใช้ dot textContent เท่านั้นครับ\n\nข้อสาม ลืมตรวจ request dot is_disconnected ในลูป ถ้าผู้ใช้ 10 คนปิดแท็บหนีไปกลางคัน เซิร์ฟเวอร์จะยังผลาญโควตา LLM ต่อจนจบฟรี ๆ\n\nและข้อสี่ ปล่อย exception หลุดออกจาก async generator โดยไม่จับมาส่ง event error ทำให้เบราว์เซอร์เห็นแค่ท่อขาดเงียบ ๆ ไม่รู้ว่าคำตอบจบแล้วหรือพังกลางทางครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d174/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนเช็กความเข้าใจเรื่อง SSE, Reverse Proxy Header และการจัดการ Error",
+      "script": "มาถึง Micro-Quiz 4 ข้อของ Day 174 แล้วครับ คำถามจะทบทวนเหตุผลที่เราใช้ fetch แทน EventSource, header กัน proxy กัก stream, การส่ง error กลาง stream, และประโยชน์ของ is_disconnected\n\nค่อย ๆ ทำทีละข้อได้เลยครับ พี่หยุดรอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายกันครับ",
+      "ttsText": "มาถึง Micro-Quiz 4 ข้อของ Day 174 แล้วครับ คำถามจะทบทวนเหตุผลที่เราใช้ fetch แทน EventSource, header กัน proxy กัก stream, การส่ง error กลาง stream, และประโยชน์ของ is_disconnected\n\nค่อย ๆ ทำทีละข้อได้เลยครับ พี่หยุดรอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายกันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ทำควิซทั้ง 4 ข้อเรื่อง FastAPI SSE Streaming และ Web UI ให้ครบ แล้วกด 'ไปต่อ' เพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 175",
+      "src": "/audio/d174/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและสดใส สรุป 4 ประเด็นสำคัญของ FastAPI SSE แล้วชวนน้องไปลุย Docker และ Staging Cloud ในวันพรุ่งนี้",
+      "script": "ยินดีด้วยครับ คุณห่อระบบ Capstone เป็น FastAPI SSE Streaming พร้อม Web Chat UI ที่ปลอดภัยได้เรียบร้อยแล้ว!\n\nสรุป 4 หัวใจของวันนี้คือ หนึ่ง ออกแบบ Typed SSE Events แยก meta, token, citation, hitl_required, error และ done ให้ชัดเจน สอง ใส่ X-Accel-Buffering: no จับ exception ใน generator และตรวจ request.is_disconnected เสมอ สาม สร้าง Web UI ที่ใช้ fetch POST คู่กับ .textContent กัน XSS พร้อมเปิด Swagger /docs และสี่ ใช้ Dependency Injection ให้ TestClient ทดสอบ stream ได้แบบ offline 100 เปอร์เซ็นต์ครับ\n\nพรุ่งนี้ใน Day 175 เราจะจับแอป FastAPI ตัวนี้แพ็กใส่ Multi-stage Docker แบบ non-root และผูก GitHub Actions CI เพื่อ Deploy ขึ้น Staging Cloud กัน แล้วเจอกันครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณห่อระบบ Capstone เป็น FastAPI SSE Streaming พร้อม Web Chat UI ที่ปลอดภัยได้เรียบร้อยแล้ว!\n\nสรุป 4 หัวใจของวันนี้คือ หนึ่ง ออกแบบ Typed SSE Events แยก meta, token, citation, hitl_required, error และ done ให้ชัดเจน สอง ใส่ X-Accel-Buffering เป็น no จับ exception ใน generator และตรวจ request dot is_disconnected เสมอ สาม สร้าง Web UI ที่ใช้ fetch POST คู่กับ dot textContent กัน XSS พร้อมเปิด Swagger slash docs และสี่ ใช้ Dependency Injection ให้ TestClient ทดสอบ stream ได้แบบ offline 100 เปอร์เซ็นต์ครับ\n\nพรุ่งนี้ใน Day 175 เราจะจับแอป FastAPI ตัวนี้แพ็กใส่ Multi-stage Docker แบบ non-root และผูก GitHub Actions CI เพื่อ Deploy ขึ้น Staging Cloud กัน แล้วเจอกันครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

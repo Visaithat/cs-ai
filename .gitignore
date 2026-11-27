@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+scripts/.audio-upgrade.log
+scripts/.last-audio-run-date
+public/audio/

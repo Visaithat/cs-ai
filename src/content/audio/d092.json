@@ -1,0 +1,109 @@
+{
+  "lessonId": "d092",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Checkpoint ปิด Phase 3",
+      "src": "/audio/d092/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่นและภูมิใจ เหมือนรุ่นพี่แสดงความยินดีที่น้องเดินมาถึงวัน Checkpoint ปิด Phase 3 และครึ่งทางของเส้นทาง 180 วัน",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 92 วัน Checkpoint ปิดท้าย Phase 3 นะครับ พี่ต้องขอแสดงความยินดีด้วยจริง ๆ เพราะวันนี้คุณเดินครบ 32 วันของ Phase 3 และผ่านมาเกินครึ่งทางของเส้นทาง 180 วันแล้วครับ!\n\nตลอด Phase 3 ตั้งแต่ PyTorch Autograd, Transformer และ BPE ไปจนถึง Dense Embeddings, Structured Outputs, Ollama, LoRA และ Versioned Prompts วันนี้เราจะนำทุกชิ้นส่วนมาปิดรอบ Portfolio Milestone ชิ้นที่ 3 คือ Typed Thai Document Classifier & Extractor และติดแท็ก v0.3.0 ครับ\n\nหัวใจของวัน Checkpoint มี 3 เรื่องครับ หนึ่ง เราเทียบหมัดต่อหมัดระหว่าง Phase 2 Classical ML, Frontier LLM และ Hybrid Routing ด้วยตัวเลขจริงบนชุดเอกสารไทยเดียวกัน สอง เราตรวจผลงานครบทั้ง 6 เกณฑ์ด้วย Phase 3 Readiness Auditor และสาม เราทบทวน Cumulative Quiz รวม Block B16 ถึง B23 เพื่อเปิดประตูสู่ Phase 4 Thai Hybrid RAG, MCP และ LangGraph ในวันพรุ่งนี้ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 92 วัน Checkpoint ปิดท้าย Phase 3 นะครับ พี่ต้องขอแสดงความยินดีด้วยจริง ๆ เพราะวันนี้คุณเดินครบ 32 วันของ Phase 3 และผ่านมาเกินครึ่งทางของเส้นทาง 180 วันแล้วครับ!\n\nตลอด Phase 3 ตั้งแต่ PyTorch Autograd, Transformer และ BPE ไปจนถึง Dense Embeddings, Structured Outputs, Ollama, LoRA และ Versioned Prompts วันนี้เราจะนำทุกชิ้นส่วนมาปิดรอบ Portfolio Milestone ชิ้นที่ 3 คือ Typed Thai Document Classifier and Extractor และติดแท็ก v0.3.0 ครับ\n\nหัวใจของวัน Checkpoint มี 3 เรื่องครับ หนึ่ง เราเทียบหมัดต่อหมัดระหว่าง Phase 2 Classical ML, Frontier LLM และ Hybrid Routing ด้วยตัวเลขจริงบนชุดเอกสารไทยเดียวกัน สอง เราตรวจผลงานครบทั้ง 6 เกณฑ์ด้วย Phase 3 Readiness Auditor และสาม เราทบทวน Cumulative Quiz รวม Block B16 ถึง B23 เพื่อเปิดประตูสู่ Phase 4 Thai Hybrid RAG, MCP และ LangGraph ในวันพรุ่งนี้ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d092/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ สรุปภารกิจวัน Checkpoint ทั้ง 3 ข้อให้เห็นภาพชัดก่อนลงมือ",
+      "script": "ภารกิจของ Day 92 มี 3 ข้อหลักครับ\n\nหนึ่ง ตรวจสอบความพร้อมของ Phase 3 Portfolio Milestone ให้ผ่านครบทั้ง 6 เกณฑ์วิศวกรรม\nสอง เปรียบเทียบแบบหมัดต่อหมัดระหว่าง Phase 2 Classical ML Baseline, Phase 3 Frontier LLM Only และ Hybrid Extractor บนแกน Macro-F1, Field Extraction, P50/P95 Latency และ Cost ต่อ 1,000 เอกสาร\nสาม ประเมินความเข้าใจรวม Block B16 ถึง B23 ผ่าน Cumulative Quiz และเชื่อมสถาปัตยกรรมไปสู่ Phase 4 ครับ\n\nวันนี้รันบนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "ภารกิจของ Day 92 มี 3 ข้อหลักครับ\n\nหนึ่ง ตรวจสอบความพร้อมของ Phase 3 Portfolio Milestone ให้ผ่านครบทั้ง 6 เกณฑ์วิศวกรรม\nสอง เปรียบเทียบแบบหมัดต่อหมัดระหว่าง Phase 2 Classical ML Baseline, Phase 3 Frontier LLM Only และ Hybrid Extractor บนแกน Macro-F1, Field Extraction, P50 กับ P95 Latency และ Cost ต่อ 1,000 เอกสาร\nสาม ประเมินความเข้าใจรวม Block B16 ถึง B23 ผ่าน Cumulative Quiz และเชื่อมสถาปัตยกรรมไปสู่ Phase 4 ครับ\n\nวันนี้รันบนเครื่องได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เช็ก Quality Gate & แผน 30 นาที",
+      "src": "/audio/d092/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่ง Quality Gate และจังหวะเวลา 30 นาทีของวัน Checkpoint",
+      "script": "เริ่มต้นให้เปิดโฟลเดอร์โปรเจกต์ Typed Thai Document Classifier & Extractor ของคุณ หรือจะเริ่มโฟลเดอร์ ai-day92 แยกสำหรับแบบฝึกหัดวันนี้ก็ได้ครับ\n\nสำหรับโปรเจกต์หลัก ให้รัน Quality Gate ครบชุดด้วย uv sync --frozen, uv run ruff check . และ uv run pytest -v เพื่อเช็กว่าทั้ง Edge Cases, Eval Benchmark และ Prompt Registry ผ่านสะอาด รวมถึงตรวจดูว่าไม่มี API key หรือข้อมูลลูกค้าหลุดเข้า Git นะครับ\n\nจังหวะเวลา 30 นาทีวันนี้ พี่แนะนำให้ทำ Cumulative Quiz 10 นาที เขียนสคริปต์ Audit กับ Comparison Report อีก 15 นาที แล้วทบทวน Error Log 5 นาทีครับ เดี๋ยวพี่รอตรงนี้ให้เช็กเครื่องก่อนนะ",
+      "ttsText": "เริ่มต้นให้เปิดโฟลเดอร์โปรเจกต์ Typed Thai Document Classifier and Extractor ของคุณ หรือจะเริ่มโฟลเดอร์ ai-day92 แยกสำหรับแบบฝึกหัดวันนี้ก็ได้ครับ\n\nสำหรับโปรเจกต์หลัก ให้รัน Quality Gate ครบชุดด้วย uv sync dash dash frozen, uv run ruff check dot และ uv run pytest dash v เพื่อเช็กว่าทั้ง Edge Cases, Eval Benchmark และ Prompt Registry ผ่านสะอาด รวมถึงตรวจดูว่าไม่มี API key หรือข้อมูลลูกค้าหลุดเข้า Git นะครับ\n\nจังหวะเวลา 30 นาทีวันนี้ พี่แนะนำให้ทำ Cumulative Quiz 10 นาที เขียนสคริปต์ Audit กับ Comparison Report อีก 15 นาที แล้วทบทวน Error Log 5 นาทีครับ เดี๋ยวพี่รอตรงนี้ให้เช็กเครื่องก่อนนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงรัน Quality Gate Phase 3",
+        "prompt": "รัน uv run ruff check และ pytest -v ยืนยัน Quality Gate และเตรียมตัวเลข Baseline ให้พร้อมก่อนไปต่อครับ",
+        "continueLabel": "เช็กเครื่องและ Quality Gate แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Map — จาก ML Baseline สู่ Hybrid & Phase 4",
+      "src": "/audio/d092/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนมองภาพใหญ่ข้าม 4 Phases บนหน้าจอให้เห็นการต่อจิ๊กซอว์",
+      "script": "ลองมองแผนภาพบนหน้าจอให้เห็นภาพรวมทั้งหมดที่เราสร้างมาครับ ถ้าเทียบกับสถาปัตยกรรมเว็บขนาดใหญ่ Phase 2 Classical ML ก็คือ Edge Fast-Path ที่ตอบกลับในระดับต่ำกว่า 5 มิลลิวินาที\n\nส่วน Phase 3 Hybrid LLM Extractor ของเราคือ Structured Compute Tier ที่มีทั้งการแคช การทำเวอร์ชันพรอมต์ และด่านตรวจ Pydantic ที่เชื่อถือได้ และตั้งแต่วันพรุ่งนี้เป็นต้นไป Phase 4 จะเข้ามาต่อเติมชั้น Search Engine แบบ Hybrid RAG กับชั้น Tool RPC และ State Machine ด้วย MCP และ LangGraph ให้ครบวงจรครับ",
+      "ttsText": "ลองมองแผนภาพบนหน้าจอให้เห็นภาพรวมทั้งหมดที่เราสร้างมาครับ ถ้าเทียบกับสถาปัตยกรรมเว็บขนาดใหญ่ Phase 2 Classical ML ก็คือ Edge Fast-Path ที่ตอบกลับในระดับต่ำกว่า 5 มิลลิวินาที\n\nส่วน Phase 3 Hybrid LLM Extractor ของเราคือ Structured Compute Tier ที่มีทั้งการแคช การทำเวอร์ชันพรอมต์ และด่านตรวจ Pydantic ที่เชื่อถือได้ และตั้งแต่วันพรุ่งนี้เป็นต้นไป Phase 4 จะเข้ามาต่อเติมชั้น Search Engine แบบ Hybrid RAG กับชั้น Tool RPC และ State Machine ด้วย MCP และ LangGraph ให้ครบวงจรครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · 6 เกณฑ์ Milestone, ตารางเทียบ & สะพานสู่ Phase 4",
+      "src": "/audio/d092/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายทรงพลังและเป็นระบบ เน้นความแตกต่างของ 4 สถาปัตยกรรมด้วยน้ำเสียงชัด แล้วเชื่อมไป Phase 4 อย่างน่าตื่นเต้น",
+      "script": "มาดู 3 แก่นสำคัญในวัน Checkpoint กันครับ\n\nเรื่องแรก เช็กลิสต์ 6 Quality Gates ของ Portfolio Milestone ชิ้นที่ 3 ก่อนติดแท็ก v0.3.0 เหมือนการตรวจรับเครื่องบินก่อนบินพาณิชย์เลยครับ คือต้องผ่านทั้ง หนึ่ง Strict Schema & Repair ที่ schema_pass_rate มากกว่าหรือเท่ากับ 0.99, สอง Thai Edge-Case Resilience และ short-circuit, สาม Versioned Prompts คู่กับ SHA-256 Audit Trail, สี่ 3-Axis Benchmark ที่ Macro-F1 มากกว่าหรือเท่ากับ 0.88, ห้า สถาปัตยกรรมคุมงบด้วย Prompt Caching, Routing หรือ Local Ollama ให้ต้นทุนไม่เกิน 0.60 ดอลลาร์ต่อ 1,000 เอกสาร และหก Offline pytest กับ ruff ผ่าน 100 เปอร์เซ็นต์ นี่แหละครับสิ่งที่แยก AI Engineer ออกจากคนที่แค่ยิง API แปะ prompt\n\nเรื่องที่สอง เทียบหมัดต่อหมัด 4 สถาปัตยกรรมบนเอกสารไทย 1,000 ฉบับ Phase 2 Classical ML เหมือนจักรยานยนต์ส่งด่วนในซอย เร็วระดับ 2.4 มิลลิวินาที P95 และแทบฟรี แต่ทำได้แค่จัดหมวดหมู่ ไม่สามารถสกัดฟิลด์ซ้อนอย่างยอดเงินหรือรหัสออเดอร์ได้ ส่วน Frontier LLM Only เหมือนรถบรรทุกคอนเทนเนอร์ แม่นสุดที่ Macro-F1 0.94 แต่ช้ากว่าที่ P95 1,280 มิลลิวินาที และแพงถึง 2.40 ดอลลาร์ หรือราว 84 บาทต่อพันเอกสาร ถ้าติด PDPA ก็มี Local Ollama Q4_K_M ที่รันในเครื่องได้ แต่ผู้ชนะตัวจริงคือ Hybrid ML บวก Routed and Cached LLM ที่ได้ F1 ถึง 0.93 แต่ลดต้นทุนลงถึง 80 เปอร์เซ็นต์ เหลือแค่ 0.48 ดอลลาร์ หรือราว 16.8 บาทเท่านั้นครับ\n\nเรื่องที่สาม สะพานเชื่อมสู่ Phase 4 วันนี้เราสร้างพนักงานอ่านเอกสารทีละแผ่นได้แม่นยำแล้ว แต่ถ้าคำตอบซ่อนอยู่ในคู่มือ PDF 300 หน้า หรือต้องเช็กสถานะออเดอร์สดจากฐานข้อมูล นั่นคือภารกิจของ Phase 4 Days 93 ถึง 124 ที่จะนำ Dense Embeddings, PyThaiNLP BM25 และ Strict Outputs ไปสร้าง Thai Hybrid RAG, MCP Tools และ Guarded LangGraph Agents ครับ",
+      "ttsText": "มาดู 3 แก่นสำคัญในวัน Checkpoint กันครับ\n\nเรื่องแรก เช็กลิสต์ 6 Quality Gates ของ Portfolio Milestone ชิ้นที่ 3 ก่อนติดแท็ก v0.3.0 เหมือนการตรวจรับเครื่องบินก่อนบินพาณิชย์เลยครับ คือต้องผ่านทั้ง หนึ่ง Strict Schema and Repair ที่ schema_pass_rate มากกว่าหรือเท่ากับ 0.99, สอง Thai Edge-Case Resilience และ short-circuit, สาม Versioned Prompts คู่กับ SHA-256 Audit Trail, สี่ 3-Axis Benchmark ที่ Macro-F1 มากกว่าหรือเท่ากับ 0.88, ห้า สถาปัตยกรรมคุมงบด้วย Prompt Caching, Routing หรือ Local Ollama ให้ต้นทุนไม่เกิน 0.60 ดอลลาร์ต่อ 1,000 เอกสาร และหก Offline pytest กับ ruff ผ่าน 100 เปอร์เซ็นต์ นี่แหละครับสิ่งที่แยก AI Engineer ออกจากคนที่แค่ยิง API แปะ prompt\n\nเรื่องที่สอง เทียบหมัดต่อหมัด 4 สถาปัตยกรรมบนเอกสารไทย 1,000 ฉบับ Phase 2 Classical ML เหมือนจักรยานยนต์ส่งด่วนในซอย เร็วระดับ 2.4 มิลลิวินาที P95 และแทบฟรี แต่ทำได้แค่จัดหมวดหมู่ ไม่สามารถสกัดฟิลด์ซ้อนอย่างยอดเงินหรือรหัสออเดอร์ได้ ส่วน Frontier LLM Only เหมือนรถบรรทุกคอนเทนเนอร์ แม่นสุดที่ Macro-F1 0.94 แต่ช้ากว่าที่ P95 1,280 มิลลิวินาที และแพงถึง 2.40 ดอลลาร์ หรือราว 84 บาทต่อพันเอกสาร ถ้าติด PDPA ก็มี Local Ollama Q4_K_M ที่รันในเครื่องได้ แต่ผู้ชนะตัวจริงคือ Hybrid ML บวก Routed and Cached LLM ที่ได้ F1 ถึง 0.93 แต่ลดต้นทุนลงถึง 80 เปอร์เซ็นต์ เหลือแค่ 0.48 ดอลลาร์ หรือราว 16.8 บาทเท่านั้นครับ\n\nเรื่องที่สาม สะพานเชื่อมสู่ Phase 4 วันนี้เราสร้างพนักงานอ่านเอกสารทีละแผ่นได้แม่นยำแล้ว แต่ถ้าคำตอบซ่อนอยู่ในคู่มือ PDF 300 หน้า หรือต้องเช็กสถานะออเดอร์สดจากฐานข้อมูล นั่นคือภารกิจของ Phase 4 Days 93 ถึง 124 ที่จะนำ Dense Embeddings, PyThaiNLP BM25 และ Strict Outputs ไปสร้าง Thai Hybrid RAG, MCP Tools และ Guarded LangGraph Agents ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างสคริปต์ Demo & Readiness Auditor",
+      "src": "/audio/d092/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง พาดูโค้ด worked_d092.py ที่คำนวณส่วนต่างและสร้างรายงาน README สำหรับเดโม 3 นาที",
+      "script": "ลองมาดูตัวอย่างโค้ดใน worked_d092.py ที่เตรียมรายงานเดโมสำหรับแปะลง README กันครับ\n\nสเต็ปแรก ฟังก์ชัน compare_phase3_architectures รับตัวเลขของ ml_base, frontier_only และ hybrid_routed มาเทียบกัน ผลคือ Hybrid ชนะ ML Baseline อยู่ +0.07 Macro-F1 แถมสกัดฟิลด์ซับซ้อนได้ ประหยัดเงินกว่า Frontier ถึง 80 เปอร์เซ็นต์ และ P50 เร็วขึ้น 4.67 เท่าเลยครับ\n\nสเต็ปที่สอง ฟังก์ชัน audit_phase3 ตรวจทั้ง 6 Quality Gates แล้วสรุปคะแนนเป็นเปอร์เซ็นต์ พร้อมธง ready_for_phase4 และรายชื่อ failed_gates ถ้ามีจุดไหนตก\n\nสเต็ปที่สาม เราเอาผลลัพธ์ทั้งหมดมาจัดรูปแบบเป็น Markdown Demo Report พร้อมตารางเปรียบเทียบสำหรับพรีเซนต์ใน 3 นาที ข้อควรจำตอนพรีเซนต์เลยนะครับ อย่าเทียบแค่คะแนน F1 อย่างเดียว ให้ชี้ให้เห็นด้วยว่า LLM เพิ่มความสามารถในการสกัดฟิลด์ซ้อนและเข้าใจสแลงไทยปนอังกฤษที่ Classical ML ทำไม่ได้ครับ พร้อมแล้วกด ไปต่อ เพื่อเขียนโค้ด Checkpoint กันเลย",
+      "ttsText": "ลองมาดูตัวอย่างโค้ดใน worked_d092 dot py ที่เตรียมรายงานเดโมสำหรับแปะลง README กันครับ\n\nสเต็ปแรก ฟังก์ชัน compare_phase3_architectures รับตัวเลขของ ml_base, frontier_only และ hybrid_routed มาเทียบกัน ผลคือ Hybrid ชนะ ML Baseline อยู่ บวก 0.07 Macro-F1 แถมสกัดฟิลด์ซับซ้อนได้ ประหยัดเงินกว่า Frontier ถึง 80 เปอร์เซ็นต์ และ P50 เร็วขึ้น 4.67 เท่าเลยครับ\n\nสเต็ปที่สอง ฟังก์ชัน audit_phase3 ตรวจทั้ง 6 Quality Gates แล้วสรุปคะแนนเป็นเปอร์เซ็นต์ พร้อมธง ready_for_phase4 และรายชื่อ failed_gates ถ้ามีจุดไหนตก\n\nสเต็ปที่สาม เราเอาผลลัพธ์ทั้งหมดมาจัดรูปแบบเป็น Markdown Demo Report พร้อมตารางเปรียบเทียบสำหรับพรีเซนต์ใน 3 นาที ข้อควรจำตอนพรีเซนต์เลยนะครับ อย่าเทียบแค่คะแนน F1 อย่างเดียว ให้ชี้ให้เห็นด้วยว่า LLM เพิ่มความสามารถในการสกัดฟิลด์ซ้อนและเข้าใจสแลงไทยปนอังกฤษที่ Classical ML ทำไม่ได้ครับ พร้อมแล้วกด ไปต่อ เพื่อเขียนโค้ด Checkpoint กันเลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาตัวอย่าง worked_d092.py",
+        "prompt": "เช็กวิธีคำนวณ comparison, 6 Quality Gates และรูปแบบ Demo Report ให้เรียบร้อยก่อนลงมือเขียนจริงครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อ..."
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง phase3_checkpoint.py",
+      "src": "/audio/d092/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชัดเจน พาไล่สเปก 3 ฟังก์ชันใน phase3_checkpoint.py เพื่อให้ผู้เรียนเขียนผ่านในรอบเดียว",
+      "script": "มาถึงโจทย์ Checkpoint 15 นาทีในไฟล์ phase3_checkpoint.py แล้วครับ เรามี Pydantic models อย่าง ArchBenchmark, Phase3Metrics และ Phase3AuditReport วางไว้ให้ครบแล้ว เหลือเติมฟังก์ชันสำคัญ 3 ตัวครับ\n\nหนึ่ง compare_ml_vs_llm ให้เช็กก่อนว่าถ้า frontier.cost_usd_per_1k หรือ hybrid.p50_ms น้อยกว่าหรือเท่ากับ 0 ให้โยน ValueError ทันที จากนั้นคำนวณคืน 4 ค่า คือ hybrid_f1_gain_vs_ml ปัด 4 ตำแหน่ง, hybrid_f1_gap_vs_frontier ปัด 4 ตำแหน่ง, cost_savings_vs_frontier_pct ปัด 1 ตำแหน่ง และ p50_speedup_vs_frontier ปัด 2 ตำแหน่ง\n\nสอง audit_phase3_milestone ตรวจ 6 เกณฑ์เรียงลำดับตามสเปกเป๊ะ ได้แก่ schema_pass_gate, macro_f1_gate, edge_cases_tested, prompts_versioned_hashed, cost_budget_gate และ offline_tests_passed แล้วคืน Phase3AuditReport ที่มี score_pct ปัด 1 ตำแหน่ง, ready_for_phase4 และ failed_gates\n\nสาม render_phase3_demo_report สร้าง Markdown ที่มีชื่อโปรเจกต์ บรรทัด Ready for Phase 4 ตารางเทียบทั้ง 3 สถาปัตยกรรมรวมเงินบาทต่อ 1,000 เอกสาร และเปอร์เซ็นต์ที่ประหยัดได้ เสร็จแล้วรัน uv run pytest -v และ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ",
+      "ttsText": "มาถึงโจทย์ Checkpoint 15 นาทีในไฟล์ phase3_checkpoint dot py แล้วครับ เรามี Pydantic models อย่าง ArchBenchmark, Phase3Metrics และ Phase3AuditReport วางไว้ให้ครบแล้ว เหลือเติมฟังก์ชันสำคัญ 3 ตัวครับ\n\nหนึ่ง compare_ml_vs_llm ให้เช็กก่อนว่าถ้า frontier dot cost_usd_per_1k หรือ hybrid dot p50_ms น้อยกว่าหรือเท่ากับ 0 ให้โยน ValueError ทันที จากนั้นคำนวณคืน 4 ค่า คือ hybrid_f1_gain_vs_ml ปัด 4 ตำแหน่ง, hybrid_f1_gap_vs_frontier ปัด 4 ตำแหน่ง, cost_savings_vs_frontier_pct ปัด 1 ตำแหน่ง และ p50_speedup_vs_frontier ปัด 2 ตำแหน่ง\n\nสอง audit_phase3_milestone ตรวจ 6 เกณฑ์เรียงลำดับตามสเปกเป๊ะ ได้แก่ schema_pass_gate, macro_f1_gate, edge_cases_tested, prompts_versioned_hashed, cost_budget_gate และ offline_tests_passed แล้วคืน Phase3AuditReport ที่มี score_pct ปัด 1 ตำแหน่ง, ready_for_phase4 และ failed_gates\n\nสาม render_phase3_demo_report สร้าง Markdown ที่มีชื่อโปรเจกต์ บรรทัด Ready for Phase 4 ตารางเทียบทั้ง 3 สถาปัตยกรรมรวมเงินบาทต่อ 1,000 เอกสาร และเปอร์เซ็นต์ที่ประหยัดได้ เสร็จแล้วรัน uv run pytest dash v และ ruff check ได้เลย พี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน phase3_checkpoint.py",
+        "prompt": "ลงมือเขียน compare_ml_vs_llm, audit_phase3_milestone และ render_phase3_demo_report แล้วรัน pytest -v ให้ผ่านครบครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d092/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 ข้อผิดพลาดระดับสถาปัตยกรรมแบบรุ่นพี่ที่ผ่านสนามจริงมาแล้ว",
+      "script": "เก่งมากครับที่ผ่านโค้ด Checkpoint ของ Phase 3 ได้ครบถ้วน! ก่อนลุยควิซรวม พี่ขอฝาก 4 ข้อคิดป้องกันความผิดพลาดระดับสถาปัตยกรรมไว้ให้จำแม่น ๆ นะครับ\n\nข้อแรก สรุปว่า LLM แทนที่ Classical ML ได้ทั้งหมด แล้วโยนทิกเก็ตแสนใบเข้า Frontier LLM โดยไม่ดูต้นทุนและ latency ทั้งที่ 70 เปอร์เซ็นต์เป็นเคสง่ายที่ fast-path หรือ small model เอาอยู่สบาย\n\nข้อสอง รีบตัดสินใจทำ Fine-Tuning หรือ LoRA ตั้งแต่ยังไม่วัด Prompt, Few-Shot และ Routing Baseline เสียเวลาเก็บข้อมูลเป็นสัปดาห์ ทั้งที่แก้ pre-normalizer กับ few-shot แค่ไม่กี่เคสก็ได้ผลดีกว่าและถูกกว่ามาก\n\nข้อสาม ปิด Phase 3 โดยไม่มีไฟล์ Versioned Prompts และตัวเลข Benchmark ที่รันซ้ำได้ พอเวลาสัมภาษณ์ตอบไม่ได้ว่าต้นทุนต่อ 1,000 เอกสารไทยกี่บาท แบบนี้เสียดายของมากครับ\n\nและข้อสี่ เทียบเฉพาะ Classification F1 โดยลืมสื่อสารให้ทีมธุรกิจเห็นว่า LLM Extractor เพิ่มความสามารถด้านการสกัดฟิลด์ซ้อนที่ Classical ML ทำไม่ได้เลยครับ",
+      "ttsText": "เก่งมากครับที่ผ่านโค้ด Checkpoint ของ Phase 3 ได้ครบถ้วน! ก่อนลุยควิซรวม พี่ขอฝาก 4 ข้อคิดป้องกันความผิดพลาดระดับสถาปัตยกรรมไว้ให้จำแม่น ๆ นะครับ\n\nข้อแรก สรุปว่า LLM แทนที่ Classical ML ได้ทั้งหมด แล้วโยนทิกเก็ตแสนใบเข้า Frontier LLM โดยไม่ดูต้นทุนและ latency ทั้งที่ 70 เปอร์เซ็นต์เป็นเคสง่ายที่ fast-path หรือ small model เอาอยู่สบาย\n\nข้อสอง รีบตัดสินใจทำ Fine-Tuning หรือ LoRA ตั้งแต่ยังไม่วัด Prompt, Few-Shot และ Routing Baseline เสียเวลาเก็บข้อมูลเป็นสัปดาห์ ทั้งที่แก้ pre-normalizer กับ few-shot แค่ไม่กี่เคสก็ได้ผลดีกว่าและถูกกว่ามาก\n\nข้อสาม ปิด Phase 3 โดยไม่มีไฟล์ Versioned Prompts และตัวเลข Benchmark ที่รันซ้ำได้ พอเวลาสัมภาษณ์ตอบไม่ได้ว่าต้นทุนต่อ 1,000 เอกสารไทยกี่บาท แบบนี้เสียดายของมากครับ\n\nและข้อสี่ เทียบเฉพาะ Classification F1 โดยลืมสื่อสารให้ทีมธุรกิจเห็นว่า LLM Extractor เพิ่มความสามารถด้านการสกัดฟิลด์ซ้อนที่ Classical ML ทำไม่ได้เลยครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Cumulative Quiz B16–B23 (4 ข้อ)",
+      "src": "/audio/d092/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงให้กำลังใจ ผ่อนคลาย ชวนทบทวนภาพรวมทั้งหมดของ Phase 3 ผ่านควิซรวม 4 ข้อ",
+      "script": "มาถึง Phase 3 Cumulative Quiz 4 ข้อที่เชื่อมความรู้ครบตั้งแต่ Block B16 ถึง B23 แล้วครับ\n\nข้อสอบจะชวนคุณทบทวนตั้งแต่ Temperature ใกล้ศูนย์ กับ Self-Attention O(n²) และ Thai BPE Tokenizer ต่อด้วย Multilingual Dense Embeddings กับ SSE Streaming ตามด้วย Strict Pydantic Schema, Prompt Caching และ Ollama Quantization ปิดท้ายด้วยลำดับวิศวกรรมก่อนตัดสินใจทำ LoRA\n\nค่อย ๆ ทำแบบไม่ต้องเปิดโพยนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดบท Phase 3 กันครับ",
+      "ttsText": "มาถึง Phase 3 Cumulative Quiz 4 ข้อที่เชื่อมความรู้ครบตั้งแต่ Block B16 ถึง B23 แล้วครับ\n\nข้อสอบจะชวนคุณทบทวนตั้งแต่ Temperature ใกล้ศูนย์ กับ Self-Attention โอ เอ็น ยกกำลังสอง และ Thai BPE Tokenizer ต่อด้วย Multilingual Dense Embeddings กับ SSE Streaming ตามด้วย Strict Pydantic Schema, Prompt Caching และ Ollama Quantization ปิดท้ายด้วยลำดับวิศวกรรมก่อนตัดสินใจทำ LoRA\n\nค่อย ๆ ทำแบบไม่ต้องเปิดโพยนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดบท Phase 3 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Cumulative Quiz B16–B23",
+        "prompt": "ทำควิซรวมทั้ง 4 ข้อเพื่อวัดความพร้อมของ Phase 3 ให้ครบก่อนกดไปฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซรวมเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุปจบ Phase 3 & ก้าวสู่ Phase 4",
+      "src": "/audio/d092/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจและปลุกพลังอย่างอบอุ่น ฉลองความสำเร็จครบ 92 วันและส่งเข้า Phase 4 อย่างน่าตื่นเต้น",
+      "script": "ยินดีด้วยจริง ๆ ครับ! คุณเรียนจบ Phase 3 ครบทั้ง 32 วัน และปิด Portfolio Milestone ชิ้นที่ 3 Typed Thai Document Classifier & Extractor ได้อย่างสมบูรณ์แล้วครับ\n\nวันนี้คุณพิสูจน์ด้วยตัวเลขจริงแล้วว่าสถาปัตยกรรม Hybrid Routing คู่กับ Prompt Caching ให้ความแม่นยำใกล้เคียง Frontier LLM แต่ประหยัดต้นทุนลงได้ถึง 75 ถึง 80 เปอร์เซ็นต์ และได้ 4 เสาหลักของระบบ LLM ระดับ production ครบมือ คือ Strict Schema + Repair, Thai Edge-Case Guards, 3-Axis Benchmark และ Versioned Prompts + SHA-256\n\nเก็บโปรเจกต์ Phase 3 นี้ไว้ให้ดีนะครับ เพราะตั้งแต่วันพรุ่งนี้ Day 93 เราจะเปิดบท Phase 4 Thai Hybrid RAG, Tools, MCP & Agents เพื่อนำ Embeddings, PyThaiNLP และ Structured Outputs ไปสร้างผู้ช่วยค้นหาความรู้จากเอกสารหลายร้อยไฟล์และเชื่อมต่อเครื่องมือจริง แล้วเจอกันใน Phase 4 นะครับ สุดยอดมากครับ!",
+      "ttsText": "ยินดีด้วยจริง ๆ ครับ! คุณเรียนจบ Phase 3 ครบทั้ง 32 วัน และปิด Portfolio Milestone ชิ้นที่ 3 Typed Thai Document Classifier and Extractor ได้อย่างสมบูรณ์แล้วครับ\n\nวันนี้คุณพิสูจน์ด้วยตัวเลขจริงแล้วว่าสถาปัตยกรรม Hybrid Routing คู่กับ Prompt Caching ให้ความแม่นยำใกล้เคียง Frontier LLM แต่ประหยัดต้นทุนลงได้ถึง 75 ถึง 80 เปอร์เซ็นต์ และได้ 4 เสาหลักของระบบ LLM ระดับ production ครบมือ คือ Strict Schema, Thai Edge-Case Guards, 3-Axis Benchmark และ Versioned Prompts พร้อม SHA-256\n\nเก็บโปรเจกต์ Phase 3 นี้ไว้ให้ดีนะครับ เพราะตั้งแต่วันพรุ่งนี้ Day 93 เราจะเปิดบท Phase 4 Thai Hybrid RAG, Tools, MCP and Agents เพื่อนำ Embeddings, PyThaiNLP และ Structured Outputs ไปสร้างผู้ช่วยค้นหาความรู้จากเอกสารหลายร้อยไฟล์และเชื่อมต่อเครื่องมือจริง แล้วเจอกันใน Phase 4 นะครับ สุดยอดมากครับ!"
+    }
+  ]
+}

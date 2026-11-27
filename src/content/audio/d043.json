@@ -1,0 +1,109 @@
+{
+  "lessonId": "d043",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — รวม Preprocess และ Model เป็นชิ้นเดียว",
+      "src": "/audio/d043/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น สดใส ชวนเห็นภาพความยุ่งเหยิงของตารางข้อมูลจริงก่อนจะจับมันเข้าสายพานอัตโนมัติใน scikit-learn",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 43 นะครับ เมื่อวานเราเรียนรู้กฎเหล็กเรื่องการแบ่ง Train, Validation และ Test ไม่ให้ข้อมูลรั่วไปแล้ว วันนี้เราจะมาลงมือสร้างโมเดล Classical ML ตัวแรกกันจริง ๆ ด้วย scikit-learn ครับ\n\nในโลกความเป็นจริง ตารางข้อมูลลูกค้าไม่เคยสะอาดเป็นตัวเลขล้วนพร้อมเทรนครับ มันจะปนกันทั้งคอลัมน์ตัวเลขอย่าง order_value_thb หรือ wait_min ที่มีค่าว่าง NaN ปนอยู่ กับคอลัมน์หมวดหมู่ข้อความอย่าง channel หรือ customer_tier ที่วันดีคืนดีอาจมีช่องทางใหม่โผล่มาในอนาคต\n\nวันนี้เราจะใช้ ColumnTransformer มาแยกสายพานแปลงตัวเลขและหมวดหมู่อย่างเป็นระบบ แล้วมัดรวมกับโมเดล Baseline 2 ระดับคือ DummyClassifier และ LogisticRegression ไว้ใน scikit-learn Pipeline ชิ้นเดียว\n\nผลลัพธ์ที่ได้คือโค้ดที่กัน Data Leakage โดยโครงสร้าง ลดความเพี้ยนระหว่างตอนเทรนกับตอนเสิร์ฟจริง แถมส่งตารางดิบที่มีค่าว่างหรือหมวดหมู่ใหม่เข้าไปทำนายได้โดยไม่ crash ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 43 นะครับ เมื่อวานเราเรียนรู้กฎเหล็กเรื่องการแบ่ง Train, Validation และ Test ไม่ให้ข้อมูลรั่วไปแล้ว วันนี้เราจะมาลงมือสร้างโมเดล Classical ML ตัวแรกกันจริง ๆ ด้วย scikit-learn ครับ\n\nในโลกความเป็นจริง ตารางข้อมูลลูกค้าไม่เคยสะอาดเป็นตัวเลขล้วนพร้อมเทรนครับ มันจะปนกันทั้งคอลัมน์ตัวเลขอย่าง order_value_thb หรือ wait_min ที่มีค่าว่าง NaN ปนอยู่ กับคอลัมน์หมวดหมู่ข้อความอย่าง channel หรือ customer_tier ที่วันดีคืนดีอาจมีช่องทางใหม่โผล่มาในอนาคต\n\nวันนี้เราจะใช้ ColumnTransformer มาแยกสายพานแปลงตัวเลขและหมวดหมู่อย่างเป็นระบบ แล้วมัดรวมกับโมเดล Baseline 2 ระดับคือ DummyClassifier และ LogisticRegression ไว้ใน scikit-learn Pipeline ชิ้นเดียว\n\nผลลัพธ์ที่ได้คือโค้ดที่กัน Data Leakage โดยโครงสร้าง ลดความเพี้ยนระหว่างตอนเทรนกับตอนเสิร์ฟจริง แถมส่งตารางดิบที่มีค่าว่างหรือหมวดหมู่ใหม่เข้าไปทำนายได้โดยไม่ crash ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d043/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยกจังหวะเป้าหมาย 3 ข้อให้ชัดเจน",
+      "script": "เป้าหมายของ Day 43 มี 3 ข้อที่จะกลายเป็นแม่แบบให้คุณใช้ไปตลอดทั้ง Phase 2 เลยครับ\n\nหนึ่ง อธิบายเหตุผลและสร้าง Baseline 2 ระดับ คือ DummyClassifier และ LogisticRegression เพื่อตั้งเกณฑ์อ้างอิงที่ซื่อสัตย์ก่อนขยับไปโมเดลซับซ้อน\nสอง ประกอบ ColumnTransformer แยกสายพานตัวเลขด้วย SimpleImputer กับ StandardScaler และสายพานหมวดหมู่ด้วย SimpleImputer กับ OneHotEncoder ที่ตั้ง handle_unknown เป็น ignore\nและสาม รวม ColumnTransformer กับ Classifier เข้าใน scikit-learn Pipeline ชิ้นเดียวที่ทนต่อค่าว่างและหมวดหมู่ไม่เคยเห็นโดยไม่เกิด Data Leakage\n\nทั้งหมดนี้รันบน CPU ของเครื่องตัวเอง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 43 มี 3 ข้อที่จะกลายเป็นแม่แบบให้คุณใช้ไปตลอดทั้ง Phase 2 เลยครับ\n\nหนึ่ง อธิบายเหตุผลและสร้าง Baseline 2 ระดับ คือ DummyClassifier และ LogisticRegression เพื่อตั้งเกณฑ์อ้างอิงที่ซื่อสัตย์ก่อนขยับไปโมเดลซับซ้อน\nสอง ประกอบ ColumnTransformer แยกสายพานตัวเลขด้วย SimpleImputer กับ StandardScaler และสายพานหมวดหมู่ด้วย SimpleImputer กับ OneHotEncoder ที่ตั้ง handle_unknown เป็น ignore\nและสาม รวม ColumnTransformer กับ Classifier เข้าใน scikit-learn Pipeline ชิ้นเดียวที่ทนต่อค่าว่างและหมวดหมู่ไม่เคยเห็นโดยไม่เกิด Data Leakage\n\nทั้งหมดนี้รันบน CPU ของเครื่องตัวเอง 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เตรียมแม่แบบ Pipeline",
+      "src": "/audio/d043/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่งตั้งโปรเจกต์ Day 43 พร้อมบอกอนาคตของโค้ดชุดนี้",
+      "script": "มาสร้างโปรเจกต์สำหรับ Day 43 กันครับ รันคำสั่งตามหน้าจอได้เลย\n\nเริ่มจาก uv init ai-day43 และ cd ai-day43 จากนั้นสั่ง uv add scikit-learn pandas และติดตั้งเครื่องมือทดสอบด้วย uv add --dev pytest ruff\nแล้วลองรันคำสั่งเช็กการ import ทั้ง Pipeline และ ColumnTransformer ว่าขึ้นคำว่า Ready เรียบร้อยไหม\n\nที่เจ๋งคือโค้ด Pipeline ที่คุณประกอบวันนี้ จะกลายเป็นโครงแม่แบบที่คุณเอาไปเสียบ LightGBM ใน Day 47 และเซฟเป็นไฟล์โมเดลไว้เสิร์ฟจริงใน Day 53 ด้วยครับ เดี๋ยวพี่รอตรงนี้ให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาสร้างโปรเจกต์สำหรับ Day 43 กันครับ รันคำสั่งตามหน้าจอได้เลย\n\nเริ่มจาก uv init ai-day43 และ cd ai-day43 จากนั้นสั่ง uv add scikit-learn pandas และติดตั้งเครื่องมือทดสอบด้วย uv add dash dash dev pytest ruff\nแล้วลองรันคำสั่งเช็กการ import ทั้ง Pipeline และ ColumnTransformer ว่าขึ้นคำว่า Ready เรียบร้อยไหม\n\nที่เจ๋งคือโค้ด Pipeline ที่คุณประกอบวันนี้ จะกลายเป็นโครงแม่แบบที่คุณเอาไปเสียบ LightGBM ใน Day 47 และเซฟเป็นไฟล์โมเดลไว้เสิร์ฟจริงใน Day 53 ด้วยครับ เดี๋ยวพี่รอตรงนี้ให้เตรียมเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียมโปรเจกต์ Day 43",
+        "prompt": "ลองรันคำสั่งตั้งโปรเจกต์ ai-day43 และเช็กการ import Pipeline กับ ColumnTransformer ให้ขึ้น Ready ครับ",
+        "continueLabel": "เช็กเครื่องเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Pipeline + ColumnTransformer",
+      "src": "/audio/d043/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนมองภาพสายพานคัดแยก 2 รางที่ไหลมารวมกันเข้าโมเดลอย่างเป็นระเบียบ",
+      "script": "ลองดูแผนภาพ scikit-learn Pipeline และ ColumnTransformer ตรงหน้านี้ก่อนนะครับ\n\nจินตนาการว่าเรามีเครื่องคัดแยกอัตโนมัติ 2 ราง คอลัมน์ตัวเลขจะถูกส่งไปรางแรกเพื่อเติมค่าว่างและปรับสเกลให้เท่าเทียมกัน ส่วนคอลัมน์หมวดหมู่ข้อความจะไหลไปรางที่สองเพื่อเติมค่าว่างแล้วแปลงเป็นรหัส 0 กับ 1\n\nจากนั้นปลายทางของทั้งสองรางจะรวมร่างกันเป็นเมทริกซ์ตัวเลขที่สะอาดเป๊ะ ส่งต่อไปให้ตัว Classifier ทำนายผล ทั้งหมดถูกห่ออยู่ในกล่อง Pipeline เดียว ไม่มีขั้นตอนไหนแอบแตะข้อมูล Test ก่อนเวลาแน่นอนครับ",
+      "ttsText": "ลองดูแผนภาพ scikit-learn Pipeline และ ColumnTransformer ตรงหน้านี้ก่อนนะครับ\n\nจินตนาการว่าเรามีเครื่องคัดแยกอัตโนมัติ 2 ราง คอลัมน์ตัวเลขจะถูกส่งไปรางแรกเพื่อเติมค่าว่างและปรับสเกลให้เท่าเทียมกัน ส่วนคอลัมน์หมวดหมู่ข้อความจะไหลไปรางที่สองเพื่อเติมค่าว่างแล้วแปลงเป็นรหัส 0 กับ 1\n\nจากนั้นปลายทางของทั้งสองรางจะรวมร่างกันเป็นเมทริกซ์ตัวเลขที่สะอาดเป๊ะ ส่งต่อไปให้ตัว Classifier ทำนายผล ทั้งหมดถูกห่ออยู่ในกล่อง Pipeline เดียว ไม่มีขั้นตอนไหนแอบแตะข้อมูล Test ก่อนเวลาแน่นอนครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d043/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบาย Baseline, ColumnTransformer และ Pipeline ด้วยภาพวิ่งจับเวลาและเครื่องชงกาแฟ เว้นจังหวะข้อ 1, 2, 3",
+      "script": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 43 แบบเข้าใจง่าย ๆ กันครับ\n\nข้อแรก สร้าง Baseline ก่อนเสมอ อย่าเพิ่งกระโดดไปโมเดลซับซ้อนครับ เปรียบเหมือนการวิ่งจับเวลา เราควรมี Baseline 2 ชั้น ชั้นแรกคือ DummyClassifier ซึ่งเหมือนการเดินเฉย ๆ โดยไม่ดูฟีเจอร์เลย เช่น ถ้าทิกเก็ตปกติมี 90 เปอร์เซ็นต์ DummyClassifier ที่ทาย 0 ตลอดก็จะได้ Accuracy 0.90 ทันที ช่วยเป็นเส้นพื้นไม่ให้เราหลงดีใจถ้าโมเดลแรกของเราได้ 0.89 ชั้นที่สองคือ LogisticRegression ที่เหมือนวิ่งรองเท้าผ้าใบธรรมดา เทรนจบในเสี้ยววินาที ให้ค่าความน่าจะเป็น predict_proba ที่เสถียร และเปิดดูน้ำหนัก coef_ เพื่อล่าบั๊ก Data Leakage ได้ด้วย\n\nข้อที่สอง คือ ColumnTransformer ตัวแยกสายพานจัดการคอลัมน์ตัวเลขและหมวดหมู่ สายพานตัวเลขเราใช้ SimpleImputer แบบ strategy median เพราะข้อมูลธุรกิจอย่างยอดซื้อหรือเวลารอมักมี outlier สูงโดด ค่ามัธยฐานเลยทนทานกว่าค่าเฉลี่ย แล้วตามด้วย StandardScaler เพื่อไม่ให้เลขหลักหมื่นไปกลบเลขหลักหน่วย ส่วนสายพานหมวดหมู่ใช้ SimpleImputer แบบ most_frequent แล้วต่อด้วย OneHotEncoder ที่สำคัญสุด ๆ คือต้องตั้ง 2 พารามิเตอร์ช่วยชีวิตไว้เสมอ ได้แก่ handle_unknown เท่ากับ ignore เผื่อวันหน้ามีช่องทางใหม่อย่าง tiktok โผล่มา ระบบจะได้ให้ค่าเป็นศูนย์แทนที่จะพังด้วย ValueError และตั้ง remainder เท่ากับ drop เพื่อตัดคอลัมน์อย่าง ticket_id ทิ้งอัตโนมัติ\n\nและข้อที่สาม คือ Pipeline การมัด ColumnTransformer กับโมเดลเป็นอ็อบเจกต์เดียว เหมือนเครื่องชงกาแฟแคปซูลครับ ใส่ข้อมูลดิบเข้าไปแล้วบด ตวง ชง และรินด้วยสูตรเดียวเป๊ะ ประโยชน์ใหญ่ 3 อย่างคือ หนึ่ง กัน Data Leakage โดยโครงสร้าง เพราะตอนเรียก fit มันจะ fit_transform เฉพาะชุด Train และตอนเรียก predict มันจะเรียกแค่ transform ด้วยสถิติเดิม สอง ขจัด Training-Serving Skew ไม่ให้โค้ดเทรนกับโค้ด API เพี้ยนกัน และสาม พร้อมเซฟเป็นไฟล์เดียวด้วย joblib หรือเอาไปทำ Cross-Validation ต่อได้ทันทีครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของ Day 43 แบบเข้าใจง่าย ๆ กันครับ\n\nข้อแรก สร้าง Baseline ก่อนเสมอ อย่าเพิ่งกระโดดไปโมเดลซับซ้อนครับ เปรียบเหมือนการวิ่งจับเวลา เราควรมี Baseline 2 ชั้น ชั้นแรกคือ DummyClassifier ซึ่งเหมือนการเดินเฉย ๆ โดยไม่ดูฟีเจอร์เลย เช่น ถ้าทิกเก็ตปกติมี 90 เปอร์เซ็นต์ DummyClassifier ที่ทาย 0 ตลอดก็จะได้ Accuracy 0.90 ทันที ช่วยเป็นเส้นพื้นไม่ให้เราหลงดีใจถ้าโมเดลแรกของเราได้ 0.89 ชั้นที่สองคือ LogisticRegression ที่เหมือนวิ่งรองเท้าผ้าใบธรรมดา เทรนจบในเสี้ยววินาที ให้ค่าความน่าจะเป็น predict_proba ที่เสถียร และเปิดดูน้ำหนัก coef_ เพื่อล่าบั๊ก Data Leakage ได้ด้วย\n\nข้อที่สอง คือ ColumnTransformer ตัวแยกสายพานจัดการคอลัมน์ตัวเลขและหมวดหมู่ สายพานตัวเลขเราใช้ SimpleImputer แบบ strategy median เพราะข้อมูลธุรกิจอย่างยอดซื้อหรือเวลารอมักมี outlier สูงโดด ค่ามัธยฐานเลยทนทานกว่าค่าเฉลี่ย แล้วตามด้วย StandardScaler เพื่อไม่ให้เลขหลักหมื่นไปกลบเลขหลักหน่วย ส่วนสายพานหมวดหมู่ใช้ SimpleImputer แบบ most_frequent แล้วต่อด้วย OneHotEncoder ที่สำคัญสุด ๆ คือต้องตั้ง 2 พารามิเตอร์ช่วยชีวิตไว้เสมอ ได้แก่ handle_unknown เท่ากับ ignore เผื่อวันหน้ามีช่องทางใหม่อย่าง tiktok โผล่มา ระบบจะได้ให้ค่าเป็นศูนย์แทนที่จะพังด้วย ValueError และตั้ง remainder เท่ากับ drop เพื่อตัดคอลัมน์อย่าง ticket_id ทิ้งอัตโนมัติ\n\nและข้อที่สาม คือ Pipeline การมัด ColumnTransformer กับโมเดลเป็นอ็อบเจกต์เดียว เหมือนเครื่องชงกาแฟแคปซูลครับ ใส่ข้อมูลดิบเข้าไปแล้วบด ตวง ชง และรินด้วยสูตรเดียวเป๊ะ ประโยชน์ใหญ่ 3 อย่างคือ หนึ่ง กัน Data Leakage โดยโครงสร้าง เพราะตอนเรียก fit มันจะ fit_transform เฉพาะชุด Train และตอนเรียก predict มันจะเรียกแค่ transform ด้วยสถิติเดิม สอง ขจัด Training-Serving Skew ไม่ให้โค้ดเทรนกับโค้ด API เพี้ยนกัน และสาม พร้อมเซฟเป็นไฟล์เดียวด้วย joblib หรือเอาไปทำ Cross-Validation ต่อได้ทันทีครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างสร้าง Pipeline & ทดสอบช่องทางใหม่ tiktok",
+      "src": "/audio/d043/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกต ชี้จุดสำคัญตรง DummyClassifier ที่ได้ accuracy 0.740 แต่ f1 เป็นศูนย์ แล้วตื่นเต้นตอนทดสอบช่องทาง tiktok",
+      "script": "มาเดินดูตัวอย่างโค้ดจริงของ Day 43 ทีละสเต็ปกันครับ สถานการณ์คือสร้าง Baseline Classifier ทายว่าทิกเก็ตลูกค้าเป็น urgent หรือไม่\n\nขั้นแรก เราสร้างข้อมูลจำลอง 200 แถวที่มีทั้งตัวเลข wait_min, order_value_thb, past_tickets และหมวดหมู่ channel กับ customer_tier โดยจงใจหยอดค่าว่าง NaN กับ None ลงไปบางช่อง แล้วแบ่ง Train 150 แถว กับ Test 50 แถวแบบ Stratified\n\nขั้นที่สอง เราสร้าง DummyClassifier เทียบกับ baseline_pipe ที่ประกอบด้วย ColumnTransformer กับ LogisticRegression ดูผลลัพธ์ตรงนี้ดี ๆ นะครับ Dummy ได้ accuracy ตั้ง 0.740 แต่ f1 เป็น 0.000 เพราะมันทาย 0 ทุกข้อ จับเคส urgent ไม่ได้เลยสักใบ ส่วน LogReg ของเราทำ accuracy ได้ 0.900 และ f1 พุ่งมาที่ 0.783 ชนะเส้นพื้นขาดลอยเลย\n\nขั้นที่สาม คือบททดสอบโหดแบบ Production เราส่งข้อมูลทิกเก็ตใหม่ T-9999 ที่ wait_min เป็น None และ channel เป็น tiktok ซึ่งไม่เคยมีในชุด Train เลย ผลคือ baseline_pipe ทำนายผ่านฉลุยโดยไม่ crash และคืนความน่าจะเป็น urgent ออกมา 0.842 ลองกดเดินโค้ดดูทีละขั้นแล้วค่อยไปลงมือเขียนเองนะครับ",
+      "ttsText": "มาเดินดูตัวอย่างโค้ดจริงของ Day 43 ทีละสเต็ปกันครับ สถานการณ์คือสร้าง Baseline Classifier ทายว่าทิกเก็ตลูกค้าเป็น urgent หรือไม่\n\nขั้นแรก เราสร้างข้อมูลจำลอง 200 แถวที่มีทั้งตัวเลข wait_min, order_value_thb, past_tickets และหมวดหมู่ channel กับ customer_tier โดยจงใจหยอดค่าว่าง NaN กับ None ลงไปบางช่อง แล้วแบ่ง Train 150 แถว กับ Test 50 แถวแบบ Stratified\n\nขั้นที่สอง เราสร้าง DummyClassifier เทียบกับ baseline_pipe ที่ประกอบด้วย ColumnTransformer กับ LogisticRegression ดูผลลัพธ์ตรงนี้ดี ๆ นะครับ Dummy ได้ accuracy ตั้ง 0.740 แต่ f1 เป็น 0.000 เพราะมันทาย 0 ทุกข้อ จับเคส urgent ไม่ได้เลยสักใบ ส่วน LogReg ของเราทำ accuracy ได้ 0.900 และ f1 พุ่งมาที่ 0.783 ชนะเส้นพื้นขาดลอยเลย\n\nขั้นที่สาม คือบททดสอบโหดแบบ Production เราส่งข้อมูลทิกเก็ตใหม่ T-9999 ที่ wait_min เป็น None และ channel เป็น tiktok ซึ่งไม่เคยมีในชุด Train เลย ผลคือ baseline_pipe ทำนายผ่านฉลุยโดยไม่ crash และคืนความน่าจะเป็น urgent ออกมา 0.842 ลองกดเดินโค้ดดูทีละขั้นแล้วค่อยไปลงมือเขียนเองนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง Pipeline & Unseen Category",
+        "prompt": "ลองกดไล่ดูตัวอย่างโค้ดทั้ง 3 ขั้น และสังเกตผลต่างระหว่าง Dummy กับ LogReg ก่อนไปทำแบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างจบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ประกอบ Pipeline ใน exercise_day43.py",
+      "src": "/audio/d043/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดเป็นจังหวะสม่ำเสมอตอนไล่ชื่อ step และสเปกทั้ง 3 ฟังก์ชัน",
+      "script": "ถึงเวลาลงมือเขียนโค้ดจริงใน exercise_day43.py แล้วครับ วันนี้มี 3 ฟังก์ชันให้ประกอบ Pipeline แบบพร้อมขึ้น Production\n\nฟังก์ชันแรก build_baseline_pipeline รับ numeric_cols กับ categorical_cols ให้ประกอบ Pipeline ย่อย 2 สาย สายตัวเลขใช้ SimpleImputer strategy median ตามด้วย StandardScaler สายหมวดหมู่ใช้ SimpleImputer strategy most_frequent ตามด้วย OneHotEncoder handle_unknown เท่ากับ ignore เอาไปใส่ใน ColumnTransformer พร้อมตั้ง remainder เท่ากับ drop แล้วห่อด้วย Pipeline ชั้นนอกที่มีชื่อ step เป๊ะตามสเปก คือ preprocess กับ clf ที่เป็น LogisticRegression max_iter 1000 และ random_state 42 ครับ\n\nฟังก์ชันที่สอง train_and_compare_baseline แบ่งข้อมูลแบบ Stratified ก่อน แล้ว fit ทั้ง DummyClassifier และ pipeline จากฟังก์ชันแรกบนชุด Train เท่านั้น จากนั้นวัด accuracy และ f1 บนชุด Test อย่าลืมใส่ zero_division เท่ากับ 0 ใน f1_score ด้วยนะ เดี๋ยวจะขึ้น warning เวลา Dummy ทายคลาส 1 เป็นศูนย์ครับ แล้วคืน dict ที่มีครบ 5 คีย์\n\nและฟังก์ชันที่สาม predict_urgent_proba รับ pipeline กับ list ของ dict ดิบ แปลงเป็น DataFrame แล้วคืนลิสต์ Python float ของความน่าจะเป็นคลาส 1 ออกมา\n\nเขียนเสร็จแล้วรัน uv run pytest -q และ uv run ruff check . นะครับ เดี๋ยวพี่รอตรงนี้ให้ลองทำเต็มที่เลย",
+      "ttsText": "ถึงเวลาลงมือเขียนโค้ดจริงใน exercise_day43.py แล้วครับ วันนี้มี 3 ฟังก์ชันให้ประกอบ Pipeline แบบพร้อมขึ้น Production\n\nฟังก์ชันแรก build_baseline_pipeline รับ numeric_cols กับ categorical_cols ให้ประกอบ Pipeline ย่อย 2 สาย สายตัวเลขใช้ SimpleImputer strategy median ตามด้วย StandardScaler สายหมวดหมู่ใช้ SimpleImputer strategy most_frequent ตามด้วย OneHotEncoder handle_unknown เท่ากับ ignore เอาไปใส่ใน ColumnTransformer พร้อมตั้ง remainder เท่ากับ drop แล้วห่อด้วย Pipeline ชั้นนอกที่มีชื่อ step เป๊ะตามสเปก คือ preprocess กับ clf ที่เป็น LogisticRegression max_iter 1000 และ random_state 42 ครับ\n\nฟังก์ชันที่สอง train_and_compare_baseline แบ่งข้อมูลแบบ Stratified ก่อน แล้ว fit ทั้ง DummyClassifier และ pipeline จากฟังก์ชันแรกบนชุด Train เท่านั้น จากนั้นวัด accuracy และ f1 บนชุด Test อย่าลืมใส่ zero_division เท่ากับ 0 ใน f1_score ด้วยนะ เดี๋ยวจะขึ้น warning เวลา Dummy ทายคลาส 1 เป็นศูนย์ครับ แล้วคืน dict ที่มีครบ 5 คีย์\n\nและฟังก์ชันที่สาม predict_urgent_proba รับ pipeline กับ list ของ dict ดิบ แปลงเป็น DataFrame แล้วคืนลิสต์ Python float ของความน่าจะเป็นคลาส 1 ออกมา\n\nเขียนเสร็จแล้วรัน uv run pytest dash q และ uv run ruff check dot นะครับ เดี๋ยวพี่รอตรงนี้ให้ลองทำเต็มที่เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด exercise_day43.py",
+        "prompt": "ลงมือประกอบ ColumnTransformer และ Pipeline ใน exercise_day43.py แล้วรัน test_day43.py ให้ผ่านทั้ง 2 ข้อครับ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d043/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 บั๊กยอดฮิตของ scikit-learn Pipeline ด้วยจังหวะเตือนภัยชัดเจนแบบรุ่นพี่",
+      "script": "เก่งมากครับที่ประกอบ Pipeline จนผ่านเทสต์แล้ว ก่อนไปทำควิซ พี่ขอฝาก 4 บั๊กสุดฮิตที่ทำให้ Pipeline พังใน Production ไว้ให้ระวังนะครับ\n\nข้อแรก คือลืมใส่ handle_unknown เท่ากับ ignore ใน OneHotEncoder ตอนเทสต์บนเครื่องผ่านฉลุย แต่พอขึ้น Production แล้วฝ่ายการตลาดเปิดช่องทาง tiktok ใหม่เข้ามา ระบบจะโยน ValueError ทันทีครับ\n\nข้อที่สอง คือไม่ใส่ StandardScaler ก่อน LogisticRegression หรือปล่อย max_iter ต่ำเกินไป ผลคือขึ้น ConvergenceWarning และน้ำหนักฟีเจอร์ที่มีช่วงตัวเลขต่างกันมากจะเพี้ยนไปหมด\n\nข้อที่สาม คือปล่อย remainder เป็น passthrough หรือลืมตั้งเป็น drop จนคอลัมน์ ticket_id หรือข้อความดิบหลุดเข้าโมเดล ทำให้แปลงเป็น float ไม่ได้หรือโมเดลแอบจำเลข ID แทน\n\nและข้อสี่ คือไปใช้ pd.get_dummies บนตารางรวมก่อนแบ่ง Train กับ Test ซึ่งนอกจากเสี่ยง Data Leakage แล้ว จำนวนและลำดับคอลัมน์ใน Production ยังจะไม่ตรงกับตอนเทรนด้วย ใช้ OneHotEncoder ใน Pipeline แทนเสมอครับ",
+      "ttsText": "เก่งมากครับที่ประกอบ Pipeline จนผ่านเทสต์แล้ว ก่อนไปทำควิซ พี่ขอฝาก 4 บั๊กสุดฮิตที่ทำให้ Pipeline พังใน Production ไว้ให้ระวังนะครับ\n\nข้อแรก คือลืมใส่ handle_unknown เท่ากับ ignore ใน OneHotEncoder ตอนเทสต์บนเครื่องผ่านฉลุย แต่พอขึ้น Production แล้วฝ่ายการตลาดเปิดช่องทาง tiktok ใหม่เข้ามา ระบบจะโยน ValueError ทันทีครับ\n\nข้อที่สอง คือไม่ใส่ StandardScaler ก่อน LogisticRegression หรือปล่อย max_iter ต่ำเกินไป ผลคือขึ้น ConvergenceWarning และน้ำหนักฟีเจอร์ที่มีช่วงตัวเลขต่างกันมากจะเพี้ยนไปหมด\n\nข้อที่สาม คือปล่อย remainder เป็น passthrough หรือลืมตั้งเป็น drop จนคอลัมน์ ticket_id หรือข้อความดิบหลุดเข้าโมเดล ทำให้แปลงเป็น float ไม่ได้หรือโมเดลแอบจำเลข ID แทน\n\nและข้อสี่ คือไปใช้ pd.get_dummies บนตารางรวมก่อนแบ่ง Train กับ Test ซึ่งนอกจากเสี่ยง Data Leakage แล้ว จำนวนและลำดับคอลัมน์ใน Production ยังจะไม่ตรงกับตอนเทรนด้วย ใช้ OneHotEncoder ใน Pipeline แทนเสมอครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d043/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนคอนเซปต์ Pipeline และ ColumnTransformer ผ่านควิซ 4 ข้อ",
+      "script": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อกันนะครับ รอบนี้จะถามเรื่องบทบาทของ DummyClassifier, อาการเมื่อลืมใส่ handle_unknown เท่ากับ ignore, ประโยชน์สำคัญของการรวมทุกอย่างเข้า Pipeline เดียว และเหตุผลที่มักใช้ median แทน mean ใน SimpleImputer ลองค่อย ๆ ตอบให้ครบแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจด้วย Micro-Quiz 4 ข้อกันนะครับ รอบนี้จะถามเรื่องบทบาทของ DummyClassifier, อาการเมื่อลืมใส่ handle_unknown เท่ากับ ignore, ประโยชน์สำคัญของการรวมทุกอย่างเข้า Pipeline เดียว และเหตุผลที่มักใช้ median แทน mean ใน SimpleImputer ลองค่อย ๆ ตอบให้ครบแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ค่อย ๆ ลองตอบควิซทั้ง 4 ข้อเรื่อง DummyClassifier, OneHotEncoder และ Pipeline แล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 44",
+      "src": "/audio/d043/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจ สรุปโครงสร้างแม่แบบ 4 ข้อให้กระชับชัดเจน แล้วชวนไปลุยวันทบทวนจับบั๊กใน Day 44",
+      "script": "ยินดีด้วยครับ คุณสร้าง Baseline Classifier แบบมืออาชีพด้วย scikit-learn จบเรียบร้อยแล้ว ขอสรุป 4 ข้อติดตัวไปใช้จริงนะครับ\n\nหนึ่ง สร้าง Baseline 2 ระดับเสมอ ทั้ง DummyClassifier เพื่อตั้งเส้นพื้น และ LogisticRegression ที่เร็วและตีความได้ ก่อนขยับไปโมเดลซับซ้อน\nสอง ใช้ ColumnTransformer พร้อม remainder เท่ากับ drop แยกสายพานตัวเลขด้วย median กับ StandardScaler และสายพานหมวดหมู่ด้วย most_frequent กับ OneHotEncoder handle_unknown เท่ากับ ignore\nสาม มัดทุกอย่างเข้า Pipeline เดียว เพื่อกัน Data Leakage โดยโครงสร้างและไม่ให้โค้ดเทรนกับโค้ด Production เพี้ยนจากกัน\nและสี่ ทดสอบ Pipeline ด้วยข้อมูลที่มีค่าว่างและหมวดหมู่ใหม่ใน pytest เสมอ\n\nอย่าลืมกด ทำเครื่องหมายว่าเรียนจบ นะครับ พรุ่งนี้ Day 44 เป็นวันทบทวน Block B11 ที่เราจะมาผ่าตัดสคริปต์ที่มีบั๊ก Data Leakage ซ่อนอยู่แล้วซ่อมให้สะอาดหมดจด แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณสร้าง Baseline Classifier แบบมืออาชีพด้วย scikit-learn จบเรียบร้อยแล้ว ขอสรุป 4 ข้อติดตัวไปใช้จริงนะครับ\n\nหนึ่ง สร้าง Baseline 2 ระดับเสมอ ทั้ง DummyClassifier เพื่อตั้งเส้นพื้น และ LogisticRegression ที่เร็วและตีความได้ ก่อนขยับไปโมเดลซับซ้อน\nสอง ใช้ ColumnTransformer พร้อม remainder เท่ากับ drop แยกสายพานตัวเลขด้วย median กับ StandardScaler และสายพานหมวดหมู่ด้วย most_frequent กับ OneHotEncoder handle_unknown เท่ากับ ignore\nสาม มัดทุกอย่างเข้า Pipeline เดียว เพื่อกัน Data Leakage โดยโครงสร้างและไม่ให้โค้ดเทรนกับโค้ด Production เพี้ยนจากกัน\nและสี่ ทดสอบ Pipeline ด้วยข้อมูลที่มีค่าว่างและหมวดหมู่ใหม่ใน pytest เสมอ\n\nอย่าลืมกด ทำเครื่องหมายว่าเรียนจบ นะครับ พรุ่งนี้ Day 44 เป็นวันทบทวน Block B11 ที่เราจะมาผ่าตัดสคริปต์ที่มีบั๊ก Data Leakage ซ่อนอยู่แล้วซ่อมให้สะอาดหมดจด แล้วเจอกันครับ!"
+    }
+  ]
+}

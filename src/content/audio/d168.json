@@ -1,0 +1,109 @@
+{
+  "lessonId": "d168",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Milestone 3 Core Flow Demo",
+      "src": "/audio/d168/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เหมือนรุ่นพี่ชวนน้องเข้าวันทดสอบใหญ่ Milestone 3 รวมทุกชิ้นส่วนเป็นท่อ E2E เดียวกัน",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 168 วันสำคัญของ Block B42 นั่นคือ Milestone 3: End-to-End Core Flow Demo ครับ\n\nตลอดสามวันที่ผ่านมาเราสร้างและผ่าน unit test ของแต่ละโมดูลแยกกันหมดแล้ว แต่ในงานวิศวกรรมซอฟต์แวร์ การที่แต่ละไฟล์ผ่านเทสต์เดี่ยวไม่ได้แปลว่าพอเอามาต่อกันแล้วข้อมูลจะไหลผ่านได้ราบรื่นครับ รอยต่อระหว่าง schema ของ GroundedGenerator ใน D165, ToolResponse ของ MCP Server ใน D166 และ State ของ CoreRouter ใน D167 มักเป็นจุดที่บั๊กชอบซ่อนอยู่\n\nวันนี้เราจึงจะประกอบทุกชิ้นส่วนเข้าเป็น CoreFlowPipeline เดียวกัน เพื่อพิสูจน์ 4 Core User Journeys แบบ End-to-End และตรวจรับ Milestone 3 Sign-Off Gate ที่การันตี Schema Pass Rate 100 เปอร์เซ็นต์, Ungrounded Citations เท่ากับ 0 และ Unapproved Writes เท่ากับ 0 บน SQLite จริง พร้อมเก็บ Telemetry พื้นฐานอย่าง trace_events และ latency_ms ส่งต่อให้ Block B43 ในวันพรุ่งนี้ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 168 วันสำคัญของ Block B42 นั่นคือ Milestone 3 End-to-End Core Flow Demo ครับ\n\nตลอดสามวันที่ผ่านมาเราสร้างและผ่าน unit test ของแต่ละโมดูลแยกกันหมดแล้ว แต่ในงานวิศวกรรมซอฟต์แวร์ การที่แต่ละไฟล์ผ่านเทสต์เดี่ยวไม่ได้แปลว่าพอเอามาต่อกันแล้วข้อมูลจะไหลผ่านได้ราบรื่นครับ รอยต่อระหว่าง schema ของ GroundedGenerator ใน D165, ToolResponse ของ MCP Server ใน D166 และ State ของ CoreRouter ใน D167 มักเป็นจุดที่บั๊กชอบซ่อนอยู่\n\nวันนี้เราจึงจะประกอบทุกชิ้นส่วนเข้าเป็น CoreFlowPipeline เดียวกัน เพื่อพิสูจน์ 4 Core User Journeys แบบ End-to-End และตรวจรับ Milestone 3 Sign-Off Gate ที่การันตี Schema Pass Rate 100 เปอร์เซ็นต์, Ungrounded Citations เท่ากับ 0 และ Unapproved Writes เท่ากับ 0 บน SQLite จริง พร้อมเก็บ Telemetry พื้นฐานอย่าง trace_events และ latency_ms ส่งต่อให้ Block B43 ในวันพรุ่งนี้ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d168/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยกจังหวะเป้าหมายทั้ง 3 ข้อชัดเจน ไล่เรียง 4 Core Journeys ให้เห็นภาพครบ",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Milestone 3 ใน Day 168 กันครับ\n\nข้อแรก คือประกอบ Core Pipeline แบบ End-to-End โดยเชื่อม Hybrid Retrieval, Grounded Citation Generator จาก D165, MCP Server จาก D166 และ Bounded LangGraph Router จาก D167 เข้าด้วยกัน\nข้อสอง คือรันและผ่าน 4 Core Demo Journeys ได้แก่ FAQ RAG พร้อม citations, การปฏิเสธคำถามนอกขอบเขตเพื่อส่งต่อ escalate, การค้นหาออเดอร์แบบ read-only พร้อม PDPA masking และ HITL Write Pause กับ Resume ทั้งฝั่งอนุมัติและปฏิเสธ\nและข้อสาม คือตรวจรับ Milestone 3 Sign-Off Gate ให้มั่นใจว่าไม่มี citation ปลอมและไม่มีการแอบเขียนฐานข้อมูลก่อนก้าวสู่ Block B43 ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Milestone 3 ใน Day 168 กันครับ\n\nข้อแรก คือประกอบ Core Pipeline แบบ End-to-End โดยเชื่อม Hybrid Retrieval, Grounded Citation Generator จาก D165, MCP Server จาก D166 และ Bounded LangGraph Router จาก D167 เข้าด้วยกัน\nข้อสอง คือรันและผ่าน 4 Core Demo Journeys ได้แก่ FAQ RAG พร้อม citations, การปฏิเสธคำถามนอกขอบเขตเพื่อส่งต่อ escalate, การค้นหาออเดอร์แบบ read-only พร้อม PDPA masking และ HITL Write Pause กับ Resume ทั้งฝั่งอนุมัติและปฏิเสธ\nและข้อสาม คือตรวจรับ Milestone 3 Sign-Off Gate ให้มั่นใจว่าไม่มี citation ปลอมและไม่มีการแอบเขียนฐานข้อมูลก่อนก้าวสู่ Block B43 ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · เช็กเทสต์ D165–D167 ก่อนต่อท่อรวม",
+      "src": "/audio/d168/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น ชวนน้องเช็ก regression tests ของสามวันก่อนหน้าให้ผ่านสะอาดก่อนสร้างไฟล์รวม",
+      "script": "ก่อนที่เราจะสร้างไฟล์ตัวประสาน src/milestone3_demo.py มาเช็กความพร้อมของฐานรากจาก D165 ถึง D167 กันก่อนครับ\n\nในโฟลเดอร์ thai-enterprise-assistant ให้รัน pytest ตรวจไฟล์เทสต์ทั้งสามไฟล์คือ test_grounded_generator.py, test_mcp_support_server.py และ test_core_router.py พร้อมกัน แล้วรัน uv run ruff check . เพื่อตรวจความสะอาดของโค้ดและ import ต่าง ๆ\n\nชุด Milestone 3 วันนี้พึ่งพาเฉพาะโค้ดในเครื่องอย่าง sqlite3, pydantic และ mock retriever จึงรันเป็น Smoke Test ใน CI ได้ภายในไม่ถึง 1 วินาทีเลย เดี๋ยวพี่พักรอให้คุณรันเช็กเทสต์เก่าทั้ง 3 ไฟล์ให้ผ่านเขียวก่อนนะครับ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "ก่อนที่เราจะสร้างไฟล์ตัวประสาน src milestone3_demo dot py มาเช็กความพร้อมของฐานรากจาก D165 ถึง D167 กันก่อนครับ\n\nในโฟลเดอร์ thai-enterprise-assistant ให้รัน pytest ตรวจไฟล์เทสต์ทั้งสามไฟล์คือ test_grounded_generator dot py, test_mcp_support_server dot py และ test_core_router dot py พร้อมกัน แล้วรัน uv run ruff check จุด เพื่อตรวจความสะอาดของโค้ดและ import ต่าง ๆ\n\nชุด Milestone 3 วันนี้พึ่งพาเฉพาะโค้ดในเครื่องอย่าง sqlite3, pydantic และ mock retriever จึงรันเป็น Smoke Test ใน CI ได้ภายในไม่ถึง 1 วินาทีเลย เดี๋ยวพี่พักรอให้คุณรันเช็กเทสต์เก่าทั้ง 3 ไฟล์ให้ผ่านเขียวก่อนนะครับ พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเช็กเทสต์ D165–D167",
+        "prompt": "ลองรัน pytest บนเทสต์ทั้ง 3 ไฟล์ก่อนหน้าและ ruff check ให้ผ่านสะอาดก่อนเริ่มต่อท่อรวมครับ",
+        "continueLabel": "เช็กเทสต์เดิมผ่านครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อ E2E Core Flow ครบทั้ง 3 เส้นทาง",
+      "src": "/audio/d168/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพ เหมือนกำลังชี้ภาพใหญ่ของระบบตั้งแต่ต้นสายจนจบสายในฐานะ Capstone Integration",
+      "script": "ลองมองแผนภาพ Core Router บนหน้าจอตอนนี้ในมุมมองของการรวมระบบทั้งหมดครับ\n\nวันนี้ไม่ได้แยกดูแค่ทีละเส้นทางแล้ว แต่เราต่อ CoreFlowPipeline ครอบทั้งหมดไว้ด้วยกัน ตั้งแต่คำถามเข้ามา ผ่าน Router แยกไปที่ Policy RAG ที่มี Strict Citations, เส้นทาง MCP Read Lookup ที่สวมหน้ากาก PDPA และเส้นทาง HITL Write ที่หยุดรอการยืนยันก่อนลง SQLite จริง\n\nทุกเส้นทางจะถูกทดสอบแบบ End-to-End ตั้งแต่คำขอเข้าจนถึงผลลัพธ์ออก เพื่อยืนยันว่าไม่มีข้อมูลหล่นหายตรงรอยต่อระหว่างแต่ละโมดูลเลยครับ",
+      "ttsText": "ลองมองแผนภาพ Core Router บนหน้าจอตอนนี้ในมุมมองของการรวมระบบทั้งหมดครับ\n\nวันนี้ไม่ได้แยกดูแค่ทีละเส้นทางแล้ว แต่เราต่อ CoreFlowPipeline ครอบทั้งหมดไว้ด้วยกัน ตั้งแต่คำถามเข้ามา ผ่าน Router แยกไปที่ Policy RAG ที่มี Strict Citations, เส้นทาง MCP Read Lookup ที่สวมหน้ากาก PDPA และเส้นทาง HITL Write ที่หยุดรอการยืนยันก่อนลง SQLite จริง\n\nทุกเส้นทางจะถูกทดสอบแบบ End-to-End ตั้งแต่คำขอเข้าจนถึงผลลัพธ์ออก เพื่อยืนยันว่าไม่มีข้อมูลหล่นหายตรงรอยต่อระหว่างแต่ละโมดูลเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลัก Integration, 4 Journeys & Telemetry",
+      "src": "/audio/d168/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายเรื่อง Dependency Injection, การตรวจรับบ้าน 4 Journeys และกล่องดำ Telemetry อย่างชัดเจนมีชีวิตชีวา",
+      "script": "มาดูแนวคิดหลัก 3 ข้อที่ทำให้ Milestone 3 ของเราแข็งแรงระดับ Production กันครับ\n\nข้อแรก คือการเชื่อมรอยต่อ B41 ถึง B42 ด้วย Dependency Injection ปัญหาที่เจอบ่อยเวลาประกอบระบบคือ Integration Seams เช่น D165 คืนออบเจ็กต์ CitationItem แต่ D167 เก็บ citations เป็น list ของ string หรือ D166 คืน ToolResponse ที่มี data['phone_masked'] เราจึงสร้างคลาส CoreFlowPipeline ที่รับ Retriever, LLM และ MCP Server ผ่าน constructor แล้วเขียน Adapter แปลงสัญญาข้อมูลให้อยู่ในจุดเดียว เหมือนการต่อตู้รถไฟ 3 โบกี้ที่มีข้อต่อล็อกเข้ากันพอดี ทำให้เราใช้ Mock รันเทสต์ฟรีใน 50 มิลลิวินาที และสลับเสียบ Qdrant กับ LLM จริงใน B44 ได้โดยไม่แก้โค้ด Router เลยครับ\n\nข้อที่สอง คือ 4 Core Journeys และเกณฑ์ Sign-Off Gate เหมือนการตรวจรับบ้านก่อนเข้าอยู่ที่ต้องลองเปิดก๊อกน้ำทุกจุดและลองตัดเบรกเกอร์จริง เราต้องรันครบทั้ง 4 สถานการณ์โดยไม่ hardcode คำตอบ ได้แก่ Journey 1 ถามนโยบายได้คำตอบพร้อม pol-refund#2, Journey 2 ถามนอกเอกสารแล้ว abstain ส่งต่อ escalate, Journey 3 เช็ก ORD-2026-104 ได้เบอร์ที่ mask แล้ว และ Journey 4 เปิดทิกเก็ตแล้วหยุดรอ พอ approve ถึงเพิ่ม 1 แถวใน SQLite โดยเกณฑ์ผ่านต้องได้ 4 เต็ม 4, Schema มากกว่าหรือเท่ากับ 99 เปอร์เซ็นต์, citation ปลอมเท่ากับ 0 และ unapproved write เท่ากับ 0 ครับ\n\nและข้อที่สาม คือ Step-Level Telemetry เราติดกล่องดำให้ท่อตั้งแต่ตอนนี้เลย โดยบันทึก thread_id, route, status, step_count, latency_ms จาก time.perf_counter() และ trace_events เพื่อเตรียมต่อเข้าชุดทดสอบ Golden Dataset 40 ข้อ, Ragas, Promptfoo และ Langfuse ใน Block B43 ครับ",
+      "ttsText": "มาดูแนวคิดหลัก 3 ข้อที่ทำให้ Milestone 3 ของเราแข็งแรงระดับ Production กันครับ\n\nข้อแรก คือการเชื่อมรอยต่อ B41 ถึง B42 ด้วย Dependency Injection ปัญหาที่เจอบ่อยเวลาประกอบระบบคือ Integration Seams เช่น D165 คืนออบเจ็กต์ CitationItem แต่ D167 เก็บ citations เป็น list ของ string หรือ D166 คืน ToolResponse ที่มี data phone_masked เราจึงสร้างคลาส CoreFlowPipeline ที่รับ Retriever, LLM และ MCP Server ผ่าน constructor แล้วเขียน Adapter แปลงสัญญาข้อมูลให้อยู่ในจุดเดียว เหมือนการต่อตู้รถไฟ 3 โบกี้ที่มีข้อต่อล็อกเข้ากันพอดี ทำให้เราใช้ Mock รันเทสต์ฟรีใน 50 มิลลิวินาที และสลับเสียบ Qdrant กับ LLM จริงใน B44 ได้โดยไม่แก้โค้ด Router เลยครับ\n\nข้อที่สอง คือ 4 Core Journeys และเกณฑ์ Sign-Off Gate เหมือนการตรวจรับบ้านก่อนเข้าอยู่ที่ต้องลองเปิดก๊อกน้ำทุกจุดและลองตัดเบรกเกอร์จริง เราต้องรันครบทั้ง 4 สถานการณ์โดยไม่ hardcode คำตอบ ได้แก่ Journey 1 ถามนโยบายได้คำตอบพร้อม pol-refund เบอร์ 2, Journey 2 ถามนอกเอกสารแล้ว abstain ส่งต่อ escalate, Journey 3 เช็ก ORD-2026-104 ได้เบอร์ที่ mask แล้ว และ Journey 4 เปิดทิกเก็ตแล้วหยุดรอ พอ approve ถึงเพิ่ม 1 แถวใน SQLite โดยเกณฑ์ผ่านต้องได้ 4 เต็ม 4, Schema มากกว่าหรือเท่ากับ 99 เปอร์เซ็นต์, citation ปลอมเท่ากับ 0 และ unapproved write เท่ากับ 0 ครับ\n\nและข้อที่สาม คือ Step-Level Telemetry เราติดกล่องดำให้ท่อตั้งแต่ตอนนี้เลย โดยบันทึก thread_id, route, status, step_count, latency_ms จาก time dot perf_counter และ trace_events เพื่อเตรียมต่อเข้าชุดทดสอบ Golden Dataset 40 ข้อ, Ragas, Promptfoo และ Langfuse ใน Block B43 ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน 4 Core Journeys & Gate Report",
+      "src": "/audio/d168/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังรัน Demo ตรวจรับงานด้วยกัน เน้นจุดสังเกตเรื่องการเช็กแถวใน SQLite จริงตอนท้าย",
+      "script": "ลองกดเดินตัวอย่างโค้ดของ Milestone 3 ดูทีละสเต็ปกันครับ\n\nขั้นที่ 1 เราสร้างคลาส DemoJourney และฟังก์ชัน run_demo_journey เพื่อจับเวลา latency_ms ด้วย time.perf_counter() แล้วตรวจเงื่อนไขว่า status ตรงตามที่คาดหวังและ step_count ไม่เกิน 3 หรือไม่\n\nขั้นที่ 2 เราลองรันครบทั้ง 4 Journeys ในรอบเดียว ไล่ตั้งแต่ J1_FAQ_RAG, J2_ABSTAIN_ESCALATE, J3_MCP_LOOKUP และ J4_HITL_PAUSE จะเห็นรายงานออกมาชัดเลยว่าแต่ละอันวิ่งเข้า route ไหนและได้ status อะไร\n\nขั้นที่ 3 เราสรุปผลรวมเป็นคำตัดสิน SHIP_TO_B43 หรือ FIX_FIRST โดยต้องผ่านทั้ง 4 journeys, ungrounded_citations เป็น 0 และ unapproved_writes เป็น 0 ข้อสังเกตสำคัญมากใน Journey 4 คืออย่าเช็กแค่คำตอบว่า awaiting_approval แล้วจบนะครับ ต้องคิวรีเช็กจำนวนแถวในตาราง tickets ของ SQLite จริง ๆ ด้วยว่าตอน pause แถวยังไม่เพิ่ม และเพิ่มเพียง 1 แถวหลังกด approve เท่านั้น เดี๋ยวพี่พักรอให้คุณกดดูตัวอย่างทั้ง 3 ขั้นก่อน พร้อมลงมือสร้างท่อจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "ttsText": "ลองกดเดินตัวอย่างโค้ดของ Milestone 3 ดูทีละสเต็ปกันครับ\n\nขั้นที่ 1 เราสร้างคลาส DemoJourney และฟังก์ชัน run_demo_journey เพื่อจับเวลา latency_ms ด้วย time dot perf_counter แล้วตรวจเงื่อนไขว่า status ตรงตามที่คาดหวังและ step_count ไม่เกิน 3 หรือไม่\n\nขั้นที่ 2 เราลองรันครบทั้ง 4 Journeys ในรอบเดียว ไล่ตั้งแต่ J1_FAQ_RAG, J2_ABSTAIN_ESCALATE, J3_MCP_LOOKUP และ J4_HITL_PAUSE จะเห็นรายงานออกมาชัดเลยว่าแต่ละอันวิ่งเข้า route ไหนและได้ status อะไร\n\nขั้นที่ 3 เราสรุปผลรวมเป็นคำตัดสิน SHIP_TO_B43 หรือ FIX_FIRST โดยต้องผ่านทั้ง 4 journeys, ungrounded_citations เป็น 0 และ unapproved_writes เป็น 0 ข้อสังเกตสำคัญมากใน Journey 4 คืออย่าเช็กแค่คำตอบว่า awaiting_approval แล้วจบนะครับ ต้องคิวรีเช็กจำนวนแถวในตาราง tickets ของ SQLite จริง ๆ ด้วยว่าตอน pause แถวยังไม่เพิ่ม และเพิ่มเพียง 1 แถวหลังกด approve เท่านั้น เดี๋ยวพี่พักรอให้คุณกดดูตัวอย่างทั้ง 3 ขั้นก่อน พร้อมลงมือสร้างท่อจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงดูตัวอย่าง Milestone 3 Demo",
+        "prompt": "ลองกดดูการรัน 4 Core Journeys และการออกคำตัดสิน SHIP_TO_B43 เมื่อเข้าใจแล้วกดไปต่อเพื่อสร้างท่อ E2E จริงครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง CoreFlowPipeline ใน milestone3_demo.py",
+      "src": "/audio/d168/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ใจเย็น ให้กำลังใจ พูดช้าชัดเป็นจังหวะตอนอธิบายการเชื่อม Adapter ทั้ง 3 โหนดและฟังก์ชันตรวจรับ Milestone 3",
+      "script": "ถึงขั้นตอนประกอบร่างใหญ่แล้วครับ มาสร้าง src/milestone3_demo.py เพื่อเชื่อมของจริงจาก D165, D166 และ D167 เข้าด้วยกันนะ\n\nส่วนแรก ในคลาส CoreFlowPipeline ให้สร้าง self.router ด้วย CoreRouter โดยเขียน Adapter 3 ตัวเชื่อมภายในครับ ตัวแรก rag_adapter เรียก retriever_fn แล้วส่งต่อให้ generate_grounded_answer ของ D165 จากนั้นแปลง citations เป็น list ของ chunk_id ส่งให้ Router ตัวที่สอง lookup_adapter แยกดู prefix ว่าเป็น ORD หรือ TKT เพื่อเรียก lookup_order หรือ get_ticket จาก MockSupportMCPServer ตัวที่สาม write_adapter เมื่อ approved เป็น True ให้ส่ง idempotency_key กับ valid_approval_token เข้า create_support_ticket แล้วคืนผลลัพธ์รวมถึง ticket_id ครับ\n\nส่วนที่สอง สร้างเมธอด handle_message และ confirm_action ที่จับเวลาด้วย perf_counter แล้วเรียก router.invoke กับ router.resume จากนั้นคืน model_dump() บวกฟิลด์ latency_ms\n\nส่วนที่สาม เขียนฟังก์ชัน run_milestone3_verification รันครบทั้ง 4 journeys โดยเช็กไม่ให้มีเบอร์โทรดิบหลุด เช็กจำนวนแถวใน SQLite ทั้งช่วง pause, approve และ reject แล้วคืน report dict ออกมา จากนั้นรัน pytest ครบทั้ง 4 ไฟล์ตั้งแต่ D165 ถึง D168 และ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "ttsText": "ถึงขั้นตอนประกอบร่างใหญ่แล้วครับ มาสร้าง src milestone3_demo dot py เพื่อเชื่อมของจริงจาก D165, D166 และ D167 เข้าด้วยกันนะ\n\nส่วนแรก ในคลาส CoreFlowPipeline ให้สร้าง self.router ด้วย CoreRouter โดยเขียน Adapter 3 ตัวเชื่อมภายในครับ ตัวแรก rag_adapter เรียก retriever_fn แล้วส่งต่อให้ generate_grounded_answer ของ D165 จากนั้นแปลง citations เป็น list ของ chunk_id ส่งให้ Router ตัวที่สอง lookup_adapter แยกดู prefix ว่าเป็น ORD หรือ TKT เพื่อเรียก lookup_order หรือ get_ticket จาก MockSupportMCPServer ตัวที่สาม write_adapter เมื่อ approved เป็น True ให้ส่ง idempotency_key กับ valid_approval_token เข้า create_support_ticket แล้วคืนผลลัพธ์รวมถึง ticket_id ครับ\n\nส่วนที่สอง สร้างเมธอด handle_message และ confirm_action ที่จับเวลาด้วย perf_counter แล้วเรียก router.invoke กับ router.resume จากนั้นคืน model_dump บวกฟิลด์ latency_ms\n\nส่วนที่สาม เขียนฟังก์ชัน run_milestone3_verification รันครบทั้ง 4 journeys โดยเช็กไม่ให้มีเบอร์โทรดิบหลุด เช็กจำนวนแถวใน SQLite ทั้งช่วง pause, approve และ reject แล้วคืน report dict ออกมา จากนั้นรัน pytest ครบทั้ง 4 ไฟล์ตั้งแต่ D165 ถึง D168 และ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง milestone3_demo.py",
+        "prompt": "ลงมือเชื่อม CoreFlowPipeline และ run_milestone3_verification แล้วรัน pytest รวม D165–D168 ให้ผ่านครบครับ",
+        "continueLabel": "รัน E2E ผ่านครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อยใน Milestone 3 Integration",
+      "src": "/audio/d168/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยอย่างภาคภูมิใจ แล้วเล่า 4 ข้อผิดพลาดในการประกอบระบบจริงด้วยจังหวะสนุกและเตือนสติ",
+      "script": "สุดยอดมากครับที่รันท่อ E2E ผ่านครบทั้ง 4 ไฟล์เลย ก่อนเข้าควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่เจอบ่อยตอนทำ Integration นะครับ\n\nข้อแรก คือชะล่าใจทดสอบเฉพาะ Mock Router ใน D167 โดยไม่ต่อกับ SQLite Store และ Citation Verifier จริง พอเอามาต่อกันจริงก็เจอ key mismatch เช่น chunk_id หาย หรือ ticket_id ไม่ตรงกัน\n\nข้อที่สอง คือดูแค่ข้อความตอบตอน HITL Interrupt หรือ Reject แต่ลืมเช็กฐานข้อมูล SQLite จริง ปรากฏว่า API ตอบว่า awaiting_approval ก็จริง แต่โค้ดข้างหลังแอบ INSERT แถวลง DB ไปแล้ว ต้อง assert SELECT COUNT ในเทสต์ด้วยเสมอครับ\n\nข้อที่สาม คือปล่อยให้เบอร์โทรดิบอย่าง 0812345678 หลุดเข้าไปในคำตอบของ Router เพราะลืมตรวจว่า field ที่ฟอร์แมตข้อความออกมาเป็น phone_masked จริงไหม\n\nและข้อที่สี่ คือรีบข้ามไปเขียน FastAPI UI หรือ SSE streaming ทั้งที่ Core Flow ยังไม่เสถียร พอเจอบั๊กก็จะแยกไม่ออกว่าพังที่ตัว API หรือพังที่ Router ครับ",
+      "ttsText": "สุดยอดมากครับที่รันท่อ E2E ผ่านครบทั้ง 4 ไฟล์เลย ก่อนเข้าควิซ พี่ขอฝาก 4 ข้อผิดพลาดที่เจอบ่อยตอนทำ Integration นะครับ\n\nข้อแรก คือชะล่าใจทดสอบเฉพาะ Mock Router ใน D167 โดยไม่ต่อกับ SQLite Store และ Citation Verifier จริง พอเอามาต่อกันจริงก็เจอ key mismatch เช่น chunk_id หาย หรือ ticket_id ไม่ตรงกัน\n\nข้อที่สอง คือดูแค่ข้อความตอบตอน HITL Interrupt หรือ Reject แต่ลืมเช็กฐานข้อมูล SQLite จริง ปรากฏว่า API ตอบว่า awaiting_approval ก็จริง แต่โค้ดข้างหลังแอบ INSERT แถวลง DB ไปแล้ว ต้อง assert SELECT COUNT ในเทสต์ด้วยเสมอครับ\n\nข้อที่สาม คือปล่อยให้เบอร์โทรดิบอย่าง 0812345678 หลุดเข้าไปในคำตอบของ Router เพราะลืมตรวจว่า field ที่ฟอร์แมตข้อความออกมาเป็น phone_masked จริงไหม\n\nและข้อที่สี่ คือรีบข้ามไปเขียน FastAPI UI หรือ SSE streaming ทั้งที่ Core Flow ยังไม่เสถียร พอเจอบั๊กก็จะแยกไม่ออกว่าพังที่ตัว API หรือพังที่ Router ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d168/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเบา ๆ ผ่อนคลาย ชวนทบทวนความเข้าใจ 4 ข้อเรื่อง E2E Integration และก้าวต่อไปสู่ Block B43",
+      "script": "มาเช็กความเข้าใจปิดท้าย Milestone 3 ด้วย Micro-Quiz 4 ข้อกันครับ รอบนี้ถามเรื่องเหตุผลที่ต้องมี E2E Integration Test, หลักฐานความปลอดภัยที่สมบูรณ์ของ Journey 4, การประสานงานของ D165 กับ D167 เมื่อเจอ citation ปลอม และงานหลักของ Block B43 ในวันพรุ่งนี้ครับ ลองตอบให้ครบทุกข้อนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจปิดท้าย Milestone 3 ด้วย Micro-Quiz 4 ข้อกันครับ รอบนี้ถามเรื่องเหตุผลที่ต้องมี E2E Integration Test, หลักฐานความปลอดภัยที่สมบูรณ์ของ Journey 4, การประสานงานของ D165 กับ D167 เมื่อเจอ citation ปลอม และงานหลักของ Block B43 ในวันพรุ่งนี้ครับ ลองตอบให้ครบทุกข้อนะ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเพื่อสรุปความเข้าใจ Milestone 3 เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป Milestone 3 & ก้าวต่อไป Block B43",
+      "src": "/audio/d168/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจอย่างยิ่งที่น้องผ่าน Milestone 3 แล้ว สรุปภาพรวมทั้ง Block B42 และชวนลุย Block B43 ต่อ",
+      "script": "ขอแสดงความยินดีด้วยครับ คุณผ่าน Milestone 3 และปิด Block B42 ได้อย่างสวยงามมาก!\n\nวันนี้เราได้ประกอบ B41 Retrieval, D165 Grounded Citations, D166 SQLite MCP Server และ D167 LangGraph Router เข้าเป็น CoreFlowPipeline เดียวกันจนผ่านครบทั้ง 4 Core Journeys แบบ deterministic 100 เปอร์เซ็นต์ พร้อมยืนยันความปลอดภัยเชิงประจักษ์ว่ามี 0 ungrounded citations, 0 unapproved DB writes และ 0 raw PII leak\n\nนอกจากนี้เรายังเก็บ trace_events และ latency_ms ไว้เรียบร้อยแล้ว เพื่อเป็นสะพานส่งต่อไปยัง Block B43 ใน Days 169 ถึง 172 ที่เราจะสร้าง 40-Case Golden Eval Dataset, รัน Ragas กับ Promptfoo และติด Langfuse Telemetry เพื่อวัดผลเชิงปริมาณกันจริง ๆ ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบเพื่อบันทึก streak นะครับ แล้วเจอกันใน Block B43 ครับ สู้ ๆ ครับ!",
+      "ttsText": "ขอแสดงความยินดีด้วยครับ คุณผ่าน Milestone 3 และปิด Block B42 ได้อย่างสวยงามมาก!\n\nวันนี้เราได้ประกอบ B41 Retrieval, D165 Grounded Citations, D166 SQLite MCP Server และ D167 LangGraph Router เข้าเป็น CoreFlowPipeline เดียวกันจนผ่านครบทั้ง 4 Core Journeys แบบ deterministic 100 เปอร์เซ็นต์ พร้อมยืนยันความปลอดภัยเชิงประจักษ์ว่ามี 0 ungrounded citations, 0 unapproved DB writes และ 0 raw PII leak\n\nนอกจากนี้เรายังเก็บ trace_events และ latency_ms ไว้เรียบร้อยแล้ว เพื่อเป็นสะพานส่งต่อไปยัง Block B43 ใน Days 169 ถึง 172 ที่เราจะสร้าง 40-Case Golden Eval Dataset, รัน Ragas กับ Promptfoo และติด Langfuse Telemetry เพื่อวัดผลเชิงปริมาณกันจริง ๆ ครับ อย่าลืมกดทำเครื่องหมายว่าเรียนจบเพื่อบันทึก streak นะครับ แล้วเจอกันใน Block B43 ครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

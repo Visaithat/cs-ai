@@ -1,0 +1,109 @@
+{
+  "lessonId": "d060",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — ปิด Phase 2 และเทียบ ML vs LLM",
+      "src": "/audio/d060/01-big-picture.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและภูมิใจในความก้าวหน้าตลอด 28 วัน ชวนคิดแบบ Senior Engineer ที่ตัดสินใจด้วยตัวเลขจริง",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 60 วัน Checkpoint สำคัญของ Phase 2 นะครับ ก่อนอื่นพี่ขอปรบมือให้เลยที่คุณเดินทางมาครบทั้ง 28 วันของ Phase 2 แล้ว\n\nวันนี้เรามีภารกิจใหญ่ 3 อย่างเพื่อปิดรอบ Portfolio Milestone ชิ้นที่ 2 อย่างสมศักดิ์ศรีครับ อย่างแรกคือตรวจเช็กความพร้อมของ Thai Ticket Priority ML Pipeline ที่เราสร้างต่อยอดมาตั้งแต่การล้างข้อมูลด้วย Polars และ DuckDB การตัดคำด้วย PyThaiNLP การทำ Error Analysis ไปจนถึงการ Export ให้เร็วกว่า 10 มิลลิวินาทีพร้อมชุดเทสต์ครบชุด\n\nอย่างที่สอง คือการคิดแบบ Senior AI Engineer ด้วยการเขียน Engineering Memo 1 หน้า เทียบ Classical ML กับ LLM ด้วยตัวเลขจริง ทั้งต้นทุนต่อแสนทิกเก็ตและ P95 Latency แล้วออกแบบ Hybrid Router ไว้ใช้ใน Phase 3 และอย่างที่สาม คือทดสอบความเข้าใจรวม Block B09 ถึง B15 พร้อมเก็บ Baseline Metrics วันนี้ไว้เทียบกับ LLM Extractor ใน Phase 3 วัน Day 92 ด้วยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 60 วัน Checkpoint สำคัญของ Phase 2 นะครับ ก่อนอื่นพี่ขอปรบมือให้เลยที่คุณเดินทางมาครบทั้ง 28 วันของ Phase 2 แล้ว\n\nวันนี้เรามีภารกิจใหญ่ 3 อย่างเพื่อปิดรอบ Portfolio Milestone ชิ้นที่ 2 อย่างสมศักดิ์ศรีครับ อย่างแรกคือตรวจเช็กความพร้อมของ Thai Ticket Priority ML Pipeline ที่เราสร้างต่อยอดมาตั้งแต่การล้างข้อมูลด้วย Polars และ DuckDB การตัดคำด้วย PyThaiNLP การทำ Error Analysis ไปจนถึงการ Export ให้เร็วกว่า 10 มิลลิวินาทีพร้อมชุดเทสต์ครบชุด\n\nอย่างที่สอง คือการคิดแบบ Senior AI Engineer ด้วยการเขียน Engineering Memo 1 หน้า เทียบ Classical ML กับ LLM ด้วยตัวเลขจริง ทั้งต้นทุนต่อแสนทิกเก็ตและ P95 Latency แล้วออกแบบ Hybrid Router ไว้ใช้ใน Phase 3 และอย่างที่สาม คือทดสอบความเข้าใจรวม Block B09 ถึง B15 พร้อมเก็บ Baseline Metrics วันนี้ไว้เทียบกับ LLM Extractor ใน Phase 3 วัน Day 92 ด้วยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & จังหวะวัน Checkpoint",
+      "src": "/audio/d060/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อของการปิด Phase 2 ให้พร้อมก้าวสู่ Phase 3",
+      "script": "มาดูเป้าหมายของวัน Checkpoint Day 60 กันครับ พอจบวันนี้คุณจะทำครบ 3 เรื่องใหญ่\n\nข้อแรก คือตรวจสอบความพร้อมของ Phase 2 Portfolio Milestone ครบทั้ง 6 เกณฑ์วิศวกรรม ตั้งแต่ Data Hygiene, Zero Data Leakage, Thai NLP กับ Error Analysis, Business Metrics, Export Parity ต่ำกว่า 10 มิลลิวินาที ไปจนถึงชุดเทสต์ที่ทำซ้ำได้\nข้อสอง คือเขียน 1-Page Engineering Trade-off Memo เทียบ Classical ML, LLM และ Hybrid Routing ด้วยตัวเลข Latency และต้นทุนต่อแสนทิกเก็ต\nและข้อสาม คือประเมินความเข้าใจเชิงบูรณาการครบทุกบล็อกของ Phase 2 เพื่อยืนยันความพร้อมก่อนขึ้น Phase 3 ครับ",
+      "ttsText": "มาดูเป้าหมายของวัน Checkpoint Day 60 กันครับ พอจบวันนี้คุณจะทำครบ 3 เรื่องใหญ่\n\nข้อแรก คือตรวจสอบความพร้อมของ Phase 2 Portfolio Milestone ครบทั้ง 6 เกณฑ์วิศวกรรม ตั้งแต่ Data Hygiene Zero Data Leakage Thai NLP กับ Error Analysis Business Metrics Export Parity ต่ำกว่า 10 มิลลิวินาที ไปจนถึงชุดเทสต์ที่ทำซ้ำได้\nข้อสอง คือเขียน 1-Page Engineering Trade-off Memo เทียบ Classical ML LLM และ Hybrid Routing ด้วยตัวเลข Latency และต้นทุนต่อแสนทิกเก็ต\nและข้อสาม คือประเมินความเข้าใจเชิงบูรณาการครบทุกบล็อกของ Phase 2 เพื่อยืนยันความพร้อมก่อนขึ้น Phase 3 ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · รัน Quality Gate & เตรียมตัวเลข Memo",
+      "src": "/audio/d060/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงชัดเจน น้ำเสียงแนะนำเหมือนพาตรวจเช็ก Quality Gate รอบสุดท้ายก่อนปล่อยงาน",
+      "script": "สำหรับช่วงเตรียมเครื่องวันนี้ ให้เปิดโฟลเดอร์โปรเจกต์ Thai Ticket Priority ML Pipeline ของคุณ แล้วรันชุดคำสั่ง Quality Gate ครบชุดครับ เริ่มจาก uv sync --frozen, ตามด้วย uv run ruff check . และ uv run pytest -v ให้ผ่านเขียวทั้งหมด หรือถ้าอยากทำแบบฝึกหัด Checkpoint แยกโฟลเดอร์ก็สร้าง ai-day60 แล้วลง pydantic, pytest และ ruff ได้เลยครับ\n\nส่วนจังหวะ 30 นาทีวันนี้ แบ่งเป็น ทำสคริปต์ Audit กับ Memo 15 นาที ทำ Cumulative Quiz 10 นาที และทบทวน Error Log อีก 5 นาที เตรียมตัวเลข F1, PR-AUC และ P95 ของตัวเองให้พร้อม แล้วกดไปต่อได้เลยครับ",
+      "ttsText": "สำหรับช่วงเตรียมเครื่องวันนี้ ให้เปิดโฟลเดอร์โปรเจกต์ Thai Ticket Priority ML Pipeline ของคุณ แล้วรันชุดคำสั่ง Quality Gate ครบชุดครับ เริ่มจาก uv sync dash dash frozen ตามด้วย uv run ruff check จุด และ uv run pytest dash v ให้ผ่านเขียวทั้งหมด หรือถ้าอยากทำแบบฝึกหัด Checkpoint แยกโฟลเดอร์ก็สร้าง ai-day60 แล้วลง pydantic pytest และ ruff ได้เลยครับ\n\nส่วนจังหวะ 30 นาทีวันนี้ แบ่งเป็น ทำสคริปต์ Audit กับ Memo 15 นาที ทำ Cumulative Quiz 10 นาที และทบทวน Error Log อีก 5 นาที เตรียมตัวเลข F1 PR-AUC และ P95 ของตัวเองให้พร้อม แล้วกดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอรัน Quality Gate ของ Phase 2",
+        "prompt": "ลองรัน uv sync --frozen, ruff check และ pytest ในโปรเจกต์ Phase 2 ของคุณให้ผ่านครบ แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "Quality Gate ผ่านครบแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "4 · Visual Map — ภาพรวม Phase 2 ML Pipeline",
+      "src": "/audio/d060/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ ชวนมองภาพรวมทั้ง 6 ช่วงของ Phase 2 ที่ต่อกันเป็นสายพานเดียวอย่างสมบูรณ์",
+      "script": "ลองมองแผนภาพ Phase 2 ML Pipeline ตรงหน้านี้แบบเต็มสายพานอีกครั้งนะครับ จากวันแรกของ Phase 2 ที่เราเริ่มจับ Polars และ DuckDB ตอนนี้ทุกชิ้นส่วนประกอบร่างเป็นระบบเดียวกันหมดแล้ว\n\nเริ่มจากข้อมูลทิกเก็ตดิบภาษาไทย ผ่านการป้องกัน Data Leakage ด้วย Pipeline การตัดคำและทำความสะอาดจาก Error Analysis การเลือก Threshold ตามต้นทุนธุรกิจ การ Export ที่เร็วกว่า 10 มิลลิวินาที จนถึงชุดเทสต์ 4 ชั้นและ Baseline สำหรับจับ Feature Drift\n\nภาพนี้แหละครับคือ Portfolio Milestone ชิ้นที่ 2 ที่พร้อมเอาไปโชว์และเดโมใน 3 นาทีได้เลย",
+      "ttsText": "ลองมองแผนภาพ Phase 2 ML Pipeline ตรงหน้านี้แบบเต็มสายพานอีกครั้งนะครับ จากวันแรกของ Phase 2 ที่เราเริ่มจับ Polars และ DuckDB ตอนนี้ทุกชิ้นส่วนประกอบร่างเป็นระบบเดียวกันหมดแล้ว\n\nเริ่มจากข้อมูลทิกเก็ตดิบภาษาไทย ผ่านการป้องกัน Data Leakage ด้วย Pipeline การตัดคำและทำความสะอาดจาก Error Analysis การเลือก Threshold ตามต้นทุนธุรกิจ การ Export ที่เร็วกว่า 10 มิลลิวินาที จนถึงชุดเทสต์ 4 ชั้นและ Baseline สำหรับจับ Feature Drift\n\nภาพนี้แหละครับคือ Portfolio Milestone ชิ้นที่ 2 ที่พร้อมเอาไปโชว์และเดโมใน 3 นาทีได้เลย"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "5 · แนวคิดหลัก: Checklist 6 ด้าน, Memo & สะพานสู่ Phase 3",
+      "src": "/audio/d060/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสนุก ชัดเจน เปรียบเทียบห้องฉุกเฉินและรถไฟฟ้ากับรถเกียร์ธรรมดา ชวนเห็นคุณค่าของ Phase 2",
+      "script": "มาดูแนวคิดหลักทั้ง 3 ข้อของวัน Checkpoint กันครับ\n\nข้อแรก คือเช็กลิสต์ 6 ด้านก่อนติดแท็ก v0.2.0 บน GitHub เพื่อยืนยันว่านี่คือระบบ ML ระดับวิศวกรรม ไม่ใช่สคริปต์ทดลอง ครบตั้งแต่ 1. Data Hygiene ด้วย Polars และ DuckDB, 2. Zero Leakage และ CV, 3. PyThaiNLP + Custom Dict จาก Error Analysis, 4. PR-AUC, F1 และ Threshold ตามต้นทุน, 5. Export Parity กับ P95 ต่ำกว่า 10 มิลลิวินาที และ 6. ชุดเทสต์ 4 ชั้นกับ Drift Baseline ซึ่งในสัมภาษณ์งานถ้าถูกถามว่าทำไมไม่ใช้ LLM ทำทั้งหมด ผลงานนี้คือคำตอบที่ทรงพลังที่สุดครับ\n\nข้อที่สอง คือ 1-Page Engineering Memo เทียบ ML กับ LLM ลองดูเศรษฐศาสตร์ที่ 100,000 ทิกเก็ตต่อเดือนครับ Classical ML ใช้ P95 แค่ 1 ถึง 5 มิลลิวินาที ต้นทุนราว 0.01 ดอลลาร์ต่อแสนใบ และข้อมูลไม่ออกนอกองค์กร ส่วน LLM API อย่างเดียวใช้เวลาราว 800 มิลลิวินาที ช้ากว่าเกิน 150 เท่า แถมต้นทุนพุ่งไป 5 ถึง 50 ดอลลาร์ เพราะภาษาไทยโดน BPE Tokenizer กิน token มากกว่าอังกฤษถึง 1.5 ถึง 3 เท่า ทางออกที่ฉลาดที่สุดคือ Hybrid Routing ครับ เหมือนห้องฉุกเฉินโรงพยาบาล ให้พยาบาลหรือ Classical ML คัดแยกเคสที่มั่นใจ 85 เปอร์เซ็นต์ในไม่ถึง 10 มิลลิวินาที แล้วส่งเฉพาะเคสกำกวมหรือประชด 15 เปอร์เซ็นต์ไปให้แพทย์เฉพาะทางคือ LLM ช่วยดู ผลคือประหยัดค่า API ลงถึง 85 เปอร์เซ็นต์ แถมได้ข้อมูลจาก LLM มาหมุนเป็น Data Flywheel สอน ML ให้เก่งขึ้นเรื่อย ๆ ด้วย\n\nข้อที่สาม คือสะพานเชื่อมสู่ Phase 3 ครับ Phase 2 สอนให้คุณเข้าใจเครื่องยนต์รถเกียร์ธรรมดาครบทุกชิ้น ทั้งเวกเตอร์ Cosine Similarity และ Evaluation เริ่มพรุ่งนี้ Day 61 เราจะก้าวขึ้นขับรถไฟฟ้าสมรรถนะสูงด้วย PyTorch Tensors, BPE Tokenizers, Dense Embeddings และ LLM Structured Outputs ครับ",
+      "ttsText": "มาดูแนวคิดหลักทั้ง 3 ข้อของวัน Checkpoint กันครับ\n\nข้อแรก คือเช็กลิสต์ 6 ด้านก่อนติดแท็ก v0.2.0 บน GitHub เพื่อยืนยันว่านี่คือระบบ ML ระดับวิศวกรรม ไม่ใช่สคริปต์ทดลอง ครบตั้งแต่ 1 Data Hygiene ด้วย Polars และ DuckDB 2 Zero Leakage และ CV 3 PyThaiNLP บวก Custom Dict จาก Error Analysis 4 PR-AUC F1 และ Threshold ตามต้นทุน 5 Export Parity กับ P95 ต่ำกว่า 10 มิลลิวินาที และ 6 ชุดเทสต์ 4 ชั้นกับ Drift Baseline ซึ่งในสัมภาษณ์งานถ้าถูกถามว่าทำไมไม่ใช้ LLM ทำทั้งหมด ผลงานนี้คือคำตอบที่ทรงพลังที่สุดครับ\n\nข้อที่สอง คือ 1-Page Engineering Memo เทียบ ML กับ LLM ลองดูเศรษฐศาสตร์ที่ 100,000 ทิกเก็ตต่อเดือนครับ Classical ML ใช้ P95 แค่ 1 ถึง 5 มิลลิวินาที ต้นทุนราว 0.01 ดอลลาร์ต่อแสนใบ และข้อมูลไม่ออกนอกองค์กร ส่วน LLM API อย่างเดียวใช้เวลาราว 800 มิลลิวินาที ช้ากว่าเกิน 150 เท่า แถมต้นทุนพุ่งไป 5 ถึง 50 ดอลลาร์ เพราะภาษาไทยโดน BPE Tokenizer กิน token มากกว่าอังกฤษถึง 1.5 ถึง 3 เท่า ทางออกที่ฉลาดที่สุดคือ Hybrid Routing ครับ เหมือนห้องฉุกเฉินโรงพยาบาล ให้พยาบาลหรือ Classical ML คัดแยกเคสที่มั่นใจ 85 เปอร์เซ็นต์ในไม่ถึง 10 มิลลิวินาที แล้วส่งเฉพาะเคสกำกวมหรือประชด 15 เปอร์เซ็นต์ไปให้แพทย์เฉพาะทางคือ LLM ช่วยดู ผลคือประหยัดค่า API ลงถึง 85 เปอร์เซ็นต์ แถมได้ข้อมูลจาก LLM มาหมุนเป็น Data Flywheel สอน ML ให้เก่งขึ้นเรื่อย ๆ ด้วย\n\nข้อที่สาม คือสะพานเชื่อมสู่ Phase 3 ครับ Phase 2 สอนให้คุณเข้าใจเครื่องยนต์รถเกียร์ธรรมดาครบทุกชิ้น ทั้งเวกเตอร์ Cosine Similarity และ Evaluation เริ่มพรุ่งนี้ Day 61 เราจะก้าวขึ้นขับรถไฟฟ้าสมรรถนะสูงด้วย PyTorch Tensors BPE Tokenizers Dense Embeddings และ LLM Structured Outputs ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "6 · ตัวอย่างพร้อมรัน — Economics, Auditor & Memo",
+      "src": "/audio/d060/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนดูตัวเลขจริงในโค้ด พาไล่คำนวณต้นทุนและเตือนจุดละเอียดอ่อนเรื่อง P95 ของระบบ Hybrid",
+      "script": "ลองมาดูตัวอย่าง worked_d060.py ที่ช่วยเราคำนวณตัวเลขและสร้าง Memo อัตโนมัติทั้ง 3 ขั้นกันครับ\n\nขั้นแรก เราเขียนฟังก์ชัน estimate_economics ลองป้อนทิกเก็ต 200,000 ใบต่อเดือน และส่งเคสกำกวม 15 เปอร์เซ็นต์ไป LLM ผลคือ Classical ML จ่ายแค่ 0.02 ดอลลาร์ต่อเดือนที่ 2 มิลลิวินาที ส่วน LLM อย่างเดียวจ่ายถึง 100 ดอลลาร์ที่ 800 มิลลิวินาที แต่พอใช้ Hybrid Router ค่าใช้จ่ายลดเหลือ 15.02 ดอลลาร์ ประหยัดไป 85 เปอร์เซ็นต์เลยครับ\n\nขั้นที่สอง เราสร้างฟังก์ชัน audit_phase2 ตรวจ 5 เกณฑ์หลัก ได้แก่ no_leakage_pipeline, val_f1 มากกว่าหรือเท่ากับ 0.80, p95_ms น้อยกว่า 10, export_parity_ok และ tests_passed พอผ่านครบก็ได้ score_pct 100 เปอร์เซ็นต์และ ready_for_phase3 เป็น True\n\nขั้นที่สาม เรานำตัวเลขที่ได้มา render เป็น Markdown Memo 1 หน้าอัตโนมัติ เพื่อให้ตัวเลขในเอกสารตรงกับโค้ดจริงเสมอ จุดที่พี่อยากเน้นเป็นพิเศษใน Memo คือเรื่อง Latency ของ Hybrid ครับ แม้ weighted average จะอยู่ที่ 122 มิลลิวินาที แต่ถ้าส่ง 15 เปอร์เซ็นต์ไป LLM ค่า P95 รวมทั้งระบบจะไปตกอยู่ในกลุ่ม 15 เปอร์เซ็นต์นั้นคือราว 800 มิลลิวินาที ดังนั้นใน Memo ต้องแยกให้ชัดระหว่าง Fast-Path P95, Slow-Path P95 และ Weighted Average เสมอนะครับ",
+      "ttsText": "ลองมาดูตัวอย่าง worked_d060.py ที่ช่วยเราคำนวณตัวเลขและสร้าง Memo อัตโนมัติทั้ง 3 ขั้นกันครับ\n\nขั้นแรก เราเขียนฟังก์ชัน estimate_economics ลองป้อนทิกเก็ต 200,000 ใบต่อเดือน และส่งเคสกำกวม 15 เปอร์เซ็นต์ไป LLM ผลคือ Classical ML จ่ายแค่ 0.02 ดอลลาร์ต่อเดือนที่ 2 มิลลิวินาที ส่วน LLM อย่างเดียวจ่ายถึง 100 ดอลลาร์ที่ 800 มิลลิวินาที แต่พอใช้ Hybrid Router ค่าใช้จ่ายลดเหลือ 15.02 ดอลลาร์ ประหยัดไป 85 เปอร์เซ็นต์เลยครับ\n\nขั้นที่สอง เราสร้างฟังก์ชัน audit_phase2 ตรวจ 5 เกณฑ์หลัก ได้แก่ no_leakage_pipeline val_f1 มากกว่าหรือเท่ากับ 0.80 p95_ms น้อยกว่า 10 export_parity_ok และ tests_passed พอผ่านครบก็ได้ score_pct 100 เปอร์เซ็นต์และ ready_for_phase3 เป็น True\n\nขั้นที่สาม เรานำตัวเลขที่ได้มา render เป็น Markdown Memo 1 หน้าอัตโนมัติ เพื่อให้ตัวเลขในเอกสารตรงกับโค้ดจริงเสมอ จุดที่พี่อยากเน้นเป็นพิเศษใน Memo คือเรื่อง Latency ของ Hybrid ครับ แม้ weighted average จะอยู่ที่ 122 มิลลิวินาที แต่ถ้าส่ง 15 เปอร์เซ็นต์ไป LLM ค่า P95 รวมทั้งระบบจะไปตกอยู่ในกลุ่ม 15 เปอร์เซ็นต์นั้นคือราว 800 มิลลิวินาที ดังนั้นใน Memo ต้องแยกให้ชัดระหว่าง Fast-Path P95 Slow-Path P95 และ Weighted Average เสมอนะครับ",
+      "pauseAfter": {
+        "title": "พักรอทบทวนตัวอย่าง Checkpoint & Memo",
+        "prompt": "ลองอ่านโค้ด worked_d060.py และทำความเข้าใจการแยก Fast-Path กับ Weighted Latency ก่อนเข้าโจทย์ Checkpoint 15 นาทีนะครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อที่โจทย์ Checkpoint"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "7 · Try It — สร้างโมดูล phase2_checkpoint.py",
+      "src": "/audio/d060/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชัดเจน ไล่สเปก 3 ฟังก์ชันของ phase2_checkpoint.py ทีละข้อแบบไม่เร่งรีบ",
+      "script": "มาถึงโจทย์ Checkpoint 15 นาทีสุดท้ายของ Phase 2 กันครับ วันนี้เราจะเขียนโมดูล phase2_checkpoint.py ที่มี Pydantic Model สองตัวคือ Phase2Metrics และ Phase2AuditReport พร้อม 3 ฟังก์ชันหลักครับ\n\nฟังก์ชันแรก estimate_monthly_economics ให้ตรวจก่อนเลยว่า monthly_tickets ต้องมากกว่า 0 และ hybrid_llm_ratio ต้องอยู่ระหว่าง 0.0 ถึง 1.0 ถ้าหลุดช่วงให้โยน ValueError จากนั้นคิด units จาก monthly_tickets หารด้วยหนึ่งแสน แล้วคำนวณ monthly_usd ปัด 2 ตำแหน่ง และ latency_ms ปัด 2 ตำแหน่ง ของ classical_ml, llm_only และ hybrid_router รวมถึง savings_vs_llm_pct ปัด 1 ตำแหน่งด้วยครับ\n\nฟังก์ชันที่สอง audit_phase2_milestone รับ Phase2Metrics มาตรวจ 5 เกณฑ์ตามลำดับคงที่ คือ no_leakage_pipeline, f1_gate, latency_gate, export_parity และ tests_passed ถ้าเกณฑ์ไหนตกให้เก็บชื่อใส่ failed_gates ตามลำดับนั้น คำนวณ score_pct ปัด 1 ตำแหน่ง และตั้ง ready_for_phase3 เป็น True เมื่อ failed_gates ว่างเปล่า\n\nฟังก์ชันที่สาม render_tradeoff_memo สร้าง Markdown ที่มีชื่อ project_name สถานะ Ready for Phase 3 ตารางเทียบทั้ง 3 แนวทาง และเปอร์เซ็นต์ที่ประหยัดได้ ลองเขียนและรัน pytest กับ ruff ดูเลย พี่รออยู่ตรงนี้นะครับ",
+      "ttsText": "มาถึงโจทย์ Checkpoint 15 นาทีสุดท้ายของ Phase 2 กันครับ วันนี้เราจะเขียนโมดูล phase2_checkpoint.py ที่มี Pydantic Model สองตัวคือ Phase2Metrics และ Phase2AuditReport พร้อม 3 ฟังก์ชันหลักครับ\n\nฟังก์ชันแรก estimate_monthly_economics ให้ตรวจก่อนเลยว่า monthly_tickets ต้องมากกว่า 0 และ hybrid_llm_ratio ต้องอยู่ระหว่าง 0.0 ถึง 1.0 ถ้าหลุดช่วงให้โยน ValueError จากนั้นคิด units จาก monthly_tickets หารด้วยหนึ่งแสน แล้วคำนวณ monthly_usd ปัด 2 ตำแหน่ง และ latency_ms ปัด 2 ตำแหน่ง ของ classical_ml llm_only และ hybrid_router รวมถึง savings_vs_llm_pct ปัด 1 ตำแหน่งด้วยครับ\n\nฟังก์ชันที่สอง audit_phase2_milestone รับ Phase2Metrics มาตรวจ 5 เกณฑ์ตามลำดับคงที่ คือ no_leakage_pipeline f1_gate latency_gate export_parity และ tests_passed ถ้าเกณฑ์ไหนตกให้เก็บชื่อใส่ failed_gates ตามลำดับนั้น คำนวณ score_pct ปัด 1 ตำแหน่ง และตั้ง ready_for_phase3 เป็น True เมื่อ failed_gates ว่างเปล่า\n\nฟังก์ชันที่สาม render_tradeoff_memo สร้าง Markdown ที่มีชื่อ project_name สถานะ Ready for Phase 3 ตารางเทียบทั้ง 3 แนวทาง และเปอร์เซ็นต์ที่ประหยัดได้ ลองเขียนและรัน pytest กับ ruff ดูเลย พี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียนโมดูล phase2_checkpoint.py",
+        "prompt": "ลงมือเขียน 3 ฟังก์ชันใน phase2_checkpoint.py และรัน uv run pytest -q เพื่อตรวจความพร้อม Phase 2 ให้ผ่านครบนะครับ",
+        "continueLabel": "ผ่าน Checkpoint แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "8 · 4 ข้อผิดพลาดที่พบบ่อยใน Phase 2",
+      "src": "/audio/d060/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยที่ผ่าน Checkpoint แล้วสรุป 4 บทเรียนสำคัญที่ต้องระวังเมื่อนำ ML ไปเทียบกับ LLM",
+      "script": "สุดยอดมากครับที่ผ่านโจทย์ Checkpoint มาได้ ก่อนเข้าควิซรวม พี่ขอฝาก 4 ข้อผิดพลาดใหญ่ที่คนเพิ่งจบ Phase 2 ต้องระวังไม่ให้เผลอทำในงานจริงนะครับ\n\nข้อแรก คือวัดความสำเร็จของข้อมูลไม่สมดุลด้วย Accuracy อย่างเดียว เช่น ทิกเก็ตด่วนมีแค่ 5 เปอร์เซ็นต์ โมเดลทายปกติทุกใบก็ได้ Accuracy 95 เปอร์เซ็นต์แล้ว แต่ Recall เป็นศูนย์ ลูกค้าหลุด SLA ทุกราย ต้องดู Precision, Recall, F1 และ PR-AUC เสมอครับ\n\nข้อที่สอง คือโยนทุกอย่างไปให้ LLM โดยไม่คำนวณ Latency, ต้นทุน และ Thai Token Tax ทำให้ระบบช้าลงกว่า 100 เท่าและบิลค่า API พุ่ง ทั้งที่ F1 ต่างจาก Classical ML แค่ 1 ถึง 2 เปอร์เซ็นต์\n\nข้อที่สาม คือลืมแยก Weighted Average Latency กับ Tail P95 ในสถาปัตยกรรม Hybrid จนเข้าใจผิดว่าทั้งระบบตอบทันใน 120 มิลลิวินาที ทั้งที่กลุ่ม 15 เปอร์เซ็นต์ที่เรียก LLM ดึง P95 ไปอยู่ที่ 800 มิลลิวินาทีแล้ว\n\nและข้อที่สี่ คือปล่อยโปรเจกต์ Phase 2 ทิ้งไว้โดยไม่บันทึก Baseline Metrics ลงใน MEMO.md ทำให้พอถึง Day 92 ใน Phase 3 ไม่มีตัวเลขตั้งต้นไว้เทียบหมัดต่อหมัดกับ LLM ครับ",
+      "ttsText": "สุดยอดมากครับที่ผ่านโจทย์ Checkpoint มาได้ ก่อนเข้าควิซรวม พี่ขอฝาก 4 ข้อผิดพลาดใหญ่ที่คนเพิ่งจบ Phase 2 ต้องระวังไม่ให้เผลอทำในงานจริงนะครับ\n\nข้อแรก คือวัดความสำเร็จของข้อมูลไม่สมดุลด้วย Accuracy อย่างเดียว เช่น ทิกเก็ตด่วนมีแค่ 5 เปอร์เซ็นต์ โมเดลทายปกติทุกใบก็ได้ Accuracy 95 เปอร์เซ็นต์แล้ว แต่ Recall เป็นศูนย์ ลูกค้าหลุด SLA ทุกราย ต้องดู Precision Recall F1 และ PR-AUC เสมอครับ\n\nข้อที่สอง คือโยนทุกอย่างไปให้ LLM โดยไม่คำนวณ Latency ต้นทุน และ Thai Token Tax ทำให้ระบบช้าลงกว่า 100 เท่าและบิลค่า API พุ่ง ทั้งที่ F1 ต่างจาก Classical ML แค่ 1 ถึง 2 เปอร์เซ็นต์\n\nข้อที่สาม คือลืมแยก Weighted Average Latency กับ Tail P95 ในสถาปัตยกรรม Hybrid จนเข้าใจผิดว่าทั้งระบบตอบทันใน 120 มิลลิวินาที ทั้งที่กลุ่ม 15 เปอร์เซ็นต์ที่เรียก LLM ดึง P95 ไปอยู่ที่ 800 มิลลิวินาทีแล้ว\n\nและข้อที่สี่ คือปล่อยโปรเจกต์ Phase 2 ทิ้งไว้โดยไม่บันทึก Baseline Metrics ลงใน MEMO dot md ทำให้พอถึง Day 92 ใน Phase 3 ไม่มีตัวเลขตั้งต้นไว้เทียบหมัดต่อหมัดกับ LLM ครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "9 · Cumulative Quiz รวม B09–B15",
+      "src": "/audio/d060/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงชวนท้าทายอย่างอบอุ่น ให้กำลังใจทำควิซรวม 7 บล็อกแบบสบาย ๆ",
+      "script": "มาถึง Cumulative Quiz รวม 4 ข้อ ครอบคลุมตั้งแต่ Block B09 ถึง B15 เลยนะครับ ทั้ง Polars Lazy Mode กับ Cosine Similarity, การแก้ Data Leakage และปรับ Threshold บนข้อมูลไม่สมดุล, 4 เสาหลักของ Thai NLP กับ Production ML และสถาปัตยกรรม Hybrid Routing\n\nลองเช็กความแม่นยำของตัวเองโดยไม่เปิดตำราดูนะครับ พี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดบท Phase 2 กันครับ",
+      "ttsText": "มาถึง Cumulative Quiz รวม 4 ข้อ ครอบคลุมตั้งแต่ Block B09 ถึง B15 เลยนะครับ ทั้ง Polars Lazy Mode กับ Cosine Similarity การแก้ Data Leakage และปรับ Threshold บนข้อมูลไม่สมดุล 4 เสาหลักของ Thai NLP กับ Production ML และสถาปัตยกรรม Hybrid Routing\n\nลองเช็กความแม่นยำของตัวเองโดยไม่เปิดตำราดูนะครับ พี่พักรอตรงนี้ เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดบท Phase 2 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอทำ Cumulative Quiz B09–B15",
+        "prompt": "ค่อย ๆ ตอบควิซรวม Phase 2 ทั้ง 4 ข้อเพื่อวัดความพร้อมก่อนขึ้น Phase 3 ทำครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซรวมเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "10 · สรุปปิด Phase 2 & ก้าวสู่ Phase 3",
+      "src": "/audio/d060/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภาคภูมิใจอย่างยิ่งใหญ่ที่ผู้เรียนจบ Phase 2 แล้วส่งต่อความตื่นเต้นเข้าสู่ Phase 3 อย่างมีพลัง",
+      "script": "ขอแสดงความยินดีด้วยจริง ๆ ครับ! คุณเรียนจบ Phase 2: Data, Math Intuition & Classical ML ครบทั้ง 28 วัน และพร้อมส่งมอบ Portfolio Milestone ชิ้นที่ 2 อย่าง Thai Ticket Priority ML Pipeline แล้วครับ\n\nขอฝากข้อคิด 3 อย่างติดตัวข้ามสู่ Phase 3 ครับ หนึ่ง วิศวกร AI เลือกเครื่องมือจากตัวเลขจริง Classical ML ชนะขาดเรื่องความเร็วต่ำกว่า 10 มิลลิวินาทีและต้นทุนเกือบศูนย์ ส่วน LLM เด่นเรื่องบริบทซับซ้อนและคำประชด และ Hybrid Routing รวมข้อดีทั้งสองโลกเข้าด้วยกัน สอง อย่าลืมเก็บตัวเลข Baseline ของ Phase 2 ทั้ง F1, PR-AUC, P95 และต้นทุนต่อแสนใบไว้ใน MEMO.md เพื่อไปวัดเทียบกับระบบ LLM ใน Day 92 และสาม ความรู้เวกเตอร์และสถิติจาก Phase 2 จะเป็นรากฐานตรงให้คุณทันที\n\nวันพรุ่งนี้ใน Day 61 เราจะเปิดฉาก Phase 3: Neural Nets, Embeddings & Core LLM ด้วย PyTorch Tensors และ Autograd กดทำเครื่องหมายว่าเรียนจบแล้วพักผ่อนให้เต็มที่ เจอกันใน Phase 3 นะครับ เก่งมากครับ!",
+      "ttsText": "ขอแสดงความยินดีด้วยจริง ๆ ครับ! คุณเรียนจบ Phase 2 Data Math Intuition and Classical ML ครบทั้ง 28 วัน และพร้อมส่งมอบ Portfolio Milestone ชิ้นที่ 2 อย่าง Thai Ticket Priority ML Pipeline แล้วครับ\n\nขอฝากข้อคิด 3 อย่างติดตัวข้ามสู่ Phase 3 ครับ หนึ่ง วิศวกร AI เลือกเครื่องมือจากตัวเลขจริง Classical ML ชนะขาดเรื่องความเร็วต่ำกว่า 10 มิลลิวินาทีและต้นทุนเกือบศูนย์ ส่วน LLM เด่นเรื่องบริบทซับซ้อนและคำประชด และ Hybrid Routing รวมข้อดีทั้งสองโลกเข้าด้วยกัน สอง อย่าลืมเก็บตัวเลข Baseline ของ Phase 2 ทั้ง F1 PR-AUC P95 และต้นทุนต่อแสนใบไว้ใน MEMO dot md เพื่อไปวัดเทียบกับระบบ LLM ใน Day 92 และสาม ความรู้เวกเตอร์และสถิติจาก Phase 2 จะเป็นรากฐานตรงให้คุณทันที\n\nวันพรุ่งนี้ใน Day 61 เราจะเปิดฉาก Phase 3 Neural Nets Embeddings and Core LLM ด้วย PyTorch Tensors และ Autograd กดทำเครื่องหมายว่าเรียนจบแล้วพักผ่อนให้เต็มที่ เจอกันใน Phase 3 นะครับ เก่งมากครับ!"
+    }
+  ]
+}

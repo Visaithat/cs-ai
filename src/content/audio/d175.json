@@ -1,0 +1,109 @@
+{
+  "lessonId": "d175",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Docker & Staging CI/CD",
+      "src": "/audio/d175/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น น้ำเสียงมืออาชีพสาย MLOps/DevSecOps อธิบายภาพรวมการส่งแอปขึ้น Staging ให้เห็นความเชื่อมโยง 3 ส่วนชัดเจน",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 175 นะครับ เมื่อวานเราทำ FastAPI SSE เสร็จแล้ว วันนี้เราจะพามันออกจากเครื่องเราไปอยู่บน Staging Cloud อย่างมืออาชีพด้วย Docker และ GitHub Actions CI/CD ครับ\n\nดู Big Picture 3 จุดสำคัญของวันนี้กันนะ จุดแรกคือปัญหาคลาสสิกที่รันบนเครื่องเราผ่านแต่ขึ้นเซิร์ฟเวอร์แล้วพัง เพราะ Python หรือ library เพี้ยน เราจึงเขียน Multi-stage Dockerfile ที่ล็อกเวอร์ชันเป๊ะด้วย uv.lock และรันด้วย user สิทธิ์ต่ำแบบ non-root เพื่อพร้อมส่งขึ้น Cloud Run หรือ Fly.io\n\nจุดที่สอง คือห้าม deploy ด้วยมือจากเครื่องตัวเองเด็ดขาด เราจะตั้ง GitHub Actions Gate บังคับให้ ruff, pytest, และเทสต์ PDPA/OWASP ผ่าน 100 เปอร์เซ็นต์ก่อนจึงอนุญาตให้ build และ deploy สู่ Staging\n\nและจุดที่สาม คือการแยก /healthz ออกจาก /readyz ตามหลัก Twelve-Factor พร้อมตรวจ staging config แบบ fail-fast เพื่อไม่ให้รับทราฟฟิกทั้งที่ยังตั้งค่าไม่พร้อมครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 175 นะครับ เมื่อวานเราทำ FastAPI SSE เสร็จแล้ว วันนี้เราจะพามันออกจากเครื่องเราไปอยู่บน Staging Cloud อย่างมืออาชีพด้วย Docker และ GitHub Actions CI/CD ครับ\n\nดู Big Picture 3 จุดสำคัญของวันนี้กันนะ จุดแรกคือปัญหาคลาสสิกที่รันบนเครื่องเราผ่านแต่ขึ้นเซิร์ฟเวอร์แล้วพัง เพราะ Python หรือ library เพี้ยน เราจึงเขียน Multi-stage Dockerfile ที่ล็อกเวอร์ชันเป๊ะด้วย uv dot lock และรันด้วย user สิทธิ์ต่ำแบบ non-root เพื่อพร้อมส่งขึ้น Cloud Run หรือ Fly dot io\n\nจุดที่สอง คือห้าม deploy ด้วยมือจากเครื่องตัวเองเด็ดขาด เราจะตั้ง GitHub Actions Gate บังคับให้ ruff, pytest, และเทสต์ PDPA กับ OWASP ผ่าน 100 เปอร์เซ็นต์ก่อนจึงอนุญาตให้ build และ deploy สู่ Staging\n\nและจุดที่สาม คือการแยก slash healthz ออกจาก slash readyz ตามหลัก Twelve-Factor พร้อมตรวจ staging config แบบ fail-fast เพื่อไม่ให้รับทราฟฟิกทั้งที่ยังตั้งค่าไม่พร้อมครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d175/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อของการแพ็ก Docker และสร้าง Deploy Gate แบบ offline",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Day 175 กันครับ\n\nข้อแรก เขียน Multi-stage Dockerfile สำหรับโปรเจกต์ Python กับ uv ที่ใช้ uv.lock แบบ --frozen, ขนาดเล็ก, ไม่ฝัง secret, มี HEALTHCHECK และรันเป็น non-root user\nข้อสอง ออกแบบ GitHub Actions workflow ที่บังคับผ่าน ruff, pytest และ security checks ก่อนปล่อยขึ้น Staging Cloud\nข้อสาม สร้างระบบ Staging Readiness และ Preflight Guard ด้วย Python เพื่อตรวจความปลอดภัยของ Dockerfile และ config แบบ offline 100 เปอร์เซ็นต์โดยไม่ต้องเปิด Docker Desktop หรือผูกบัตรเครดิต Cloud เลยครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Day 175 กันครับ\n\nข้อแรก เขียน Multi-stage Dockerfile สำหรับโปรเจกต์ Python กับ uv ที่ใช้ uv dot lock แบบ dash dash frozen, ขนาดเล็ก, ไม่ฝัง secret, มี HEALTHCHECK และรันเป็น non-root user\nข้อสอง ออกแบบ GitHub Actions workflow ที่บังคับผ่าน ruff, pytest และ security checks ก่อนปล่อยขึ้น Staging Cloud\nข้อสาม สร้างระบบ Staging Readiness และ Preflight Guard ด้วย Python เพื่อตรวจความปลอดภัยของ Dockerfile และ config แบบ offline 100 เปอร์เซ็นต์โดยไม่ต้องเปิด Docker Desktop หรือผูกบัตรเครดิต Cloud เลยครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d175/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาสร้างโฟลเดอร์ .github/workflows และเช็ก uv.lock ให้ตรงกับ pyproject.toml",
+      "script": "มาเตรียมโครงสร้างรีโปสำหรับงาน Deploy กันครับ ดูคำสั่งบนหน้าจอได้เลย\n\nเริ่มจากสร้างโฟลเดอร์ .github/workflows เผื่อไว้พร้อมกับ src และ tests เช็กว่ามี pydantic, pytest และ ruff แล้วรัน uv lock --check เพื่อยืนยันว่าไฟล์ uv.lock อัปเดตตรงกับ pyproject.toml เรียบร้อยครับ\n\nย้ำอีกทีว่าวันนี้เราเขียนตัวตรวจ Dockerfile และ Staging Config ด้วย pytest แบบ offline ได้ครบทั้งหมด เดี๋ยวพี่พักรอให้เตรียมโฟลเดอร์และล็อกไฟล์ให้เรียบร้อยก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาเตรียมโครงสร้างรีโปสำหรับงาน Deploy กันครับ ดูคำสั่งบนหน้าจอได้เลย\n\nเริ่มจากสร้างโฟลเดอร์ dot github slash workflows เผื่อไว้พร้อมกับ src และ tests เช็กว่ามี pydantic, pytest และ ruff แล้วรัน uv lock dash dash check เพื่อยืนยันว่าไฟล์ uv dot lock อัปเดตตรงกับ pyproject dot toml เรียบร้อยครับ\n\nย้ำอีกทีว่าวันนี้เราเขียนตัวตรวจ Dockerfile และ Staging Config ด้วย pytest แบบ offline ได้ครบทั้งหมด เดี๋ยวพี่พักรอให้เตรียมโฟลเดอร์และล็อกไฟล์ให้เรียบร้อยก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียม Workflows & Lockfile",
+        "prompt": "สร้างโฟลเดอร์ .github/workflows และตรวจสอบ uv.lock ให้ตรงกับ pyproject.toml ก่อนกดไปต่อครับ",
+        "continueLabel": "ตรวจโฟลเดอร์และ lockfile แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ท่อส่งขึ้น Staging",
+      "src": "/audio/d175/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนเห็นภาพสายพานการแพ็ก container และการคัดกรองบน CI ก่อนถึง Staging Cloud",
+      "script": "ลองมองแผนภาพด่าน D175 ตรงหน้านี้ไปด้วยกันนะครับ ภาพรวมคือท่อส่งโค้ดจาก GitHub ขึ้น Staging Cloud\n\nโค้ดของเราต้องผ่านด่านตรวจสอบคุณภาพและ Security Gate ใน GitHub Actions ก่อน ทั้ง ruff, pytest และเทสต์ PDPA/OWASP จากนั้นค่อยแพ็กเป็น Multi-stage Docker image แบบ non-root แล้วปล่อยขึ้น Staging เพื่อเตรียมพร้อมสำหรับการตรวจ smoke check และ Red-Team ในวันพรุ่งนี้ครับ",
+      "ttsText": "ลองมองแผนภาพด่าน D175 ตรงหน้านี้ไปด้วยกันนะครับ ภาพรวมคือท่อส่งโค้ดจาก GitHub ขึ้น Staging Cloud\n\nโค้ดของเราต้องผ่านด่านตรวจสอบคุณภาพและ Security Gate ใน GitHub Actions ก่อน ทั้ง ruff, pytest และเทสต์ PDPA กับ OWASP จากนั้นค่อยแพ็กเป็น Multi-stage Docker image แบบ non-root แล้วปล่อยขึ้น Staging เพื่อเตรียมพร้อมสำหรับการตรวจ smoke check และ Red-Team ในวันพรุ่งนี้ครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d175/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบาย Multi-stage Docker, Liveness vs Readiness และ CI Gate อย่างชัดเจน มีจังหวะเปรียบเทียบที่จำแม่น",
+      "script": "เรามาเจาะลึก 3 แนวคิดหลักของบทนี้กันครับ\n\nข้อแรก Production Multi-stage Dockerfile สำหรับ Python และ uv ถ้าเราเขียน stage เดียวแล้วรันเป็น root image จะใหญ่เกิน 1 GB และอันตรายมาก มาตรฐานคือแยก 2 stages ครับ Stage แรกเป็น builder ก๊อปปี้แค่ pyproject.toml กับ uv.lock เข้ามาก่อนเพื่อใช้ Docker layer cache แล้วรัน uv sync --frozen --no-dev --no-install-project ส่วน Stage ที่สองเป็น runtime ใช้ python:3.12-slim ก๊อปปี้เฉพาะ .venv กับ src เข้ามา สร้าง appuser แล้วสลับเป็น USER appuser พร้อมตั้ง HEALTHCHECK และห้ามลืมสร้าง .dockerignore ตัด .git, .env, .venv และ tests ออก รวมถึงห้ามเขียน secret ลงใน ENV หรือ ARG เด็ดขาด เพราะใครสั่ง docker history ก็อ่านเห็นหมดเลยครับ\n\nข้อที่สอง Staging Cloud Config, Secrets และ Liveness vs Readiness ค่าตั้งต้องอ่านจาก Runtime Environment Variables และฉีด secret ผ่าน Secret Manager เท่านั้น และต้องแยกสอง endpoint นี้เสมอครับ /healthz คือ Liveness เหมือนเช็กชีพจรว่า process FastAPI ยังตื่นอยู่ไหม ห้ามเอาการเช็ก DB หนัก ๆ มาใส่ตรงนี้เด็ดขาด ส่วน /readyz คือ Readiness เอาไว้เช็กว่า config ครบและ vector DB พร้อมรับทราฟฟิกหรือยัง พร้อมตรวจ fail-fast เช่น ถ้า APP_ENV เป็น staging ห้ามใช้ CORS เป็น wildcard ดอกจัน และห้ามปล่อย key เป็น placeholder ครับ\n\nข้อที่สาม GitHub Actions CI/CD Gate ใน ci-staging.yml เราแบ่งเป็น 2 jobs คือ quality-and-security-gate ที่รัน uv sync --frozen, ruff check, pytest และ docker build ส่วน job deploy-staging ต้องผูกด้วย needs: quality-and-security-gate และตั้งเงื่อนไข if ให้ทำงานเฉพาะตอน push ขึ้น branch main เท่านั้น เพื่อไม่ให้โค้ดเสียจาก PR หลุดขึ้น Staging ได้เลยครับ",
+      "ttsText": "เรามาเจาะลึก 3 แนวคิดหลักของบทนี้กันครับ\n\nข้อแรก Production Multi-stage Dockerfile สำหรับ Python และ uv ถ้าเราเขียน stage เดียวแล้วรันเป็น root image จะใหญ่เกิน 1 กิกะไบต์ และอันตรายมาก มาตรฐานคือแยก 2 stages ครับ Stage แรกเป็น builder ก๊อปปี้แค่ pyproject dot toml กับ uv dot lock เข้ามาก่อนเพื่อใช้ Docker layer cache แล้วรัน uv sync dash dash frozen dash dash no dash dev dash dash no dash install dash project ส่วน Stage ที่สองเป็น runtime ใช้ python 3.12 slim ก๊อปปี้เฉพาะ dot venv กับ src เข้ามา สร้าง appuser แล้วสลับเป็น USER appuser พร้อมตั้ง HEALTHCHECK และห้ามลืมสร้าง dot dockerignore ตัด dot git, dot env, dot venv และ tests ออก รวมถึงห้ามเขียน secret ลงใน ENV หรือ ARG เด็ดขาด เพราะใครสั่ง docker history ก็อ่านเห็นหมดเลยครับ\n\nข้อที่สอง Staging Cloud Config, Secrets และ Liveness vs Readiness ค่าตั้งต้องอ่านจาก Runtime Environment Variables และฉีด secret ผ่าน Secret Manager เท่านั้น และต้องแยกสอง endpoint นี้เสมอครับ slash healthz คือ Liveness เหมือนเช็กชีพจรว่า process FastAPI ยังตื่นอยู่ไหม ห้ามเอาการเช็ก DB หนัก ๆ มาใส่ตรงนี้เด็ดขาด ส่วน slash readyz คือ Readiness เอาไว้เช็กว่า config ครบและ vector DB พร้อมรับทราฟฟิกหรือยัง พร้อมตรวจ fail-fast เช่น ถ้า APP_ENV เป็น staging ห้ามใช้ CORS เป็น wildcard ดอกจัน และห้ามปล่อย key เป็น placeholder ครับ\n\nข้อที่สาม GitHub Actions CI/CD Gate ใน ci-staging dot yml เราแบ่งเป็น 2 jobs คือ quality-and-security-gate ที่รัน uv sync dash dash frozen, ruff check, pytest และ docker build ส่วน job deploy-staging ต้องผูกด้วย needs quality-and-security-gate และตั้งเงื่อนไข if ให้ทำงานเฉพาะตอน push ขึ้น branch main เท่านั้น เพื่อไม่ให้โค้ดเสียจาก PR หลุดขึ้น Staging ได้เลยครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน Deployment Gate",
+      "src": "/audio/d175/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังตรวจเช็กไฟล์ config จริง พูดชัดตรงกฎ 5 ข้อของ audit_dockerfile และย้ำจุดตายเรื่อง .dockerignore",
+      "script": "มาดูตัวอย่างโค้ดใน worked_deploy_gate.py กันครับ แทนที่จะตรวจ Dockerfile กับ env ด้วยสายตา เราเขียน Python script มาช่วยตรวจเป็น pre-flight gate อัตโนมัติเลย\n\nขั้นแรก ฟังก์ชัน audit_dockerfile จะตรวจ 5 เงื่อนไขเหล็กใน Dockerfile ครับ คือต้องมี FROM ... AS ... อย่างน้อย 2 stage, ต้องมี --frozen, คำสั่ง USER สุดท้ายต้องไม่ใช่ root หรือ 0, ต้องมี HEALTHCHECK, และห้ามมี ENV หรือ ARG ที่กำหนดค่า API_KEY, SECRET, PASSWORD หรือ TOKEN แบบตายตัว\n\nขั้นที่สอง เราลองเอา good_df เทียบกับ bad_df ที่ลืม non-root และเผลอใส่ ENV LLM_API_KEY ลงไป ตัว audit ก็จับปัญหาออกมาได้ครบทั้ง 5 ข้อทันที\n\nขั้นที่สาม check_staging_readiness ตรวจค่า env ของ Staging แบบ fail-fast เพื่อดักตั้งแต่ก่อนเปิดเซิร์ฟเวอร์ถ้าเจอคีย์ placeholder หรือ CORS เป็นดอกจันครับ\n\nจุดสังเกตที่พลาดกันบ่อยมาก ๆ คือ หลายคนใส่ .env ลงใน .gitignore แล้วคิดว่าปลอดภัย แต่ลืมใส่ลง .dockerignore ครับ ผลคือคำสั่ง COPY . . ของ Docker ดันแพ็กไฟล์ .env เข้าไปใน container เฉยเลย เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่างก่อน พร้อมเขียนจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาดูตัวอย่างโค้ดใน worked_deploy_gate dot py กันครับ แทนที่จะตรวจ Dockerfile กับ env ด้วยสายตา เราเขียน Python script มาช่วยตรวจเป็น pre-flight gate อัตโนมัติเลย\n\nขั้นแรก ฟังก์ชัน audit_dockerfile จะตรวจ 5 เงื่อนไขเหล็กใน Dockerfile ครับ คือต้องมี FROM กับ AS อย่างน้อย 2 stage, ต้องมี dash dash frozen, คำสั่ง USER สุดท้ายต้องไม่ใช่ root หรือ 0, ต้องมี HEALTHCHECK, และห้ามมี ENV หรือ ARG ที่กำหนดค่า API_KEY, SECRET, PASSWORD หรือ TOKEN แบบตายตัว\n\nขั้นที่สอง เราลองเอา good_df เทียบกับ bad_df ที่ลืม non-root และเผลอใส่ ENV LLM_API_KEY ลงไป ตัว audit ก็จับปัญหาออกมาได้ครบทั้ง 5 ข้อทันที\n\nขั้นที่สาม check_staging_readiness ตรวจค่า env ของ Staging แบบ fail-fast เพื่อดักตั้งแต่ก่อนเปิดเซิร์ฟเวอร์ถ้าเจอคีย์ placeholder หรือ CORS เป็นดอกจันครับ\n\nจุดสังเกตที่พลาดกันบ่อยมาก ๆ คือ หลายคนใส่ dot env ลงใน dot gitignore แล้วคิดว่าปลอดภัย แต่ลืมใส่ลง dot dockerignore ครับ ผลคือคำสั่ง COPY จุด จุด ของ Docker ดันแพ็กไฟล์ dot env เข้าไปใน container เฉยเลย เดี๋ยวพี่พักรอให้ไล่ดูตัวอย่างก่อน พร้อมเขียนจริงเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา Worked Example",
+        "prompt": "ลองไล่ดูโค้ด audit_dockerfile และ check_staging_readiness ทั้ง 3 ขั้นให้เข้าใจก่อนกดไปต่อครับ",
+        "continueLabel": "เข้าใจตัวอย่าง Gate แล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียน Deploy Gate",
+      "src": "/audio/d175/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชวนทำทีละฟังก์ชันใน src/deploy_gate.py พร้อมเตือนรายละเอียดเรื่อง regex MULTILINE และ validation ขอบเขตพอร์ต",
+      "script": "ถึงเวลาลงมือเขียน src/deploy_gate.py แล้วครับ วันนี้เรามี 4 ฟังก์ชันที่ต้องทำให้ผ่านชุดเทสต์ 5 ข้อใน test_deploy_gate.py นะ\n\nตัวแรก validate_dockerfile_security คืน DockerfileAudit ตรวจครบทั้ง 5 กฎของ Dockerfile อย่าลืมใช้ re.MULTILINE และเผื่อช่องว่างนำหน้าบรรทัดด้วยนะครับ เผื่อ test string มี indentation ติดมา\nตัวที่สอง validate_ci_workflow รับ YAML string ของ GitHub Actions มาตรวจว่ามีครบทั้ง ruff, pytest และคำสั่ง needs: เชื่อมระหว่าง job ทดสอบกับ job deploy ถ้าขาดตัวไหนก็ใส่ชื่อปัญหาลงรายการ\nตัวที่สาม validate_staging_config คืน StagingConfigStatus ตรวจ 4 อย่างคือ APP_ENV ต้องเป็น staging หรือ production, LLM_API_KEY ต้องยาวอย่างน้อย 10 ตัวอักษรและไม่มีคำว่า changeme, placeholder หรือ dummy, ALLOWED_ORIGINS ต้องไม่เป็นดอกจันและทุกโดเมนขึ้นต้น https://, และ PORT ต้องแปลงเป็น int ให้อยู่ในช่วง 1 ถึง 65535 ครับ\nตัวที่สี่ build_readiness_payload รวมผลทั้ง 3 ส่วนแล้วคืน status เป็น ready หรือ not_ready พร้อมรายละเอียดปัญหาทั้งหมด\n\nพอผ่าน pytest กับ ruff แล้ว แนะนำให้ลองสร้างไฟล์ Dockerfile, .dockerignore และ ci-staging.yml จริงในรีโปแล้วรัน gate ตรวจดูด้วยนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียน src slash deploy_gate dot py แล้วครับ วันนี้เรามี 4 ฟังก์ชันที่ต้องทำให้ผ่านชุดเทสต์ 5 ข้อใน test_deploy_gate dot py นะ\n\nตัวแรก validate_dockerfile_security คืน DockerfileAudit ตรวจครบทั้ง 5 กฎของ Dockerfile อย่าลืมใช้ re dot MULTILINE และเผื่อช่องว่างนำหน้าบรรทัดด้วยนะครับ เผื่อ test string มี indentation ติดมา\nตัวที่สอง validate_ci_workflow รับ YAML string ของ GitHub Actions มาตรวจว่ามีครบทั้ง ruff, pytest และคำสั่ง needs เพื่อเชื่อมระหว่าง job ทดสอบกับ job deploy ถ้าขาดตัวไหนก็ใส่ชื่อปัญหาลงรายการ\nตัวที่สาม validate_staging_config คืน StagingConfigStatus ตรวจ 4 อย่างคือ APP_ENV ต้องเป็น staging หรือ production, LLM_API_KEY ต้องยาวอย่างน้อย 10 ตัวอักษรและไม่มีคำว่า changeme, placeholder หรือ dummy, ALLOWED_ORIGINS ต้องไม่เป็นดอกจันและทุกโดเมนขึ้นต้น https colon slash slash, และ PORT ต้องแปลงเป็น int ให้อยู่ในช่วง 1 ถึง 65535 ครับ\nตัวที่สี่ build_readiness_payload รวมผลทั้ง 3 ส่วนแล้วคืน status เป็น ready หรือ not_ready พร้อมรายละเอียดปัญหาทั้งหมด\n\nพอผ่าน pytest กับ ruff แล้ว แนะนำให้ลองสร้างไฟล์ Dockerfile, dot dockerignore และ ci-staging dot yml จริงในรีโปแล้วรัน gate ตรวจดูด้วยนะครับ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน Deploy Gate",
+        "prompt": "ลงมือเขียน src/deploy_gate.py ให้ผ่านครบ 5 test cases และลองสร้าง Dockerfile กับ .dockerignore จริงในรีโปครับ",
+        "continueLabel": "เขียน Deploy Gate เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d175/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชย แล้วเล่า 4 ข้อผิดพลาดสาย Container และ CI/CD ด้วยจังหวะเตือนภัยที่จำง่าย",
+      "script": "เยี่ยมเลยครับที่ทำ Deploy Gate ผ่านแล้ว มาเช็ก 4 ข้อผิดพลาดที่ทำให้ทีม DevOps ปวดหัวกันบ่อย ๆ นะครับ\n\nข้อแรก ลืมใส่ .env และ .git ลงใน .dockerignore เพราะคิดว่าใส่ใน .gitignore แล้วจบ แต่ Docker ไม่สน .gitignore นะ ถ้าไม่กันไว้ความลับจะถูกแพ็กเข้าไปใน image ทันที\n\nข้อสอง เอาเช็ก Vector DB หรือ LLM ping ไปยัดไว้ใน /healthz พอ DB กระตุกแค่ 2 วินาที Cloud Run หรือ Kubernetes ก็นึกว่าแอปตาย แล้วสั่งฆ่ารีสตาร์ท container วนลูปเป็น CrashLoopBackOff เลย ต้องแยก DB check ไปไว้ที่ /readyz เท่านั้นครับ\n\nข้อสาม รัน uv sync ใน Dockerfile หรือ CI โดยลืมใส่ --frozen ทำให้วันดีคืนดีได้ library เวอร์ชันใหม่มาพังโค้ดทั้งที่ไม่ได้แก้ Python เลย\n\nและข้อสี่ ตั้ง job deploy ใน GitHub Actions โดยลืมใส่ needs: ผูกกับ job ทดสอบ ผลคือต่อให้ pytest แดงเถือก job deploy ก็ยังวิ่งขนานแล้วส่งโค้ดเสียขึ้น Staging อยู่ดีครับ",
+      "ttsText": "เยี่ยมเลยครับที่ทำ Deploy Gate ผ่านแล้ว มาเช็ก 4 ข้อผิดพลาดที่ทำให้ทีม DevOps ปวดหัวกันบ่อย ๆ นะครับ\n\nข้อแรก ลืมใส่ dot env และ dot git ลงใน dot dockerignore เพราะคิดว่าใส่ใน dot gitignore แล้วจบ แต่ Docker ไม่สน dot gitignore นะ ถ้าไม่กันไว้ความลับจะถูกแพ็กเข้าไปใน image ทันที\n\nข้อสอง เอาเช็ก Vector DB หรือ LLM ping ไปยัดไว้ใน slash healthz พอ DB กระตุกแค่ 2 วินาที Cloud Run หรือ Kubernetes ก็นึกว่าแอปตาย แล้วสั่งฆ่ารีสตาร์ท container วนลูปเป็น CrashLoopBackOff เลย ต้องแยก DB check ไปไว้ที่ slash readyz เท่านั้นครับ\n\nข้อสาม รัน uv sync ใน Dockerfile หรือ CI โดยลืมใส่ dash dash frozen ทำให้วันดีคืนดีได้ library เวอร์ชันใหม่มาพังโค้ดทั้งที่ไม่ได้แก้ Python เลย\n\nและข้อสี่ ตั้ง job deploy ใน GitHub Actions โดยลืมใส่ needs ผูกกับ job ทดสอบ ผลคือต่อให้ pytest แดงเถือก job deploy ก็ยังวิ่งขนานแล้วส่งโค้ดเสียขึ้น Staging อยู่ดีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d175/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนทบทวนหลักการ Dockerfile layer cache, Liveness/Readiness, Secrets และ CI needs",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 175 กันครับ ครอบคลุมทั้งเรื่องลำดับการ COPY lockfile, ความต่างของ /healthz กับ /readyz, เหตุผลที่ห้ามใส่ secret ใน Dockerfile, และคีย์ควบคุม job ใน GitHub Actions\n\nค่อย ๆ ทำทีละข้อได้เลยนะ เดี๋ยวพี่พักรออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 175 กันครับ ครอบคลุมทั้งเรื่องลำดับการ COPY lockfile, ความต่างของ slash healthz กับ slash readyz, เหตุผลที่ห้ามใส่ secret ใน Dockerfile, และคีย์ควบคุม job ใน GitHub Actions\n\nค่อย ๆ ทำทีละข้อได้เลยนะ เดี๋ยวพี่พักรออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเรื่อง Docker, Readiness Probe และ GitHub Actions CI ให้ครบ แล้วกด 'ไปต่อ' ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 176",
+      "src": "/audio/d175/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ กระฉับกระเฉง สรุป 4 เสาหลักของการแพ็กเกจและการ deploy แล้วชวนน้องไปลุย Milestone 5 วันพรุ่งนี้",
+      "script": "ยินดีด้วยครับ คุณวางระบบ Container และ CI/CD Gate ของ Day 175 เรียบร้อยแล้ว!\n\nสรุป 4 สิ่งสำคัญไว้ใช้งานจริงนะครับ หนึ่ง เขียน Multi-stage Dockerfile ด้วย uv sync --frozen --no-dev ตัดไฟล์เสี่ยงใน .dockerignore รันด้วย USER appuser และมี HEALTHCHECK สอง แยก /healthz ออกจาก /readyz พร้อมตรวจ config แบบ fail-fast สาม ห้ามฝัง secret ใน Dockerfile ให้ฉีดผ่าน Cloud Secret Manager หรือ GitHub Secrets ตอน runtime เท่านั้น และสี่ ผูก GitHub Actions ด้วย needs: ให้ ruff, pytest และ docker build ผ่านก่อนปล่อยขึ้น Staging ทุกครั้งครับ\n\nพรุ่งนี้ใน Day 176 เป็นวันตัดสิน Milestone 5 แล้ว เราจะยิง Smoke Check และถล่มระบบตัวเองด้วยชุด Red-Team สองภาษาบน Staging กัน แล้วเจอกันครับ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณวางระบบ Container และ CI/CD Gate ของ Day 175 เรียบร้อยแล้ว!\n\nสรุป 4 สิ่งสำคัญไว้ใช้งานจริงนะครับ หนึ่ง เขียน Multi-stage Dockerfile ด้วย uv sync dash dash frozen dash dash no dash dev ตัดไฟล์เสี่ยงใน dot dockerignore รันด้วย USER appuser และมี HEALTHCHECK สอง แยก slash healthz ออกจาก slash readyz พร้อมตรวจ config แบบ fail-fast สาม ห้ามฝัง secret ใน Dockerfile ให้ฉีดผ่าน Cloud Secret Manager หรือ GitHub Secrets ตอน runtime เท่านั้น และสี่ ผูก GitHub Actions ด้วย needs ให้ ruff, pytest และ docker build ผ่านก่อนปล่อยขึ้น Staging ทุกครั้งครับ\n\nพรุ่งนี้ใน Day 176 เป็นวันตัดสิน Milestone 5 แล้ว เราจะยิง Smoke Check และถล่มระบบตัวเองด้วยชุด Red-Team สองภาษาบน Staging กัน แล้วเจอกันครับ สู้ ๆ ครับ!"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "lessonId": "d055",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — พิมพ์เขียว Mini-Project #2",
+      "src": "/audio/d055/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เหมือนเริ่มโปรเจกต์สำคัญด้วยกัน น้ำเสียงอบอุ่นชวนวางแผนสถาปัตยกรรมทีละขั้น",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 55 นะครับ วันนี้ตื่นเต้นหน่อยเพราะเราจะเริ่มออกแบบ Phase 2 Mini-Project หรือ Portfolio ชิ้นที่ 2 ของเรากันแล้ว นั่นคือระบบคัดแยกทิกเก็ตด่วนภาษาไทยครับ\n\nโจทย์ธุรกิจจริงคือ ทีมซัพพอร์ต e-commerce ไทยรับทิกเก็ตวันละหลักหมื่นใบ ถ้าแยกเคสด่วนช้าจะเสียค่าปรับ SLA และเสียลูกค้า VIP แต่ถ้าโยนเข้า LLM ทุกใบก็ช้าเกินไปและค่าใช้จ่ายบานปลาย วันนี้เราเลยออกแบบ Classical ML Pipeline ที่ทำนาย P95 latency ต่ำกว่า 10 มิลลิวินาทีบน CPU ด้วยต้นทุนใกล้ศูนย์บาทครับ\n\nแต่ก่อนจะรีบเขียนโค้ดเทรนโมเดล กว่าครึ่งของโปรเจกต์ ML พังเพราะเผลอใส่ฟีเจอร์ที่เกิดหลังเปิดทิกเก็ตหรือแบ่งข้อมูลแบบสุ่มจนอนาคตรั่วเข้าอดีต วันนี้เราจะล็อก Data Contract กับตัวกัน Data Leakage ด้วย Pydantic และ Polars พร้อมวางพิมพ์เขียว Hybrid Feature Pipeline ที่รวมข้อความไทยเข้ากับ metadata ตาราง และตั้ง Quality Gates ให้ชัดเจนก่อนลงมือเทรนในวันพรุ่งนี้ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 55 นะครับ วันนี้ตื่นเต้นหน่อยเพราะเราจะเริ่มออกแบบ Phase 2 Mini-Project หรือ Portfolio ชิ้นที่ 2 ของเรากันแล้ว นั่นคือระบบคัดแยกทิกเก็ตด่วนภาษาไทยครับ\n\nโจทย์ธุรกิจจริงคือ ทีมซัพพอร์ต e-commerce ไทยรับทิกเก็ตวันละหลักหมื่นใบ ถ้าแยกเคสด่วนช้าจะเสียค่าปรับ SLA และเสียลูกค้า VIP แต่ถ้าโยนเข้า LLM ทุกใบก็ช้าเกินไปและค่าใช้จ่ายบานปลาย วันนี้เราเลยออกแบบ Classical ML Pipeline ที่ทำนาย P95 latency ต่ำกว่า 10 มิลลิวินาทีบน CPU ด้วยต้นทุนใกล้ศูนย์บาทครับ\n\nแต่ก่อนจะรีบเขียนโค้ดเทรนโมเดล กว่าครึ่งของโปรเจกต์ ML พังเพราะเผลอใส่ฟีเจอร์ที่เกิดหลังเปิดทิกเก็ตหรือแบ่งข้อมูลแบบสุ่มจนอนาคตรั่วเข้าอดีต วันนี้เราจะล็อก Data Contract กับตัวกัน Data Leakage ด้วย Pydantic และ Polars พร้อมวางพิมพ์เขียว Hybrid Feature Pipeline ที่รวมข้อความไทยเข้ากับ metadata ตาราง และตั้ง Quality Gates ให้ชัดเจนก่อนลงมือเทรนในวันพรุ่งนี้ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d055/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงมั่นใจ กระฉับกระเฉง ไล่เป้าหมาย 3 ข้อของการออกแบบระบบให้ฟังชัดและมีพลัง",
+      "script": "เป้าหมายของ Day 55 มี 3 ข้อที่จะวางฐานให้เราตลอด Day 55 ถึง Day 60 เลยครับ\n\nข้อแรก คือกำหนดขอบเขตและอธิบายเหตุผลทางสถาปัตยกรรมได้ว่า ทำไมงานนี้ต้องใช้ Classical ML ที่เร็วต่ำกว่า 10 มิลลิวินาที แทนที่จะยิง LLM ทุกใบ\nข้อที่สอง คือออกแบบ 5-Layer ML Pipeline และ Data Contract ที่ผสาน PyThaiNLP TF-IDF กับ Tabular Metadata ใน ColumnTransformer พร้อมรายการคอลัมน์ต้องห้ามกัน Data Leakage\nข้อที่สาม คือเขียน Executable Spec และ Quality Gate Checker ด้วย Pydantic และ Polars เพื่อตรวจสคีมา การแบ่งข้อมูลตามเวลา และเกณฑ์ PR-AUC, Recall, Latency\n\nทั้งหมดนี้รันบน CPU 100% ไม่ต้องใช้ API key ครับ",
+      "ttsText": "เป้าหมายของ Day 55 มี 3 ข้อที่จะวางฐานให้เราตลอด Day 55 ถึง Day 60 เลยครับ\n\nข้อแรก คือกำหนดขอบเขตและอธิบายเหตุผลทางสถาปัตยกรรมได้ว่า ทำไมงานนี้ต้องใช้ Classical ML ที่เร็วต่ำกว่า 10 มิลลิวินาที แทนที่จะยิง LLM ทุกใบ\nข้อที่สอง คือออกแบบ 5 Layer ML Pipeline และ Data Contract ที่ผสาน PyThaiNLP TF-IDF กับ Tabular Metadata ใน ColumnTransformer พร้อมรายการคอลัมน์ต้องห้ามกัน Data Leakage\nข้อที่สาม คือเขียน Executable Spec และ Quality Gate Checker ด้วย Pydantic และ Polars เพื่อตรวจสคีมา การแบ่งข้อมูลตามเวลา และเกณฑ์ PR-AUC, Recall, Latency\n\nทั้งหมดนี้รันบน CPU 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้งโปรเจกต์ Mini-Project",
+      "src": "/audio/d055/03-setup.mp3",
+      "stylePrompt": "พูดช้าชัด น้ำเสียงเอาใจใส่ ชวนสร้างโฟลเดอร์โปรเจกต์ที่จะใช้ยาวจนจบ Phase 2",
+      "script": "มาสร้างบ้านหลังใหม่สำหรับ Phase 2 Mini-Project กันครับ โฟลเดอร์นี้เราจะใช้ต่อยอดยาวตั้งแต่ Day 55 ไปจนถึง Day 60 Demo เลย\n\nขั้นแรก สั่ง uv init thai-ticket-priority แล้ว cd เข้าโฟลเดอร์\nขั้นที่สอง ติดตั้งชุดเครื่องมือ Phase 2 ครบชุดด้วย uv add polars pydantic scikit-learn lightgbm pythainlp joblib skl2onnx onnxruntime numpy pandas และลงเครื่องมือเทสต์ด้วย uv add --dev pytest ruff\nขั้นที่สาม รันคำสั่ง python เช็ก import ให้เห็นข้อความ Phase 2 Mini-Project Ready\n\nตั้งค่าให้เรียบร้อยเลยนะครับ เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาสร้างบ้านหลังใหม่สำหรับ Phase 2 Mini-Project กันครับ โฟลเดอร์นี้เราจะใช้ต่อยอดยาวตั้งแต่ Day 55 ไปจนถึง Day 60 Demo เลย\n\nขั้นแรก สั่ง uv init thai-ticket-priority แล้ว cd เข้าโฟลเดอร์\nขั้นที่สอง ติดตั้งชุดเครื่องมือ Phase 2 ครบชุดด้วย uv add polars pydantic scikit-learn lightgbm pythainlp joblib skl2onnx onnxruntime numpy pandas และลงเครื่องมือเทสต์ด้วย uv add dash dash dev pytest ruff\nขั้นที่สาม รันคำสั่ง python เช็ก import ให้เห็นข้อความ Phase 2 Mini-Project Ready\n\nตั้งค่าให้เรียบร้อยเลยนะครับ เดี๋ยวพี่รอตรงนี้ เสร็จแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงสร้างโปรเจกต์ thai-ticket-priority",
+        "prompt": "ลองรันคำสั่งสร้างโฟลเดอร์ thai-ticket-priority และติดตั้งชุดไลบรารี Phase 2 ให้ครบ แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "สร้างโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — สถาปัตยกรรม 5 ชั้น",
+      "src": "/audio/d055/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นเหมือนกำลังกางพิมพ์เขียวสถาปัตยกรรมให้ดูทีละชั้นอย่างเป็นระบบ",
+      "script": "ก่อนไปลงรายละเอียด ลองคลิกสำรวจแผนภาพพิมพ์เขียว 5 ชั้นของ Phase 2 Mini-Project ตรงหน้านี้ดูนะครับ\n\nคุณจะเห็นภาพรวมตั้งแต่ชั้นล่างสุดคือ Polars Clean และ Data Contract ไหลขึ้นมาที่ชั้น Hybrid Features ซึ่งเอา PyThaiNLP TF-IDF มารวมกับข้อมูลตาราง ต่อไปยังชั้นโมเดล LightGBM กับ LogisticRegression ต่อด้วยชั้น Threshold Tuning กับ Error Analysis และปิดท้ายด้วย ONNX <10ms กับ Tests\n\nการเห็นภาพทั้ง 5 ชั้นเชื่อมกันแบบนี้ จะช่วยให้เวลาเขียนโค้ดจริงใน Day 56 ถึง Day 59 คุณรู้ตลอดเวลาว่าไฟล์ไหนอยู่ชั้นไหนครับ",
+      "ttsText": "ก่อนไปลงรายละเอียด ลองคลิกสำรวจแผนภาพพิมพ์เขียว 5 ชั้นของ Phase 2 Mini-Project ตรงหน้านี้ดูนะครับ\n\nคุณจะเห็นภาพรวมตั้งแต่ชั้นล่างสุดคือ Polars Clean และ Data Contract ไหลขึ้นมาที่ชั้น Hybrid Features ซึ่งเอา PyThaiNLP TF-IDF มารวมกับข้อมูลตาราง ต่อไปยังชั้นโมเดล LightGBM กับ LogisticRegression ต่อด้วยชั้น Threshold Tuning กับ Error Analysis และปิดท้ายด้วย ONNX ต่ำกว่า 10 มิลลิวินาที กับ Tests\n\nการเห็นภาพทั้ง 5 ชั้นเชื่อมกันแบบนี้ จะช่วยให้เวลาเขียนโค้ดจริงใน Day 56 ถึง Day 59 คุณรู้ตลอดเวลาว่าไฟล์ไหนอยู่ชั้นไหนครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d055/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสถาปัตยกรรมอย่างมีเหตุผล ชัดเจน และเน้นจุดชี้เป็นชี้ตายเรื่อง Leakage",
+      "script": "เรามาเจาะแนวคิดหลักในการออกแบบ Mini-Project ทั้ง 3 ข้อกันครับ\n\nข้อแรก ทำไมงานนี้ต้องเริ่มที่ Classical ML ทิกเก็ตจริงมีเคสด่วนประมาณ 12 ถึง 18 เปอร์เซ็นต์ ถ้าเรายิง LLM API ทุกใบ จะช้า 500 ถึง 2,000 มิลลิวินาที และค่า token ภาษาไทยก็แพงกว่าอังกฤษ 1.5 ถึง 3 เท่า งานนี้เปรียบเหมือนห้องฉุกเฉินครับ Classical ML คือพยาบาลคัดกรองหน้าประตูที่แยกเคสฉุกเฉินในเสี้ยววินาที ด้วยสัญญาณชีพและอาการสั้น ๆ โดยเราตั้งเป้า PR-AUC อย่างน้อย 0.78, Recall ของเคสด่วนอย่างน้อย 0.85 บน cost matrix ที่ปล่อยหลุดแพงกว่าตรวจเก้อ 10 เท่า และ P95 latency ไม่เกิน 10 มิลลิวินาทีครับ\n\nข้อที่สอง พิมพ์เขียว 5 ชั้นและ Data Contract ปลอด Leakage ชั้นที่ 1 ล้างข้อมูลด้วย Polars ชั้นที่ 2 แบ่ง Train, Val, Test แบบเรียงตามเวลาคืออดีตไปอนาคต พร้อมกฎเหล็ก Point-in-Time Feature คือใช้ได้เฉพาะข้อมูลที่มีอยู่จริง ณ วินาทีลูกค้าส่งทิกเก็ต คอลัมน์หลังเหตุการณ์อย่าง first_response_min, resolved_at, agent_id, refund_approved หรือ sla_breached ห้ามหลุดเข้ามาเด็ดขาด ชั้นที่ 3 Hybrid ColumnTransformer รวมข้อความไทยกับตัวเลขและหมวดหมู่ ชั้นที่ 4 เทียบ LogisticRegression กับ LightGBM และจูน threshold บน Val เท่านั้น และชั้นที่ 5 แพ็ก Artifact Bundle คู่กับ Drift Baseline\n\nข้อที่สาม เปลี่ยนสเปกกระดาษให้เป็น Executable Spec ด้วย Pydantic และ Polars เราสร้าง TicketInput เป็นด่านตรวจหน้าประตู Inference และสร้าง QualityGate ที่มีเกณฑ์ min_pr_auc, min_urgent_recall และ max_p95_latency_ms คอยบล็อกอัตโนมัติไม่ให้โมเดลที่ตก SLA หลุดขึ้น Production ครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักในการออกแบบ Mini-Project ทั้ง 3 ข้อกันครับ\n\nข้อแรก ทำไมงานนี้ต้องเริ่มที่ Classical ML ทิกเก็ตจริงมีเคสด่วนประมาณ 12 ถึง 18 เปอร์เซ็นต์ ถ้าเรายิง LLM API ทุกใบ จะช้า 500 ถึง 2,000 มิลลิวินาที และค่า token ภาษาไทยก็แพงกว่าอังกฤษ 1.5 ถึง 3 เท่า งานนี้เปรียบเหมือนห้องฉุกเฉินครับ Classical ML คือพยาบาลคัดกรองหน้าประตูที่แยกเคสฉุกเฉินในเสี้ยววินาที ด้วยสัญญาณชีพและอาการสั้น ๆ โดยเราตั้งเป้า PR-AUC อย่างน้อย 0.78, Recall ของเคสด่วนอย่างน้อย 0.85 บน cost matrix ที่ปล่อยหลุดแพงกว่าตรวจเก้อ 10 เท่า และ P95 latency ไม่เกิน 10 มิลลิวินาทีครับ\n\nข้อที่สอง พิมพ์เขียว 5 ชั้นและ Data Contract ปลอด Leakage ชั้นที่ 1 ล้างข้อมูลด้วย Polars ชั้นที่ 2 แบ่ง Train, Val, Test แบบเรียงตามเวลาคืออดีตไปอนาคต พร้อมกฎเหล็ก Point-in-Time Feature คือใช้ได้เฉพาะข้อมูลที่มีอยู่จริง ณ วินาทีลูกค้าส่งทิกเก็ต คอลัมน์หลังเหตุการณ์อย่าง first_response_min, resolved_at, agent_id, refund_approved หรือ sla_breached ห้ามหลุดเข้ามาเด็ดขาด ชั้นที่ 3 Hybrid ColumnTransformer รวมข้อความไทยกับตัวเลขและหมวดหมู่ ชั้นที่ 4 เทียบ LogisticRegression กับ LightGBM และจูน threshold บน Val เท่านั้น และชั้นที่ 5 แพ็ก Artifact Bundle คู่กับ Drift Baseline\n\nข้อที่สาม เปลี่ยนสเปกกระดาษให้เป็น Executable Spec ด้วย Pydantic และ Polars เราสร้าง TicketInput เป็นด่านตรวจหน้าประตู Inference และสร้าง QualityGate ที่มีเกณฑ์ min_pr_auc, min_urgent_recall และ max_p95_latency_ms คอยบล็อกอัตโนมัติไม่ให้โมเดลที่ตก SLA หลุดขึ้น Production ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน",
+      "src": "/audio/d055/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนวิเคราะห์ตัวอย่างโค้ด ไล่ตั้งแต่ตรวจ Leakage ไปจนถึงเคสที่โมเดลแม่นแต่ช้าจนตก Gate",
+      "script": "ลองมาดูตัวอย่างโค้ด Executable Spec ของจริงใน 3 ขั้นตอนนะครับ\n\nขั้นที่ 1 เราประกาศชุดคอลัมน์ฟีเจอร์ที่อนุญาต 6 ตัว และชุด FORBIDDEN_LEAKAGE_COLS อีก 5 ตัวที่เกิดหลังเปิดทิกเก็ตอย่างชัดเจน\n\nขั้นที่ 2 เราเขียนฟังก์ชัน audit_splits ด้วย Polars เพื่อเช็ก 3 ด่านรวดเดียว คือมีคอลัมน์ขาดไหม มีคอลัมน์ต้องห้ามปนเข้ามาไหม และเวลาสูงสุดของ Train น้อยกว่าเวลาต่ำสุดของ Val และเวลาสูงสุดของ Val น้อยกว่าเวลาต่ำสุดของ Test หรือเปล่า ถ้าผิดเงื่อนไขไหนก็โยน ValueError ทันที\n\nขั้นที่ 3 เราดู check_quality_gate เทียบโมเดล 2 ตัว ลองดูตรงนี้ให้ดีนะครับ Candidate A ได้ PR-AUC 0.84, Recall 0.89 และเร็ว 2.4 มิลลิวินาที จึงผ่านฉลุย ส่วน Candidate B ได้ PR-AUC สูงกว่านิดหน่อยคือ 0.86 แต่ช้าถึง 45 มิลลิวินาที เลยโดน Gate ตีกลับทันที นี่แหละครับวิธีคิดแบบ AI Engineer ที่ไม่ดูแค่ความแม่นยำอย่างเดียวแต่คุม SLA ระบบจริงด้วย ลองไล่อ่านโค้ดแล้วกด ไปต่อ เพื่อเขียนสเปกจริงกันครับ",
+      "ttsText": "ลองมาดูตัวอย่างโค้ด Executable Spec ของจริงใน 3 ขั้นตอนนะครับ\n\nขั้นที่ 1 เราประกาศชุดคอลัมน์ฟีเจอร์ที่อนุญาต 6 ตัว และชุด FORBIDDEN_LEAKAGE_COLS อีก 5 ตัวที่เกิดหลังเปิดทิกเก็ตอย่างชัดเจน\n\nขั้นที่ 2 เราเขียนฟังก์ชัน audit_splits ด้วย Polars เพื่อเช็ก 3 ด่านรวดเดียว คือมีคอลัมน์ขาดไหม มีคอลัมน์ต้องห้ามปนเข้ามาไหม และเวลาสูงสุดของ Train น้อยกว่าเวลาต่ำสุดของ Val และเวลาสูงสุดของ Val น้อยกว่าเวลาต่ำสุดของ Test หรือเปล่า ถ้าผิดเงื่อนไขไหนก็โยน ValueError ทันที\n\nขั้นที่ 3 เราดู check_quality_gate เทียบโมเดล 2 ตัว ลองดูตรงนี้ให้ดีนะครับ Candidate A ได้ PR-AUC 0.84, Recall 0.89 และเร็ว 2.4 มิลลิวินาที จึงผ่านฉลุย ส่วน Candidate B ได้ PR-AUC สูงกว่านิดหน่อยคือ 0.86 แต่ช้าถึง 45 มิลลิวินาที เลยโดน Gate ตีกลับทันที นี่แหละครับวิธีคิดแบบ AI Engineer ที่ไม่ดูแค่ความแม่นยำอย่างเดียวแต่คุม SLA ระบบจริงด้วย ลองไล่อ่านโค้ดแล้วกด ไปต่อ เพื่อเขียนสเปกจริงกันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาตัวอย่าง Data Contract & Gate",
+        "prompt": "ลองดูโค้ดตรวจ Leakage, Temporal Split และ Quality Gate ทั้ง 3 ขั้น เมื่อเข้าใจแล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — เขียน ticket_spec.py",
+      "src": "/audio/d055/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ชวนลงมือสร้างไฟล์สเปกจริง ไล่สเปกทีละคลาสและฟังก์ชันอย่างเป็นระเบียบ",
+      "script": "ถึงเวลาลงมือสร้างไฟล์สเปกจริง ticket_spec.py ที่จะใช้เป็นฐานของโปรเจกต์ยาวถึง Day 60 แล้วครับ มี 3 ส่วนด้วยกัน\n\nส่วนแรก คลาส TicketInput สืบทอด Pydantic BaseModel ตรวจ ticket_id ไม่ว่าง, text ยาวอย่างน้อย 2 ตัวอักษร, customer_tier เป็น Literal สี่ระดับตั้งแต่ standard ถึง vip, channel เป็น line, chat หรือ email และตัวเลข order_value_thb, wait_minutes, past_tickets_30d ต้องไม่ติดลบ\n\nส่วนที่สอง คลาส QualityGate มีค่าเริ่มต้น min_pr_auc 0.78, min_urgent_recall 0.85, max_p95_latency_ms 10.0 พร้อมเมธอด evaluate ที่คืน dict passed กับ list ของ failures\n\nส่วนที่สาม ฟังก์ชัน audit_dataset_contract รับ DataFrame ของ Polars ทั้ง 3 split แล้วเช็กว่ามี REQUIRED_COLS ครบทั้ง 8 คอลัมน์ ไม่มีคอลัมน์ใน FORBIDDEN_LEAKAGE_COLS ปนอยู่เลย และลำดับเวลา train max น้อยกว่า val min รวมถึง val max น้อยกว่า test min อย่าลืมใส่คำว่า leakage หรือ temporal overlap ในข้อความ ValueError ด้วยนะครับ เพื่อให้เทสต์และ log อ่านรู้เรื่องทันที\n\nเขียนเสร็จแล้วรัน pytest กับ ruff check ดูนะครับ เดี๋ยวพี่รอตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือสร้างไฟล์สเปกจริง ticket_spec dot py ที่จะใช้เป็นฐานของโปรเจกต์ยาวถึง Day 60 แล้วครับ มี 3 ส่วนด้วยกัน\n\nส่วนแรก คลาส TicketInput สืบทอด Pydantic BaseModel ตรวจ ticket_id ไม่ว่าง, text ยาวอย่างน้อย 2 ตัวอักษร, customer_tier เป็น Literal สี่ระดับตั้งแต่ standard ถึง vip, channel เป็น line, chat หรือ email และตัวเลข order_value_thb, wait_minutes, past_tickets_30d ต้องไม่ติดลบ\n\nส่วนที่สอง คลาส QualityGate มีค่าเริ่มต้น min_pr_auc 0.78, min_urgent_recall 0.85, max_p95_latency_ms 10.0 พร้อมเมธอด evaluate ที่คืน dict passed กับ list ของ failures\n\nส่วนที่สาม ฟังก์ชัน audit_dataset_contract รับ DataFrame ของ Polars ทั้ง 3 split แล้วเช็กว่ามี REQUIRED_COLS ครบทั้ง 8 คอลัมน์ ไม่มีคอลัมน์ใน FORBIDDEN_LEAKAGE_COLS ปนอยู่เลย และลำดับเวลา train max น้อยกว่า val min รวมถึง val max น้อยกว่า test min อย่าลืมใส่คำว่า leakage หรือ temporal overlap ในข้อความ ValueError ด้วยนะครับ เพื่อให้เทสต์และ log อ่านรู้เรื่องทันที\n\nเขียนเสร็จแล้วรัน pytest กับ ruff check ดูนะครับ เดี๋ยวพี่รอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน ticket_spec.py",
+        "prompt": "ลงมือเขียน TicketInput, QualityGate และ audit_dataset_contract แล้วกดรัน pytest ได้เลยครับ เสร็จแล้วกด 'ไปต่อ'",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d055/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชย แล้วสรุป 4 ข้อผิดพลาดตอนออกแบบระบบ ML ด้วยจังหวะเตือนภัยสนุก ๆ",
+      "script": "เยี่ยมเลยครับ ได้ไฟล์สเปกของ Mini-Project มาเรียบร้อยแล้ว ก่อนเข้าควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่มักเกิดขึ้นตอนออกแบบ ML Pipeline นะครับ\n\nข้อแรก คือเผลอเอา Post-Event Feature อย่าง first_response_min หรือ agent_id มาเทรน ในแล็บได้ PR-AUC 0.99 สวยหรู แต่ขึ้น Production จริงคอลัมน์นั้นยังเป็น null ตอนทิกเก็ตเพิ่งเข้า เลยพังทันที\n\nข้อที่สอง คือใช้ Accuracy เป็นเกณฑ์วัดผลบนข้อมูลทิกเก็ตที่ไม่สมดุล เคสด่วนมีแค่ 15% ถ้าโมเดลทายไม่ด่วนทั้งหมดก็ได้ Accuracy 85% แล้ว แต่ปล่อยเคสด่วนหลุด 100% เลย ต้องใช้ PR-AUC, Recall และต้นทุนธุรกิจครับ\n\nข้อที่สาม คือโยนทุกงานไปใช้ LLM API จนระบบช้า 1 ถึง 2 วินาทีและค่า token บาน ทั้งที่ Classical ML อย่าง TF-IDF กับ LightGBM ทำได้ต่ำกว่า 5 มิลลิวินาที\n\nและข้อที่สี่ คือแบ่ง Train, Val, Test แบบสุ่มบนข้อมูลที่มีลำดับเวลา ทำให้ทิกเก็ตจากแคมเปญวันเดียวกันหลุดข้ามไปอยู่ทั้ง Train และ Test คะแนนเลยหลอกตาครับ",
+      "ttsText": "เยี่ยมเลยครับ ได้ไฟล์สเปกของ Mini-Project มาเรียบร้อยแล้ว ก่อนเข้าควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่มักเกิดขึ้นตอนออกแบบ ML Pipeline นะครับ\n\nข้อแรก คือเผลอเอา Post-Event Feature อย่าง first_response_min หรือ agent_id มาเทรน ในแล็บได้ PR-AUC 0.99 สวยหรู แต่ขึ้น Production จริงคอลัมน์นั้นยังเป็น null ตอนทิกเก็ตเพิ่งเข้า เลยพังทันที\n\nข้อที่สอง คือใช้ Accuracy เป็นเกณฑ์วัดผลบนข้อมูลทิกเก็ตที่ไม่สมดุล เคสด่วนมีแค่ 15 เปอร์เซ็นต์ ถ้าโมเดลทายไม่ด่วนทั้งหมดก็ได้ Accuracy 85 เปอร์เซ็นต์ แล้ว แต่ปล่อยเคสด่วนหลุด 100 เปอร์เซ็นต์ เลย ต้องใช้ PR-AUC, Recall และต้นทุนธุรกิจครับ\n\nข้อที่สาม คือโยนทุกงานไปใช้ LLM API จนระบบช้า 1 ถึง 2 วินาทีและค่า token บาน ทั้งที่ Classical ML อย่าง TF-IDF กับ LightGBM ทำได้ต่ำกว่า 5 มิลลิวินาที\n\nและข้อที่สี่ คือแบ่ง Train, Val, Test แบบสุ่มบนข้อมูลที่มีลำดับเวลา ทำให้ทิกเก็ตจากแคมเปญวันเดียวกันหลุดข้ามไปอยู่ทั้ง Train และ Test คะแนนเลยหลอกตาครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d055/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงเป็นกันเอง ชวนทบทวนหลักการออกแบบสถาปัตยกรรม 4 ข้อแบบไม่เครียด",
+      "script": "มาเช็กความแม่นยำด้านการออกแบบด้วย Micro-Quiz 4 ข้อกันครับ จะถามเรื่อง Post-Event Data Leakage, เหตุผลที่เลือก Classical ML แทน LLM, บทบาทของ ColumnTransformer และการตัดสินใจเมื่อโมเดลตก Latency Gate\n\nลองตอบให้ครบทั้ง 4 ข้อแล้วอ่านคำอธิบายดูนะครับ เดี๋ยวพี่พักรอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปครับ",
+      "ttsText": "มาเช็กความแม่นยำด้านการออกแบบด้วย Micro-Quiz 4 ข้อกันครับ จะถามเรื่อง Post-Event Data Leakage, เหตุผลที่เลือก Classical ML แทน LLM, บทบาทของ ColumnTransformer และการตัดสินใจเมื่อโมเดลตก Latency Gate\n\nลองตอบให้ครบทั้ง 4 ข้อแล้วอ่านคำอธิบายดูนะครับ เดี๋ยวพี่พักรอตรงนี้ เสร็จแล้วกด ไปต่อ เพื่อฟังสรุปครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ค่อย ๆ ตอบควิซทั้ง 4 ข้อเรื่อง Data Leakage, ColumnTransformer และ Quality Gate ให้ครบ แล้วกด 'ไปต่อ' เพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 56",
+      "src": "/audio/d055/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและตื่นเต้นชวนลุยลงมือเทรนโมเดล End-to-End ในวันพรุ่งนี้",
+      "script": "ยินดีด้วยครับ คุณออกแบบพิมพ์เขียวของ Portfolio Milestone #2 เสร็จเรียบร้อยแล้ว ขอสรุป 3 สิ่งที่ได้จาก Day 55 นะครับ\n\nหนึ่ง เราเลือกสถาปัตยกรรมตามเหตุผลจริงของงาน ใช้ Classical ML ผสานข้อความไทยกับ Tabular Metadata เพื่อทำความเร็ว P95 ต่ำกว่า 10 มิลลิวินาทีบน CPU\nสอง เราวางโครงสร้าง 5 ชั้นชัดเจน ตั้งแต่ Polars Clean, Time-based Split, Hybrid ColumnTransformer, Model กับ Val-only Threshold ไปจนถึง Artifact Bundle และ Drift Monitor\nสาม เราเปลี่ยนสเปกให้เป็นโค้ดที่รันตรวจอัตโนมัติได้ด้วย TicketInput, QualityGate และ audit_dataset_contract เพื่อกัน Leakage ตั้งแต่หน้าประตู\n\nใน Day 56 พรุ่งนี้ ซึ่งเป็นวันทบทวน Block B14 ด้วย เราจะเอาพิมพ์เขียวชุดนี้มาเขียน End-to-End Training Script ให้รันจบครบทั้งเทรน จูน threshold และส่งออก bundle ในคำสั่งเดียวเลยครับ เจอกันพรุ่งนี้ สู้ ๆ ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณออกแบบพิมพ์เขียวของ Portfolio Milestone ที่ 2 เสร็จเรียบร้อยแล้ว ขอสรุป 3 สิ่งที่ได้จาก Day 55 นะครับ\n\nหนึ่ง เราเลือกสถาปัตยกรรมตามเหตุผลจริงของงาน ใช้ Classical ML ผสานข้อความไทยกับ Tabular Metadata เพื่อทำความเร็ว P95 ต่ำกว่า 10 มิลลิวินาทีบน CPU\nสอง เราวางโครงสร้าง 5 ชั้นชัดเจน ตั้งแต่ Polars Clean, Time-based Split, Hybrid ColumnTransformer, Model กับ Val-only Threshold ไปจนถึง Artifact Bundle และ Drift Monitor\nสาม เราเปลี่ยนสเปกให้เป็นโค้ดที่รันตรวจอัตโนมัติได้ด้วย TicketInput, QualityGate และ audit_dataset_contract เพื่อกัน Leakage ตั้งแต่หน้าประตู\n\nใน Day 56 พรุ่งนี้ ซึ่งเป็นวันทบทวน Block B14 ด้วย เราจะเอาพิมพ์เขียวชุดนี้มาเขียน End-to-End Training Script ให้รันจบครบทั้งเทรน จูน threshold และส่งออก bundle ในคำสั่งเดียวเลยครับ เจอกันพรุ่งนี้ สู้ ๆ ครับ"
+    }
+  ]
+}

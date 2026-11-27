@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+ <title id="title">AI engineering feedback loop</title><desc id="desc">Problem leads to data, model, evaluation, application, monitoring, then feedback returns to data.</desc>
+ <style>.n{fill:#fff;stroke:#cbd5e1;stroke-width:2}.t{font:600 16px system-ui,sans-serif;fill:#122033}.a{stroke:#4f46e5;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+ <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4f46e5"/></marker></defs>
+ <path class="a" d="M118 110h54M238 110h54M358 110h54M478 110h54M598 110h54"/><path class="a" d="M685 145c0 55-635 55-635 0"/>
+ <g transform="translate(18 70)"><rect class="n" width="100" height="80" rx="16"/><text class="t" x="50" y="46" text-anchor="middle">Problem</text></g>
+ <g transform="translate(172 70)"><rect class="n" width="66" height="80" rx="16"/><text class="t" x="33" y="46" text-anchor="middle">Data</text></g>
+ <g transform="translate(292 70)"><rect class="n" width="66" height="80" rx="16"/><text class="t" x="33" y="46" text-anchor="middle">Model</text></g>
+ <g transform="translate(412 70)"><rect class="n" width="66" height="80" rx="16"/><text class="t" x="33" y="38" text-anchor="middle">Eval</text><text class="t" x="33" y="58" text-anchor="middle">uation</text></g>
+ <g transform="translate(532 70)"><rect class="n" width="66" height="80" rx="16"/><text class="t" x="33" y="46" text-anchor="middle">App</text></g>
+ <g transform="translate(652 70)"><rect class="n" width="66" height="80" rx="16"/><text class="t" x="33" y="38" text-anchor="middle">Moni</text><text class="t" x="33" y="58" text-anchor="middle">tor</text></g>
+</svg>

@@ -1,0 +1,109 @@
+{
+  "lessonId": "d077",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — สัญญาข้อมูลและ Constrained Decoding",
+      "src": "/audio/d077/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น เป็นกันเอง ชวนน้องมองภาพรวมการสกัดเอกสารไทยให้ตรงโครงสร้าง น้ำเสียงสดใสมีจังหวะหยุดหายใจตามธรรมชาติ",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 77 ใน Block B20 นะครับ วันนี้เราจะมาแก้ปัญหาสุดคลาสสิกของงาน AI จริง นั่นคือการบังคับผลลัพธ์ LLM ให้ตรงรูปเป๊ะด้วย Pydantic v2 และ Strict JSON Schema ครับ\n\nลองนึกภาพใบแจ้งหนี้ อีเมล หรือแชตลูกค้าภาษาไทยดูนะ ข้อความพวกนี้ไม่มีโครงสร้างตายตัวเลย แทนที่เราจะขอร้องโมเดลใน prompt ว่าช่วยตอบเป็น JSON หน่อย วันนี้เราเปลี่ยนมาสร้าง Data Contract ที่เข้มงวดจาก model_json_schema พร้อม extra=\"forbid\" แล้วส่งให้ LLM API บังคับตั้งแต่ขั้นตอนสุ่ม token หรือที่เรียกว่า Constrained Decoding เลย\n\nแต่จำไว้อย่างหนึ่งนะครับ JSON ที่ผ่าน schema ไม่ได้แปลว่าตัวเลขหรือกฎธุรกิจจะถูกเสมอไป เช่น subtotal + vat อาจจะไม่เท่ากับ total ก็ได้ เราจึงต้องซ้อนด่านตรวจฝั่ง Python ด้วย model_validator และเทสต์แบบออฟไลน์ผ่าน pytest ก่อนส่ง object ที่ type-safe เข้าสู่ระบบบัญชีหรือปูทางต่อไปยัง Validation-Repair Loop ใน Day 78 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 77 ใน Block B20 นะครับ วันนี้เราจะมาแก้ปัญหาสุดคลาสสิกของงาน AI จริง นั่นคือการบังคับผลลัพธ์ LLM ให้ตรงรูปเป๊ะด้วย Pydantic v2 และ Strict JSON Schema ครับ\n\nลองนึกภาพใบแจ้งหนี้ อีเมล หรือแชตลูกค้าภาษาไทยดูนะ ข้อความพวกนี้ไม่มีโครงสร้างตายตัวเลย แทนที่เราจะขอร้องโมเดลใน prompt ว่าช่วยตอบเป็น JSON หน่อย วันนี้เราเปลี่ยนมาสร้าง Data Contract ที่เข้มงวดจาก model_json_schema พร้อม extra เท่ากับ forbid แล้วส่งให้ LLM API บังคับตั้งแต่ขั้นตอนสุ่ม token หรือที่เรียกว่า Constrained Decoding เลย\n\nแต่จำไว้อย่างหนึ่งนะครับ JSON ที่ผ่าน schema ไม่ได้แปลว่าตัวเลขหรือกฎธุรกิจจะถูกเสมอไป เช่น subtotal บวก vat อาจจะไม่เท่ากับ total ก็ได้ เราจึงต้องซ้อนด่านตรวจฝั่ง Python ด้วย model_validator และเทสต์แบบออฟไลน์ผ่าน pytest ก่อนส่ง object ที่ type-safe เข้าสู่ระบบบัญชีหรือปูทางต่อไปยัง Validation-Repair Loop ใน Day 78 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d077/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน แบ่งจังหวะ 3 เป้าหมายให้ง่ายต่อการจำ และปิดท้ายอย่างสบายใจเรื่องโหมด mock",
+      "script": "มาดูเป้าหมายของ Day 77 กัน 3 ข้อนะครับ พอจบวันนี้คุณจะทำได้ครบเลย\n\nหนึ่ง สร้าง Strict JSON Schema จาก Pydantic v2 โดยใช้ ConfigDict extra=\"forbid\", Literal, Field description และ model_json_schema\nสอง เชื่อมต่อตัวพาร์สผลลัพธ์กับ Official LLM SDK ที่สลับใช้ได้ทั้ง API จริงและโหมด mock JSON บนเครื่อง\nสาม แยกแยะและอุดช่องโหว่ที่ schema ตรวจไม่ได้ ด้วย model_validator เช็กกฎธุรกิจข้ามฟิลด์ รวมถึงเปิดค่า None เพื่อลดอาการแต่งข้อมูลหรือ hallucination\n\nไม่ต้องกังวลถ้ายังไม่มี OPENAI_API_KEY นะครับ โหมด mock และ pytest รันบนเครื่องได้ 100% เลยครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 77 กัน 3 ข้อนะครับ พอจบวันนี้คุณจะทำได้ครบเลย\n\nหนึ่ง สร้าง Strict JSON Schema จาก Pydantic v2 โดยใช้ ConfigDict extra เท่ากับ forbid, Literal, Field description และ model_json_schema\nสอง เชื่อมต่อตัวพาร์สผลลัพธ์กับ Official LLM SDK ที่สลับใช้ได้ทั้ง API จริงและโหมด mock JSON บนเครื่อง\nสาม แยกแยะและอุดช่องโหว่ที่ schema ตรวจไม่ได้ ด้วย model_validator เช็กกฎธุรกิจข้ามฟิลด์ รวมถึงเปิดค่า None เพื่อลดอาการแต่งข้อมูลหรือ hallucination\n\nไม่ต้องกังวลถ้ายังไม่มี OPENAI_API_KEY นะครับ โหมด mock และ pytest รันบนเครื่องได้ 100 เปอร์เซ็นต์ เลยครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d077/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นชวนน้องพิมพ์คำสั่งทีละบรรทัดให้ชัวร์ ไม่เร่งรีบ",
+      "script": "ช่วงติดตั้งวันนี้สั้นมากครับ ใช้ uv เหมือนเดิมเลย เริ่มจากสั่ง uv init ai-day77 แล้วเข้าไปในโฟลเดอร์ จากนั้นติดตั้ง pydantic กับ openai ด้วย uv add ตามด้วย uv add --dev pytest ruff\n\nเสร็จแล้วลองรันคำสั่งเช็กเวอร์ชัน Pydantic v2 บนหน้าจอดูว่า import ทั้ง pydantic และ openai ผ่านเรียบร้อยไหม ส่วน OPENAI_API_KEY ในไฟล์ .env ถ้ายังไม่มีก็ไม่เป็นไรครับ เอาไว้ค่อยใส่ตอนอยากลองยิง API จริง แต่ถ้าใส่ก็อย่าลืมเพิ่ม .env ลงใน .gitignore ด้วยนะ\n\nเดี๋ยวพี่พักรอให้ตั้งโปรเจกต์ให้เรียบร้อยก่อน เสร็จแล้วกดไปต่อได้เลยครับ",
+      "ttsText": "ช่วงติดตั้งวันนี้สั้นมากครับ ใช้ uv เหมือนเดิมเลย เริ่มจากสั่ง uv init ai-day77 แล้วเข้าไปในโฟลเดอร์ จากนั้นติดตั้ง pydantic กับ openai ด้วย uv add ตามด้วย uv add dash dash dev pytest ruff\n\nเสร็จแล้วลองรันคำสั่งเช็กเวอร์ชัน Pydantic v2 บนหน้าจอดูว่า import ทั้ง pydantic และ openai ผ่านเรียบร้อยไหม ส่วน OPENAI_API_KEY ในไฟล์ dot env ถ้ายังไม่มีก็ไม่เป็นไรครับ เอาไว้ค่อยใส่ตอนอยากลองยิง API จริง แต่ถ้าใส่ก็อย่าลืมเพิ่ม dot env ลงใน dot gitignore ด้วยนะ\n\nเดี๋ยวพี่พักรอให้ตั้งโปรเจกต์ให้เรียบร้อยก่อน เสร็จแล้วกดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ ai-day77",
+        "prompt": "สร้างโฟลเดอร์ ai-day77 ด้วย uv และเช็กว่า import pydantic กับ openai สำเร็จก่อนไปต่อครับ",
+        "continueLabel": "ตั้งโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — Structured Output Pipeline",
+      "src": "/audio/d077/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนดูแผนภาพประกอบ เห็นภาพการไหลของข้อมูลจากข้อความไทยสู่ object ที่ปลอดภัย",
+      "script": "ลองดูแผนภาพ Structured Output ตรงหน้านี้กันนะครับ มันเล่าเส้นทางทั้งหมดของวันนี้ในภาพเดียวเลย\n\nฝั่งซ้ายเริ่มจากข้อความภาษาไทยดิบ ๆ กับคำสั่งสกัดข้อมูล จากนั้น Pydantic จะสร้าง JSON Schema แบบเข้มงวดส่งเข้าไปเป็นกรอบบังคับให้ LLM ในชั้น Constrained Decoding พอโมเดลพ่น JSON ออกมา ผลลัพธ์จะวิ่งกลับมาเข้าด่าน model_validate ใน Python อีกชั้นเพื่อเช็กกฎธุรกิจ ก่อนกลายเป็น object ที่พร้อมส่งเข้าฐานข้อมูลหรือระบบทิกเก็ตได้อย่างมั่นใจครับ",
+      "ttsText": "ลองดูแผนภาพ Structured Output ตรงหน้านี้กันนะครับ มันเล่าเส้นทางทั้งหมดของวันนี้ในภาพเดียวเลย\n\nฝั่งซ้ายเริ่มจากข้อความภาษาไทยดิบ ๆ กับคำสั่งสกัดข้อมูล จากนั้น Pydantic จะสร้าง JSON Schema แบบเข้มงวดส่งเข้าไปเป็นกรอบบังคับให้ LLM ในชั้น Constrained Decoding พอโมเดลพ่น JSON ออกมา ผลลัพธ์จะวิ่งกลับมาเข้าด่าน model_validate ใน Python อีกชั้นเพื่อเช็กกฎธุรกิจ ก่อนกลายเป็น object ที่พร้อมส่งเข้าฐานข้อมูลหรือระบบทิกเก็ตได้อย่างมั่นใจครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d077/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายแนวคิดยากให้เข้าใจง่าย มีจังหวะเปรียบเทียบชัดเจน และเน้นน้ำเสียงเตือนเรื่องช่อง None กับด่านตรวจ 2 ชั้น",
+      "script": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของวันนี้กันครับ\n\nข้อแรก Constrained Decoding ต่างจากการขอใน prompt อย่างไร การขอร้องใน prompt ว่าช่วยตอบเป็น JSON เหมือนติดป้ายบอกลูกค้าว่ากรุณากรอกเบอร์เป็นตัวเลขเท่านั้น โมเดลยังเผลอใส่ markdown fence หรือเปลี่ยนชื่อ key ได้ แต่ Constrained Decoding เหมือนช่องฟอร์มเว็บที่ล็อกคีย์บอร์ดให้กดได้เฉพาะเลข 0 ถึง 9 ระบบจะคอมไพล์ JSON Schema เป็น finite-state machine แล้วปิดโอกาส token ที่ผิดรูปให้เป็นศูนย์ตั้งแต่ตอนสุ่ม token เลยครับ\n\nข้อที่สอง ใช้ Pydantic v2 เป็น Single Source of Truth ด้วย model_json_schema มีนิสัย 3 อย่างที่ต้องทำให้ติดมือ คือใส่ ConfigDict extra=\"forbid\" เพื่อสร้าง additionalProperties เป็น false เลี่ยง dict[str, Any] และเขียน Field description ให้ชัดเพราะโมเดลใช้อ่านเป็นคำใบ้ ที่สำคัญมาก ๆ คือฟิลด์ที่อาจไม่มีในเอกสารอย่างเลขใบแจ้งหนี้ ต้องเปิดเป็น str | None นะครับ ไม่อย่างนั้นโมเดลที่โดนบังคับให้ตอบ string จะแต่งเลขมั่วขึ้นมาให้ผ่าน schema ทันที\n\nและข้อที่สาม Schema ผ่านไม่ได้แปลว่าข้อมูลถูก เราจึงต้องซ้อนด่านตรวจ 2 ชั้น ด่านแรกคือ Constrained Decoding คุมโครงสร้าง ส่วนด่านสองคือ model_validate_json คู่กับ model_validator แบบ after ไว้เช็กกฎข้ามฟิลด์อย่าง subtotal + vat == total และอย่าลืมแยกฟังก์ชันเรียก API ออกจากฟังก์ชัน parse ด้วยนะ จะได้ใช้ mock JSON รัน pytest บนเครื่องได้เร็วและฟรีครับ",
+      "ttsText": "เรามาเจาะแนวคิดหลักทั้ง 3 ข้อของวันนี้กันครับ\n\nข้อแรก Constrained Decoding ต่างจากการขอใน prompt อย่างไร การขอร้องใน prompt ว่าช่วยตอบเป็น JSON เหมือนติดป้ายบอกลูกค้าว่ากรุณากรอกเบอร์เป็นตัวเลขเท่านั้น โมเดลยังเผลอใส่ markdown fence หรือเปลี่ยนชื่อ key ได้ แต่ Constrained Decoding เหมือนช่องฟอร์มเว็บที่ล็อกคีย์บอร์ดให้กดได้เฉพาะเลข 0 ถึง 9 ระบบจะคอมไพล์ JSON Schema เป็น finite-state machine แล้วปิดโอกาส token ที่ผิดรูปให้เป็นศูนย์ตั้งแต่ตอนสุ่ม token เลยครับ\n\nข้อที่สอง ใช้ Pydantic v2 เป็น Single Source of Truth ด้วย model_json_schema มีนิสัย 3 อย่างที่ต้องทำให้ติดมือ คือใส่ ConfigDict extra เท่ากับ forbid เพื่อสร้าง additionalProperties เป็น false เลี่ยง dict ของ str กับ Any และเขียน Field description ให้ชัดเพราะโมเดลใช้อ่านเป็นคำใบ้ ที่สำคัญมาก ๆ คือฟิลด์ที่อาจไม่มีในเอกสารอย่างเลขใบแจ้งหนี้ ต้องเปิดเป็น str หรือ None นะครับ ไม่อย่างนั้นโมเดลที่โดนบังคับให้ตอบ string จะแต่งเลขมั่วขึ้นมาให้ผ่าน schema ทันที\n\nและข้อที่สาม Schema ผ่านไม่ได้แปลว่าข้อมูลถูก เราจึงต้องซ้อนด่านตรวจ 2 ชั้น ด่านแรกคือ Constrained Decoding คุมโครงสร้าง ส่วนด่านสองคือ model_validate_json คู่กับ model_validator แบบ after ไว้เช็กกฎข้ามฟิลด์อย่าง subtotal บวก vat เท่ากับ total และอย่าลืมแยกฟังก์ชันเรียก API ออกจากฟังก์ชัน parse ด้วยนะ จะได้ใช้ mock JSON รัน pytest บนเครื่องได้เร็วและฟรีครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน — ใบกำกับภาษีไทย",
+      "src": "/audio/d077/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงเหมือนกำลังนั่งไล่โค้ดรีวิวกับน้องทีละสเต็ป เน้นจุดสังเกตตรง nested model และเคสตัวเลขเพี้ยน",
+      "script": "มาดูตัวอย่างโค้ดจริงใน worked_day77.py กันครับ สถานการณ์นี้เราจะสกัดใบกำกับภาษีภาษาไทยทั้งรายการสินค้า ยอดก่อนภาษี VAT 7% และยอดสุทธิ\n\nในขั้นแรก เราสร้าง LineItem กับ ThaiInvoiceExtraction โดยใส่ extra=\"forbid\" ทั้งในคลาสหลักและ sub-model นะครับ จุดนี้สำคัญมาก เพราะถ้าลืมใส่ใน LineItem ตัว API จะปฏิเสธ schema ทันทีเพราะ additionalProperties หายไปใน defs จากนั้นเราเขียน model_validator ชื่อ verify_invoice_math ตรวจว่า subtotal + vat_amount ต่างจาก total_amount ไม่เกิน 0.02 บาท\n\nขั้นที่สอง เราเขียน extract_thai_invoice ให้รองรับทั้ง mock_json แบบออฟไลน์ และโหมด API จริงผ่าน client.chat.completions.parse โดยส่ง response_format เป็นคลาส Pydantic ของเราได้เลย\n\nขั้นที่สาม ลองดูเคส bad_math_mock ครับ โครงสร้าง JSON ถูกเป๊ะทุกฟิลด์ แต่ยอดรวมเพี้ยนจาก 1070 เป็น 1700 ซึ่งด่านที่สองของเราจับได้ทันทีและโยน ValidationError ออกมาชัดเจน เดี๋ยวพี่พักรอให้ลองไล่ดูทั้ง 3 ขั้นตอนก่อน พร้อมลงมือเขียนเองเมื่อไหร่กดไปต่อได้เลยครับ",
+      "ttsText": "มาดูตัวอย่างโค้ดจริงใน worked_day77.py กันครับ สถานการณ์นี้เราจะสกัดใบกำกับภาษีภาษาไทยทั้งรายการสินค้า ยอดก่อนภาษี VAT 7 เปอร์เซ็นต์ และยอดสุทธิ\n\nในขั้นแรก เราสร้าง LineItem กับ ThaiInvoiceExtraction โดยใส่ extra เท่ากับ forbid ทั้งในคลาสหลักและ sub-model นะครับ จุดนี้สำคัญมาก เพราะถ้าลืมใส่ใน LineItem ตัว API จะปฏิเสธ schema ทันทีเพราะ additionalProperties หายไปใน defs จากนั้นเราเขียน model_validator ชื่อ verify_invoice_math ตรวจว่า subtotal บวก vat_amount ต่างจาก total_amount ไม่เกิน 0.02 บาท\n\nขั้นที่สอง เราเขียน extract_thai_invoice ให้รองรับทั้ง mock_json แบบออฟไลน์ และโหมด API จริงผ่าน client.chat.completions.parse โดยส่ง response_format เป็นคลาส Pydantic ของเราได้เลย\n\nขั้นที่สาม ลองดูเคส bad_math_mock ครับ โครงสร้าง JSON ถูกเป๊ะทุกฟิลด์ แต่ยอดรวมเพี้ยนจาก 1070 เป็น 1700 ซึ่งด่านที่สองของเราจับได้ทันทีและโยน ValidationError ออกมาชัดเจน เดี๋ยวพี่พักรอให้ลองไล่ดูทั้ง 3 ขั้นตอนก่อน พร้อมลงมือเขียนเองเมื่อไหร่กดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอทบทวนตัวอย่าง ThaiInvoiceExtraction",
+        "prompt": "ลองอ่านโค้ด worked_day77.py ทั้ง 3 ขั้นตอน โดยเฉพาะการใช้ extra='forbid' ใน nested model แล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "เข้าใจตัวอย่างแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สกัดทิกเก็ตลูกค้าไทย",
+      "src": "/audio/d077/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดตอนไล่สเปกของฟิลด์และฟังก์ชันทั้ง 3 ส่วนให้น้องเขียนตามได้ง่าย",
+      "script": "ถึงตาคุณลงมือเขียนจริงใน exercise_day77.py แล้วครับ โจทย์วันนี้คือสร้างตัวสกัดทิกเก็ตแจ้งปัญหาลูกค้าไทยแบบ Strict Schema 3 ส่วนหลัก ๆ นะ\n\nส่วนแรก สร้างคลาส ThaiTicketExtraction ตั้ง ConfigDict extra=\"forbid\" โดยมี 6 ฟิลด์ คือ ticket_ref เป็น str | None, category เป็น Literal billing shipping technical หรือ account, urgency เป็น Literal low medium หรือ high, amount_thb เป็น float | None ที่มากกว่าหรือเท่ากับ 0.0, summary_th เป็น str ที่ต้อง strip ช่องว่างก่อนเช็กความยาว 5 ถึง 160 ตัวอักษร และ needs_human_review เป็น bool จากนั้นเติม model_validator แบบ after เพื่อบังคับว่าถ้า urgency เป็น high และ amount_thb มากกว่าหรือเท่ากับ 10000 บาท แต่ needs_human_review เป็น False ให้ raise ValueError ทันที\n\nส่วนที่สอง เขียนฟังก์ชัน build_strict_response_format ที่สร้าง dict สำหรับส่ง API และตรวจด้วยว่า schema มี additionalProperties เป็น False จริงไหม\n\nส่วนที่สาม เขียน parse_ticket_json เรียก model_validate_json เสร็จแล้วรัน uv run pytest -q กับ ruff check ได้เลย ถ้าติดขัดเปิดดูคำใบ้ทีละขั้นได้นะ เดี๋ยวพี่รอตรงนี้ครับ",
+      "ttsText": "ถึงตาคุณลงมือเขียนจริงใน exercise_day77.py แล้วครับ โจทย์วันนี้คือสร้างตัวสกัดทิกเก็ตแจ้งปัญหาลูกค้าไทยแบบ Strict Schema 3 ส่วนหลัก ๆ นะ\n\nส่วนแรก สร้างคลาส ThaiTicketExtraction ตั้ง ConfigDict extra เท่ากับ forbid โดยมี 6 ฟิลด์ คือ ticket_ref เป็น str หรือ None, category เป็น Literal billing shipping technical หรือ account, urgency เป็น Literal low medium หรือ high, amount_thb เป็น float หรือ None ที่มากกว่าหรือเท่ากับ 0.0, summary_th เป็น str ที่ต้อง strip ช่องว่างก่อนเช็กความยาว 5 ถึง 160 ตัวอักษร และ needs_human_review เป็น bool จากนั้นเติม model_validator แบบ after เพื่อบังคับว่าถ้า urgency เป็น high และ amount_thb มากกว่าหรือเท่ากับ 10000 บาท แต่ needs_human_review เป็น False ให้ raise ValueError ทันที\n\nส่วนที่สอง เขียนฟังก์ชัน build_strict_response_format ที่สร้าง dict สำหรับส่ง API และตรวจด้วยว่า schema มี additionalProperties เป็น False จริงไหม\n\nส่วนที่สาม เขียน parse_ticket_json เรียก model_validate_json เสร็จแล้วรัน uv run pytest dash q กับ ruff check ได้เลย ถ้าติดขัดเปิดดูคำใบ้ทีละขั้นได้นะ เดี๋ยวพี่รอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอเขียนโค้ด exercise_day77.py",
+        "prompt": "ลงมือเขียน ThaiTicketExtraction และฟังก์ชันทั้งสองใน exercise_day77.py แล้วรัน test_day77.py ให้ผ่านครบ 4 เคสครับ",
+        "continueLabel": "เขียนโค้ดและรันเทสต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d077/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยตอนต้น จากนั้นเล่า 4 ข้อผิดพลาดด้วยจังหวะสนุกปนเตือนภัยแบบรุ่นพี่ที่เคยเจอมากับตัว",
+      "script": "เยี่ยมมากครับที่ผ่านแบบฝึกหัดมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 กับดักยอดฮิตของงาน Strict Structured Outputs ไว้กันพลาดในโปรเจกต์จริงนะครับ\n\nข้อแรก ไม่ยอมเปิดช่อง None ให้ฟิลด์ที่อาจไม่มีในเอกสาร ผลคือพอข้อความลูกค้าไม่ได้พิมพ์เลขใบแจ้งหนี้ โมเดลเลยแต่งเลข INV-0001 ขึ้นมาเองแบบหน้าตาเฉย\nข้อที่สอง ลืมใส่ ConfigDict extra=\"forbid\" ใน nested sub-model ทำให้ API ตีกลับด้วย HTTP 400 แจ้งว่า additionalProperties ใน defs ไม่เป็น false\nข้อที่สาม เชื่อใจข้อมูลทันทีแค่เพราะผ่าน Strict Schema โดยไม่ใส่ model_validator ปล่อยให้ยอด subtotal + vat ไม่เท่ากับ total ไหลลงฐานข้อมูลเงียบ ๆ\nและข้อที่สี่ ยิง LLM API จริงในทุก unit test ทำให้ pytest ช้า เสียเงิน และ CI พังเวลาเน็ตหลุด แยกฟังก์ชัน parse ออกมาเทสต์ด้วย mock JSON เสมอนะครับ",
+      "ttsText": "เยี่ยมมากครับที่ผ่านแบบฝึกหัดมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 กับดักยอดฮิตของงาน Strict Structured Outputs ไว้กันพลาดในโปรเจกต์จริงนะครับ\n\nข้อแรก ไม่ยอมเปิดช่อง None ให้ฟิลด์ที่อาจไม่มีในเอกสาร ผลคือพอข้อความลูกค้าไม่ได้พิมพ์เลขใบแจ้งหนี้ โมเดลเลยแต่งเลข INV-0001 ขึ้นมาเองแบบหน้าตาเฉย\nข้อที่สอง ลืมใส่ ConfigDict extra เท่ากับ forbid ใน nested sub-model ทำให้ API ตีกลับด้วย HTTP 400 แจ้งว่า additionalProperties ใน defs ไม่เป็น false\nข้อที่สาม เชื่อใจข้อมูลทันทีแค่เพราะผ่าน Strict Schema โดยไม่ใส่ model_validator ปล่อยให้ยอด subtotal บวก vat ไม่เท่ากับ total ไหลลงฐานข้อมูลเงียบ ๆ\nและข้อที่สี่ ยิง LLM API จริงในทุก unit test ทำให้ pytest ช้า เสียเงิน และ CI พังเวลาเน็ตหลุด แยกฟังก์ชัน parse ออกมาเทสต์ด้วย mock JSON เสมอนะครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d077/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนทบทวนความรู้ 4 ข้อแบบไม่กดดัน",
+      "script": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อสั้น ๆ นะครับ ทั้งเรื่อง Constrained Decoding ช่องทางออก None ผลของ extra=\"forbid\" และการจับผิดตัวเลขข้ามฟิลด์ ไม่ต้องกังวลถ้าพลาดข้อไหน เพราะระบบจะอธิบายให้ฟังแล้วจัดคิวทบทวนให้อัตโนมัติ ลองตอบครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความเข้าใจกันด้วย Micro-Quiz 4 ข้อสั้น ๆ นะครับ ทั้งเรื่อง Constrained Decoding ช่องทางออก None ผลของ extra เท่ากับ forbid และการจับผิดตัวเลขข้ามฟิลด์ ไม่ต้องกังวลถ้าพลาดข้อไหน เพราะระบบจะอธิบายให้ฟังแล้วจัดคิวทบทวนให้อัตโนมัติ ลองตอบครบแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอทำ Micro-Quiz 4 ข้อ (Day 77)",
+        "prompt": "ตอบควิซทั้ง 4 ข้อเกี่ยวกับ Strict JSON Schema และ Pydantic v2 ให้ครบแล้วกดไปต่อครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 78",
+      "src": "/audio/d077/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภูมิใจ สรุป 4 แก่นสำคัญให้ชัดเจน แล้วชวนไปต่อ Day 78 อย่างตื่นเต้น",
+      "script": "ยินดีด้วยครับ คุณจบ Day 77 แล้ว สรุป 4 แก่นสำคัญติดตัวไปใช้จริงกันนะ\n\nหนึ่ง ใช้ Pydantic v2 คู่กับ extra=\"forbid\", Literal และ Field description เป็น Single Source of Truth\nสอง เปิดช่อง T | None เสมอสำหรับข้อมูลที่อาจไม่มีในเอกสาร เพื่อกัน hallucination\nสาม ซ้อนด่านตรวจ 2 ชั้น คือกฎโครงสร้างที่ Constrained Decoding และกฎธุรกิจข้ามฟิลด์ที่ model_validator\nสี่ แยกชั้น parse ออกจาก HTTP client เพื่อให้ pytest แบบ mock รันได้เร็วและทำซ้ำได้ทุกครั้ง\n\nส่วนวันพรุ่งนี้ใน Day 78 เราจะมาดูกันต่อว่าเมื่อด่านที่ 2 จับ ValidationError ได้แล้ว เราจะส่ง error กลับไปให้โมเดลซ่อมตัวเองอย่างไรใน Validation-Repair Loop แล้วเจอกันครับ",
+      "ttsText": "ยินดีด้วยครับ คุณจบ Day 77 แล้ว สรุป 4 แก่นสำคัญติดตัวไปใช้จริงกันนะ\n\nหนึ่ง ใช้ Pydantic v2 คู่กับ extra เท่ากับ forbid, Literal และ Field description เป็น Single Source of Truth\nสอง เปิดช่อง T หรือ None เสมอสำหรับข้อมูลที่อาจไม่มีในเอกสาร เพื่อกัน hallucination\nสาม ซ้อนด่านตรวจ 2 ชั้น คือกฎโครงสร้างที่ Constrained Decoding และกฎธุรกิจข้ามฟิลด์ที่ model_validator\nสี่ แยกชั้น parse ออกจาก HTTP client เพื่อให้ pytest แบบ mock รันได้เร็วและทำซ้ำได้ทุกครั้ง\n\nส่วนวันพรุ่งนี้ใน Day 78 เราจะมาดูกันต่อว่าเมื่อด่านที่ 2 จับ ValidationError ได้แล้ว เราจะส่ง error กลับไปให้โมเดลซ่อมตัวเองอย่างไรใน Validation-Repair Loop แล้วเจอกันครับ"
+    }
+  ]
+}

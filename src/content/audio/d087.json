@@ -1,0 +1,109 @@
+{
+  "lessonId": "d087",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — พิมพ์เขียว Milestone #3",
+      "src": "/audio/d087/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างกระตือรือร้น เหมือนชวนน้องกางแบบแปลนโปรเจกต์พอร์ตโฟลิโอชิ้นใหญ่ น้ำเสียงมั่นใจ ชัดเจน และชวนตื่นเต้นกับ Milestone #3",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 87 ของ Neural Path นะครับ วันนี้พิเศษหน่อยเพราะเราจะมากางพิมพ์เขียวออกแบบ Portfolio Milestone #3 หรือ Phase 3 Mini-Project กันครับ\n\nระบบที่เราจะสร้างชื่อว่า Typed Thai Document Classifier and Extractor สำหรับคัดแยกและสกัดเอกสารธุรกิจไทย 3 ประเภทคือ receipt, support_ticket และ tax_invoice_request โดยตั้งเป้าหมาย SLA วัดผลชัดเจนตั้งแต่วันแรก คือ Schema Validity อย่างน้อย 99 เปอร์เซ็นต์, Classification Accuracy อย่างน้อย 90 เปอร์เซ็นต์, P95 Latency ต่ำกว่า 2.5 วินาที และต้นทุนไม่เกิน 1.50 ดอลลาร์ต่อ 1,000 เอกสารครับ\n\nวันนี้เราจะวาง Data Contract ด้วย Pydantic v2 ทั้ง 3 ประเภท พร้อมกฎเลขผู้เสียภาษี 13 หลัก, ออกแบบ Versioned SHA-256 Cache Key เพื่อไม่ให้เสิร์ฟข้อมูลเก่าเวลาแก้ prompt และวางทางออก HITL เพื่อเป็นเข็มทิศไปประกอบโค้ดจริงใน Day 88 ถึง 92 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 87 ของ Neural Path นะครับ วันนี้พิเศษหน่อยเพราะเราจะมากางพิมพ์เขียวออกแบบ Portfolio Milestone #3 หรือ Phase 3 Mini-Project กันครับ\n\nระบบที่เราจะสร้างชื่อว่า Typed Thai Document Classifier and Extractor สำหรับคัดแยกและสกัดเอกสารธุรกิจไทย 3 ประเภทคือ receipt, support_ticket และ tax_invoice_request โดยตั้งเป้าหมาย SLA วัดผลชัดเจนตั้งแต่วันแรก คือ Schema Validity อย่างน้อย 99 เปอร์เซ็นต์, Classification Accuracy อย่างน้อย 90 เปอร์เซ็นต์, P95 Latency ต่ำกว่า 2.5 วินาที และต้นทุนไม่เกิน 1.50 ดอลลาร์ต่อ 1,000 เอกสารครับ\n\nวันนี้เราจะวาง Data Contract ด้วย Pydantic v2 ทั้ง 3 ประเภท พร้อมกฎเลขผู้เสียภาษี 13 หลัก, ออกแบบ Versioned SHA-256 Cache Key เพื่อไม่ให้เสิร์ฟข้อมูลเก่าเวลาแก้ prompt และวางทางออก HITL เพื่อเป็นเข็มทิศไปประกอบโค้ดจริงใน Day 88 ถึง 92 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d087/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง เป็นระบบ แยกเป้าหมาย 3 ด้านชัดเจนตั้งแต่สเปก, Schema และ Cache Key",
+      "script": "มาเช็กเป้าหมายของ Day 87 กันครับ จบบทนี้คุณจะได้พิมพ์เขียวที่แข็งแรง 3 ส่วนพร้อมต่อยอดทันที\n\nอย่างแรก กำหนดขอบเขตสถาปัตยกรรมและเป้าหมาย SLA 4 แกนของ Milestone #3 ได้ชัดเจนเหมือนเขียน ADR จริง\nอย่างที่สอง ออกแบบ Strict Pydantic v2 Schemas สำหรับเอกสารไทย 3 ประเภท พร้อมตรวจเลขผู้เสียภาษี 13 หลักและใช้ Optional กัน hallucination\nและอย่างที่สาม ออกแบบ Model Routing และ Versioned SHA-256 Cache Key ที่ผูกกับ prompt_version และ schema_version บนเครื่องได้ 100 เปอร์เซ็นต์ครับ",
+      "ttsText": "มาเช็กเป้าหมายของ Day 87 กันครับ จบบทนี้คุณจะได้พิมพ์เขียวที่แข็งแรง 3 ส่วนพร้อมต่อยอดทันที\n\nอย่างแรก กำหนดขอบเขตสถาปัตยกรรมและเป้าหมาย SLA 4 แกนของ Milestone #3 ได้ชัดเจนเหมือนเขียน ADR จริง\nอย่างที่สอง ออกแบบ Strict Pydantic v2 Schemas สำหรับเอกสารไทย 3 ประเภท พร้อมตรวจเลขผู้เสียภาษี 13 หลักและใช้ Optional กัน hallucination\nและอย่างที่สาม ออกแบบ Model Routing และ Versioned SHA-256 Cache Key ที่ผูกกับ prompt_version และ schema_version บนเครื่องได้ 100 เปอร์เซ็นต์ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d087/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาตั้งโปรเจกต์ thai-doc-extractor ทีละคำสั่งอย่างชัดเจน",
+      "script": "มาตั้งโฟลเดอร์ต้นแบบของ Phase 3 Mini-Project กันครับ ดูในกล่องคำสั่งได้เลย\n\nเริ่มจากสั่ง uv init thai-doc-extractor แล้ว cd เข้าไป จากนั้นติดตั้ง pydantic ด้วย uv add pydantic และติดตั้ง pytest กับ ruff ด้วย uv add --dev pytest ruff แล้วรันคำสั่ง python เช็กเวอร์ชันให้ขึ้นคำว่า Phase 3 Spec Ready ครับ\n\nschema และ cache key ที่เราสร้างในโปรเจกต์นี้จะได้เอาไปต่อยอดกับ SQLite Cache และ Repair Loop ใน Day 88 ถึง 92 ต่อเลย เดี๋ยวพี่พักรอให้ตั้งเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยนะครับ",
+      "ttsText": "มาตั้งโฟลเดอร์ต้นแบบของ Phase 3 Mini-Project กันครับ ดูในกล่องคำสั่งได้เลย\n\nเริ่มจากสั่ง uv init thai-doc-extractor แล้ว cd เข้าไป จากนั้นติดตั้ง pydantic ด้วย uv add pydantic และติดตั้ง pytest กับ ruff ด้วย uv add dash dash dev pytest ruff แล้วรันคำสั่ง python เช็กเวอร์ชันให้ขึ้นคำว่า Phase 3 Spec Ready ครับ\n\nschema และ cache key ที่เราสร้างในโปรเจกต์นี้จะได้เอาไปต่อยอดกับ SQLite Cache และ Repair Loop ใน Day 88 ถึง 92 ต่อเลย เดี๋ยวพี่พักรอให้ตั้งเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตั้งโปรเจกต์ thai-doc-extractor",
+        "prompt": "ลองรันคำสั่งสร้างโปรเจกต์ thai-doc-extractor และเช็กเวอร์ชัน Pydantic ให้พร้อมก่อนนะครับ",
+        "continueLabel": "ตั้งโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — สถาปัตยกรรม 5 ชั้น",
+      "src": "/audio/d087/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงชวนสำรวจแผนภาพสถาปัตยกรรม 5 ชั้น ไล่จากซ้ายไปขวาให้เห็นการไหลของเอกสารอย่างชัดเจน",
+      "script": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรม Phase 3 Extractor บนหน้าจอไปด้วยกันนะครับ เราแบ่งท่อการทำงานไว้ 5 ชั้นชัดเจน\n\nเริ่มจาก Versioned Prompt ไหลเข้าสู่ตัวทำความสะอาดข้อความไทยอย่าง Edge-Case Normalizer จากนั้นวิ่งไปชน Router กับ Cache ก่อนส่งเข้าชั้น Pydantic Repair เพื่อซ่อมผลลัพธ์ให้เป๊ะ แล้วค่อยไปสรุปในชั้น Eval และ Cost ครับ\n\nการกางภาพรวมทั้ง 5 ชั้นแบบนี้ตั้งแต่วันนี้ จะช่วยให้ตอนเขียนโค้ดเชื่อมชิ้นส่วนในวันพรุ่งนี้ขอบต่อกันสนิททุกชิ้นเลยครับ",
+      "ttsText": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรม Phase 3 Extractor บนหน้าจอไปด้วยกันนะครับ เราแบ่งท่อการทำงานไว้ 5 ชั้นชัดเจน\n\nเริ่มจาก Versioned Prompt ไหลเข้าสู่ตัวทำความสะอาดข้อความไทยอย่าง Edge-Case Normalizer จากนั้นวิ่งไปชน Router กับ Cache ก่อนส่งเข้าชั้น Pydantic Repair เพื่อซ่อมผลลัพธ์ให้เป๊ะ แล้วค่อยไปสรุปในชั้น Eval และ Cost ครับ\n\nการกางภาพรวมทั้ง 5 ชั้นแบบนี้ตั้งแต่วันนี้ จะช่วยให้ตอนเขียนโค้ดเชื่อมชิ้นส่วนในวันพรุ่งนี้ขอบต่อกันสนิททุกชิ้นเลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d087/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายการออกแบบระบบอย่างมีหลักการ สนุก ชวนเห็นภาพเรื่องซองเอกสาร 3 สีกับรหัสล็อตบนกล่องยา",
+      "script": "มาเจาะพิมพ์เขียวทั้ง 3 ส่วนของ Milestone #3 กันครับ ส่วนแรกคือการล็อกขอบเขตและ 4 ตัวชี้วัด SLA สำหรับเอกสารไทย 3 ประเภทคือ receipt, support_ticket และ tax_invoice_request พร้อมกฎ HITL เมื่อ confidence ต่ำกว่า 0.75 หรือยอดใบเสร็จตั้งแต่ 50,000 บาทขึ้นไปครับ\n\nส่วนที่สอง การออกแบบ ThaiDocExtraction เหมือนซองเอกสาร 3 สีของฝ่ายธุรการ หน้าซองระบุ doc_type ข้างในใส่เฉพาะ payload ช่องเดียว อีก 2 ช่องเป็น None โดยใช้ model_validator mode after ตรวจข้ามฟิลด์ และเก็บ tax_id_13 เป็น string เพื่อรักษาเลข 0 นำหน้า พร้อมล้างขีดให้ครบ 13 หลักครับ\n\nส่วนที่สาม นโยบาย Routing 4 ด่านจาก SQLite Cache ไป Small Tier, Frontier Escalation และ Safe Fallback โดย Cache Key ต้องมัดรวมข้อความที่ normalize แล้วกับ prompt_version, schema_version และ policy version ก่อนแฮช SHA-256 เหมือนรหัสล็อตบนกล่องยา พออัปเกรด prompt ก็ invalidate อัตโนมัติ และห้ามแคชผล fallback เด็ดขาดครับ",
+      "ttsText": "มาเจาะพิมพ์เขียวทั้ง 3 ส่วนของ Milestone #3 กันครับ ส่วนแรกคือการล็อกขอบเขตและ 4 ตัวชี้วัด SLA สำหรับเอกสารไทย 3 ประเภทคือ receipt, support_ticket และ tax_invoice_request พร้อมกฎ HITL เมื่อ confidence ต่ำกว่า 0.75 หรือยอดใบเสร็จตั้งแต่ 50,000 บาทขึ้นไปครับ\n\nส่วนที่สอง การออกแบบ ThaiDocExtraction เหมือนซองเอกสาร 3 สีของฝ่ายธุรการ หน้าซองระบุ doc_type ข้างในใส่เฉพาะ payload ช่องเดียว อีก 2 ช่องเป็น None โดยใช้ model_validator mode after ตรวจข้ามฟิลด์ และเก็บ tax_id_13 เป็น string เพื่อรักษาเลข 0 นำหน้า พร้อมล้างขีดให้ครบ 13 หลักครับ\n\nส่วนที่สาม นโยบาย Routing 4 ด่านจาก SQLite Cache ไป Small Tier, Frontier Escalation และ Safe Fallback โดย Cache Key ต้องมัดรวมข้อความที่ normalize แล้วกับ prompt_version, schema_version และ policy version ก่อนแฮช SHA-256 เหมือนรหัสล็อตบนกล่องยา พออัปเกรด prompt ก็ invalidate อัตโนมัติ และห้ามแคชผล fallback เด็ดขาดครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรันพิมพ์เขียว 3 ส่วน",
+      "src": "/audio/d087/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนรีวิวโค้ดพิมพ์เขียวทีละสเต็ป ชี้ให้เห็นการ auto-invalidation ของ SHA-256 และตัวตรวจ SLA Gate",
+      "script": "มาดูโค้ดพิมพ์เขียวทั้ง 3 ส่วนใน worked_day87.py กันครับ\n\nสเต็ปแรก เรานิยาม ReceiptPayload, SupportTicketPayload และ TaxInvoiceRequestPayload ที่ตั้ง extra=\"forbid\" ทุกชั้น แล้วครอบด้วย ThaiDocExtraction ที่มี verify_matching_payload คอยตรวจว่า payload ที่ไม่เป็น None ต้องตรงกับ doc_type เป๊ะ พอส่งเลขผู้เสียภาษีที่มีขีดคั่นเข้ามา ระบบก็ล้างขีดเหลือ 13 หลักสะอาดให้ทันที\n\nสเต็ปที่สอง ใน make_cache_key สังเกตผลรันเลยครับ ข้อความใบเสร็จที่มีช่องว่างซ้ำหรือติด zero-width space จะได้ key เดียวกันเป๊ะคือ Cache Hit แต่พอขยับ prompt_version จาก v1.0 เป็น v1.1 ปุ๊บ key เปลี่ยนทันทีเป็น False เกิด Auto Invalidation โดยไม่ต้องล้างฐานข้อมูลเลย\n\nสเต็ปที่สาม evaluate_sla รับค่า 4 แกนมาตรวจเทียบเกณฑ์ Milestone #3 และคืนรายการ failed_gates ออกมาชัดเจน เดี๋ยวพี่พักรอให้คุณลองเดินดูตัวอย่างทั้ง 3 ขั้นตอนและสังเกตทริคเรื่องใส่ policy version แทนชื่อโมเดลเดี่ยวใน Cache Key ด้วยนะครับ",
+      "ttsText": "มาดูโค้ดพิมพ์เขียวทั้ง 3 ส่วนใน worked_day87.py กันครับ\n\nสเต็ปแรก เรานิยาม ReceiptPayload, SupportTicketPayload และ TaxInvoiceRequestPayload ที่ตั้ง extra เท่ากับ forbid ทุกชั้น แล้วครอบด้วย ThaiDocExtraction ที่มี verify_matching_payload คอยตรวจว่า payload ที่ไม่เป็น None ต้องตรงกับ doc_type เป๊ะ พอส่งเลขผู้เสียภาษีที่มีขีดคั่นเข้ามา ระบบก็ล้างขีดเหลือ 13 หลักสะอาดให้ทันที\n\nสเต็ปที่สอง ใน make_cache_key สังเกตผลรันเลยครับ ข้อความใบเสร็จที่มีช่องว่างซ้ำหรือติด zero-width space จะได้ key เดียวกันเป๊ะคือ Cache Hit แต่พอขยับ prompt_version จาก v1.0 เป็น v1.1 ปุ๊บ key เปลี่ยนทันทีเป็น False เกิด Auto Invalidation โดยไม่ต้องล้างฐานข้อมูลเลย\n\nสเต็ปที่สาม evaluate_sla รับค่า 4 แกนมาตรวจเทียบเกณฑ์ Milestone #3 และคืนรายการ failed_gates ออกมาชัดเจน เดี๋ยวพี่พักรอให้คุณลองเดินดูตัวอย่างทั้ง 3 ขั้นตอนและสังเกตทริคเรื่องใส่ policy version แทนชื่อโมเดลเดี่ยวใน Cache Key ด้วยนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษาพิมพ์เขียว worked_day87.py",
+        "prompt": "ลองไล่ดูโค้ดทั้ง 3 ส่วน ทั้ง Envelope Validator, Versioned Cache Key และ SLA Checker ได้เลยครับ",
+        "continueLabel": "เข้าใจพิมพ์เขียวแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือเขียนโค้ดจริง",
+      "src": "/audio/d087/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่นชัดเจน พาไล่สเปกทั้ง 4 ส่วนใน exercise_day87.py ทีละจุดอย่างเป็นระบบ",
+      "script": "มาลงมือสร้างไฟล์สัญญาข้อมูลจริงใน exercise_day87.py กันครับ มี 4 ส่วนให้ประกอบให้ครบนะ\n\nหนึ่ง สร้าง 3 strict payload models แบบ extra=\"forbid\" ได้แก่ ReceiptPayload, SupportTicketPayload ที่ strip summary_th แล้วยาว 5 ถึง 160 ตัวอักษร และ TaxInvoiceRequestPayload ที่มี validator ล้างขีดและตรวจ tax_id_13 ครบ 13 หลักเมื่อไม่เป็น None\n\nสอง สร้าง ThaiDocExtraction แล้วเขียน model_validator mode after บังคับให้มีเฉพาะ payload ที่ตรงกับ doc_type และบังคับให้ใบเสร็จที่ total_thb >= 50,000 บาทต้องมี needs_human_review เป็น True ครับ\n\nสาม เขียน make_extraction_cache_key ล้าง zero-width space, BOM และช่องว่างซ้ำ เช็กว่าไม่ว่างแล้วคืน SHA-256 hex 64 ตัวอักษร\nและสี่ เขียน check_sla_budget ตรวจช่วงค่าแล้วเช็ก 4 เกณฑ์ของ Milestone #3 เสร็จแล้วรัน test_day87.py ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "ttsText": "มาลงมือสร้างไฟล์สัญญาข้อมูลจริงใน exercise_day87.py กันครับ มี 4 ส่วนให้ประกอบให้ครบนะ\n\nหนึ่ง สร้าง 3 strict payload models แบบ extra เท่ากับ forbid ได้แก่ ReceiptPayload, SupportTicketPayload ที่ strip summary_th แล้วยาว 5 ถึง 160 ตัวอักษร และ TaxInvoiceRequestPayload ที่มี validator ล้างขีดและตรวจ tax_id_13 ครบ 13 หลักเมื่อไม่เป็น None\n\nสอง สร้าง ThaiDocExtraction แล้วเขียน model_validator mode after บังคับให้มีเฉพาะ payload ที่ตรงกับ doc_type และบังคับให้ใบเสร็จที่ total_thb มากกว่าหรือเท่ากับ 50,000 บาทต้องมี needs_human_review เป็น True ครับ\n\nสาม เขียน make_extraction_cache_key ล้าง zero-width space, BOM และช่องว่างซ้ำ เช็กว่าไม่ว่างแล้วคืน SHA-256 hex 64 ตัวอักษร\nและสี่ เขียน check_sla_budget ตรวจช่วงค่าแล้วเช็ก 4 เกณฑ์ของ Milestone #3 เสร็จแล้วรัน test_day87.py ได้เลย เดี๋ยวพี่รอตรงนี้นะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด exercise_day87.py",
+        "prompt": "ลงมือเขียน Schemas, ThaiDocExtraction, make_extraction_cache_key และ check_sla_budget แล้วรัน test_day87.py ให้ผ่านครบนะครับ",
+        "continueLabel": "เขียนโค้ดและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d087/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยแล้วเล่า 4 บั๊กคลาสสิกตอนออกแบบ Schema และ Cache Key แบบกันเองแต่จริงจัง",
+      "script": "เก่งมากครับที่เขียนพิมพ์เขียวจนเทสต์ผ่านหมดแล้ว ก่อนไปควิซ พี่ขอเตือน 4 บั๊กคลาสสิกที่เจอบ่อยตอนออกแบบระบบสกัดเอกสารนะครับ\n\nข้อแรก แฮช Cache Key จากข้อความเอกสารอย่างเดียวโดยลืมใส่ prompt_version กับ schema_version ผลคือพอแก้บั๊กใน prompt แล้ว ระบบก็ยังตอบคำตอบผิดแบบเดิมจาก cache ให้ลูกค้าตลอดกาล\n\nข้อที่สอง ปล่อยให้ payload หลายประเภทถูกเติมพร้อมกันหรือเป็น None ทั้งหมด เช่น doc_type บอกว่าเป็น receipt แต่ช่อง receipt ดันเป็น None ทำให้โค้ดฝั่งบัญชีพังด้วย AttributeError กลาง production\n\nข้อที่สาม ไม่ normalize ขีดคั่นในเลขผู้เสียภาษี 13 หลักของไทย หรือเผลอเก็บเป็น int ทำให้เลข 0 นำหน้าอย่าง 01055 หายไปทันที ต้องเก็บเป็น str และล้างขีดก่อนตรวจเสมอครับ\n\nและข้อที่สี่ ลุยเขียน Pipeline โดยไม่ตั้งเป้าหมาย SLA ก่อน สุดท้ายไม่รู้เลยว่าช้าไปหรือแพงเกินงบ ต้องเช็ก 4 แกนตั้งแต่หน้าพิมพ์เขียวเลยครับ",
+      "ttsText": "เก่งมากครับที่เขียนพิมพ์เขียวจนเทสต์ผ่านหมดแล้ว ก่อนไปควิซ พี่ขอเตือน 4 บั๊กคลาสสิกที่เจอบ่อยตอนออกแบบระบบสกัดเอกสารนะครับ\n\nข้อแรก แฮช Cache Key จากข้อความเอกสารอย่างเดียวโดยลืมใส่ prompt_version กับ schema_version ผลคือพอแก้บั๊กใน prompt แล้ว ระบบก็ยังตอบคำตอบผิดแบบเดิมจาก cache ให้ลูกค้าตลอดกาล\n\nข้อที่สอง ปล่อยให้ payload หลายประเภทถูกเติมพร้อมกันหรือเป็น None ทั้งหมด เช่น doc_type บอกว่าเป็น receipt แต่ช่อง receipt ดันเป็น None ทำให้โค้ดฝั่งบัญชีพังด้วย AttributeError กลาง production\n\nข้อที่สาม ไม่ normalize ขีดคั่นในเลขผู้เสียภาษี 13 หลักของไทย หรือเผลอเก็บเป็น int ทำให้เลข 0 นำหน้าอย่าง 01055 หายไปทันที ต้องเก็บเป็น str และล้างขีดก่อนตรวจเสมอครับ\n\nและข้อที่สี่ ลุยเขียน Pipeline โดยไม่ตั้งเป้าหมาย SLA ก่อน สุดท้ายไม่รู้เลยว่าช้าไปหรือแพงเกินงบ ต้องเช็ก 4 แกนตั้งแต่หน้าพิมพ์เขียวเลยครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d087/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ ชวนเช็กความเข้าใจเรื่อง Cache Key, model_validator, tax_id_13 และการห้ามแคช fallback",
+      "script": "มาถึง Micro-Quiz 4 ข้อของ Day 87 แล้วครับ คำถามรอบนี้จะช่วยย้ำ 4 จุดตายของงานออกแบบ ทั้งเหตุผลที่ต้องใส่เวอร์ชันใน Cache Key, หน้าที่ของ model_validator, ทำไม tax_id_13 ถึงห้ามใช้ int และทำไมถึงห้ามแคชผลลัพธ์ fallback\n\nค่อย ๆ อ่านแล้วเลือกตอบให้ครบทั้ง 4 ข้อนะ เดี๋ยวพี่รอตรงนี้ครับ",
+      "ttsText": "มาถึง Micro-Quiz 4 ข้อของ Day 87 แล้วครับ คำถามรอบนี้จะช่วยย้ำ 4 จุดตายของงานออกแบบ ทั้งเหตุผลที่ต้องใส่เวอร์ชันใน Cache Key, หน้าที่ของ model_validator, ทำไม tax_id_13 ถึงห้ามใช้ int และทำไมถึงห้ามแคชผลลัพธ์ fallback\n\nค่อย ๆ อ่านแล้วเลือกตอบให้ครบทั้ง 4 ข้อนะ เดี๋ยวพี่รอตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง Cache Key, Thai Tax ID และ HITL Schema แล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 88",
+      "src": "/audio/d087/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดีและมั่นใจ สรุป 3 เสาหลักของพิมพ์เขียว Milestone #3 แล้วส่งต่อความตื่นเต้นไปยังวันประกอบจริง Day 88",
+      "script": "ยินดีด้วยครับ คุณวางพิมพ์เขียว Phase 3 Mini-Project เสร็จสมบูรณ์ใน Day 87 แล้ว พี่ขอสรุป 3 เสาหลักที่จะใช้ต่อในวันพรุ่งนี้ไว้นะครับ\n\nหนึ่ง ล็อกขอบเขตและ 4 เกณฑ์ SLA ของ Milestone #3 ให้ชัด เอกสารไทย 3 ประเภทภายใต้ Accuracy อย่างน้อย 90 เปอร์เซ็นต์, Schema Validity อย่างน้อย 99 เปอร์เซ็นต์, P95 ไม่เกิน 2.5 วินาที และต้นทุนไม่เกิน 1.50 ดอลลาร์ต่อ 1,000 เอกสาร\nสอง ออกแบบ Data Contract ด้วย Pydantic v2 ที่เข้มงวด ทั้ง extra=\"forbid\", ช่อง Optional เพื่อลด hallucination, เลขผู้เสียภาษีไทยแบบ str 13 หลัก และ model_validator เช็กความตรงกันของ payload\nสาม ผูก Versioned SHA-256 Cache Key กับ prompt_version, schema_version และ policy_version เพื่อทำ Auto Invalidation และห้ามแคชผล fallback เด็ดขาดครับ\n\nพรุ่งนี้ Day 88 ซึ่งเป็น Review Day เราจะประกอบพิมพ์เขียวทั้งหมดนี้เป็น Extraction Pipeline ที่มี SQLite Cache, Routing และ Repair Loop ที่รันจริงและผ่าน pytest ทุกข้อ แล้วเจอกันพรุ่งนี้ครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณวางพิมพ์เขียว Phase 3 Mini-Project เสร็จสมบูรณ์ใน Day 87 แล้ว พี่ขอสรุป 3 เสาหลักที่จะใช้ต่อในวันพรุ่งนี้ไว้นะครับ\n\nหนึ่ง ล็อกขอบเขตและ 4 เกณฑ์ SLA ของ Milestone #3 ให้ชัด เอกสารไทย 3 ประเภทภายใต้ Accuracy อย่างน้อย 90 เปอร์เซ็นต์, Schema Validity อย่างน้อย 99 เปอร์เซ็นต์, P95 ไม่เกิน 2.5 วินาที และต้นทุนไม่เกิน 1.50 ดอลลาร์ต่อ 1,000 เอกสาร\nสอง ออกแบบ Data Contract ด้วย Pydantic v2 ที่เข้มงวด ทั้ง extra เท่ากับ forbid, ช่อง Optional เพื่อลด hallucination, เลขผู้เสียภาษีไทยแบบ str 13 หลัก และ model_validator เช็กความตรงกันของ payload\nสาม ผูก Versioned SHA-256 Cache Key กับ prompt_version, schema_version และ policy_version เพื่อทำ Auto Invalidation และห้ามแคชผล fallback เด็ดขาดครับ\n\nพรุ่งนี้ Day 88 ซึ่งเป็น Review Day เราจะประกอบพิมพ์เขียวทั้งหมดนี้เป็น Extraction Pipeline ที่มี SQLite Cache, Routing และ Repair Loop ที่รันจริงและผ่าน pytest ทุกข้อ แล้วเจอกันพรุ่งนี้ครับ!"
+    }
+  ]
+}

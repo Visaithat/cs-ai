@@ -1,0 +1,42 @@
+{
+  "name": "neural-path",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Neural Path — Thai/English digital textbook for the 180-day practical AI Engineer curriculum (Day 1 prototype).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "audio:d001": "uv run --with google-genai --with lameenc python scripts/generate-audio.py d001",
+    "audio:b01-b02": "uv run --with google-genai --with lameenc --with edge-tts python scripts/generate-audio.py d001 d002 d003 d004 d005 d006 d007 d008 --skip-existing --fallback-edge",
+    "audio:upgrade-b01-b02": "uv run --with google-genai --with lameenc python scripts/generate-audio.py d002 d003 d004 d005 d006 d007 d008 --skip-gemini --stop-on-daily-quota --delay 22",
+    "audio:daily": "uv run --with google-genai --with lameenc python scripts/generate-audio.py --all --skip-gemini --upload-supabase --prune-local --stop-on-daily-quota --sync-registry --delay 22",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-thai": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "lucide-react": "^1.77.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.1"
+  }
+}

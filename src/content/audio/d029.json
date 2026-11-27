@@ -1,0 +1,109 @@
+{
+  "lessonId": "d029",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — วางสเปกก่อนเขียนโค้ด",
+      "src": "/audio/d029/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่นและกระตือรือร้น ชวนน้องเข้าสู่ช่วงมินิโปรเจกต์แรกของ Phase 1 น้ำเสียงเป็นกันเอง ชัดเจน และชวนให้เห็นความสำคัญของการออกแบบสเปก",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 29 ซึ่งเป็นวันเปิดฉาก Block B08 และเป็นมินิโปรเจกต์แรกของพอร์ตโฟลิโอเราเลยนะ วันนี้เราจะมาวางสเปกและสถาปัตยกรรมของ Resilient Async Data Fetcher CLI กันครับ ใช้เวลาชิว ๆ ประมาณ 30 นาที และรันบนเครื่องตัวเองได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key เลย\n\nลองมองภาพรวมของงาน AI จริง ๆ นะครับ โปรเจกต์ส่วนใหญ่ไม่ได้พังเพราะเราเขียน Python ไม่เป็น แต่พังเพราะไม่เคยตกลงสัญญาข้อมูลตั้งแต่แรก ว่า input หน้าตายังไง output หน้าตายังไง และถ้าต้นทางล่มหรือส่งข้อมูลเพี้ยนมา ระบบจะรับมือแบบไหน\n\nวันนี้เราเลยออกแบบ 4 เรื่องหลักล่วงหน้าก่อนลงมือเขียนท่อใน Day 30 นั่นคือ สัญญาข้อมูลด้วย Pydantic อย่าง FetchTarget, FetchedRecord และ QuarantineRecord เพื่อคัดแยกข้อมูลภาษาไทยที่เสียออกไม่ให้ปนเปื้อน, การแบ่งโมดูลในโฟลเดอร์ src ให้ทดสอบแบบ offline ได้ทันทีด้วย MockTransport, และสุดท้ายคือวางโครงสร้าง error กับ RunSummary เพื่อเตรียมส่ง metrics เข้า structlog ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 29 ซึ่งเป็นวันเปิดฉาก Block B08 และเป็นมินิโปรเจกต์แรกของพอร์ตโฟลิโอเราเลยนะ วันนี้เราจะมาวางสเปกและสถาปัตยกรรมของ Resilient Async Data Fetcher CLI กันครับ ใช้เวลาชิว ๆ ประมาณ 30 นาที และรันบนเครื่องตัวเองได้ 100 เปอร์เซ็นต์ ไม่ต้องใช้ API key เลย\n\nลองมองภาพรวมของงาน AI จริง ๆ นะครับ โปรเจกต์ส่วนใหญ่ไม่ได้พังเพราะเราเขียน Python ไม่เป็น แต่พังเพราะไม่เคยตกลงสัญญาข้อมูลตั้งแต่แรก ว่า input หน้าตายังไง output หน้าตายังไง และถ้าต้นทางล่มหรือส่งข้อมูลเพี้ยนมา ระบบจะรับมือแบบไหน\n\nวันนี้เราเลยออกแบบ 4 เรื่องหลักล่วงหน้าก่อนลงมือเขียนท่อใน Day 30 นั่นคือ สัญญาข้อมูลด้วย Pydantic อย่าง FetchTarget, FetchedRecord และ QuarantineRecord เพื่อคัดแยกข้อมูลภาษาไทยที่เสียออกไม่ให้ปนเปื้อน, การแบ่งโมดูลในโฟลเดอร์ src ให้ทดสอบแบบ offline ได้ทันทีด้วย MockTransport, และสุดท้ายคือวางโครงสร้าง error กับ RunSummary เพื่อเตรียมส่ง metrics เข้า structlog ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d029/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดถ้อยชัดคำ แบ่งจังหวะเป้าหมายทั้ง 3 ข้อให้ฟังง่าย และให้ความมั่นใจว่ารันออฟไลน์ได้ทั้งหมด",
+      "script": "มาดูเป้าหมายของ Day 29 กันครับ พอจบบทนี้คุณจะได้สเปกที่พร้อมใช้งานจริง 3 อย่างด้วยกัน\n\nอย่างแรก คือกำหนด data contract ด้วย Pydantic v2 ให้ครบทั้งอินพุต, ข้อมูลที่ผ่านเกณฑ์, รายการที่ถูกกักกัน และตัวเลขสรุปรอบรัน\nอย่างที่สอง คือวางขอบเขตโมดูลทั้ง 6 ไฟล์ใน src layout เพื่อแยก pure logic ออกจาก I/O อย่างเด็ดขาด\nและอย่างที่สาม คือระบุ failure modes กับ acceptance criteria ให้ชัด แล้วเขียน pytest ตรวจความถูกต้องของสเปกบนเครื่องได้ทันทีครับ",
+      "ttsText": "มาดูเป้าหมายของ Day 29 กันครับ พอจบบทนี้คุณจะได้สเปกที่พร้อมใช้งานจริง 3 อย่างด้วยกัน\n\nอย่างแรก คือกำหนด data contract ด้วย Pydantic v2 ให้ครบทั้งอินพุต, ข้อมูลที่ผ่านเกณฑ์, รายการที่ถูกกักกัน และตัวเลขสรุปรอบรัน\nอย่างที่สอง คือวางขอบเขตโมดูลทั้ง 6 ไฟล์ใน src layout เพื่อแยก pure logic ออกจาก I O อย่างเด็ดขาด\nและอย่างที่สาม คือระบุ failure modes กับ acceptance criteria ให้ชัด แล้วเขียน pytest ตรวจความถูกต้องของสเปกบนเครื่องได้ทันทีครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d029/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นเหมือนช่วยเช็กเครื่องอยู่ข้าง ๆ ไล่คำสั่ง uv ทีละขั้นให้พิมพ์ตามทัน",
+      "script": "มาตั้งต้นสร้างบ้านให้มินิโปรเจกต์ Phase 1 กันเลยครับ โปรเจกต์นี้เราจะใช้ต่อเนื่องไปจนถึง Day 32 เพื่อเป็น Portfolio Milestone ชิ้นแรกของคุณเลยนะ\n\nเริ่มจากรัน uv init --package resilient-fetcher แล้ว cd เข้าโฟลเดอร์ จากนั้นติดตั้ง runtime packages ได้แก่ pydantic, pydantic-settings, httpx, tenacity, typer และ structlog แล้วค่อยเพิ่ม dev tools อย่าง pytest, pytest-cov และ ruff เข้าไปด้วยครับ\n\nปิดท้ายด้วยคำสั่ง python -c เช็ก import ให้เห็นคำว่า Ready! และได้ไฟล์ uv.lock เรียบร้อย เดี๋ยวพี่รอตรงนี้ก่อนนะ ลองตั้งโปรเจกต์ให้เสร็จแล้วค่อยกดไปต่อครับ",
+      "ttsText": "มาตั้งต้นสร้างบ้านให้มินิโปรเจกต์ Phase 1 กันเลยครับ โปรเจกต์นี้เราจะใช้ต่อเนื่องไปจนถึง Day 32 เพื่อเป็น Portfolio Milestone ชิ้นแรกของคุณเลยนะ\n\nเริ่มจากรัน uv init dash dash package resilient-fetcher แล้ว cd เข้าโฟลเดอร์ จากนั้นติดตั้ง runtime packages ได้แก่ pydantic, pydantic settings, httpx, tenacity, typer และ structlog แล้วค่อยเพิ่ม dev tools อย่าง pytest, pytest cov และ ruff เข้าไปด้วยครับ\n\nปิดท้ายด้วยคำสั่ง python dash c เช็ก import ให้เห็นคำว่า Ready และได้ไฟล์ uv dot lock เรียบร้อย เดี๋ยวพี่รอตรงนี้ก่อนนะ ลองตั้งโปรเจกต์ให้เสร็จแล้วค่อยกดไปต่อครับ",
+      "pauseAfter": {
+        "title": "พักรอสร้างโปรเจกต์ resilient-fetcher",
+        "prompt": "ลองรัน uv init --package resilient-fetcher และติดตั้งแพ็กเกจครบชุดตามคำสั่งบนหน้าจอได้เลยครับ",
+        "continueLabel": "สร้างโปรเจกต์เสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — แผนภาพสถาปัตยกรรม",
+      "src": "/audio/d029/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนมองแผนภาพสถาปัตยกรรม เล่าลำดับการไหลของข้อมูลทีละชั้นให้เห็นภาพชัดเจน",
+      "script": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรมบนหน้าจอไปด้วยกันนะครับ นี่คือภาพรวมทั้งหมดของ Resilient Async Data Fetcher CLI ที่เราจะสร้างตลอด 4 วันนี้\n\nข้อมูลเริ่มจากชั้นบนสุดคือ Typer CLI ที่รับคำสั่งจากผู้ใช้และโหลดค่าตั้งค่าผ่าน pydantic-settings จากนั้นส่งต่อเข้า SQLite Cache เพื่อเช็กว่าเคยดึงไว้แล้วหรือยัง ถ้ายังไม่มีค่อยวิ่งเข้าท่อ Async httpx ที่คุมเพดานด้วย Semaphore และ retry ผ่าน tenacity ก่อนคัดแยกผลลัพธ์ลง output.jsonl กับ quarantine.jsonl พร้อมพ่น metrics ด้วย structlog ครับ",
+      "ttsText": "ลองคลิกสำรวจแผนภาพสถาปัตยกรรมบนหน้าจอไปด้วยกันนะครับ นี่คือภาพรวมทั้งหมดของ Resilient Async Data Fetcher CLI ที่เราจะสร้างตลอด 4 วันนี้\n\nข้อมูลเริ่มจากชั้นบนสุดคือ Typer CLI ที่รับคำสั่งจากผู้ใช้และโหลดค่าตั้งค่าผ่าน pydantic settings จากนั้นส่งต่อเข้า SQLite Cache เพื่อเช็กว่าเคยดึงไว้แล้วหรือยัง ถ้ายังไม่มีค่อยวิ่งเข้าท่อ Async httpx ที่คุมเพดานด้วย Semaphore และ retry ผ่าน tenacity ก่อนคัดแยกผลลัพธ์ลง output dot jsonl กับ quarantine dot jsonl พร้อมพ่น metrics ด้วย structlog ครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d029/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายสถาปัตยกรรมแบบเห็นภาพ ใช้คำเปรียบเทียบสนุก เข้าใจง่าย และเน้นจังหวะตรงเรื่องแยก error",
+      "script": "ทีนี้เรามาเจาะ 3 แนวคิดหลักในการออกแบบสเปกกันนะครับ\n\nข้อแรก คือสัญญาข้อมูลทั้ง 4 รุ่นใน models.py เปรียบเหมือนการเขียนแบบแปลนบ้านก่อนลงมือสร้าง เพื่อให้ทุกโมดูลคุยภาษาเดียวกันครับ ได้แก่ FetchTarget สำหรับอินพุตที่ต้องขึ้นต้นด้วย http หรือ https, FetchedRecord สำหรับข้อมูลที่ผ่าน schema แล้ว, QuarantineRecord ที่เก็บ item_id, url, stage และ reason ของรายการที่พังแยกไว้ในไฟล์ quarantine.jsonl แทนการปล่อยให้พังทั้ง batch หรือทิ้งหายไปเงียบ ๆ, และ RunSummary สำหรับสรุปยอดท้ายรอบ\n\nข้อที่สอง คือการแบ่งความรับผิดชอบเป็น 6 โมดูลในโฟลเดอร์ src เพื่อแยก logic ออกจาก I/O เหมือนครัวร้านอาหารที่แยกห้องเย็น เตาผัด และเคาน์เตอร์รับออเดอร์ออกจากกันครับ เราแยก config.py, models.py, errors.py, cache.py, fetcher.py และ cli.py โดยให้ลูกศรการพึ่งพาไหลทางเดียว ที่สำคัญคือ fetcher.py ต้องรับ httpx.AsyncClient จากภายนอกได้ หรือที่เรียกว่า Dependency Injection เพื่อให้ Day 31 ฉีด MockTransport เข้าไปเทสต์ได้ในไม่กี่มิลลิวินาที\n\nและข้อที่สาม คือการระบุ Failure Modes กับ Acceptance Criteria ล่วงหน้าใน errors.py ครับ เราสร้าง classify_http_status เป็น pure logic เพื่อแยก RetryableFetchError อย่าง 408, 429, 5xx และ timeout ออกจาก NonRetryableFetchError อย่าง 400, 401 และ 404 ที่ต้อง fail-fast ทันที จะได้ไม่เสียเวลายิง URL ที่ไม่มีอยู่จริงซ้ำ ๆ ครับ",
+      "ttsText": "ทีนี้เรามาเจาะ 3 แนวคิดหลักในการออกแบบสเปกกันนะครับ\n\nข้อแรก คือสัญญาข้อมูลทั้ง 4 รุ่นใน models dot py เปรียบเหมือนการเขียนแบบแปลนบ้านก่อนลงมือสร้าง เพื่อให้ทุกโมดูลคุยภาษาเดียวกันครับ ได้แก่ FetchTarget สำหรับอินพุตที่ต้องขึ้นต้นด้วย http หรือ https, FetchedRecord สำหรับข้อมูลที่ผ่าน schema แล้ว, QuarantineRecord ที่เก็บ item_id, url, stage และ reason ของรายการที่พังแยกไว้ในไฟล์ quarantine dot jsonl แทนการปล่อยให้พังทั้ง batch หรือทิ้งหายไปเงียบ ๆ, และ RunSummary สำหรับสรุปยอดท้ายรอบ\n\nข้อที่สอง คือการแบ่งความรับผิดชอบเป็น 6 โมดูลในโฟลเดอร์ src เพื่อแยก logic ออกจาก I O เหมือนครัวร้านอาหารที่แยกห้องเย็น เตาผัด และเคาน์เตอร์รับออเดอร์ออกจากกันครับ เราแยก config dot py, models dot py, errors dot py, cache dot py, fetcher dot py และ cli dot py โดยให้ลูกศรการพึ่งพาไหลทางเดียว ที่สำคัญคือ fetcher dot py ต้องรับ httpx AsyncClient จากภายนอกได้ หรือที่เรียกว่า Dependency Injection เพื่อให้ Day 31 ฉีด MockTransport เข้าไปเทสต์ได้ในไม่กี่มิลลิวินาที\n\nและข้อที่สาม คือการระบุ Failure Modes กับ Acceptance Criteria ล่วงหน้าใน errors dot py ครับ เราสร้าง classify_http_status เป็น pure logic เพื่อแยก RetryableFetchError อย่าง 408, 429, 500 ถึง 599 และ timeout ออกจาก NonRetryableFetchError อย่าง 400, 401 และ 404 ที่ต้อง fail-fast ทันที จะได้ไม่เสียเวลายิง URL ที่ไม่มีอยู่จริงซ้ำ ๆ ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน & ตรวจสเปก",
+      "src": "/audio/d029/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังเดินดูโค้ดโครงกระดูกทีละไฟล์ เน้นเสียงตรงจุดตรวจ invariant และข้อควรระวังเรื่อง extra='ignore'",
+      "script": "มาดูตัวอย่างการประกอบโครงกระดูกโปรเจกต์ทีละขั้นกันครับ ทั้งหมดนี้รันทดสอบสเปกบนเครื่องได้ 100 เปอร์เซ็นต์โดยยังไม่ต้องยิงเน็ตจริงเลย\n\nขั้นที่ 1 ใน config.py เราสร้างคลาส FetcherSettings ที่สืบทอดจาก BaseSettings ตั้ง env_prefix เป็น FETCHER_ และกำหนดขอบเขตปลอดภัยไว้ครบ เช่น max_concurrency อยู่ระหว่าง 1 ถึง 50 หรือ timeout_s มากกว่า 0 ถึง 60 วินาที จุดที่อยากให้สังเกตมาก ๆ คือเราตั้ง extra='ignore' นะครับ อย่าเผลอไปตั้ง forbid เชียว เพราะในเครื่องหรือไฟล์ .env อาจมีตัวแปรระบบอื่นปนอยู่ เดี๋ยวโหลด config พังเปล่า ๆ\n\nขั้นที่ 2 เราลองประกอบ FetchTarget, FetchedRecord, QuarantineRecord และ classify_http_status มาจำลองข้อมูลจริง เพื่อดูการตัดช่องว่างอัตโนมัติและการจำแนก 429 เป็น retryable กับ 404 เป็น non_retryable\n\nและขั้นที่ 3 เราเสริมเกราะให้ RunSummary ด้วย @model_validator(mode='after') เพื่อเช็ก invariant ว่า succeeded + quarantined ต้องเท่ากับ total เสมอ และ cache_hits ต้องไม่เกิน succeeded เพื่อกันบั๊กรายการตกหล่นหายไประหว่างท่อครับ ลองเดินดูทีละขั้นให้เข้าใจแล้วกดไปต่อที่แบบฝึกหัดได้เลยนะ",
+      "ttsText": "มาดูตัวอย่างการประกอบโครงกระดูกโปรเจกต์ทีละขั้นกันครับ ทั้งหมดนี้รันทดสอบสเปกบนเครื่องได้ 100 เปอร์เซ็นต์โดยยังไม่ต้องยิงเน็ตจริงเลย\n\nขั้นที่ 1 ใน config dot py เราสร้างคลาส FetcherSettings ที่สืบทอดจาก BaseSettings ตั้ง env prefix เป็น FETCHER underscore และกำหนดขอบเขตปลอดภัยไว้ครบ เช่น max concurrency อยู่ระหว่าง 1 ถึง 50 หรือ timeout s มากกว่า 0 ถึง 60 วินาที จุดที่อยากให้สังเกตมาก ๆ คือเราตั้ง extra เท่ากับ ignore นะครับ อย่าเผลอไปตั้ง forbid เชียว เพราะในเครื่องหรือไฟล์ dot env อาจมีตัวแปรระบบอื่นปนอยู่ เดี๋ยวโหลด config พังเปล่า ๆ\n\nขั้นที่ 2 เราลองประกอบ FetchTarget, FetchedRecord, QuarantineRecord และ classify_http_status มาจำลองข้อมูลจริง เพื่อดูการตัดช่องว่างอัตโนมัติและการจำแนก 429 เป็น retryable กับ 404 เป็น non retryable\n\nและขั้นที่ 3 เราเสริมเกราะให้ RunSummary ด้วย model validator แบบ after เพื่อเช็ก invariant ว่า succeeded บวก quarantined ต้องเท่ากับ total เสมอ และ cache hits ต้องไม่เกิน succeeded เพื่อกันบั๊กรายการตกหล่นหายไประหว่างท่อครับ ลองเดินดูทีละขั้นให้เข้าใจแล้วกดไปต่อที่แบบฝึกหัดได้เลยนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงตรวจโครงกระดูกสเปก",
+        "prompt": "ลองไล่ดูโค้ด FetcherSettings, โมเดลทั้ง 4 รุ่น และ model_validator เช็ก invariant ให้เข้าใจครบทั้ง 3 ขั้นครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — เขียนโมดูลสเปกครบชุด",
+      "src": "/audio/d029/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงใจเย็น ให้กำลังใจ พูดช้าชัดตอนไล่ข้อกำหนดทั้ง 5 ส่วนของ fetcher_spec.py เพื่อให้ผู้เรียนไล่เติมโค้ดตามได้สบาย",
+      "script": "ถึงเวลาลงมือเขียนจริงแล้วครับ โจทย์ 12 นาทีวันนี้ให้เราสร้างไฟล์ fetcher_spec.py เพื่อนิยามสเปกทั้งหมดของมินิโปรเจกต์ให้ผ่านชุดเทสต์ 5 กลุ่มครับ\n\nมาเช็กทีละส่วนกันนะ ส่วนแรกคือ FetcherSettings ใช้ env_prefix='FETCHER_' และ extra='ignore' พร้อมกำหนดช่วงค่าของ max_concurrency, timeout_s, max_retries และ cache_ttl_s ให้ตรงตามสเปก\nส่วนที่สองคือ FetchTarget และ FetchedRecord อย่าลืมใส่ ConfigDict(str_strip_whitespace=True) เพื่อให้ตัดช่องว่างก่อนเข้า validator และตรวจ url ให้ขึ้นต้นด้วย http:// หรือ https://\nส่วนที่สามคือ RunSummary ที่ต้องมี @model_validator(mode='after') เช็กว่า succeeded + quarantined == total และ cache_hits <= succeeded\n\nส่วนที่สี่คือฟังก์ชัน classify_http_status แยก 2xx เป็น ok, 408, 429 และ 5xx เป็น retryable, ส่วนที่เหลือเป็น non_retryable\nและส่วนสุดท้ายคือ load_targets อ่านลิสต์ข้อความ JSONL ทีละบรรทัด ข้ามบรรทัดว่าง ถ้า json.loads พังให้ลง QuarantineRecord ที่ stage='parse' แต่ถ้า Pydantic พังให้ตั้ง stage='validate' ครับ เสร็จแล้วรัน pytest -v กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "ttsText": "ถึงเวลาลงมือเขียนจริงแล้วครับ โจทย์ 12 นาทีวันนี้ให้เราสร้างไฟล์ fetcher_spec dot py เพื่อนิยามสเปกทั้งหมดของมินิโปรเจกต์ให้ผ่านชุดเทสต์ 5 กลุ่มครับ\n\nมาเช็กทีละส่วนกันนะ ส่วนแรกคือ FetcherSettings ใช้ env prefix เท่ากับ FETCHER underscore และ extra เท่ากับ ignore พร้อมกำหนดช่วงค่าของ max concurrency, timeout s, max retries และ cache ttl s ให้ตรงตามสเปก\nส่วนที่สองคือ FetchTarget และ FetchedRecord อย่าลืมใส่ ConfigDict str strip whitespace เท่ากับ True เพื่อให้ตัดช่องว่างก่อนเข้า validator และตรวจ url ให้ขึ้นต้นด้วย http หรือ https\nส่วนที่สามคือ RunSummary ที่ต้องมี model validator แบบ after เช็กว่า succeeded บวก quarantined เท่ากับ total และ cache hits น้อยกว่าหรือเท่ากับ succeeded\n\nส่วนที่สี่คือฟังก์ชัน classify_http_status แยก 200 ถึง 299 เป็น ok, 408, 429 และ 500 ถึง 599 เป็น retryable, ส่วนที่เหลือเป็น non retryable\nและส่วนสุดท้ายคือ load_targets อ่านลิสต์ข้อความ JSONL ทีละบรรทัด ข้ามบรรทัดว่าง ถ้า json loads พังให้ลง QuarantineRecord ที่ stage เท่ากับ parse แต่ถ้า Pydantic พังให้ตั้ง stage เท่ากับ validate ครับ เสร็จแล้วรัน pytest dash v กับ ruff check ได้เลย เดี๋ยวพี่รออยู่ตรงนี้ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณเขียน fetcher_spec.py",
+        "prompt": "เติมโค้ด FetcherSettings, Data Contracts, classify_http_status และ load_targets แล้วรัน pytest ตรวจให้ผ่านครบนะครับ",
+        "continueLabel": "เขียนสเปกและเทสต์ผ่านแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d029/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อนเล่า 4 กับดักการออกแบบโปรเจกต์ ด้วยจังหวะสนุกปนเตือนสติแบบรุ่นพี่ที่เคยรื้อโค้ดมาก่อน",
+      "script": "เยี่ยมมากครับที่ผ่านโจทย์สเปกมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 กับดักยอดฮิตตอนออกแบบโปรเจกต์ CLI แรกที่อยากให้เลี่ยงตั้งแต่วันนี้เลยนะ\n\nข้อแรก คือโยนทั้ง CLI, HTTP client, SQLite และ validation ลงไปรวมใน cli.py ไฟล์เดียว พอโค้ดยาวเกิน 300 บรรทัด จะทดสอบ retry หรือ cache แยกไม่ได้เลย ต้องแยก 6 โมดูลและส่ง AsyncClient ผ่านพารามิเตอร์ครับ\nข้อที่สอง คือ hardcode ค่า timeout, max_concurrency หรือ path ไฟล์ลงในโค้ด เวลาเอาไปรันเทสต์หรือย้ายเครื่องอาจเผลอเขียนทับข้อมูลจริง ให้รวมไว้ใน FetcherSettings ทั้งหมด\n\nข้อที่สาม คือไม่นิยาม Quarantine Schema ไว้ตั้งแต่ต้น แล้วใช้วิธี print('error') ทิ้งไว้ใน terminal ทำให้ตามสืบไม่ได้ว่าพังที่ fetch, parse หรือ validate\nและข้อที่สี่ คือเผลอจัด HTTP 404 หรือ 401 เป็น retryable error ทำให้ระบบเสียเวลายิง URL ที่ไม่มีอยู่จริงซ้ำ 3 ถึง 5 รอบต่อรายการจน batch ช้าลงหลายเท่าครับ",
+      "ttsText": "เยี่ยมมากครับที่ผ่านโจทย์สเปกมาได้ ก่อนเข้าควิซ พี่ขอฝาก 4 กับดักยอดฮิตตอนออกแบบโปรเจกต์ CLI แรกที่อยากให้เลี่ยงตั้งแต่วันนี้เลยนะ\n\nข้อแรก คือโยนทั้ง CLI, HTTP client, SQLite และ validation ลงไปรวมใน cli dot py ไฟล์เดียว พอโค้ดยาวเกิน 300 บรรทัด จะทดสอบ retry หรือ cache แยกไม่ได้เลย ต้องแยก 6 โมดูลและส่ง AsyncClient ผ่านพารามิเตอร์ครับ\nข้อที่สอง คือ hardcode ค่า timeout, max concurrency หรือ path ไฟล์ลงในโค้ด เวลาเอาไปรันเทสต์หรือย้ายเครื่องอาจเผลอเขียนทับข้อมูลจริง ให้รวมไว้ใน FetcherSettings ทั้งหมด\n\nข้อที่สาม คือไม่นิยาม Quarantine Schema ไว้ตั้งแต่ต้น แล้วใช้วิธี print error ทิ้งไว้ใน terminal ทำให้ตามสืบไม่ได้ว่าพังที่ fetch, parse หรือ validate\nและข้อที่สี่ คือเผลอจัด HTTP 404 หรือ 401 เป็น retryable error ทำให้ระบบเสียเวลายิง URL ที่ไม่มีอยู่จริงซ้ำ 3 ถึง 5 รอบต่อรายการจน batch ช้าลงหลายเท่าครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d029/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนความเข้าใจเรื่องสถาปัตยกรรมและ Failure Modes แบบไม่กดดัน",
+      "script": "มาเช็กความแม่นยำด้านการออกแบบกันด้วย Micro-Quiz 4 ข้อก่อนลงมือสร้างท่อใน Day 30 นะครับ\n\nคำถามจะทบทวนตั้งแต่เหตุผลของการฉีด AsyncClient เข้า fetcher.py, สถานะ HTTP ที่ต้อง fail-fast, การตั้ง env_prefix คู่กับ extra='ignore' ไปจนถึงประโยชน์ของ invariant บน RunSummary เดี๋ยวพี่พักรอให้คุณทำครบทั้ง 4 ข้อก่อน เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "ttsText": "มาเช็กความแม่นยำด้านการออกแบบกันด้วย Micro-Quiz 4 ข้อก่อนลงมือสร้างท่อใน Day 30 นะครับ\n\nคำถามจะทบทวนตั้งแต่เหตุผลของการฉีด AsyncClient เข้า fetcher dot py, สถานะ HTTP ที่ต้อง fail-fast, การตั้ง env prefix คู่กับ extra เท่ากับ ignore ไปจนถึงประโยชน์ของ invariant บน RunSummary เดี๋ยวพี่พักรอให้คุณทำครบทั้ง 4 ข้อก่อน เสร็จแล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่องสถาปัตยกรรม สัญญาข้อมูล และ Failure Modes แล้วกด 'ไปต่อ' เพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 30",
+      "src": "/audio/d029/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและกระตือรือร้น สรุป 4 แก่นสำคัญของการวางสเปกให้กระชับ แล้วส่งไม้ต่อเข้า Day 30 อย่างสดใส",
+      "script": "ยินดีด้วยครับ คุณจบ Day 29 และวางพิมพ์เขียวของ Resilient Async Data Fetcher CLI เสร็จสมบูรณ์แล้ว! ขอสรุป 4 แก่นหลักติดตัวไปใช้ต่อในวันพรุ่งนี้นะครับ\n\nหนึ่ง เริ่มโปรเจกต์ด้วยการวาง Data Contracts ด้วย Pydantic อย่าง FetchTarget, FetchedRecord, QuarantineRecord และ RunSummary ก่อนเขียนโค้ด I/O\nสอง แบ่งโครงสร้าง src layout เป็น 6 โมดูล เพื่อให้แต่ละชั้นทดสอบแยกชิ้นแบบ offline ได้ด้วย MockTransport\nสาม แยกความผิดพลาดชั่วคราวอย่าง 408, 429, 5xx และ timeout ออกมา retry ส่วน 400, 401, 404 ให้ fail-fast เข้า quarantine ทันที\nและสี่ ใช้ FetcherSettings กับ env_prefix เพื่อปรับแต่งค่าได้อย่างปลอดภัยโดยไม่ต้องแก้ซอร์สโค้ด\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบเพื่อเก็บการ์ดทบทวนลงคิวนะครับ แล้วพรุ่งนี้ใน Day 30 เราจะมาลงมือสร้างท่อ Async Ingestion, Semaphore และ Streaming JSONL ของจริงกัน เจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณจบ Day 29 และวางพิมพ์เขียวของ Resilient Async Data Fetcher CLI เสร็จสมบูรณ์แล้ว! ขอสรุป 4 แก่นหลักติดตัวไปใช้ต่อในวันพรุ่งนี้นะครับ\n\nหนึ่ง เริ่มโปรเจกต์ด้วยการวาง Data Contracts ด้วย Pydantic อย่าง FetchTarget, FetchedRecord, QuarantineRecord และ RunSummary ก่อนเขียนโค้ด I O\nสอง แบ่งโครงสร้าง src layout เป็น 6 โมดูล เพื่อให้แต่ละชั้นทดสอบแยกชิ้นแบบ offline ได้ด้วย MockTransport\nสาม แยกความผิดพลาดชั่วคราวอย่าง 408, 429, 500 ถึง 599 และ timeout ออกมา retry ส่วน 400, 401, 404 ให้ fail-fast เข้า quarantine ทันที\nและสี่ ใช้ FetcherSettings กับ env prefix เพื่อปรับแต่งค่าได้อย่างปลอดภัยโดยไม่ต้องแก้ซอร์สโค้ด\n\nอย่าลืมกดทำเครื่องหมายว่าเรียนจบเพื่อเก็บการ์ดทบทวนลงคิวนะครับ แล้วพรุ่งนี้ใน Day 30 เราจะมาลงมือสร้างท่อ Async Ingestion, Semaphore และ Streaming JSONL ของจริงกัน เจอกันครับ!"
+    }
+  ]
+}

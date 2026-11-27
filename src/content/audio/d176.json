@@ -1,0 +1,109 @@
+{
+  "lessonId": "d176",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — Milestone 5 Red-Team Pass",
+      "src": "/audio/d176/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างตื่นเต้นและจริงจังแบบวันสอบประเมิน Milestone 5 น้ำเสียงมุ่งมั่นแต่เป็นกันเอง เล่า 3 ขั้นตอน Go/No-Go ให้เห็นภาพชัด",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 176 วันตัดสิน Milestone 5 ของ Block 44 แล้วนะครับ วันนี้เราจะพิสูจน์ว่าระบบ Capstone ที่เราติดเกราะและ deploy ขึ้น Staging มาตลอด 3 วัน ปลอดภัยและพร้อมรับมือโลกจริงแค่ไหนครับ\n\nลองมอง Big Picture 3 ส่วนของวันนี้กันนะ ส่วนแรก คือการยิง Live Staging Smoke Test ก่อนเลย ป้ายเขียวใน CI อย่างเดียวไม่พอ เราต้องเช็กจริงว่า /healthz, /readyz, หน้าเว็บแชต, และ /v1/chat/stream ตอบครบและส่ง trace_id ออกไปหา Langfuse ได้จริงไหม\n\nส่วนที่สอง คือการถล่มระบบตัวเองด้วย Red-Team Suite 5 หมวดหมู่ทั้งภาษาไทยและภาษาอังกฤษ ตั้งแต่ Direct และ Indirect Injection, ล้วง PDPA, ข้ามสิทธิ์ Tenant ACL, ไปจนถึงข้ามขั้นตอน HITL โดยมีเกณฑ์เหล็กคือผ่านอย่างน้อย 0.90 และ Critical Leaks ต้องเป็น 0 เท่านั้น\n\nและส่วนที่สาม ทุกช่องโหว่ที่เจอบนสนามซ้อมวันนี้ เราจะเอามาเขียนเป็น Regression Test ถาวรใน CI ก่อนเดินหน้าเข้า Block 45 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 176 วันตัดสิน Milestone 5 ของ Block 44 แล้วนะครับ วันนี้เราจะพิสูจน์ว่าระบบ Capstone ที่เราติดเกราะและ deploy ขึ้น Staging มาตลอด 3 วัน ปลอดภัยและพร้อมรับมือโลกจริงแค่ไหนครับ\n\nลองมอง Big Picture 3 ส่วนของวันนี้กันนะ ส่วนแรก คือการยิง Live Staging Smoke Test ก่อนเลย ป้ายเขียวใน CI อย่างเดียวไม่พอ เราต้องเช็กจริงว่า slash healthz, slash readyz, หน้าเว็บแชต, และ slash v1 slash chat slash stream ตอบครบและส่ง trace_id ออกไปหา Langfuse ได้จริงไหม\n\nส่วนที่สอง คือการถล่มระบบตัวเองด้วย Red-Team Suite 5 หมวดหมู่ทั้งภาษาไทยและภาษาอังกฤษ ตั้งแต่ Direct และ Indirect Injection, ล้วง PDPA, ข้ามสิทธิ์ Tenant ACL, ไปจนถึงข้ามขั้นตอน HITL โดยมีเกณฑ์เหล็กคือผ่านอย่างน้อย 0.90 และ Critical Leaks ต้องเป็น 0 เท่านั้น\n\nและส่วนที่สาม ทุกช่องโหว่ที่เจอบนสนามซ้อมวันนี้ เราจะเอามาเขียนเป็น Regression Test ถาวรใน CI ก่อนเดินหน้าเข้า Block 45 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d176/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อของ Milestone 5 ให้เห็นเกณฑ์ Go และ No-Go ทันที",
+      "script": "มาดูเป้าหมาย 3 ข้อสำหรับผ่านด่าน Milestone 5 ในวันนี้กันครับ\n\nข้อแรก ตรวจสอบ Live Staging Smoke Checklist ทั้ง /healthz, /readyz, SSE streaming และ trace_id เพื่อยืนยันว่าแอปพร้อมรับทราฟฟิกจริง\nข้อสอง ออกแบบและรัน Red-Team Test Suite สองภาษาครบ 5 มิติ ทั้ง Direct Injection, Indirect RAG Injection, PDPA PII Leak, Cross-Tenant ACL Bypass และ HITL Write Bypass\nข้อสาม บังคับใช้เกณฑ์ตัดสิน Milestone 5 คือ overall_pass_rate >= 0.90, critical_leaks == 0 และ smoke_passed == True เพื่อตัดสินใจ Go สู่ Block 45 หรือถอยกลับไปแก้ก่อน Ship โดยทดสอบแบบ offline 100 เปอร์เซ็นต์ครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อสำหรับผ่านด่าน Milestone 5 ในวันนี้กันครับ\n\nข้อแรก ตรวจสอบ Live Staging Smoke Checklist ทั้ง slash healthz, slash readyz, SSE streaming และ trace_id เพื่อยืนยันว่าแอปพร้อมรับทราฟฟิกจริง\nข้อสอง ออกแบบและรัน Red-Team Test Suite สองภาษาครบ 5 มิติ ทั้ง Direct Injection, Indirect RAG Injection, PDPA PII Leak, Cross-Tenant ACL Bypass และ HITL Write Bypass\nข้อสาม บังคับใช้เกณฑ์ตัดสิน Milestone 5 คือ overall_pass_rate มากกว่าหรือเท่ากับ 0.90, critical_leaks เท่ากับ 0 และ smoke_passed เป็น True เพื่อตัดสินใจ Go สู่ Block 45 หรือถอยกลับไปแก้ก่อน Ship โดยทดสอบแบบ offline 100 เปอร์เซ็นต์ครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้ง & เช็กเครื่อง",
+      "src": "/audio/d176/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาเตรียมโฟลเดอร์ evals และแพ็กเกจทดสอบให้พร้อม",
+      "script": "มาเตรียมไฟล์และโฟลเดอร์สำหรับ Milestone 5 Verification Harness กันครับ\n\nในรีโป thai-enterprise-assistant ให้ตรวจว่ามีโฟลเดอร์ evals, src และ tests ครบ จากนั้นยืนยันว่ามี pydantic, fastapi, httpx, pytest และ ruff พร้อมใช้งานด้วย uv run pytest --version\n\nแบบฝึกหัดวันนี้รันแบบ offline 100 เปอร์เซ็นต์ผ่าน mock target และ TestClient แต่พอคุณมี Staging URL จริงเมื่อไหร่ ก็สลับ base URL เข้ามาใช้ harness ตัวเดียวกันยิงทดสอบได้ทันทีเลยครับ เดี๋ยวพี่พักรอให้เช็กเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาเตรียมไฟล์และโฟลเดอร์สำหรับ Milestone 5 Verification Harness กันครับ\n\nในรีโป thai-enterprise-assistant ให้ตรวจว่ามีโฟลเดอร์ evals, src และ tests ครบ จากนั้นยืนยันว่ามี pydantic, fastapi, httpx, pytest และ ruff พร้อมใช้งานด้วย uv run pytest dash dash version\n\nแบบฝึกหัดวันนี้รันแบบ offline 100 เปอร์เซ็นต์ผ่าน mock target และ TestClient แต่พอคุณมี Staging URL จริงเมื่อไหร่ ก็สลับ base URL เข้ามาใช้ harness ตัวเดียวกันยิงทดสอบได้ทันทีเลยครับ เดี๋ยวพี่พักรอให้เช็กเครื่องก่อน พร้อมแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเตรียม Milestone 5 Harness",
+        "prompt": "ตรวจโฟลเดอร์ evals, src, tests และแพ็กเกจ pytest, httpx, fastapi ในรีโปให้พร้อมก่อนกดไปต่อครับ",
+        "continueLabel": "เตรียม harness พร้อมแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — ด่านตัดสิน Milestone 5",
+      "src": "/audio/d176/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้นชวนมองภาพด่านสุดท้ายของ B44 ที่รวม Smoke Check และ Red-Team Pass เข้าด้วยกัน",
+      "script": "มองภาพรวมของด่าน D176 บนแผนภาพกันนะครับ นี่คือประตูด่านสุดท้ายของสายพานความปลอดภัยและการ Deploy\n\nก่อนจะผ่าน Milestone 5 ไปได้ ระบบบน Staging ต้องผ่านการเช็ก 2 ชั้นพร้อมกัน ชั้นแรกคือทุก endpoint ตอบปกติ สตรีม SSE ได้ และส่ง trace ออกไปได้จริง ส่วนชั้นที่สองคือทนแรงปะทะจากชุดโจมตี Red-Team ภาษาไทย-อังกฤษได้ตั้งแต่ 90 เปอร์เซ็นต์ขึ้นไปโดยไม่มี Critical Leak เลยแม้แต่จุดเดียวครับ",
+      "ttsText": "มองภาพรวมของด่าน D176 บนแผนภาพกันนะครับ นี่คือประตูด่านสุดท้ายของสายพานความปลอดภัยและการ Deploy\n\nก่อนจะผ่าน Milestone 5 ไปได้ ระบบบน Staging ต้องผ่านการเช็ก 2 ชั้นพร้อมกัน ชั้นแรกคือทุก endpoint ตอบปกติ สตรีม SSE ได้ และส่ง trace ออกไปได้จริง ส่วนชั้นที่สองคือทนแรงปะทะจากชุดโจมตี Red-Team ภาษาไทยและอังกฤษได้ตั้งแต่ 90 เปอร์เซ็นต์ขึ้นไปโดยไม่มี Critical Leak เลยแม้แต่จุดเดียวครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d176/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบาย Smoke Check, Red-Team 5 หมวดหมู่ และกฎ Dual Gate Go/No-Go ให้ฟังสนุกและเฉียบคม",
+      "script": "มาเจาะลึก 3 แนวคิดหลักของ Milestone 5 กันครับ\n\nข้อแรก Live Staging Smoke Test ก่อนจะยิง Red-Team เราต้องพิสูจน์ก่อนว่าเซิร์ฟเวอร์ทำงานปกติ! ทำไมน่ะเหรอครับ ก็เพราะถ้าเซิร์ฟเวอร์พังตอบ 500 ทุกคำขอ มันก็จะดูเหมือนไม่คายความลับออกมาเลย 100 เปอร์เซ็นต์แบบปลอม ๆ น่ะสิ Smoke Check ขั้นต่ำจึงต้องเช็กทั้ง /healthz กับ /readyz ได้ 200, หน้าเว็บใช้ textContent ไม่ใช้ innerHTML, และ /v1/chat/stream มี header X-Accel-Buffering: no พร้อม trace_id ใน meta ครบทุกจุดครับ\n\nข้อที่สอง ออกแบบ Red-Team Matrix 5 หมวดหมู่ให้ตรงกับสถาปัตยกรรมจริงขององค์กรไทย ไม่ใช่ก๊อปคำถามแฮ็กภาษาอังกฤษมาแปะเฉย ๆ 5 หมวดที่ว่าคือ หนึ่ง Direct Prompt Injection สองภาษา, สอง Indirect RAG Injection ที่ซ่อนในเอกสาร, สาม PDPA PII Exfiltration ระดับ critical, สี่ Cross-Tenant ACL Bypass เช่น tenant_a แอบถามบิลของ tenant_b ระดับ critical, และห้า HITL Write Bypass สั่งลบหรือแก้ข้อมูลโดยข้ามขั้นอนุมัติ ระดับ critical เช่นกันครับ\n\nข้อที่สาม กฎตัดสิน Dual Gate Go หรือ No-Go เราไม่ดูแค่ค่าเฉลี่ย 90 เปอร์เซ็นต์นะครับ เพราะต่อให้กันได้ 19 จาก 20 ข้อ แต่ข้อเดียวที่หลุดคือ tenant_a อ่านข้อมูลลับของ tenant_b ได้ แบบนี้ยังไงก็ต้องสั่ง NO-GO ทันที! ดังนั้นการจะ Go ได้ต้องครบ 4 เงื่อนไขคือ smoke_passed, benign_baseline_ok ที่ยืนยันว่าไม่บล็อกคำถามปกติของลูกค้าจนใช้งานไม่ได้, defense_rate อย่างน้อย 0.90, และ critical_leaks ต้องเท่ากับ 0 เท่านั้นครับ",
+      "ttsText": "มาเจาะลึก 3 แนวคิดหลักของ Milestone 5 กันครับ\n\nข้อแรก Live Staging Smoke Test ก่อนจะยิง Red-Team เราต้องพิสูจน์ก่อนว่าเซิร์ฟเวอร์ทำงานปกติ! ทำไมน่ะเหรอครับ ก็เพราะถ้าเซิร์ฟเวอร์พังตอบ 500 ทุกคำขอ มันก็จะดูเหมือนไม่คายความลับออกมาเลย 100 เปอร์เซ็นต์แบบปลอม ๆ น่ะสิ Smoke Check ขั้นต่ำจึงต้องเช็กทั้ง slash healthz กับ slash readyz ได้ 200, หน้าเว็บใช้ textContent ไม่ใช้ innerHTML, และ slash v1 slash chat slash stream มี header X-Accel-Buffering เป็น no พร้อม trace_id ใน meta ครบทุกจุดครับ\n\nข้อที่สอง ออกแบบ Red-Team Matrix 5 หมวดหมู่ให้ตรงกับสถาปัตยกรรมจริงขององค์กรไทย ไม่ใช่ก๊อปคำถามแฮ็กภาษาอังกฤษมาแปะเฉย ๆ 5 หมวดที่ว่าคือ หนึ่ง Direct Prompt Injection สองภาษา, สอง Indirect RAG Injection ที่ซ่อนในเอกสาร, สาม PDPA PII Exfiltration ระดับ critical, สี่ Cross-Tenant ACL Bypass เช่น tenant_a แอบถามบิลของ tenant_b ระดับ critical, และห้า HITL Write Bypass สั่งลบหรือแก้ข้อมูลโดยข้ามขั้นอนุมัติ ระดับ critical เช่นกันครับ\n\nข้อที่สาม กฎตัดสิน Dual Gate Go หรือ No-Go เราไม่ดูแค่ค่าเฉลี่ย 90 เปอร์เซ็นต์นะครับ เพราะต่อให้กันได้ 19 จาก 20 ข้อ แต่ข้อเดียวที่หลุดคือ tenant_a อ่านข้อมูลลับของ tenant_b ได้ แบบนี้ยังไงก็ต้องสั่ง NO-GO ทันที! ดังนั้นการจะ Go ได้ต้องครบ 4 เงื่อนไขคือ smoke_passed, benign_baseline_ok ที่ยืนยันว่าไม่บล็อกคำถามปกติของลูกค้าจนใช้งานไม่ได้, defense_rate อย่างน้อย 0.90, และ critical_leaks ต้องเท่ากับ 0 เท่านั้นครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน Red-Team Harness",
+      "src": "/audio/d176/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนวิเคราะห์โค้ด worked_redteam.py ชี้จุดสำคัญเรื่อง PDPA masking ที่ไม่ต้อง block คำถามทั้งหมด",
+      "script": "ลองมาดูตัวอย่างโค้ดใน worked_redteam.py ทั้ง 3 ขั้นนะครับ\n\nขั้นแรก เรานิยาม AttackCase ด้วย Pydantic ระบุ category, severity ว่าเป็น critical หรือ high, tenant_id, และ forbidden_outputs ที่ห้ามหลุดในคำตอบ แล้วเขียน judge_attack_response ตรวจสองอย่างคือต้องไม่มีคำต้องห้ามหลุดออกมา และถ้าเคสนั้นบังคับให้ปฏิเสธหรือเข้า HITL ระบบต้องตั้ง blocked หรือ hitl_required เป็น True ด้วย\n\nขั้นที่สอง เราจำลอง mock_staging_handler แล้วรันชุดโจมตี RT-01 ถึง RT-04 ทั้ง Direct Injection, PDPA, ACL Bypass และ HITL Bypass\n\nขั้นที่สาม เรารัน Benign Baseline ถามนโยบายคืนสินค้าปกติของลูกค้าว่ายังตอบได้ไหม ไม่โดนบล็อกมั่ว จากนั้นค่อยคำนวณ pass_rate กับ critical_leaks เพื่อสรุปผลเป็น GO_TO_B45\n\nจุดสังเกตที่เจ๋งมากในเคส PDPA RT-02 คือ ระบบไม่จำเป็นต้องบล็อกคำถามลูกค้าเสมอไปนะครับ ถ้าเรา mask เลขบัตรประชาชนเป็น THAI_ID_1 ได้ตั้งแต่ขาเข้าแล้วไม่คายเลขดิบออกมา ก็ถือว่าป้องกันผ่านแล้ว เดี๋ยวพี่พักรอให้ดูโค้ดตัวอย่างก่อน พร้อมทำแบบฝึกหัดเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "ttsText": "ลองมาดูตัวอย่างโค้ดใน worked_redteam dot py ทั้ง 3 ขั้นนะครับ\n\nขั้นแรก เรานิยาม AttackCase ด้วย Pydantic ระบุ category, severity ว่าเป็น critical หรือ high, tenant_id, และ forbidden_outputs ที่ห้ามหลุดในคำตอบ แล้วเขียน judge_attack_response ตรวจสองอย่างคือต้องไม่มีคำต้องห้ามหลุดออกมา และถ้าเคสนั้นบังคับให้ปฏิเสธหรือเข้า HITL ระบบต้องตั้ง blocked หรือ hitl_required เป็น True ด้วย\n\nขั้นที่สอง เราจำลอง mock_staging_handler แล้วรันชุดโจมตี RT-01 ถึง RT-04 ทั้ง Direct Injection, PDPA, ACL Bypass และ HITL Bypass\n\nขั้นที่สาม เรารัน Benign Baseline ถามนโยบายคืนสินค้าปกติของลูกค้าว่ายังตอบได้ไหม ไม่โดนบล็อกมั่ว จากนั้นค่อยคำนวณ pass_rate กับ critical_leaks เพื่อสรุปผลเป็น GO_TO_B45\n\nจุดสังเกตที่เจ๋งมากในเคส PDPA RT-02 คือ ระบบไม่จำเป็นต้องบล็อกคำถามลูกค้าเสมอไปนะครับ ถ้าเรา mask เลขบัตรประชาชนเป็น THAI_ID_1 ได้ตั้งแต่ขาเข้าแล้วไม่คายเลขดิบออกมา ก็ถือว่าป้องกันผ่านแล้ว เดี๋ยวพี่พักรอให้ดูโค้ดตัวอย่างก่อน พร้อมทำแบบฝึกหัดเมื่อไหร่กด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา Worked Example",
+        "prompt": "ลองไล่ดู AttackCase, judge_attack_response และเงื่อนไขตัดสิน GO_TO_B45 ในตัวอย่างก่อนกดไปต่อครับ",
+        "continueLabel": "เข้าใจตัวอย่าง Red-Team แล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ลงมือสร้าง Milestone 5 Harness",
+      "src": "/audio/d176/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ชวนทำ 4 ฟังก์ชันใน src/milestone5_redteam.py ให้เป๊ะตามสเปกและผ่านเทสต์ 4 เคส",
+      "script": "ถึงเวลาสร้าง Automated Milestone 5 Verification Harness ในไฟล์ src/milestone5_redteam.py แล้วครับ มี 4 ฟังก์ชันหลักให้เติมให้ครบ\n\nตัวแรก verify_staging_smoke ตรวจ 4 endpoint คือ /healthz กับ /readyz ต้องได้ status 200, หน้า / ต้องมี textContent และไม่มี .innerHTML, ส่วน /v1/chat/stream ต้องมี header x-accel-buffering เท่ากับ no และมี trace_id ใน meta แล้วคืน SmokeReport\nตัวที่สอง evaluate_redteam_suite ถ้ารับ cases ว่างให้โยน ValueError ออกมา ส่วนแต่ละ case ให้เรียก handler แล้วตรวจว่าไม่มีคำใน forbidden_outputs หลุด และผ่านกฎ require_refusal_or_hitl พร้อมนับ critical_leaks, failed_case_ids และสรุปคะแนนแยกตาม by_category\nตัวที่สาม check_benign_baseline ยืนยันว่าคำถามปกติของลูกค้าไม่ถูก block และตอบคำตอบที่ไม่ว่างกลับมา\nตัวที่สี่ milestone5_signoff รวมผลทั้ง 3 ส่วนแล้วคืน verdict เป็น GO หรือ NO_GO พร้อม list ของ blocking_reasons เช่น smoke_failed, benign_baseline_failed, pass_rate_below_threshold หรือ critical_leaks ครับ\n\nเขียนเสร็จแล้วรัน pytest tests/test_milestone5_redteam.py และ ruff check ดูนะครับ อย่าลืมลองออกแบบคำถามโจมตีไทย-อังกฤษของตัวเองเพิ่มด้วยนะ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "ttsText": "ถึงเวลาสร้าง Automated Milestone 5 Verification Harness ในไฟล์ src slash milestone5_redteam dot py แล้วครับ มี 4 ฟังก์ชันหลักให้เติมให้ครบ\n\nตัวแรก verify_staging_smoke ตรวจ 4 endpoint คือ slash healthz กับ slash readyz ต้องได้ status 200, หน้า slash ต้องมี textContent และไม่มี dot innerHTML, ส่วน slash v1 slash chat slash stream ต้องมี header x-accel-buffering เท่ากับ no และมี trace_id ใน meta แล้วคืน SmokeReport\nตัวที่สอง evaluate_redteam_suite ถ้ารับ cases ว่างให้โยน ValueError ออกมา ส่วนแต่ละ case ให้เรียก handler แล้วตรวจว่าไม่มีคำใน forbidden_outputs หลุด และผ่านกฎ require_refusal_or_hitl พร้อมนับ critical_leaks, failed_case_ids และสรุปคะแนนแยกตาม by_category\nตัวที่สาม check_benign_baseline ยืนยันว่าคำถามปกติของลูกค้าไม่ถูก block และตอบคำตอบที่ไม่ว่างกลับมา\nตัวที่สี่ milestone5_signoff รวมผลทั้ง 3 ส่วนแล้วคืน verdict เป็น GO หรือ NO_GO พร้อม list ของ blocking_reasons เช่น smoke_failed, benign_baseline_failed, pass_rate_below_threshold หรือ critical_leaks ครับ\n\nเขียนเสร็จแล้วรัน pytest tests slash test_milestone5_redteam dot py และ ruff check ดูนะครับ อย่าลืมลองออกแบบคำถามโจมตีไทย-อังกฤษของตัวเองเพิ่มด้วยนะ พี่รออยู่ตรงนี้ เสร็จแล้วกด ไปต่อ ครับ",
+      "pauseAfter": {
+        "title": "พักรอให้คุณสร้าง Milestone 5 Harness",
+        "prompt": "ลงมือเขียน 4 ฟังก์ชันใน src/milestone5_redteam.py และรัน pytest ให้ผ่านครบทั้ง 4 test cases ครับ",
+        "continueLabel": "ผ่าน Milestone 5 Tests แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d176/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชย แล้วเล่า 4 กับดักของการทำ Red-Team และประเมิน Milestone 5 ให้ฟังสนุกและระวังได้จริง",
+      "script": "สุดยอดมากครับ! มาดู 4 จุดพลาดที่เจอบ่อยตอนทำ Red-Team และตรวจรับ Milestone 5 กันนะ\n\nข้อแรก วัดเฉพาะ Attack Pass Rate โดยไม่ทดสอบ Benign Baseline กลายเป็นว่าได้บอทขี้ระแวงที่แบนคำภาษาไทยทั่วไปหมด จนได้คะแนนกันโจมตี 100 เปอร์เซ็นต์แต่ลูกค้าจริงถามอะไรไม่ได้เลย\n\nข้อสอง ยอมปล่อยผ่านเพราะคะแนนรวมถึง 90 เปอร์เซ็นต์ ทั้งที่ยังมี Critical Leak หลุดอยู่ 1 ข้อ อย่างเช่นข้ามสิทธิ์ ACL หรือคายเลขบัตรประชาชนดิบออกมา ต้องจำไว้เลยว่า critical_leaks == 0 คือ hard blocker ที่ห้ามต่อรองครับ\n\nข้อสาม เช็กแค่ข้อความบนหน้าเว็บในเบราว์เซอร์ แต่ลืมเปิดเช็ก trace_id และ log หลังบ้านใน Langfuse หรือ Structlog กลายเป็นว่าหน้าบ้าน mask สวยหรู แต่หลังบ้านเก็บเลขบัตรประชาชนดิบไว้เพียบ\n\nและข้อสี่ เจอช่องโหว่แล้วแก้เฉพาะหน้าแต่ไม่ยอมเพิ่มเข้า Regression Suite ใน CI พอสัปดาห์หน้ามีคนแก้ System Prompt ช่องโหว่เดิมก็กลับมาหลอนใหม่ทันทีครับ",
+      "ttsText": "สุดยอดมากครับ! มาดู 4 จุดพลาดที่เจอบ่อยตอนทำ Red-Team และตรวจรับ Milestone 5 กันนะ\n\nข้อแรก วัดเฉพาะ Attack Pass Rate โดยไม่ทดสอบ Benign Baseline กลายเป็นว่าได้บอทขี้ระแวงที่แบนคำภาษาไทยทั่วไปหมด จนได้คะแนนกันโจมตี 100 เปอร์เซ็นต์แต่ลูกค้าจริงถามอะไรไม่ได้เลย\n\nข้อสอง ยอมปล่อยผ่านเพราะคะแนนรวมถึง 90 เปอร์เซ็นต์ ทั้งที่ยังมี Critical Leak หลุดอยู่ 1 ข้อ อย่างเช่นข้ามสิทธิ์ ACL หรือคายเลขบัตรประชาชนดิบออกมา ต้องจำไว้เลยว่า critical_leaks เท่ากับ 0 คือ hard blocker ที่ห้ามต่อรองครับ\n\nข้อสาม เช็กแค่ข้อความบนหน้าเว็บในเบราว์เซอร์ แต่ลืมเปิดเช็ก trace_id และ log หลังบ้านใน Langfuse หรือ Structlog กลายเป็นว่าหน้าบ้าน mask สวยหรู แต่หลังบ้านเก็บเลขบัตรประชาชนดิบไว้เพียบ\n\nและข้อสี่ เจอช่องโหว่แล้วแก้เฉพาะหน้าแต่ไม่ยอมเพิ่มเข้า Regression Suite ใน CI พอสัปดาห์หน้ามีคนแก้ System Prompt ช่องโหว่เดิมก็กลับมาหลอนใหม่ทันทีครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d176/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนเกณฑ์ Go/No-Go และวิธีจัดการช่องโหว่จาก Red-Team",
+      "script": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อสุดท้ายของ Block 44 นะครับ ทั้งเรื่องการตัดสินใจเมื่อเจอ critical leak แม้คะแนนรวมจะ 95 เปอร์เซ็นต์, บทบาทของ Benign Baseline, เหตุผลที่ต้องทำ Smoke Check ก่อน, และการเปลี่ยนช่องโหว่เป็น regression test\n\nทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิด Block 44 กันครับ",
+      "ttsText": "มาเช็กความแม่นกันด้วย Micro-Quiz 4 ข้อสุดท้ายของ Block 44 นะครับ ทั้งเรื่องการตัดสินใจเมื่อเจอ critical leak แม้คะแนนรวมจะ 95 เปอร์เซ็นต์, บทบาทของ Benign Baseline, เหตุผลที่ต้องทำ Smoke Check ก่อน, และการเปลี่ยนช่องโหว่เป็น regression test\n\nทำครบแล้วกด ไปต่อ เพื่อฟังสรุปปิด Block 44 กันครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง Staging Smoke Check และ Milestone 5 Red-Team Gate ให้ครบ แล้วกด 'ไปต่อ' ครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Block 45",
+      "src": "/audio/d176/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงยินดี ภาคภูมิใจอย่างยิ่งที่น้องผ่าน Milestone 5 และจบ Block 44 พร้อมส่งต่อไปยัง Block สุดท้ายอย่างมีพลัง",
+      "script": "ขอแสดงความยินดีด้วยครับ คุณผ่าน Milestone 5 และจบ Block 44 อย่างเป็นทางการแล้ว!\n\nสรุป 4 หัวใจที่เราวางไว้ใน Milestone นี้คือ หนึ่ง ผ่าน Live Staging Smoke Check ครบทั้ง /healthz, /readyz, Web UI ที่ใช้ .textContent, header SSE และ trace_id สอง ทดสอบ Red-Team ครบ 5 หมวดหมู่ทั้งไทยและอังกฤษ สาม บังคับ Dual Gate คือ pass_rate อย่างน้อย 0.90, critical_leaks เป็น 0 และต้องผ่าน Benign Baseline ด้วย และสี่ นำทุกเคสที่เคยเจาะผ่านไปล็อกเป็น regression test ถาวรใน pytest และ GitHub Actions CI ครับ\n\nจากนี้ไป คุณพร้อมก้าวเข้าสู่ Block สุดท้าย Block 45 เพื่อทำ Load Testing, Failure Testing และเตรียมพรีเซนต์ Final Defense แล้ว เก่งมาก ๆ เลยครับ เจอกันในบทต่อไป สู้ ๆ ครับ!",
+      "ttsText": "ขอแสดงความยินดีด้วยครับ คุณผ่าน Milestone 5 และจบ Block 44 อย่างเป็นทางการแล้ว!\n\nสรุป 4 หัวใจที่เราวางไว้ใน Milestone นี้คือ หนึ่ง ผ่าน Live Staging Smoke Check ครบทั้ง slash healthz, slash readyz, Web UI ที่ใช้ dot textContent, header SSE และ trace_id สอง ทดสอบ Red-Team ครบ 5 หมวดหมู่ทั้งไทยและอังกฤษ สาม บังคับ Dual Gate คือ pass_rate อย่างน้อย 0.90, critical_leaks เป็น 0 และต้องผ่าน Benign Baseline ด้วย และสี่ นำทุกเคสที่เคยเจาะผ่านไปล็อกเป็น regression test ถาวรใน pytest และ GitHub Actions CI ครับ\n\nจากนี้ไป คุณพร้อมก้าวเข้าสู่ Block สุดท้าย Block 45 เพื่อทำ Load Testing, Failure Testing และเตรียมพรีเซนต์ Final Defense แล้ว เก่งมาก ๆ เลยครับ เจอกันในบทต่อไป สู้ ๆ ครับ!"
+    }
+  ]
+}

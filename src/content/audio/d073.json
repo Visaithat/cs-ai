@@ -1,0 +1,109 @@
+{
+  "lessonId": "d073",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — สัญญาการเรียก Production LLM API",
+      "src": "/audio/d073/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น สดใส ชวนน้องเข้าสู่ Phase 3 แบบเป็นกันเอง เน้นจังหวะชัดตรง 4 เสาหลักของวันนี้",
+      "script": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 73 นะครับ วันนี้เราขยับมาเรียก Production LLM API กันจริงจังแล้ว แต่ไม่ต้องห่วงเรื่องค่าใช้จ่าย เพราะรันได้ทั้ง API จริง, Local Ollama และโหมด mock ใน pytest ฟรีร้อยเปอร์เซ็นต์ครับ\n\nภาพใหญ่ของวันนี้มี 4 เรื่องหลัก หนึ่งคือแยก system กับ user role ตามขอบเขตความไว้วางใจ เพื่อลดความเสี่ยง prompt injection สองคือคุมความนิ่งและงบผ่าน temperature, top_p, max_tokens และ httpx timeout\n\nสามคือหุ้ม Official SDK ไว้หลัง Protocol interface เพื่อสลับ Ollama หรือ mock test ได้ทันที และสี่คืออ่าน prompt_tokens กับ completion_tokens ทุกคำขอ เพราะภาษาไทยกิน token มากกว่าอังกฤษ 1.5–3 เท่า ใช้ต่อยอดถึง Day 76 ครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับเข้าสู่ Day 73 นะครับ วันนี้เราขยับมาเรียก Production LLM API กันจริงจังแล้ว แต่ไม่ต้องห่วงเรื่องค่าใช้จ่าย เพราะรันได้ทั้ง API จริง, Local Ollama และโหมด mock ใน pytest ฟรีร้อยเปอร์เซ็นต์ครับ\n\nภาพใหญ่ของวันนี้มี 4 เรื่องหลัก หนึ่งคือแยก system กับ user role ตามขอบเขตความไว้วางใจ เพื่อลดความเสี่ยง prompt injection สองคือคุมความนิ่งและงบผ่าน temperature, top_p, max_tokens และ httpx timeout\n\nสามคือหุ้ม Official SDK ไว้หลัง Protocol interface เพื่อสลับ Ollama หรือ mock test ได้ทันที และสี่คืออ่าน prompt_tokens กับ completion_tokens ทุกคำขอ เพราะภาษาไทยกิน token มากกว่าอังกฤษ 1.5 ถึง 3 เท่า ใช้ต่อยอดถึง Day 76 ครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐานที่ต้องใช้",
+      "src": "/audio/d073/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง ชัดเจน ไล่เป้าหมาย 3 ข้อเป็นจังหวะน่าฟัง และย้ำว่าไม่มี API key ก็เรียนได้",
+      "script": "เป้าหมายของ Day 73 มี 3 ข้อที่ทำได้จริงหลังจบบทนี้ครับ\n\nข้อแรก แยกบทบาท system, user และ assistant ตาม trust boundary โดยไม่เอาข้อความลูกค้าไปต่อใน system\nข้อสอง ตั้งค่า production defaults ทั้ง temperature, top_p, max_tokens และ httpx.Timeout พร้อมอ่านค่า usage เพื่อคำนวณต้นทุน\nข้อสาม หุ้ม Official SDK หลัง Protocol interface เพื่อสลับ API จริง, Local Ollama และโหมด mock ใน pytest ได้ทันที\n\nทั้งหมดนี้ต่อยอดจาก httpx และ BPE tokenizer โดยรันเทสต์ฟรีบนเครื่องได้เลยครับ",
+      "ttsText": "เป้าหมายของ Day 73 มี 3 ข้อที่ทำได้จริงหลังจบบทนี้ครับ\n\nข้อแรก แยกบทบาท system, user และ assistant ตาม trust boundary โดยไม่เอาข้อความลูกค้าไปต่อใน system\nข้อสอง ตั้งค่า production defaults ทั้ง temperature, top_p, max_tokens และ httpx Timeout พร้อมอ่านค่า usage เพื่อคำนวณต้นทุน\nข้อสาม หุ้ม Official SDK หลัง Protocol interface เพื่อสลับ API จริง, Local Ollama และโหมด mock ใน pytest ได้ทันที\n\nทั้งหมดนี้ต่อยอดจาก httpx และ BPE tokenizer โดยรันเทสต์ฟรีบนเครื่องได้เลยครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · ติดตั้งโปรเจกต์ ai-day73",
+      "src": "/audio/d073/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็นเหมือนนั่งพาเซ็ตอัปข้าง ๆ ไล่คำสั่ง uv ทีละขั้นให้ชัดเจน",
+      "script": "มาตั้งโปรเจกต์ ai-day73 ด้วย uv กันครับ มีแค่ 3 ขั้นสั้น ๆ เอง\n\nเริ่มจาก uv init ai-day73 แล้วติดตั้ง openai กับ httpx ด้วย uv add จากนั้นเพิ่ม pytest กับ ruff ด้วย uv add --dev แล้วลองรัน python เช็ก import openai และ httpx ดูเวอร์ชันโดยยังไม่ต้องตั้ง API key ครับ\n\nถ้าอยากลองยิง API จริงค่อยตั้ง OPENAI_API_KEY ใน .env หรือชี้ไป Local Ollama ทีหลัง ตอนนี้เช็กเครื่องให้ผ่านก่อนแล้วกด ไปต่อ ได้เลยครับ",
+      "ttsText": "มาตั้งโปรเจกต์ ai-day73 ด้วย uv กันครับ มีแค่ 3 ขั้นสั้น ๆ เอง\n\nเริ่มจาก uv init ai-day73 แล้วติดตั้ง openai กับ httpx ด้วย uv add จากนั้นเพิ่ม pytest กับ ruff ด้วย uv add dash dash dev แล้วลองรัน python เช็ก import openai และ httpx ดูเวอร์ชันโดยยังไม่ต้องตั้ง API key ครับ\n\nถ้าอยากลองยิง API จริงค่อยตั้ง OPENAI_API_KEY ใน dot env หรือชี้ไป Local Ollama ทีหลัง ตอนนี้เช็กเครื่องให้ผ่านก่อนแล้วกด ไปต่อ ได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงติดตั้ง ai-day73",
+        "prompt": "ลองรันคำสั่ง uv init และติดตั้ง openai, httpx, pytest, ruff ให้เรียบร้อย แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ติดตั้งเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — โครงสร้าง LLM Request",
+      "src": "/audio/d073/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนดูแผนภาพโครงสร้าง LLM Request ให้เห็นภาพความเชื่อมโยงของ roles และ sampling params",
+      "script": "ก่อนลงรายละเอียด ลองกดเล่นแผนภาพโครงสร้าง LLM Request บนหน้าจอดูก่อนนะครับ\n\nจะเห็นว่าข้อมูลใน Context Window แบ่งโซนชัด ตั้งแต่ system role ที่ล็อกกฎระบบ, ประวัติใน assistant และข้อความดิบใน user ส่วนด้านข้างลองคลิกปรับ temperature, top_p กับ max_tokens ดูครับ จะเห็นเลยว่าการลด temperature ช่วยให้คำตอบนิ่งขึ้นและ max_tokens ช่วยคุมงบยังไง",
+      "ttsText": "ก่อนลงรายละเอียด ลองกดเล่นแผนภาพโครงสร้าง LLM Request บนหน้าจอดูก่อนนะครับ\n\nจะเห็นว่าข้อมูลใน Context Window แบ่งโซนชัด ตั้งแต่ system role ที่ล็อกกฎระบบ, ประวัติใน assistant และข้อความดิบใน user ส่วนด้านข้างลองคลิกปรับ temperature, top_p กับ max_tokens ดูครับ จะเห็นเลยว่าการลด temperature ช่วยให้คำตอบนิ่งขึ้นและ max_tokens ช่วยคุมงบยังไง"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d073/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายแนวคิดหลัก 3 ข้ออย่างมีชีวิตชีวา ใช้อุปมาคู่มือร้าน แท็กซี่ และปลั๊กไฟให้เข้าใจง่าย",
+      "script": "มาเจาะ 3 แนวคิดหลักของ Day 73 กันนะครับ\n\nข้อแรก แยก system, user และ assistant roles ตาม trust boundary เหมือนคู่มือพนักงานหลังเคาน์เตอร์กับกระดาษโน้ตลูกค้า ห้ามเอาข้อความลูกค้าไป f-string ใน system เด็ดขาด เพราะโมเดลเชื่อ system มากกว่า user และการแยกชัดยังช่วยให้แคช prefix ใน Day 79 ได้ด้วยครับ\n\nข้อสอง ตั้ง sampling defaults, max_tokens และ httpx.Timeout งานจัดหมวดหมู่ควรใช้ temperature 0.0–0.2 และปล่อย top_p เป็น 1.0 อย่าปรับซ้อนทั้งคู่ การไม่ใส่ max_tokens กับ timeout เหมือนขึ้นแท็กซี่ไม่ดูมิเตอร์ และอย่าลืมเก็บ prompt_tokens กับ completion_tokens แยกกัน เพราะ output แพงกว่า input 3–5 เท่าครับ\n\nข้อสาม หุ้ม SDK หลัง Thin Protocol Wrapper อย่าง LLMBackend(Protocol) เหมือนปลั๊กไฟมาตรฐานที่ผนัง แอปไม่ต้องรู้ว่าหลังปลั๊กเป็น Cloud API, Local Ollama หรือ MockLLMBackend ตอนรัน pytest ครับ",
+      "ttsText": "มาเจาะ 3 แนวคิดหลักของ Day 73 กันนะครับ\n\nข้อแรก แยก system, user และ assistant roles ตาม trust boundary เหมือนคู่มือพนักงานหลังเคาน์เตอร์กับกระดาษโน้ตลูกค้า ห้ามเอาข้อความลูกค้าไป f-string ใน system เด็ดขาด เพราะโมเดลเชื่อ system มากกว่า user และการแยกชัดยังช่วยให้แคช prefix ใน Day 79 ได้ด้วยครับ\n\nข้อสอง ตั้ง sampling defaults, max_tokens และ httpx Timeout งานจัดหมวดหมู่ควรใช้ temperature 0 ถึง 0.2 และปล่อย top_p เป็น 1.0 อย่าปรับซ้อนทั้งคู่ การไม่ใส่ max_tokens กับ timeout เหมือนขึ้นแท็กซี่ไม่ดูมิเตอร์ และอย่าลืมเก็บ prompt_tokens กับ completion_tokens แยกกัน เพราะ output แพงกว่า input 3 ถึง 5 เท่าครับ\n\nข้อสาม หุ้ม SDK หลัง Thin Protocol Wrapper อย่าง LLMBackend Protocol เหมือนปลั๊กไฟมาตรฐานที่ผนัง แอปไม่ต้องรู้ว่าหลังปลั๊กเป็น Cloud API, Local Ollama หรือ MockLLMBackend ตอนรัน pytest ครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างพร้อมรัน worked_day73.py",
+      "src": "/audio/d073/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงเหมือนรุ่นพี่นั่งพาไล่อ่านโค้ด worked_day73.py ทีละสเต็ป ชัดเจนตรงจุด fail-fast และทริก Ollama",
+      "script": "มาดูตัวอย่าง worked_day73.py กันครับ โจทย์คือสร้างตัวจัดหมวดหมู่ทิกเก็ตภาษาไทยที่พร้อมเทสต์ออฟไลน์ทันที\n\nสเต็ปแรก นิยาม dataclass ChatMessage, SamplingParams ที่ตรวจขอบเขตแบบ fail-fast ใน __post_init__, TokenUsage สำหรับคำนวณราคา และ LLMResult\n\nสเต็ปสอง สร้าง LLMBackend Protocol กับ OpenAICompatibleBackend ที่ตั้ง httpx.Timeout ไว้แล้ว และ MockLLMBackend สำหรับเทสต์ จากนั้นสเต็ปสามเรียก classify_ticket ส่งทิกเก็ตลูกค้าเข้า user role เท่านั้น แล้วตรวจจาก mock.last_messages ว่าระบบแยก roles ถูกต้อง พร้อมคำนวณต้นทุนเป็นบาท\n\nทริกสำคัญเวลาต่อ Local Ollama ผ่าน OpenAI SDK คือต้องส่ง api_key เป็นสตริงไม่ว่างอย่างคำว่า ollama และเช็ก resp.usage is not None เสมอนะครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "ttsText": "มาดูตัวอย่าง worked_day73 dot py กันครับ โจทย์คือสร้างตัวจัดหมวดหมู่ทิกเก็ตภาษาไทยที่พร้อมเทสต์ออฟไลน์ทันที\n\nสเต็ปแรก นิยาม dataclass ChatMessage, SamplingParams ที่ตรวจขอบเขตแบบ fail-fast ใน post init, TokenUsage สำหรับคำนวณราคา และ LLMResult\n\nสเต็ปสอง สร้าง LLMBackend Protocol กับ OpenAICompatibleBackend ที่ตั้ง httpx Timeout ไว้แล้ว และ MockLLMBackend สำหรับเทสต์ จากนั้นสเต็ปสามเรียก classify_ticket ส่งทิกเก็ตลูกค้าเข้า user role เท่านั้น แล้วตรวจจาก mock last_messages ว่าระบบแยก roles ถูกต้อง พร้อมคำนวณต้นทุนเป็นบาท\n\nทริกสำคัญเวลาต่อ Local Ollama ผ่าน OpenAI SDK คือต้องส่ง api_key เป็นสตริงไม่ว่างอย่างคำว่า ollama และเช็ก resp usage is not None เสมอนะครับ ดูครบแล้วกด ไปต่อ ได้เลย",
+      "pauseAfter": {
+        "title": "พักรอช่วงศึกษา worked_day73.py",
+        "prompt": "ลองกดดูโค้ดทั้ง 3 ขั้นของ worked_day73.py และสังเกตการแยก Protocol กับ MockLLMBackend แล้วกดไปต่อได้เลยครับ",
+        "continueLabel": "ดูตัวอย่างครบแล้ว — ไปต่อ..."
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — สร้าง llm_gateway.py",
+      "src": "/audio/d073/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดตอนไล่สเปกทั้ง 5 ข้อของ llm_gateway.py เพื่อให้พิมพ์ตามทัน",
+      "script": "ถึงเวลาลงมือเขียน llm_gateway.py แล้วครับ เพื่อผ่าน test_llm_gateway.py ทั้ง 5 test cases มาดูสเปกทีละจุดนะ\n\nหนึ่ง ChatMessage ตรวจใน __post_init__ ให้ role อยู่ในชุด system, user, assistant และ content หลัง strip ต้องไม่ว่าง สอง SamplingParams ตรวจช่วงค่าและเติมเมธอด to_httpx_timeout ที่ตั้ง connect เป็น min(5.0, timeout_sec) และ read เท่ากับ timeout_sec สาม TokenUsage ปฏิเสธค่าติดลบและคำนวณ cost_usd\n\nสี่และห้า ใน SupportGateway.ask วาง system_prompt เป็นชิ้นแรก ตามด้วย history ที่ห้ามมี role='system' แทรกเข้ามา ถ้าเจอให้ raise ValueError แล้วปิดท้ายด้วย user_text ที่ strip แล้วโดยห้ามปนเข้า system ครับ เสร็จแล้วรัน pytest กับ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะ",
+      "ttsText": "ถึงเวลาลงมือเขียน llm_gateway dot py แล้วครับ เพื่อผ่าน test_llm_gateway dot py ทั้ง 5 test cases มาดูสเปกทีละจุดนะ\n\nหนึ่ง ChatMessage ตรวจใน post init ให้ role อยู่ในชุด system, user, assistant และ content หลัง strip ต้องไม่ว่าง สอง SamplingParams ตรวจช่วงค่าและเติมเมธอด to_httpx_timeout ที่ตั้ง connect เป็น min ของ 5.0 กับ timeout_sec และ read เท่ากับ timeout_sec สาม TokenUsage ปฏิเสธค่าติดลบและคำนวณ cost_usd\n\nสี่และห้า ใน SupportGateway ask วาง system_prompt เป็นชิ้นแรก ตามด้วย history ที่ห้ามมี role เท่ากับ system แทรกเข้ามา ถ้าเจอให้ raise ValueError แล้วปิดท้ายด้วย user_text ที่ strip แล้วโดยห้ามปนเข้า system ครับ เสร็จแล้วรัน pytest กับ ruff check ได้เลย เดี๋ยวพี่รอตรงนี้นะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเขียนโค้ด llm_gateway.py",
+        "prompt": "ลงมือเติมโค้ดใน llm_gateway.py และรัน uv run pytest -q เพื่อตรวจทั้ง 5 test cases ได้เลยครับ พร้อมแล้วกดไปต่อ",
+        "continueLabel": "เขียนโค้ดเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d073/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยก่อนเปิด แล้วเล่า 4 ข้อผิดพลาดยอดฮิตใน production ด้วยจังหวะเตือนภัยแบบรุ่นพี่",
+      "script": "เก่งมากครับที่ผ่าน llm_gateway.py มาได้ ก่อนไปควิซ มาดู 4 ข้อผิดพลาดยอดฮิตเวลาเรียก LLM API จริงกันนะ\n\nข้อแรก เอาข้อความลูกค้าไป f-string ใน system message ทำให้พัง trust boundary และเสี่ยง prompt injection\nข้อสอง ปล่อย temperature เป็น default 1.0 ในงานจัดหมวดหมู่ หรือปรับซ้อนกับ top_p จนคำตอบแกว่งทุกครั้งที่เรียกซ้ำ\n\nข้อสาม ลืมใส่ max_tokens และ httpx.Timeout พอโมเดลวนลูปหรือ API ค้าง worker จะโดนจองค้างจนระบบล่มและบิลพุ่ง\nข้อสี่ ผูกโค้ดธุรกิจติด SDK ค่ายเดียวโดยไม่หุ้ม Protocol ทำให้เขียน pytest ออฟไลน์ไม่ได้และสลับไป Ollama ลำบากครับ",
+      "ttsText": "เก่งมากครับที่ผ่าน llm_gateway dot py มาได้ ก่อนไปควิซ มาดู 4 ข้อผิดพลาดยอดฮิตเวลาเรียก LLM API จริงกันนะ\n\nข้อแรก เอาข้อความลูกค้าไป f-string ใน system message ทำให้พัง trust boundary และเสี่ยง prompt injection\nข้อสอง ปล่อย temperature เป็น default 1.0 ในงานจัดหมวดหมู่ หรือปรับซ้อนกับ top_p จนคำตอบแกว่งทุกครั้งที่เรียกซ้ำ\n\nข้อสาม ลืมใส่ max_tokens และ httpx Timeout พอโมเดลวนลูปหรือ API ค้าง worker จะโดนจองค้างจนระบบล่มและบิลพุ่ง\nข้อสี่ ผูกโค้ดธุรกิจติด SDK ค่ายเดียวโดยไม่หุ้ม Protocol ทำให้เขียน pytest ออฟไลน์ไม่ได้และสลับไป Ollama ลำบากครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d073/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงสบาย ๆ เป็นกันเอง ชวนทบทวนความเข้าใจผ่าน Micro-Quiz 4 ข้อโดยไม่กดดัน",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 73 กันครับ\n\nคำถามจะทวนเรื่องเหตุผลที่ไม่ใส่ข้อความลูกค้าใน system, การตั้ง sampling params สำหรับงานจัดหมวดหมู่, ทำไมต้องแยกเก็บ prompt_tokens กับ completion_tokens และประโยชน์ของ typing.Protocol ทำครบแล้วกด ไปต่อ เพื่อฟังสรุปนะครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อของ Day 73 กันครับ\n\nคำถามจะทวนเรื่องเหตุผลที่ไม่ใส่ข้อความลูกค้าใน system, การตั้ง sampling params สำหรับงานจัดหมวดหมู่, ทำไมต้องแยกเก็บ prompt_tokens กับ completion_tokens และประโยชน์ของ typing Protocol ทำครบแล้วกด ไปต่อ เพื่อฟังสรุปนะครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเกี่ยวกับ LLM roles, sampling params, usage และ Protocol แล้วกดไปต่อเพื่อฟังสรุปครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 74",
+      "src": "/audio/d073/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจ อบอุ่น สรุป takeaways ทั้ง 4 ข้อให้กระชับทรงพลัง แล้วชวนไปต่อ Day 74",
+      "script": "ยินดีด้วยครับ จบ Day 73 แล้ว! วันนี้คุณวางรากฐานเรียก Production LLM API ได้ครบ 4 ข้อเลย\n\nหนึ่ง แยก system, user, assistant อย่างเคร่งครัด ไม่ปนข้อความลูกค้าลงใน system\nสอง ตั้ง temperature 0.0–0.2 สำหรับงานนิ่ง คง top_p ที่ 1.0 พร้อมใส่ max_tokens และ httpx.Timeout\nสาม อ่าน prompt_tokens กับ completion_tokens แยกกันทุกคำขอเพื่อคุมต้นทุนภาษาไทย\nสี่ หุ้ม SDK หลัง Protocol เพื่อสลับ Cloud, Ollama และ mock ใน pytest ได้สะอาด\n\nพรุ่งนี้ Day 74 เราจะจัดระเบียบข้างใน prompt ด้วย Context Engineering, XML delimiters และ few-shot ภาษาไทยครับ กดทำเครื่องหมายว่าเรียนจบแล้วเจอกัน Day 74 นะครับ",
+      "ttsText": "ยินดีด้วยครับ จบ Day 73 แล้ว! วันนี้คุณวางรากฐานเรียก Production LLM API ได้ครบ 4 ข้อเลย\n\nหนึ่ง แยก system, user, assistant อย่างเคร่งครัด ไม่ปนข้อความลูกค้าลงใน system\nสอง ตั้ง temperature 0 ถึง 0.2 สำหรับงานนิ่ง คง top_p ที่ 1.0 พร้อมใส่ max_tokens และ httpx Timeout\nสาม อ่าน prompt_tokens กับ completion_tokens แยกกันทุกคำขอเพื่อคุมต้นทุนภาษาไทย\nสี่ หุ้ม SDK หลัง Protocol เพื่อสลับ Cloud, Ollama และ mock ใน pytest ได้สะอาด\n\nพรุ่งนี้ Day 74 เราจะจัดระเบียบข้างใน prompt ด้วย Context Engineering, XML delimiters และ few-shot ภาษาไทยครับ กดทำเครื่องหมายว่าเรียนจบแล้วเจอกัน Day 74 นะครับ"
+    }
+  ]
+}

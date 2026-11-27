@@ -1,0 +1,109 @@
+{
+  "lessonId": "d022",
+  "voiceLabel": "รุ่นพี่ AI Engineer (Gemini TTS · Puck)",
+  "voiceId": "Puck",
+  "voiceStyle": "คุณคือรุ่นพี่ AI Engineer คนไทยที่กำลังนั่งอธิบายหนังสือเรียนให้รุ่นน้องฟังตัวต่อตัว สไตล์โฮสต์ NotebookLM: น้ำเสียงอบอุ่น สดใส มีชีวิตชีวา เหมือนคุยกันจริง ๆ ไม่ใช่อ่านข่าว มีจังหวะหายใจ เว้นวรรคอย่างเป็นธรรมชาติ เน้นเสียงสูงต่ำและอารมณ์ตามบริบทของแต่ละช่วง พูดคำศัพท์ภาษาอังกฤษเทคนิคปนภาษาไทยได้ลื่นไหลชัดเจนเหมือนวิศวกรไทยใช้งานจริง",
+  "introNote": "เปิดฟังชิว ๆ เหมือนมีรุ่นพี่มานั่งเปิดหนังสืออธิบายให้ฟังข้าง ๆ พร้อมไฮไลต์สีเขียวและเลื่อนหน้าตามอัตโนมัติ พอถึงช่วงเขียนโค้ดระบบจะหยุดรอให้คุณลองทำจนกว่าจะกดไปต่อครับ",
+  "cues": [
+    {
+      "sectionId": "big-picture",
+      "label": "1 · Big Picture — สู่ Python Package มาตรฐาน",
+      "src": "/audio/d022/01-big-picture.mp3",
+      "stylePrompt": "เปิดบทอย่างอบอุ่น เป็นกันเอง เหมือนชวนน้องอัปเกรดจากสคริปต์เดี่ยวเป็นวิศวกรแพ็กเกจมืออาชีพ น้ำเสียงสดใสชวนติดตาม",
+      "script": "สวัสดีครับ ยินดีต้อนรับสู่ Day 22 นะครับ วันนี้เราจะยกระดับโปรเจกต์ AI จากสคริปต์ 1 ไฟล์อย่าง main.py ให้กลายเป็น Python Package มาตรฐานที่ขยายต่อได้ยาวถึง production เลย\n\nตอนทดลองวันแรก ๆ ไฟล์เดียวอาจจะสะดวกครับ แต่พอเริ่มมีทั้ง Pydantic schema, HTTP client, ระบบ cache และชุดเทสต์ ไฟล์เดี่ยวจะบวมและ import พันกันจนแก้ยาก ในงานจริงเราจึงแยกโมดูลตามหน้าที่ ทั้ง models.py, service.py และ cli.py เพื่อให้หยิบ logic ไปใช้ซ้ำได้ทั้งใน CLI, FastAPI และ Eval Harness\n\nอีกปัญหาคลาสสิกคือภาพลวงตาที่ว่า เทสต์ผ่านในเครื่องฉัน แต่พังตอน build Docker จริง เพราะโครงสร้างแบบ flat layout ทำให้ pytest เผลอ import โฟลเดอร์ดิบแทนแพ็กเกจที่ติดตั้งใน .venv\n\nวันนี้เราแก้ทั้งสองเรื่องด้วย src layout และ pyproject.toml พร้อมเปิดทางให้ประกาศคำสั่ง CLI ใน terminal ได้ด้วยครับ",
+      "ttsText": "สวัสดีครับ ยินดีต้อนรับสู่ Day 22 นะครับ วันนี้เราจะยกระดับโปรเจกต์ AI จากสคริปต์ 1 ไฟล์อย่าง main dot py ให้กลายเป็น Python Package มาตรฐานที่ขยายต่อได้ยาวถึง production เลย\n\nตอนทดลองวันแรก ๆ ไฟล์เดียวอาจจะสะดวกครับ แต่พอเริ่มมีทั้ง Pydantic schema, HTTP client, ระบบ cache และชุดเทสต์ ไฟล์เดี่ยวจะบวมและ import พันกันจนแก้ยาก ในงานจริงเราจึงแยกโมดูลตามหน้าที่ ทั้ง models dot py, service dot py และ cli dot py เพื่อให้หยิบ logic ไปใช้ซ้ำได้ทั้งใน CLI, FastAPI และ Eval Harness\n\nอีกปัญหาคลาสสิกคือภาพลวงตาที่ว่า เทสต์ผ่านในเครื่องฉัน แต่พังตอน build Docker จริง เพราะโครงสร้างแบบ flat layout ทำให้ pytest เผลอ import โฟลเดอร์ดิบแทนแพ็กเกจที่ติดตั้งใน dot venv\n\nวันนี้เราแก้ทั้งสองเรื่องด้วย src layout และ pyproject dot toml พร้อมเปิดทางให้ประกาศคำสั่ง CLI ใน terminal ได้ด้วยครับ"
+    },
+    {
+      "sectionId": "objectives",
+      "label": "2 · เป้าหมาย & พื้นฐาน",
+      "src": "/audio/d022/02-objectives.mp3",
+      "stylePrompt": "น้ำเสียงกระฉับกระเฉง มั่นใจ แยกจังหวะเป้าหมาย 3 ข้อชัดเจน และย้ำว่าทำได้บนเครื่อง 100 เปอร์เซ็นต์",
+      "script": "มาดูเป้าหมาย 3 ข้อของ Day 22 กันครับ\n\nอย่างแรก คุณจะอธิบายได้เต็มปากเลยว่าทำไม src layout ถึงปลอดภัยกว่า flat layout ในแง่กลไก sys.path และการรัน pytest\nอย่างที่สอง คุณจะตั้งค่า pyproject.toml เป็น ทั้งบล็อก project, dependencies, build-system และ project.scripts พร้อมติดตั้งแบบ editable install ด้วย uv sync\nและอย่างที่สาม คุณจะได้จัดระเบียบโค้ดโปรเจกต์ AI ออกเป็น models.py, service.py, cli.py และ tests/ พร้อมเขียนเทสต์ตรวจทั้ง import path และ metadata ของ pyproject.toml ด้วย tomllib ใน Python 3.11 ขึ้นไปครับ",
+      "ttsText": "มาดูเป้าหมาย 3 ข้อของ Day 22 กันครับ\n\nอย่างแรก คุณจะอธิบายได้เต็มปากเลยว่าทำไม src layout ถึงปลอดภัยกว่า flat layout ในแง่กลไก sys dot path และการรัน pytest\nอย่างที่สอง คุณจะตั้งค่า pyproject dot toml เป็น ทั้งบล็อก project, dependencies, build-system และ project dot scripts พร้อมติดตั้งแบบ editable install ด้วย uv sync\nและอย่างที่สาม คุณจะได้จัดระเบียบโค้ดโปรเจกต์ AI ออกเป็น models dot py, service dot py, cli dot py และโฟลเดอร์ tests พร้อมเขียนเทสต์ตรวจทั้ง import path และ metadata ของ pyproject dot toml ด้วย tomllib ใน Python 3.11 ขึ้นไปครับ"
+    },
+    {
+      "sectionId": "setup",
+      "label": "3 · สร้างแพ็กเกจด้วย uv init --package",
+      "src": "/audio/d022/03-setup.mp3",
+      "stylePrompt": "พูดช้าลงเล็กน้อย น้ำเสียงใจเย็น พาไล่คำสั่ง uv init --package และเน้นจุดสังเกตเรื่องขีดกลางกับขีดล่างให้ชัด",
+      "script": "มาตั้งโปรเจกต์แพ็กเกจจริงบนเครื่องกันครับ วันนี้เรามีตัวช่วยเจ๋ง ๆ คือแฟล็ก --package ของ uv\n\nแค่สั่ง uv init --package ticket-kit แล้ว cd เข้าไป จากนั้น uv add pydantic และ uv add --dev pytest ruff แล้วปิดท้ายด้วย uv sync กับ uv run ticket-kit ครับ ตัว uv จะสร้างโครง src layout พร้อม build-system และ project.scripts ให้ครบในคำสั่งเดียว\n\nจุดสำคัญที่ต้องสังเกตคือ ชื่อโปรเจกต์ใช้ขีดกลาง ticket-kit แต่ชื่อโฟลเดอร์โมดูลใน src ต้องใช้ขีดล่างเป็น src/ticket_kit/ เพราะ Python import ชื่อที่มีขีดกลางไม่ได้ครับ ลองรันให้ผ่านก่อน แล้วค่อยกดไปต่อนะ",
+      "ttsText": "มาตั้งโปรเจกต์แพ็กเกจจริงบนเครื่องกันครับ วันนี้เรามีตัวช่วยเจ๋ง ๆ คือแฟล็ก dash dash package ของ uv\n\nแค่สั่ง uv init dash dash package ticket-kit แล้ว cd เข้าไป จากนั้น uv add pydantic และ uv add dash dash dev pytest ruff แล้วปิดท้ายด้วย uv sync กับ uv run ticket-kit ครับ ตัว uv จะสร้างโครง src layout พร้อม build-system และ project dot scripts ให้ครบในคำสั่งเดียว\n\nจุดสำคัญที่ต้องสังเกตคือ ชื่อโปรเจกต์ใช้ขีดกลาง ticket-kit แต่ชื่อโฟลเดอร์โมดูลใน src ต้องใช้ขีดล่างเป็น src slash ticket_kit เพราะ Python import ชื่อที่มีขีดกลางไม่ได้ครับ ลองรันให้ผ่านก่อน แล้วค่อยกดไปต่อนะ",
+      "pauseAfter": {
+        "title": "พักรอช่วงสร้างแพ็กเกจ ticket-kit",
+        "prompt": "ลองรัน uv init --package ticket-kit, ติดตั้ง dependency และลองสั่ง uv run ticket-kit ให้เห็นผลลัพธ์ก่อนกดไปต่อครับ",
+        "continueLabel": "สร้างแพ็กเกจเสร็จแล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "visual-map",
+      "label": "Visual Intuition — โครงสร้าง src/ Layout",
+      "src": "/audio/d022/04-visual-map.mp3",
+      "stylePrompt": "น้ำเสียงตื่นเต้น ชวนเห็นภาพ ชี้ไปที่โครงสร้างโฟลเดอร์และจุดเชื่อมระหว่าง pyproject.toml กับ src",
+      "script": "ลองดูแผนภาพโครงสร้าง src layout และ pyproject.toml บนหน้าจอไปด้วยกันนะครับ\n\nจุดเด่นของแผนภาพนี้คือการแยกชั้นชัดเจนมาก โค้ดที่พร้อมส่งมอบทั้งหมดถูกเก็บไว้ใต้โฟลเดอร์ src/ticket_kit/ ส่วนโฟลเดอร์ tests/ อยู่นอก src ที่รากโปรเจกต์เพื่อไม่ให้ไฟล์เทสต์ติดเข้าไปใน wheel ตอน build\n\nตรงกลางมี pyproject.toml เป็นตัวเชื่อม ทำให้ uv sync ติดตั้งโค้ดใน src เข้าไปใน .venv แบบ editable และเปิดให้เรียกคำสั่งจาก project.scripts ได้จากทุกโฟลเดอร์เลยครับ",
+      "ttsText": "ลองดูแผนภาพโครงสร้าง src layout และ pyproject dot toml บนหน้าจอไปด้วยกันนะครับ\n\nจุดเด่นของแผนภาพนี้คือการแยกชั้นชัดเจนมาก โค้ดที่พร้อมส่งมอบทั้งหมดถูกเก็บไว้ใต้โฟลเดอร์ src slash ticket_kit ส่วนโฟลเดอร์ tests อยู่นอก src ที่รากโปรเจกต์เพื่อไม่ให้ไฟล์เทสต์ติดเข้าไปใน wheel ตอน build\n\nตรงกลางมี pyproject dot toml เป็นตัวเชื่อม ทำให้ uv sync ติดตั้งโค้ดใน src เข้าไปใน dot venv แบบ editable และเปิดให้เรียกคำสั่งจาก project dot scripts ได้จากทุกโฟลเดอร์เลยครับ"
+    },
+    {
+      "sectionId": "concepts",
+      "label": "4 · แนวคิดหลักทั้ง 3 ข้อ",
+      "src": "/audio/d022/05-concepts.mp3",
+      "stylePrompt": "สไตล์โฮสต์ NotebookLM อธิบายกลไก sys.path, pyproject.toml และขอบเขตโมดูลด้วยภาพเปรียบเทียบที่เข้าใจง่ายทันที",
+      "script": "เรามาเจาะ 3 แนวคิดหลักของวันนี้กันครับ\n\nข้อแรก ทำไม src layout ถึงชนะ flat layout เหตุผลอยู่ที่กลไกของ Python ที่ใส่ working directory ไว้หน้าสุดของ sys.path เสมอ ใน flat layout เวลาคุณรัน pytest ที่รากโปรเจกต์ Python จะเผลอ import โฟลเดอร์ดิบใน working directory แทนแพ็กเกจที่ติดตั้งใน .venv เหมือนเชฟที่ชิมซุปจากหม้อหลังครัวโดยไม่ได้ตรวจว่าจัดใส่กล่องเดลิเวอรีครบไหม แต่ src layout ซ่อนโค้ดไว้ใต้ src ทำให้ import ตรงจากรากไม่ได้ บังคับให้เทสต์ต้องรันผ่านแพ็กเกจที่ติดตั้งจริงด้วย uv sync เสมอ จบปัญหา ModuleNotFoundError โดยไม่ต้องแฮ็ก sys.path.append เลยครับ\n\nข้อที่สอง เจาะลึก pyproject.toml ซึ่งเป็นแหล่งความจริงเดียวแทน setup.py และ requirements.txt โดยบล็อกสำคัญคือ build-system เช่น hatchling ที่บอกวิธีแพ็กโค้ดใน src และบล็อก project.scripts เช่น ticket-kit = \"ticket_kit.cli:main\" ที่แปลงฟังก์ชัน Python ให้เป็นคำสั่ง terminal นอกจากนี้ยังแยก dependencies สำหรับ runtime ออกจาก dependency-groups.dev ที่มี pytest และ ruff เพื่อให้ production image ไม่แบกเครื่องมือ dev ไปด้วย และจำไว้นะครับ แม้ editable install จะอัปเดตโค้ดให้อัตโนมัติ แต่ถ้าแก้ project.scripts หรือ dependencies ต้องรัน uv sync ใหม่ทุกครั้ง\n\nข้อที่สาม การแบ่งขอบเขตโมดูลให้ชัด ให้ models.py ถือเฉพาะ Pydantic schema, service.py ถือ core logic โดยไม่ปน print หรือ sys.argv, cli.py รับอินพุตแล้วส่งต่อให้ service, และ __init__.py ประกาศ __all__ เป็นหน้าร้านของแพ็กเกจ ทำแบบนี้จะนำไปหุ้มด้วย Typer หรือ FastAPI ในอนาคตได้ทันทีโดยไม่ต้องรื้อโค้ดครับ",
+      "ttsText": "เรามาเจาะ 3 แนวคิดหลักของวันนี้กันครับ\n\nข้อแรก ทำไม src layout ถึงชนะ flat layout เหตุผลอยู่ที่กลไกของ Python ที่ใส่ working directory ไว้หน้าสุดของ sys dot path เสมอ ใน flat layout เวลาคุณรัน pytest ที่รากโปรเจกต์ Python จะเผลอ import โฟลเดอร์ดิบใน working directory แทนแพ็กเกจที่ติดตั้งใน dot venv เหมือนเชฟที่ชิมซุปจากหม้อหลังครัวโดยไม่ได้ตรวจว่าจัดใส่กล่องเดลิเวอรีครบไหม แต่ src layout ซ่อนโค้ดไว้ใต้ src ทำให้ import ตรงจากรากไม่ได้ บังคับให้เทสต์ต้องรันผ่านแพ็กเกจที่ติดตั้งจริงด้วย uv sync เสมอ จบปัญหา ModuleNotFoundError โดยไม่ต้องแฮ็ก sys dot path dot append เลยครับ\n\nข้อที่สอง เจาะลึก pyproject dot toml ซึ่งเป็นแหล่งความจริงเดียวแทน setup dot py และ requirements dot txt โดยบล็อกสำคัญคือ build-system เช่น hatchling ที่บอกวิธีแพ็กโค้ดใน src และบล็อก project dot scripts เช่น ticket-kit เท่ากับ ticket_kit dot cli colon main ที่แปลงฟังก์ชัน Python ให้เป็นคำสั่ง terminal นอกจากนี้ยังแยก dependencies สำหรับ runtime ออกจาก dependency-groups dot dev ที่มี pytest และ ruff เพื่อให้ production image ไม่แบกเครื่องมือ dev ไปด้วย และจำไว้นะครับ แม้ editable install จะอัปเดตโค้ดให้อัตโนมัติ แต่ถ้าแก้ project dot scripts หรือ dependencies ต้องรัน uv sync ใหม่ทุกครั้ง\n\nข้อที่สาม การแบ่งขอบเขตโมดูลให้ชัด ให้ models dot py ถือเฉพาะ Pydantic schema, service dot py ถือ core logic โดยไม่ปน print หรือ sys dot argv, cli dot py รับอินพุตแล้วส่งต่อให้ service, และ dunder init dot py ประกาศ dunder all เป็นหน้าร้านของแพ็กเกจ ทำแบบนี้จะนำไปหุ้มด้วย Typer หรือ FastAPI ในอนาคตได้ทันทีโดยไม่ต้องรื้อโค้ดครับ"
+    },
+    {
+      "sectionId": "worked-example",
+      "label": "5 · ตัวอย่างสร้างแพ็กเกจ ticket-kit",
+      "src": "/audio/d022/06-worked-example.mp3",
+      "stylePrompt": "น้ำเสียงชวนสังเกตเหมือนกำลังไล่รีวิวไฟล์โค้ดทีละไฟล์ พูดช้าลงเล็กน้อยตอนชี้จุดตายเรื่องขาด build-system",
+      "script": "ลองมาดูตัวอย่างจริงของการประกอบแพ็กเกจ ticket-kit ทีละขั้นนะครับ\n\nขั้นแรก ในไฟล์ src/ticket_kit/models.py เราประกาศ TicketItem และ TicketSummary ด้วย Pydantic BaseModel แยกข้อมูลเข้าและผลสรุปออกมาชัดเจน\n\nขั้นที่สอง ในไฟล์ src/ticket_kit/service.py เราเขียนฟังก์ชัน summarize_tickets ที่รับ list ของ TicketItem นับจำนวนตาม channel ด้วย Counter แล้วคืน TicketSummary ออกไป สังเกตว่าในไฟล์นี้ไม่มี print สักบรรทัดเดียวเลยครับ\n\nขั้นที่สาม หลังจากผูก cli.py และ __init__.py แล้ว เรารัน uv sync แล้วลองพิสูจน์ด้วย uv run python -c \"import ticket_kit; print(ticket_kit.__file__)\" จะเห็นพาธชี้เข้าไปที่ src/ticket_kit/__init__.py จริง ๆ และพอสั่ง uv run ticket-kit ก็จะรันฟังก์ชัน main ได้ทันที\n\nระวังจุดตายตรงท้ายตัวอย่างด้วยนะครับ ถ้าคุณสร้างโฟลเดอร์ src เองโดยลืมใส่ build-system ใน pyproject.toml ตัว uv sync จะไม่ติดตั้งโปรเจกต์เข้า .venv แล้ว pytest จะฟ้อง ModuleNotFoundError ทันที ลองเดินตัวอย่างให้ครบแล้วกดไปต่อได้เลยครับ",
+      "ttsText": "ลองมาดูตัวอย่างจริงของการประกอบแพ็กเกจ ticket-kit ทีละขั้นนะครับ\n\nขั้นแรก ในไฟล์ src slash ticket_kit slash models dot py เราประกาศ TicketItem และ TicketSummary ด้วย Pydantic BaseModel แยกข้อมูลเข้าและผลสรุปออกมาชัดเจน\n\nขั้นที่สอง ในไฟล์ src slash ticket_kit slash service dot py เราเขียนฟังก์ชัน summarize_tickets ที่รับ list ของ TicketItem นับจำนวนตาม channel ด้วย Counter แล้วคืน TicketSummary ออกไป สังเกตว่าในไฟล์นี้ไม่มี print สักบรรทัดเดียวเลยครับ\n\nขั้นที่สาม หลังจากผูก cli dot py และ dunder init dot py แล้ว เรารัน uv sync แล้วลองพิสูจน์ด้วยคำสั่ง import ticket_kit แล้วพิมพ์ dunder file จะเห็นพาธชี้เข้าไปที่ src slash ticket_kit slash dunder init dot py จริง ๆ และพอสั่ง uv run ticket-kit ก็จะรันฟังก์ชัน main ได้ทันที\n\nระวังจุดตายตรงท้ายตัวอย่างด้วยนะครับ ถ้าคุณสร้างโฟลเดอร์ src เองโดยลืมใส่ build-system ใน pyproject dot toml ตัว uv sync จะไม่ติดตั้งโปรเจกต์เข้า dot venv แล้ว pytest จะฟ้อง ModuleNotFoundError ทันที ลองเดินตัวอย่างให้ครบแล้วกดไปต่อได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงเดินตัวอย่าง ticket-kit",
+        "prompt": "ลองไล่ดูโมดูล models.py, service.py และวิธีเช็ก ticket_kit.__file__ ผ่าน editable install แล้วกดไปต่อที่แบบฝึกหัดครับ",
+        "continueLabel": "ดูตัวอย่างเสร็จแล้ว — ไปต่อที่แบบฝึกหัด"
+      }
+    },
+    {
+      "sectionId": "try-it",
+      "label": "6 · Try It — ประกอบแพ็กเกจ ticket-kit",
+      "src": "/audio/d022/07-try-it.mp3",
+      "stylePrompt": "น้ำเสียงอบอุ่น ให้กำลังใจ พูดช้าชัดตอนไล่โครงสร้างไฟล์และฟังก์ชันที่ต้องเขียนในแพ็กเกจ",
+      "script": "ถึงเวลาลงมือสร้างแพ็กเกจ ticket-kit ของจริงแล้วครับ โจทย์ให้เวลา 12 นาทีในการจัดโครงสร้างใต้ src/ticket_kit/ ให้ครบและผ่านเทสต์ 4 ข้อ\n\nเช็กสเปกทีละไฟล์นะครับ เริ่มจาก pyproject.toml ต้องมี build-system และ project.scripts ที่ผูก ticket-kit = \"ticket_kit.cli:main\" เอาไว้\nไฟล์ที่สอง src/ticket_kit/models.py ใส่ TicketItem ที่มี ticket_id ยาวอย่างน้อย 3, channel เป็น line, email หรือ web และ urgent ค่าเริ่มต้น False คู่กับ TicketSummary ที่มี total, urgent_count และ by_channel\nไฟล์ที่สาม src/ticket_kit/service.py เติมฟังก์ชัน summarize_tickets และ filter_urgent ที่คืนเฉพาะรายการที่ urgent เป็น True โดยคงลำดับเดิม\nไฟล์ที่สี่ src/ticket_kit/cli.py สร้าง format_summary_line คืนรูปแบบ total=<n> urgent=<u_count> และฟังก์ชัน main ที่คืน exit code 0\nและไฟล์ที่ห้า src/ticket_kit/__init__.py export ทั้ง 4 สัญลักษณ์ผ่าน __all__\n\nเสร็จแล้วรัน uv sync ตามด้วย uv run pytest -q, uv run ticket-kit และ uv run ruff check . นะครับ เทสต์จะใช้ tomllib ตรวจ pyproject.toml ของคุณด้วย พี่หยุดรอตรงนี้ ลุยได้เลยครับ",
+      "ttsText": "ถึงเวลาลงมือสร้างแพ็กเกจ ticket-kit ของจริงแล้วครับ โจทย์ให้เวลา 12 นาทีในการจัดโครงสร้างใต้ src slash ticket_kit ให้ครบและผ่านเทสต์ 4 ข้อ\n\nเช็กสเปกทีละไฟล์นะครับ เริ่มจาก pyproject dot toml ต้องมี build-system และ project dot scripts ที่ผูก ticket-kit เท่ากับ ticket_kit dot cli colon main เอาไว้\nไฟล์ที่สอง src slash ticket_kit slash models dot py ใส่ TicketItem ที่มี ticket_id ยาวอย่างน้อย 3, channel เป็น line, email หรือ web และ urgent ค่าเริ่มต้น False คู่กับ TicketSummary ที่มี total, urgent_count และ by_channel\nไฟล์ที่สาม src slash ticket_kit slash service dot py เติมฟังก์ชัน summarize_tickets และ filter_urgent ที่คืนเฉพาะรายการที่ urgent เป็น True โดยคงลำดับเดิม\nไฟล์ที่สี่ src slash ticket_kit slash cli dot py สร้าง format_summary_line คืนรูปแบบ total เท่ากับ n เว้นวรรค urgent เท่ากับ u_count และฟังก์ชัน main ที่คืน exit code 0\nและไฟล์ที่ห้า src slash ticket_kit slash dunder init dot py export ทั้ง 4 สัญลักษณ์ผ่าน dunder all\n\nเสร็จแล้วรัน uv sync ตามด้วย uv run pytest dash q, uv run ticket-kit และ uv run ruff check dot นะครับ เทสต์จะใช้ tomllib ตรวจ pyproject dot toml ของคุณด้วย พี่หยุดรอตรงนี้ ลุยได้เลยครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงประกอบแพ็กเกจ ticket-kit",
+        "prompt": "ลงมือสร้างไฟล์ใต้ src/ticket_kit/, ตั้งค่า pyproject.toml แล้วรัน uv sync && uv run pytest -q ให้ผ่านทั้ง 4 เทสต์ครับ",
+        "continueLabel": "แพ็กเกจผ่านเทสต์แล้ว — ฟังต่อ"
+      }
+    },
+    {
+      "sectionId": "mistakes",
+      "label": "7 · 4 ข้อผิดพลาดที่พบบ่อย",
+      "src": "/audio/d022/08-mistakes.mp3",
+      "stylePrompt": "น้ำเสียงชมเชยในตอนเปิด จากนั้นเล่า 4 ข้อผิดพลาดเรื่อง packaging แบบกระชับ เป็นกันเอง ชวนให้จำง่าย",
+      "script": "สุดยอดเลยครับที่ประกอบแพ็กเกจจนเทสต์เขียวครบ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่คนเพิ่งจัด src layout เจอบ่อยที่สุดนะครับ\n\nข้อแรก คือสร้างโฟลเดอร์ src/ticket_kit/ เองแต่ลืมใส่บล็อก build-system ใน pyproject.toml ทำให้ uv sync ไม่ติดตั้งแพ็กเกจเข้า .venv แล้ว pytest ฟ้อง ModuleNotFoundError ทั้งที่ไฟล์อยู่ครบ\nข้อที่สอง คือแก้ project.scripts ใน pyproject.toml แล้วแต่ลืมรัน uv sync ซ้ำ ผลคือพิมพ์ uv run ticket-kit แล้วหาคำสั่งไม่เจอหรือยังเรียกฟังก์ชันเก่าอยู่\nข้อที่สาม คือตั้งชื่อโฟลเดอร์ใต้ src ด้วยขีดกลางอย่าง src/ticket-kit/ ตามชื่อโปรเจกต์ ทำให้ Python import ไม่ได้ จำไว้ว่าชื่อโปรเจกต์ใช้ขีดกลางได้ แต่ชื่อโฟลเดอร์แพ็กเกจต้องใช้ขีดล่างเสมอครับ\nและข้อที่สี่ คือเอาโฟลเดอร์ tests ไปวางปนไว้ใน src/ticket_kit/tests/ ทำให้ไฟล์เทสต์ติดไปใน wheel ตอน build และเสี่ยงชื่อโมดูลชนกัน ให้วาง tests/ ไว้ที่รากโปรเจกต์คู่ขนานกับ src/ เสมอครับ",
+      "ttsText": "สุดยอดเลยครับที่ประกอบแพ็กเกจจนเทสต์เขียวครบ ก่อนไปทำควิซ พี่ขอสรุป 4 ข้อผิดพลาดที่คนเพิ่งจัด src layout เจอบ่อยที่สุดนะครับ\n\nข้อแรก คือสร้างโฟลเดอร์ src slash ticket_kit เองแต่ลืมใส่บล็อก build-system ใน pyproject dot toml ทำให้ uv sync ไม่ติดตั้งแพ็กเกจเข้า dot venv แล้ว pytest ฟ้อง ModuleNotFoundError ทั้งที่ไฟล์อยู่ครบ\nข้อที่สอง คือแก้ project dot scripts ใน pyproject dot toml แล้วแต่ลืมรัน uv sync ซ้ำ ผลคือพิมพ์ uv run ticket-kit แล้วหาคำสั่งไม่เจอหรือยังเรียกฟังก์ชันเก่าอยู่\nข้อที่สาม คือตั้งชื่อโฟลเดอร์ใต้ src ด้วยขีดกลางอย่าง src slash ticket-kit ตามชื่อโปรเจกต์ ทำให้ Python import ไม่ได้ จำไว้ว่าชื่อโปรเจกต์ใช้ขีดกลางได้ แต่ชื่อโฟลเดอร์แพ็กเกจต้องใช้ขีดล่างเสมอครับ\nและข้อที่สี่ คือเอาโฟลเดอร์ tests ไปวางปนไว้ใน src slash ticket_kit slash tests ทำให้ไฟล์เทสต์ติดไปใน wheel ตอน build และเสี่ยงชื่อโมดูลชนกัน ให้วางโฟลเดอร์ tests ไว้ที่รากโปรเจกต์คู่ขนานกับ src เสมอครับ"
+    },
+    {
+      "sectionId": "quiz",
+      "label": "8 · Micro-Quiz 4 ข้อ",
+      "src": "/audio/d022/09-quiz.mp3",
+      "stylePrompt": "น้ำเสียงผ่อนคลาย เป็นกันเอง ชวนทบทวนเหตุผลของ src layout และ pyproject.toml แบบไม่เครียด",
+      "script": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้เราจะทบทวนทั้งเหตุผลทางเทคนิคของ src layout, ความหมายของ project.scripts, สาเหตุของ ModuleNotFoundError และเหตุผลที่แยก pytest กับ ruff ไว้ใน dev dependency group\n\nค่อย ๆ อ่านเหตุผลของแต่ละตัวเลือกดูนะครับ ถ้าข้อไหนตอบผิดระบบจะเก็บเข้าคิวทบทวนให้อัตโนมัติ พี่พักรอตรงนี้ ทำครบแล้วกดไปต่อเพื่อฟังสรุปครับ",
+      "ttsText": "มาเช็กความเข้าใจกับ Micro-Quiz 4 ข้อกันครับ รอบนี้เราจะทบทวนทั้งเหตุผลทางเทคนิคของ src layout, ความหมายของ project dot scripts, สาเหตุของ ModuleNotFoundError และเหตุผลที่แยก pytest กับ ruff ไว้ใน dev dependency group\n\nค่อย ๆ อ่านเหตุผลของแต่ละตัวเลือกดูนะครับ ถ้าข้อไหนตอบผิดระบบจะเก็บเข้าคิวทบทวนให้อัตโนมัติ พี่พักรอตรงนี้ ทำครบแล้วกดไปต่อเพื่อฟังสรุปครับ",
+      "pauseAfter": {
+        "title": "พักรอช่วงทำ Micro-Quiz 4 ข้อ",
+        "prompt": "ลองตอบควิซทั้ง 4 ข้อเรื่อง src layout, project.scripts และ dependency groups ให้ครบ แล้วกดไปต่อเพื่อฟังสรุปปิดท้ายครับ",
+        "continueLabel": "ทำควิซเสร็จแล้ว — ฟังสรุปปิดท้าย"
+      }
+    },
+    {
+      "sectionId": "summary",
+      "label": "9 · สรุป & ก้าวต่อไป Day 23",
+      "src": "/audio/d022/10-summary.mp3",
+      "stylePrompt": "น้ำเสียงภูมิใจและกระตือรือร้น สรุป 4 แกนของบทนี้ให้กระชับชัด แล้วชวนไปต่อ Day 23 เรื่อง Typer CLI",
+      "script": "ยินดีด้วยครับ คุณเรียนจบ Day 22 เรียบร้อยแล้ว ขอสรุป 4 หลักการสำคัญของ Python Packaging ที่เราได้วันนี้ครับ\n\nหนึ่ง ใช้ src layout คู่กับ tests/ ที่รากโปรเจกต์ เพื่อให้ pytest ทดสอบกับแพ็กเกจที่ติดตั้งจริงเสมอโดยไม่ต้องแฮ็ก sys.path\nสอง ใช้ pyproject.toml เป็นศูนย์กลางเดียว ทั้ง dependencies, dependency-groups.dev, build-system และ project.scripts\nสาม รัน uv sync ทุกครั้งหลังแก้ build-system, scripts หรือ dependencies เพื่ออัปเดต editable install และ uv.lock\nสี่ แบ่งขอบเขตโมดูลเป็น models.py, service.py, cli.py และ __init__.py ให้สะอาด\n\nอย่าลืมกดปุ่ม ทำเครื่องหมายว่าเรียนจบ นะครับ และใน Day 23 พรุ่งนี้ เราจะนำโครงแพ็กเกจนี้มาสร้าง CLI ระดับโปรดักชันด้วย Typer ที่รองรับ type hints, progress บน stderr และ exit codes กันครับ แล้วเจอกันครับ!",
+      "ttsText": "ยินดีด้วยครับ คุณเรียนจบ Day 22 เรียบร้อยแล้ว ขอสรุป 4 หลักการสำคัญของ Python Packaging ที่เราได้วันนี้ครับ\n\nหนึ่ง ใช้ src layout คู่กับโฟลเดอร์ tests ที่รากโปรเจกต์ เพื่อให้ pytest ทดสอบกับแพ็กเกจที่ติดตั้งจริงเสมอโดยไม่ต้องแฮ็ก sys dot path\nสอง ใช้ pyproject dot toml เป็นศูนย์กลางเดียว ทั้ง dependencies, dependency-groups dot dev, build-system และ project dot scripts\nสาม รัน uv sync ทุกครั้งหลังแก้ build-system, scripts หรือ dependencies เพื่ออัปเดต editable install และ uv dot lock\nสี่ แบ่งขอบเขตโมดูลเป็น models dot py, service dot py, cli dot py และ dunder init dot py ให้สะอาด\n\nอย่าลืมกดปุ่ม ทำเครื่องหมายว่าเรียนจบ นะครับ และใน Day 23 พรุ่งนี้ เราจะนำโครงแพ็กเกจนี้มาสร้าง CLI ระดับโปรดักชันด้วย Typer ที่รองรับ type hints, progress บน stderr และ exit codes กันครับ แล้วเจอกันครับ!"
+    }
+  ]
+}
